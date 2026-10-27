@@ -1,0 +1,40 @@
+# Secrets
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+
+# API keys and credentials
+*.pem
+*.key
+credentials*
+secrets*
+
+# Python environments and caches
+.venv/
+**/.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# Downloaded third-party repositories and models
+work/
+*.bin
+*.safetensors
+hf-cache/
+.conda-envs/
+.conda-pkgs/
+.cargo-home/
+.pip-cache/
+
+# Runtime state
+state/
+logs/
+data/
+reports/
+
+# macOS
+.DS_Store

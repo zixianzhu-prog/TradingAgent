@@ -1,0 +1,85 @@
+{
+  "generated_at": "2026-10-27T15:14:44.558240+00:00",
+  "mode": "dry-run",
+  "data_provider": "openbb",
+  "results": [
+    {
+      "signal": {
+        "ticker": "NVDA",
+        "score": 0.6225591936510426,
+        "direction": "hold",
+        "price": 217.67010498046875,
+        "stop_price": 205.3686763218471,
+        "reasons": [
+          "close=217.67",
+          "MA20=224.42",
+          "MA50=222.15",
+          "ATR14=6.15",
+          "Kronos5D=-1.65%"
+        ],
+        "as_of": "2026-10-27"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "AAPL",
+        "score": 0.8271423019143487,
+        "direction": "hold",
+        "price": 347.6199951171875,
+        "stop_price": 334.9014195033482,
+        "reasons": [
+          "close=347.62",
+          "MA20=340.09",
+          "MA50=331.07",
+          "ATR14=6.36",
+          "Kronos5D=-1.59%"
+        ],
+        "as_of": "2026-10-27"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "MSFT",
+        "score": 0.9433241303949589,
+        "direction": "hold",
+        "price": 533.0399780273438,
+        "stop_price": 511.01153564453125,
+        "reasons": [
+          "close=533.04",
+          "MA20=529.08",
+          "MA50=510.23",
+          "ATR14=11.01",
+          "Kronos5D=-1.35%"
+        ],
+        "as_of": "2026-10-27"
+      },
+      "order": null,
+      "fill": null
+    }
+  ],
+  "kronos": {
+    "NVDA": {
+      "last_close": 217.67010498046875,
+      "predicted_close": 214.06979370117188,
+      "forecast_return": -0.016540219336136808
+    },
+    "AAPL": {
+      "last_close": 347.6199951171875,
+      "predicted_close": 342.0865783691406,
+      "forecast_return": -0.015918004791932283
+    },
+    "MSFT": {
+      "last_close": 533.0399780273438,
+      "predicted_close": 525.869384765625,
+      "forecast_return": -0.013452261663853826
+    }
+  },
+  "portfolio": {
+    "cash": 100000.0,
+    "positions": {}
+  }
+}
