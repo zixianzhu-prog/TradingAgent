@@ -1,6 +1,6 @@
 # 十仓库交易系统进度
 
-更新时间：2026-10-27 11:20（America/New_York）
+更新时间：2026-10-27（America/New_York）
 
 > “已安装”不等于“已接入”。只有数据或信号进入本地 `ai-fund-lab` 主流程，才标记为已接入。
 
@@ -15,7 +15,7 @@
 | 7 | CCXT | 加密交易所统一 API | ✅ | ✅ Kraken 公共 BTC/USD | 不接美股主流程 |
 | 8 | Freqtrade | 加密策略回测与执行 | ✅ Python 3.12 | ✅ Coinbase 29 日正式基线回测 | 独立加密分支 |
 | 9 | Hummingbot | 做市与加密执行 | ✅ 项目内 Conda 环境 | ✅ CLI 与 paper-trade 模块 | 独立加密分支 |
-| 10 | NautilusTrader | 事件驱动回测及执行引擎 | ✅ | ✅ v1.221.0 模拟对象 | ⏳ |
+| 10 | NautilusTrader | 事件驱动回测及执行引擎 | ✅ | ✅ Coinbase 29 日 EMA 基线回测 | 独立加密分支 |
 
 ## 当前已验证结果
 
@@ -28,7 +28,7 @@
 - Freqtrade 正式基线：Coinbase 公共数据，BTC/USD + ETH/USD，29 天、5 分钟周期；9 笔交易，总收益 -3.26%，最大回撤 3.55%。默认示例策略不合格，仅验证回测链路。
 - Hummingbot：本地源码与 61 个 Cython 模块编译成功，`hbot --help` 和 paper-trade 模块验证通过；没有配置交易所凭据。
 - Qlib：PyQLib v0.9.7 可导入；RD-Agent 尚未配置 LLM。
-- NautilusTrader：v1.221.0 可导入并创建模拟 TraderId、Price、Quantity 对象。
+- NautilusTrader：使用与 Freqtrade 相同的 Coinbase BTC/USD + ETH/USD 5 分钟数据完成 29 日 EMA(10/20) 基线；417 笔完整交易，总收益 -80.37%，其中 7,924.40 USD 为手续费，证明该高换手策略在 1.2% 单边费用下不可行。
 
 ## 完成口径
 
