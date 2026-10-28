@@ -22,6 +22,7 @@ __pycache__/
 
 # Downloaded third-party repositories and models
 work/
+tools/
 *.bin
 *.safetensors
 hf-cache/
@@ -31,10 +32,13 @@ hf-cache/
 .pip-cache/
 
 # Runtime state
+.runtime/
 state/
 logs/
+log/
 data/
 reports/
+selector.log
 
 # macOS
 .DS_Store
