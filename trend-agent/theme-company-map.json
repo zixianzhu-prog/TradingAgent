@@ -1,0 +1,102 @@
+{
+  "themes": {
+    "ai_data_center_power": [
+      {
+        "ticker": "VRT",
+        "company": "Vertiv",
+        "exposure": "AI data-center power, cooling and 800 VDC infrastructure",
+        "exposure_strength": 0.95,
+        "evidence_status": "confirmed",
+        "serenity_role": "multi-node infrastructure supplier",
+        "pure_play": true
+      },
+      {
+        "ticker": "NVTS",
+        "company": "Navitas Semiconductor",
+        "exposure": "GaN and SiC devices across NVIDIA 800 VDC conversion stages",
+        "exposure_strength": 0.9,
+        "evidence_status": "confirmed",
+        "serenity_role": "power-semiconductor chokepoint candidate",
+        "pure_play": true
+      }
+    ],
+    "optical_interconnect": [
+      {
+        "ticker": "LITE",
+        "company": "Lumentum",
+        "exposure": "CPO external laser sources and cloud optical modules",
+        "exposure_strength": 0.9,
+        "evidence_status": "confirmed",
+        "serenity_role": "optical supply-chain candidate",
+        "pure_play": true
+      },
+      {
+        "ticker": "COHR",
+        "company": "Coherent",
+        "exposure": "datacom transceivers, lasers and optical components",
+        "exposure_strength": 0.75,
+        "evidence_status": "confirmed",
+        "serenity_role": "vertically integrated optical supplier",
+        "pure_play": false
+      }
+    ],
+    "robotics_automation": [
+      {
+        "ticker": "SYM",
+        "company": "Symbotic",
+        "exposure": "warehouse automation systems",
+        "exposure_strength": 0.9,
+        "evidence_status": "confirmed",
+        "serenity_role": "direct exposure",
+        "pure_play": true
+      },
+      {
+        "ticker": "TER",
+        "company": "Teradyne",
+        "exposure": "industrial and collaborative robotics businesses",
+        "exposure_strength": 0.8,
+        "evidence_status": "confirmed",
+        "serenity_role": "direct but diversified",
+        "pure_play": false
+      },
+      {
+        "ticker": "ROK",
+        "company": "Rockwell Automation",
+        "exposure": "industrial automation and control",
+        "exposure_strength": 0.7,
+        "evidence_status": "confirmed",
+        "serenity_role": "adjacent infrastructure",
+        "pure_play": false
+      },
+      {
+        "ticker": "NVDA",
+        "company": "NVIDIA",
+        "exposure": "robotics compute and simulation platform",
+        "exposure_strength": 0.6,
+        "evidence_status": "confirmed",
+        "serenity_role": "enabling platform",
+        "pure_play": false
+      }
+    ],
+    "frontier_biotech": [
+      {
+        "ticker": "MRNA",
+        "company": "Moderna",
+        "exposure": "mRNA platform and products",
+        "exposure_strength": 0.9,
+        "evidence_status": "confirmed",
+        "serenity_role": "direct exposure",
+        "pure_play": true
+      },
+      {
+        "ticker": "DHR",
+        "company": "Danaher / Aldevron",
+        "exposure": "mRNA manufacturing inputs and services",
+        "exposure_strength": 0.7,
+        "evidence_status": "confirmed",
+        "serenity_role": "supply-chain supplier",
+        "pure_play": false
+      }
+    ]
+  }
+}

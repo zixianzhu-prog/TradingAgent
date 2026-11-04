@@ -1,0 +1,109 @@
+{
+  "generated_at": "2026-11-03T14:20:51.481997+00:00",
+  "mode": "dry-run",
+  "data_provider": "openbb",
+  "results": [
+    {
+      "signal": {
+        "ticker": "SYM",
+        "score": 0.12434429734775176,
+        "direction": "hold",
+        "price": 37.22999954223633,
+        "stop_price": 32.6422849382673,
+        "reasons": [
+          "close=37.23",
+          "MA20=39.94",
+          "MA50=41.23",
+          "ATR14=2.29",
+          "Kronos5D=+5.12%"
+        ],
+        "as_of": "2026-11-02"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "TER",
+        "score": 0.0,
+        "direction": "hold",
+        "price": 261.010009765625,
+        "stop_price": 215.2300022670201,
+        "reasons": [
+          "close=261.01",
+          "MA20=342.40",
+          "MA50=361.91",
+          "ATR14=22.89",
+          "Kronos5D=+13.12%"
+        ],
+        "as_of": "2026-11-02"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "ROK",
+        "score": 0.5837748737361985,
+        "direction": "buy",
+        "price": 440.1600036621094,
+        "stop_price": 414.74000767299106,
+        "reasons": [
+          "close=440.16",
+          "MA20=433.94",
+          "MA50=430.93",
+          "ATR14=12.71",
+          "Kronos5D=+4.29%"
+        ],
+        "as_of": "2026-11-02"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "NVDA",
+        "score": 0.3982607029032525,
+        "direction": "hold",
+        "price": 202.05999755859375,
+        "stop_price": 188.58856855119978,
+        "reasons": [
+          "close=202.06",
+          "MA20=219.62",
+          "MA50=221.50",
+          "ATR14=6.74",
+          "Kronos5D=+3.01%"
+        ],
+        "as_of": "2026-11-02"
+      },
+      "order": null,
+      "fill": null
+    }
+  ],
+  "kronos": {
+    "SYM": {
+      "last_close": 37.22999954223633,
+      "predicted_close": 39.137821197509766,
+      "forecast_return": 0.05124420302796584
+    },
+    "TER": {
+      "last_close": 261.010009765625,
+      "predicted_close": 295.25775146484375,
+      "forecast_return": 0.13121236894313615
+    },
+    "ROK": {
+      "last_close": 440.1600036621094,
+      "predicted_close": 459.0213928222656,
+      "forecast_return": 0.042851210930639816
+    },
+    "NVDA": {
+      "last_close": 202.05999755859375,
+      "predicted_close": 208.13221740722656,
+      "forecast_return": 0.030051568454918742
+    }
+  },
+  "portfolio": {
+    "cash": 100000.0,
+    "positions": {}
+  }
+}

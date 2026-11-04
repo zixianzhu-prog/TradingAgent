@@ -1,0 +1,146 @@
+{
+  "alert_score": 60,
+  "deep_research_score": 70,
+  "lookback_days": 7,
+  "themes": [
+    {
+      "name": "robotics_automation",
+      "label": "机器人与自动化",
+      "keywords": [
+        "humanoid robot",
+        "industrial robot",
+        "warehouse automation",
+        "robotics deployment",
+        "robot actuator",
+        "machine vision",
+        "人形机器人",
+        "工业机器人",
+        "仓储自动化",
+        "机器人执行器",
+        "机器视觉"
+      ],
+      "counter_keywords": [
+        "deployment delayed",
+        "robotics layoffs",
+        "project cancelled",
+        "部署延期",
+        "项目取消"
+      ],
+      "trusted_sources": [
+        "company-ir",
+        "sec.gov",
+        "ieee",
+        "ifr.org"
+      ]
+    },
+    {
+      "name": "optical_interconnect",
+      "label": "AI 光互连与 CPO",
+      "keywords": [
+        "co-packaged optics",
+        "cpo laser",
+        "external laser source",
+        "optical interconnect",
+        "1.6t transceiver",
+        "silicon photonics",
+        "光互连",
+        "硅光"
+      ],
+      "counter_keywords": [
+        "design cancelled",
+        "inventory correction",
+        "demand slowdown",
+        "项目取消",
+        "库存调整"
+      ],
+      "trusted_sources": [
+        "company-ir",
+        "sec.gov",
+        "nvidia.com",
+        "opencompute.org"
+      ]
+    },
+    {
+      "name": "ai_data_center_power",
+      "label": "AI 数据中心电力基础设施",
+      "keywords": [
+        "800v dc",
+        "data center power",
+        "power infrastructure",
+        "grid constraint",
+        "liquid cooling",
+        "数据中心电力",
+        "液冷"
+      ],
+      "counter_keywords": [
+        "project cancelled",
+        "capex cut",
+        "demand slowdown",
+        "项目取消",
+        "削减资本开支"
+      ],
+      "trusted_sources": [
+        "sec.gov",
+        "energy.gov",
+        "company-ir"
+      ]
+    },
+    {
+      "name": "frontier_biotech",
+      "label": "前沿生物科技与公共卫生",
+      "keywords": [
+        "clinical trial",
+        "fda approval",
+        "vaccine",
+        "outbreak",
+        "pandemic",
+        "临床试验",
+        "疫苗",
+        "疫情"
+      ],
+      "counter_keywords": [
+        "trial failed",
+        "safety concern",
+        "rejected",
+        "试验失败",
+        "安全问题"
+      ],
+      "trusted_sources": [
+        "fda.gov",
+        "cdc.gov",
+        "who.int",
+        "clinicaltrials.gov"
+      ]
+    },
+    {
+      "name": "geopolitical_supply_chain",
+      "label": "地缘政治与关键供应链",
+      "keywords": [
+        "export control",
+        "sanctions",
+        "tariff",
+        "supply disruption",
+        "critical mineral",
+        "出口管制",
+        "制裁",
+        "关税",
+        "供应中断"
+      ],
+      "counter_keywords": [
+        "agreement reached",
+        "restrictions lifted",
+        "达成协议",
+        "取消限制"
+      ],
+      "trusted_sources": [
+        "commerce.gov",
+        "treasury.gov",
+        "whitehouse.gov",
+        "europa.eu"
+      ],
+      "excluded_sources": [
+        "arxiv"
+      ]
+    }
+  ]
+}

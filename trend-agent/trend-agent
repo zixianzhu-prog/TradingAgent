@@ -1,0 +1,8 @@
+#!/bin/sh
+set -eu
+
+PROJECT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+PYTHON_BIN=${TREND_AGENT_PYTHON:-python3}
+
+PYTHONPATH="$PROJECT_DIR/src${PYTHONPATH:+:$PYTHONPATH}" \
+    exec "$PYTHON_BIN" -m trend_agent.cli "$@"

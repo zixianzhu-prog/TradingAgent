@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import math
 from statistics import mean
 
 from .models import Bar, Signal
@@ -28,6 +29,12 @@ def trend_signal(
 ) -> Signal:
     if len(bars) < slow_window + 1:
         raise ValueError(f"{ticker}: need at least {slow_window + 1} bars")
+    if any(
+        not math.isfinite(value) or value <= 0
+        for bar in bars
+        for value in (bar.open, bar.high, bar.low, bar.close)
+    ):
+        raise ValueError(f"{ticker}: market history contains invalid OHLC values")
     close = bars[-1].close
     fast = mean(bar.close for bar in bars[-fast_window:])
     slow = mean(bar.close for bar in bars[-slow_window:])

@@ -3,16 +3,25 @@
 from __future__ import annotations
 
 import json
+import random
 import sys
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
+import torch
 
 from model import Kronos, KronosPredictor, KronosTokenizer
 
 
 def main(input_name: str, output_name: str) -> None:
     payload = json.loads(Path(input_name).read_text(encoding="utf-8"))
+    # Keep demos and audits reproducible. This controls sampling variance; it
+    # does not make the forecast more accurate or turn it into a probability.
+    seed = int(payload.get("seed", 42))
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
     tickers = list(payload["series"])
     frames = []
     history_timestamps = []

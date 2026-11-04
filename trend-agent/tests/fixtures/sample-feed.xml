@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Sample technology feed</title>
+    <item>
+      <title>Operator expands 800V DC data center power pilot</title>
+      <link>https://example.com/power-pilot</link>
+      <pubDate>Sun, 02 Nov 2026 14:00:00 GMT</pubDate>
+      <description>The company increased power infrastructure spending and added liquid cooling capacity.</description>
+    </item>
+    <item>
+      <title>New export control affects critical mineral supply</title>
+      <link>https://example.com/export-control</link>
+      <pubDate>Sun, 02 Nov 2026 15:00:00 GMT</pubDate>
+      <description>New sanctions may cause a supply disruption for specialized components.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,78 @@
+{
+  "method": "Aleabit/Serenity supply-chain research and stock-selection gates",
+  "decision_policy": "Priority research requires a market/news score >= 70; an investable thesis additionally requires confirmed chokepoint, customer dependency, and earnings validation.",
+  "companies": [
+    {
+      "ticker": "VRT",
+      "supply_chain_map": "pass",
+      "chokepoint_evidence": "partial",
+      "customer_dependency": "pass",
+      "pure_play": "pass",
+      "multi_node_control": "pass",
+      "counter_thesis": "pass",
+      "earnings_validation": "pass",
+      "serenity_decision": "research-ready",
+      "reason": "Vertiv 同时覆盖数据中心电力、冷却和生命周期服务，与 NVIDIA 800 VDC 路线明确协同；最新财报的订单、收入、利润率和现金流均验证需求，但其供应集中度并非垄断，估值仍需单独检查。"
+    },
+    {
+      "ticker": "NVTS",
+      "supply_chain_map": "pass",
+      "chokepoint_evidence": "partial",
+      "customer_dependency": "pass",
+      "pure_play": "pass",
+      "multi_node_control": "pass",
+      "counter_thesis": "pass",
+      "earnings_validation": "pending",
+      "serenity_decision": "watch",
+      "reason": "Navitas 获 NVIDIA 800 VDC 开发合作并覆盖 GaN/SiC 多个转换环节，但量产主要面向 2027，当前仍亏损，必须等待收入和客户量产验证。"
+    },
+    {
+      "ticker": "LITE",
+      "supply_chain_map": "pass",
+      "chokepoint_evidence": "partial",
+      "customer_dependency": "partial",
+      "pure_play": "pass",
+      "multi_node_control": "pass",
+      "counter_thesis": "pass",
+      "earnings_validation": "pass",
+      "serenity_decision": "watch",
+      "reason": "Lumentum 已披露 CPO 高功率激光需求、首笔 ELS 模块订单和强劲业绩，但客户集中度与不可替代性尚未充分公开，因此保留观察。"
+    },
+    {
+      "ticker": "COHR",
+      "supply_chain_map": "pass",
+      "chokepoint_evidence": "partial",
+      "customer_dependency": "partial",
+      "pure_play": "partial",
+      "multi_node_control": "pass",
+      "counter_thesis": "pass",
+      "earnings_validation": "pending",
+      "serenity_decision": "watch",
+      "reason": "Coherent 纵向覆盖多个光学节点，但业务较多元，仍需最新财报和客户披露证明 AI 光互连增量对集团业绩足够重要。"
+    },
+    {
+      "ticker": "MRNA",
+      "supply_chain_map": "pass",
+      "chokepoint_evidence": "partial",
+      "customer_dependency": "unknown",
+      "pure_play": "pass",
+      "multi_node_control": "partial",
+      "counter_thesis": "pass",
+      "earnings_validation": "pending",
+      "serenity_decision": "watch",
+      "reason": "Moderna 对 mRNA 的业务暴露直接且相对纯粹，但当前证据尚不能证明它控制不可替代的供应节点，也没有确认下游客户依赖；需要等待管线、收入和现金消耗的财报验证。"
+    },
+    {
+      "ticker": "DHR",
+      "supply_chain_map": "pass",
+      "chokepoint_evidence": "partial",
+      "customer_dependency": "unknown",
+      "pure_play": "fail",
+      "multi_node_control": "partial",
+      "counter_thesis": "pass",
+      "earnings_validation": "pending",
+      "serenity_decision": "watch",
+      "reason": "Aldevron 直接参与 mRNA 制造，但 Danaher 是多元化集团；该业务对集团的收入贡献、客户依赖和产能利用率均未得到确认。"
+    }
+  ]
+}

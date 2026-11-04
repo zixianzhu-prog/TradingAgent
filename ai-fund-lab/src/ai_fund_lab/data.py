@@ -8,6 +8,24 @@ from typing import Protocol
 from .models import Bar
 
 
+def validated_bar(
+    day: date,
+    open_price: float,
+    high: float,
+    low: float,
+    close: float,
+    volume: float,
+) -> Bar | None:
+    """Reject incomplete market rows before they can influence a signal."""
+    prices = (open_price, high, low, close)
+    if not all(math.isfinite(value) and value > 0 for value in prices):
+        return None
+    if high < max(open_price, close) or low > min(open_price, close) or low > high:
+        return None
+    clean_volume = volume if math.isfinite(volume) and volume >= 0 else 0.0
+    return Bar(day, open_price, high, low, close, clean_volume)
+
+
 class MarketDataProvider(Protocol):
     def history(self, ticker: str, bars: int) -> list[Bar]: ...
 
@@ -57,12 +75,13 @@ class YFinanceDataProvider:
                     item = item.iloc[0]
                 return float(item)
 
-            result.append(
-                Bar(
-                    index.date(), value("Open"), value("High"), value("Low"),
-                    value("Close"), value("Volume")
-                )
+            bar = validated_bar(
+                index.date(), value("Open"), value("High"), value("Low"),
+                value("Close"), value("Volume")
             )
+            if bar is not None:
+                result.append(bar)
+        result = result[-bars:]
         if len(result) < bars:
             raise RuntimeError(f"Only {len(result)} bars returned for {ticker}; need {bars}.")
         return result
@@ -87,19 +106,20 @@ class OpenBBDataProvider:
             start_date=start,
             provider="yfinance",
         )
-        frame = response.to_dataframe().tail(bars)
+        frame = response.to_dataframe()
         result: list[Bar] = []
         for index, row in frame.iterrows():
-            result.append(
-                Bar(
-                    index.date() if hasattr(index, "date") else index,
-                    float(row["open"]),
-                    float(row["high"]),
-                    float(row["low"]),
-                    float(row["close"]),
-                    float(row.get("volume", 0.0)),
-                )
+            bar = validated_bar(
+                index.date() if hasattr(index, "date") else index,
+                float(row["open"]),
+                float(row["high"]),
+                float(row["low"]),
+                float(row["close"]),
+                float(row.get("volume", 0.0)),
             )
+            if bar is not None:
+                result.append(bar)
+        result = result[-bars:]
         if len(result) < bars:
             raise RuntimeError(f"OpenBB returned {len(result)} bars for {ticker}; need {bars}.")
         return result

@@ -1,0 +1,31 @@
+{
+  "article_limit": 1000,
+  "sentiment_lexicon": {
+    "positive": [
+      "approval", "approved", "partnership", "expansion", "contract", "award",
+      "growth", "beat", "launch", "successful", "positive", "accelerate",
+      "获批", "合作", "扩产", "增长", "中标", "成功"
+    ],
+    "negative": [
+      "failed", "failure", "rejected", "delay", "cut", "decline", "loss",
+      "warning", "recall", "investigation", "miss", "risk", "shortage",
+      "失败", "拒绝", "延迟", "削减", "下降", "亏损", "召回", "调查"
+    ]
+  },
+  "companies": [
+    {
+      "ticker": "MRNA",
+      "name": "Moderna",
+      "company_terms": ["Moderna"],
+      "product_terms": ["mRNA", "LNP", "lipid nanoparticle", "Spikevax", "mRESVIA", "vaccine"],
+      "trusted_sources": ["moderna", "sec.gov", "fda.gov", "cdc.gov", "nih.gov"]
+    },
+    {
+      "ticker": "DHR",
+      "name": "Danaher / Aldevron",
+      "company_terms": ["Danaher", "Aldevron"],
+      "product_terms": ["mRNA", "LNP", "lipid nanoparticle", "cGMP", "plasmid DNA", "pDNA"],
+      "trusted_sources": ["danaher", "aldevron", "sec.gov", "fda.gov"]
+    }
+  ]
+}

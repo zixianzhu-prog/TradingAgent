@@ -34,10 +34,12 @@ hf-cache/
 # Runtime state
 .runtime/
 state/
+**/state/
 logs/
 log/
 data/
 reports/
+**/reports/
 selector.log
 
 # macOS

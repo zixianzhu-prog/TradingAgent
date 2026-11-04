@@ -1,0 +1,22 @@
+{
+  "sources": [
+    {
+      "name": "arXiv Artificial Intelligence",
+      "url": "https://rss.arxiv.org/rss/cs.AI",
+      "enabled": true,
+      "timeout": 20
+    },
+    {
+      "name": "SEC Press Releases",
+      "url": "https://www.sec.gov/news/pressreleases.rss",
+      "enabled": true,
+      "timeout": 20
+    },
+    {
+      "name": "Federal Reserve Press Releases",
+      "url": "https://www.federalreserve.gov/feeds/press_all.xml",
+      "enabled": true,
+      "timeout": 20
+    }
+  ]
+}

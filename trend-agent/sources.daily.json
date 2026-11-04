@@ -1,0 +1,53 @@
+{
+  "sources": [
+    {
+      "name": "Google News AI Data Center Power",
+      "url": "https://news.google.com/rss/search?q=%28AI%20data%20center%20power%20OR%20800VDC%20OR%20liquid%20cooling%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 100
+    },
+    {
+      "name": "Google News Optical Interconnect",
+      "url": "https://news.google.com/rss/search?q=%28co-packaged%20optics%20OR%20external%20laser%20source%20OR%201.6T%20optical%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 100
+    },
+    {
+      "name": "Google News Robotics Automation",
+      "url": "https://news.google.com/rss/search?q=%28humanoid%20robot%20OR%20industrial%20robot%20OR%20warehouse%20automation%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 100
+    },
+    {
+      "name": "Google News Moderna",
+      "url": "https://news.google.com/rss/search?q=Moderna%20MRNA%20mRNA%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 100
+    },
+    {
+      "name": "Google News Danaher Aldevron",
+      "url": "https://news.google.com/rss/search?q=Danaher%20Aldevron%20mRNA%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 100
+    },
+    {
+      "name": "SEC Press Releases",
+      "url": "https://www.sec.gov/news/pressreleases.rss",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 50
+    },
+    {
+      "name": "arXiv Artificial Intelligence",
+      "url": "https://rss.arxiv.org/rss/cs.AI",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 50
+    }
+  ]
+}

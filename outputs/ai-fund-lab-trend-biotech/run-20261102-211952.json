@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-11-03T02:19:40.668449+00:00",
+  "mode": "dry-run",
+  "data_provider": "openbb",
+  "results": [
+    {
+      "signal": {
+        "ticker": "MRNA",
+        "score": 1.0,
+        "direction": "hold",
+        "price": NaN,
+        "stop_price": 0.01,
+        "reasons": [
+          "close=nan",
+          "MA20=nan",
+          "MA50=nan",
+          "ATR14=23.11"
+        ],
+        "as_of": "2026-11-02"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "DHR",
+        "score": 1.0,
+        "direction": "hold",
+        "price": NaN,
+        "stop_price": 0.01,
+        "reasons": [
+          "close=nan",
+          "MA20=nan",
+          "MA50=nan",
+          "ATR14=6.91"
+        ],
+        "as_of": "2026-11-02"
+      },
+      "order": null,
+      "fill": null
+    }
+  ],
+  "kronos": {},
+  "portfolio": {
+    "cash": 100000.0,
+    "positions": {}
+  }
+}
