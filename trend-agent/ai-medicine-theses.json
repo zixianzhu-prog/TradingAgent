@@ -1,0 +1,190 @@
+{
+  "title": "AI Medicine: 5–10 Year Research Track",
+  "method": "Forward signals + Serenity chokepoint/stock-selection gates + OpenBB/Kronos market context",
+  "important_note": "The long-horizon ranking is based on durable business evidence. Kronos is a five-day context signal and does not predict ten-year returns.",
+  "candidates": [
+    {
+      "rank": 1,
+      "ticker": "TEM",
+      "company": "Tempus AI",
+      "classification": "core research candidate",
+      "thesis": "The strongest long-duration candidate because it combines diagnostics, multimodal clinical data, AI models and workflow distribution. Every additional test, patient record and health-system integration can improve the data network and the usefulness of its models.",
+      "why_now": "Recent results show continuing oncology volume growth, expanding minimal-residual-disease testing, growth in data licensing and new health-system integrations.",
+      "serenity_angle": "An information chokepoint: the scarce asset is not a single model, but permissioned longitudinal clinical and molecular data connected to real diagnostic workflows.",
+      "risks": "Valuation, healthcare privacy and regulation, integration execution, reimbursement, dilution and competition from large diagnostics/platform companies.",
+      "validation_gates": "Track diagnostic volume, data-and-services revenue, health-system integrations, gross margin, cash flow and renewal/expansion evidence.",
+      "bear_case": "The apparent data flywheel may be weaker than expected if hospitals restrict data reuse, competitors gain similar datasets, or diagnostic growth fails to produce durable margins and cash flow.",
+      "falsifiers": [
+        "Diagnostic volume growth stalls for two consecutive reported quarters",
+        "Data-and-services growth materially trails total company growth",
+        "Gross margin or cash-flow progress deteriorates despite higher volume",
+        "Major health-system integrations fail to expand or renew"
+      ],
+      "sources": [
+        "https://investors.tempus.com/news/news-details/2026/Tempus-Reports-Second-Quarter-2026-Results-07-30-2026/default.aspx",
+        "https://investors.tempus.com/files/doc_financials/2026/q3/TEM-Q3-26-Financial-Results_11-1.pdf"
+      ]
+    },
+    {
+      "rank": 2,
+      "ticker": "SDGR",
+      "company": "Schrodinger",
+      "classification": "infrastructure research candidate",
+      "thesis": "A picks-and-shovels approach to AI medicine: pharma customers use its physics-based and AI software across many programs, while its proprietary pipeline preserves additional upside.",
+      "why_now": "Software ACV growth, pharmaceutical collaborations and continuing product development provide commercial evidence outside any one clinical asset.",
+      "serenity_angle": "A horizontal discovery layer used across multiple customers and drug programs; more diversified than betting on one molecule.",
+      "risks": "Hosted-software transition, uneven revenue recognition, long drug-development cycles, customer concentration and competition from internal pharma AI teams or newer platforms.",
+      "validation_gates": "Track software ACV, retention, hosted adoption, software gross margin, cash runway, collaboration milestones and clinical pipeline progress.",
+      "bear_case": "Pharma customers may build comparable tools internally, hosted adoption may pressure economics, and proprietary drug programs may consume capital without validating the software advantage.",
+      "falsifiers": [
+        "Software ACV or retention weakens for two consecutive reported periods",
+        "Software gross margin fails to recover during the hosted transition",
+        "Major pharmaceutical collaborations contract without replacement",
+        "Cash runway falls materially without corresponding pipeline validation"
+      ],
+      "sources": [
+        "https://ir.schrodinger.com/press-releases/news-details/2026/Schrdinger-Reports-Second-Quarter-2026-Financial-Results/",
+        "https://ir.schrodinger.com/press-releases/news-details/2026/Schrdinger-Reports-Fourth-Quarter-and-Full-Year-2025-Financial-Results/default.aspx",
+        "https://clinicaltrials.gov/study/NCT05544019",
+        "https://clinicaltrials.gov/study/NCT05961839"
+      ]
+    },
+    {
+      "rank": 5,
+      "ticker": "RXRX",
+      "company": "Recursion Pharmaceuticals",
+      "classification": "high-upside watchlist",
+      "thesis": "The most asymmetric platform candidate: automated wet labs, proprietary biological maps and AI models create a closed discovery loop, with partner milestones and clinical assets offering multiple ways to win.",
+      "why_now": "Sanofi and Genentech program decisions provide external validation that the platform can produce partner-relevant candidates and targets.",
+      "serenity_angle": "Controls several discovery nodes—data generation, automated experiments, biological maps and model development—but has not yet proved durable downstream economics.",
+      "risks": "Clinical failure, cash burn, dilution, partner dependence, long timelines and the possibility that platform productivity does not translate into approved drugs.",
+      "validation_gates": "Track clinical readouts, partner option exercises, milestones, platform-to-clinic cycle time, cash runway and share dilution.",
+      "bear_case": "The platform can generate attractive experiments and partner interest without improving clinical success rates; continued cash burn and dilution could absorb most shareholder upside.",
+      "falsifiers": [
+        "Lead clinical programs fail efficacy or safety endpoints",
+        "Partners stop exercising options or advancing discovered programs",
+        "Platform-to-clinic cycle time does not improve",
+        "Cash runway falls below a prudent research horizon after dilution"
+      ],
+      "sources": [
+        "https://ir.recursion.com/news-releases/news-release-details/recursion-reports-third-quarter-2026-financial-results-and",
+        "https://ir.recursion.com/node/13196/xbrl-viewer",
+        "https://clinicaltrials.gov/study/NCT05552755",
+        "https://clinicaltrials.gov/study/NCT06005974",
+        "https://clinicaltrials.gov/study/NCT06678659"
+      ]
+    },
+    {
+      "rank": 8,
+      "ticker": "ABCL",
+      "company": "AbCellera Biologics",
+      "classification": "secondary watchlist",
+      "thesis": "A technology-enabled antibody discovery platform with long-term optionality, but current evidence is weaker than the top three for an AI-medicine-specific thesis.",
+      "why_now": "Q3 2026 validated ABCL635 clinically and expanded liquidity, while the fall in partner-led programs and the decision not to advance ABCL575 beyond Phase 1 expose the remaining platform-conversion risk.",
+      "serenity_angle": "Potential platform supplier across many antibody programs, but its irreplaceability and AI-specific advantage still need proof.",
+      "risks": "Clinical risk, dilution from the $200 million offering, partner-led programs declining from 44 to 34, revenue volatility, internal pipeline concentration and unclear AI differentiation.",
+      "validation_gates": "Track clinical data, partner starts, milestone and royalty economics, cash runway and proof that the platform improves speed or success rates.",
+      "bear_case": "The antibody platform may remain a useful service rather than an irreplaceable AI chokepoint, while clinical spending increases before partner economics become durable.",
+      "falsifiers": [
+        "Internal clinical programs fail to validate the discovery platform",
+        "Partner program starts and milestone economics remain weak",
+        "No measurable evidence shows better discovery speed or success rates",
+        "Capital requirements rise faster than validated program value"
+      ],
+      "sources": [
+        "https://investors.abcellera.com/news/news-releases/2026/AbCellera-Reports-Q3-2026-Business-Results/default.aspx",
+        "https://www.sec.gov/Archives/edgar/data/1703057/000170305726000059/abcl-20260930.htm"
+      ]
+    },
+    {
+      "rank": 3,
+      "ticker": "CERT",
+      "company": "Certara",
+      "classification": "validated workflow infrastructure challenger",
+      "thesis": "Certara is a picks-and-shovels candidate whose biosimulation, clinical intelligence and regulatory-science products sit inside recurring drug-development decisions rather than depending on one therapeutic asset.",
+      "why_now": "Q3 2026 software revenue grew organically at a double-digit rate, adjusted EBITDA remained positive, and operating cash generation improved even as total-company growth remained modest.",
+      "serenity_angle": "The potential chokepoint is regulatory-grade model-informed development embedded across many customer workflows; switching costs and accumulated scientific validation matter more than headline generative AI.",
+      "risks": "Only low-single-digit total revenue growth, declining services revenue, AI commoditization, acquisition integration, customer budget pressure and a valuation that may already reflect software durability.",
+      "validation_gates": "Track organic software growth, bookings, retention, adjusted EBITDA margin, regulatory adoption and evidence that AI features expand pricing or workflow dependency.",
+      "bear_case": "Certara may be a durable scientific-software vendor without an accelerating AI moat; slower services and modest total growth could cap long-term upside despite strong margins.",
+      "falsifiers": [
+        "Organic software growth falls back below high single digits for two consecutive quarters",
+        "Bookings or retention weaken despite new AI products",
+        "Customers can replace core workflows without meaningful switching cost",
+        "Margin improvement depends mainly on cost cuts rather than product adoption"
+      ],
+      "sources": [
+        "https://ir.certara.com/",
+        "https://ir.certara.com/news-releases/news-release-details/certara-reports-third-quarter-2026-financial-results",
+        "https://ir.certara.com/static-files/b8db7767-72ec-468e-9999-cd2b710d2f36"
+      ]
+    },
+    {
+      "rank": 4,
+      "ticker": "NTRA",
+      "company": "Natera",
+      "classification": "scaled diagnostic-data compounder",
+      "thesis": "Natera combines cfDNA molecular testing, bioinformatics and AI with scaled clinical workflows across oncology, women's health and organ health, producing a large and growing real-world evidence network.",
+      "why_now": "Q3 2026 revenue grew 34%, oncology test volume grew 61%, cash increased sequentially and full-year guidance called for positive cash flow.",
+      "serenity_angle": "The defensible node is not AI alone but the combination of validated assays, longitudinal testing data, reimbursement, clinician adoption and laboratory execution.",
+      "risks": "Premium valuation, reimbursement and regulatory changes, litigation, laboratory concentration, supplier dependencies, competition and the possibility that growth normalizes before margins justify the price.",
+      "validation_gates": "Track oncology and MRD volumes, reimbursement, gross margin, cash flow, clinical publications, payer coverage and valuation relative to durable growth.",
+      "bear_case": "Excellent diagnostic execution may already be reflected in a very large market value, while reimbursement, litigation or weaker incremental test economics could compress returns.",
+      "falsifiers": [
+        "Oncology or MRD volume growth decelerates materially for two consecutive quarters",
+        "Gross margin deteriorates as volume scales",
+        "Cash flow fails to remain positive despite raised revenue guidance",
+        "Coverage, reimbursement or clinical utility evidence weakens"
+      ],
+      "sources": [
+        "https://investor.natera.com/overview/",
+        "https://investor.natera.com/news/news-details/2026/Natera-Reports-Third-Quarter-2026-Financial-Results/default.aspx"
+      ]
+    },
+    {
+      "rank": 6,
+      "ticker": "SOPH",
+      "company": "SOPHiA GENETICS",
+      "classification": "emerging precision-medicine network",
+      "thesis": "SOPHiA offers direct AI-medicine exposure through a cloud-native platform that standardizes and analyzes multimodal clinical data across a distributed healthcare network and supports biopharma programs.",
+      "why_now": "Q3 2026 revenue grew 25%, adjusted EBITDA loss improved 31%, and new biopharma and companion-diagnostic collaborations added external validation.",
+      "serenity_angle": "A decentralized clinical-data network can become an information chokepoint if more institutions and analyses improve utility, retention and partner value faster than competitors can replicate it.",
+      "risks": "Small scale, continued losses, limited cash cushion, foreign-exchange exposure, competition from larger diagnostics/data platforms and uncertain conversion of network scale into pricing power.",
+      "validation_gates": "Track platform analysis volume, institution retention, biopharma revenue, gross margin, adjusted EBITDA trajectory, cash runway and evidence of pricing power.",
+      "bear_case": "The network may remain useful but fragmented, with hospitals retaining data control and larger competitors limiting pricing power before SOPHiA reaches profitability.",
+      "falsifiers": [
+        "Revenue growth falls below the mid-teens before profitability",
+        "Adjusted EBITDA improvement stalls or reverses",
+        "Cash runway falls below two years without financing",
+        "Institution or biopharma adoption fails to generate stronger unit economics"
+      ],
+      "sources": [
+        "https://ir.sophiagenetics.com/",
+        "https://ir.sophiagenetics.com/2026-11-03-SOPHiA-GENETICS-Reports-Third-Quarter-2026-Results",
+        "https://www.sec.gov/Archives/edgar/data/1840706/000184070626000350/sophiageneticssaex992q32026.htm"
+      ]
+    },
+    {
+      "rank": 7,
+      "ticker": "GH",
+      "company": "Guardant Health",
+      "classification": "scaled precision-oncology challenger",
+      "thesis": "Guardant controls multiple precision-oncology nodes—advanced cancer testing, recurrence monitoring, screening and biopharma data—creating repeated clinical data and workflow feedback loops.",
+      "why_now": "Q3 2026 revenue grew 36%, oncology tests grew 58%, Shield screening tests grew 246% and full-year revenue guidance increased.",
+      "serenity_angle": "The chokepoint candidate is the combination of liquid-biopsy evidence, physician workflow, payer access and accumulating genomic/clinical data rather than a standalone AI model.",
+      "risks": "Large ongoing cash burn, screening commercialization costs, reimbursement, regulation, competitive liquid biopsy platforms and difficulty isolating AI-specific economics.",
+      "validation_gates": "Track Shield adoption, oncology and recurrence volumes, payer coverage, gross margin, free cash flow, clinical utility evidence and biopharma-data growth.",
+      "bear_case": "Rapid screening growth may require sustained spending, while reimbursement or competition prevents scale from translating into durable cash generation.",
+      "falsifiers": [
+        "Shield and oncology volume growth slows materially before operating leverage appears",
+        "Free-cash-flow burn worsens despite higher revenue",
+        "Coverage or reimbursement expansion stalls",
+        "Clinical evidence fails to support broad repeat use"
+      ],
+      "sources": [
+        "https://investors.guardanthealth.com/",
+        "https://investors.guardanthealth.com/press-releases/press-releases/2026/Guardant-Health-Reports-Third-Quarter-2026-Financial-Results-and-Increases-2026-Revenue-Guidance/default.aspx"
+      ]
+    }
+  ]
+}

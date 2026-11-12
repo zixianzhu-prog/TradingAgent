@@ -22,6 +22,20 @@
       "max_items": 100
     },
     {
+      "name": "Google News AI Medicine",
+      "url": "https://news.google.com/rss/search?q=%28AI%20drug%20discovery%20OR%20AI%20medicine%20OR%20precision%20medicine%20OR%20clinical%20AI%20OR%20computational%20biology%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 100
+    },
+    {
+      "name": "Google News AI Medicine Finalists",
+      "url": "https://news.google.com/rss/search?q=%28Tempus%20AI%20OR%20Schrodinger%20OR%20Recursion%20Pharmaceuticals%20OR%20AbCellera%20OR%20Certara%20OR%20Natera%20OR%20SOPHiA%20GENETICS%20OR%20Guardant%20Health%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 100
+    },
+    {
       "name": "Google News Moderna",
       "url": "https://news.google.com/rss/search?q=Moderna%20MRNA%20mRNA%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
       "enabled": true,
@@ -43,8 +57,85 @@
       "max_items": 50
     },
     {
+      "name": "SEC Tempus AI Filings",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001717115&owner=exclude&count=40&output=atom",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 40
+    },
+    {
+      "name": "SEC Schrodinger Filings",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001490978&owner=exclude&count=40&output=atom",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 40
+    },
+    {
+      "name": "SEC Recursion Filings",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001601830&owner=exclude&count=40&output=atom",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 40
+    },
+    {
+      "name": "SEC AbCellera Filings",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001703057&owner=exclude&count=40&output=atom",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 40
+    },
+    {
+      "name": "SEC Certara Filings",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001827090&owner=exclude&count=40&output=atom",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 40
+    },
+    {
+      "name": "SEC Natera Filings",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001604821&owner=exclude&count=40&output=atom",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 40
+    },
+    {
+      "name": "SEC SOPHiA GENETICS Filings",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001840706&owner=exclude&count=40&output=atom",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 40
+    },
+    {
+      "name": "SEC Guardant Health Filings",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001576280&owner=exclude&count=40&output=atom",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 40
+    },
+    {
       "name": "arXiv Artificial Intelligence",
       "url": "https://rss.arxiv.org/rss/cs.AI",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 50
+    },
+    {
+      "name": "FDA Press Releases",
+      "url": "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/press-releases/rss.xml",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 50
+    },
+    {
+      "name": "FDA What's New Drugs",
+      "url": "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/drugs/rss.xml",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 50
+    },
+    {
+      "name": "FDA What's New Biologics",
+      "url": "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/biologics/rss.xml",
       "enabled": true,
       "timeout": 20,
       "max_items": 50

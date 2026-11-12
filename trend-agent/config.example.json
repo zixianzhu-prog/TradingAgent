@@ -86,6 +86,42 @@
       ]
     },
     {
+      "name": "ai_medicine",
+      "label": "AI 医疗与智能药物研发",
+      "keywords": [
+        "ai drug discovery",
+        "ai medicine",
+        "precision medicine",
+        "computational biology",
+        "clinical ai",
+        "diagnostic intelligence",
+        "digital pathology",
+        "multimodal clinical data",
+        "foundation model biology",
+        "ai-designed drug",
+        "人工智能药物研发",
+        "精准医疗",
+        "临床人工智能"
+      ],
+      "counter_keywords": [
+        "clinical failure",
+        "trial halted",
+        "cash runway",
+        "dilution",
+        "regulatory rejection",
+        "临床失败",
+        "试验暂停",
+        "监管拒绝"
+      ],
+      "trusted_sources": [
+        "fda.gov",
+        "clinicaltrials.gov",
+        "sec.gov",
+        "company-ir",
+        "nature.com"
+      ]
+    },
+    {
       "name": "frontier_biotech",
       "label": "前沿生物科技与公共卫生",
       "keywords": [

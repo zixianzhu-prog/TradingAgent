@@ -1,5 +1,79 @@
 {
   "themes": {
+    "ai_medicine": [
+      {
+        "ticker": "TEM",
+        "company": "Tempus AI",
+        "exposure": "multimodal clinical data, diagnostics and AI embedded in healthcare workflows",
+        "exposure_strength": 0.95,
+        "evidence_status": "confirmed",
+        "serenity_role": "clinical-data and diagnostic-intelligence chokepoint candidate",
+        "pure_play": true
+      },
+      {
+        "ticker": "SDGR",
+        "company": "Schrodinger",
+        "exposure": "physics-based and AI-enabled drug discovery software and proprietary pipeline",
+        "exposure_strength": 0.9,
+        "evidence_status": "confirmed",
+        "serenity_role": "drug-discovery software infrastructure",
+        "pure_play": true
+      },
+      {
+        "ticker": "RXRX",
+        "company": "Recursion Pharmaceuticals",
+        "exposure": "AI-native biology and chemistry platform, automated labs and clinical pipeline",
+        "exposure_strength": 0.9,
+        "evidence_status": "confirmed",
+        "serenity_role": "AI-native discovery platform with asymmetric clinical upside",
+        "pure_play": true
+      },
+      {
+        "ticker": "ABCL",
+        "company": "AbCellera Biologics",
+        "exposure": "technology-enabled antibody discovery and development platform",
+        "exposure_strength": 0.7,
+        "evidence_status": "confirmed",
+        "serenity_role": "antibody discovery platform watchlist",
+        "pure_play": true
+      },
+      {
+        "ticker": "CERT",
+        "company": "Certara",
+        "exposure": "biosimulation, clinical intelligence and regulatory-science software embedded in drug-development workflows",
+        "exposure_strength": 0.88,
+        "evidence_status": "confirmed",
+        "serenity_role": "model-informed drug-development infrastructure challenger",
+        "pure_play": true
+      },
+      {
+        "ticker": "NTRA",
+        "company": "Natera",
+        "exposure": "cell-free DNA diagnostics using molecular biology, bioinformatics and AI across oncology and other clinical workflows",
+        "exposure_strength": 0.86,
+        "evidence_status": "confirmed",
+        "serenity_role": "diagnostic-data network challenger",
+        "pure_play": true
+      },
+      {
+        "ticker": "SOPH",
+        "company": "SOPHiA GENETICS",
+        "exposure": "cloud-native multimodal AI platform for precision medicine and biopharma",
+        "exposure_strength": 0.84,
+        "evidence_status": "confirmed",
+        "serenity_role": "decentralized clinical-data platform challenger",
+        "pure_play": true
+      },
+      {
+        "ticker": "GH",
+        "company": "Guardant Health",
+        "exposure": "precision-oncology testing, screening and biopharma data",
+        "exposure_strength": 0.82,
+        "evidence_status": "confirmed",
+        "serenity_role": "liquid-biopsy data and workflow challenger",
+        "pure_play": true
+      }
+    ],
     "ai_data_center_power": [
       {
         "ticker": "VRT",

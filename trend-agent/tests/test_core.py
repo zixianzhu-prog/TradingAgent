@@ -30,6 +30,16 @@ class TrendAgentTests(unittest.TestCase):
             self.assertEqual(insert_articles(connection, [article]), (0, 1))
             self.assertEqual(len(recent_articles(connection)), 1)
 
+    def test_sec_filings_are_deduplicated_within_issuer_not_across_issuers(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            connection = connect(Path(directory) / "test.db")
+            filings = [
+                Article("SEC TEM Filings", "10-Q", "https://sec.example/tem", "Quarterly report"),
+                Article("SEC SDGR Filings", "10-Q", "https://sec.example/sdgr", "Quarterly report"),
+            ]
+            self.assertEqual(insert_articles(connection, filings), (2, 0))
+            self.assertEqual(insert_articles(connection, filings), (0, 2))
+
     def test_theme_score_uses_evidence_and_source_diversity(self) -> None:
         theme = ThemeConfig(
             name="power",

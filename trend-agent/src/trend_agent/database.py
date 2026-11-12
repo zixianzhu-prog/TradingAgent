@@ -59,7 +59,11 @@ def connect(path: str | Path) -> sqlite3.Connection:
 
 
 def fingerprint(article: Article) -> str:
-    normalized = " ".join(f"{article.title} {article.content}".lower().split())
+    # SEC Atom entries often share generic titles such as "10-Q" across issuers.
+    # Scope those fingerprints by issuer/source so one company's filing cannot
+    # suppress another company's disclosure as a false duplicate.
+    source_scope = article.source if article.source.lower().startswith("sec ") else ""
+    normalized = " ".join(f"{source_scope} {article.title} {article.content}".lower().split())
     return hashlib.sha256(normalized.encode("utf-8")).hexdigest()
 
 

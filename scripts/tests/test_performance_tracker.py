@@ -7,7 +7,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from performance_tracker import backfill_outcomes, connect, record_predictions
+from performance_tracker import backfill_outcomes, connect, record_cohort_history, record_predictions
 
 
 class PerformanceTrackerTests(unittest.TestCase):
@@ -30,6 +30,25 @@ class PerformanceTrackerTests(unittest.TestCase):
             self.assertEqual(backfill_outcomes(connection), 0)
             connection.close()
 
+    def test_cohort_history_uses_saved_market_artifacts(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            connection = connect(str(root / "history.db"))
+            connection.execute(
+                "INSERT INTO predictions VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                ("TEST", "2026-01-02", 100, 70, 80, 60, 0.1, 75, 65, 0.03, 72, "high", "watch", "now"),
+            )
+            connection.commit()
+            report_dir = root / "market"
+            report_dir.mkdir()
+            (report_dir / "run-1.json").write_text(
+                __import__("json").dumps({"results": [{"signal": {"ticker": "TEST", "as_of": "2026-01-02"}}]}),
+                encoding="utf-8",
+            )
+            self.assertEqual(record_cohort_history(connection, str(report_dir), "ai-medicine"), 1)
+            self.assertEqual(record_cohort_history(connection, str(report_dir), "ai-medicine"), 0)
+            connection.close()
+
     def test_prediction_is_frozen_on_first_insert(self):
         with tempfile.TemporaryDirectory() as directory:
             connection = connect(str(Path(directory) / "history.db"))
@@ -42,6 +61,8 @@ class PerformanceTrackerTests(unittest.TestCase):
             self.assertEqual(record_predictions(connection, market, news, serenity), 0)
             frozen = connection.execute("SELECT news_score FROM predictions").fetchone()[0]
             self.assertEqual(frozen, 70)
+            cohort = connection.execute("SELECT cohort FROM prediction_cohorts").fetchone()[0]
+            self.assertEqual(cohort, "general")
             connection.close()
 
 

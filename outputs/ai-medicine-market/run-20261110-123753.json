@@ -1,0 +1,124 @@
+{
+  "generated_at": "2026-11-10T17:37:32.955331+00:00",
+  "mode": "dry-run",
+  "data_provider": "openbb",
+  "results": [
+    {
+      "signal": {
+        "ticker": "TEM",
+        "score": 0.5151616361931778,
+        "direction": "buy",
+        "price": 79.86000061035156,
+        "stop_price": 65.61557170322963,
+        "reasons": [
+          "close=79.86",
+          "MA20=72.15",
+          "MA50=72.06",
+          "ATR14=7.12",
+          "Kronos5D=+1.98%"
+        ],
+        "as_of": "2026-11-10"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "SDGR",
+        "score": 0.6942101773419035,
+        "direction": "buy",
+        "price": 31.920000076293945,
+        "stop_price": 26.89421435764858,
+        "reasons": [
+          "close=31.92",
+          "MA20=26.75",
+          "MA50=26.32",
+          "ATR14=2.51",
+          "Kronos5D=+2.05%"
+        ],
+        "as_of": "2026-11-10"
+      },
+      "order": {
+        "ticker": "SDGR",
+        "side": "buy",
+        "quantity": 198,
+        "reference_price": 31.920000076293945,
+        "stop_price": 26.89421435764858,
+        "take_profit_price": 41.97157151358468,
+        "signal_score": 0.6942101773419035,
+        "reasons": [
+          "close=31.92",
+          "MA20=26.75",
+          "MA50=26.32",
+          "ATR14=2.51",
+          "Kronos5D=+2.05%"
+        ]
+      },
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "RXRX",
+        "score": 0.5263476885035161,
+        "direction": "hold",
+        "price": 3.5299999713897705,
+        "stop_price": 2.8425715310232977,
+        "reasons": [
+          "close=3.53",
+          "MA20=3.79",
+          "MA50=3.78",
+          "ATR14=0.34",
+          "Kronos5D=-1.05%"
+        ],
+        "as_of": "2026-11-10"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "ABCL",
+        "score": 0.3436825479151685,
+        "direction": "hold",
+        "price": 12.149999618530273,
+        "stop_price": 10.055328641619,
+        "reasons": [
+          "close=12.15",
+          "MA20=12.15",
+          "MA50=12.31",
+          "ATR14=1.05",
+          "Kronos5D=+1.34%"
+        ],
+        "as_of": "2026-11-10"
+      },
+      "order": null,
+      "fill": null
+    }
+  ],
+  "kronos": {
+    "TEM": {
+      "last_close": 79.86000061035156,
+      "predicted_close": 81.44189453125,
+      "forecast_return": 0.0198083384523966
+    },
+    "SDGR": {
+      "last_close": 31.920000076293945,
+      "predicted_close": 32.57588195800781,
+      "forecast_return": 0.020547677949442456
+    },
+    "RXRX": {
+      "last_close": 3.5299999713897705,
+      "predicted_close": 3.4930927753448486,
+      "forecast_return": -0.010455296414745074
+    },
+    "ABCL": {
+      "last_close": 12.149999618530273,
+      "predicted_close": 12.312435150146484,
+      "forecast_return": 0.01336917997663778
+    }
+  },
+  "portfolio": {
+    "cash": 100000.0,
+    "positions": {}
+  }
+}

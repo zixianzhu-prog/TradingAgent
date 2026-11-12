@@ -48,6 +48,12 @@ def connect(path: str) -> sqlite3.Connection:
           evaluated_at TEXT NOT NULL,
           PRIMARY KEY (ticker, prediction_as_of, horizon)
         );
+        CREATE TABLE IF NOT EXISTS prediction_cohorts (
+          ticker TEXT NOT NULL,
+          as_of TEXT NOT NULL,
+          cohort TEXT NOT NULL,
+          PRIMARY KEY (ticker, as_of, cohort)
+        );
         """
     )
     return connection
@@ -60,7 +66,32 @@ def latest_report(directory: str) -> Path:
     return reports[-1]
 
 
-def record_predictions(connection: sqlite3.Connection, market: dict[str, Any], news: dict[str, Any], serenity: dict[str, Any], theme_stocks: dict[str, Any] | None = None) -> int:
+def record_cohort_history(connection: sqlite3.Connection, directory: str, cohort: str) -> int:
+    """Recover cohort labels from immutable historical market-run artifacts."""
+    inserted = 0
+    for path in sorted(Path(directory).glob("run-*.json")):
+        market = json.loads(path.read_text(encoding="utf-8"))
+        for item in market.get("results", []):
+            signal = item.get("signal", {})
+            ticker, as_of = signal.get("ticker"), signal.get("as_of")
+            if not ticker or not as_of:
+                continue
+            exists = connection.execute(
+                "SELECT 1 FROM predictions WHERE ticker=? AND as_of=?", (ticker, as_of)
+            ).fetchone()
+            if not exists:
+                continue
+            before = connection.total_changes
+            connection.execute(
+                "INSERT OR IGNORE INTO prediction_cohorts (ticker, as_of, cohort) VALUES (?, ?, ?)",
+                (ticker, as_of, cohort),
+            )
+            inserted += connection.total_changes - before
+    connection.commit()
+    return inserted
+
+
+def record_predictions(connection: sqlite3.Connection, market: dict[str, Any], news: dict[str, Any], serenity: dict[str, Any], theme_stocks: dict[str, Any] | None = None, cohort: str = "general") -> int:
     news_by_ticker = {item["ticker"]: item for item in news.get("companies", [])}
     for item in (theme_stocks or {}).get("companies", []):
         news_by_ticker.setdefault(item["ticker"], {
@@ -95,6 +126,10 @@ def record_predictions(connection: sqlite3.Connection, market: dict[str, Any], n
             ),
         )
         count += connection.total_changes - before
+        connection.execute(
+            "INSERT OR IGNORE INTO prediction_cohorts (ticker, as_of, cohort) VALUES (?, ?, ?)",
+            (ticker, signal["as_of"], cohort),
+        )
     connection.commit()
     return count
 
@@ -176,17 +211,19 @@ def main() -> None:
     parser.add_argument("--theme-stock-report")
     parser.add_argument("--database", required=True)
     parser.add_argument("--output", required=True)
+    parser.add_argument("--cohort", default="general")
     args = parser.parse_args()
     market = json.loads(latest_report(args.market_dir).read_text(encoding="utf-8"))
     news = json.loads(Path(args.news_report).read_text(encoding="utf-8"))
     serenity = json.loads(Path(args.serenity_assessment).read_text(encoding="utf-8"))
     theme_stocks = json.loads(Path(args.theme_stock_report).read_text(encoding="utf-8")) if args.theme_stock_report else None
     connection = connect(args.database)
-    recorded = record_predictions(connection, market, news, serenity, theme_stocks)
+    recorded = record_predictions(connection, market, news, serenity, theme_stocks, args.cohort)
+    cohort_labels = record_cohort_history(connection, args.market_dir, args.cohort)
     backfilled = backfill_outcomes(connection)
     build_report(connection, args.output)
     connection.close()
-    print(json.dumps({"recorded": recorded, "backfilled": backfilled, "report": args.output}))
+    print(json.dumps({"recorded": recorded, "cohortLabels": cohort_labels, "backfilled": backfilled, "report": args.output}))
 
 
 if __name__ == "__main__":

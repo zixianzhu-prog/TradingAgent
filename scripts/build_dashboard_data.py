@@ -81,15 +81,42 @@ def performance_rows(database: Path) -> tuple[list[dict], dict]:
     predictions = [dict(row) for row in connection.execute(
         "SELECT * FROM predictions ORDER BY as_of DESC, ticker"
     ).fetchall()]
+    has_benchmarks = connection.execute(
+        "SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='benchmark_outcomes'"
+    ).fetchone()[0]
+    benchmark_columns = {
+        row[1] for row in connection.execute("PRAGMA table_info(benchmark_outcomes)")
+    } if has_benchmarks else set()
+    has_cohorts = connection.execute(
+        "SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='prediction_cohorts'"
+    ).fetchone()[0]
     metrics = {}
     for horizon in (1, 5, 20, 60):
-        rows = connection.execute(
-            "SELECT realized_return, direction_correct FROM outcomes WHERE horizon=?", (horizon,)
-        ).fetchall()
+        if has_benchmarks:
+            xbi_select = "xbi_return, excess_xbi" if {"xbi_return", "excess_xbi"} <= benchmark_columns else "NULL AS xbi_return, NULL AS excess_xbi"
+            cohort_join = "JOIN prediction_cohorts c ON c.ticker=b.ticker AND c.as_of=b.prediction_as_of" if has_cohorts else ""
+            cohort_where = "AND c.cohort='ai-medicine'" if has_cohorts else ""
+            rows = connection.execute(
+                f"SELECT b.prediction_as_of, b.realized_return, b.direction_correct, b.spy_return, b.xlv_return, {xbi_select}, b.excess_spy, b.excess_xlv, b.random_return, b.momentum_return FROM benchmark_outcomes b {cohort_join} WHERE b.horizon=? {cohort_where}",
+                (horizon,),
+            ).fetchall()
+        else:
+            rows = []
+        avg = lambda key: sum(row[key] for row in rows if row[key] is not None) / len([row for row in rows if row[key] is not None]) if any(row[key] is not None for row in rows) else None
         metrics[str(horizon)] = {
             "samples": len(rows),
-            "averageReturn": sum(row[0] for row in rows) / len(rows) if rows else None,
-            "hitRate": sum(row[1] for row in rows) / len(rows) if rows else None,
+            "distinctDates": len({row["prediction_as_of"] for row in rows}),
+            "averageReturn": avg("realized_return"),
+            "hitRate": avg("direction_correct"),
+            "spyReturn": avg("spy_return"),
+            "xlvReturn": avg("xlv_return"),
+            "xbiReturn": avg("xbi_return"),
+            "excessSpy": avg("excess_spy"),
+            "excessXlv": avg("excess_xlv"),
+            "excessXbi": avg("excess_xbi"),
+            "randomReturn": avg("random_return"),
+            "momentumReturn": avg("momentum_return"),
+            "validationStatus": "insufficient-sample" if len(rows) < 30 or len({row["prediction_as_of"] for row in rows}) < 10 else "initial-evidence" if avg("excess_spy") is not None and avg("excess_spy") > 0 and avg("excess_xlv") > 0 and avg("excess_xbi") is not None and avg("excess_xbi") > 0 else "not-validated",
         }
     connection.close()
     return predictions, metrics
@@ -131,15 +158,35 @@ def main() -> None:
     company_news = {row["ticker"]: row for row in company_news_payload["companies"]}
     serenity_payload = load(ROOT / "trend-agent/serenity-assessments.json", {"companies": []})
     serenity = {row["ticker"]: row for row in serenity_payload["companies"]}
+    serenity_gate_payload = load(ROOT / "state/serenity-gate-results.json", {"companies": [], "summary": {}})
+    for gate_row in serenity_gate_payload.get("companies", []):
+        ticker = gate_row["ticker"]
+        serenity.setdefault(ticker, {})["serenity_decision"] = gate_row["decision"]
+        serenity[ticker]["automated_gate"] = gate_row
     tradingagents_payload = load(ROOT / "state/tradingagents-reviews.json", {"reviews": []})
     tradingagents = {row["ticker"]: row for row in tradingagents_payload["reviews"]}
     biotech_market = latest(ROOT / "outputs/daily-market")
     theme_market = latest(ROOT / "outputs/theme-market")
     power_market = latest(ROOT / "outputs/power-theme-market")
+    ai_medicine_market = latest(ROOT / "outputs/ai-medicine-market")
+    ai_medicine_theses = load(ROOT / "trend-agent/ai-medicine-theses.json", {"candidates": []})
+    ai_medicine_audit_payload = load(ROOT / "state/ai-medicine-thesis-audit.json", {"audits": []})
+    ai_medicine_audits = {row["ticker"]: row for row in ai_medicine_audit_payload.get("audits", [])}
+    ai_medicine_financial_payload = load(ROOT / "state/ai-medicine-financial-scenarios.json", {"companies": []})
+    ai_medicine_financials = {row["ticker"]: row for row in ai_medicine_financial_payload.get("companies", [])}
+    event_revalidation = load(ROOT / "state/event-revalidation.json", {"scheduledEvents": [], "revalidationTasks": [], "summary": {}})
+    disclosure_divergences = load(ROOT / "state/disclosure-divergences.json", {"companies": [], "summary": {}})
+    clinical_trials = load(ROOT / "state/clinical-trials-snapshot.json", {"studies": [], "changes": [], "currentRisks": [], "summary": {}})
+    evidence_graph = load(ROOT / "state/ai-medicine-evidence-graph.json", {"nodes": [], "edges": [], "companies": [], "summary": {}})
+    sec_xbrl = load(ROOT / "state/sec-xbrl-validation.json", {"companies": [], "summary": {}})
+    ai_medicine_peer_screen = load(ROOT / "state/ai-medicine-peer-screen.json", {"companies": [], "deepReviewed": [], "challengers": []})
+    ai_medicine_thesis_memory = load(ROOT / "state/ai-medicine-thesis-memory.json", {"history": [], "latest": {"companies": {}}, "summary": {}})
+    form4_monitor = load(ROOT / "state/form4-snapshot.json", {"filings": [], "newFilings": [], "marketTransactions": [], "summary": {}})
     predictions, performance = performance_rows(ROOT / "state/investment-score-history.db")
     stocks = market_rows(theme_market, theme_links, company_news, serenity, "robotics")
     stocks += market_rows(power_market, theme_links, company_news, serenity, "power")
     stocks += market_rows(biotech_market, theme_links, company_news, serenity, "biotech")
+    stocks += market_rows(ai_medicine_market, theme_links, company_news, serenity, "ai_medicine")
     stocks.sort(key=lambda row: row["combinedScore"], reverse=True)
     themes_by_name = {row["name"]: row for row in trends.get("themes", [])}
     for row in stocks:
@@ -188,6 +235,28 @@ def main() -> None:
         "performance": performance,
         "tradingAgentsReviews": list(tradingagents.values()),
         "latestUpdates": latest_updates,
+        "eventAgent": event_revalidation,
+        "disclosureDivergences": disclosure_divergences,
+        "clinicalTrials": clinical_trials,
+        "evidenceGraph": evidence_graph,
+        "secXbrlValidation": sec_xbrl,
+        "form4Monitor": form4_monitor,
+        "aiMedicinePeerScreen": ai_medicine_peer_screen,
+        "aiMedicineThesisMemory": ai_medicine_thesis_memory,
+        "serenityGate": serenity_gate_payload,
+        "aiMedicine": {
+            "title": ai_medicine_theses.get("title"),
+            "note": ai_medicine_theses.get("important_note"),
+            "auditMethod": ai_medicine_audit_payload.get("method"),
+            "candidates": [
+                {
+                    **candidate,
+                    "audit": ai_medicine_audits.get(candidate["ticker"], {}),
+                    "financial": ai_medicine_financials.get(candidate["ticker"], {}),
+                }
+                for candidate in sorted(ai_medicine_theses.get("candidates", []), key=lambda row: row.get("rank", 999))
+            ],
+        },
         "summary": {
             "themes": len(trends.get("themes", [])),
             "stocks": len(stocks),

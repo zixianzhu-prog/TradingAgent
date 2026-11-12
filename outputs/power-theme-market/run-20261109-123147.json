@@ -1,0 +1,61 @@
+{
+  "generated_at": "2026-11-09T17:31:32.414688+00:00",
+  "mode": "dry-run",
+  "data_provider": "openbb",
+  "results": [
+    {
+      "signal": {
+        "ticker": "VRT",
+        "score": 0.0,
+        "direction": "hold",
+        "price": 201.14500427246094,
+        "stop_price": 162.17586626325334,
+        "reasons": [
+          "close=201.15",
+          "MA20=212.46",
+          "MA50=235.88",
+          "ATR14=19.48",
+          "Kronos5D=+5.80%"
+        ],
+        "as_of": "2026-11-09"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "NVTS",
+        "score": 0.0,
+        "direction": "hold",
+        "price": 9.46500015258789,
+        "stop_price": 7.817143099648612,
+        "reasons": [
+          "close=9.47",
+          "MA20=8.87",
+          "MA50=10.45",
+          "ATR14=0.82",
+          "Kronos5D=-9.08%"
+        ],
+        "as_of": "2026-11-09"
+      },
+      "order": null,
+      "fill": null
+    }
+  ],
+  "kronos": {
+    "VRT": {
+      "last_close": 201.14500427246094,
+      "predicted_close": 212.80577087402344,
+      "forecast_return": 0.05797194239916292
+    },
+    "NVTS": {
+      "last_close": 9.46500015258789,
+      "predicted_close": 8.605283737182617,
+      "forecast_return": -0.09083110423090823
+    }
+  },
+  "portfolio": {
+    "cash": 100000.0,
+    "positions": {}
+  }
+}

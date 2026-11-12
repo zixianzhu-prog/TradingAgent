@@ -1,0 +1,12 @@
+{
+  "companies": [
+    {"ticker": "TEM", "cik": "0001717115"},
+    {"ticker": "SDGR", "cik": "0001490978", "skip_comparisons": ["shares"], "skip_reason": "SEC standard fact may represent one share class while local valuation uses total multi-class shares"},
+    {"ticker": "RXRX", "cik": "0001601830"},
+    {"ticker": "ABCL", "cik": "0001703057"},
+    {"ticker": "CERT", "cik": "0001827090"},
+    {"ticker": "NTRA", "cik": "0001604821"},
+    {"ticker": "SOPH", "cik": "0001840706", "skip_comparisons": ["shares"], "skip_reason": "Foreign private issuer share tags are not consistently comparable to local market-cap shares"},
+    {"ticker": "GH", "cik": "0001576280"}
+  ]
+}

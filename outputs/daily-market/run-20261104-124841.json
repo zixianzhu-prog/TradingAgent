@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-11-04T17:48:01.909753+00:00",
+  "mode": "dry-run",
+  "data_provider": "openbb",
+  "results": [
+    {
+      "signal": {
+        "ticker": "MRNA",
+        "score": 1.0,
+        "direction": "hold",
+        "price": 246.6300048828125,
+        "stop_price": 200.49085780552457,
+        "reasons": [
+          "close=246.63",
+          "MA20=220.58",
+          "MA50=187.55",
+          "ATR14=23.07",
+          "Kronos5D=-1.63%"
+        ],
+        "as_of": "2026-11-04"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "DHR",
+        "score": 0.9796486424798139,
+        "direction": "buy",
+        "price": 233.7899932861328,
+        "stop_price": 219.9671391078404,
+        "reasons": [
+          "close=233.79",
+          "MA20=228.47",
+          "MA50=219.69",
+          "ATR14=6.91",
+          "Kronos5D=+0.25%"
+        ],
+        "as_of": "2026-11-04"
+      },
+      "order": {
+        "ticker": "DHR",
+        "side": "buy",
+        "quantity": 72,
+        "reference_price": 233.7899932861328,
+        "stop_price": 219.9671391078404,
+        "take_profit_price": 261.4357016427176,
+        "signal_score": 0.9796486424798139,
+        "reasons": [
+          "close=233.79",
+          "MA20=228.47",
+          "MA50=219.69",
+          "ATR14=6.91",
+          "Kronos5D=+0.25%"
+        ]
+      },
+      "fill": null
+    }
+  ],
+  "kronos": {
+    "MRNA": {
+      "last_close": 246.6300048828125,
+      "predicted_close": 242.61695861816406,
+      "forecast_return": -0.01627152489639394
+    },
+    "DHR": {
+      "last_close": 233.7899932861328,
+      "predicted_close": 234.3753204345703,
+      "forecast_return": 0.0025036450029798374
+    }
+  },
+  "portfolio": {
+    "cash": 100000.0,
+    "positions": {}
+  }
+}

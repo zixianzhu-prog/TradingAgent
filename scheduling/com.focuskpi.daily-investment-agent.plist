@@ -18,8 +18,8 @@
     <integer>0</integer>
   </dict>
   <key>StandardOutPath</key>
-  <string>/Users/rezz/Documents/Codex/2026-10-27/x20-wps-highlight/logs/daily-agent.out.log</string>
+  <string>/Users/rezz/Documents/Codex/2026-10-27/x20-wps-highlight/log/daily-agent.out.log</string>
   <key>StandardErrorPath</key>
-  <string>/Users/rezz/Documents/Codex/2026-10-27/x20-wps-highlight/logs/daily-agent.err.log</string>
+  <string>/Users/rezz/Documents/Codex/2026-10-27/x20-wps-highlight/log/daily-agent.err.log</string>
 </dict>
 </plist>

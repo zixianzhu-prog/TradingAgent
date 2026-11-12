@@ -1,0 +1,109 @@
+{
+  "generated_at": "2026-11-09T17:31:49.947023+00:00",
+  "mode": "dry-run",
+  "data_provider": "openbb",
+  "results": [
+    {
+      "signal": {
+        "ticker": "TEM",
+        "score": 0.47199912186396914,
+        "direction": "hold",
+        "price": 84.0199966430664,
+        "stop_price": 70.24842561994281,
+        "reasons": [
+          "close=84.02",
+          "MA20=71.55",
+          "MA50=71.72",
+          "ATR14=6.89",
+          "Kronos5D=-0.56%"
+        ],
+        "as_of": "2026-11-09"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "SDGR",
+        "score": 0.6612225037275364,
+        "direction": "hold",
+        "price": 32.630001068115234,
+        "stop_price": 27.877843856811523,
+        "reasons": [
+          "close=32.63",
+          "MA20=26.41",
+          "MA50=26.06",
+          "ATR14=2.38",
+          "Kronos5D=-0.94%"
+        ],
+        "as_of": "2026-11-09"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "RXRX",
+        "score": 0.5825941757859141,
+        "direction": "hold",
+        "price": 3.799999952316284,
+        "stop_price": 3.126871483666556,
+        "reasons": [
+          "close=3.80",
+          "MA20=3.80",
+          "MA50=3.78",
+          "ATR14=0.34",
+          "Kronos5D=+1.94%"
+        ],
+        "as_of": "2026-11-09"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "ABCL",
+        "score": 0.37430882692589634,
+        "direction": "hold",
+        "price": 12.34000015258789,
+        "stop_price": 10.308957781110491,
+        "reasons": [
+          "close=12.34",
+          "MA20=12.17",
+          "MA50=12.30",
+          "ATR14=1.02",
+          "Kronos5D=+1.44%"
+        ],
+        "as_of": "2026-11-09"
+      },
+      "order": null,
+      "fill": null
+    }
+  ],
+  "kronos": {
+    "TEM": {
+      "last_close": 84.0199966430664,
+      "predicted_close": 83.54595947265625,
+      "forecast_return": -0.0056419565502241475
+    },
+    "SDGR": {
+      "last_close": 32.630001068115234,
+      "predicted_close": 32.32393264770508,
+      "forecast_return": -0.009379969671813315
+    },
+    "RXRX": {
+      "last_close": 3.799999952316284,
+      "predicted_close": 3.8735907077789307,
+      "forecast_return": 0.01936598852265492
+    },
+    "ABCL": {
+      "last_close": 12.34000015258789,
+      "predicted_close": 12.517472267150879,
+      "forecast_return": 0.014381856755955491
+    }
+  },
+  "portfolio": {
+    "cash": 100000.0,
+    "positions": {}
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "api_base": "https://clinicaltrials.gov/api/v2/studies",
+  "page_size": 20,
+  "assets": [
+    {"ticker": "ABCL", "asset": "ABCL635", "query": "ABCL635"},
+    {"ticker": "ABCL", "asset": "ABCL575", "query": "ABCL575"},
+    {"ticker": "RXRX", "asset": "REC-4881", "query": "REC-4881"},
+    {"ticker": "RXRX", "asset": "REC-1245", "query": "REC-1245"},
+    {"ticker": "SDGR", "asset": "SGR-1505", "query": "SGR-1505"},
+    {"ticker": "SDGR", "asset": "SGR-2921", "query": "SGR-2921"}
+  ]
+}

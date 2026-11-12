@@ -1,0 +1,75 @@
+{
+  "lookback_days": 7,
+  "materiality_threshold": 60,
+  "companies": [
+    {
+      "ticker": "TEM",
+      "aliases": ["Tempus AI", "Tempus"],
+      "events": [
+        {"type": "earnings", "date": null, "label": "Q4/FY 2026 earnings", "gates": ["earnings_validation", "valuation", "cash_generation"]},
+        {"type": "integration", "date": "2026-11-30", "label": "Personalis shareholder vote", "gates": ["integration_execution", "data_chokepoint", "valuation"]}
+      ]
+    },
+    {
+      "ticker": "SDGR",
+      "aliases": ["Schrodinger", "Schrödinger", "SGR-1505", "SGR-2921"],
+      "events": [
+        {"type": "earnings", "date": null, "label": "Q4/FY 2026 earnings", "gates": ["earnings_validation", "hosted_margin", "cash_runway"]}
+      ]
+    },
+    {
+      "ticker": "RXRX",
+      "aliases": ["Recursion Pharmaceuticals", "Recursion", "REC-4881", "REC-1245"],
+      "events": [
+        {"type": "regulatory", "date": null, "label": "REC-4881 FDA path", "gates": ["clinical_validation", "regulatory_path", "valuation"]},
+        {"type": "clinical", "date": null, "label": "REC-1245 expansion data", "gates": ["clinical_validation", "cash_runway", "falsifiers"]}
+      ]
+    },
+    {
+      "ticker": "ABCL",
+      "aliases": ["AbCellera Biologics", "AbCellera", "ABCL635", "ABCL575"],
+      "events": [
+        {"type": "earnings", "date": "2026-11-09", "label": "Q3 2026 earnings", "resolved": true, "evidence_url": "https://investors.abcellera.com/news/news-releases/2026/AbCellera-Reports-Q3-2026-Business-Results/default.aspx", "gates": ["earnings_validation", "cash_runway", "dilution", "partner_economics"]},
+        {"type": "clinical", "date": null, "label": "ABCL575 top-line data", "gates": ["clinical_validation", "platform_validation", "falsifiers"]}
+      ]
+    },
+    {
+      "ticker": "CERT",
+      "aliases": ["Certara", "biosimulation", "model-informed drug development"],
+      "events": [
+        {"type": "earnings", "date": null, "label": "Q4/FY 2026 earnings", "gates": ["earnings_validation", "software_growth", "customer_dependency", "valuation"]}
+      ]
+    },
+    {
+      "ticker": "NTRA",
+      "aliases": ["Natera", "Signatera", "Panorama", "Prospera"],
+      "events": [
+        {"type": "earnings", "date": null, "label": "Q4/FY 2026 earnings", "gates": ["earnings_validation", "cash_generation", "test_volume", "valuation"]},
+        {"type": "regulatory", "date": null, "label": "Diagnostic coverage and regulatory updates", "gates": ["customer_dependency", "regulatory_path", "falsifiers"]}
+      ]
+    },
+    {
+      "ticker": "SOPH",
+      "aliases": ["SOPHiA GENETICS", "SOPHiA DDM"],
+      "events": [
+        {"type": "earnings", "date": null, "label": "Q4/FY 2026 earnings", "gates": ["earnings_validation", "cash_runway", "customer_dependency", "valuation"]}
+      ]
+    },
+    {
+      "ticker": "GH",
+      "aliases": ["Guardant Health", "Guardant360", "Guardant Reveal", "Shield"],
+      "events": [
+        {"type": "earnings", "date": null, "label": "Q4/FY 2026 earnings", "gates": ["earnings_validation", "cash_generation", "test_volume", "valuation"]},
+        {"type": "regulatory", "date": null, "label": "Shield coverage and regulatory updates", "gates": ["customer_dependency", "regulatory_path", "falsifiers"]}
+      ]
+    }
+  ],
+  "event_keywords": {
+    "earnings": ["financial results", "quarter results", "earnings", "revenue", "guidance", "10-q", "10-k"],
+    "clinical": ["phase 1", "phase 2", "phase 3", "top-line", "clinical data", "trial results", "endpoint"],
+    "regulatory": ["fda", "approval", "clearance", "regulatory", "registrational"],
+    "partnership": ["collaboration", "partnership", "option", "milestone", "licensing"],
+    "financing": ["public offering", "dilution", "financing", "cash runway", "common shares", "s-3", "424b"],
+    "integration": ["acquisition", "merger", "shareholder vote", "integration"]
+  }
+}

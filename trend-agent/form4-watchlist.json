@@ -1,0 +1,14 @@
+{
+  "lookback_days": 120,
+  "max_filings_per_company": 3,
+  "companies": [
+    {"ticker": "TEM", "cik": "0001717115", "name": "Tempus AI"},
+    {"ticker": "SDGR", "cik": "0001490978", "name": "Schrodinger"},
+    {"ticker": "RXRX", "cik": "0001601830", "name": "Recursion Pharmaceuticals"},
+    {"ticker": "ABCL", "cik": "0001703057", "name": "AbCellera Biologics"},
+    {"ticker": "CERT", "cik": "0001827090", "name": "Certara"},
+    {"ticker": "NTRA", "cik": "0001604821", "name": "Natera"},
+    {"ticker": "SOPH", "cik": "0001840706", "name": "SOPHiA GENETICS"},
+    {"ticker": "GH", "cik": "0001576280", "name": "Guardant Health"}
+  ]
+}

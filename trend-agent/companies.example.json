@@ -14,6 +14,46 @@
   },
   "companies": [
     {
+      "ticker": "TEM", "name": "Tempus AI", "company_terms": ["Tempus AI", "Tempus"],
+      "product_terms": ["precision medicine", "clinical data", "molecular data", "diagnostics"],
+      "trusted_sources": ["tempus.com", "sec.gov", "fda.gov"]
+    },
+    {
+      "ticker": "SDGR", "name": "Schrodinger", "company_terms": ["Schrodinger", "Schrödinger"],
+      "product_terms": ["biosimulation", "drug discovery software", "SGR-1505"],
+      "trusted_sources": ["schrodinger.com", "sec.gov", "clinicaltrials.gov"]
+    },
+    {
+      "ticker": "RXRX", "name": "Recursion Pharmaceuticals", "company_terms": ["Recursion Pharmaceuticals", "Recursion"],
+      "product_terms": ["Recursion OS", "REC-4881", "REC-1245", "AI drug discovery"],
+      "trusted_sources": ["recursion.com", "sec.gov", "clinicaltrials.gov"]
+    },
+    {
+      "ticker": "ABCL", "name": "AbCellera", "company_terms": ["AbCellera", "AbCellera Biologics"],
+      "product_terms": ["ABCL635", "ABCL575", "antibody discovery"],
+      "trusted_sources": ["abcellera.com", "sec.gov", "clinicaltrials.gov"]
+    },
+    {
+      "ticker": "CERT", "name": "Certara", "company_terms": ["Certara"],
+      "product_terms": ["biosimulation", "model-informed drug development", "regulatory science"],
+      "trusted_sources": ["certara.com", "sec.gov", "fda.gov"]
+    },
+    {
+      "ticker": "NTRA", "name": "Natera", "company_terms": ["Natera"],
+      "product_terms": ["Signatera", "Panorama", "Prospera", "cell-free DNA", "MRD"],
+      "trusted_sources": ["natera.com", "sec.gov", "fda.gov"]
+    },
+    {
+      "ticker": "SOPH", "name": "SOPHiA GENETICS", "company_terms": ["SOPHiA GENETICS", "SOPHiA DDM"],
+      "product_terms": ["precision medicine", "multimodal data", "companion diagnostic"],
+      "trusted_sources": ["sophiagenetics.com", "sec.gov", "fda.gov"]
+    },
+    {
+      "ticker": "GH", "name": "Guardant Health", "company_terms": ["Guardant Health"],
+      "product_terms": ["Guardant360", "Guardant Reveal", "Shield", "liquid biopsy"],
+      "trusted_sources": ["guardanthealth.com", "sec.gov", "fda.gov"]
+    },
+    {
       "ticker": "MRNA",
       "name": "Moderna",
       "company_terms": ["Moderna"],
