@@ -3,6 +3,19 @@
   "decision_policy": "Priority research requires a market/news score >= 70; an investable thesis additionally requires confirmed chokepoint, customer dependency, and earnings validation.",
   "companies": [
     {
+      "ticker": "NVDA",
+      "supply_chain_map": "unreviewed",
+      "chokepoint_evidence": "unreviewed",
+      "customer_dependency": "unreviewed",
+      "pure_play": "fail",
+      "multi_node_control": "unreviewed",
+      "counter_thesis": "pending",
+      "earnings_validation": "pending",
+      "management_governance": "pending",
+      "serenity_decision": "watch",
+      "reason": "NVIDIA 的管理层交接、董事会调查及下一次财报需要独立验证；CEO 离任已经由公司公告和 SEC 8-K 确认，个人关系与间谍相关说法须按来源分别核实，不能将未经确认的报道视作公司事实。"
+    },
+    {
       "ticker": "TEM",
       "supply_chain_map": "pass",
       "chokepoint_evidence": "partial",

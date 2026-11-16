@@ -1,6 +1,6 @@
 {
   "title": "AI Medicine public-company screening universe",
-  "scope_note": "This is a reproducible starting universe, not an exhaustive global list. Eight finalists receive the same evidence audit; adjacent comparators remain outside the final ranking until they meet the direct AI-medicine exposure rule.",
+  "scope_note": "This is a reproducible starting universe, not an exhaustive global list. Thirteen candidates have completed the same first-pass evidence audit. Deep review means the evidence was examined; it does not mean the company passed the investment gates.",
   "criteria": {
     "ai_medicine_relevance": 20,
     "proprietary_data_or_models": 20,
@@ -12,76 +12,344 @@
   },
   "companies": [
     {
-      "ticker": "TEM", "company": "Tempus AI", "segment": "clinical data + intelligent diagnostics", "stage": "deep-reviewed",
-      "scores": {"ai_medicine_relevance": 5, "proprietary_data_or_models": 5, "workflow_or_customer_lock_in": 5, "commercial_validation": 4, "multi_node_control": 5, "financial_resilience": 3, "primary_evidence_coverage": 5},
+      "ticker": "TEM",
+      "company": "Tempus AI",
+      "segment": "clinical data + intelligent diagnostics",
+      "stage": "deep-reviewed",
+      "scores": {
+        "ai_medicine_relevance": 5,
+        "proprietary_data_or_models": 5,
+        "workflow_or_customer_lock_in": 5,
+        "commercial_validation": 4,
+        "multi_node_control": 5,
+        "financial_resilience": 3,
+        "primary_evidence_coverage": 5
+      },
       "screen_reason": "Direct AI-medicine exposure with clinical/molecular data, diagnostics and provider workflow distribution.",
       "source": "https://investors.tempus.com/overview/default.aspx"
     },
     {
-      "ticker": "SDGR", "company": "Schrodinger", "segment": "drug-discovery software + therapeutics", "stage": "deep-reviewed",
-      "scores": {"ai_medicine_relevance": 5, "proprietary_data_or_models": 4, "workflow_or_customer_lock_in": 4, "commercial_validation": 4, "multi_node_control": 4, "financial_resilience": 4, "primary_evidence_coverage": 5},
+      "ticker": "SDGR",
+      "company": "Schrodinger",
+      "segment": "drug-discovery software + therapeutics",
+      "stage": "deep-reviewed",
+      "scores": {
+        "ai_medicine_relevance": 5,
+        "proprietary_data_or_models": 4,
+        "workflow_or_customer_lock_in": 4,
+        "commercial_validation": 4,
+        "multi_node_control": 4,
+        "financial_resilience": 4,
+        "primary_evidence_coverage": 5
+      },
       "screen_reason": "Picks-and-shovels software exposure across customer programs plus proprietary drug-discovery upside.",
       "source": "https://ir.schrodinger.com/"
     },
     {
-      "ticker": "RXRX", "company": "Recursion Pharmaceuticals", "segment": "AI-native drug discovery", "stage": "deep-reviewed",
-      "scores": {"ai_medicine_relevance": 5, "proprietary_data_or_models": 5, "workflow_or_customer_lock_in": 3, "commercial_validation": 2, "multi_node_control": 5, "financial_resilience": 2, "primary_evidence_coverage": 5},
+      "ticker": "RXRX",
+      "company": "Recursion Pharmaceuticals",
+      "segment": "AI-native drug discovery",
+      "stage": "deep-reviewed",
+      "scores": {
+        "ai_medicine_relevance": 5,
+        "proprietary_data_or_models": 5,
+        "workflow_or_customer_lock_in": 3,
+        "commercial_validation": 2,
+        "multi_node_control": 5,
+        "financial_resilience": 2,
+        "primary_evidence_coverage": 5
+      },
       "screen_reason": "End-to-end AI-native discovery platform with proprietary data and clinical/partner validation still developing.",
       "source": "https://ir.recursion.com/"
     },
     {
-      "ticker": "ABCL", "company": "AbCellera Biologics", "segment": "antibody discovery + development", "stage": "deep-reviewed",
-      "scores": {"ai_medicine_relevance": 3, "proprietary_data_or_models": 4, "workflow_or_customer_lock_in": 3, "commercial_validation": 2, "multi_node_control": 4, "financial_resilience": 4, "primary_evidence_coverage": 5},
+      "ticker": "ABCL",
+      "company": "AbCellera Biologics",
+      "segment": "antibody discovery + development",
+      "stage": "deep-reviewed",
+      "scores": {
+        "ai_medicine_relevance": 3,
+        "proprietary_data_or_models": 4,
+        "workflow_or_customer_lock_in": 3,
+        "commercial_validation": 2,
+        "multi_node_control": 4,
+        "financial_resilience": 4,
+        "primary_evidence_coverage": 5
+      },
       "screen_reason": "Technology-enabled antibody platform, but the AI-specific advantage and durable partner economics require more proof.",
       "source": "https://investors.abcellera.com/"
     },
     {
-      "ticker": "CERT", "company": "Certara", "segment": "biosimulation + regulatory science", "stage": "deep-reviewed",
-      "scores": {"ai_medicine_relevance": 4, "proprietary_data_or_models": 4, "workflow_or_customer_lock_in": 5, "commercial_validation": 5, "multi_node_control": 4, "financial_resilience": 4, "primary_evidence_coverage": 4},
+      "ticker": "CERT",
+      "company": "Certara",
+      "segment": "biosimulation + regulatory science",
+      "stage": "deep-reviewed",
+      "scores": {
+        "ai_medicine_relevance": 4,
+        "proprietary_data_or_models": 4,
+        "workflow_or_customer_lock_in": 5,
+        "commercial_validation": 5,
+        "multi_node_control": 4,
+        "financial_resilience": 4,
+        "primary_evidence_coverage": 4
+      },
       "screen_reason": "Strong workflow embedding, positive adjusted EBITDA and software growth support an infrastructure thesis; AI differentiation and modest total growth remain the main limits.",
       "source": "https://ir.certara.com/"
     },
     {
-      "ticker": "SOPH", "company": "SOPHiA GENETICS", "segment": "multimodal clinical analytics", "stage": "deep-reviewed",
-      "scores": {"ai_medicine_relevance": 5, "proprietary_data_or_models": 4, "workflow_or_customer_lock_in": 4, "commercial_validation": 3, "multi_node_control": 3, "financial_resilience": 2, "primary_evidence_coverage": 4},
+      "ticker": "SOPH",
+      "company": "SOPHiA GENETICS",
+      "segment": "multimodal clinical analytics",
+      "stage": "deep-reviewed",
+      "scores": {
+        "ai_medicine_relevance": 5,
+        "proprietary_data_or_models": 4,
+        "workflow_or_customer_lock_in": 4,
+        "commercial_validation": 3,
+        "multi_node_control": 3,
+        "financial_resilience": 2,
+        "primary_evidence_coverage": 4
+      },
       "screen_reason": "Direct AI precision-medicine platform with growing healthcare and biopharma adoption; small scale, cash runway and pricing power keep it below the leaders.",
       "source": "https://ir.sophiagenetics.com/"
     },
     {
-      "ticker": "NTRA", "company": "Natera", "segment": "cell-free DNA diagnostics", "stage": "deep-reviewed",
-      "scores": {"ai_medicine_relevance": 4, "proprietary_data_or_models": 4, "workflow_or_customer_lock_in": 4, "commercial_validation": 5, "multi_node_control": 3, "financial_resilience": 4, "primary_evidence_coverage": 4},
+      "ticker": "NTRA",
+      "company": "Natera",
+      "segment": "cell-free DNA diagnostics",
+      "stage": "deep-reviewed",
+      "scores": {
+        "ai_medicine_relevance": 4,
+        "proprietary_data_or_models": 4,
+        "workflow_or_customer_lock_in": 4,
+        "commercial_validation": 5,
+        "multi_node_control": 3,
+        "financial_resilience": 4,
+        "primary_evidence_coverage": 4
+      },
       "screen_reason": "Scaled AI-enabled diagnostics and strong commercial validation; premium valuation and reliance on diagnostic execution reduce the relative Serenity edge.",
       "source": "https://investor.natera.com/overview/"
     },
     {
-      "ticker": "GH", "company": "Guardant Health", "segment": "precision oncology diagnostics", "stage": "deep-reviewed",
-      "scores": {"ai_medicine_relevance": 4, "proprietary_data_or_models": 4, "workflow_or_customer_lock_in": 4, "commercial_validation": 4, "multi_node_control": 3, "financial_resilience": 3, "primary_evidence_coverage": 3},
+      "ticker": "GH",
+      "company": "Guardant Health",
+      "segment": "precision oncology diagnostics",
+      "stage": "deep-reviewed",
+      "scores": {
+        "ai_medicine_relevance": 4,
+        "proprietary_data_or_models": 4,
+        "workflow_or_customer_lock_in": 4,
+        "commercial_validation": 4,
+        "multi_node_control": 3,
+        "financial_resilience": 3,
+        "primary_evidence_coverage": 3
+      },
       "screen_reason": "Scaled precision-oncology, screening and data exposure; reimbursement risk and continuing free-cash-flow burn lower the long-horizon ranking.",
       "source": "https://guardanthealth.com/"
     },
     {
-      "ticker": "ILMN", "company": "Illumina", "segment": "genomic sequencing infrastructure", "stage": "sector-comparator",
-      "scores": {"ai_medicine_relevance": 3, "proprietary_data_or_models": 3, "workflow_or_customer_lock_in": 5, "commercial_validation": 5, "multi_node_control": 4, "financial_resilience": 4, "primary_evidence_coverage": 3},
+      "ticker": "GEHC",
+      "company": "GE HealthCare Technologies",
+      "segment": "AI medical imaging + hospital equipment",
+      "stage": "deep-reviewed",
+      "scores": {
+        "ai_medicine_relevance": 4,
+        "proprietary_data_or_models": 4,
+        "workflow_or_customer_lock_in": 5,
+        "commercial_validation": 5,
+        "multi_node_control": 4,
+        "financial_resilience": 5,
+        "primary_evidence_coverage": 4
+      },
+      "screen_reason": "Large installed imaging base and extensive FDA AI-device footprint make this the principal scaled imaging challenger; direct AI revenue attribution and product-level adoption still require deep review.",
+      "source": "https://investor.gehealthcare.com/"
+    },
+    {
+      "ticker": "RDNT",
+      "company": "RadNet / DeepHealth",
+      "segment": "imaging services + AI diagnostics",
+      "stage": "deep-reviewed",
+      "scores": {
+        "ai_medicine_relevance": 5,
+        "proprietary_data_or_models": 4,
+        "workflow_or_customer_lock_in": 4,
+        "commercial_validation": 4,
+        "multi_node_control": 5,
+        "financial_resilience": 3,
+        "primary_evidence_coverage": 4
+      },
+      "screen_reason": "Combines imaging delivery, patient workflow and FDA-listed DeepHealth products; acquisition economics, debt and measurable AI contribution remain open questions.",
+      "source": "https://investor.radnet.com/"
+    },
+    {
+      "ticker": "ISRG",
+      "company": "Intuitive Surgical",
+      "segment": "robotic surgery + workflow data",
+      "stage": "deep-reviewed",
+      "scores": {
+        "ai_medicine_relevance": 3,
+        "proprietary_data_or_models": 4,
+        "workflow_or_customer_lock_in": 5,
+        "commercial_validation": 5,
+        "multi_node_control": 5,
+        "financial_resilience": 5,
+        "primary_evidence_coverage": 4
+      },
+      "screen_reason": "Installed systems, recurring instruments and surgical workflow create a durable platform, but the investment case is robotic surgery first and AI medicine second.",
+      "source": "https://isrg.intuitive.com/"
+    },
+    {
+      "ticker": "IQV",
+      "company": "IQVIA",
+      "segment": "clinical-trial data + execution",
+      "stage": "deep-reviewed",
+      "scores": {
+        "ai_medicine_relevance": 3,
+        "proprietary_data_or_models": 4,
+        "workflow_or_customer_lock_in": 5,
+        "commercial_validation": 5,
+        "multi_node_control": 4,
+        "financial_resilience": 5,
+        "primary_evidence_coverage": 3
+      },
+      "screen_reason": "Clinical data and trial execution are critical medicine infrastructure; the next audit must separate AI differentiation from the broader CRO and data-services franchise.",
+      "source": "https://ir.iqvia.com/"
+    },
+    {
+      "ticker": "NVDA",
+      "company": "NVIDIA",
+      "segment": "healthcare compute infrastructure",
+      "stage": "deep-reviewed",
+      "scores": {
+        "ai_medicine_relevance": 2,
+        "proprietary_data_or_models": 4,
+        "workflow_or_customer_lock_in": 2,
+        "commercial_validation": 2,
+        "multi_node_control": 4,
+        "financial_resilience": 5,
+        "primary_evidence_coverage": 3
+      },
+      "screen_reason": "A key compute and software enabler for imaging and drug discovery, but healthcare is not a separately attributable pure-play revenue stream and NVIDIA is not the FDA device sponsor.",
+      "source": "https://investor.nvidia.com/"
+    },
+    {
+      "ticker": "ILMN",
+      "company": "Illumina",
+      "segment": "genomic sequencing infrastructure",
+      "stage": "sector-comparator",
+      "scores": {
+        "ai_medicine_relevance": 3,
+        "proprietary_data_or_models": 3,
+        "workflow_or_customer_lock_in": 5,
+        "commercial_validation": 5,
+        "multi_node_control": 4,
+        "financial_resilience": 4,
+        "primary_evidence_coverage": 3
+      },
       "screen_reason": "Critical genomics infrastructure comparator, but it is not a pure-play AI-medicine thesis.",
       "source": "https://investor.illumina.com/"
     },
     {
-      "ticker": "TWST", "company": "Twist Bioscience", "segment": "synthetic DNA infrastructure", "stage": "adjacent",
-      "scores": {"ai_medicine_relevance": 3, "proprietary_data_or_models": 3, "workflow_or_customer_lock_in": 3, "commercial_validation": 4, "multi_node_control": 3, "financial_resilience": 3, "primary_evidence_coverage": 3},
+      "ticker": "TWST",
+      "company": "Twist Bioscience",
+      "segment": "synthetic DNA infrastructure",
+      "stage": "adjacent",
+      "scores": {
+        "ai_medicine_relevance": 3,
+        "proprietary_data_or_models": 3,
+        "workflow_or_customer_lock_in": 3,
+        "commercial_validation": 4,
+        "multi_node_control": 3,
+        "financial_resilience": 3,
+        "primary_evidence_coverage": 3
+      },
       "screen_reason": "Potential upstream enabler, but current relevance is adjacent to rather than a direct AI-medicine platform thesis.",
       "source": "https://investors.twistbioscience.com/"
     },
     {
-      "ticker": "DHR", "company": "Danaher", "segment": "life-science tools", "stage": "sector-comparator",
-      "scores": {"ai_medicine_relevance": 2, "proprietary_data_or_models": 3, "workflow_or_customer_lock_in": 5, "commercial_validation": 5, "multi_node_control": 5, "financial_resilience": 5, "primary_evidence_coverage": 3},
+      "ticker": "DHR",
+      "company": "Danaher",
+      "segment": "life-science tools",
+      "stage": "sector-comparator",
+      "scores": {
+        "ai_medicine_relevance": 2,
+        "proprietary_data_or_models": 3,
+        "workflow_or_customer_lock_in": 5,
+        "commercial_validation": 5,
+        "multi_node_control": 5,
+        "financial_resilience": 5,
+        "primary_evidence_coverage": 3
+      },
       "screen_reason": "Durable tools benchmark with broad exposure; conglomerate diversification dilutes a pure AI-medicine signal.",
       "source": "https://investors.danaher.com/"
     },
     {
-      "ticker": "MRNA", "company": "Moderna", "segment": "computational medicines + therapeutics", "stage": "sector-comparator",
-      "scores": {"ai_medicine_relevance": 3, "proprietary_data_or_models": 4, "workflow_or_customer_lock_in": 2, "commercial_validation": 4, "multi_node_control": 4, "financial_resilience": 3, "primary_evidence_coverage": 4},
+      "ticker": "MRNA",
+      "company": "Moderna",
+      "segment": "computational medicines + therapeutics",
+      "stage": "sector-comparator",
+      "scores": {
+        "ai_medicine_relevance": 3,
+        "proprietary_data_or_models": 4,
+        "workflow_or_customer_lock_in": 2,
+        "commercial_validation": 4,
+        "multi_node_control": 4,
+        "financial_resilience": 3,
+        "primary_evidence_coverage": 4
+      },
       "screen_reason": "Computational platform comparator, but product, clinical and vaccine-cycle risks dominate the current equity thesis.",
       "source": "https://investors.modernatx.com/"
+    },
+    {
+      "ticker": "HTFL",
+      "company": "HeartFlow",
+      "segment": "AI coronary CT analysis",
+      "stage": "deep-reviewed",
+      "scores": {
+        "ai_medicine_relevance": 5,
+        "proprietary_data_or_models": 3,
+        "workflow_or_customer_lock_in": 5,
+        "commercial_validation": 5,
+        "multi_node_control": 3,
+        "financial_resilience": 3,
+        "primary_evidence_coverage": 4
+      },
+      "screen_reason": "Added from the news-to-Serenity flow: pure-play AI cardiac analysis with a Category I CPT code and ~99% US coverage; citation-checked Serenity review.",
+      "source": "https://www.sec.gov/Archives/edgar/data/1464521/000146452126000042/htfl-20251231x10k.htm"
+    },
+    {
+      "ticker": "CBLL",
+      "company": "Ceribell",
+      "segment": "AI point-of-care EEG",
+      "stage": "deep-reviewed",
+      "scores": {
+        "ai_medicine_relevance": 5,
+        "proprietary_data_or_models": 3,
+        "workflow_or_customer_lock_in": 3,
+        "commercial_validation": 5,
+        "multi_node_control": 5,
+        "financial_resilience": 2,
+        "primary_evidence_coverage": 4
+      },
+      "screen_reason": "Added from the news-to-Serenity flow: first FDA-cleared AI device for status epilepticus, only cleared delirium monitor, Medicare NTAP; citation-checked Serenity review.",
+      "source": "https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm"
+    },
+    {
+      "ticker": "CAI",
+      "company": "Caris Life Sciences",
+      "segment": "AI molecular profiling + clinico-genomic data",
+      "stage": "deep-reviewed",
+      "scores": {
+        "ai_medicine_relevance": 5,
+        "proprietary_data_or_models": 3,
+        "workflow_or_customer_lock_in": 3,
+        "commercial_validation": 5,
+        "multi_node_control": 5,
+        "financial_resilience": 3,
+        "primary_evidence_coverage": 4
+      },
+      "screen_reason": "Added from the news-to-Serenity flow: 1M+ sequenced cases feeding AI products and pharma services; citation-checked Serenity review.",
+      "source": "https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-20251231.htm"
     }
   ]
 }

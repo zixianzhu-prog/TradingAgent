@@ -1,0 +1,29 @@
+{
+  "as_of": "2026-11-13",
+  "selection_policy": "Round-robin coverage by predefined research cohort, not by current score. Cross-checked companies do not receive an automatic action upgrade until every company in the 13-name finalist cohort completes the same evidence classes.",
+  "required_evidence_classes": [
+    "company_or_regulatory_primary_source",
+    "customer_or_workflow_adoption",
+    "peer_reviewed_or_independent_validation",
+    "adversarial_or_counter_evidence",
+    "financial_and_dilution_verification"
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "status": "cross-checked",
+      "tickers": ["RDNT", "SOPH", "TEM", "CERT", "NTRA", "GH"]
+    },
+    {
+      "round": 2,
+      "status": "queued",
+      "tickers": ["SDGR", "RXRX", "ABCL"]
+    },
+    {
+      "round": 3,
+      "status": "queued",
+      "tickers": ["GEHC", "ISRG", "IQV", "NVDA"]
+    }
+  ],
+  "comparative_ranking_status": "provisional-until-all-13-complete"
+}

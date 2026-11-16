@@ -1,0 +1,54 @@
+{
+  "alert_score": 60,
+  "deep_research_score": 70,
+  "lookback_days": 7,
+  "themes": [
+    {
+      "name": "ai_medicine",
+      "label": "AI 医疗与智能药物研发",
+      "keywords": [
+        "ai drug discovery", "ai medicine", "precision medicine",
+        "computational biology", "clinical ai", "diagnostic intelligence",
+        "digital pathology", "multimodal clinical data", "foundation model biology",
+        "ai medical imaging", "robotic surgery", "clinical trial data", "healthcare compute",
+        "FDA AI-enabled medical device", "medical imaging algorithm",
+        "ai-designed drug", "artificial intelligence healthcare",
+        "人工智能药物研发", "精准医疗", "临床人工智能"
+      ],
+      "counter_keywords": [
+        "clinical failure", "trial halted", "cash runway", "dilution",
+        "regulatory rejection", "临床失败", "试验暂停", "监管拒绝"
+      ],
+      "trusted_sources": [
+        "fda.gov", "clinicaltrials.gov", "sec.gov", "company-ir", "nature.com"
+      ]
+    },
+    {
+      "name": "nvidia_company_news",
+      "label": "NVIDIA 公司重大新闻",
+      "keywords": [
+        "NVIDIA", "NVDA", "Jensen Huang", "Jen-Hsun Huang", "Colette Kress",
+        "Nvidia CEO", "Nvidia executive", "Nvidia board", "Nvidia earnings",
+        "Nvidia revenue", "Nvidia data center", "Nvidia Blackwell", "Nvidia Rubin",
+        "Nvidia customer", "Nvidia partnership", "Nvidia export control",
+        "Nvidia China", "H20 export license", "H200 China license",
+        "AI chip export restriction", "BIS NVIDIA", "Nvidia investigation",
+        "Nvidia resignation", "Nvidia CEO transition", "Nvidia scandal",
+        "NVIDIA Announces CEO Transition", "Statement From NVIDIA Board",
+        "A Message to Our Company", "foreign intelligence effort",
+        "英伟达", "黄仁勋", "英伟达CEO", "英伟达总裁", "英伟达辞职",
+        "英伟达调查", "英伟达丑闻", "英伟达财报", "英伟达出口管制"
+      ],
+      "counter_keywords": [
+        "license denied", "inventory charge", "write-down", "China restriction",
+        "market foreclosure", "design out", "tariff", "smuggling investigation",
+        "resignation", "resigned", "affair", "scandal", "investigation",
+        "security concern", "criminal probe", "insider risk", "fraud allegation",
+        "许可拒绝", "库存减值", "中国限制", "出口禁令", "辞职", "婚外情", "调查", "丑闻"
+      ],
+      "trusted_sources": [
+        "nvidia.com", "sec.gov", "bis.gov", "commerce.gov", "federalregister.gov"
+      ]
+    }
+  ]
+}

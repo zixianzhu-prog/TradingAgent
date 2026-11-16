@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from import_tradingagents_reports import import_directory, import_report_tree
+from import_tradingagents_reports import COMPLETE_ARTIFACTS, import_directory, import_report_tree
 
 
 def test_imports_final_rating_and_conclusion(tmp_path: Path):
@@ -34,3 +34,33 @@ def test_complete_tree_uses_portfolio_rating(tmp_path: Path):
     result = import_report_tree(report, "VRT", complete=True)
     assert result["rating"] == "OVERWEIGHT"
     assert result["status"] == "reviewed"
+    assert result["reviewDepth"] == "partial"
+    assert result["coverage"]["percentage"] < 100
+    assert "sentiment" in result["coverage"]["missing"]
+    assert result["artifacts"]["market"]["summary"] == "Market"
+
+
+def test_complete_tree_imports_every_agent_role(tmp_path: Path):
+    report = tmp_path / "TEM_20261114_120000"
+    for relative in COMPLETE_ARTIFACTS.values():
+        path = report / relative
+        path.parent.mkdir(parents=True, exist_ok=True)
+        content = "**Rating**: BUY" if relative.endswith("decision.md") else f"Report for {relative}"
+        path.write_text(content, encoding="utf-8")
+
+    result = import_report_tree(report, "TEM", complete=True)
+
+    assert result["status"] == "reviewed"
+    assert result["reviewDepth"] == "full"
+    assert result["analysisDate"] == "2026-11-14"
+    assert result["rating"] == "BUY"
+    assert result["coverage"] == {
+        "present": 12,
+        "expected": 12,
+        "percentage": 100,
+        "missing": [],
+        "fullAnalystTeam": True,
+        "fullDebateTeam": True,
+        "fullRiskTeam": True,
+    }
+    assert all(result["components"][name] for name in COMPLETE_ARTIFACTS)

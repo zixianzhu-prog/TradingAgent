@@ -13,11 +13,75 @@ RATING_RE = re.compile(
 )
 PROPOSAL_RE = re.compile(r"FINAL TRANSACTION PROPOSAL\s*:\s*([^\n]+)", re.IGNORECASE)
 
+COMPLETE_ARTIFACTS = {
+    "market": "1_analysts/market.md",
+    "sentiment": "1_analysts/sentiment.md",
+    "news": "1_analysts/news.md",
+    "fundamentals": "1_analysts/fundamentals.md",
+    "bull": "2_research/bull.md",
+    "bear": "2_research/bear.md",
+    "researchManager": "2_research/manager.md",
+    "trader": "3_trading/trader.md",
+    "aggressiveRisk": "4_risk/aggressive.md",
+    "conservativeRisk": "4_risk/conservative.md",
+    "neutralRisk": "4_risk/neutral.md",
+    "portfolioDecision": "5_portfolio/decision.md",
+}
+
+REQUIRED_ANALYSTS = ("market", "sentiment", "news", "fundamentals")
+REQUIRED_DEBATE = ("bull", "bear", "researchManager")
+REQUIRED_RISK = ("aggressiveRisk", "conservativeRisk", "neutralRisk")
+
 
 def compact(text: str, limit: int = 280) -> str:
     text = re.sub(r"[#>*_`|]", " ", text)
     text = re.sub(r"\s+", " ", text).strip()
     return text if len(text) <= limit else text[: limit - 1].rstrip() + "…"
+
+
+def artifact(directory: Path, relative: str) -> dict:
+    path = directory / relative
+    text = path.read_text(encoding="utf-8") if path.is_file() else ""
+    return {
+        "available": bool(text.strip()),
+        "summary": compact(text, 700),
+        "path": str(path) if path.is_file() else "",
+    }
+
+
+def full_components(artifacts: dict) -> dict:
+    return {
+        "market": artifacts["market"]["available"],
+        "sentiment": artifacts["sentiment"]["available"],
+        "news": artifacts["news"]["available"],
+        "fundamentals": artifacts["fundamentals"]["available"],
+        "bull": artifacts["bull"]["available"],
+        "bear": artifacts["bear"]["available"],
+        "researchManager": artifacts["researchManager"]["available"],
+        "trader": artifacts["trader"]["available"],
+        "aggressiveRisk": artifacts["aggressiveRisk"]["available"],
+        "conservativeRisk": artifacts["conservativeRisk"]["available"],
+        "neutralRisk": artifacts["neutralRisk"]["available"],
+        "portfolioDecision": artifacts["portfolioDecision"]["available"],
+        # Backwards-compatible aggregate fields used by the existing UI.
+        "debate": all(artifacts[key]["available"] for key in REQUIRED_DEBATE),
+        "risk": all(artifacts[key]["available"] for key in REQUIRED_RISK),
+    }
+
+
+def coverage(components: dict) -> dict:
+    detailed = tuple(COMPLETE_ARTIFACTS)
+    present = [key for key in detailed if components.get(key)]
+    missing = [key for key in detailed if not components.get(key)]
+    return {
+        "present": len(present),
+        "expected": len(detailed),
+        "percentage": round(100 * len(present) / len(detailed)),
+        "missing": missing,
+        "fullAnalystTeam": all(components.get(key) for key in REQUIRED_ANALYSTS),
+        "fullDebateTeam": all(components.get(key) for key in REQUIRED_DEBATE),
+        "fullRiskTeam": all(components.get(key) for key in REQUIRED_RISK),
+    }
 
 
 def final_section(text: str) -> str:
@@ -55,7 +119,9 @@ def import_directory(directory: Path) -> dict:
 
 def import_report_tree(directory: Path, ticker: str, complete: bool) -> dict:
     if complete:
-        market_path = directory / "1_analysts/market.md"
+        artifacts = {key: artifact(directory, relative) for key, relative in COMPLETE_ARTIFACTS.items()}
+        components = full_components(artifacts)
+        market_path = directory / COMPLETE_ARTIFACTS["market"]
         plan_paths = [directory / "2_research/manager.md", directory / "5_portfolio/decision.md"]
         portfolio_path = directory / "5_portfolio/decision.md"
     else:
@@ -67,21 +133,31 @@ def import_report_tree(directory: Path, ticker: str, complete: bool) -> dict:
     portfolio = portfolio_path.read_text(encoding="utf-8") if portfolio_path.is_file() else ""
     ratings = [value.upper() for value in RATING_RE.findall(portfolio)]
     proposals = [compact(value, 100) for value in PROPOSAL_RE.findall(portfolio)]
-    return {
+    result = {
         "ticker": ticker.upper(),
         "status": "reviewed" if complete and portfolio else "incomplete",
         "rating": ratings[-1] if ratings and complete else "INCOMPLETE",
         "proposal": proposals[-1] if proposals and complete else "",
         "conclusion": compact(portfolio or plan),
         "marketSummary": compact(market),
-        "components": {
+        "components": components if complete else {
             "market": bool(market),
             "debate": any(path.is_file() for path in plan_paths),
-            "risk": complete and (directory / "4_risk").is_dir(),
-            "portfolioDecision": bool(portfolio) and complete,
+            "risk": False,
+            "portfolioDecision": bool(portfolio),
         },
         "sourceDirectory": str(directory),
     }
+    if complete:
+        result["artifacts"] = artifacts
+        result["coverage"] = coverage(components)
+        result["runId"] = directory.name
+        parts = directory.name.split("_", 2)
+        raw_date = parts[1] if len(parts) > 1 and len(parts[1]) == 8 else ""
+        result["analysisDate"] = f"{raw_date[:4]}-{raw_date[4:6]}-{raw_date[6:]}" if raw_date else ""
+        result["status"] = "reviewed"
+        result["reviewDepth"] = "full" if result["coverage"]["percentage"] == 100 else "partial"
+    return result
 
 
 def build(input_root: Path, tradingagents_root: Path | None = None) -> dict:

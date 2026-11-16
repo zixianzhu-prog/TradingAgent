@@ -4,6 +4,7 @@
 
 | 股票 | 状态 | 差异分 | 官方风险类别 | 受影响 Serenity 门槛 |
 | --- | --- | ---: | --- | --- |
+| NVDA | no-material-divergence | 0/100 | 无 | 无 |
 | TEM | no-material-divergence | 0/100 | 无 | 无 |
 | SDGR | no-material-divergence | 0/100 | 无 | 无 |
 | RXRX | no-material-divergence | 0/100 | 无 | 无 |
@@ -12,3 +13,7 @@
 | NTRA | no-material-divergence | 0/100 | 无 | 无 |
 | SOPH | no-material-divergence | 0/100 | 无 | 无 |
 | GH | no-material-divergence | 0/100 | 无 | 无 |
+| GEHC | no-material-divergence | 0/100 | 无 | 无 |
+| RDNT | no-material-divergence | 0/100 | 无 | 无 |
+| ISRG | no-material-divergence | 0/100 | 无 | 无 |
+| IQV | no-material-divergence | 0/100 | 无 | 无 |

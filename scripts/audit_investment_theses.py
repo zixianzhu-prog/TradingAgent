@@ -77,7 +77,8 @@ def main() -> None:
     serenity_payload = json.loads(Path(args.serenity).read_text(encoding="utf-8"))
     serenity = {row["ticker"]: row for row in serenity_payload.get("companies", [])}
     market = latest(Path(args.market_dir))
-    audits = [audit_candidate(candidate, serenity, market) for candidate in theses.get("candidates", [])]
+    candidates = [*theses.get("candidates", []), *theses.get("expanded_deep_dives", [])]
+    audits = [audit_candidate(candidate, serenity, market) for candidate in candidates]
     payload = {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "method": "Evidence completeness audit; score measures research traceability, not expected return.",

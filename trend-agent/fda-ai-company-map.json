@@ -1,0 +1,31 @@
+{
+  "source_url": "https://www.fda.gov/media/178541/download?attachment=",
+  "list_url": "https://www.fda.gov/medical-devices/artificial-intelligence-enabled-medical-devices/list-artificial-intelligence-enabled-medical-devices",
+  "companies": [
+    {
+      "ticker": "GEHC",
+      "company": "GE HealthCare Technologies",
+      "manufacturer_patterns": ["GE Medical Systems", "GE Healthcare", "GE Precision Healthcare"]
+    },
+    {
+      "ticker": "RDNT",
+      "company": "RadNet / DeepHealth",
+      "manufacturer_patterns": ["DeepHealth", "Aidence"]
+    },
+    {
+      "ticker": "ISRG",
+      "company": "Intuitive Surgical",
+      "manufacturer_patterns": ["Intuitive Surgical"]
+    },
+    {
+      "ticker": "IQV",
+      "company": "IQVIA",
+      "manufacturer_patterns": ["IQVIA"]
+    },
+    {
+      "ticker": "NVDA",
+      "company": "NVIDIA",
+      "manufacturer_patterns": ["NVIDIA"]
+    }
+  ]
+}

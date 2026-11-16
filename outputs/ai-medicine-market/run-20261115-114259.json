@@ -1,0 +1,370 @@
+{
+  "generated_at": "2026-11-15T16:42:12.335816+00:00",
+  "mode": "dry-run",
+  "data_provider": "openbb",
+  "results": [
+    {
+      "signal": {
+        "ticker": "TEM",
+        "score": 0.5803890919447905,
+        "direction": "hold",
+        "price": 71.5999984741211,
+        "stop_price": 56.52942875453404,
+        "reasons": [
+          "close=71.60",
+          "MA20=73.33",
+          "MA50=72.84",
+          "ATR14=7.54",
+          "Kronos5D=+1.71%"
+        ],
+        "as_of": "2026-11-13"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "SDGR",
+        "score": 0.8520497178564115,
+        "direction": "buy",
+        "price": 29.530000686645508,
+        "stop_price": 24.134286335536412,
+        "reasons": [
+          "close=29.53",
+          "MA20=27.71",
+          "MA50=26.92",
+          "ATR14=2.70",
+          "Kronos5D=+1.37%"
+        ],
+        "as_of": "2026-11-13"
+      },
+      "order": {
+        "ticker": "SDGR",
+        "side": "buy",
+        "quantity": 185,
+        "reference_price": 29.530000686645508,
+        "stop_price": 24.134286335536412,
+        "take_profit_price": 40.3214293888637,
+        "signal_score": 0.8520497178564115,
+        "reasons": [
+          "close=29.53",
+          "MA20=27.71",
+          "MA50=26.92",
+          "ATR14=2.70",
+          "Kronos5D=+1.37%"
+        ]
+      },
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "RXRX",
+        "score": 0.3310976037122,
+        "direction": "hold",
+        "price": 3.184999942779541,
+        "stop_price": 2.4882858140127997,
+        "reasons": [
+          "close=3.18",
+          "MA20=3.73",
+          "MA50=3.78",
+          "ATR14=0.35",
+          "Kronos5D=-1.74%"
+        ],
+        "as_of": "2026-11-13"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "CERT",
+        "score": 1.0,
+        "direction": "buy",
+        "price": 11.569999694824219,
+        "stop_price": 10.242428370884486,
+        "reasons": [
+          "close=11.57",
+          "MA20=11.08",
+          "MA50=9.70",
+          "ATR14=0.66",
+          "Kronos5D=+1.45%"
+        ],
+        "as_of": "2026-11-13"
+      },
+      "order": {
+        "ticker": "CERT",
+        "side": "buy",
+        "quantity": 753,
+        "reference_price": 11.569999694824219,
+        "stop_price": 10.242428370884486,
+        "take_profit_price": 14.225142342703684,
+        "signal_score": 1.0,
+        "reasons": [
+          "close=11.57",
+          "MA20=11.08",
+          "MA50=9.70",
+          "ATR14=0.66",
+          "Kronos5D=+1.45%"
+        ]
+      },
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "NTRA",
+        "score": 0.41745015899778865,
+        "direction": "hold",
+        "price": 319.0899963378906,
+        "stop_price": 269.3199942452567,
+        "reasons": [
+          "close=319.09",
+          "MA20=377.09",
+          "MA50=379.70",
+          "ATR14=24.89",
+          "Kronos5D=-1.23%"
+        ],
+        "as_of": "2026-11-13"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "SOPH",
+        "score": 0.05417593356988154,
+        "direction": "hold",
+        "price": 8.210000038146973,
+        "stop_price": 7.039571421486991,
+        "reasons": [
+          "close=8.21",
+          "MA20=7.37",
+          "MA50=7.65",
+          "ATR14=0.59",
+          "Kronos5D=+0.23%"
+        ],
+        "as_of": "2026-11-13"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "GH",
+        "score": 0.2805517218162045,
+        "direction": "hold",
+        "price": 151.6999969482422,
+        "stop_price": 130.82428196498327,
+        "reasons": [
+          "close=151.70",
+          "MA20=165.56",
+          "MA50=168.65",
+          "ATR14=10.44",
+          "Kronos5D=+1.14%"
+        ],
+        "as_of": "2026-11-13"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "ABCL",
+        "score": 0.24942854564907685,
+        "direction": "hold",
+        "price": 11.489999771118164,
+        "stop_price": 9.384571756635394,
+        "reasons": [
+          "close=11.49",
+          "MA20=12.08",
+          "MA50=12.34",
+          "ATR14=1.05",
+          "Kronos5D=+0.76%"
+        ],
+        "as_of": "2026-11-13"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "GEHC",
+        "score": 1.0,
+        "direction": "hold",
+        "price": 83.0199966430664,
+        "stop_price": 77.20828247070312,
+        "reasons": [
+          "close=83.02",
+          "MA20=77.55",
+          "MA50=70.55",
+          "ATR14=2.91",
+          "Kronos5D=-0.45%"
+        ],
+        "as_of": "2026-11-13"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "RDNT",
+        "score": 0.6979725382932553,
+        "direction": "buy",
+        "price": 76.41999816894531,
+        "stop_price": 69.37928662981305,
+        "reasons": [
+          "close=76.42",
+          "MA20=73.98",
+          "MA50=72.78",
+          "ATR14=3.52",
+          "Kronos5D=+1.15%"
+        ],
+        "as_of": "2026-11-13"
+      },
+      "order": {
+        "ticker": "RDNT",
+        "side": "buy",
+        "quantity": 142,
+        "reference_price": 76.41999816894531,
+        "stop_price": 69.37928662981305,
+        "take_profit_price": 90.50142124720983,
+        "signal_score": 0.6979725382932553,
+        "reasons": [
+          "close=76.42",
+          "MA20=73.98",
+          "MA50=72.78",
+          "ATR14=3.52",
+          "Kronos5D=+1.15%"
+        ]
+      },
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "ISRG",
+        "score": 1.0,
+        "direction": "hold",
+        "price": 443.5899963378906,
+        "stop_price": 412.6214294433594,
+        "reasons": [
+          "close=443.59",
+          "MA20=447.13",
+          "MA50=417.59",
+          "ATR14=15.48",
+          "Kronos5D=+2.01%"
+        ],
+        "as_of": "2026-11-13"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "IQV",
+        "score": 0.6629474330823539,
+        "direction": "hold",
+        "price": 265.1199951171875,
+        "stop_price": 244.721435546875,
+        "reasons": [
+          "close=265.12",
+          "MA20=271.04",
+          "MA50=267.41",
+          "ATR14=10.20",
+          "Kronos5D=+1.30%"
+        ],
+        "as_of": "2026-11-13"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "NVDA",
+        "score": 0.0,
+        "direction": "hold",
+        "price": 162.85000610351562,
+        "stop_price": 140.84000941685267,
+        "reasons": [
+          "close=162.85",
+          "MA20=198.69",
+          "MA50=214.65",
+          "ATR14=11.00",
+          "Kronos5D=+2.71%"
+        ],
+        "as_of": "2026-11-13"
+      },
+      "order": null,
+      "fill": null
+    }
+  ],
+  "kronos": {
+    "TEM": {
+      "last_close": 71.5999984741211,
+      "predicted_close": 72.82785034179688,
+      "forecast_return": 0.017148769467077107
+    },
+    "SDGR": {
+      "last_close": 29.530000686645508,
+      "predicted_close": 29.93430519104004,
+      "forecast_return": 0.013691313748508405
+    },
+    "RXRX": {
+      "last_close": 3.184999942779541,
+      "predicted_close": 3.1295998096466064,
+      "forecast_return": -0.01739407664936632
+    },
+    "CERT": {
+      "last_close": 11.569999694824219,
+      "predicted_close": 11.737235069274902,
+      "forecast_return": 0.014454224620722878
+    },
+    "NTRA": {
+      "last_close": 319.0899963378906,
+      "predicted_close": 315.1690979003906,
+      "forecast_return": -0.012287751049857687
+    },
+    "SOPH": {
+      "last_close": 8.210000038146973,
+      "predicted_close": 8.228801727294922,
+      "forecast_return": 0.0022900961096941064
+    },
+    "GH": {
+      "last_close": 151.6999969482422,
+      "predicted_close": 153.4221954345703,
+      "forecast_return": 0.011352659993234537
+    },
+    "ABCL": {
+      "last_close": 11.489999771118164,
+      "predicted_close": 11.577783584594727,
+      "forecast_return": 0.007640018731525089
+    },
+    "GEHC": {
+      "last_close": 83.0199966430664,
+      "predicted_close": 82.642822265625,
+      "forecast_return": -0.004543175050500392
+    },
+    "RDNT": {
+      "last_close": 76.41999816894531,
+      "predicted_close": 77.29767608642578,
+      "forecast_return": 0.011484924607563451
+    },
+    "ISRG": {
+      "last_close": 443.5899963378906,
+      "predicted_close": 452.4929504394531,
+      "forecast_return": 0.02007023191474544
+    },
+    "IQV": {
+      "last_close": 265.1199951171875,
+      "predicted_close": 268.5708923339844,
+      "forecast_return": 0.01301635968751258
+    },
+    "NVDA": {
+      "last_close": 162.85000610351562,
+      "predicted_close": 167.25755310058594,
+      "forecast_return": 0.027065071119915407
+    }
+  },
+  "portfolio": {
+    "cash": 100000.0,
+    "positions": {}
+  }
+}

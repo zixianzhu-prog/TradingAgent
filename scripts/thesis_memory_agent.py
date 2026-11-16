@@ -85,7 +85,8 @@ def build_snapshot(theses: dict, gates: dict, financials: dict, market: dict, ev
         })
     companies = {}
     reflections = reflections or {}
-    for thesis in theses.get("candidates", []):
+    research_universe = [*theses.get("candidates", []), *theses.get("expanded_deep_dives", [])]
+    for thesis in research_universe:
         ticker = thesis["ticker"]
         gate, financial, signal = gate_rows.get(ticker, {}), financial_rows.get(ticker, {}), signal_rows.get(ticker, {})
         forecast = market.get("kronos", {}).get(ticker, {}).get("forecast_return")

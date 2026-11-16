@@ -21,7 +21,8 @@ def source_id(url: str) -> str:
 def build(theses: dict, assessments: dict, clinical: dict, events: dict, financials: dict) -> dict:
     nodes: dict[str, dict] = {}
     edges: list[dict] = []
-    candidates = {row["ticker"]: row for row in theses.get("candidates", [])}
+    research_universe = [*theses.get("candidates", []), *theses.get("expanded_deep_dives", [])]
+    candidates = {row["ticker"]: row for row in research_universe}
     assessment_rows = {row["ticker"]: row for row in assessments.get("companies", [])}
     financial_rows = {row["ticker"]: row for row in financials.get("companies", [])}
 

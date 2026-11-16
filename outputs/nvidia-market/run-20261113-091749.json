@@ -1,0 +1,37 @@
+{
+  "generated_at": "2026-11-13T14:17:17.962897+00:00",
+  "mode": "dry-run",
+  "data_provider": "openbb",
+  "results": [
+    {
+      "signal": {
+        "ticker": "NVDA",
+        "score": 0.0,
+        "direction": "hold",
+        "price": 166.19000244140625,
+        "stop_price": 144.8685782296317,
+        "reasons": [
+          "close=166.19",
+          "MA20=201.25",
+          "MA50=215.96",
+          "ATR14=10.66",
+          "Kronos5D=+7.39%"
+        ],
+        "as_of": "2026-11-12"
+      },
+      "order": null,
+      "fill": null
+    }
+  ],
+  "kronos": {
+    "NVDA": {
+      "last_close": 166.19000244140625,
+      "predicted_close": 178.47406005859375,
+      "forecast_return": 0.07391574364720577
+    }
+  },
+  "portfolio": {
+    "cash": 100000.0,
+    "positions": {}
+  }
+}

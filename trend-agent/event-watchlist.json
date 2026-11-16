@@ -3,6 +3,15 @@
   "materiality_threshold": 60,
   "companies": [
     {
+      "ticker": "NVDA",
+      "aliases": ["NVIDIA", "NVDA", "Jensen Huang", "Jen-Hsun Huang", "H20", "H200"],
+      "events": [
+        {"type": "leadership", "date": "2026-11-12", "label": "CEO transition and permanent successor search", "gates": ["management_governance", "counter_thesis", "earnings_validation"]},
+        {"type": "governance", "date": "2026-11-10", "label": "Independent board investigation", "gates": ["management_governance", "reputation_risk", "counter_thesis"]},
+        {"type": "earnings", "date": "2026-11-17", "label": "Q3 FY2027 earnings and management outlook", "gates": ["earnings_validation", "valuation", "customer_dependency", "cash_generation"]}
+      ]
+    },
+    {
       "ticker": "TEM",
       "aliases": ["Tempus AI", "Tempus"],
       "events": [
@@ -62,6 +71,38 @@
         {"type": "earnings", "date": null, "label": "Q4/FY 2026 earnings", "gates": ["earnings_validation", "cash_generation", "test_volume", "valuation"]},
         {"type": "regulatory", "date": null, "label": "Shield coverage and regulatory updates", "gates": ["customer_dependency", "regulatory_path", "falsifiers"]}
       ]
+    },
+    {
+      "ticker": "GEHC",
+      "aliases": ["GE HealthCare", "GE Healthcare", "GE Medical Systems"],
+      "events": [
+        {"type": "regulatory", "date": null, "label": "FDA AI imaging device additions", "gates": ["chokepoint_evidence", "customer_dependency", "earnings_validation"]},
+        {"type": "earnings", "date": null, "label": "AI product adoption and imaging growth update", "gates": ["earnings_validation", "pure_play", "customer_dependency"]}
+      ]
+    },
+    {
+      "ticker": "RDNT",
+      "aliases": ["RadNet", "DeepHealth", "Aidence", "Saige-Dx"],
+      "events": [
+        {"type": "regulatory", "date": null, "label": "DeepHealth FDA device additions", "gates": ["chokepoint_evidence", "multi_node_control", "customer_dependency"]},
+        {"type": "earnings", "date": null, "label": "DeepHealth revenue and imaging integration update", "gates": ["earnings_validation", "pure_play", "cash_generation"]}
+      ]
+    },
+    {
+      "ticker": "ISRG",
+      "aliases": ["Intuitive Surgical", "da Vinci", "Ion", "IRISeg"],
+      "events": [
+        {"type": "regulatory", "date": null, "label": "AI-enabled surgical workflow authorization", "gates": ["chokepoint_evidence", "multi_node_control", "customer_dependency"]},
+        {"type": "earnings", "date": null, "label": "procedure growth and recurring instrument revenue", "gates": ["earnings_validation", "customer_dependency", "valuation"]}
+      ]
+    },
+    {
+      "ticker": "IQV",
+      "aliases": ["IQVIA"],
+      "events": [
+        {"type": "partnership", "date": null, "label": "AI clinical-development customer adoption", "gates": ["customer_dependency", "chokepoint_evidence", "multi_node_control"]},
+        {"type": "earnings", "date": null, "label": "technology and analytics growth update", "gates": ["earnings_validation", "pure_play", "valuation"]}
+      ]
     }
   ],
   "event_keywords": {
@@ -70,6 +111,9 @@
     "regulatory": ["fda", "approval", "clearance", "regulatory", "registrational"],
     "partnership": ["collaboration", "partnership", "option", "milestone", "licensing"],
     "financing": ["public offering", "dilution", "financing", "cash runway", "common shares", "s-3", "424b"],
-    "integration": ["acquisition", "merger", "shareholder vote", "integration"]
+    "integration": ["acquisition", "merger", "shareholder vote", "integration"],
+    "leadership": ["ceo transition", "chief executive", "resignation", "resigned", "successor", "interim ceo", "辞职", "首席执行官"],
+    "governance": ["board investigation", "independent investigation", "foreign intelligence effort", "governance", "董事会调查", "独立调查"],
+    "reputational": ["affair", "scandal", "misconduct", "espionage", "spy allegation", "丑闻", "婚外情", "间谍指控"]
   }
 }

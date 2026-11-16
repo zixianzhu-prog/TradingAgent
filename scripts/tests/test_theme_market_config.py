@@ -26,6 +26,18 @@ class ThemeMarketConfigTests(unittest.TestCase):
             self.assertEqual(selected, ["HIGH", "LOW"])
             self.assertEqual(json.loads(output.read_text())["watchlist"], ["HIGH", "LOW"])
 
+    def test_explicit_coverage_ticker_is_kept_when_news_link_is_weak(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            report, base, output = root / "theme.json", root / "base.json", root / "output.json"
+            report.write_text(json.dumps({"companies": [
+                {"ticker": "TEM", "theme": "ai_medicine", "decision": "deep-research", "transmission_score": 80},
+                {"ticker": "GEHC", "theme": "ai_medicine", "decision": "weak-link", "transmission_score": 20},
+            ]}), encoding="utf-8")
+            base.write_text(json.dumps({"watchlist": [], "max_positions": 5}), encoding="utf-8")
+            selected = build_config(str(report), str(base), str(output), 2, "ai_medicine", include_tickers=["GEHC"])
+            self.assertEqual(selected, ["TEM", "GEHC"])
+
 
 if __name__ == "__main__":
     unittest.main()

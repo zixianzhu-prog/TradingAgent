@@ -14,6 +14,14 @@
   },
   "companies": [
     {
+      "ticker": "NVDA", "name": "NVIDIA", "company_terms": ["NVIDIA", "NVDA"],
+      "product_terms": ["H20", "H200", "Blackwell", "data center", "AI accelerator", "export control", "export license"],
+      "trusted_sources": ["nvidia.com", "sec.gov", "bis.gov", "commerce.gov", "federalregister.gov"],
+      "official_sources": [
+        "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Second-Quarter-Fiscal-2027/default.aspx"
+      ]
+    },
+    {
       "ticker": "TEM", "name": "Tempus AI", "company_terms": ["Tempus AI", "Tempus"],
       "product_terms": ["precision medicine", "clinical data", "molecular data", "diagnostics"],
       "trusted_sources": ["tempus.com", "sec.gov", "fda.gov"]
@@ -52,6 +60,42 @@
       "ticker": "GH", "name": "Guardant Health", "company_terms": ["Guardant Health"],
       "product_terms": ["Guardant360", "Guardant Reveal", "Shield", "liquid biopsy"],
       "trusted_sources": ["guardanthealth.com", "sec.gov", "fda.gov"]
+    },
+    {
+      "ticker": "GEHC", "name": "GE HealthCare Technologies", "company_terms": ["GE HealthCare", "GE Healthcare", "GE Medical Systems"],
+      "product_terms": ["AI medical imaging", "CT", "MRI", "ultrasound", "Critical Care Suite"],
+      "trusted_sources": ["gehealthcare.com", "sec.gov", "fda.gov"],
+      "official_sources": [
+        "https://investor.gehealthcare.com/news-releases/news-release-details/ge-healthcare-reports-third-quarter-2026-financial-results",
+        "https://investor.gehealthcare.com/static-files/5baf90ea-64d0-4ec1-ba22-505912df8e07"
+      ]
+    },
+    {
+      "ticker": "RDNT", "name": "RadNet / DeepHealth", "company_terms": ["RadNet", "DeepHealth", "Aidence"],
+      "product_terms": ["AI medical imaging", "mammography", "Saige-Dx", "diagnostic imaging"],
+      "trusted_sources": ["radnet.com", "deephealth.com", "sec.gov", "fda.gov"],
+      "official_sources": [
+        "https://www.radnet.com/newsroom/press-releases/q3-2026-results",
+        "https://www.radnet.com/about/history"
+      ]
+    },
+    {
+      "ticker": "ISRG", "name": "Intuitive Surgical", "company_terms": ["Intuitive Surgical"],
+      "product_terms": ["da Vinci", "Ion", "robotic surgery", "IRISeg"],
+      "trusted_sources": ["intuitive.com", "sec.gov", "fda.gov"],
+      "official_sources": [
+        "https://isrg.intuitive.com/news-releases/news-release-details/intuitive-announces-third-quarter-earnings-6",
+        "https://isrg.intuitive.com/static-files/42b1fa2c-4c6e-4dd7-90b9-acceda8baded"
+      ]
+    },
+    {
+      "ticker": "IQV", "name": "IQVIA", "company_terms": ["IQVIA"],
+      "product_terms": ["clinical trials", "real world data", "clinical data", "AI clinical development"],
+      "trusted_sources": ["iqvia.com", "sec.gov", "clinicaltrials.gov"],
+      "official_sources": [
+        "https://ir.iqvia.com/press-releases/press-release-details/2026/IQVIA-Reports-Third-Quarter-2026-Results/default.aspx",
+        "https://www.sec.gov/Archives/edgar/data/1478242/000162828026067646/iqv-20260930.htm"
+      ]
     },
     {
       "ticker": "MRNA",

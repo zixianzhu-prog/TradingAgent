@@ -6,6 +6,23 @@ from .config import ThemeConfig
 from .models import Article, ThemeResult
 
 
+HIGH_MATERIALITY_TERMS = (
+    "ceo", "resign", "resignation", "transition", "board", "investigation",
+    "affair", "scandal", "espionage", "intelligence", "earnings", "sec filing",
+    "export control", "license", "inventory charge", "customer", "partnership",
+    "监管", "辞职", "董事会", "调查", "婚外情", "丑闻", "财报", "出口管制",
+)
+
+
+def _evidence_priority(article: Article) -> tuple[int, str]:
+    text = f"{article.title} {article.content}".lower()
+    priority = sum(4 for term in HIGH_MATERIALITY_TERMS if term in text)
+    source = article.source.lower()
+    if any(marker in source for marker in ("sec", "investor", "nvidia news", "company ir", "regulator")):
+        priority += 10
+    return priority, article.published_at
+
+
 def score_theme(theme: ThemeConfig, articles: list[Article]) -> ThemeResult:
     matched_articles: list[tuple[Article, list[str], list[str]]] = []
     term_counts: Counter[str] = Counter()
@@ -41,16 +58,18 @@ def score_theme(theme: ThemeConfig, articles: list[Article]) -> ThemeResult:
     else:
         status = "weak"
 
+    ranked_evidence = sorted(matched_articles, key=lambda row: _evidence_priority(row[0]), reverse=True)
     evidence = tuple(
         {
             "title": article.title,
             "url": article.url,
             "source": article.source,
             "published_at": article.published_at,
+            "content_excerpt": article.content[:1200],
             "matched_terms": matched,
             "counter_terms": counters,
         }
-        for article, matched, counters in matched_articles[:10]
+        for article, matched, counters in ranked_evidence[:10]
     )
     return ThemeResult(
         name=theme.name,

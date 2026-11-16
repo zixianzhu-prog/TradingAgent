@@ -12,6 +12,11 @@
 | NTRA | verified | 3 | 0 | 1 |
 | SOPH | insufficient-xbrl | 0 | 0 | 4 |
 | GH | verified | 2 | 0 | 2 |
+| GEHC | verified | 3 | 0 | 1 |
+| RDNT | verified | 3 | 0 | 1 |
+| ISRG | verified | 3 | 0 | 1 |
+| IQV | verified | 3 | 0 | 1 |
+| NVDA | verified | 3 | 0 | 1 |
 
 ## TEM · verified
 
@@ -100,3 +105,58 @@
 | 季度净利润/亏损 | — | — | — | unavailable | — |
 | 现金及短期投资 | 1100.0 | — | — | unavailable | — |
 | 流通股份 | 135285975.0 | 135285975.0 | 0.0 | pass | dei:EntityCommonStockSharesOutstanding |
+
+## GEHC · verified
+
+[SEC Company Facts 原始 JSON](https://data.sec.gov/api/xbrl/companyfacts/CIK0001932393.json)
+
+| 指标 | 本地值 | SEC值 | 差异 | 结果 | XBRL标签 |
+| --- | ---: | ---: | ---: | --- | --- |
+| 季度收入 | 5512.0 | 5513.0 | -1.0 | pass | us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax |
+| 季度净利润/亏损 | 615.0 | 615.0 | 0.0 | pass | us-gaap:NetIncomeLoss |
+| 现金及短期投资 | 2854.0 | — | — | unavailable | — |
+| 流通股份 | 453000000.0 | 452137831.0 | 862169.0 | pass | dei:EntityCommonStockSharesOutstanding |
+
+## RDNT · verified
+
+[SEC Company Facts 原始 JSON](https://data.sec.gov/api/xbrl/companyfacts/CIK0000790526.json)
+
+| 指标 | 本地值 | SEC值 | 差异 | 结果 | XBRL标签 |
+| --- | ---: | ---: | ---: | --- | --- |
+| 季度收入 | 638.3 | 638.257 | 0.043000000000006366 | pass | us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax |
+| 季度净利润/亏损 | 4.2 | 4.153 | 0.0470000000000006 | pass | us-gaap:NetIncomeLoss |
+| 现金及短期投资 | 750.6 | — | — | unavailable | — |
+| 流通股份 | 79200000.0 | 78774892.0 | 425108.0 | pass | dei:EntityCommonStockSharesOutstanding |
+
+## ISRG · verified
+
+[SEC Company Facts 原始 JSON](https://data.sec.gov/api/xbrl/companyfacts/CIK0001035267.json)
+
+| 指标 | 本地值 | SEC值 | 差异 | 结果 | XBRL标签 |
+| --- | ---: | ---: | ---: | --- | --- |
+| 季度收入 | 3048.7 | 3048.7 | 0.0 | pass | us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax |
+| 季度净利润/亏损 | 523.0 | 522.8 | 0.20000000000004547 | pass | us-gaap:NetIncomeLoss |
+| 现金及短期投资 | 6800.4 | — | — | unavailable | — |
+| 流通股份 | 351600000.0 | 346643718.0 | 4956282.0 | pass | dei:EntityCommonStockSharesOutstanding |
+
+## IQV · verified
+
+[SEC Company Facts 原始 JSON](https://data.sec.gov/api/xbrl/companyfacts/CIK0001478242.json)
+
+| 指标 | 本地值 | SEC值 | 差异 | 结果 | XBRL标签 |
+| --- | ---: | ---: | ---: | --- | --- |
+| 季度收入 | 4428.0 | 4428.0 | 0.0 | pass | us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax |
+| 季度净利润/亏损 | 350.0 | 350.0 | 0.0 | pass | us-gaap:NetIncomeLoss |
+| 现金及短期投资 | 2249.0 | — | — | unavailable | — |
+| 流通股份 | 167000000.0 | 164800000.0 | 2200000.0 | pass | dei:EntityCommonStockSharesOutstanding |
+
+## NVDA · verified
+
+[SEC Company Facts 原始 JSON](https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json)
+
+| 指标 | 本地值 | SEC值 | 差异 | 结果 | XBRL标签 |
+| --- | ---: | ---: | ---: | --- | --- |
+| 季度收入 | 96221.0 | 96221.0 | 0.0 | pass | us-gaap:Revenues |
+| 季度净利润/亏损 | 59688.0 | 59688.0 | 0.0 | pass | us-gaap:NetIncomeLoss |
+| 现金及短期投资 | 99369.0 | — | — | unavailable | — |
+| 流通股份 | 24285000000.0 | 24100000000.0 | 185000000.0 | pass | dei:EntityCommonStockSharesOutstanding |

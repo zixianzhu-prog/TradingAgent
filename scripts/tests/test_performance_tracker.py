@@ -7,27 +7,37 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from performance_tracker import backfill_outcomes, connect, record_cohort_history, record_predictions
+from benchmark_evaluator import create_table
+from performance_tracker import build_report, connect, record_cohort_history, record_predictions
 
 
 class PerformanceTrackerTests(unittest.TestCase):
-    def test_backfills_only_when_future_observation_exists(self):
+    def test_report_uses_trading_day_outcomes_not_agent_run_gaps(self):
+        """A skipped agent run must not stretch a 1-day outcome across several days."""
         with tempfile.TemporaryDirectory() as directory:
-            connection = connect(str(Path(directory) / "history.db"))
-            start = date(2026, 1, 1)
-            for offset in range(6):
+            root = Path(directory)
+            connection = connect(str(root / "history.db"))
+            # Agent ran on 11-04 and next on 11-09 (two trading days skipped).
+            for day, price in (("2026-11-04", 100.0), ("2026-11-09", 130.0)):
                 connection.execute(
                     "INSERT INTO predictions VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-                    ("TEST", str(start + timedelta(days=offset)), 100 + offset, 70, 80, 60, 0.1,
-                     75, 65, 0.03, 72, "high", "watch", "now"),
+                    ("TEST", day, price, 70, 80, 60, 0.1, 75, 65, 0.03, 72, "high", "watch", "now"),
                 )
             connection.commit()
-            self.assertEqual(backfill_outcomes(connection), 6)
-            horizons = connection.execute(
-                "SELECT horizon, COUNT(*) FROM outcomes GROUP BY horizon ORDER BY horizon"
-            ).fetchall()
-            self.assertEqual([(row[0], row[1]) for row in horizons], [(1, 5), (5, 1)])
-            self.assertEqual(backfill_outcomes(connection), 0)
+            build_report(connection, str(root / "empty.md"))
+            self.assertIn("| 1 | 0 |", (root / "empty.md").read_text(encoding="utf-8"))
+            create_table(connection)
+            connection.execute(
+                """INSERT INTO benchmark_outcomes (ticker, prediction_as_of, horizon, target_as_of, target_price,
+                realized_return, spy_return, xlv_return, xbi_return, excess_spy, excess_xlv, excess_xbi,
+                direction_correct, evaluated_at) VALUES ('TEST', '2026-11-04', 1, '2026-11-05', 101, 0.01,
+                0, 0, 0.005, 0.01, 0.01, 0.005, 1, 'now')"""
+            )
+            connection.commit()
+            build_report(connection, str(root / "report.md"))
+            text = (root / "report.md").read_text(encoding="utf-8")
+            self.assertIn("| 1 | 1 | +1.00% | +0.50% |", text)
+            self.assertNotIn("+30.00%", text)
             connection.close()
 
     def test_cohort_history_uses_saved_market_artifacts(self):

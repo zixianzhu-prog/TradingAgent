@@ -1,0 +1,11 @@
+{
+  "note": "Broad health and biotech radar feeds for the emerging-signal detector. They are not filtered by any preset theme, so new topics can surface before anyone writes a keyword for them. Stored in state/radar-news.db so they do not change the AI-medicine scores.",
+  "sources": [
+    {"name": "WHO News", "url": "https://www.who.int/rss-feeds/news-english.xml", "enabled": true, "timeout": 30, "max_items": 200, "authority": true},
+    {"name": "medRxiv", "url": "https://connect.medrxiv.org/medrxiv_xml.php?subject=all", "enabled": true, "timeout": 30, "max_items": 300, "authority": true},
+    {"name": "bioRxiv", "url": "https://connect.biorxiv.org/biorxiv_xml.php?subject=all", "enabled": true, "timeout": 30, "max_items": 300, "authority": true},
+    {"name": "STAT News", "url": "https://www.statnews.com/feed/", "enabled": true, "timeout": 20, "max_items": 100},
+    {"name": "STAT Biotech", "url": "https://www.statnews.com/category/biotech/feed/", "enabled": true, "timeout": 20, "max_items": 100},
+    {"name": "BioPharma Dive", "url": "https://www.biopharmadive.com/feeds/news/", "enabled": true, "timeout": 20, "max_items": 100}
+  ]
+}

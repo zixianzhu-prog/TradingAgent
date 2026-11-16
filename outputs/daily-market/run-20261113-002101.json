@@ -1,0 +1,91 @@
+{
+  "generated_at": "2026-11-13T05:20:33.926784+00:00",
+  "mode": "dry-run",
+  "data_provider": "openbb",
+  "results": [
+    {
+      "signal": {
+        "ticker": "MRNA",
+        "score": 1.0,
+        "direction": "buy",
+        "price": 231.35000610351562,
+        "stop_price": 191.24200221470426,
+        "reasons": [
+          "close=231.35",
+          "MA20=230.21",
+          "MA50=200.18",
+          "ATR14=20.05",
+          "Kronos5D=+7.06%"
+        ],
+        "as_of": "2026-11-12"
+      },
+      "order": {
+        "ticker": "MRNA",
+        "side": "buy",
+        "quantity": 24,
+        "reference_price": 231.35000610351562,
+        "stop_price": 191.24200221470426,
+        "take_profit_price": 311.56601388113836,
+        "signal_score": 1.0,
+        "reasons": [
+          "close=231.35",
+          "MA20=230.21",
+          "MA50=200.18",
+          "ATR14=20.05",
+          "Kronos5D=+7.06%"
+        ]
+      },
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "DHR",
+        "score": 1.0,
+        "direction": "buy",
+        "price": 232.16000366210938,
+        "stop_price": 219.26715087890625,
+        "reasons": [
+          "close=232.16",
+          "MA20=231.42",
+          "MA50=222.07",
+          "ATR14=6.45",
+          "Kronos5D=+0.24%"
+        ],
+        "as_of": "2026-11-12"
+      },
+      "order": {
+        "ticker": "DHR",
+        "side": "buy",
+        "quantity": 77,
+        "reference_price": 232.16000366210938,
+        "stop_price": 219.26715087890625,
+        "take_profit_price": 257.9457092285156,
+        "signal_score": 1.0,
+        "reasons": [
+          "close=232.16",
+          "MA20=231.42",
+          "MA50=222.07",
+          "ATR14=6.45",
+          "Kronos5D=+0.24%"
+        ]
+      },
+      "fill": null
+    }
+  ],
+  "kronos": {
+    "MRNA": {
+      "last_close": 231.35000610351562,
+      "predicted_close": 247.69461059570312,
+      "forecast_return": 0.07064881807210432
+    },
+    "DHR": {
+      "last_close": 232.16000366210938,
+      "predicted_close": 232.72500610351562,
+      "forecast_return": 0.0024336769146013904
+    }
+  },
+  "portfolio": {
+    "cash": 100000.0,
+    "positions": {}
+  }
+}

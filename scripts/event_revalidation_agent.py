@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import sqlite3
 from datetime import date, datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
@@ -45,6 +46,34 @@ def information_timing(article: dict) -> dict:
     }
 
 
+def validate_article_timing(article: dict, today: date) -> dict:
+    """Quarantine impossible dates before an event can stale research gates."""
+    published = parse_timestamp(article.get("published_at"))
+    discovered = parse_timestamp(article.get("discovered_at"))
+    reasons = []
+    if published and published.date() > today:
+        reasons.append("published-after-as-of")
+    if discovered and discovered.date() > today:
+        reasons.append("discovered-after-as-of")
+    if published and discovered and published > discovered + timedelta(days=1):
+        reasons.append("published-materially-after-discovery")
+    if reasons:
+        status = "quarantined"
+    elif not published:
+        status = "discovery-time-only"
+    elif not discovered:
+        status = "publisher-time-only"
+    else:
+        status = "verified-ordering"
+    return {
+        "status": status,
+        "reasons": reasons,
+        "publishedAt": published.isoformat() if published else None,
+        "discoveredAt": discovered.isoformat() if discovered else None,
+        "asOf": today.isoformat(),
+    }
+
+
 def event_status(event_date: str | None, today: date) -> tuple[str, int | None]:
     if not event_date:
         return "unscheduled", None
@@ -58,15 +87,29 @@ def event_status(event_date: str | None, today: date) -> tuple[str, int | None]:
     return "scheduled", delta
 
 
+def mentions(text: str, term: str) -> bool:
+    """Whole-word match for company names, aliases and tickers.
+
+    Plain substring matching let the alias "Ion" (Intuitive's bronchoscopy
+    platform) hit "regulation" and "administration", attaching unrelated FDA and
+    arXiv items to ISRG. Short terms (<=4 chars, e.g. "Ion", "TEM") must also match
+    case exactly so ordinary words such as "ion" or "tem" do not count.
+    """
+    if not term:
+        return False
+    flags = 0 if len(term) <= 4 else re.IGNORECASE
+    return re.search(rf"(?<![A-Za-z0-9]){re.escape(term)}(?![A-Za-z0-9])", text, flags) is not None
+
+
 def classify(text: str, keyword_map: dict[str, list[str]]) -> list[str]:
     lowered = text.lower()
     return [kind for kind, words in keyword_map.items() if any(word.lower() in lowered for word in words)]
 
 
 def materiality(article: dict, company: dict, kinds: list[str], today: date) -> tuple[int, list[str]]:
-    text = f"{article['title']} {article.get('content', '')}".lower()
-    direct_ticker = company["ticker"].lower() in text
-    alias_match = any(alias.lower() in text for alias in company["aliases"])
+    text = f"{article['title']} {article.get('content', '')}"
+    direct_ticker = mentions(text, company["ticker"])
+    alias_match = any(mentions(text, alias) for alias in company["aliases"])
     source_company_match = article.get("source", "").lower().startswith(f"sec {company['ticker'].lower()} ")
     reasons = []
     score = 0
@@ -106,6 +149,9 @@ def affected_gates(company: dict, kinds: list[str]) -> list[str]:
         "partnership": ["customer_dependency", "partner_economics"],
         "financing": ["cash_runway", "dilution", "valuation"],
         "integration": ["integration_execution", "valuation"],
+        "leadership": ["management_governance", "counter_thesis", "earnings_validation"],
+        "governance": ["management_governance", "reputation_risk", "counter_thesis"],
+        "reputational": ["management_governance", "reputation_risk", "counter_thesis"],
     }
     for kind in kinds:
         gates.update(defaults.get(kind, []))
@@ -116,7 +162,9 @@ def build(config: dict, articles: list[dict], today: date) -> dict:
     threshold = int(config.get("materiality_threshold", 60))
     scheduled = []
     tasks = []
+    quarantined = []
     seen_tasks: set[str] = set()
+    seen_quarantine: set[str] = set()
     for company in config["companies"]:
         for event in company.get("events", []):
             status, days = event_status(event.get("date"), today)
@@ -124,12 +172,31 @@ def build(config: dict, articles: list[dict], today: date) -> dict:
                 status = "evidence-received"
             scheduled.append({"ticker": company["ticker"], **event, "status": status, "daysUntil": days})
         for article in articles:
+            # Academic preprints mention companies as tools ("trained on NVIDIA GPUs"); they are
+            # not events about the company and must not reopen its Serenity gates.
+            if any(marker in article.get("source", "").lower() for marker in ("arxiv", "biorxiv", "medrxiv")):
+                continue
             text = f"{article['title']} {article.get('content', '')}"
             source_company_match = article.get("source", "").lower().startswith(f"sec {company['ticker'].lower()} ")
-            if not source_company_match and not any(alias.lower() in text.lower() for alias in company["aliases"]):
+            if not source_company_match and not any(mentions(text, alias) for alias in company["aliases"]):
                 continue
             kinds = classify(text, config["event_keywords"])
             if not kinds:
+                continue
+            timing_validation = validate_article_timing(article, today)
+            if timing_validation["status"] == "quarantined":
+                quarantine_id = hashlib.sha256(f"{article['url']}|{article['title']}".encode()).hexdigest()[:16]
+                if quarantine_id not in seen_quarantine:
+                    seen_quarantine.add(quarantine_id)
+                    quarantined.append({
+                        "eventId": quarantine_id,
+                        "ticker": company["ticker"],
+                        "title": article["title"],
+                        "url": article["url"],
+                        "source": article["source"],
+                        "dateValidation": timing_validation,
+                        "status": "quarantined-date",
+                    })
                 continue
             score, reasons = materiality(article, company, kinds, today)
             if score < threshold:
@@ -147,6 +214,7 @@ def build(config: dict, articles: list[dict], today: date) -> dict:
                 "url": article["url"],
                 "source": article["source"],
                 **information_timing(article),
+                "dateValidation": timing_validation,
                 "affectedGates": affected_gates(company, kinds),
                 "reasons": reasons,
                 "status": "pending-revalidation",
@@ -165,10 +233,12 @@ def build(config: dict, articles: list[dict], today: date) -> dict:
         "method": "Deterministic event matching, conservative information timing and materiality scoring; tasks request research revalidation and never place orders.",
         "scheduledEvents": scheduled,
         "revalidationTasks": tasks,
+        "quarantinedEvents": quarantined,
         "summary": {
             "dueSoon": sum(row["status"] in {"due-soon", "overdue-awaiting-evidence"} for row in scheduled),
             "evidenceReceived": sum(row["status"] == "evidence-received" for row in scheduled),
             "pendingTasks": len(tasks),
+            "quarantinedDates": len(quarantined),
             "companies": len(config["companies"]),
         },
     }
@@ -192,7 +262,7 @@ def write_report(payload: dict, output: str) -> None:
     lines = [
         "# 事件驱动重新验证队列", "",
         f"生成日期：{payload['asOf']}", "",
-        "> 事件只触发重新研究，不会自动改变评级、仓位或创建交易。", "",
+        "> 事件只触发重新研究，不会自动改变评级、仓位或创建交易。发布时间、发现时间或as-of不一致的事件会被隔离，不能使Serenity门槛失效。", "",
         "## 事件日历", "",
         "| 股票 | 事件 | 日期 | 状态 | 重新检查 |", "| --- | --- | --- | --- | --- |",
     ]
@@ -207,9 +277,15 @@ def write_report(payload: dict, output: str) -> None:
             f"- [{row['title']}]({row['url']})",
             f"- 事件类型：{', '.join(row['eventTypes']) or 'unclassified'}",
             f"- 信息可用：{row['knowledgeAt']}；最早进入研究：{row['firstEligibleResearchDate']}",
+            f"- 日期校验：{row['dateValidation']['status']}",
             f"- 重新检查：{', '.join(row['affectedGates'])}",
             f"- 触发原因：{'；'.join(row['reasons'])}", "",
         ]
+    lines += ["", "## 日期异常隔离", ""]
+    if not payload.get("quarantinedEvents"):
+        lines.append("当前没有日期异常事件。")
+    for row in payload.get("quarantinedEvents", []):
+        lines.append(f"- {row['ticker']} · [{row['title']}]({row['url']}) · {', '.join(row['dateValidation']['reasons'])}")
     Path(output).write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 

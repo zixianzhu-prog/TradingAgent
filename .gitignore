@@ -6,6 +6,7 @@
 **/.env.*
 
 # API keys and credentials
+.secrets/
 *.pem
 *.key
 credentials*

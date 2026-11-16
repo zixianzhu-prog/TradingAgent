@@ -23,7 +23,12 @@
       "sources": [
         "https://investors.tempus.com/news/news-details/2026/Tempus-Reports-Second-Quarter-2026-Results-07-30-2026/default.aspx",
         "https://investors.tempus.com/files/doc_financials/2026/q3/TEM-Q3-26-Financial-Results_11-1.pdf"
-      ]
+      ],
+      "long_term_case": {
+        "edge": "Diagnostics, clinical records and molecular data in one network; each test can make its models more useful.",
+        "counter": "Sole-source Illumina sequencers; about a fifth of last quarter's data revenue came from related party Pathos; debt exceeds cash.",
+        "next_check": "Next quarterly report: data-and-services growth and the Pathos share of data revenue."
+      }
     },
     {
       "rank": 2,
@@ -47,7 +52,12 @@
         "https://ir.schrodinger.com/press-releases/news-details/2026/Schrdinger-Reports-Fourth-Quarter-and-Full-Year-2025-Financial-Results/default.aspx",
         "https://clinicaltrials.gov/study/NCT05544019",
         "https://clinicaltrials.gov/study/NCT05961839"
-      ]
+      ],
+      "long_term_case": {
+        "edge": "Physics-based drug-design software used by all top-20 pharma with 96% customer retention.",
+        "counter": "Software growth slowed to 6%; pharma could build similar tools in-house.",
+        "next_check": "Next quarterly report: software contract value and retention."
+      }
     },
     {
       "rank": 5,
@@ -117,7 +127,12 @@
         "https://ir.certara.com/",
         "https://ir.certara.com/news-releases/news-release-details/certara-reports-third-quarter-2026-financial-results",
         "https://ir.certara.com/static-files/b8db7767-72ec-468e-9999-cd2b710d2f36"
-      ]
+      ],
+      "long_term_case": {
+        "edge": "Biosimulation software licensed by about 20 drug regulators including FDA, a standard that is hard to displace.",
+        "counter": "Modest growth; AI is embedded rather than core; $295.5M credit-agreement debt.",
+        "next_check": "Next quarterly report: organic software growth back above high single digits."
+      }
     },
     {
       "rank": 4,
@@ -139,7 +154,12 @@
       "sources": [
         "https://investor.natera.com/overview/",
         "https://investor.natera.com/news/news-details/2026/Natera-Reports-Third-Quarter-2026-Financial-Results/default.aspx"
-      ]
+      ],
+      "long_term_case": {
+        "edge": "Test volume, Medicare ADLT pricing for its MRD test and clinical adoption give it scale competitors lack.",
+        "counter": "AI is auxiliary rather than core; heavy stock compensation and dilution.",
+        "next_check": "Next quarterly report: MRD volume growth and reimbursement changes."
+      }
     },
     {
       "rank": 6,
@@ -162,7 +182,12 @@
         "https://ir.sophiagenetics.com/",
         "https://ir.sophiagenetics.com/2026-11-03-SOPHiA-GENETICS-Reports-Third-Quarter-2026-Results",
         "https://www.sec.gov/Archives/edgar/data/1840706/000184070626000350/sophiageneticssaex992q32026.htm"
-      ]
+      ],
+      "long_term_case": {
+        "edge": "Sequencer-agnostic analysis platform spreading across hospital labs.",
+        "counter": "Repeated dilution and high-cost debt; hospitals keep control of their data.",
+        "next_check": "Next quarterly report: revenue growth versus cash runway."
+      }
     },
     {
       "rank": 7,
@@ -185,6 +210,223 @@
         "https://investors.guardanthealth.com/",
         "https://investors.guardanthealth.com/press-releases/press-releases/2026/Guardant-Health-Reports-Third-Quarter-2026-Financial-Results-and-Increases-2026-Revenue-Guidance/default.aspx"
       ]
+    }
+  ],
+  "ranking_scope": "The numbered ranking covers the original eight direct/pure-play AI-medicine candidates only. It is not a full-market ranking and must not be presented as one.",
+  "expanded_deep_dives": [
+    {
+      "ticker": "GEHC",
+      "company": "GE HealthCare Technologies",
+      "classification": "scaled imaging platform — expanded deep dive",
+      "thesis": "GE HealthCare combines a large hospital installed base, imaging hardware, service relationships and an extensive FDA AI-device footprint. Its potential advantage is distribution and workflow integration, not a single algorithm.",
+      "why_now": "Q3 2026 revenue grew 7.2%, backlog was $23.7 billion and the FDA mapping identified 107 AI-enabled device records under GE manufacturer names.",
+      "serenity_angle": "A multi-node distribution and workflow platform, but not a pure AI play; the open question is whether AI raises replacement demand, attachment revenue or pricing power.",
+      "risks": "Diversified exposure, hospital capital cycles, $10 billion of debt, acquisition execution and strong imaging competition.",
+      "validation_gates": "Require product-level adoption, AI-linked revenue or order evidence, recurring service attachment, customer retention and margin contribution.",
+      "bear_case": "AI becomes a standard imaging feature shared by all major OEMs, producing no durable pricing power while debt and capital intensity reduce equity upside.",
+      "falsifiers": [
+        "AI products do not improve orders, attachment or margins",
+        "Backlog weakens for two consecutive quarters",
+        "Competitors match key functionality without meaningful switching cost"
+      ],
+      "competitors": [
+        "Siemens Healthineers",
+        "Philips",
+        "Canon Medical",
+        "United Imaging"
+      ],
+      "sources": [
+        "https://investor.gehealthcare.com/news-releases/news-release-details/ge-healthcare-reports-third-quarter-2026-financial-results",
+        "https://www.fda.gov/medical-devices/artificial-intelligence-enabled-medical-devices/list-artificial-intelligence-enabled-medical-devices"
+      ]
+    },
+    {
+      "ticker": "RDNT",
+      "company": "RadNet / DeepHealth",
+      "classification": "vertically integrated imaging challenger — expanded deep dive",
+      "thesis": "RadNet links real imaging centers, patient workflow, image data and DeepHealth software. That vertical loop may create a more defensible learning and distribution advantage than a standalone radiology algorithm vendor.",
+      "why_now": "Q3 2026 total revenue grew 22.1%; Digital Health revenue grew 32.6% to $32.9 million, while the FDA mapping identified nine DeepHealth/Aidence records.",
+      "serenity_angle": "Controls multiple connected nodes—care delivery, workflow, data and AI software—but Digital Health is still a small share of total revenue and must prove independent economics.",
+      "risks": "Acquisition integration, capital intensity, R&D spending, limited Digital Health profit, reimbursement and competition from OEMs and independent AI vendors.",
+      "validation_gates": "Track Digital Health revenue share, segment EBITDA after AI R&D, external customer growth, center deployment, free cash flow and leverage.",
+      "bear_case": "The imaging-center business drives most value while DeepHealth remains a costly feature set with weak external pricing power.",
+      "falsifiers": [
+        "Digital Health growth falls below core imaging growth",
+        "Segment cash flow remains negative after integration",
+        "External customers do not expand beyond RadNet's own network"
+      ],
+      "competitors": [
+        "GE HealthCare",
+        "Siemens Healthineers",
+        "Aidoc",
+        "Lunit",
+        "Hologic"
+      ],
+      "sources": [
+        "https://www.radnet.com/newsroom/press-releases/q3-2026-results",
+        "https://www.radnet.com/about/history",
+        "https://www.fda.gov/medical-devices/artificial-intelligence-enabled-medical-devices/list-artificial-intelligence-enabled-medical-devices"
+      ]
+    },
+    {
+      "ticker": "ISRG",
+      "company": "Intuitive Surgical",
+      "classification": "robotic-surgery compounder — expanded deep dive",
+      "thesis": "Intuitive's installed systems, surgeon workflow, recurring instruments and procedure data form a durable platform. AI can enhance planning and assistance, but the current investment case remains robotic surgery rather than pure AI medicine.",
+      "why_now": "Q3 2026 revenue grew 22%, procedure volume grew about 15%, da Vinci installed base reached 12,094 and instruments/accessories generated $1.80 billion.",
+      "serenity_angle": "Strong customer workflow dependence and multiple revenue nodes; the main issue is valuation and whether AI creates incremental economics beyond the existing platform moat.",
+      "risks": "Premium valuation, emerging robotic competitors, hospital budgets, regulation, litigation and procedure-mix sensitivity.",
+      "validation_gates": "Track procedure growth, utilization per system, recurring revenue, new platform placements, gross margin and competitive win/loss evidence.",
+      "bear_case": "Robotic surgery remains excellent but already priced for sustained dominance, while AI adds little incremental revenue and competition compresses returns.",
+      "falsifiers": [
+        "Procedure growth falls below installed-base growth",
+        "Recurring instrument growth weakens materially",
+        "Competing systems reduce placements or utilization"
+      ],
+      "competitors": [
+        "Medtronic",
+        "Johnson & Johnson",
+        "Stryker",
+        "CMR Surgical"
+      ],
+      "sources": [
+        "https://isrg.intuitive.com/news-releases/news-release-details/intuitive-announces-third-quarter-earnings-6",
+        "https://isrg.intuitive.com/static-files/42b1fa2c-4c6e-4dd7-90b9-acceda8baded"
+      ],
+      "long_term_case": {
+        "edge": "Installed robots, trained surgeons, instruments it manufactures itself and procedure growth of 14%: an ecosystem rivals must rebuild.",
+        "counter": "AI is a feature, not the core; ~14x sales; a $450M antitrust settlement may open instrument servicing; China pricing.",
+        "next_check": "Next quarterly report: procedure growth versus installed-base growth."
+      }
+    },
+    {
+      "ticker": "IQV",
+      "company": "IQVIA",
+      "classification": "clinical-data and trial infrastructure — expanded deep dive",
+      "thesis": "IQVIA's healthcare data, clinical operations and commercial workflows create a broad information and execution layer across drug development. AI may improve margins and customer dependency, but its impact must be separated from the underlying CRO business.",
+      "why_now": "Q3 2026 revenue grew 8%, clinical bookings reached $3.2 billion and management reported more than 400 AI agents deployed.",
+      "serenity_angle": "A workflow and data chokepoint candidate with $34.2 billion of remaining performance obligations, offset by high leverage and diversified service exposure.",
+      "risks": "Net debt of $13.8 billion, pharma budget cycles, execution complexity, CRO competition and limited disclosure of AI-specific revenue.",
+      "validation_gates": "Track AI-agent customer adoption, R&D Solutions bookings, backlog conversion, organic growth, margin expansion, retention and net leverage.",
+      "bear_case": "AI primarily improves internal productivity without increasing customer pricing or growth, while leverage limits flexibility during a clinical-spending slowdown.",
+      "falsifiers": [
+        "AI adoption grows without measurable margin or booking benefit",
+        "Net leverage fails to decline",
+        "Backlog conversion or clinical win rates weaken"
+      ],
+      "competitors": [
+        "ICON",
+        "Thermo Fisher PPD",
+        "Fortrea",
+        "Syneos Health",
+        "Veeva",
+        "Flatiron Health"
+      ],
+      "sources": [
+        "https://ir.iqvia.com/press-releases/press-release-details/2026/IQVIA-Reports-Third-Quarter-2026-Results/default.aspx",
+        "https://www.sec.gov/Archives/edgar/data/1478242/000162828026067646/iqv-20260930.htm"
+      ]
+    },
+    {
+      "ticker": "NVDA",
+      "company": "NVIDIA",
+      "classification": "healthcare compute enabler — expanded deep dive",
+      "thesis": "NVIDIA supplies accelerated compute and software used in imaging and digital biology, but healthcare is not separately disclosed and cannot be valued as a pure AI-medicine business.",
+      "why_now": "Q2 FY2027 revenue reached $96.2 billion and Data Center revenue $89.0 billion; the scale validates infrastructure demand but not healthcare-specific economics.",
+      "serenity_angle": "An enabling platform rather than the narrow downstream medical chokepoint Serenity normally seeks. It is a benchmark and infrastructure exposure, not a like-for-like pure-play candidate.",
+      "risks": "Valuation, customer concentration, custom accelerators, export controls, supply-chain concentration and lack of healthcare revenue attribution.",
+      "validation_gates": "Require disclosed healthcare adoption, durable software dependency, customer economics and evidence that healthcare demand is material rather than promotional.",
+      "bear_case": "Healthcare use cases grow but remain immaterial to NVIDIA's valuation, while broader data-center cycles and regulation dominate stock returns.",
+      "falsifiers": [
+        "Healthcare remains undisclosed and immaterial",
+        "Customers shift workloads to custom accelerators or cloud abstractions",
+        "Broader AI infrastructure growth slows before healthcare becomes measurable"
+      ],
+      "competitors": [
+        "AMD",
+        "Google TPU",
+        "AWS Trainium",
+        "custom ASICs",
+        "cloud-managed AI platforms"
+      ],
+      "sources": [
+        "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Second-Quarter-Fiscal-2027/default.aspx"
+      ]
+    },
+    {
+      "ticker": "HTFL",
+      "company": "HeartFlow",
+      "classification": "news-triggered, Serenity-reviewed",
+      "thesis": "The closest thing to a reimbursement chokepoint in AI medicine: its AI coronary analysis is paid under a Category I CPT code, covered for about 99% of insured US lives and written into cardiology guidelines. Every CT scanner and hospital that adopts it makes it harder to displace.",
+      "why_now": "Q3 2026 revenue grew 57% with an 83.6% gross margin, and more than 1,800 institutions have adopted it.",
+      "serenity_angle": "A payment chokepoint: the scarce asset is the billing code, coverage and clinical evidence, not the algorithm alone.",
+      "bear_case": "At roughly fifteen times sales the price already assumes years of dominance; scanner makers or cheaper AI rivals could substitute the analysis.",
+      "falsifiers": [
+        "Revenue growth falls below 25% within four quarters",
+        "A scanner maker bundles an equivalent reimbursed analysis",
+        "CMS cuts the CPT 75580 payment rate"
+      ],
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1464521/000146452126000042/htfl-20251231x10k.htm",
+        "https://www.sec.gov/Archives/edgar/data/0001464521/000146452126000171/htfl-20261112xex99_1.htm"
+      ],
+      "long_term_case": {
+        "edge": "Category I billing code, ~99% insured coverage and guideline inclusion: a payment moat rivals must rebuild from scratch.",
+        "counter": "Priced at ~15x sales; fell 19% after beating expectations. Scanner makers could substitute it.",
+        "next_check": "Next quarterly report: growth above 30% and any CPT payment changes."
+      },
+      "risks": "Valuation (~15x sales), substitution by scanner makers or cheaper AI rivals, CPT payment changes.",
+      "validation_gates": "Track revenue growth, gross margin, CPT 75580 payment rate, coverage policies and guideline status."
+    },
+    {
+      "ticker": "CBLL",
+      "company": "Ceribell",
+      "classification": "news-triggered, Serenity-reviewed",
+      "thesis": "A pure-play AI brain-monitoring platform with first-in-class FDA clearances: the first device cleared to help diagnose status epilepticus and the only cleared delirium monitor, backed by a Medicare add-on payment. It controls hardware, algorithm, manufacturing and distribution.",
+      "why_now": "Q3 2026 revenue grew 30% with gross margin near 90%.",
+      "serenity_angle": "A clinical-workflow chokepoint in the ICU and emergency room: rapid EEG where hospitals often have no neurologist on site.",
+      "bear_case": "Losses are widening and headbands are assembled by contract manufacturers in China and Vietnam; more dilution is likely.",
+      "falsifiers": [
+        "Quarterly net loss keeps widening for two more quarters",
+        "Revenue growth falls below 20%",
+        "NTAP payment is not renewed"
+      ],
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm",
+        "https://www.sec.gov/Archives/edgar/data/1861107/000119312526445555/cbll-20260930.htm"
+      ],
+      "long_term_case": {
+        "edge": "First FDA-cleared AI device for status epilepticus and the only cleared delirium monitor, with a Medicare add-on payment.",
+        "counter": "Losses widening ($60.4M in nine months); overseas contract manufacturing; likely dilution.",
+        "next_check": "Next quarterly report: loss trend and delirium adoption."
+      },
+      "risks": "Widening losses and dilution, overseas contract manufacturing, competing EEG technologies, NTAP renewal.",
+      "validation_gates": "Track loss trend, account growth, delirium adoption, NTAP status and competing cleared EEG functions."
+    },
+    {
+      "ticker": "CAI",
+      "company": "Caris Life Sciences",
+      "classification": "news-triggered, Serenity-reviewed",
+      "thesis": "More than a million sequenced tumour cases feed both AI products and pharma services, and FDA companion-diagnostic approvals put its tests inside treatment decisions. The data asset grows with every test.",
+      "why_now": "Q3 2026 revenue grew 27% to $275M and the quarter was profitable.",
+      "serenity_angle": "A data network across testing, AI products and pharma services, similar to Tempus but with its own sequencing scale.",
+      "bear_case": "A disclosed material weakness in internal control, a $393M term loan and dependence on a few sequencer suppliers.",
+      "falsifiers": [
+        "The material weakness is not remediated by the next annual report",
+        "Revenue growth falls below 15%",
+        "Pharma services revenue declines"
+      ],
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-20251231.htm",
+        "https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm"
+      ],
+      "long_term_case": {
+        "edge": "1M+ sequenced cases and FDA companion diagnostics feeding AI products and pharma services.",
+        "counter": "Disclosed material weakness in internal control; $393M term loan; few sequencer suppliers.",
+        "next_check": "Next annual report: material weakness remediated."
+      },
+      "risks": "Material weakness in internal control, term-loan debt, reimbursement pressure and precision-oncology competition.",
+      "validation_gates": "Track remediation of the material weakness, testing growth, pharma services revenue and margins."
     }
   ]
 }

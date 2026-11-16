@@ -1,5 +1,16 @@
 {
   "themes": {
+    "nvidia_company_news": [
+      {
+        "ticker": "NVDA",
+        "company": "NVIDIA",
+        "exposure": "AI accelerators, data-center systems, software ecosystem, customers, executive governance and geopolitical/export-control exposure",
+        "exposure_strength": 1.0,
+        "evidence_status": "confirmed",
+        "serenity_role": "dominant AI-compute platform; assess leadership continuity, customer dependence, supply-chain chokepoints, regulatory exposure and substitution risk",
+        "pure_play": false
+      }
+    ],
     "ai_medicine": [
       {
         "ticker": "TEM",
@@ -72,6 +83,51 @@
         "evidence_status": "confirmed",
         "serenity_role": "liquid-biopsy data and workflow challenger",
         "pure_play": true
+      },
+      {
+        "ticker": "GEHC",
+        "company": "GE HealthCare Technologies",
+        "exposure": "AI-enabled CT, MRI, ultrasound and clinical imaging workflow across an installed hospital equipment base",
+        "exposure_strength": 0.82,
+        "evidence_status": "fda-and-company-evidence-pending-deep-review",
+        "serenity_role": "medical-imaging distribution and workflow platform",
+        "pure_play": false
+      },
+      {
+        "ticker": "RDNT",
+        "company": "RadNet / DeepHealth",
+        "exposure": "diagnostic-imaging delivery plus DeepHealth AI software and FDA-authorized imaging products",
+        "exposure_strength": 0.84,
+        "evidence_status": "fda-and-company-evidence-pending-deep-review",
+        "serenity_role": "vertically integrated imaging-data and care-delivery challenger",
+        "pure_play": false
+      },
+      {
+        "ticker": "ISRG",
+        "company": "Intuitive Surgical",
+        "exposure": "robotic-surgery installed base, instruments, workflow data and AI-enabled planning/segmentation",
+        "exposure_strength": 0.78,
+        "evidence_status": "fda-and-company-evidence-pending-deep-review",
+        "serenity_role": "robotic-surgery workflow and recurring-instrument platform",
+        "pure_play": false
+      },
+      {
+        "ticker": "IQV",
+        "company": "IQVIA",
+        "exposure": "clinical-trial operations, healthcare data and AI-supported drug-development workflows",
+        "exposure_strength": 0.76,
+        "evidence_status": "company-and-sec-evidence-pending-deep-review",
+        "serenity_role": "clinical-data and trial-execution infrastructure",
+        "pure_play": false
+      },
+      {
+        "ticker": "NVDA",
+        "company": "NVIDIA",
+        "exposure": "accelerated computing, software libraries and model infrastructure used across medical imaging and drug discovery",
+        "exposure_strength": 0.65,
+        "evidence_status": "infrastructure-exposure-pending-revenue-attribution",
+        "serenity_role": "healthcare compute enabler rather than direct medical-device sponsor",
+        "pure_play": false
       }
     ],
     "ai_data_center_power": [

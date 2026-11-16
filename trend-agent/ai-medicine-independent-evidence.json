@@ -1,0 +1,162 @@
+{
+  "as_of": "2026-11-13",
+  "method_note": "Curated cross-check register. Peer review, customer-side evidence and independent industry analysis are separated from company disclosure. A published study is not automatically independent when authors or sponsors have company ties.",
+  "companies": [
+    {
+      "ticker": "RDNT",
+      "ai_exposure_label": "imaging-center operator with an AI/software option",
+      "ai_revenue_share": {
+        "period": "Q3 2026",
+        "digital_health_revenue_m": 32.9,
+        "total_revenue_m": 638.3,
+        "calculated_pct": 5.2,
+        "external_customer_share_of_digital_health_pct": 63.0,
+        "estimated_external_digital_health_revenue_m": 20.7,
+        "estimated_external_digital_health_share_of_total_pct": 3.2,
+        "interpretation": "Digital Health was about 5.2% of consolidated quarterly revenue; applying the disclosed 63% external-customer mix implies about $20.7M, or 3.2% of total revenue, from external Digital Health customers. This is an estimate, not a reported segment line. RDNT is not a pure AI Medicine company."
+      },
+      "evidence": [
+        {
+          "type": "official_external_customer_disclosure",
+          "claim": "External non-RadNet customers represented about 63% of Digital Health revenue; most new business was with hospitals and health systems.",
+          "source": "https://www.sec.gov/Archives/edgar/data/790526/000168316826006125/radnet_ex9901.htm",
+          "independence": "company disclosure filed with SEC",
+          "limitation": "Supports external adoption, but customer names, renewal economics and independently verified ROI remain incomplete."
+        },
+        {
+          "type": "independent_industry_case",
+          "claim": "BCG used RadNet as an example of redesigning imaging workflows around AI and a unified data platform.",
+          "source": "https://www.bcg.com/assets/2026/executive-perspectives-ai-first-companies-health-care-providers.pdf",
+          "independence": "third-party industry analysis",
+          "limitation": "Operational case evidence, not an investment valuation or audited measure of AI revenue."
+        },
+        {
+          "type": "peer_reviewed_clinical_study",
+          "claim": "A large mammography study reported improved cancer detection using the DeepHealth workflow.",
+          "source": "https://pubmed.ncbi.nlm.nih.gov/40374196/",
+          "independence": "peer reviewed with disclosed company ties",
+          "limitation": "Company employee/option conflicts mean this is clinical validation, not fully independent commercial proof."
+        },
+        {
+          "type": "adversarial_third_party",
+          "claim": "A critical industry analysis argues that customer conflicts and unclear contract economics may weaken the external DeepHealth thesis.",
+          "source": "https://newsletter.hntrbrk.com/p/radnet-the-ai-story-that-doesnt-add",
+          "independence": "third-party short-thesis style analysis",
+          "limitation": "Use as a counter-thesis requiring primary-source verification, not as established fact."
+        }
+      ]
+    },
+    {
+      "ticker": "SOPH",
+      "ai_exposure_label": "direct precision-medicine data and analytics platform",
+      "ai_revenue_share": null,
+      "evidence": [
+        {
+          "type": "customer_lab_validation",
+          "claim": "A multi-laboratory study of 145 ovarian-cancer samples found strong analytical agreement between SOPHiA DDM HRD and an approved comparator, with a stated borderline-result limitation.",
+          "source": "https://pubmed.ncbi.nlm.nih.gov/41453730/",
+          "independence": "customer/laboratory authored peer-reviewed study",
+          "limitation": "Clinical comparability does not establish pricing power, retention or company-level profitability."
+        },
+        {
+          "type": "real_world_clinical_validation",
+          "claim": "A 4,777-case real-world cohort reported the decentralized SOPHiA DDM HRD workflow as reliable for therapeutic guidance.",
+          "source": "https://pubmed.ncbi.nlm.nih.gov/41945131/",
+          "independence": "peer-reviewed clinical cohort",
+          "limitation": "Product performance evidence is not evidence of durable customer economics or sufficient cash runway."
+        },
+        {
+          "type": "official_customer_and_partner_disclosure",
+          "claim": "The company disclosed work with Synnovis and Memorial Sloan Kettering-related products and named additional clinical customers in Q3 2026.",
+          "source": "https://www.sec.gov/Archives/edgar/data/1840706/000162828026052125/sophiageneticssaex992q22026.htm",
+          "independence": "company disclosure filed with SEC",
+          "limitation": "Named adoption is useful, but contract size, retention and customer-side ROI are not fully disclosed."
+        }
+      ]
+    },
+    {
+      "ticker": "TEM",
+      "ai_exposure_label": "direct precision-oncology data and diagnostics platform",
+      "ai_revenue_share": null,
+      "evidence": [
+        {
+          "type": "peer_reviewed_assay_validation",
+          "claim": "The Tempus xT oncology assay was analytically validated across multiple variant classes and clinical specimens.",
+          "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6481324/",
+          "independence": "peer reviewed with company-affiliated authors",
+          "limitation": "Validates assay performance, not data exclusivity, customer retention, pricing power or investment returns."
+        },
+        {
+          "type": "multicenter_clinical_use",
+          "claim": "An MD Anderson precision-oncology study used Tempus tumor profiling in a defined patient cohort.",
+          "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12929784/",
+          "independence": "academic clinical study using the product",
+          "limitation": "Product use does not establish contract economics or a durable information chokepoint."
+        }
+      ]
+    },
+    {
+      "ticker": "CERT",
+      "ai_exposure_label": "drug-development modeling and regulatory workflow platform",
+      "ai_revenue_share": null,
+      "evidence": [
+        {
+          "type": "regulatory_application",
+          "claim": "FDA workshop material describes PBPK models being used in regulatory decisions and study waivers, supporting the workflow category in which Simcyp operates.",
+          "source": "https://www.fda.gov/media/187978/download",
+          "independence": "regulator-authored category evidence",
+          "limitation": "Supports model-informed development, but does not identify Certara revenue, market share or customer dependency."
+        },
+        {
+          "type": "publication_inventory",
+          "claim": "Certara lists hundreds of peer-reviewed and independent applications of Simcyp.",
+          "source": "https://www.certara.com/simcyp-publications-and-independent-applications/",
+          "independence": "company-curated bibliography",
+          "limitation": "The inventory must be sampled and independently verified before it can prove a chokepoint or switching costs."
+        }
+      ]
+    },
+    {
+      "ticker": "NTRA",
+      "ai_exposure_label": "scaled molecular-diagnostics and longitudinal-data platform",
+      "ai_revenue_share": null,
+      "evidence": [
+        {
+          "type": "peer_reviewed_clinical_validation",
+          "claim": "A long-term breast-cancer cohort reported Signatera detection before clinical or radiologic relapse in 30 of 34 relapsing patients.",
+          "source": "https://pubmed.ncbi.nlm.nih.gov/38691816/",
+          "independence": "peer-reviewed clinical study",
+          "limitation": "Disease-specific prognostic performance does not establish reimbursement durability or company valuation."
+        },
+        {
+          "type": "adversarial_clinical_comparison",
+          "claim": "A colorectal-cancer surveillance study found no advantage over standard imaging plus CEA under the studied protocol.",
+          "source": "https://pubmed.ncbi.nlm.nih.gov/35258578/",
+          "independence": "peer-reviewed counter-evidence",
+          "limitation": "Single-center retrospective evidence should challenge, not automatically invalidate, the broader thesis."
+        }
+      ]
+    },
+    {
+      "ticker": "GH",
+      "ai_exposure_label": "precision-oncology testing and cancer-screening platform",
+      "ai_revenue_share": null,
+      "evidence": [
+        {
+          "type": "regulatory_clinical_validation",
+          "claim": "FDA review reported Shield sensitivity of 83.1% for colorectal cancer and noted limited detection of advanced adenomas and the need for post-approval study.",
+          "source": "https://www.accessdata.fda.gov/cdrh_docs/pdf23/P230009B.pdf",
+          "independence": "regulator-reviewed evidence",
+          "limitation": "Regulatory performance evidence does not establish adoption, reimbursement economics or cash generation."
+        },
+        {
+          "type": "independent_clinical_guidance",
+          "claim": "Clinical guidance reviews blood-based screening as an additional option while preserving limitations relative to established screening methods.",
+          "source": "https://www.cghjournal.org/article/S1542-3565%2825%2900320-9/pdf",
+          "independence": "peer-reviewed clinical guidance",
+          "limitation": "Category guidance is not a company-level market-share or valuation endorsement."
+        }
+      ]
+    }
+  ]
+}

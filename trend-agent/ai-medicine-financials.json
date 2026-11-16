@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-11",
+  "as_of": "2026-11-13",
   "currency": "USD",
   "method_note": "Market values use each row's stated price date and latest available share count. Financial facts come from company filings/releases. Scenario labels are deterministic research rules, not price targets.",
   "companies": [
@@ -7,8 +7,8 @@
       "ticker": "TEM",
       "financial_period": "Q3 2026",
       "financial_date": "2026-09-30",
-      "price_date": "2026-11-06",
-      "price": 76.05,
+      "price_date": "2026-11-13",
+      "price": 69.58000183105469,
       "shares": 182401637,
       "quarterly_revenue_m": 411.5,
       "revenue_growth_pct": 23.0,
@@ -20,6 +20,37 @@
       "dilution_flag": "medium",
       "data_freshness": "current",
       "next_validation_event": "Q4/FY 2026 earnings and Personalis integration update",
+      "scenario_inputs": {
+        "horizon_years": 5,
+        "metric": "sales",
+        "inputs_verified": false,
+        "net_debt_assumption_m": 0,
+        "net_debt_assumption_note": "Debt was not verified in the current snapshot; zero is a simplifying assumption and must be replaced before an investment conclusion.",
+        "probability_basis": "Analyst-set conservative priors reflecting premium valuation and unresolved debt/dilution evidence; not empirical probabilities.",
+        "cases": {
+          "bear": {
+            "probability": 0.35,
+            "revenue_cagr": 0.08,
+            "annual_share_dilution": 0.05,
+            "terminal_margin": null,
+            "terminal_multiple": 4.0
+          },
+          "base": {
+            "probability": 0.45,
+            "revenue_cagr": 0.18,
+            "annual_share_dilution": 0.03,
+            "terminal_margin": null,
+            "terminal_multiple": 8.0
+          },
+          "bull": {
+            "probability": 0.2,
+            "revenue_cagr": 0.28,
+            "annual_share_dilution": 0.02,
+            "terminal_margin": null,
+            "terminal_multiple": 12.0
+          }
+        }
+      },
       "bull_case": "Diagnostics volume, MRD testing and Data & Applications compound above 25%, while integrations deepen the clinical-data network and adjusted EBITDA continues to scale.",
       "base_case": "Revenue grows near 20–25%, data licensing remains strong and margins improve gradually, but the premium valuation requires consistent execution.",
       "bear_case": "Growth falls below 15%, acquisitions dilute focus, reimbursement or privacy constraints weaken the data flywheel, or stock compensation prevents durable cash generation.",
@@ -31,8 +62,8 @@
       "ticker": "SDGR",
       "financial_period": "Q3 2026",
       "financial_date": "2026-09-30",
-      "price_date": "2026-11-06",
-      "price": 29.82,
+      "price_date": "2026-11-13",
+      "price": 29.209999084472656,
       "shares": 74805628,
       "quarterly_revenue_m": 64.5,
       "revenue_growth_pct": 19.0,
@@ -55,8 +86,8 @@
       "ticker": "RXRX",
       "financial_period": "Q3 2026",
       "financial_date": "2026-09-30",
-      "price_date": "2026-11-06",
-      "price": 3.52,
+      "price_date": "2026-11-13",
+      "price": 3.2049999237060547,
       "shares": 623367849,
       "quarterly_revenue_m": 18.6,
       "revenue_growth_pct": 257.7,
@@ -79,8 +110,8 @@
       "ticker": "ABCL",
       "financial_period": "Q3 2026",
       "financial_date": "2026-09-30",
-      "price_date": "2026-11-10",
-      "price": 12.15,
+      "price_date": "2026-11-13",
+      "price": 11.229999542236328,
       "shares": 324047363,
       "quarterly_revenue_m": 10.6,
       "revenue_growth_pct": 17.8,
@@ -104,8 +135,8 @@
       "ticker": "CERT",
       "financial_period": "Q3 2026",
       "financial_date": "2026-09-30",
-      "price_date": "2026-11-11",
-      "price": 11.98,
+      "price_date": "2026-11-13",
+      "price": 11.930000305175781,
       "shares": 152543402,
       "quarterly_revenue_m": 94.9,
       "revenue_growth_pct": 4.0,
@@ -128,8 +159,8 @@
       "ticker": "NTRA",
       "financial_period": "Q3 2026",
       "financial_date": "2026-09-30",
-      "price_date": "2026-11-11",
-      "price": 320.60,
+      "price_date": "2026-11-13",
+      "price": 314.7200012207031,
       "shares": 145004521,
       "quarterly_revenue_m": 794.0,
       "revenue_growth_pct": 34.1,
@@ -152,8 +183,8 @@
       "ticker": "SOPH",
       "financial_period": "Q3 2026",
       "financial_date": "2026-09-30",
-      "price_date": "2026-11-11",
-      "price": 7.625,
+      "price_date": "2026-11-13",
+      "price": 7.715000152587891,
       "shares": 85658321,
       "quarterly_revenue_m": 24.3,
       "revenue_growth_pct": 25.0,
@@ -165,6 +196,37 @@
       "dilution_flag": "high",
       "data_freshness": "current_q3_2026",
       "next_validation_event": "Q4/FY 2026 platform growth, biopharma adoption, cash runway and 2027 EBITDA path",
+      "scenario_inputs": {
+        "horizon_years": 5,
+        "metric": "sales",
+        "inputs_verified": false,
+        "net_debt_assumption_m": -93.7,
+        "net_debt_assumption_note": "Uses reported cash and securities as net cash because debt was not separately verified; replace with audited net debt before an investment conclusion.",
+        "probability_basis": "Analyst-set downside-skewed priors reflecting negative EBITDA and financing risk; not empirical probabilities.",
+        "cases": {
+          "bear": {
+            "probability": 0.4,
+            "revenue_cagr": 0.08,
+            "annual_share_dilution": 0.08,
+            "terminal_margin": null,
+            "terminal_multiple": 3.0
+          },
+          "base": {
+            "probability": 0.45,
+            "revenue_cagr": 0.18,
+            "annual_share_dilution": 0.05,
+            "terminal_margin": null,
+            "terminal_multiple": 6.0
+          },
+          "bull": {
+            "probability": 0.15,
+            "revenue_cagr": 0.27,
+            "annual_share_dilution": 0.03,
+            "terminal_margin": null,
+            "terminal_multiple": 10.0
+          }
+        }
+      },
       "bull_case": "Institution and biopharma adoption compounds, network utility supports pricing and adjusted EBITDA turns positive in the stated 2027 window.",
       "base_case": "Revenue grows above 20% and losses narrow, but cash runway and scale remain the primary constraints.",
       "bear_case": "Growth slows before profitability, forcing financing while larger clinical-data platforms limit pricing power.",
@@ -177,8 +239,8 @@
       "ticker": "GH",
       "financial_period": "Q3 2026",
       "financial_date": "2026-09-30",
-      "price_date": "2026-11-11",
-      "price": 159.58,
+      "price_date": "2026-11-13",
+      "price": 150.0050048828125,
       "shares": 135285975,
       "quarterly_revenue_m": 361.0,
       "revenue_growth_pct": 36.0,
@@ -195,6 +257,370 @@
       "bear_case": "Screening growth remains expensive, reimbursement stalls or competition prevents volume from becoming durable cash generation.",
       "sources": [
         "https://investors.guardanthealth.com/press-releases/press-releases/2026/Guardant-Health-Reports-Third-Quarter-2026-Financial-Results-and-Increases-2026-Revenue-Guidance/default.aspx"
+      ]
+    },
+    {
+      "ticker": "GEHC",
+      "financial_period": "Q3 2026",
+      "financial_date": "2026-09-30",
+      "price_date": "2026-11-13",
+      "price": 82.765,
+      "shares": 453000000,
+      "quarterly_revenue_m": 5512.0,
+      "revenue_growth_pct": 7.2,
+      "cash_and_securities_m": 2854.0,
+      "net_debt_m": 7146.0,
+      "quarterly_net_income_m": 615.0,
+      "quarterly_operating_cash_flow_m": 907.0,
+      "adjusted_ebitda_m": 913.0,
+      "full_year_revenue_guide_m": null,
+      "dilution_flag": "low",
+      "data_freshness": "current_q3_2026_primary_source",
+      "next_validation_event": "Q4/FY 2026 imaging order growth, AI product adoption and SOFIE acquisition update",
+      "bull_case": "The installed imaging base, 107 mapped FDA AI-device records and workflow software allow AI features to lift replacement demand, service attachment and margins across hospitals.",
+      "base_case": "Core imaging grows mid-single digits and AI improves product competitiveness, but diversified segments make AI-specific revenue difficult to isolate.",
+      "bear_case": "Hospital capital budgets slow, competitors match AI features, debt and acquisition spending constrain flexibility, and AI remains a feature rather than a pricing-power moat.",
+      "competitors": [
+        "Siemens Healthineers",
+        "Philips",
+        "Canon Medical",
+        "United Imaging"
+      ],
+      "sources": [
+        "https://investor.gehealthcare.com/news-releases/news-release-details/ge-healthcare-reports-third-quarter-2026-financial-results",
+        "https://www.fda.gov/medical-devices/artificial-intelligence-enabled-medical-devices/list-artificial-intelligence-enabled-medical-devices"
+      ]
+    },
+    {
+      "ticker": "RDNT",
+      "financial_period": "Q3 2026",
+      "financial_date": "2026-09-30",
+      "price_date": "2026-11-13",
+      "price": 76.005,
+      "shares": 79200000,
+      "quarterly_revenue_m": 638.3,
+      "revenue_growth_pct": 22.1,
+      "cash_and_securities_m": 750.6,
+      "net_debt_m": 700.0,
+      "net_debt_basis": "Approximation from reported 1.66x net-debt/adjusted-EBITDA and annualized Q3 adjusted EBITDA; not an audited balance-sheet figure.",
+      "quarterly_net_income_m": 4.2,
+      "quarterly_operating_cash_flow_m": null,
+      "adjusted_ebitda_m": 105.0,
+      "full_year_revenue_guide_m": null,
+      "dilution_flag": "medium",
+      "data_freshness": "current_q3_2026_primary_source",
+      "next_validation_event": "Q4/FY 2026 Digital Health revenue, DeepHealth R&D spending, ONRAD integration and segment cash flow",
+      "scenario_inputs": {
+        "horizon_years": 5,
+        "metric": "ebitda",
+        "inputs_verified": false,
+        "net_debt_assumption_m": 700,
+        "net_debt_assumption_note": "Approximation from the company-reported 1.66x net-debt/adjusted-EBITDA ratio and annualized Q3 adjusted EBITDA; replace with audited balance-sheet debt before an investment conclusion.",
+        "probability_basis": "Analyst-set priors for a mature imaging operator with a smaller AI option; not empirical probabilities.",
+        "cases": {
+          "bear": {
+            "probability": 0.25,
+            "revenue_cagr": 0.04,
+            "annual_share_dilution": 0.02,
+            "terminal_margin": 0.12,
+            "terminal_multiple": 10.0
+          },
+          "base": {
+            "probability": 0.55,
+            "revenue_cagr": 0.09,
+            "annual_share_dilution": 0.01,
+            "terminal_margin": 0.17,
+            "terminal_multiple": 14.0
+          },
+          "bull": {
+            "probability": 0.2,
+            "revenue_cagr": 0.14,
+            "annual_share_dilution": 0.005,
+            "terminal_margin": 0.22,
+            "terminal_multiple": 18.0
+          }
+        }
+      },
+      "bull_case": "RadNet combines imaging delivery, proprietary workflow data and DeepHealth software; Digital Health growth and deployment inside its own centers create a vertically integrated feedback loop.",
+      "base_case": "Imaging-center growth funds continued AI development, while Digital Health becomes a useful but still modest contributor to group revenue and EBITDA.",
+      "bear_case": "Digital Health remains under 10% of revenue, R&D and acquisitions absorb cash, integration risk rises, and independent AI vendors or equipment OEMs erode differentiation.",
+      "competitors": [
+        "GE HealthCare",
+        "Siemens Healthineers",
+        "Aidoc",
+        "Lunit",
+        "Hologic"
+      ],
+      "sources": [
+        "https://www.radnet.com/newsroom/press-releases/q3-2026-results",
+        "https://www.radnet.com/about/history",
+        "https://www.fda.gov/medical-devices/artificial-intelligence-enabled-medical-devices/list-artificial-intelligence-enabled-medical-devices"
+      ]
+    },
+    {
+      "ticker": "ISRG",
+      "financial_period": "Q3 2026",
+      "financial_date": "2026-09-30",
+      "price_date": "2026-11-13",
+      "price": 445.485,
+      "shares": 351600000,
+      "quarterly_revenue_m": 3048.7,
+      "revenue_growth_pct": 22.0,
+      "cash_and_securities_m": 6800.4,
+      "quarterly_net_income_m": 523.0,
+      "quarterly_operating_cash_flow_m": null,
+      "adjusted_ebitda_m": null,
+      "full_year_revenue_guide_m": null,
+      "dilution_flag": "low",
+      "data_freshness": "current_q3_2026_primary_source",
+      "next_validation_event": "Q4/FY 2026 procedure growth, da Vinci 5 placements, recurring instrument revenue and litigation update",
+      "bull_case": "A growing installed base, recurring instruments and services, procedure data and surgeon workflow lock-in support durable compounding as AI improves planning and assistance.",
+      "base_case": "Procedure and installed-base growth remain strong, but most value continues to come from robotic surgery economics rather than separately monetized AI.",
+      "bear_case": "Premium valuation compresses, competing robotic systems improve, hospitals resist capital spending, or litigation and regulation weaken platform economics.",
+      "competitors": [
+        "Medtronic",
+        "Johnson & Johnson",
+        "Stryker",
+        "CMR Surgical"
+      ],
+      "sources": [
+        "https://isrg.intuitive.com/news-releases/news-release-details/intuitive-announces-third-quarter-earnings-6",
+        "https://isrg.intuitive.com/static-files/42b1fa2c-4c6e-4dd7-90b9-acceda8baded",
+        "https://www.fda.gov/medical-devices/artificial-intelligence-enabled-medical-devices/list-artificial-intelligence-enabled-medical-devices"
+      ]
+    },
+    {
+      "ticker": "IQV",
+      "financial_period": "Q3 2026",
+      "financial_date": "2026-09-30",
+      "price_date": "2026-11-13",
+      "price": 264.855,
+      "shares": 167000000,
+      "quarterly_revenue_m": 4428.0,
+      "revenue_growth_pct": 8.0,
+      "cash_and_securities_m": 2249.0,
+      "net_debt_m": 13818.0,
+      "quarterly_net_income_m": 350.0,
+      "quarterly_operating_cash_flow_m": 825.0,
+      "adjusted_ebitda_m": 1032.0,
+      "full_year_revenue_guide_m": 17425.0,
+      "dilution_flag": "low",
+      "data_freshness": "current_q3_2026_primary_source",
+      "next_validation_event": "December 2026 Investor Day and Q4/FY 2026 AI-agent adoption, bookings, backlog and leverage update",
+      "bull_case": "Proprietary healthcare data, trial operations and more than 400 deployed AI agents deepen customer workflow dependency and improve trial speed and margins.",
+      "base_case": "Clinical and commercial services compound at high single digits, with AI improving execution but not creating a separately measurable hypergrowth business.",
+      "bear_case": "High net leverage, CRO competition, pharma budget cycles and internally built customer tools limit AI monetization and multiple expansion.",
+      "competitors": [
+        "ICON",
+        "Thermo Fisher PPD",
+        "Fortrea",
+        "Syneos Health",
+        "Veeva",
+        "Flatiron Health"
+      ],
+      "sources": [
+        "https://ir.iqvia.com/press-releases/press-release-details/2026/IQVIA-Reports-Third-Quarter-2026-Results/default.aspx",
+        "https://www.sec.gov/Archives/edgar/data/1478242/000162828026067646/iqv-20260930.htm"
+      ]
+    },
+    {
+      "ticker": "NVDA",
+      "financial_period": "Q2 FY2027",
+      "financial_date": "2026-07-26",
+      "price_date": "2026-11-13",
+      "price": 160.2,
+      "shares": 24285000000,
+      "quarterly_revenue_m": 96221.0,
+      "revenue_growth_pct": 106.0,
+      "cash_and_securities_m": 99369.0,
+      "net_debt_m": -66003.0,
+      "quarterly_net_income_m": 59688.0,
+      "quarterly_operating_cash_flow_m": 24077.0,
+      "adjusted_ebitda_m": null,
+      "full_year_revenue_guide_m": null,
+      "dilution_flag": "low",
+      "data_freshness": "current_q2_fy2027_primary_source",
+      "next_validation_event": "Q3 FY2027 earnings and any disclosed healthcare-specific adoption or revenue attribution",
+      "bull_case": "CUDA, accelerated computing and domain libraries become the default infrastructure for imaging, digital biology and drug discovery, allowing healthcare demand to compound inside a much larger platform.",
+      "base_case": "Healthcare remains a strategically important use case but financially immaterial relative to data-center demand, so the stock thesis is driven by broader AI infrastructure.",
+      "bear_case": "Healthcare customers adopt alternative accelerators or cloud abstractions, healthcare contribution remains undisclosed, and broader AI-capex or export risks dominate returns.",
+      "competitors": [
+        "AMD",
+        "Google TPU",
+        "AWS Trainium",
+        "custom ASICs",
+        "cloud-managed AI platforms"
+      ],
+      "sources": [
+        "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Second-Quarter-Fiscal-2027/default.aspx"
+      ]
+    },
+    {
+      "ticker": "HTFL",
+      "financial_period": "Q3 2026",
+      "financial_date": "2026-09-30",
+      "price_date": "2026-11-13",
+      "price": 48.46,
+      "shares": 87887561,
+      "quarterly_revenue_m": 72.9,
+      "revenue_growth_pct": 57.0,
+      "cash_and_securities_m": 167.7,
+      "quarterly_net_income_m": -11.5,
+      "quarterly_operating_cash_flow_m": null,
+      "adjusted_ebitda_m": null,
+      "full_year_revenue_guide_m": null,
+      "dilution_flag": "medium",
+      "data_freshness": "current_q3_2026",
+      "next_validation_event": "Q4/FY 2026 results: growth, gross margin and new CPT/coverage developments",
+      "scenario_inputs": {
+        "horizon_years": 5,
+        "metric": "sales",
+        "inputs_verified": false,
+        "net_debt_assumption_m": -167.7,
+        "net_debt_assumption_note": "Cash and short-term investments from the Q3 2026 10-Q XBRL; no long-term debt tag found. Verify before an investment conclusion.",
+        "probability_basis": "Analyst-set priors reflecting a ~15x sales valuation; not empirical probabilities.",
+        "cases": {
+          "bear": {
+            "probability": 0.35,
+            "revenue_cagr": 0.15,
+            "annual_share_dilution": 0.04,
+            "terminal_margin": null,
+            "terminal_multiple": 4.0
+          },
+          "base": {
+            "probability": 0.45,
+            "revenue_cagr": 0.28,
+            "annual_share_dilution": 0.03,
+            "terminal_margin": null,
+            "terminal_multiple": 7.0
+          },
+          "bull": {
+            "probability": 0.2,
+            "revenue_cagr": 0.38,
+            "annual_share_dilution": 0.02,
+            "terminal_margin": null,
+            "terminal_multiple": 10.0
+          }
+        }
+      },
+      "bull_case": "Coverage and guideline adoption keep growth above 30% and the plaque-analysis products widen the moat.",
+      "base_case": "Growth slows toward the 20s as adoption matures; valuation compresses while revenue compounds.",
+      "bear_case": "Scanner makers or cheaper AI rivals substitute the analysis, and the premium multiple de-rates sharply.",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/0001464521/000146452126000171/htfl-20261112xex99_1.htm",
+        "https://www.sec.gov/Archives/edgar/data/1464521/000146452126000042/htfl-20251231x10k.htm"
+      ]
+    },
+    {
+      "ticker": "CBLL",
+      "financial_period": "Q3 2026",
+      "financial_date": "2026-09-30",
+      "price_date": "2026-11-13",
+      "price": 26.14,
+      "shares": 38835010,
+      "quarterly_revenue_m": 29.3,
+      "revenue_growth_pct": 30.0,
+      "cash_and_securities_m": 117.5,
+      "quarterly_net_income_m": -21.4,
+      "quarterly_operating_cash_flow_m": null,
+      "adjusted_ebitda_m": null,
+      "full_year_revenue_guide_m": null,
+      "dilution_flag": "high",
+      "data_freshness": "current_q3_2026",
+      "next_validation_event": "Q4/FY 2026 results: account growth, delirium launch and cash runway",
+      "scenario_inputs": {
+        "horizon_years": 5,
+        "metric": "sales",
+        "inputs_verified": false,
+        "net_debt_assumption_m": -117.5,
+        "net_debt_assumption_note": "Cash and marketable securities from the Q3 2026 10-Q XBRL; no long-term debt tag found. Verify before an investment conclusion.",
+        "probability_basis": "Analyst-set downside-skewed priors reflecting widening losses and funding needs; not empirical probabilities.",
+        "cases": {
+          "bear": {
+            "probability": 0.4,
+            "revenue_cagr": 0.12,
+            "annual_share_dilution": 0.08,
+            "terminal_margin": null,
+            "terminal_multiple": 3.0
+          },
+          "base": {
+            "probability": 0.45,
+            "revenue_cagr": 0.25,
+            "annual_share_dilution": 0.05,
+            "terminal_margin": null,
+            "terminal_multiple": 6.0
+          },
+          "bull": {
+            "probability": 0.15,
+            "revenue_cagr": 0.35,
+            "annual_share_dilution": 0.03,
+            "terminal_margin": null,
+            "terminal_multiple": 9.0
+          }
+        }
+      },
+      "bull_case": "Hospitals standardise on rapid EEG and the delirium indication opens a second market, with NTAP supporting pricing.",
+      "base_case": "Growth stays in the 20s while losses narrow slowly; one more equity raise is likely.",
+      "bear_case": "Losses force repeated dilution, and alternative EEG technologies erode the first-mover position.",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1861107/000119312526445555/cbll-20260930.htm",
+        "https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm"
+      ]
+    },
+    {
+      "ticker": "CAI",
+      "financial_period": "Q3 2026",
+      "financial_date": "2026-09-30",
+      "price_date": "2026-11-13",
+      "price": 23.04,
+      "shares": 286784504,
+      "quarterly_revenue_m": 275.4,
+      "revenue_growth_pct": 27.0,
+      "cash_and_securities_m": 769.2,
+      "quarterly_net_income_m": 15.2,
+      "quarterly_operating_cash_flow_m": null,
+      "adjusted_ebitda_m": null,
+      "full_year_revenue_guide_m": null,
+      "dilution_flag": "medium",
+      "data_freshness": "current_q3_2026",
+      "next_validation_event": "Q4/FY 2026 results and remediation of the disclosed material weakness",
+      "scenario_inputs": {
+        "horizon_years": 5,
+        "metric": "sales",
+        "inputs_verified": false,
+        "net_debt_assumption_m": -376.0,
+        "net_debt_assumption_note": "Cash, restricted cash and marketable securities ($769.2M, Q3 2026 10-Q) less $393.2M long-term debt (XBRL).",
+        "probability_basis": "Analyst-set priors; not empirical probabilities.",
+        "cases": {
+          "bear": {
+            "probability": 0.35,
+            "revenue_cagr": 0.1,
+            "annual_share_dilution": 0.03,
+            "terminal_margin": null,
+            "terminal_multiple": 3.0
+          },
+          "base": {
+            "probability": 0.45,
+            "revenue_cagr": 0.2,
+            "annual_share_dilution": 0.02,
+            "terminal_margin": null,
+            "terminal_multiple": 6.0
+          },
+          "bull": {
+            "probability": 0.2,
+            "revenue_cagr": 0.3,
+            "annual_share_dilution": 0.01,
+            "terminal_margin": null,
+            "terminal_multiple": 9.0
+          }
+        }
+      },
+      "bull_case": "The clinico-genomic dataset compounds into AI products and pharma services with growing margins.",
+      "base_case": "Testing grows near 20% and profitability holds; the material weakness is remediated.",
+      "bear_case": "Reimbursement pressure and competition in precision oncology cap growth, and control issues persist.",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm",
+        "https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-20251231.htm"
       ]
     }
   ]

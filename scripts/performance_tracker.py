@@ -37,17 +37,6 @@ def connect(path: str) -> sqlite3.Connection:
           recorded_at TEXT NOT NULL,
           PRIMARY KEY (ticker, as_of)
         );
-        CREATE TABLE IF NOT EXISTS outcomes (
-          ticker TEXT NOT NULL,
-          prediction_as_of TEXT NOT NULL,
-          horizon INTEGER NOT NULL,
-          target_as_of TEXT NOT NULL,
-          target_price REAL NOT NULL,
-          realized_return REAL NOT NULL,
-          direction_correct INTEGER NOT NULL,
-          evaluated_at TEXT NOT NULL,
-          PRIMARY KEY (ticker, prediction_as_of, horizon)
-        );
         CREATE TABLE IF NOT EXISTS prediction_cohorts (
           ticker TEXT NOT NULL,
           as_of TEXT NOT NULL,
@@ -134,32 +123,24 @@ def record_predictions(connection: sqlite3.Connection, market: dict[str, Any], n
     return count
 
 
-def backfill_outcomes(connection: sqlite3.Connection) -> int:
-    inserted = 0
-    tickers = [row[0] for row in connection.execute("SELECT DISTINCT ticker FROM predictions")]
-    evaluated_at = datetime.now(timezone.utc).isoformat()
-    for ticker in tickers:
-        rows = connection.execute(
-            "SELECT * FROM predictions WHERE ticker=? ORDER BY as_of", (ticker,)
-        ).fetchall()
-        for index, prediction in enumerate(rows):
-            for horizon in HORIZONS:
-                target_index = index + horizon
-                if target_index >= len(rows):
-                    continue
-                target = rows[target_index]
-                realized = float(target["price"]) / float(prediction["price"]) - 1.0
-                forecast = float(prediction["forecast_return"])
-                correct = int((forecast >= 0 and realized >= 0) or (forecast < 0 and realized < 0))
-                before = connection.total_changes
-                connection.execute(
-                    "INSERT OR IGNORE INTO outcomes VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-                    (ticker, prediction["as_of"], horizon, target["as_of"], float(target["price"]),
-                     realized, correct, evaluated_at),
-                )
-                inserted += connection.total_changes - before
-    connection.commit()
-    return inserted
+def benchmark_rows(connection: sqlite3.Connection, horizon: int) -> list[sqlite3.Row]:
+    """Read outcomes computed on real trading-day price series by benchmark_evaluator.
+
+    The tracker used to step forward through its own prediction rows, so a skipped
+    agent run silently stretched a "1-day" outcome across several trading days.
+    Outcomes now have exactly one source of truth: ``benchmark_outcomes``.
+    """
+    exists = connection.execute(
+        "SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='benchmark_outcomes'"
+    ).fetchone()[0]
+    if not exists:
+        return []
+    return connection.execute(
+        """SELECT b.realized_return, b.excess_xbi, b.direction_correct, p.combined_score, p.serenity_decision
+           FROM benchmark_outcomes b JOIN predictions p
+           ON p.ticker=b.ticker AND p.as_of=b.prediction_as_of
+           WHERE b.horizon=?""", (horizon,)
+    ).fetchall()
 
 
 def build_report(connection: sqlite3.Connection, output: str) -> None:
@@ -179,25 +160,24 @@ def build_report(connection: sqlite3.Connection, output: str) -> None:
             f"{row['technical_score']} | {row['kronos_score']} | {row['combined_score']} | {row['serenity_decision']} |"
         )
     lines.extend(["", "## 未来表现回填", "",
-                  "| 后续交易观察点 | 已完成样本 | 平均收益 | 方向命中率 | 高分组平均收益 | 低分组平均收益 | Serenity通过组 |",
-                  "| ---: | ---: | ---: | ---: | ---: | ---: | ---: |"])
+                  "| 后续交易日 | 已完成样本 | 平均收益 | 平均超额XBI | Kronos方向命中率 | 高分组平均收益 | 低分组平均收益 | Serenity通过组 |",
+                  "| ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |"])
     for horizon in HORIZONS:
-        rows = connection.execute(
-            """SELECT o.realized_return, o.direction_correct, p.combined_score, p.serenity_decision
-               FROM outcomes o JOIN predictions p
-               ON p.ticker=o.ticker AND p.as_of=o.prediction_as_of
-               WHERE o.horizon=?""", (horizon,)
-        ).fetchall()
+        rows = benchmark_rows(connection, horizon)
         returns = [float(row["realized_return"]) for row in rows]
         high = [float(row["realized_return"]) for row in rows if row["combined_score"] >= 70]
         low = [float(row["realized_return"]) for row in rows if row["combined_score"] < 70]
         serenity_ready = [float(row["realized_return"]) for row in rows if row["serenity_decision"] == "research-ready"]
+        excess_xbi = [float(row["excess_xbi"]) for row in rows if row["excess_xbi"] is not None]
         fmt = lambda values: f"{mean(values):+.2%}" if values else "等待数据"
         hit = f"{mean([row['direction_correct'] for row in rows]):.1%}" if rows else "等待数据"
         lines.append(
-            f"| {horizon} | {len(rows)} | {fmt(returns)} | {hit} | {fmt(high)} | {fmt(low)} | {fmt(serenity_ready)} |"
+            f"| {horizon} | {len(rows)} | {fmt(returns)} | {fmt(excess_xbi)} | {hit} | {fmt(high)} | {fmt(low)} | {fmt(serenity_ready)} |"
         )
-    lines.extend(["", "高分组定义为综合分≥70。样本量不足时不得据此调整权重或宣称有效。", ""])
+    lines.extend(["",
+                  "回填来自 `benchmark_outcomes`：按真实交易日价格序列计算，Agent 某天未运行不会拉长观察周期。",
+                  "方向命中率只检验 Kronos 预测符号；综合分与 Serenity 分层是否有效见 `agent-benchmark-validation.md` 的 Rank IC 与分层诊断。",
+                  "高分组定义为综合分≥70。样本量不足时不得据此调整权重或宣称有效。", ""])
     target = Path(output)
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text("\n".join(lines), encoding="utf-8")
@@ -220,10 +200,9 @@ def main() -> None:
     connection = connect(args.database)
     recorded = record_predictions(connection, market, news, serenity, theme_stocks, args.cohort)
     cohort_labels = record_cohort_history(connection, args.market_dir, args.cohort)
-    backfilled = backfill_outcomes(connection)
     build_report(connection, args.output)
     connection.close()
-    print(json.dumps({"recorded": recorded, "cohortLabels": cohort_labels, "backfilled": backfilled, "report": args.output}))
+    print(json.dumps({"recorded": recorded, "cohortLabels": cohort_labels, "report": args.output}))
 
 
 if __name__ == "__main__":

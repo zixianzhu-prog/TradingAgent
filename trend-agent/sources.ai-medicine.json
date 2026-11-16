@@ -1,0 +1,75 @@
+{
+  "sources": [
+    {
+      "name": "Google News AI Medicine",
+      "url": "https://news.google.com/rss/search?q=%28AI%20drug%20discovery%20OR%20AI%20medicine%20OR%20precision%20medicine%20OR%20clinical%20AI%20OR%20computational%20biology%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 100
+    },
+    {
+      "name": "Google News AI Medicine Candidates",
+      "url": "https://news.google.com/rss/search?q=%28Tempus%20AI%20OR%20Schrodinger%20OR%20Recursion%20Pharmaceuticals%20OR%20AbCellera%20OR%20Certara%20OR%20Natera%20OR%20SOPHiA%20GENETICS%20OR%20Guardant%20Health%20OR%20GE%20HealthCare%20OR%20RadNet%20OR%20DeepHealth%20OR%20Intuitive%20Surgical%20OR%20IQVIA%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 100
+    },
+    {
+      "name": "Google News NVIDIA Company-wide",
+      "url": "https://news.google.com/rss/search?q=%28NVIDIA%20OR%20NVDA%20OR%20Jensen%20Huang%29%20when%3A7d&hl=en-US&gl=US&ceid=US:en",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 100
+    },
+    {
+      "name": "Google News NVIDIA Leadership and Governance",
+      "url": "https://news.google.com/rss/search?q=%28NVIDIA%20OR%20Jensen%20Huang%29%20%28CEO%20OR%20resign%20OR%20board%20OR%20investigation%20OR%20affair%20OR%20scandal%29%20when%3A14d&hl=en-US&gl=US&ceid=US:en",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 100
+    },
+    {
+      "name": "NVIDIA News",
+      "url": "https://nvidianews.nvidia.com/releases.xml",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 50
+    },
+    {
+      "name": "NVIDIA SEC Filings",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1045810&type=&dateb=&owner=include&count=40&output=atom",
+      "enabled": false,
+      "timeout": 20,
+      "max_items": 50,
+      "note": "Disabled: www.sec.gov returns 403 without a contact User-Agent, so this feed never delivered. SEC filings now come from scripts/official_feeds.py (EDGAR full-text search index)."
+    },
+    {
+      "name": "SEC Press Releases",
+      "url": "https://www.sec.gov/news/pressreleases.rss",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 50
+    },
+    {
+      "name": "FDA Press Releases",
+      "url": "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/press-releases/rss.xml",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 50
+    },
+    {
+      "name": "FDA Drugs",
+      "url": "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/drugs/rss.xml",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 50
+    },
+    {
+      "name": "FDA Biologics",
+      "url": "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/biologics/rss.xml",
+      "enabled": true,
+      "timeout": 20,
+      "max_items": 50
+    }
+  ]
+}
