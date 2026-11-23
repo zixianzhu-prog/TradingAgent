@@ -35,16 +35,20 @@
 - 官方来源：[来源 1](https://investors.tempus.com/news/news-details/2026/Tempus-Reports-Third-Quarter-2026-Results/default.aspx)
 
 ### TEM 五年数值情景（sales终值法）
+终值倍数来源：bear = Damodaran industry P/S; base = median of AI-medicine peers; bull = top quartile of peers（行业：Heathcare Information and Technology）。
+
+增速来源：起点 23.0%（latest quarter year over year），start = the company's own reported growth; bear/base fade to Damodaran industry fundamental growth, bull to the industry's 5-year revenue CAGR；行业基本增速 5.3%，行业 5 年收入 CAGR 15.6%。
+
 
 | 情景 | 主观权重 | 收入CAGR | 年稀释 | 终值利润率 | 终值倍数 | 五年收入 | 每股年化回报敏感度 |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| bear | 35% | 8.0% | 5.0% | n/a | 4.0x | $2354.6M | -10.3% |
-| base | 45% | 18.0% | 3.0% | n/a | 8.0x | $3666.1M | 14.8% |
-| bull | 20% | 28.0% | 2.0% | n/a | 12.0x | $5506.1M | 36.4% |
+| bear | 35% | 7.0% | 5.0% | n/a | 4.7x | $2250.7M | -8.2% |
+| base | 45% | 12.3% | 3.0% | n/a | 8.2x | $2859.6M | 9.8% |
+| bull | 20% | 18.5% | 2.0% | n/a | 14.1x | $3747.6M | 30.4% |
 
-**默认期望财富口径：15.4%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：10.3%。
+**默认期望财富口径：11.2%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：7.6%。
 
-排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $78.70（相对当前 13.1%）；悲观达到门槛所需价格 $68.51（相对当前 -1.5%）。
+排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $62.92（相对当前 -9.6%）；悲观达到门槛所需价格 $76.95（相对当前 10.6%）。
 
 权重依据：Analyst-set conservative priors reflecting premium valuation and unresolved debt/dilution evidence; not empirical probabilities. 净负债假设：Debt was not verified in the current snapshot; zero is a simplifying assumption and must be replaced before an investment conclusion. Illustrative per-share exclusion test, not a DCF or target price. Growth, dilution, probabilities and terminal multiples are analyst-set assumptions, not evidence-generated forecasts. Passing cannot upgrade a company; failing can only keep it from upgrade.
 
@@ -60,6 +64,24 @@
 - 数据状态：current
 - 计算口径：Price date: 2026-11-13. P/S denominator is latest quarter annualized (not TTM) (258.0M). Annualizing one quarter can distort seasonal businesses. Runway is a simple cash/burn proxy, not company guidance. EV/EBITDA and OCF yield appear only when meaningful inputs exist. Metrics are not directly comparable across business models.
 - 官方来源：[来源 1](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000075/sdgr-20260930x8kxexx991.htm)
+
+### SDGR 五年数值情景（sales终值法）
+终值倍数来源：bear = Damodaran industry P/S; base = median of AI-medicine peers; bull = top quartile of peers（行业：Heathcare Information and Technology）。
+
+增速来源：起点 19.0%（latest quarter year over year），start = the company's own reported growth; bear/base fade to Damodaran industry fundamental growth, bull to the industry's 5-year revenue CAGR；行业基本增速 5.3%，行业 5 年收入 CAGR 15.6%。
+
+
+| 情景 | 主观权重 | 收入CAGR | 年稀释 | 终值利润率 | 终值倍数 | 五年收入 | 每股年化回报敏感度 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| bear | 40% | 6.7% | 3.0% | n/a | 4.7x | $356.0M | -4.2% |
+| base | 45% | 10.7% | 2.0% | n/a | 8.2x | $429.3M | 10.0% |
+| bull | 15% | 16.9% | 1.0% | n/a | 14.1x | $564.2M | 29.4% |
+
+**默认期望财富口径：9.8%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：7.3%。
+
+排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $26.75（相对当前 -8.4%）；悲观达到门槛所需价格 $39.96（相对当前 36.8%）。
+
+权重依据：Analyst-set priors: software growth slowed to ~6% while drug-discovery revenue is lumpy; not empirical probabilities. 净负债假设：Cash and securities ($373M, latest quarter) treated as net cash; debt not separately verified. Illustrative per-share exclusion test, not a DCF or target price. Growth, dilution, probabilities and terminal multiples are analyst-set assumptions, not evidence-generated forecasts. Passing cannot upgrade a company; failing can only keep it from upgrade.
 
 ## RXRX
 
@@ -127,16 +149,20 @@
 - 官方来源：[来源 1](https://ir.sophiagenetics.com/2026-11-03-SOPHiA-GENETICS-Reports-Third-Quarter-2026-Results) · [来源 2](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000350/sophiageneticssaex992q32026.htm)
 
 ### SOPH 五年数值情景（sales终值法）
+终值倍数来源：bear = Damodaran industry P/S; base = median of AI-medicine peers; bull = top quartile of peers（行业：Heathcare Information and Technology）。
+
+增速来源：起点 25.0%（latest quarter year over year），start = the company's own reported growth; bear/base fade to Damodaran industry fundamental growth, bull to the industry's 5-year revenue CAGR；行业基本增速 5.3%，行业 5 年收入 CAGR 15.6%。
+
 
 | 情景 | 主观权重 | 收入CAGR | 年稀释 | 终值利润率 | 终值倍数 | 五年收入 | 每股年化回报敏感度 |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| bear | 40% | 8.0% | 8.0% | n/a | 3.0x | $139.6M | -12.0% |
-| base | 45% | 18.0% | 5.0% | n/a | 6.0x | $217.3M | 10.6% |
-| bull | 15% | 27.0% | 3.0% | n/a | 10.0x | $313.9M | 33.4% |
+| bear | 40% | 7.2% | 8.0% | n/a | 4.7x | $134.6M | -5.6% |
+| base | 45% | 13.1% | 5.0% | n/a | 8.2x | $175.4M | 12.7% |
+| bull | 15% | 19.3% | 3.0% | n/a | 14.1x | $229.7M | 34.2% |
 
-**默认期望财富口径：9.7%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：5.0%。
+**默认期望财富口径：12.1%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：8.6%。
 
-排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $7.25（相对当前 -6.0%）；悲观达到门槛所需价格 $6.90（相对当前 -10.6%）。
+排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $7.95（相对当前 3.1%）；悲观达到门槛所需价格 $9.77（相对当前 26.7%）。
 
 权重依据：Analyst-set downside-skewed priors reflecting negative EBITDA and financing risk; not empirical probabilities. 净负债假设：Uses reported cash and securities as net cash because debt was not separately verified; replace with audited net debt before an investment conclusion. Illustrative per-share exclusion test, not a DCF or target price. Growth, dilution, probabilities and terminal multiples are analyst-set assumptions, not evidence-generated forecasts. Passing cannot upgrade a company; failing can only keep it from upgrade.
 
@@ -206,6 +232,24 @@
 - 计算口径：Price date: 2026-11-13. P/S denominator is latest quarter annualized (not TTM) (12194.8M). Annualizing one quarter can distort seasonal businesses. Runway is a simple cash/burn proxy, not company guidance. EV/EBITDA and OCF yield appear only when meaningful inputs exist. Metrics are not directly comparable across business models.
 - 官方来源：[来源 1](https://isrg.intuitive.com/news-releases/news-release-details/intuitive-announces-third-quarter-earnings-6) · [来源 2](https://isrg.intuitive.com/static-files/42b1fa2c-4c6e-4dd7-90b9-acceda8baded) · [来源 3](https://www.fda.gov/medical-devices/artificial-intelligence-enabled-medical-devices/list-artificial-intelligence-enabled-medical-devices)
 
+### ISRG 五年数值情景（sales终值法）
+终值倍数来源：bear = Damodaran industry P/S; base = median of AI-medicine peers; bull = top quartile of peers（行业：Healthcare Products）。
+
+增速来源：起点 20.5%（fiscal 2025 over 2024），start = the company's own reported growth; bear/base fade to Damodaran industry fundamental growth, bull to the industry's 5-year revenue CAGR；行业基本增速 7.2%，行业 5 年收入 CAGR 18.4%。
+
+
+| 情景 | 主观权重 | 收入CAGR | 年稀释 | 终值利润率 | 终值倍数 | 五年收入 | 每股年化回报敏感度 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| bear | 30% | 8.5% | 0.0% | n/a | 4.4x | $18370.6M | -11.1% |
+| base | 50% | 12.5% | 0.0% | n/a | 8.2x | $21965.7M | 3.6% |
+| bull | 20% | 19.2% | 0.0% | n/a | 14.1x | $29408.1M | 21.9% |
+
+**默认期望财富口径：5.4%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：2.8%。
+
+排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $301.66（相对当前 -32.3%）；悲观达到门槛所需价格 $418.54（相对当前 -6.0%）。
+
+权重依据：Analyst-set priors for a profitable market leader priced at ~13x sales; not empirical probabilities. 净负债假设：Cash and investments ($6.8B, latest quarter) treated as net cash; no long-term debt. Illustrative per-share exclusion test, not a DCF or target price. Growth, dilution, probabilities and terminal multiples are analyst-set assumptions, not evidence-generated forecasts. Passing cannot upgrade a company; failing can only keep it from upgrade.
+
 ## IQV
 
 - 估值判断：not obviously premium on sales; inspect quality and dilution
@@ -246,16 +290,20 @@
 - 官方来源：[来源 1](https://www.sec.gov/Archives/edgar/data/0001464521/000146452126000171/htfl-20261112xex99_1.htm) · [来源 2](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000042/htfl-20251231x10k.htm)
 
 ### HTFL 五年数值情景（sales终值法）
+终值倍数来源：bear = Damodaran industry P/S; base = median of AI-medicine peers; bull = top quartile of peers（行业：Heathcare Information and Technology）。
+
+增速来源：起点 39.9%（fiscal 2025 over 2024），start = the company's own reported growth; bear/base fade to Damodaran industry fundamental growth, bull to the industry's 5-year revenue CAGR；行业基本增速 5.3%，行业 5 年收入 CAGR 15.6%。
+
 
 | 情景 | 主观权重 | 收入CAGR | 年稀释 | 终值利润率 | 终值倍数 | 五年收入 | 每股年化回报敏感度 |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| bear | 35% | 15.0% | 4.0% | n/a | 4.0x | $586.5M | -13.5% |
-| base | 45% | 28.0% | 3.0% | n/a | 7.0x | $1001.9M | 7.8% |
-| bull | 20% | 38.0% | 2.0% | n/a | 10.0x | $1459.4M | 25.7% |
+| bear | 35% | 8.6% | 4.0% | n/a | 4.7x | $439.9M | -15.5% |
+| base | 45% | 18.8% | 3.0% | n/a | 8.2x | $688.6M | 3.3% |
+| bull | 20% | 25.1% | 2.0% | n/a | 14.1x | $893.8M | 22.1% |
 
-**默认期望财富口径：7.8%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：3.9%。
+**默认期望财富口径：4.1%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：0.5%。
 
-排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $39.99（相对当前 -17.5%）；悲观达到门槛所需价格 $39.81（相对当前 -17.8%）。
+排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $32.38（相对当前 -33.2%）；悲观达到门槛所需价格 $35.40（相对当前 -27.0%）。
 
 权重依据：Analyst-set priors reflecting a ~15x sales valuation; not empirical probabilities. 净负债假设：Cash and short-term investments from the Q3 2026 10-Q XBRL; no long-term debt tag found. Verify before an investment conclusion. Illustrative per-share exclusion test, not a DCF or target price. Growth, dilution, probabilities and terminal multiples are analyst-set assumptions, not evidence-generated forecasts. Passing cannot upgrade a company; failing can only keep it from upgrade.
 
@@ -273,16 +321,20 @@
 - 官方来源：[来源 1](https://www.sec.gov/Archives/edgar/data/1861107/000119312526445555/cbll-20260930.htm) · [来源 2](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm)
 
 ### CBLL 五年数值情景（sales终值法）
+终值倍数来源：bear = Damodaran industry P/S; base = median of AI-medicine peers; bull = top quartile of peers（行业：Healthcare Products）。
+
+增速来源：起点 30.0%（latest quarter year over year），start = the company's own reported growth; bear/base fade to Damodaran industry fundamental growth, bull to the industry's 5-year revenue CAGR；行业基本增速 7.2%，行业 5 年收入 CAGR 18.4%。
+
 
 | 情景 | 主观权重 | 收入CAGR | 年稀释 | 终值利润率 | 终值倍数 | 五年收入 | 每股年化回报敏感度 |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| bear | 40% | 12.0% | 8.0% | n/a | 3.0x | $206.5M | -13.2% |
-| base | 45% | 25.0% | 5.0% | n/a | 6.0x | $357.7M | 11.8% |
-| bull | 15% | 35.0% | 3.0% | n/a | 9.0x | $525.5M | 32.7% |
+| bear | 40% | 9.4% | 8.0% | n/a | 4.4x | $183.9M | -9.2% |
+| base | 45% | 16.2% | 5.0% | n/a | 8.2x | $248.0M | 10.7% |
+| bull | 15% | 23.0% | 3.0% | n/a | 14.1x | $330.0M | 32.3% |
 
-**默认期望财富口径：9.9%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：5.0%。
+**默认期望财富口径：9.9%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：6.0%。
 
-排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $25.91（相对当前 -0.9%）；悲观达到门槛所需价格 $21.88（相对当前 -16.3%）。
+排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $24.62（相对当前 -5.8%）；悲观达到门槛所需价格 $27.29（相对当前 4.4%）。
 
 权重依据：Analyst-set downside-skewed priors reflecting widening losses and funding needs; not empirical probabilities. 净负债假设：Cash and marketable securities from the Q3 2026 10-Q XBRL; no long-term debt tag found. Verify before an investment conclusion. Illustrative per-share exclusion test, not a DCF or target price. Growth, dilution, probabilities and terminal multiples are analyst-set assumptions, not evidence-generated forecasts. Passing cannot upgrade a company; failing can only keep it from upgrade.
 
@@ -300,15 +352,19 @@
 - 官方来源：[来源 1](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm) · [来源 2](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-20251231.htm)
 
 ### CAI 五年数值情景（sales终值法）
+终值倍数来源：bear = Damodaran industry P/S; base = median of AI-medicine peers; bull = top quartile of peers（行业：Heathcare Information and Technology）。
+
+增速来源：起点 27.0%（latest quarter year over year），start = the company's own reported growth; bear/base fade to Damodaran industry fundamental growth, bull to the industry's 5-year revenue CAGR；行业基本增速 5.3%，行业 5 年收入 CAGR 15.6%。
+
 
 | 情景 | 主观权重 | 收入CAGR | 年稀释 | 终值利润率 | 终值倍数 | 五年收入 | 每股年化回报敏感度 |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| bear | 35% | 10.0% | 3.0% | n/a | 3.0x | $1774.1M | -5.7% |
-| base | 45% | 20.0% | 2.0% | n/a | 6.0x | $2741.1M | 18.2% |
-| bull | 20% | 30.0% | 1.0% | n/a | 9.0x | $4090.2M | 39.9% |
+| bear | 35% | 7.4% | 3.0% | n/a | 4.7x | $1574.1M | 0.3% |
+| base | 45% | 13.8% | 2.0% | n/a | 8.2x | $2105.3M | 19.3% |
+| bull | 20% | 20.1% | 1.0% | n/a | 14.1x | $2752.6M | 41.3% |
 
-**默认期望财富口径：18.8%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：14.1%。
+**默认期望财富口径：20.8%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：17.1%。
 
-排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $30.15（相对当前 30.9%）；悲观达到门槛所需价格 $29.03（相对当前 26.0%）。
+排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $31.61（相对当前 37.2%）；悲观达到门槛所需价格 $39.60（相对当前 71.9%）。
 
 权重依据：Analyst-set priors; not empirical probabilities. 净负债假设：Cash, restricted cash and marketable securities ($769.2M, Q3 2026 10-Q) less $393.2M long-term debt (XBRL). Illustrative per-share exclusion test, not a DCF or target price. Growth, dilution, probabilities and terminal multiples are analyst-set assumptions, not evidence-generated forecasts. Passing cannot upgrade a company; failing can only keep it from upgrade.

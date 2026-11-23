@@ -17,3 +17,6 @@
 | RDNT | no-material-divergence | 0/100 | 无 | 无 |
 | ISRG | no-material-divergence | 0/100 | 无 | 无 |
 | IQV | no-material-divergence | 0/100 | 无 | 无 |
+| HTFL | no-material-divergence | 0/100 | 无 | 无 |
+| CBLL | no-material-divergence | 0/100 | 无 | 无 |
+| CAI | no-material-divergence | 0/100 | 无 | 无 |

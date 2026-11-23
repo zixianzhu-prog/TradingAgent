@@ -4,23 +4,23 @@
 
 | # | Ticker | Company | Potential | Evidence | Flag |
 | ---: | --- | --- | ---: | ---: | --- |
-| 1 | HTFL | HeartFlow | 84.7 | 72 |  |
-| 2 | CBLL | Ceribell | 81.7 | 76 |  |
-| 3 | CAI | Caris Life Sciences | 81.7 | 76 |  |
-| 4 | ISRG | Intuitive Surgical | 79.7 | 69 |  |
-| 5 | SDGR | Schrodinger | 79.3 | 69 |  |
-| 6 | TEM | Tempus AI | 78.3 | 78 |  |
-| 7 | RDNT | RadNet / DeepHealth | 78.3 | 75 |  |
-| 8 | GH | Guardant Health | 77.7 | 55 |  |
-| 9 | GEHC | GE HealthCare Technologies | 76.3 | 75 |  |
-| 10 | IQV | IQVIA | 76.3 | 26 | evidence incomplete |
-| 11 | NTRA | Natera | 75.0 | 72 |  |
-| 12 | RXRX | Recursion Pharmaceuticals | 69.3 | 76 |  |
-| 13 | SOPH | SOPHiA GENETICS | 68.0 | 56 |  |
-| 14 | CERT | Certara | 67.3 | 74 |  |
-| 15 | ABCL | AbCellera Biologics | 59.7 | 52 |  |
+| 1 | HTFL | HeartFlow | 84.7 | 77 |  |
+| 2 | CAI | Caris Life Sciences | 81.7 | 78 |  |
+| 3 | CBLL | Ceribell | 81.7 | 75 |  |
+| 4 | ISRG | Intuitive Surgical | 79.7 | 72 |  |
+| 5 | RDNT | RadNet / DeepHealth | 78.3 | 74 |  |
+| 6 | GEHC | GE HealthCare Technologies | 76.3 | 75 |  |
+| 7 | NTRA | Natera | 75.0 | 72 |  |
+| 8 | SDGR | Schrodinger | 74.7 | 59 |  |
+| 9 | TEM | Tempus AI | 73.7 | 70 |  |
+| 10 | IQV | IQVIA | 70.3 | 65 |  |
+| 11 | RXRX | Recursion Pharmaceuticals | 69.3 | 76 |  |
+| 12 | SOPH | SOPHiA GENETICS | 68.0 | 50 |  |
+| 13 | CERT | Certara | 67.3 | 74 |  |
+| 14 | GH | Guardant Health | 61.3 | 45 | evidence incomplete |
+| 15 | ABCL | AbCellera Biologics | 58.0 | 64 |  |
 
-## 3. CAI — Caris Life Sciences
+## 2. CAI — Caris Life Sciences
 
 **Chokepoint:** A data network across testing, AI products and pharma services, similar to Tempus but with its own sequencing scale.
 
@@ -54,28 +54,28 @@ Sources: https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-
 
 Sources: https://isrg.intuitive.com/news-releases/news-release-details/intuitive-announces-third-quarter-earnings-6, https://isrg.intuitive.com/static-files/42b1fa2c-4c6e-4dd7-90b9-acceda8baded, https://www.fda.gov/medical-devices/artificial-intelligence-enabled-medical-devices/list-artificial-intelligence-enabled-medical-devices
 
-## 6. TEM — Tempus AI
+## 5. RDNT — RadNet / DeepHealth
 
-**Chokepoint:** An information chokepoint: the scarce asset is not a single model, but permissioned longitudinal clinical and molecular data connected to real diagnostic workflows.
+**Chokepoint:** Controls multiple connected nodes—care delivery, workflow, data and AI software—but Digital Health is still a small share of total revenue and must prove independent economics.
 
-**Why it can win:** The strongest long-duration candidate because it combines diagnostics, multimodal clinical data, AI models and workflow distribution. Every additional test, patient record and health-system integration can improve the data network and the usefulness of its models.
+**Why it can win:** RadNet links real imaging centers, patient workflow, image data and DeepHealth software. That vertical loop may create a more defensible learning and distribution advantage than a standalone radiology algorithm vendor.
 
-**Why now:** Recent results show continuing oncology volume growth, expanding minimal-residual-disease testing, growth in data licensing and new health-system integrations.
+**Why now:** Q3 2026 total revenue grew 22.1%; Digital Health revenue grew 32.6% to $32.9 million, while the FDA mapping identified nine DeepHealth/Aidence records.
 
-**Strongest case against:** The apparent data flywheel may be weaker than expected if hospitals restrict data reuse, competitors gain similar datasets, or diagnostic growth fails to produce durable margins and cash flow.
+**Strongest case against:** The imaging-center business drives most value while DeepHealth remains a costly feature set with weak external pricing power.
 
 **We are wrong if:**
-- Diagnostic volume growth stalls for two consecutive reported quarters
-- Data-and-services growth materially trails total company growth
-- Gross margin or cash-flow progress deteriorates despite higher volume
+- Digital Health growth falls below core imaging growth
+- Segment cash flow remains negative after integration
+- External customers do not expand beyond RadNet's own network
 
-Sources: https://investors.tempus.com/news/news-details/2026/Tempus-Reports-Second-Quarter-2026-Results-07-30-2026/default.aspx, https://investors.tempus.com/files/doc_financials/2026/q3/TEM-Q3-26-Financial-Results_11-1.pdf, https://investors.tempus.com/news/news-details/2026/Tempus-Reports-Third-Quarter-2026-Results/default.aspx
+Sources: https://www.radnet.com/newsroom/press-releases/q3-2026-results, https://www.radnet.com/about/history, https://www.fda.gov/medical-devices/artificial-intelligence-enabled-medical-devices/list-artificial-intelligence-enabled-medical-devices
 
 ## 1. HTFL — HeartFlow
 
 **Chokepoint:** A payment chokepoint: the scarce asset is the billing code, coverage and clinical evidence, not the algorithm alone.
 
-**Why it can win:** The closest thing to a reimbursement chokepoint in AI medicine: its AI coronary analysis is paid under a Category I CPT code, covered for about 99% of insured US lives and written into cardiology guidelines. Every CT scanner and hospital that adopts it makes it harder to displace.
+**Why it can win:** The closest thing to a reimbursement chokepoint in AI medicine: its AI coronary analysis (FFR-CT) is paid under a Category I CPT code, insurers' coverage policies for it apply to about 99% of insured US lives, and it is written into cardiology guidelines. Its second product, plaque analysis, got its own Category I code in 2026 and is covered for about 75%. Every CT scanner and hospital that adopts it makes it harder to displace.
 
 **Why now:** Q3 2026 revenue grew 57% with an 83.6% gross margin, and more than 1,800 institutions have adopted it.
 
@@ -88,7 +88,7 @@ Sources: https://investors.tempus.com/news/news-details/2026/Tempus-Reports-Seco
 
 Sources: https://www.sec.gov/Archives/edgar/data/1464521/000146452126000042/htfl-20251231x10k.htm, https://www.sec.gov/Archives/edgar/data/0001464521/000146452126000171/htfl-20261112xex99_1.htm
 
-## 2. CBLL — Ceribell
+## 3. CBLL — Ceribell
 
 **Chokepoint:** A clinical-workflow chokepoint in the ICU and emergency room: rapid EEG where hospitals often have no neurologist on site.
 
@@ -105,7 +105,7 @@ Sources: https://www.sec.gov/Archives/edgar/data/1464521/000146452126000042/htfl
 
 Sources: https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm, https://www.sec.gov/Archives/edgar/data/1861107/000119312526445555/cbll-20260930.htm
 
-## 5. SDGR — Schrodinger
+## 8. SDGR — Schrodinger
 
 **Chokepoint:** A horizontal discovery layer used across multiple customers and drug programs; more diversified than betting on one molecule.
 

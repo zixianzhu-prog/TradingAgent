@@ -4,16 +4,16 @@
 
 | 股票 | 市值 | 60日平均成交额 | 流动性 | 年化波动 | 状态 |
 |---|---:|---:|---|---:|---|
-| ABCL | $3.64B | $55.15M | pass | 80.0% | current |
-| CERT | $1.82B | $25.27M | pass | 52.5% | current |
-| GEHC | $37.49B | $264.98M | pass | 30.0% | current |
-| GH | $20.29B | $329.15M | pass | 48.4% | current |
-| IQV | $44.23B | $386.76M | pass | 27.4% | current |
-| ISRG | $156.63B | $967.35M | pass | 35.3% | current |
-| NTRA | $45.64B | $644.88M | pass | 52.1% | current |
-| NVDA | $3890.46B | $30665.04M | pass | 42.3% | current |
-| RDNT | $6.02B | $51.29M | pass | 37.8% | current |
-| RXRX | $2.00B | $90.40M | pass | 99.6% | current |
-| SDGR | $2.19B | $58.11M | pass | 99.1% | current |
-| SOPH | $0.66B | $5.12M | pass | 64.8% | current |
-| TEM | $12.69B | $509.64M | pass | 100.2% | current |
+| ABCL | $3.64B | $50.84M | pass | 81.2% | current |
+| CERT | $1.82B | $25.90M | pass | 51.2% | current |
+| GEHC | $37.49B | $272.53M | pass | 30.1% | current |
+| GH | $20.29B | $326.44M | pass | 49.5% | current |
+| IQV | $44.23B | $386.99M | pass | 27.4% | current |
+| ISRG | $156.63B | $986.85M | pass | 35.4% | current |
+| NTRA | $45.64B | $661.54M | pass | 57.1% | current |
+| NVDA | $3890.46B | $33408.69M | pass | 82.3% | current |
+| RDNT | $6.02B | $51.43M | pass | 39.1% | current |
+| RXRX | $2.00B | $93.92M | pass | 100.5% | current |
+| SDGR | $2.19B | $59.49M | pass | 103.8% | current |
+| SOPH | $0.66B | $5.17M | pass | 70.7% | current |
+| TEM | $12.69B | $477.29M | pass | 88.6% | current |

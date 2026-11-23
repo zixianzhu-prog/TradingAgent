@@ -2,23 +2,23 @@
 
 > 每条关系都标明来源类型；图表示研究证据连接，不表示因果已被证明或股票具有预期收益。
 
-节点：219；关系：204；官方/原始来源：38；临床试验：7
+节点：225；关系：210；官方/原始来源：38；临床试验：7
 
 | 股票 | 官方来源 | 临床资产 | Serenity通过门槛 |
 | --- | ---: | ---: | ---: |
-| TEM | 2 | 0 | 5/7 |
-| SDGR | 4 | 2 | 5/7 |
+| TEM | 2 | 0 | 3/7 |
+| SDGR | 4 | 2 | 2/7 |
 | RXRX | 5 | 2 | 5/7 |
-| ABCL | 2 | 2 | 2/7 |
+| ABCL | 2 | 2 | 0/7 |
 | CERT | 3 | 0 | 4/7 |
 | NTRA | 2 | 0 | 3/7 |
-| SOPH | 3 | 0 | 3/7 |
-| GH | 2 | 0 | 2/7 |
+| SOPH | 3 | 0 | 1/7 |
+| GH | 2 | 0 | 0/7 |
 | GEHC | 2 | 0 | 4/7 |
 | RDNT | 3 | 0 | 5/7 |
 | ISRG | 2 | 0 | 3/7 |
-| IQV | 2 | 0 | 1/7 |
-| NVDA | 1 | 0 | 1/7 |
+| IQV | 2 | 0 | 2/7 |
+| NVDA | 1 | 0 | 0/7 |
 | HTFL | 2 | 0 | 5/7 |
 | CBLL | 2 | 0 | 5/7 |
 | CAI | 2 | 0 | 5/7 |
@@ -229,3 +229,9 @@
 - **Intuitive Surgical** — `HAS_VALIDATION_EVENT` → **procedure growth and recurring instrument revenue** · event watchlist
 - **IQVIA** — `HAS_VALIDATION_EVENT` → **AI clinical-development customer adoption** · event watchlist
 - **IQVIA** — `HAS_VALIDATION_EVENT` → **technology and analytics growth update** · event watchlist
+- **HeartFlow** — `HAS_VALIDATION_EVENT` → **commercial adoption, reimbursement and cash update** · event watchlist
+- **HeartFlow** — `HAS_VALIDATION_EVENT` → **FDA and CPT/reimbursement update** · event watchlist
+- **Ceribell** — `HAS_VALIDATION_EVENT` → **hospital adoption, recurring revenue and cash update** · event watchlist
+- **Ceribell** — `HAS_VALIDATION_EVENT` → **FDA and Medicare NTAP update** · event watchlist
+- **Caris Life Sciences** — `HAS_VALIDATION_EVENT` → **molecular profiling volume, pharma revenue and cash update** · event watchlist
+- **Caris Life Sciences** — `HAS_VALIDATION_EVENT` → **biopharma data and companion diagnostic adoption** · event watchlist

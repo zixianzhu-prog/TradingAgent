@@ -1,14 +1,14 @@
 # NVIDIA 公司重大新闻与管理层事件影响
 
-生成时间：2026-11-15T16:43:20.203147+00:00
+生成时间：2026-11-23T18:22:53.448034+00:00
 
 > 本报告区分公司/监管正式披露与媒体报道。事件影响是情景分析；价格方向由独立市场模型验证，不代表因果证明或投资指令。
 
 ## 当前研究信号
 
 - NVIDIA 主题分：60/100；主题传导分：51/100。
-- NVDA 最新本地市场快照：$162.85；技术方向：hold；Kronos 五日预测：+5.08%
-- Serenity 事件重审任务：18 项；受影响门槛：cash_generation, cash_runway, counter_thesis, customer_dependency, earnings_validation, integration_execution, management_governance, reputation_risk, valuation。
+- NVDA 最新本地市场快照：$165.61；技术方向：hold；Kronos 五日预测：+1.64%
+- Serenity 事件重审任务：24 项；受影响门槛：cash_generation, cash_runway, clinical_validation, counter_thesis, customer_dependency, dilution, earnings_validation, falsifiers, integration_execution, management_governance, partner_economics, reputation_risk, valuation。
 
 ## 已确认事实
 
@@ -43,15 +43,15 @@
 
 ## 自动发现的相关报道
 
-- [NVIDIA Announces CEO Transition](https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition) — NVIDIA News · Thu, 12 Nov 2026 13:48:00 GMT
-- [Statement From NVIDIA Board of Directors](https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors) — NVIDIA News · Sun, 08 Nov 2026 20:00:00 GMT
-- [Nvidia CEO Huang resigns amid affair scandals, board names CFO Colette Kress interim CEO - Yahoo Finance](https://news.google.com/rss/articles/CBMi4AFBVV95cUxQZzNYVy04Z1l4VlFPaDZDbW5wb0M2d1RTbFJVaWEwTGdSU0oxZkM5UG1aWlkzaVFIZGE5ZmpnaE5EOWZXdnl3Y3dYWmZrZ3l0Q2ItUU5EU1o4dHhYczFuRElaV2ZhcGNhVWlqTkdiWGIwUzNCVG5yRzR0VXJHMVlFT2xmX3ZzbU9SVEdrYzJBczh1eFZPYnduVXNCY21YOE9SMS1jRUtCdnRIckt4VkttOFRrZzNMLWhFUFRyc1k3dkhHMDJNbUFGLWtldmtOcENSbFpXYkNfSFFjRWFJdTFJVg?oc=5) — Yahoo Finance · Fri, 13 Nov 2026 05:32:00 GMT
-- [Statement From the Independent Members of the NVIDIA Board](https://nvidianews.nvidia.com/news/statement-from-the-independent-members-of-the-nvidia-board) — NVIDIA News · Tue, 10 Nov 2026 19:07:00 GMT
-- [A Message to Our Company](https://nvidianews.nvidia.com/news/a-message-to-our-company) — NVIDIA News · Sun, 08 Nov 2026 21:02:00 GMT
-- [NVIDIA, Rebellions and SK Telecom Announce Collaboration to Advance Sovereign AI Infrastructure With NVIDIA NVLink Fusion](https://nvidianews.nvidia.com/news/nvidia-rebellions-and-sk-telecom-announce-collaboration-to-advance-sovereign-ai-infrastructure-with-nvidia-nvlink-fusion) — NVIDIA News · Mon, 09 Nov 2026 05:00:00 GMT
-- [Nvidia CEO Jensen Huang resigns in wake of affair, spy scandal - Yahoo Finance](https://news.google.com/rss/articles/CBMinAFBVV95cUxNeG9oYzBqM051ZC1tMzJJZWYzVnA2N2ZxZGJWRDA5d3FqZHJHV2hPRjVLR254bGFQa0VUMWlpN0h5aWdKYktrVWx3Wk4xb1FpX2U1ekUyWVlBa05YODg2SHUxTVBuTWZsaTFxMnk1cXQzTEVUNnRLd0FkdnprLXFRbkZPaDVJSFFvMEVjWlZQMGF5UHZqRUthSW84S3A?oc=5) — Yahoo Finance · Thu, 12 Nov 2026 18:41:50 GMT
-- [Nvidia CEO Jensen Huang admits affair, board to launch investigation - Axios](https://news.google.com/rss/articles/CBMiogFBVV95cUxNblR4YzRVcEJwVHJVTXNsU2ZnWUJNcVZBZm9Ma2hLSDlHR3BZdmZ5ZGRtbm9yd1gxdm5HQTltcEIzQ3ZlNC1lYWNJbG5wOUNqVjBhYVV0MjhjbjJ4cWZKcnhqTHhSVWY0TmFzTVlIMUZqVktUNGRpREthUVFDX0w1c2xCRjRTUU5UaFZ0enhrbzk2TDhxZG5vWUNWNEF0UjV1ZEE?oc=5) — Axios · Sun, 08 Nov 2026 23:18:34 GMT
-- [NVIDIA Announces New Planned Investments in Korean Startups at the MSIT-NVIDIA AI Startup Partnership Forum](https://blogs.nvidia.com/blog/korean-startup-investments-msit/) — NVIDIA News · Mon, 09 Nov 2026 08:00:53 GMT
-- [Korea’s AI Ecosystem Advances and Secures Agentic AI With NVIDIA](https://blogs.nvidia.com/blog/korea-secure-agentic-ai/) — NVIDIA News · Mon, 09 Nov 2026 05:00:39 GMT
+- [NVIDIA Board Reinstates Jensen Huang as President, CEO and Board Director](https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director) — NVIDIA News · Mon, 23 Nov 2026 13:55:00 GMT
+- [NVIDIA Expands Commitments With Supply Chain Partners to Support AI Infrastructure Buildout](https://nvidianews.nvidia.com/news/nvidia-expands-commitments-with-supply-chain-partners-to-support-ai-infrastructure-buildout) — NVIDIA News · Tue, 17 Nov 2026 22:18:00 GMT
+- [NVIDIA Announces Financial Results for Third Quarter Fiscal 2027](https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027) — NVIDIA News · Tue, 17 Nov 2026 21:20:00 GMT
+- [NVIDIA Board of Directors Establishes National Security and Export Control Oversight Committee](https://nvidianews.nvidia.com/news/nvidia-board-of-directors-establishes-national-security-and-export-control-oversight-committee) — NVIDIA News · Tue, 17 Nov 2026 10:00:00 GMT
+- [NVIDIA Board Reinstates Jensen Huang as President, CEO and Board Director - NVIDIA Newsroom](https://news.google.com/rss/articles/CBMiqwFBVV95cUxPaG9iTHJ2RUFZRnYtZHQyX01EU3pnY1BaT09BSkxPWUR4bDV4cFNhanZOSzFoMU9adTcwTEJMMkZqajRLZnZ5X1dEcXVaTXVrQnZfLXYxa05OQ1ZacjVoek4yRlo5M2RsSmhQdllVOVNGQTFHa3ZtRnFOWnBENXVZMU9LVF9hbGcwYmhBRmV6MEJxekUzbmZ1SXphUVNJb010QjAwRE13TmJOM2M?oc=5) — NVIDIA Newsroom · Mon, 23 Nov 2026 14:01:39 GMT
+- [NVIDIA and Microsoft Expand Accelerated Computing From Azure to Windows PCs](https://blogs.nvidia.com/blog/microsoft-ignite-accelerated-computing-azure-windows-pcs/) — NVIDIA News · Thu, 19 Nov 2026 20:00:15 GMT
+- [What Nvidia’s Interim CEO, Colette Kress, Said to Employees After Jensen Huang’s Resignation - The New York Times](https://news.google.com/rss/articles/CBMilgFBVV95cUxNa2dJSnFrVWt3REVkbE5CbllIMi1jZnFlRmtPbmZJM09SbmpoOEhVWElRVElyY00xc29ZLXA5T2wtRWFHQ0YzMG1jdjRPZWM4d2RaR05ja3Y3TGx5LURKVTk4allMbzduWC1uNVJSZmM4SlB6SjBiSVdWLXI5OW83V1RZcjF1SmctMzhaMXlHOXNSOXQycWc?oc=5) — The New York Times · Wed, 18 Nov 2026 21:11:29 GMT
+- [Nvidia Earnings Live Updates: First Report Since Jensen Huang’s Resignation Beats Expectations - The New York Times](https://news.google.com/rss/articles/CBMihAFBVV95cUxNdFFIYV9qR0U3Q3Q5bFNVM2VscDYtYU01YkxpSDFVRUkxNkYyX0l1NlNDYmRDU25NaHhJR0JvV0tnMDQxRHBvYkx5Y21WaDVwVDA5MjdaNndERWNmZlp2dzVIdm8ySG40RzJRWGVfY1RCdTNkd2NmVlN2Q3JURVpfNWptNDk?oc=5) — The New York Times · Wed, 18 Nov 2026 16:40:12 GMT
+- [Nvidia board faction angling for Jensen Huang return as CEO, report claims — company defiant at earnings calls, says no possibility of reinstatement - Tom's Hardware](https://news.google.com/rss/articles/CBMipwJBVV95cUxOYVNjSEd5a3JNZHlvVl9HSmY5LUNOaGJFazM1NlNTQmtpN2s3Rld0bkVTZ0l6czVJbEM2WnA1YlFOaHY0ZmNOMHl5U3dzYzdXTWtoaGJoTDdYYlNaa19BalllY3U4ZXh3Mmt3cVF0U2QtRDBFcGMzYWUyZ2djU1F2ZnZ2VUdYQ0ItWENWQXF4MmwtUXBzWlA2VFpFSnJaLXZnTktkRmVqY3ltYUxrVVdYV0FpVDhObTVHN3RPbVN4MUhQVk1hZDRnM2RlXzlPZ0FHZVpqTVRIQ2o5RFhWSG5XWHM1WHRKWkRZcExPLXZTTVBUcnVPS0VuOUZ6TE1KMHQ3M3dlX0RWVHBvNWJ4RXQza1NqSkJQYnNTYnhqMjdLcVNPRkJTWjEw?oc=5) — Tom's Hardware · Wed, 18 Nov 2026 13:30:00 GMT
+- [Ex-CEO Jensen Huang signals interest in returning to Nvidia after resigning amid scandal - PBS](https://news.google.com/rss/articles/CBMiwwFBVV95cUxNY0IwMTh0cnVtSFEtamprcXFCbWJISEc3ZE5EcHBWODdYa1NMOXRCb05za2NDVUVGTHNiR3g4cnBnbE02VkZKMU81dnFMa3pTRmgyWWhXQklJRGh2Um9PZzJRUzFJWjB1RFNzMkx1dEtTVGY2RnRGMkdoU3FqdkFwbkJmcGRLaDZvUnIxeVhTamtNMTh1amZHbFhMMjE4c3J3akNld2lld0ROZ2F0am50WnhwSXhURkpuNTdwdDFFa3FDelU?oc=5) — PBS · Tue, 17 Nov 2026 21:40:17 GMT
 
-市场快照文件：`outputs/nvidia-market/run-20261115-114317.json`
+市场快照文件：`outputs/nvidia-market/run-20261123-132250.json`
