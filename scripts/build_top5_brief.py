@@ -1215,7 +1215,7 @@ def funds_section(root: Path) -> str:
     return f"""
   <section class="section" id="funds" aria-labelledby="funds-h">
     <h2 id="funds-h">Specialist biotech funds building positions</h2>
-    <p>Schedule 13G/13D filings by dedicated life-science investors (RA Capital, Baker Bros, Perceptive, RTW, Commodore, BVF and others) in the companies this page follows, last 12 months. A first filing means the fund just crossed 5% of the shares. This is ownership bought in the market or in an offering; it is not proof the company raised new money, and 13G filers are passive by definition.</p>
+    <p>Schedule 13G/13D filings by dedicated life-science investors (RA Capital, Baker Bros, Perceptive, RTW, Commodore, BVF and others) in the companies this page follows, last 12 months. A first filing means the fund just crossed 5% of the shares. This is ownership bought in the market or in an offering; it is not proof the company raised new money, and 13G filers are passive by definition. Treat it as context: in a 2018 to mid-2025 test on 445 health-care companies, stocks where a specialist fund newly crossed 5% did no better than the same stocks bought at a random month start (430 cases, 12-month median excess vs XBI -21.5% against -21.4%); a specialist 13D did worse (60 cases, -45.4%). See outputs/fund-stake-study.md.</p>
     <p class="note"><span>Now:</span> {len(new)} new positions and {len(rows_data) - len(new)} amendments from specialist funds across {len(by_company)} companies.</p>
     <p class="note"><span>Several specialists in the same company:</span> {crowd or "—"}</p>
     <div class="table-wrap"><table><thead><tr><th class="n">Filed</th><th>Ticker</th><th>Fund</th><th class="n">Stake</th><th>Form</th><th></th></tr></thead>
