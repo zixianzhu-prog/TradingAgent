@@ -186,14 +186,14 @@ def study(evts: list[dict], prices: dict[str, list[tuple[str, float]]], tickers:
     return out
 
 
-def fetch_prices(tickers: list[str]) -> dict[str, list[tuple[str, float]]]:
+def fetch_prices(tickers: list[str], start: str = "2017-12-01") -> dict[str, list[tuple[str, float]]]:
     import yfinance as yf
 
     out = {}
     names = sorted(set(tickers) | {"XBI"})
     for i in range(0, len(names), 100):
         chunk = names[i:i + 100]
-        frame = yf.download(chunk, start="2017-12-01", auto_adjust=True, progress=False, group_by="ticker", threads=True)
+        frame = yf.download(chunk, start=start, auto_adjust=True, progress=False, group_by="ticker", threads=True)
         for t in chunk:
             try:
                 col = frame[t]["Close"].dropna()
