@@ -1,0 +1,15 @@
+{
+  "method": "Only add a relationship when a primary source explicitly identifies the person, patent, assignee, license, company or investor. Technology similarity alone is not ownership.",
+  "links": [
+    {
+      "ticker": "ABCL",
+      "person": "Carl Hansen",
+      "relation": "founder",
+      "sourceType": "SEC 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1703057/000170305726000012/abcl-20251231.htm",
+      "quote": "We believe Dr. Hansen is qualified to serve on our Board of Directors because of the perspective and experience he brings as a co-founder and our Chief Executive Officer.",
+      "status": "verified",
+      "scopeNote": "This proves the founder/company relationship only. It does not prove that a specific paper or university patent was transferred to the company."
+    }
+  ]
+}

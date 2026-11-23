@@ -1,0 +1,50 @@
+{
+  "lookback_days": 30,
+  "history_days": 180,
+  "per_query": 25,
+  "target_institutions": [
+    "Massachusetts Institute of Technology",
+    "MIT",
+    "Broad Institute",
+    "Harvard University",
+    "Stanford University"
+  ],
+  "themes": [
+    {
+      "id": "ai_drug_discovery",
+      "label": "AI drug discovery",
+      "query": "artificial intelligence drug discovery molecular generation target discovery",
+      "keywords": ["drug discovery", "molecular generation", "target discovery", "virtual screening", "computational chemistry"]
+    },
+    {
+      "id": "protein_design",
+      "label": "Protein and antibody design",
+      "query": "machine learning protein design antibody design generative biology",
+      "keywords": ["protein design", "antibody design", "generative biology", "structure prediction", "protein language model"]
+    },
+    {
+      "id": "precision_oncology",
+      "label": "Precision oncology and clinical genomics",
+      "query": "precision oncology clinical genomics liquid biopsy multimodal clinical data",
+      "keywords": ["precision oncology", "clinical genomics", "liquid biopsy", "multimodal clinical", "companion diagnostic"]
+    },
+    {
+      "id": "medical_imaging_ai",
+      "label": "Medical imaging and clinical decision AI",
+      "query": "medical imaging artificial intelligence clinical decision support pathology radiology",
+      "keywords": ["medical imaging", "clinical decision", "digital pathology", "radiology", "diagnostic algorithm"]
+    },
+    {
+      "id": "novel_therapeutic_platforms",
+      "label": "Novel therapeutic platforms",
+      "query": "gene editing RNA therapy cell therapy targeted delivery machine learning",
+      "keywords": ["gene editing", "RNA therapy", "cell therapy", "targeted delivery", "in vivo editing"]
+    },
+    {
+      "id": "biosecurity",
+      "label": "Biosecurity and emerging pathogens",
+      "query": "emerging pathogen pandemic preparedness antimicrobial resistance biodefense",
+      "keywords": ["emerging pathogen", "pandemic preparedness", "antimicrobial resistance", "biodefense", "vaccine platform"]
+    }
+  ]
+}
