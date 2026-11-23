@@ -333,6 +333,8 @@ trend-agent/.venv/bin/python scripts/build_top5_brief.py
 python3 scripts/translate_page.py  # Chinese copy: dashboard/dist/top5.zh.html
 # Order tickets (research suggestions, paper only): action, limit, size, scale plan, invalidation per company.
 PYTHONPATH=scripts ai-fund-lab/.venv/bin/python scripts/order_tickets.py
+# Forward record: freeze today's tickets (append-only, committed) and score earlier calls against XBI.
+PYTHONPATH=scripts ai-fund-lab/.venv/bin/python scripts/ticket_ledger.py || echo "ticket ledger skipped"
 # Rebuild the page so it shows today's tickets (they are computed from the ranking the first build wrote).
 trend-agent/.venv/bin/python scripts/build_top5_brief.py
 python3 scripts/translate_page.py

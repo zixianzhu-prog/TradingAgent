@@ -66,7 +66,7 @@
 | 要求 | 状态 | 说明 |
 |---|---|---|
 | 大方向 + 理论基础 | ✅ 第一版 | OpenAlex + PubMed 科研发现层，追踪论文、作者、机构和基金。公司候选要求共享具体技术词组，目前只有 2 条（cfDNA 论文 → Natera），不当作商业证据。仍需 Peter 确认特指的 MIT 论文。 |
-| 新领域 → 新公司 → 融资 | ✅ 第一版 | “从实验室到公司”表：研究来源（10-K 中的大学/研究所授权，逐字核对）→ 创始人 → 专业基金持股（13D/13G）→ 药企合作/IND。19 家公司有引用的研究来源或创始人，其中多家来自 MIT/Broad/哈佛/斯坦福等（例：PRME 的专利授权自 Broad，与 MIT、哈佛共有；CGEM 授权自 MIT）。创始人的 OpenAlex 论文只在唯一匹配时附上（候选）。专利尚未经 USPTO 独立核验。 |
+| 新领域 → 新公司 → 融资 | ✅ 第一版 | “从实验室到公司”表：研究来源（10-K 中的大学/研究所授权，逐字核对）→ 创始人 → 专业基金持股（13D/13G）→ 药企合作/IND。19 家公司有引用的研究来源或创始人，其中多家来自 MIT/Broad/哈佛/斯坦福等（例：PRME 的专利授权自 Broad，与 MIT、哈佛共有；CGEM 授权自 MIT）。创始人的 OpenAlex 论文只在唯一匹配时附上（候选）。专利已由 USPTO 官方受让记录核验 7 家（38 条），其中 3 家专利已抵押给债权人（IRD、HURA、BDSX）。 |
 | 大药厂在用它的东西 | ✅ 第一版 | 8-K 新闻稿抽取合作方、首付款、里程碑（逐字核对原文、去重）：近 90 天确认 9 笔药企合作，其中 1 笔是药企为 AI 平台付费（GENB–Zealand）。每周更新。 |
 | 动物实验过了 → 进入临床 | ✅ 第一版 | 近 90 天确认 20 个 IND 获批（药名、适应症、下一期试验）；有 IND 或药企合作的药物开发公司自动进入小盘股名单。 |
 | 资金进入 / 创始人追加 | ✅ 第一版 | Form 4 内部人公开市场买入 + SEC 13D/13G 重要股东雷达（44 家公司、247 份申报，逐份读取申报人和持股比例）。标出专业生物医药基金：近 12 个月 14 次新建仓（例：IRD 11-16 新进 Boxer 5.4%、Cormorant 6.6%，另有 Perceptive 9.99%）。持股不等于公司拿到新钱。 |
@@ -90,7 +90,7 @@
 - `outputs/science-commercialization-graph.md`：把科研发现与技术归属、融资、药企付款、临床和收入串联的公司级证据链。
 - `state/science-commercialization-graph.json`：上述链路的机器可读节点、边和逐公司证据缺口。
 - `outputs/technology-ownership.md`：SEC 原文中的创始人、专利组合与独家许可证据；不把公司披露冒充 USPTO 独立核验。
-- `outputs/uspto-assignment-validation.md`：7 家公司进入 USPTO 受让记录队列；官方导出/API 尚未配置时保持 pending。
+- `outputs/uspto-assignment-validation.md`：7 家公司由 USPTO 开放数据门户核验（38 条所有权记录，3 家专利抵押）；不带 key 的每日运行沿用上次在线查询结果。
 - `outputs/institutional-ownership.md`：32 家公司的 13D/13G 监控队列；缺 SEC 联系型 User-Agent 时明确显示配置缺口。
 - `trend-agent/frontier-science-watchlist.json`：六个科研方向与重点机构配置。
 - 默认 `./run-daily-investment-agent.sh` 进入无模型的 `collect` 模式；仅在需要 TradingAgents/Claude 深审时使用 `AGENT_MODE=deep`，减少额度消耗。
