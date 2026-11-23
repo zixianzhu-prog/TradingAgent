@@ -91,3 +91,11 @@ def test_flip_points_state_the_room_left():
     pts = ot.flip_points({"price": 50.0, "upper": 62.5, "impliedGrowth": 0.10, "baseGrowth": 0.12}, None)
     assert "2.0 points" in pts[0] and "20%" in pts[1]
     assert "1,000M" in ot.flip_points({"price": 4, "upper": 3, "method": "rNPV"}, {"impliedPeakSalesM": 1000})[0]
+
+
+def test_patent_liens_keep_latest_date_per_lender():
+    from order_tickets import patent_liens
+    u = {"companies": [{"ticker": "IRD", "securityInterests": [
+        {"assignee": "OPCM SA LLC", "recordedAt": "2026-04-21T00:00:00"}, {"assignee": "OPCM SA LLC", "recordedAt": "2025-01-01"}]},
+        {"ticker": "ALEC", "securityInterests": []}]}
+    assert patent_liens(u) == {"IRD": [("OPCM SA LLC", "2026-04-21")]}

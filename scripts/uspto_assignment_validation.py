@@ -6,6 +6,11 @@ import json
 import os
 from datetime import datetime, timezone
 from pathlib import Path
+import re
+import ssl
+import urllib.error
+import urllib.parse
+import urllib.request
 from urllib.parse import quote_plus
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -21,9 +26,63 @@ def company_names(theme: dict, small_caps: dict) -> dict[str, str]:
     return {r.get("ticker"): r.get("company") for r in rows if r.get("ticker")}
 
 
+ODP = "https://api.uspto.gov/api/v1/patent/applications"
+SUFFIX = re.compile(r",?\s*\b(inc|corp|corporation|ltd|limited|plc|llc|n\.?v|s\.?a|ag|holdings?|co)\b\.?|/nv\b", re.I)
+
+
+def base_name(name: str) -> str:
+    return re.sub(r"\s+", " ", SUFFIX.sub("", name or "").replace(",", " ")).strip()
+
+
+def odp_get(url: str, key: str) -> dict:
+    """GET an Open Data Portal endpoint; the key goes only in the request header, never to disk or logs."""
+    req = urllib.request.Request(url, headers={"X-API-KEY": key, "Accept": "application/json", "User-Agent": "serenity-research-agent"})
+    cafile = "/etc/ssl/cert.pem" if Path("/etc/ssl/cert.pem").exists() else None
+    try:
+        with urllib.request.urlopen(req, timeout=40, context=ssl.create_default_context(cafile=cafile)) as resp:
+            return json.loads(resp.read())
+    except urllib.error.HTTPError as exc:
+        if exc.code == 404:
+            return {}
+        raise
+
+
+def odp_records(ticker: str, name: str, key: str, fetch=odp_get, max_apps: int = 6) -> tuple[list[dict], int]:
+    """Applications filed by the company (applicant field) and their recorded assignments from USPTO ODP.
+    Returns (records in the import format, number of applications found)."""
+    query = base_name(name)
+    first = query.split()[0].lower() if query else ""
+    url = f"{ODP}/search?" + urllib.parse.urlencode({"q": f'applicationMetaData.firstApplicantName:"{query}"', "limit": 25})
+    found = fetch(url, key)
+    apps = [a for a in found.get("patentFileWrapperDataBag", [])
+            if first and first in (a.get("applicationMetaData", {}).get("firstApplicantName") or "").lower()]
+    records = []
+    for app in apps[:max_apps]:
+        number, meta = app.get("applicationNumberText"), app.get("applicationMetaData", {})
+        for bag in fetch(f"{ODP}/{number}/assignment", key).get("patentFileWrapperDataBag", []):
+            for a in bag.get("assignmentBag", []):
+                records.append({"ticker": ticker, "applicationNumber": number, "inventionTitle": meta.get("inventionTitle"),
+                                "applicant": meta.get("firstApplicantName"),
+                                "assignee": "; ".join(x.get("assigneeNameText", "") for x in a.get("assigneeBag", [])),
+                                "assignor": "; ".join(x.get("assignorName", "") for x in a.get("assignorBag", [])),
+                                "recordedAt": a.get("assignmentRecordedDate"), "reelFrame": a.get("reelAndFrameNumber"),
+                                "conveyance": a.get("conveyanceText"), "url": a.get("assignmentDocumentLocationURI"),
+                                "source": "USPTO Open Data Portal"})
+    return records, int(found.get("count") or 0)
+
+
 def official(record: dict) -> bool:
     url = (record.get("url") or "").lower()
     return bool(record.get("assignee") and record.get("recordedAt") and any(host in url for host in OFFICIAL_HOSTS))
+
+
+def cached_api_records(previous: dict) -> tuple[list[dict], dict, str | None]:
+    """Records from the last live ODP lookup, so a run without the key does not erase them."""
+    recs = [r for c in previous.get("companies", []) for r in c.get("officialAssignments", []) + c.get("securityInterests", [])
+            if r.get("source") == "USPTO Open Data Portal"]
+    clean = [{k: v for k, v in r.items() if k != "independentAssignmentVerified"} for r in recs]
+    api = previous.get("api", {})
+    return clean, api.get("applicationsFound", {}), api.get("lastLiveLookup")
 
 
 def build(ownership: dict, names: dict[str, str], imported: dict, api_key_present: bool) -> dict:
@@ -40,10 +99,13 @@ def build(ownership: dict, names: dict[str, str], imported: dict, api_key_presen
         technology = [e for e in company.get("evidence", []) if e.get("relation") != "founder_company"]
         if not technology:
             continue
-        records = imported_by_ticker.get(ticker, [])
+        all_records = imported_by_ticker.get(ticker, [])
+        # A security interest pledges the patents to a lender: it proves debt against the IP, not ownership.
+        liens = [r for r in all_records if "SECURITY" in (r.get("conveyance") or "").upper()]
+        records = [r for r in all_records if r not in liens]
         name = names.get(ticker) or ticker
         companies.append({"ticker": ticker, "company": name, "status": "verified" if records else "pending-official-search",
-                          "secClaims": technology, "officialAssignments": records,
+                          "secClaims": technology, "officialAssignments": records, "securityInterests": liens,
                           "search": {"assignee": name,
                                      "url": "https://assignmentcenter.uspto.gov/search/intellectualProperty/search",
                                      "instructions": f"Search Assignee for {name}; export the reel/frame, assignor, assignee, recorded date and official result URL."}})
@@ -54,6 +116,7 @@ def build(ownership: dict, names: dict[str, str], imported: dict, api_key_presen
             "api": {"keyConfigured": api_key_present,
                     "note": "USPTO ODP requires an account/API key after June 18, 2026. Assignment Center remains the official manual search source."},
             "summary": {"queued": len(companies), "verifiedCompanies": verified,
+                        "companiesWithPatentLiens": sum(bool(c["securityInterests"]) for c in companies),
                         "officialRecords": sum(len(c["officialAssignments"]) for c in companies), "rejectedImports": len(rejected)},
             "companies": companies, "rejectedImports": rejected}
 
@@ -66,6 +129,17 @@ def render(payload: dict) -> str:
              "| 公司 | SEC 说法 | USPTO 状态 | 官方检索 |", "|---|---:|---|---|"]
     for c in payload.get("companies", []):
         lines.append(f"| {c['ticker']} · {c['company']} | {len(c['secClaims'])} | {c['status']} | [按受让人检索]({c['search']['url']}) |")
+    liens = [(c["ticker"], r) for c in payload.get("companies", []) for r in c.get("securityInterests", [])]
+    if liens:
+        lines += ["", "## 专利被抵押给债权人（担保权益）", "", "这不是所有权证明，而是风险：违约时专利可能被债权人取得。", "",
+                  "| 公司 | 债权人（登记的受让方） | 申请号 | 登记日 | 卷/帧 |", "|---|---|---|---|---|"]
+        for t, r in liens:
+            lines.append(f"| {t} | {r['assignee']} | {r.get('applicationNumber', '')} | {r['recordedAt']} | [{r.get('reelFrame', '')}]({r['url']}) |")
+    recs = [(c["ticker"], r) for c in payload.get("companies", []) for r in c["officialAssignments"]]
+    if recs:
+        lines += ["", "## USPTO 官方受让记录", "", "| 公司 | 申请号 | 发明名称 | 受让人 | 转让人 | 登记日 | 卷/帧 |", "|---|---|---|---|---|---|---|"]
+        for t, r in recs:
+            lines.append(f"| {t} | {r.get('applicationNumber', '')} | {(r.get('inventionTitle') or '')[:60]} | {r['assignee']} | {(r.get('assignor') or '')[:60]} | {r['recordedAt']} | [{r.get('reelFrame', '')}]({r['url']}) |")
     lines += ["", "## 导入规则", "",
               "把官方搜索结果规范化写入 `trend-agent/uspto-assignment-evidence.json`：必须包括 ticker、assignee、assignor、recordedAt、reelFrame、url。",
               "URL 必须来自 USPTO 官方域名；公司网页、Google Patents 或名称相似都不能把状态改为 verified。"]
@@ -81,9 +155,31 @@ def main() -> None:
     p.add_argument("--state", default=str(ROOT / "state/uspto-assignment-validation.json"))
     p.add_argument("--report", default=str(ROOT / "outputs/uspto-assignment-validation.md"))
     args = p.parse_args()
-    payload = build(load(Path(args.ownership), {}),
-                    company_names(load(Path(args.theme), {}), load(Path(args.small_caps), {})),
-                    load(Path(args.official_evidence), {"records": []}), bool(os.getenv("USPTO_API_KEY")))
+    ownership = load(Path(args.ownership), {})
+    names = company_names(load(Path(args.theme), {}), load(Path(args.small_caps), {}))
+    imported = load(Path(args.official_evidence), {"records": []})
+    key = os.getenv("USPTO_API_KEY", "").strip()
+    api_errors, app_counts, last_live = [], {}, None
+    if not key:
+        cached, app_counts, last_live = cached_api_records(load(Path(args.state), {}))
+        imported["records"] = imported.get("records", []) + cached
+    else:
+        last_live = datetime.now(timezone.utc).date().isoformat()
+        # Live lookup for every queued company; manual exports in the evidence file still count.
+        for company in ownership.get("companies", []):
+            t = company.get("ticker")
+            if not any(e.get("relation") != "founder_company" for e in company.get("evidence", [])):
+                continue
+            try:
+                recs, n = odp_records(t, names.get(t) or t, key)
+                imported["records"] = imported.get("records", []) + recs
+                app_counts[t] = n
+            except Exception as exc:
+                api_errors.append({"ticker": t, "error": f"{type(exc).__name__}: {str(exc)[:120]}"})
+    payload = build(ownership, names, imported, bool(key))
+    payload["api"]["applicationsFound"] = app_counts
+    payload["api"]["errors"] = api_errors
+    payload["api"]["lastLiveLookup"] = last_live
     Path(args.state).write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     Path(args.report).write_text(render(payload), encoding="utf-8")
     print(json.dumps(payload["summary"], ensure_ascii=False))

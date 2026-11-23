@@ -721,7 +721,6 @@
   "Specialist funds holding {n}%+": "持股 {n}% 以上的专业基金",
   "Pharma deal / IND ({n} days)": "药企合作 / IND（{n} 天）",
   "The chain Peter asked for: which university or institute the technology came from, who founded the company, whether specialist biotech funds own it, and whether pharma or the FDA has engaged. Origins and founders are quoted from each company's own {n}-K (every quote checked against the filing); funds come from Schedule {n}D/{n}G; deals and IND clearances from {n}-K press releases.": "Peter 要的这条链：技术来自哪所大学或研究所、谁创办了公司、有没有专业生物医药基金持股、药企或 FDA 是否已经介入。研究来源和创始人逐字引自公司自己的 {n}-K（每条引文都核对过原文）；基金来自 Schedule {n}D/{n}G；合作和 IND 来自 {n}-K 新闻稿。",
-  "{n} companies with a quoted research origin or founder; {n} license from MIT, Broad, Harvard, Stanford, Whitehead, Dana-Farber or Scripps. A license proves where the patents came from, not that a given paper became the product; patents are not yet checked against USPTO records.": "{n} 家公司有引用的研究来源或创始人；其中 {n} 家的技术授权来自 MIT、Broad、哈佛、斯坦福、Whitehead、Dana-Farber 或 Scripps。授权只能证明专利来源，不能证明某篇论文变成了产品；专利尚未与 USPTO 记录核对。",
   "Price ${n} is {n}% above the rNPV base value ${n}; it implies ${n}M peak sales for the lead asset": "价格 ${n} 比 rNPV 基准价值 ${n} 高 {n}%；相当于主药峰值销售 ${n}M",
   "{n} · Out of sample: {n} health-care companies the rule never saw": "{n} · 样本外：规则从未见过的 {n} 家医疗公司",
   "The same rules replayed on {n} filings from listed health-care companies (drugs, diagnostics, biologics, devices, labs) that were not in the sample above. Each cell: median excess return vs XBI · share that lost {n}%+ vs XBI · filings.": "同样的规则，在不在上面样本里的上市医疗公司（药物、诊断、生物制品、器械、检测）的 {n} 份年报上重跑。每格：相对 XBI 的中位超额收益 · 比 XBI 少赚 {n}% 以上的比例 · 年报数。",
@@ -738,5 +737,9 @@
   "Deep discount: the price implies {n}% growth against {n}% in the base case. In the {n}-{n} backtests (both samples) this bucket had the worst returns; find out what the market knows first": "深度折价：现价隐含增速 {n}%，基准情景 {n}%。在 {n}-{n} 年回测中（两个样本都是）这一组回报最差；先弄清市场知道什么",
   "Flips if:": "何时改判：",
   "Second review (opus, arguing against):": "二次复核（Opus，站在反方）：",
-  "base-case growth can fall {n} points a year (from {n}% to {n}%) before today's price leaves the range; the terminal sales multiple can shrink {n}% before the price leaves the range": "基准情景增速每年再低 {n} 个点（从 {n}% 降到 {n}%），现价就会跑出区间；终值市销率再缩小 {n}%，现价就会跑出区间"
+  "base-case growth can fall {n} points a year (from {n}% to {n}%) before today's price leaves the range; the terminal sales multiple can shrink {n}% before the price leaves the range": "基准情景增速每年再低 {n} 个点（从 {n}% 降到 {n}%），现价就会跑出区间；终值市销率再缩小 {n}%，现价就会跑出区间",
+  "USPTO assignment records": "USPTO 受让记录",
+  "{n} companies with a quoted research origin or founder; {n} license from MIT, Broad, Harvard, Stanford, Whitehead, Dana-Farber or Scripps. A license proves where the patents came from, not that a given paper became the product. USPTO records come from the Open Data Portal: an owner record shows the company holds the patent application; \"pledged to\" means a lender holds a security interest in it.": "{n} 家公司有引用的研究来源或创始人；其中 {n} 家的技术授权来自 MIT、Broad、哈佛、斯坦福、Whitehead、Dana-Farber 或 Scripps。授权只能证明专利来源，不能证明某篇论文变成了产品。USPTO 记录来自其开放数据门户：所有权记录表示公司持有该专利申请；“pledged to”表示债权人对其持有担保权益（专利被抵押）。",
+  "{n} owner records": "{n} 条所有权记录",
+  "no owner record": "无所有权记录"
 }

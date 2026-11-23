@@ -147,6 +147,18 @@ def next_earnings(ticker: str, watch: dict, today: date) -> str | None:
     return None
 
 
+def patent_liens(uspto: dict) -> dict[str, list[tuple[str, str]]]:
+    """Lender and latest recorded date per company, from USPTO security-interest assignments."""
+    out: dict[str, list[tuple[str, str]]] = {}
+    for c in uspto.get("companies", []):
+        latest: dict[str, str] = {}
+        for r in c.get("securityInterests", []):
+            latest[r["assignee"]] = max(latest.get(r["assignee"], ""), (r.get("recordedAt") or "")[:10])
+        if latest:
+            out[c["ticker"]] = sorted(latest.items(), key=lambda x: x[1], reverse=True)
+    return out
+
+
 def ticket(row: dict, ctx: dict, portfolio: float, today: date) -> dict:
     t = row["ticker"]
     o = row.get("orderRange") or {}
@@ -262,7 +274,9 @@ def ticket(row: dict, ctx: dict, portfolio: float, today: date) -> dict:
         "safetyFloor": o.get("floor"), "positionPct": size, "buyNowPct": now_part, "positionUsd": round(size * portfolio),
         "sizeAdjustments": adjustments, "scalePlan": scale, "scaleCues": deal_cues, "nextEarnings": earnings,
         "invalidation": falsifiers + [f"open counter-point: {c}" for c in counters] + [f"FDA rejection letter: {c}" for c in crl]
-                        + [f"key departure: {d}" for d in departures],
+                        + [f"key departure: {d}" for d in departures]
+                        + [f"patents pledged to {who} (USPTO, recorded {when}): a default hands the IP to the lender"
+                           for who, when in ctx.get("liens", {}).get(t, [])],
         "flipPoints": flip_points(o, row.get("rnpv")),
         "adversarial": {k: adv.get(k) for k in ("verdict", "overall", "model", "downgrades")} if adv else None,
         "trimAbove": trim, "trimRule": f"consider trimming above ${trim}, where even the bull case earns less than 12% a year" if trim else None,
@@ -291,7 +305,8 @@ def build(portfolio: float, price_fn=price_risk) -> dict:
            "events": events, "departures": departures, "deals": deals, "watch": read(WATCHLIST, {}),
            "trends": growth_trends([r["ticker"] for r in ranking]),
            "adversarial": read(ROOT / "state/serenity-adversarial.json", {}).get("companies", {}),
-           "bull": {t: bull_price(f) for t, f in financials.items()}}
+           "bull": {t: bull_price(f) for t, f in financials.items()},
+           "liens": patent_liens(read(ROOT / "state/uspto-assignment-validation.json", {}))}
     small_rows = small_cap_rows({r["ticker"] for r in ranking})
     if small_rows:
         ctx["risk"].update(price_fn([r["ticker"] for r in small_rows]))

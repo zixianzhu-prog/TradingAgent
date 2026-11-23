@@ -1086,6 +1086,14 @@ def lab_to_company_section(root: Path) -> str:
         return ""
     own = load(root / "state/institutional-ownership.json", {}).get("filings", [])
     pharma = [f for f in load(root / "state/pharma-deals-ind.json", {}).get("filings", []) if not f.get("duplicateOf")]
+    uspto = {c["ticker"]: c for c in load(root / "state/uspto-assignment-validation.json", {}).get("companies", [])}
+    def patents(t):
+        c = uspto.get(t)
+        if not c:
+            return "—"
+        own = f'{len(c["officialAssignments"])} owner records' if c["officialAssignments"] else "no owner record"
+        lien = sorted({r["assignee"] for r in c.get("securityInterests", [])})
+        return own + (f'; pledged to {", ".join(lien)}' if lien else "")
     elite = ("Massachusetts Institute", "MIT", "Broad Institute", "Harvard", "Stanford", "Whitehead", "Dana-Farber", "Scripps")
     rows_by = {}
     for l in founders:
@@ -1115,14 +1123,15 @@ def lab_to_company_section(root: Path) -> str:
         r = rows_by[t]
         inst = ", ".join(f'<a href="{esc(u)}">{esc(i)}</a>' for i, u in sorted(r["inst"].items())) or "—"
         body += (f'<tr><td class="tk">{esc(t)}</td><td style="white-space:normal">{inst}</td><td>{esc(", ".join(sorted(r["people"])) or "—")}</td>'
+                 f'<td style="white-space:normal">{esc(patents(t))}</td>'
                  f'<td style="white-space:normal">{esc(funds(t))}</td><td style="white-space:normal">{esc(deals(t))}</td></tr>')
     n_elite = sum(any(e in i for i in rows_by[t]["inst"] for e in elite) for t in rows_by)
     return f"""
   <section class="section" id="lab" aria-labelledby="lab-h">
     <h2 id="lab-h">From lab to company</h2>
     <p>The chain Peter asked for: which university or institute the technology came from, who founded the company, whether specialist biotech funds own it, and whether pharma or the FDA has engaged. Origins and founders are quoted from each company's own 10-K (every quote checked against the filing); funds come from Schedule 13D/13G; deals and IND clearances from 8-K press releases.</p>
-    <p class="note"><span>Now:</span> {len(rows_by)} companies with a quoted research origin or founder; {n_elite} license from MIT, Broad, Harvard, Stanford, Whitehead, Dana-Farber or Scripps. A license proves where the patents came from, not that a given paper became the product; patents are not yet checked against USPTO records.</p>
-    <div class="table-wrap"><table><thead><tr><th>Ticker</th><th>Research origin (licensed from)</th><th>Founders named in the 10-K</th><th>Specialist funds holding 5%+</th><th>Pharma deal / IND (90 days)</th></tr></thead><tbody>{body}</tbody></table></div>
+    <p class="note"><span>Now:</span> {len(rows_by)} companies with a quoted research origin or founder; {n_elite} license from MIT, Broad, Harvard, Stanford, Whitehead, Dana-Farber or Scripps. A license proves where the patents came from, not that a given paper became the product. USPTO records come from the Open Data Portal: an owner record shows the company holds the patent application; "pledged to" means a lender holds a security interest in it.</p>
+    <div class="table-wrap"><table><thead><tr><th>Ticker</th><th>Research origin (licensed from)</th><th>Founders named in the 10-K</th><th>USPTO assignment records</th><th>Specialist funds holding 5%+</th><th>Pharma deal / IND (90 days)</th></tr></thead><tbody>{body}</tbody></table></div>
   </section>"""
 
 
