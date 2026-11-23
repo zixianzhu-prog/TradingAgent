@@ -90,6 +90,29 @@ def retrieve(url, trusted_domains):
         return clean(data.decode("utf-8", errors="replace"))
 
 
+def management_docs(ticker, urls):
+    radar = read(ROOT / "state/management-radar.json", {})
+    rows = radar.get("companies", [])
+    row = next((r for r in (rows if isinstance(rows, list) else rows.values()) if r.get("ticker") == ticker), None)
+    if not row or not row.get("timeline"):
+        return []
+    lines = []
+    for e in row["timeline"]:
+        lines.append(f"{e.get('date')}: {e.get('title')} ({e.get('source')}, {e.get('url') or 'no link'}). {e.get('detail', '')} "
+                     f"Radar reading: {e.get('interpretation')}." + (f" Policy: {e['policy']}" if e.get("policy") else ""))
+        if e.get("type") == "key_departure" and str(e.get("url", "")).startswith("https://www.sec.gov/"):
+            urls.add(e["url"])
+    people = "; ".join(f"{p['name']} ({', '.join(r for r in p.get('roles', []) if r.isascii())})" for p in row.get("corePeople", []))
+    body = (f"Management and insider timeline for {ticker} from SEC 8-K Item 5.02 and Form 4 filings (last {radar.get('lookbackDays', 180)} days). "
+            f"Core people on file: {people or 'none read'}. Events: " + " ".join(lines) +
+            " An insider sale is not bearish without 10b5-1 plan, ownership and concentration context; a purchase is supporting evidence only. "
+            "Events marked 'Configured material event' come from the analyst watchlist and must be checked against the cited filing.")
+    sec = all(str(e.get("url", "")).startswith("https://www.sec.gov/") for e in row["timeline"])
+    return [{"title": f"Management radar — {ticker}", "text": body, "url": next((e["url"] for e in row["timeline"] if e.get("url")), ""),
+             "publishedAt": max(e.get("date", "") for e in row["timeline"]), "observedAt": radar.get("generatedAt", now()),
+             "provenance": "sec-management-radar" if sec else "management-radar", "primary": sec, "path": "state/management-radar.json"}]
+
+
 def collect(company, fetch=False):
     ticker = company["ticker"]
     aliases = [ticker, company.get("name", ticker), *company.get("company_terms", [])]
@@ -155,6 +178,9 @@ def collect(company, fetch=False):
                 "primary": True,
                 "path": "state/sec-xbrl-validation.json",
             })
+    # Management radar (scripts/management_radar.py): 8-K Item 5.02 departures, governance events and
+    # Form 4 insider trades, each with its SEC link. Departures also queue the 8-K itself for retrieval.
+    docs += management_docs(ticker, urls)
     # Hand-maintained financial/thesis data is discovery context, never verified primary evidence.
     for filename, keys in (("ai-medicine-financials.json", ("companies",)), ("ai-medicine-theses.json", ("candidates", "expanded_deep_dives"))):
         payload = read(ROOT / "trend-agent" / filename, {})
@@ -186,6 +212,8 @@ def collect(company, fetch=False):
     def source_priority(doc):
         if doc.get("provenance") == "sec-companyfacts":
             return 6
+        if doc.get("provenance") in ("sec-management-radar", "management-radar"):
+            return 5
         if doc.get("provenance") == "primary-document" and "list-artificial-intelligence-enabled-medical-devices" not in doc.get("url", ""):
             return 5
         if doc.get("provenance") == "fda-ai-device-list":
@@ -202,7 +230,7 @@ def collect(company, fetch=False):
         if len(body) < 120 or clean(doc["title"]) == body:
             continue
         chunks = [body[i:i + 3000] for i in range(0, len(body), 2800)]
-        relevant = [chunk for chunk in chunks if re.search(r"revenue|customer|supply|manufactur|risk|competition|profit|margin|partner|board|clinical|cash|license", chunk, re.I)]
+        relevant = [chunk for chunk in chunks if re.search(r"revenue|customer|supply|manufactur|risk|competition|profit|margin|partner|board|clinical|cash|license|management|insider", chunk, re.I)]
         for chunk in (relevant or chunks)[:6]:
             key = digest([doc["url"], chunk])
             if key in seen:
@@ -255,6 +283,19 @@ This is research evidence completeness, not a probability of returns or permissi
     raise RuntimeError("Configured models unavailable/rate-limited")
 
 
+NON_SPECIFIC = re.compile(
+    r"face (?:significant|intense|substantial|strong) competition|(?:very|highly|intensely) competitive|ability to compete"
+    r"|may not (?:be able to )?(?:achieve|generate|attain|maintain|sustain) (?:sufficient revenue|profitab)"
+    r"|incurred (?:significant |substantial |net )?losses|history of (?:net )?losses|expect to continue to incur"
+    r"|This record supports regulatory product evidence only|A registry record shows the trial exists"
+    # Risk-factor hedges state what could happen, not what did: "may not provide adequate protection",
+    # "competitors may contest our patents", "we cannot offer any assurances", "we have no control over".
+    r"|\b(?:may|might|could) (?:not |also |in the future )?(?:be |provide|prevent|stop|contest|challenge|adversely|harm|result|fail|lose|face|become|limit)"
+    r"|cannot (?:offer|give|provide|make) (?:any )?assurance|no assurance|can be no assurance|not conclusive as to its validity"
+    r"|(?:we )?have no control over|it may be difficult for us"
+    r"|Highest listed phase:|Overall status:|^[a-z]+:[A-Za-z]+Member\b|^\S+ \d{10} --\d{2}-\d{2}", re.I)
+
+
 def validate(raw, passages):
     if not isinstance(raw, dict) or not isinstance(raw.get("gates", {}), dict):
         raw = {}
@@ -290,6 +331,11 @@ def validate(raw, passages):
         if state == "pass" and gate != "counter_thesis" and refs["counter"]:
             state = "partial"
             missing.append("存在反证，需要进一步核验")
+        if state == "fail" and refs["counter"] and all(NON_SPECIFIC.search(r["quote"]) for r in refs["counter"]):
+            # Generic risk-factor language, our own disclaimer sentences and registry/XBRL fields are not
+            # direct counter-evidence: every filer has them. A fail needs a company-specific fact.
+            state = "unknown"
+            missing.append("反证只是通用风险条款或记录字段，不是针对公司的直接反证")
         if state == "fail" and not any(r["primary"] for r in refs["counter"]):
             state = "unknown"
             missing.append("不通过需要直接反证，缺少证据不能等同失败")
@@ -436,6 +482,13 @@ def import_codex(response_path, skills):
         expected = {row["ticker"]: row for row in read(ROOT / "state/serenity-claude-queue.json", {}).get("companies", [])}
     for row in read(ROOT / "state/serenity-codex-queue.json", {}).get("companies", []):
         expected.setdefault(row["ticker"], row)
+    # Any reviewer may grade any current packet: match on the exact input hash across all three
+    # manifests, so a Claude re-review of an inbox packet is not rejected as stale.
+    by_hash = {row["inputHash"]: row for name in ("serenity-codex-inbox.json", "serenity-codex-queue.json", "serenity-claude-queue.json")
+               for row in read(ROOT / "state" / name, {}).get("companies", [])}
+    for raw in response_preview.get("reviews", []) if isinstance(response_preview.get("reviews"), list) else []:
+        if isinstance(raw, dict) and raw.get("inputHash") in by_hash and by_hash[raw["inputHash"]]["ticker"] == raw.get("ticker"):
+            expected[raw["ticker"]] = by_hash[raw["inputHash"]]
     response = read(response_path, {})
     reviews = response.get("reviews", [])
     if not isinstance(reviews, list) or not reviews:
@@ -484,7 +537,10 @@ def import_codex(response_path, skills):
             "gates": gates,
             "usage": {},
         }
-        reviewer_tag = "claude" if response.get("reviewer") == "Claude" else "codex"
+        # "-claude-" marks reviews of the memo packets built from SEC filings, which new news packets
+        # must not mark stale. Claude CLI reviews of ordinary queue/inbox packets go stale like Codex ones.
+        memo = item["inputHash"] in {r["inputHash"] for r in read(ROOT / "state/serenity-claude-queue.json", {}).get("companies", [])}
+        reviewer_tag = ("claude" if memo else "claudecli") if response.get("reviewer") == "Claude" else "codex"
         review_path = directory / f"{ticker}-{reviewer_tag}-{item['inputHash'][:20]}.json"
         review_path.write_text(json.dumps(review, ensure_ascii=False, indent=2))
         rows[ticker] = entry_from_review(review, review_path)
