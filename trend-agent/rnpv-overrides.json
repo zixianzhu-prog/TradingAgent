@@ -1,0 +1,222 @@
+{
+  "note": "Per-company rNPV inputs replacing the default peak-sales priors. Patient counts and evidence are verbatim quotes from the company's own SEC filings; penetration and net price are analyst assumptions and are labelled as such.",
+  "companies": {
+    "SGMT": {
+      "asset": "denifanstat, oral FASN inhibitor, moderate-to-severe acne (US Phase 3 AURORA, started 2026-10)",
+      "source": "patients: Sagimet 10-K for 2025; penetration and price: analyst assumptions",
+      "patients": {
+        "value": 10000000,
+        "derivation": "50 million Americans with acne x up to 20% severe = 10 million; the drug targets moderate-to-severe, so this is a floor on the addressable group",
+        "quotes": [
+          "Acne is the most common skin condition in the United States, affecting up to 50 million Americans annually.",
+          "the prevalence of severe acne may be as high as 20% of those affected by acne."
+        ],
+        "url": "https://www.sec.gov/Archives/edgar/data/1400118/000110465926026140/sgmt-20251231x10k.htm"
+      },
+      "netPricePerYearUsd": 1500,
+      "penetration": {
+        "bear": 0.005,
+        "base": 0.015,
+        "bull": 0.04
+      },
+      "assumptions": "Net price $1,500 a year and 0.5% / 1.5% / 4% share of the 10 million are analyst assumptions for a branded oral acne drug competing with generic antibiotics and isotretinoin; not company guidance.",
+      "evidence": [
+        {
+          "quote": "In June 2025, Ascletis announced that denifanstat met all primary and secondary endpoints in its Phase 3 trial in moderate to severe acne vulgaris in China.",
+          "url": "https://www.sec.gov/Archives/edgar/data/1400118/000110465926026140/sgmt-20251231x10k.htm"
+        },
+        {
+          "quote": "In December 2025, Ascletis announced that the China NMPA has accepted its NDA for denifanstat for the treatment of moderate to severe acne.",
+          "url": "https://www.sec.gov/Archives/edgar/data/1400118/000110465926026140/sgmt-20251231x10k.htm"
+        }
+      ],
+      "economics": {
+        "type": "self-commercialized",
+        "checked": "https://www.sec.gov/Archives/edgar/data/1400118/000110465926026140/sgmt-20251231x10k.htm"
+      }
+    },
+    "ELDN": {
+      "asset": "Study of Tegoprubart Efficacy and Safety Compared With Tacrolimus in Kidney Transplantation (NCT07835581)",
+      "source": "patients: company 10-K (quote verified); price, covered share and penetration: Sonnet assumptions, unverified",
+      "patients": {
+        "value": 32400,
+        "derivation": "270,000 (US prevalence) x covered share 12%",
+        "quotes": [
+          "with an estimated 270,000 Americans living with a transplanted kidney."
+        ],
+        "url": "https://www.sec.gov/Archives/edgar/data/1404281/000119312526116164/eldn-20251231.htm",
+        "indication": "Prevention of allograft rejection in kidney transplantation"
+      },
+      "netPricePerYearUsd": 45000,
+      "penetration": {
+        "bear": 0.05,
+        "base": 0.15,
+        "bull": 0.3
+      },
+      "assumptions": "Tegoprubart targets new transplant initiations (~25k/yr incidence ≈ 9% of the 270k prevalent base, rounded to 12% to allow modest switch-in of stable patients); $45k/yr anchored to belatacept (Nulojix) with a modest premium for a novel CD40L mechanism; penetration reflects stiff tacrolimus entrenchment at bear, meaningful uptake if Phase 3 superiority on CNI toxicity holds at base, and broad first-line displacement if safety profile proves differentiated at bull.",
+      "assumptionsBy": "claude-sonnet (unverified)",
+      "economics": {
+        "type": "self-commercialized",
+        "checked": "https://www.sec.gov/Archives/edgar/data/1404281/000119312526116164/eldn-20251231.htm"
+      }
+    },
+    "HURA": {
+      "asset": "Placebo-Controlled Trial of IFx-Hu2.0 Followed By Pembrolizumab In Checkpoint Inhibitor Naïve Participants With Advanced (NCT06947928)",
+      "source": "patients: company 10-K (quote verified); price, covered share and penetration: Sonnet assumptions, unverified",
+      "patients": {
+        "value": 2547,
+        "derivation": "4,245 (US prevalence, advanced/metastatic MCC, projected 2027) x covered share 60%",
+        "quotes": [
+          "According to DelveInsight, it is estimated by 2027 there will be approximately 4,245 patients in the US and 7,049 patients in the 7 major market European countries, including the UK, growing to a total of 15, 262 patients by 2034 in these geographic territories."
+        ],
+        "url": "https://www.sec.gov/Archives/edgar/data/1498382/000119312526134950/hura-20251231.htm",
+        "indication": "Advanced or metastatic Merkel Cell Carcinoma"
+      },
+      "netPricePerYearUsd": 185000,
+      "penetration": {
+        "bear": 0.08,
+        "base": 0.18,
+        "bull": 0.32
+      },
+      "assumptions": "Net price benchmarked to avelumab/pembrolizumab monotherapy WAC (~$200K) with a ~8% net discount; addressable share set at 0.60 to reflect the CPI-naïve first-line subset of the advanced/metastatic population; penetration capped by competition from already-approved checkpoint inhibitors (avelumab, pembrolizumab) in this rare indication.",
+      "assumptionsBy": "claude-sonnet (unverified)",
+      "economics": {
+        "type": "self-commercialized",
+        "checked": "https://www.sec.gov/Archives/edgar/data/1498382/000119312526134950/hura-20251231.htm"
+      }
+    },
+    "IRD": {
+      "asset": "OPI-NXYDLD-303 Safety and Efficacy of Phentolamine Ophthalmic Solution in Keratorefractive Surgery Participants With Dec (NCT07140783)",
+      "source": "patients: company 10-K (quote verified); price, covered share and penetration: Sonnet assumptions, unverified",
+      "patients": {
+        "value": 8360000,
+        "derivation": "38,000,000 (US prevalence (cumulative post-keratorefractive-surgery population)) x covered share 22%",
+        "quotes": [
+          "Further, according to GlobalData, approximately 38 million patients in the U.S."
+        ],
+        "url": "https://www.sec.gov/Archives/edgar/data/1228627/000114036126009247/ef20060643_10k.htm",
+        "indication": "Decreased mesopic visual acuity in keratorefractive surgery patients (post-LASIK/PRK night-vision disturbances)"
+      },
+      "netPricePerYearUsd": 1800,
+      "penetration": {
+        "bear": 0.03,
+        "base": 0.09,
+        "bull": 0.2
+      },
+      "assumptions": "~22% of post-refractive patients report clinically bothersome mesopic disturbances (label-eligible); net price of ~$1,800/yr reflects a periodic-use branded ophthalmic drop (comparable to Ryzumvi launch pricing with managed-care rebates); penetration is capped by elective/cash-pay dynamics, competition from accommodative strategies, and the fact that many patients self-resolve.",
+      "assumptionsBy": "claude-sonnet (unverified)",
+      "economics": {
+        "type": "royalty",
+        "rate": 0.15,
+        "endYear": 2040,
+        "basis": "Viatris holds the exclusive license for phentolamine (PS) including night vision disturbances in its territory; IRD receives tiered royalties. 15% is the midpoint of 'low double-digit up to low 20%' (US); ex-US is low double-digit. Royalties end 2040.",
+        "quotes": [
+          "The Company will also receive tiered royalties, starting at low double-digit royalties up to low 20% royalties, based on the aggregate annual net sales of all PS Products in the United States, and will receive low double-digit royalties based on all annual net sales in the Viatris Territory outside of the United States.",
+          "The royalty payments will continue on a country-by-country basis from the date of the first commercial sale of the first PS Product in a country of the Viatris Territory until December 31, 2040."
+        ],
+        "url": "https://www.sec.gov/Archives/edgar/data/1228627/000114036126009247/ef20060643_10k.htm"
+      }
+    },
+    "ANTX": {
+      "asset": "Phase 2 Study of Oral Epetraborole in Adults With Polycythemia Vera (NCT07891533)",
+      "source": "patients: company 10-K (quote verified); price, covered share and penetration: Sonnet assumptions, unverified",
+      "patients": {
+        "value": 62000,
+        "derivation": "155,000 (US prevalence) x covered share 40%",
+        "quotes": [
+          "PV is estimated to affect approximately 155,000 people in the U.S."
+        ],
+        "url": "https://www.sec.gov/Archives/edgar/data/1880438/000119312526110693/antx-20251231.htm",
+        "indication": "Polycythemia Vera (PV)"
+      },
+      "netPricePerYearUsd": 90000,
+      "penetration": {
+        "bear": 0.08,
+        "base": 0.18,
+        "bull": 0.32
+      },
+      "assumptions": "$90K net price anchored to oral JAK/myeloproliferative agents (below ruxolitinib list ~$150K after rebates); 40% addressable share reflects likely label for hydroxyurea-refractory/intolerant patients; penetration capped by entrenched ruxolitinib use and a Phase 2-stage asset still needing Phase 3 proof.",
+      "assumptionsBy": "claude-sonnet (unverified)",
+      "economics": {
+        "type": "self-commercialized",
+        "checked": "https://www.sec.gov/Archives/edgar/data/1880438/000119312526110693/antx-20251231.htm"
+      }
+    },
+    "FATE": {
+      "asset": "FT839 in Autoimmune Diseases (NCT07800871)",
+      "source": "patients: company 10-K (quote verified); price, covered share and penetration: Sonnet assumptions, unverified",
+      "patients": {
+        "value": 21250,
+        "derivation": "85,000 (US prevalence) x covered share 25%",
+        "quotes": [
+          "the prevalence of SSc is greater than 85,000 patients with significant unmet medical need."
+        ],
+        "url": "https://www.sec.gov/Archives/edgar/data/1434316/000119312526073699/fate-20251231.htm",
+        "indication": "Systemic Sclerosis (SSc)"
+      },
+      "netPricePerYearUsd": 300000,
+      "penetration": {
+        "bear": 0.05,
+        "base": 0.15,
+        "bull": 0.3
+      },
+      "assumptions": "Cell therapy one-time infusion priced analogously to oncology CAR-T but discounted for autoimmune (~$300K net); addressable share limited to severe/refractory SSc (~25%); penetration range reflects single-infusion logistics and competitive pressure from emerging small-molecule and biologic entrants.",
+      "assumptionsBy": "claude-sonnet (unverified)",
+      "economics": {
+        "type": "self-commercialized",
+        "checked": "https://www.sec.gov/Archives/edgar/data/1434316/000119312526073699/fate-20251231.htm"
+      }
+    },
+    "PALI": {
+      "asset": "A Trial to Investigate PALI-2108 Versus Placebo in Participants With Moderately to Severely Active Ulcerative Colitis (NCT07845487)",
+      "source": "patients: company 10-K (quote verified); price, covered share and penetration: Sonnet assumptions, unverified",
+      "patients": {
+        "value": 209701,
+        "derivation": "655,317 (US diagnosed prevalent cases (2031 projection, 8MM context)) x covered share 32%",
+        "quotes": [
+          "is again projected to lead in prevalence in 2031 with 655,317 cases, whereas Canada is projected to report the lowest with 91,186 cases."
+        ],
+        "url": "https://www.sec.gov/Archives/edgar/data/1357459/000135745926000004/pali-20251231.htm",
+        "indication": "Ulcerative Colitis (UC) — moderately to severely active"
+      },
+      "netPricePerYearUsd": 38000,
+      "penetration": {
+        "bear": 0.03,
+        "base": 0.07,
+        "bull": 0.14
+      },
+      "assumptions": "UC advanced therapies (Rinvoq, Zeposia, Entyvio biosimilars) net ~$30–45K; ~32% of prevalent UC is moderately-to-severely active and label-eligible; penetration capped by a crowded market with established biologics and JAK inhibitors, with upside if colonic prodrug delivery shows tolerability advantages.",
+      "assumptionsBy": "claude-sonnet (unverified)",
+      "economics": {
+        "type": "self-commercialized",
+        "checked": "https://www.sec.gov/Archives/edgar/data/1357459/000135745926000004/pali-20251231.htm"
+      }
+    },
+    "PRME": {
+      "asset": "A Study of the Safety and Efficacy of Prime Editing (PM647a) in Participants With Alpha-1 Antitrypsin Deficiency (NCT07887347)",
+      "source": "patients: company 10-K (quote verified); price, covered share and penetration: Sonnet assumptions, unverified",
+      "patients": {
+        "value": 55000,
+        "derivation": "100,000 (US prevalence) x covered share 55%",
+        "quotes": [
+          "In the United States, approximately 100,000 individuals – many of whom are undiagnosed - have AATD, with PiZZ patients representing the most severe form."
+        ],
+        "url": "https://www.sec.gov/Archives/edgar/data/1894562/000162828026013569/prme-20251231.htm",
+        "indication": "Alpha-1 Antitrypsin Deficiency (AATD)"
+      },
+      "netPricePerYearUsd": 3000000,
+      "penetration": {
+        "bear": 0.02,
+        "base": 0.06,
+        "bull": 0.14
+      },
+      "assumptions": "PM647a is a prime-editing corrective targeting the Z allele (PiZZ genotype, ~55% of US AATD); priced as a one-time curative analogous to approved gene therapies (Hemgenix $3.5M, Zynteglo $2.8M) at $3M net; peak penetration capped by high undiagnosed fraction and typical rare-disease gene-therapy uptake curves. One-time gene-editing price: the penetrated pool is treated over 10 years (corrected by hand).",
+      "assumptionsBy": "claude-sonnet (unverified)",
+      "oneTimeTherapy": true,
+      "economics": {
+        "type": "self-commercialized",
+        "checked": "https://www.sec.gov/Archives/edgar/data/1894562/000162828026013569/prme-20251231.htm"
+      }
+    }
+  }
+}
