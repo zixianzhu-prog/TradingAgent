@@ -927,7 +927,7 @@ def early_signals_section(root: Path) -> str:
     dep_rows = "".join(f'<tr><td>{esc(d["company"])}</td><td class="n">{esc(d["date"])}</td><td style="white-space:normal"><a href="{esc(d["url"])}" target="_blank" rel="noopener">“{esc(d["sentence"][:220])}”</a></td></tr>'
                        for d in people.get("keyDepartures", []))
     people_html = ('<h3 class="bucket-h">What insiders are doing</h3>'
-                   f'<p class="bucket-blurb">Covered companies since {esc(people.get("since", ""))}. An officer or director buying shares with their own money in the open market (Form 4, code P) is a positive signal; '
+                   f'<p class="bucket-blurb">Covered companies since {esc(people.get("since", ""))}. Open-market buying (Form 4, code P) is shown as context, not as a buy signal: in 1,561 purchases at 445 health-care companies (2018 to mid-2025), stocks did no better than the same companies bought at a random month start (12-month median excess vs XBI -21.6% against -21.4%); only buying by 10% holders, usually funds, did somewhat better (170 cases, borderline significance). See outputs/insider-buy-study.md. '
                    'sales are common (tax, diversification, pre-set plans) and are listed only as counts. A CEO, CFO, CSO, president or founder leaving (8-K Item 5.02) is a negative signal. '
                    'Both are written to the news store as official SEC events; a key departure at a reviewed company also queues a re-check of its governance gate.</p>'
                    + ('<div class="table-wrap"><table><thead><tr><th>Ticker</th><th>Buyer</th><th>Role</th><th class="n">Date</th><th class="n">Bought</th></tr></thead>'
