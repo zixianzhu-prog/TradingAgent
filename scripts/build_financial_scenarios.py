@@ -6,7 +6,32 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
-def analyze(row: dict) -> dict:
+def apply_calibrated_multiples(scenario_inputs: dict, calibration: dict | None) -> dict | None:
+    """Replace hand-set exit multiples with the sourced ones from calibrate_multiples.py, if present."""
+    if not calibration:
+        return None
+    for name, case in scenario_inputs["cases"].items():
+        case["terminal_multiple"] = float(calibration[name])
+        case["terminal_multiple_basis"] = calibration["basis"][name]
+    return {"method": "bear = Damodaran industry P/S; base = median of AI-medicine peers; bull = top quartile of peers",
+            "industry": calibration["sector_industry"]}
+
+
+def apply_calibrated_growth(scenario_inputs: dict, calibration: dict | None) -> dict | None:
+    """Replace hand-set revenue CAGRs with the sourced growth paths from calibrate_growth.py, if present."""
+    if not calibration:
+        return None
+    for name, case in scenario_inputs["cases"].items():
+        case["revenue_cagr"] = float(calibration[name])
+        case["revenue_cagr_basis"] = calibration["basis"][name]
+    return {"method": "start = the company's own reported growth; bear/base fade to Damodaran industry fundamental growth, bull to the industry's 5-year revenue CAGR",
+            "start": calibration["start"], "start_basis": calibration["start_basis"],
+            "industry_fundamental_growth": calibration["industry_fundamental_growth"],
+            "industry_historical_cagr": calibration["industry_historical_cagr"],
+            "revenue_history_m": calibration.get("revenue_history_m", [])}
+
+
+def analyze(row: dict, calibration: dict | None = None, growth: dict | None = None) -> dict:
     market_cap_m = row["price"] * row["shares"] / 1_000_000
     guide = row.get("full_year_revenue_guide_m")
     annualized_revenue = guide or row["quarterly_revenue_m"] * 4
@@ -55,6 +80,8 @@ def analyze(row: dict) -> dict:
     scenario_model = None
     scenario_inputs = row.get("scenario_inputs")
     if scenario_inputs:
+        multiples_source = apply_calibrated_multiples(scenario_inputs, calibration)
+        growth_source = apply_calibrated_growth(scenario_inputs, growth)
         years = int(scenario_inputs["horizon_years"])
         if years <= 0:
             raise ValueError(f"{row['ticker']}: scenario horizon must be positive")
@@ -111,6 +138,10 @@ def analyze(row: dict) -> dict:
             case["price_change_to_policy_return"] = round(target_price / row["price"] - 1, 4)
             case["policy_return_threshold"] = target_return
             case["passes_policy_return"] = case["annualized_return"] >= target_return
+        # Safety-margin price: the bear case does not lose money over the horizon.
+        bear = cases["bear"]
+        floor_cap = bear["terminal_equity_value_m"] / bear["diluted_share_factor"]
+        bear["price_for_zero_return"] = round(row["price"] * floor_cap / market_cap_m, 2)
         inputs_verified = bool(scenario_inputs.get("inputs_verified", False))
         exclusion_pass = cases["base"]["passes_policy_return"] and cases["bear"]["passes_policy_return"] and inputs_verified
         scenario_model = {
@@ -127,6 +158,8 @@ def analyze(row: dict) -> dict:
             "probability_basis": scenario_inputs.get("probability_basis", "Analyst-set sensitivity weights; not empirically estimated probabilities."),
             "safety_margin_policy": {"base_min_return": base_min_return, "bear_min_return": bear_min_return},
             "inputs_verified": inputs_verified,
+            "multiples_source": multiples_source,
+            "growth_source": growth_source,
             "exclusion_test_pass": exclusion_pass,
             "limitation": "Illustrative per-share exclusion test, not a DCF or target price. Growth, dilution, probabilities and terminal multiples are analyst-set assumptions, not evidence-generated forecasts. Passing cannot upgrade a company; failing can only keep it from upgrade.",
         }
@@ -157,9 +190,13 @@ def main() -> None:
     parser.add_argument("--financials", required=True)
     parser.add_argument("--json-output", required=True)
     parser.add_argument("--markdown-output", required=True)
+    parser.add_argument("--multiples", help="state/multiple-calibration.json from calibrate_multiples.py")
+    parser.add_argument("--growth", help="state/growth-calibration.json from calibrate_growth.py")
     args = parser.parse_args()
     source = json.loads(Path(args.financials).read_text(encoding="utf-8"))
-    companies = [analyze(row) for row in source["companies"]]
+    calibrated = json.loads(Path(args.multiples).read_text(encoding="utf-8"))["companies"] if args.multiples else {}
+    growth = json.loads(Path(args.growth).read_text(encoding="utf-8"))["companies"] if args.growth else {}
+    companies = [analyze(row, calibrated.get(row["ticker"]), growth.get(row["ticker"])) for row in source["companies"]]
     payload = {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "asOf": source["as_of"],
@@ -202,6 +239,11 @@ def main() -> None:
         if row.get("scenario_model"):
             model = row["scenario_model"]
             lines += ["", f"### {row['ticker']} 五年数值情景（{model['metric']}终值法）", "", "| 情景 | 主观权重 | 收入CAGR | 年稀释 | 终值利润率 | 终值倍数 | 五年收入 | 每股年化回报敏感度 |", "|---|---:|---:|---:|---:|---:|---:|---:|"]
+            if model.get("multiples_source"):
+                lines[-3:-3] = [f"终值倍数来源：{model['multiples_source']['method']}（行业：{model['multiples_source']['industry']}）。", ""]
+            if model.get("growth_source"):
+                g = model["growth_source"]
+                lines[-3:-3] = [f"增速来源：起点 {g['start']:.1%}（{g['start_basis']}），{g['method']}；行业基本增速 {g['industry_fundamental_growth']:.1%}，行业 5 年收入 CAGR {g['industry_historical_cagr']:.1%}。", ""]
             for name in ("bear", "base", "bull"):
                 case = model["cases"][name]
                 margin = f"{case['terminal_margin']:.1%}" if case.get("terminal_margin") is not None else "n/a"

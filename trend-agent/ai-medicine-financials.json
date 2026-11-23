@@ -80,7 +80,38 @@
       "bear_case": "Hosted migration compresses margins, pharma customers internalize AI tools, milestone timing slips and cash burn persists without stronger recurring growth.",
       "sources": [
         "https://www.sec.gov/Archives/edgar/data/1490978/000149097826000075/sdgr-20260930x8kxexx991.htm"
-      ]
+      ],
+      "scenario_inputs": {
+        "horizon_years": 5,
+        "metric": "sales",
+        "inputs_verified": false,
+        "net_debt_assumption_m": -373.0,
+        "net_debt_assumption_note": "Cash and securities ($373M, latest quarter) treated as net cash; debt not separately verified.",
+        "probability_basis": "Analyst-set priors: software growth slowed to ~6% while drug-discovery revenue is lumpy; not empirical probabilities.",
+        "cases": {
+          "bear": {
+            "probability": 0.4,
+            "revenue_cagr": 0.05,
+            "annual_share_dilution": 0.03,
+            "terminal_margin": null,
+            "terminal_multiple": 3.5
+          },
+          "base": {
+            "probability": 0.45,
+            "revenue_cagr": 0.12,
+            "annual_share_dilution": 0.02,
+            "terminal_margin": null,
+            "terminal_multiple": 6.0
+          },
+          "bull": {
+            "probability": 0.15,
+            "revenue_cagr": 0.2,
+            "annual_share_dilution": 0.01,
+            "terminal_margin": null,
+            "terminal_multiple": 9.0
+          }
+        }
+      }
     },
     {
       "ticker": "RXRX",
@@ -387,7 +418,38 @@
         "https://isrg.intuitive.com/news-releases/news-release-details/intuitive-announces-third-quarter-earnings-6",
         "https://isrg.intuitive.com/static-files/42b1fa2c-4c6e-4dd7-90b9-acceda8baded",
         "https://www.fda.gov/medical-devices/artificial-intelligence-enabled-medical-devices/list-artificial-intelligence-enabled-medical-devices"
-      ]
+      ],
+      "scenario_inputs": {
+        "horizon_years": 5,
+        "metric": "sales",
+        "inputs_verified": false,
+        "net_debt_assumption_m": -6800.4,
+        "net_debt_assumption_note": "Cash and investments ($6.8B, latest quarter) treated as net cash; no long-term debt.",
+        "probability_basis": "Analyst-set priors for a profitable market leader priced at ~13x sales; not empirical probabilities.",
+        "cases": {
+          "bear": {
+            "probability": 0.3,
+            "revenue_cagr": 0.09,
+            "annual_share_dilution": 0.0,
+            "terminal_margin": null,
+            "terminal_multiple": 7.0
+          },
+          "base": {
+            "probability": 0.5,
+            "revenue_cagr": 0.14,
+            "annual_share_dilution": 0.0,
+            "terminal_margin": null,
+            "terminal_multiple": 10.0
+          },
+          "bull": {
+            "probability": 0.2,
+            "revenue_cagr": 0.18,
+            "annual_share_dilution": 0.0,
+            "terminal_margin": null,
+            "terminal_multiple": 13.0
+          }
+        }
+      }
     },
     {
       "ticker": "IQV",

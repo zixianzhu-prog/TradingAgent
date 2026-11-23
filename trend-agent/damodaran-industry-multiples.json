@@ -1,0 +1,880 @@
+{
+  "source": "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/psdata.html",
+  "data_date": "January 2026",
+  "fetched": "2026-11-23",
+  "industries": {
+    "Advertising": {
+      "firms": 52,
+      "ps": 1.64,
+      "ev_sales": 2.12,
+      "net_margin": "-0.30%",
+      "operating_margin": "10.05%"
+    },
+    "Aerospace/Defense": {
+      "firms": 79,
+      "ps": 3.17,
+      "ev_sales": 3.57,
+      "net_margin": "4.99%",
+      "operating_margin": "8.70%"
+    },
+    "Air Transport": {
+      "firms": 23,
+      "ps": 0.58,
+      "ev_sales": 1.03,
+      "net_margin": "2.51%",
+      "operating_margin": "4.88%"
+    },
+    "Apparel": {
+      "firms": 35,
+      "ps": 1.27,
+      "ev_sales": 1.59,
+      "net_margin": "3.85%",
+      "operating_margin": "9.89%"
+    },
+    "Auto & Truck": {
+      "firms": 33,
+      "ps": 3.34,
+      "ev_sales": 3.88,
+      "net_margin": "1.29%",
+      "operating_margin": "2.38%"
+    },
+    "Auto Parts": {
+      "firms": 35,
+      "ps": 0.64,
+      "ev_sales": 0.82,
+      "net_margin": "0.72%",
+      "operating_margin": "5.80%"
+    },
+    "Bank (Money Center)": {
+      "firms": 15,
+      "ps": 4.09,
+      "ev_sales": 8.31,
+      "net_margin": "28.89%",
+      "operating_margin": "0.08%"
+    },
+    "Banks (Regional)": {
+      "firms": 568,
+      "ps": 3.67,
+      "ev_sales": 4.28,
+      "net_margin": "27.49%",
+      "operating_margin": "-0.12%"
+    },
+    "Beverage (Alcoholic)": {
+      "firms": 14,
+      "ps": 1.75,
+      "ev_sales": 2.45,
+      "net_margin": "0.56%",
+      "operating_margin": "22.79%"
+    },
+    "Beverage (Soft)": {
+      "firms": 27,
+      "ps": 3.57,
+      "ev_sales": 4.16,
+      "net_margin": "13.40%",
+      "operating_margin": "20.63%"
+    },
+    "Broadcasting": {
+      "firms": 24,
+      "ps": 0.83,
+      "ev_sales": 1.4,
+      "net_margin": "2.06%",
+      "operating_margin": "12.35%"
+    },
+    "Brokerage & Investment Banking": {
+      "firms": 32,
+      "ps": 2.87,
+      "ev_sales": 5.78,
+      "net_margin": "14.45%",
+      "operating_margin": "-0.12%"
+    },
+    "Building Materials": {
+      "firms": 41,
+      "ps": 1.68,
+      "ev_sales": 2.05,
+      "net_margin": "7.42%",
+      "operating_margin": "12.80%"
+    },
+    "Business & Consumer Services": {
+      "firms": 155,
+      "ps": 2.2,
+      "ev_sales": 2.53,
+      "net_margin": "7.03%",
+      "operating_margin": "12.32%"
+    },
+    "Cable TV": {
+      "firms": 9,
+      "ps": 0.86,
+      "ev_sales": 2.06,
+      "net_margin": "7.08%",
+      "operating_margin": "18.24%"
+    },
+    "Chemical (Basic)": {
+      "firms": 29,
+      "ps": 0.47,
+      "ev_sales": 0.85,
+      "net_margin": "-3.73%",
+      "operating_margin": "2.86%"
+    },
+    "Chemical (Diversified)": {
+      "firms": 4,
+      "ps": 0.34,
+      "ev_sales": 0.84,
+      "net_margin": "-5.35%",
+      "operating_margin": "3.41%"
+    },
+    "Chemical (Specialty)": {
+      "firms": 59,
+      "ps": 2.12,
+      "ev_sales": 2.65,
+      "net_margin": "2.91%",
+      "operating_margin": "12.41%"
+    },
+    "Coal & Related Energy": {
+      "firms": 16,
+      "ps": 2.75,
+      "ev_sales": 2.54,
+      "net_margin": "-2.13%",
+      "operating_margin": "-3.82%"
+    },
+    "Computer Services": {
+      "firms": 64,
+      "ps": 1.24,
+      "ev_sales": 1.48,
+      "net_margin": "4.45%",
+      "operating_margin": "7.63%"
+    },
+    "Computers/Peripherals": {
+      "firms": 36,
+      "ps": 6.43,
+      "ev_sales": 6.63,
+      "net_margin": "17.78%",
+      "operating_margin": "22.49%"
+    },
+    "Construction Supplies": {
+      "firms": 40,
+      "ps": 2.83,
+      "ev_sales": 3.23,
+      "net_margin": "10.78%",
+      "operating_margin": "15.27%"
+    },
+    "Diversified": {
+      "firms": 20,
+      "ps": 2.85,
+      "ev_sales": 3.08,
+      "net_margin": "16.37%",
+      "operating_margin": "22.82%"
+    },
+    "Drugs (Biotechnology)": {
+      "firms": 496,
+      "ps": 7.31,
+      "ev_sales": 7.92,
+      "net_margin": "-5.00%",
+      "operating_margin": "8.76%"
+    },
+    "Drugs (Pharmaceutical)": {
+      "firms": 228,
+      "ps": 5.63,
+      "ev_sales": 6.24,
+      "net_margin": "18.54%",
+      "operating_margin": "29.54%"
+    },
+    "Education": {
+      "firms": 32,
+      "ps": 1.74,
+      "ev_sales": 1.99,
+      "net_margin": "8.79%",
+      "operating_margin": "13.54%"
+    },
+    "Electrical Equipment": {
+      "firms": 112,
+      "ps": 4.09,
+      "ev_sales": 4.42,
+      "net_margin": "0.94%",
+      "operating_margin": "9.75%"
+    },
+    "Electronics (Consumer & Office)": {
+      "firms": 8,
+      "ps": 0.96,
+      "ev_sales": 0.91,
+      "net_margin": "-9.42%",
+      "operating_margin": "-4.25%"
+    },
+    "Electronics (General)": {
+      "firms": 114,
+      "ps": 3.02,
+      "ev_sales": 3.21,
+      "net_margin": "6.47%",
+      "operating_margin": "10.52%"
+    },
+    "Engineering/Construction": {
+      "firms": 48,
+      "ps": 1.58,
+      "ev_sales": 1.74,
+      "net_margin": "5.94%",
+      "operating_margin": "6.75%"
+    },
+    "Entertainment": {
+      "firms": 92,
+      "ps": 3.87,
+      "ev_sales": 4.33,
+      "net_margin": "4.43%",
+      "operating_margin": "10.38%"
+    },
+    "Environmental & Waste Services": {
+      "firms": 53,
+      "ps": 3.09,
+      "ev_sales": 3.7,
+      "net_margin": "8.24%",
+      "operating_margin": "14.85%"
+    },
+    "Farming/Agriculture": {
+      "firms": 35,
+      "ps": 0.92,
+      "ev_sales": 1.34,
+      "net_margin": "3.91%",
+      "operating_margin": "5.61%"
+    },
+    "Financial Svcs. (Non-bank & Insurance)": {
+      "firms": 176,
+      "ps": 5.22,
+      "ev_sales": 18.91,
+      "net_margin": "22.19%",
+      "operating_margin": "18.54%"
+    },
+    "Food Processing": {
+      "firms": 78,
+      "ps": 1.05,
+      "ev_sales": 1.47,
+      "net_margin": "2.82%",
+      "operating_margin": "10.77%"
+    },
+    "Food Wholesalers": {
+      "firms": 13,
+      "ps": 0.31,
+      "ev_sales": 0.46,
+      "net_margin": "1.17%",
+      "operating_margin": "2.55%"
+    },
+    "Furn/Home Furnishings": {
+      "firms": 27,
+      "ps": 0.98,
+      "ev_sales": 1.33,
+      "net_margin": "1.10%",
+      "operating_margin": "6.88%"
+    },
+    "Green & Renewable Energy": {
+      "firms": 15,
+      "ps": 3.76,
+      "ev_sales": 7.87,
+      "net_margin": "-10.83%",
+      "operating_margin": "18.39%"
+    },
+    "Healthcare Products": {
+      "firms": 204,
+      "ps": 4.36,
+      "ev_sales": 4.76,
+      "net_margin": "9.61%",
+      "operating_margin": "15.47%"
+    },
+    "Healthcare Support Services": {
+      "firms": 104,
+      "ps": 0.37,
+      "ev_sales": 0.46,
+      "net_margin": "1.25%",
+      "operating_margin": "2.99%"
+    },
+    "Heathcare Information and Technology": {
+      "firms": 115,
+      "ps": 4.7,
+      "ev_sales": 5.31,
+      "net_margin": "7.45%",
+      "operating_margin": "14.75%"
+    },
+    "Homebuilding": {
+      "firms": 30,
+      "ps": 1.07,
+      "ev_sales": 1.19,
+      "net_margin": "9.47%",
+      "operating_margin": "12.63%"
+    },
+    "Hospitals/Healthcare Facilities": {
+      "firms": 31,
+      "ps": 1.08,
+      "ev_sales": 1.69,
+      "net_margin": "6.30%",
+      "operating_margin": "12.86%"
+    },
+    "Hotel/Gaming": {
+      "firms": 63,
+      "ps": 3.26,
+      "ev_sales": 4.33,
+      "net_margin": "10.38%",
+      "operating_margin": "16.44%"
+    },
+    "Household Products": {
+      "firms": 110,
+      "ps": 2.67,
+      "ev_sales": 3.06,
+      "net_margin": "11.68%",
+      "operating_margin": "18.79%"
+    },
+    "Information Services": {
+      "firms": 15,
+      "ps": 1.7,
+      "ev_sales": 2.21,
+      "net_margin": "6.53%",
+      "operating_margin": "12.45%"
+    },
+    "Insurance (General)": {
+      "firms": 21,
+      "ps": 3.53,
+      "ev_sales": 4.32,
+      "net_margin": "12.37%",
+      "operating_margin": "21.46%"
+    },
+    "Insurance (Life)": {
+      "firms": 20,
+      "ps": 0.95,
+      "ev_sales": 1.28,
+      "net_margin": "7.80%",
+      "operating_margin": "10.65%"
+    },
+    "Insurance (Prop/Cas.)": {
+      "firms": 57,
+      "ps": 1.36,
+      "ev_sales": 1.49,
+      "net_margin": "11.13%",
+      "operating_margin": "15.30%"
+    },
+    "Investments & Asset Management": {
+      "firms": 283,
+      "ps": 4.59,
+      "ev_sales": 5.49,
+      "net_margin": "18.36%",
+      "operating_margin": "25.18%"
+    },
+    "Machinery": {
+      "firms": 105,
+      "ps": 3.08,
+      "ev_sales": 3.43,
+      "net_margin": "10.58%",
+      "operating_margin": "16.06%"
+    },
+    "Metals & Mining": {
+      "firms": 73,
+      "ps": 3.81,
+      "ev_sales": 4.03,
+      "net_margin": "10.52%",
+      "operating_margin": "23.76%"
+    },
+    "Office Equipment & Services": {
+      "firms": 14,
+      "ps": 1.02,
+      "ev_sales": 1.43,
+      "net_margin": "4.38%",
+      "operating_margin": "10.88%"
+    },
+    "Oil/Gas (Integrated)": {
+      "firms": 4,
+      "ps": 1.58,
+      "ev_sales": 1.75,
+      "net_margin": "8.30%",
+      "operating_margin": "11.57%"
+    },
+    "Oil/Gas (Production and Exploration)": {
+      "firms": 142,
+      "ps": 2.0,
+      "ev_sales": 2.68,
+      "net_margin": "14.63%",
+      "operating_margin": "25.82%"
+    },
+    "Oil/Gas Distribution": {
+      "firms": 23,
+      "ps": 2.78,
+      "ev_sales": 4.37,
+      "net_margin": "13.35%",
+      "operating_margin": "26.06%"
+    },
+    "Oilfield Svcs/Equip.": {
+      "firms": 97,
+      "ps": 0.57,
+      "ev_sales": 0.74,
+      "net_margin": "2.34%",
+      "operating_margin": "4.85%"
+    },
+    "Packaging & Container": {
+      "firms": 19,
+      "ps": 1.03,
+      "ev_sales": 1.55,
+      "net_margin": "4.48%",
+      "operating_margin": "9.79%"
+    },
+    "Paper/Forest Products": {
+      "firms": 6,
+      "ps": 0.76,
+      "ev_sales": 1.02,
+      "net_margin": "3.44%",
+      "operating_margin": "6.58%"
+    },
+    "Power": {
+      "firms": 46,
+      "ps": 2.74,
+      "ev_sales": 4.7,
+      "net_margin": "12.73%",
+      "operating_margin": "21.36%"
+    },
+    "Precious Metals": {
+      "firms": 56,
+      "ps": 5.84,
+      "ev_sales": 5.98,
+      "net_margin": "28.59%",
+      "operating_margin": "40.43%"
+    },
+    "Publishing & Newspapers": {
+      "firms": 19,
+      "ps": 1.47,
+      "ev_sales": 1.7,
+      "net_margin": "8.19%",
+      "operating_margin": "9.84%"
+    },
+    "R.E.I.T.": {
+      "firms": 190,
+      "ps": 5.89,
+      "ev_sales": 10.65,
+      "net_margin": "13.23%",
+      "operating_margin": "22.21%"
+    },
+    "Real Estate (Development)": {
+      "firms": 14,
+      "ps": 1.77,
+      "ev_sales": 3.03,
+      "net_margin": "7.01%",
+      "operating_margin": "21.19%"
+    },
+    "Real Estate (General/Diversified)": {
+      "firms": 12,
+      "ps": 4.82,
+      "ev_sales": 6.83,
+      "net_margin": "23.77%",
+      "operating_margin": "22.09%"
+    },
+    "Real Estate (Operations & Services)": {
+      "firms": 54,
+      "ps": 1.24,
+      "ev_sales": 1.46,
+      "net_margin": "1.19%",
+      "operating_margin": "2.76%"
+    },
+    "Recreation": {
+      "firms": 49,
+      "ps": 1.26,
+      "ev_sales": 1.94,
+      "net_margin": "-4.72%",
+      "operating_margin": "8.06%"
+    },
+    "Reinsurance": {
+      "firms": 1,
+      "ps": 0.6,
+      "ev_sales": 0.65,
+      "net_margin": "3.89%",
+      "operating_margin": "7.23%"
+    },
+    "Restaurant/Dining": {
+      "firms": 64,
+      "ps": 3.34,
+      "ev_sales": 4.17,
+      "net_margin": "9.37%",
+      "operating_margin": "13.79%"
+    },
+    "Retail (Automotive)": {
+      "firms": 34,
+      "ps": 0.89,
+      "ev_sales": 1.27,
+      "net_margin": "3.36%",
+      "operating_margin": "5.84%"
+    },
+    "Retail (Building Supply)": {
+      "firms": 14,
+      "ps": 1.85,
+      "ev_sales": 2.26,
+      "net_margin": "7.84%",
+      "operating_margin": "11.82%"
+    },
+    "Retail (Distributors)": {
+      "firms": 62,
+      "ps": 1.51,
+      "ev_sales": 1.89,
+      "net_margin": "6.05%",
+      "operating_margin": "10.32%"
+    },
+    "Retail (General)": {
+      "firms": 23,
+      "ps": 2.01,
+      "ev_sales": 2.11,
+      "net_margin": "5.61%",
+      "operating_margin": "6.50%"
+    },
+    "Retail (Grocery and Food)": {
+      "firms": 15,
+      "ps": 0.34,
+      "ev_sales": 0.49,
+      "net_margin": "1.32%",
+      "operating_margin": "1.85%"
+    },
+    "Retail (REITs)": {
+      "firms": 26,
+      "ps": 7.82,
+      "ev_sales": 12.04,
+      "net_margin": "23.00%",
+      "operating_margin": "38.64%"
+    },
+    "Retail (Special Lines)": {
+      "firms": 94,
+      "ps": 1.43,
+      "ev_sales": 1.63,
+      "net_margin": "5.19%",
+      "operating_margin": "8.08%"
+    },
+    "Rubber& Tires": {
+      "firms": 3,
+      "ps": 0.14,
+      "ev_sales": 0.59,
+      "net_margin": "-9.49%",
+      "operating_margin": "2.57%"
+    },
+    "Semiconductor": {
+      "firms": 66,
+      "ps": 15.46,
+      "ev_sales": 15.7,
+      "net_margin": "30.45%",
+      "operating_margin": "35.31%"
+    },
+    "Semiconductor Equip": {
+      "firms": 31,
+      "ps": 7.49,
+      "ev_sales": 7.61,
+      "net_margin": "21.32%",
+      "operating_margin": "26.29%"
+    },
+    "Shipbuilding & Marine": {
+      "firms": 8,
+      "ps": 1.45,
+      "ev_sales": 1.74,
+      "net_margin": "9.48%",
+      "operating_margin": "13.52%"
+    },
+    "Shoe": {
+      "firms": 11,
+      "ps": 1.95,
+      "ev_sales": 2.04,
+      "net_margin": "6.27%",
+      "operating_margin": "9.14%"
+    },
+    "Software (Entertainment)": {
+      "firms": 77,
+      "ps": 9.01,
+      "ev_sales": 9.13,
+      "net_margin": "29.93%",
+      "operating_margin": "33.67%"
+    },
+    "Software (Internet)": {
+      "firms": 29,
+      "ps": 8.76,
+      "ev_sales": 9.56,
+      "net_margin": "-0.93%",
+      "operating_margin": "3.74%"
+    },
+    "Software (System & Application)": {
+      "firms": 309,
+      "ps": 11.01,
+      "ev_sales": 11.41,
+      "net_margin": "25.49%",
+      "operating_margin": "33.21%"
+    },
+    "Steel": {
+      "firms": 19,
+      "ps": 0.99,
+      "ev_sales": 1.17,
+      "net_margin": "1.93%",
+      "operating_margin": "4.11%"
+    },
+    "Telecom (Wireless)": {
+      "firms": 12,
+      "ps": 2.48,
+      "ev_sales": 3.72,
+      "net_margin": "12.24%",
+      "operating_margin": "19.74%"
+    },
+    "Telecom. Equipment": {
+      "firms": 57,
+      "ps": 6.13,
+      "ev_sales": 6.52,
+      "net_margin": "16.09%",
+      "operating_margin": "20.92%"
+    },
+    "Telecom. Services": {
+      "firms": 39,
+      "ps": 1.39,
+      "ev_sales": 2.61,
+      "net_margin": "14.20%",
+      "operating_margin": "20.82%"
+    },
+    "Tobacco": {
+      "firms": 10,
+      "ps": 5.3,
+      "ev_sales": 6.4,
+      "net_margin": "26.65%",
+      "operating_margin": "43.68%"
+    },
+    "Transportation": {
+      "firms": 19,
+      "ps": 1.27,
+      "ev_sales": 1.64,
+      "net_margin": "8.23%",
+      "operating_margin": "7.64%"
+    },
+    "Transportation (Railroads)": {
+      "firms": 4,
+      "ps": 5.26,
+      "ev_sales": 6.67,
+      "net_margin": "24.73%",
+      "operating_margin": "37.43%"
+    },
+    "Trucking": {
+      "firms": 26,
+      "ps": 1.42,
+      "ev_sales": 1.74,
+      "net_margin": "3.79%",
+      "operating_margin": "7.31%"
+    },
+    "Utility (General)": {
+      "firms": 14,
+      "ps": 2.9,
+      "ev_sales": 5.25,
+      "net_margin": "14.18%",
+      "operating_margin": "23.21%"
+    },
+    "Utility (Water)": {
+      "firms": 14,
+      "ps": 4.43,
+      "ev_sales": 7.16,
+      "net_margin": "21.16%",
+      "operating_margin": "33.65%"
+    },
+    "Total Market": {
+      "firms": 5994,
+      "ps": 3.07,
+      "ev_sales": 3.97,
+      "net_margin": "9.74%",
+      "operating_margin": "12.75%"
+    },
+    "Total Market (without financials)": {
+      "firms": 4822,
+      "ps": 3.03,
+      "ev_sales": 3.46,
+      "net_margin": "8.56%",
+      "operating_margin": "13.06%"
+    }
+  },
+  "growth": {
+    "fundamental": {
+      "source": "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/fundgr.html",
+      "column": "Fundamental Growth",
+      "industries": {
+        "Advertising": -0.0134,
+        "Aerospace/Defense": 0.0761,
+        "Air Transport": 0.1232,
+        "Apparel": 0.052,
+        "Auto & Truck": 0.0132,
+        "Auto Parts": -0.0021,
+        "Bank (Money Center)": 0.0925,
+        "Banks (Regional)": 0.0623,
+        "Beverage (Alcoholic)": 0.0057,
+        "Beverage (Soft)": 0.0845,
+        "Broadcasting": 0.0156,
+        "Brokerage & Investment Banking": 0.1286,
+        "Building Materials": 0.1191,
+        "Business & Consumer Services": 0.1044,
+        "Cable TV": 0.0736,
+        "Chemical (Basic)": -0.0826,
+        "Chemical (Specialty)": -0.0105,
+        "Coal & Related Energy": -0.0251,
+        "Computer Services": 0.0894,
+        "Computers/Peripherals": -0.0015,
+        "Construction Supplies": 0.152,
+        "Diversified": 0.1062,
+        "Drugs (Biotechnology)": -0.0567,
+        "Drugs (Pharmaceutical)": 0.0995,
+        "Education": 0.1371,
+        "Electrical Equipment": -0.0198,
+        "Electronics (General)": 0.1011,
+        "Engineering/Construction": 0.2396,
+        "Entertainment": 0.047,
+        "Environmental & Waste Services": 0.1188,
+        "Farming/Agriculture": 0.0705,
+        "Financial Svcs. (Non-bank & Insurance)": 0.2348,
+        "Food Processing": -0.0198,
+        "Food Wholesalers": 0.1128,
+        "Furn/Home Furnishings": -0.0025,
+        "Green & Renewable Energy": -0.0735,
+        "Healthcare Products": 0.0725,
+        "Healthcare Support Services": 0.0501,
+        "Heathcare Information and Technology": 0.0532,
+        "Homebuilding": 0.1287,
+        "Hospitals/Healthcare Facilities": 0.4609,
+        "Hotel/Gaming": 0.3709,
+        "Household Products": 0.0885,
+        "Information Services": 0.1015,
+        "Insurance (General)": 0.1208,
+        "Insurance (Life)": 0.0855,
+        "Insurance (Prop/Cas.)": 0.1451,
+        "Investments & Asset Management": 0.0663,
+        "Machinery": 0.1093,
+        "Metals & Mining": 0.0854,
+        "Office Equipment & Services": 0.0563,
+        "Oil/Gas (Integrated)": 0.0321,
+        "Oil/Gas (Production and Exploration)": 0.0712,
+        "Oil/Gas Distribution": 0.0551,
+        "Oilfield Svcs/Equip.": 0.0345,
+        "Packaging & Container": 0.0546,
+        "Paper/Forest Products": -0.1631,
+        "Power": 0.0558,
+        "Precious Metals": 0.1761,
+        "Publishing & Newspapers": 0.1064,
+        "R.E.I.T.": -0.0478,
+        "Real Estate (Development)": 0.0506,
+        "Real Estate (General/Diversified)": 0.0786,
+        "Real Estate (Operations & Services)": 0.0241,
+        "Recreation": -0.1269,
+        "Reinsurance": 0.0566,
+        "Restaurant/Dining": 0.0004,
+        "Retail (Automotive)": 0.3205,
+        "Retail (Distributors)": 0.1189,
+        "Retail (General)": 0.23,
+        "Retail (Grocery and Food)": 0.0807,
+        "Retail (REITs)": -0.0391,
+        "Retail (Special Lines)": 0.211,
+        "Semiconductor": 0.2622,
+        "Semiconductor Equip": 0.2885,
+        "Shipbuilding & Marine": 0.0866,
+        "Shoe": 0.0683,
+        "Software (Entertainment)": 0.3347,
+        "Software (Internet)": -0.0147,
+        "Software (System & Application)": 0.2341,
+        "Steel": 0.0129,
+        "Telecom (Wireless)": 0.078,
+        "Telecom. Equipment": 0.1461,
+        "Telecom. Services": 0.1037,
+        "Transportation": 0.2593,
+        "Transportation (Railroads)": 0.1666,
+        "Trucking": 0.0545,
+        "Utility (General)": 0.036,
+        "Utility (Water)": 0.1122,
+        "Total Market": 0.1122,
+        "Total Market (without financials)": 0.1115
+      }
+    },
+    "historical": {
+      "source": "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histgr.html",
+      "column": "CAGR in Revenues- Last 5 years",
+      "industries": {
+        "Advertising": 0.1767,
+        "Aerospace/Defense": 0.111,
+        "Air Transport": 0.4779,
+        "Apparel": 0.081,
+        "Auto & Truck": 0.0864,
+        "Auto Parts": 0.1591,
+        "Bank (Money Center)": 0.0906,
+        "Banks (Regional)": 0.0805,
+        "Beverage (Alcoholic)": 0.0343,
+        "Beverage (Soft)": 0.0858,
+        "Broadcasting": 0.0841,
+        "Brokerage & Investment Banking": 0.3552,
+        "Building Materials": 0.0414,
+        "Business & Consumer Services": 0.058,
+        "Cable TV": 0.2694,
+        "Chemical (Basic)": 0.1388,
+        "Chemical (Diversified)": 0.0144,
+        "Chemical (Specialty)": 0.0804,
+        "Coal & Related Energy": 0.1924,
+        "Computer Services": 0.271,
+        "Computers/Peripherals": 0.0671,
+        "Construction Supplies": 0.137,
+        "Diversified": 0.089,
+        "Drugs (Biotechnology)": 0.2893,
+        "Drugs (Pharmaceutical)": 0.1845,
+        "Education": 0.0774,
+        "Electrical Equipment": 0.1917,
+        "Electronics (Consumer & Office)": -0.0349,
+        "Electronics (General)": 0.0727,
+        "Engineering/Construction": 0.117,
+        "Entertainment": 0.1643,
+        "Environmental & Waste Services": 0.217,
+        "Farming/Agriculture": 0.1402,
+        "Financial Svcs. (Non-bank & Insurance)": 0.113,
+        "Food Processing": 0.0716,
+        "Food Wholesalers": 0.1328,
+        "Furn/Home Furnishings": 0.0099,
+        "Green & Renewable Energy": 0.171,
+        "Healthcare Products": 0.1841,
+        "Healthcare Support Services": 0.1312,
+        "Heathcare Information and Technology": 0.1557,
+        "Homebuilding": 0.0987,
+        "Hospitals/Healthcare Facilities": 0.1594,
+        "Hotel/Gaming": 0.2182,
+        "Household Products": 0.0809,
+        "Information Services": 0.0677,
+        "Insurance (General)": 0.1183,
+        "Insurance (Life)": 0.0252,
+        "Insurance (Prop/Cas.)": 0.0876,
+        "Investments & Asset Management": 0.0569,
+        "Machinery": 0.1037,
+        "Metals & Mining": 0.0867,
+        "Office Equipment & Services": 0.0813,
+        "Oil/Gas (Integrated)": 0.0462,
+        "Oil/Gas (Production and Exploration)": 0.1761,
+        "Oil/Gas Distribution": 0.2013,
+        "Oilfield Svcs/Equip.": 0.1079,
+        "Packaging & Container": 0.0466,
+        "Paper/Forest Products": -0.0034,
+        "Power": 0.0674,
+        "Precious Metals": 0.4605,
+        "Publishing & Newspapers": 0.0004,
+        "R.E.I.T.": 0.1259,
+        "Real Estate (Development)": 0.2861,
+        "Real Estate (General/Diversified)": 0.096,
+        "Real Estate (Operations & Services)": 0.1263,
+        "Recreation": 0.0914,
+        "Reinsurance": 0.0939,
+        "Restaurant/Dining": 0.1394,
+        "Retail (Automotive)": 0.1542,
+        "Retail (Building Supply)": 0.0073,
+        "Retail (Distributors)": 0.1012,
+        "Retail (General)": 0.0992,
+        "Retail (Grocery and Food)": -0.0263,
+        "Retail (REITs)": 0.1314,
+        "Retail (Special Lines)": 0.0696,
+        "Rubber& Tires": -0.1323,
+        "Semiconductor": 0.1118,
+        "Semiconductor Equip": 0.0938,
+        "Shipbuilding & Marine": -0.0012,
+        "Shoe": 0.1243,
+        "Software (Entertainment)": 0.1672,
+        "Software (Internet)": 0.2918,
+        "Software (System & Application)": 0.1956,
+        "Steel": 0.1137,
+        "Telecom (Wireless)": 0.037,
+        "Telecom. Equipment": 0.0327,
+        "Telecom. Services": 0.1357,
+        "Tobacco": 0.0291,
+        "Transportation": 0.0912,
+        "Transportation (Railroads)": 0.0491,
+        "Trucking": 0.0333,
+        "Utility (General)": 0.0533,
+        "Utility (Water)": 0.133,
+        "Total Market": 0.1277,
+        "Total Market (without financials)": 0.1375
+      }
+    }
+  }
+}
