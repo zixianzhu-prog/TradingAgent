@@ -44,3 +44,26 @@ def test_primary_ownership_and_xbrl_create_auditable_chain():
     assert row["verifiedStages"]["revenueValidation"] == 1
     assert row["chainStatus"] == "ownership-and-company-revenue-verified"
     assert "尚不能证明收入来自相关 AI/科研技术" in row["gaps"][-1]
+
+
+def test_equity_raise_is_funding_and_sponsored_research_is_not():
+    manual = {"links": [{"ticker": "TEST", "institution": "Allen Institute", "relation": "sponsored_research",
+                         "url": "https://www.sec.gov/x", "quote": "We fund research at the Allen Institute.", "status": "verified"}]}
+    raises = {"companies": {"TEST": {"totalUsdM": 50.0, "periods": [
+        {"start": "2025-01-01", "end": "2025-12-31", "usdM": 50.0, "form": "10-K", "tag": "ProceedsFromIssuanceOfCommonStock",
+         "url": "https://www.sec.gov/Archives/edgar/data/1/1/"}]}}}
+    result = build({}, base_company(), {}, {}, {}, {}, {}, manual, raises=raises)
+    row = next(r for r in result["companies"] if r["ticker"] == "TEST")
+    assert row["verifiedStages"]["funding"] == 1 and row["funding"][0]["relation"] == "equity_raise"
+    assert row["verifiedStages"]["researcherCompanyRelation"] == 1
+
+
+def test_company_authored_research_counts_as_discovery_only_when_verified():
+    research = {"companies": {"TEST": {"verified": True, "recentWorks": 12, "worksSince": "2023-11-23", "institution": "Test Bio (US)",
+                                       "openalexId": "https://openalex.org/I1",
+                                       "topWorks": [{"title": "A paper", "doi": "https://doi.org/10.1/x", "companyAuthors": ["Jane Roe"]}]}}}
+    row = next(r for r in build({}, base_company(), {}, {}, {}, {}, {}, {"links": []}, research=research)["companies"] if r["ticker"] == "TEST")
+    assert row["verifiedStages"]["discovery"] == 1 and row["verifiedStages"]["researcherCompanyRelation"] == 1
+    research["companies"]["TEST"]["verified"] = False
+    rows = build({}, base_company(), {}, {}, {}, {}, {}, {"links": []}, research=research)["companies"]
+    assert not any(r["ticker"] == "TEST" for r in rows)

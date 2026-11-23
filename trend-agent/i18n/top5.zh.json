@@ -738,10 +738,14 @@
   "Second review (opus, arguing against):": "二次复核（Opus，站在反方）：",
   "base-case growth can fall {n} points a year (from {n}% to {n}%) before today's price leaves the range; the terminal sales multiple can shrink {n}% before the price leaves the range": "基准情景增速每年再低 {n} 个点（从 {n}% 降到 {n}%），现价就会跑出区间；终值市销率再缩小 {n}%，现价就会跑出区间",
   "USPTO assignment records": "USPTO 受让记录",
-  "{n} companies with a quoted research origin or founder; {n} license from MIT, Broad, Harvard, Stanford, Whitehead, Dana-Farber or Scripps. A license proves where the patents came from, not that a given paper became the product. USPTO records come from the Open Data Portal: an owner record shows the company holds the patent application; \"pledged to\" means a lender holds a security interest in it.": "{n} 家公司有引用的研究来源或创始人；其中 {n} 家的技术授权来自 MIT、Broad、哈佛、斯坦福、Whitehead、Dana-Farber 或 Scripps。授权只能证明专利来源，不能证明某篇论文变成了产品。USPTO 记录来自其开放数据门户：所有权记录表示公司持有该专利申请；“pledged to”表示债权人对其持有担保权益（专利被抵押）。",
   "{n} owner records": "{n} 条所有权记录",
   "no owner record": "无所有权记录",
   "Where U.S. countermeasure money is going (contract actions by HHS's preparedness office, which runs BARDA and the Strategic National Stockpile, from USAspending.gov) and which outbreaks WHO and the CDC are warning about. A contract is revenue for the company; an outbreak is context, not sales.": "美国政府的应对资金流向哪里（HHS 应急准备办公室的合同动作，它负责 BARDA 和国家战略储备，数据来自 USAspending.gov），以及 WHO 和 CDC 正在警示哪些疫情。合同是公司的收入；疫情只是背景，不等于销售。",
   "CDC health alerts (HAN), last {n} months": "CDC 健康警报（HAN），近 {n} 个月",
-  "Alert": "警报"
+  "Alert": "警报",
+  "{n} companies with a quoted research origin, a named founder or their own published papers; {n} license from MIT, Broad, Harvard, Stanford, Whitehead, Dana-Farber or Scripps. A license proves where the patents came from, not that a given paper became the product. Company papers are OpenAlex works whose authors list the company as their institution (unique name match only). Equity raised is cash received from selling shares, from the cash-flow statement in SEC XBRL; offerings and PIPEs by listed companies do not file a Form D. USPTO records come from the Open Data Portal: an owner record shows the company holds the patent application; \"pledged to\" means a lender holds a security interest in it.": "{n} 家公司有引用的研究来源、创始人或自己发表的论文；其中 {n} 家的技术授权来自 MIT、Broad、哈佛、斯坦福、Whitehead、Dana-Farber 或 Scripps。授权只能证明专利来源，不能证明某篇论文变成了产品。公司论文指 OpenAlex 中作者机构为该公司的论文（仅限公司名唯一匹配）。股权融资是现金流量表（SEC XBRL）中发行股票收到的现金；上市公司的增发和定向增发不提交 Form D。USPTO 记录来自其开放数据门户：所有权记录表示公司持有该专利申请；“pledged to”表示债权人对其持有担保权益（专利被抵押）。",
+  "Company papers, last {n} years": "公司论文（近 {n} 年）",
+  "Equity raised, {n} months": "股权融资（近 {n} 个月）",
+  "({n} cites)": "（{n} 次引用）",
+  "{n}; top:": "{n}；引用最多："
 }

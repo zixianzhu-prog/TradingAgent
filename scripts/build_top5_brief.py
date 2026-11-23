@@ -1094,6 +1094,19 @@ def lab_to_company_section(root: Path) -> str:
         own = f'{len(c["officialAssignments"])} owner records' if c["officialAssignments"] else "no owner record"
         lien = sorted({r["assignee"] for r in c.get("securityInterests", [])})
         return own + (f'; pledged to {", ".join(lien)}' if lien else "")
+    research = {t: c for t, c in load(root / "state/company-research.json", {}).get("companies", {}).items() if c.get("verified")}
+    raises = load(root / "state/equity-raises.json", {}).get("companies", {})
+    def papers(t):
+        c = research.get(t)
+        if not c:
+            return "—"
+        w = (c.get("topWorks") or [{}])[0]
+        link = w.get("doi") or w.get("id")
+        top = f'; top: <a href="{esc(link)}">{esc((w.get("title") or "")[:60])}</a> ({w.get("citedBy")} cites)' if link else ""
+        return f'{c["recentWorks"]}{top}'
+    def raised(t):
+        r = raises.get(t) or {}
+        return f'${r["totalUsdM"]:,.0f}M' if r.get("totalUsdM", 0) >= 5 else "—"
     elite = ("Massachusetts Institute", "MIT", "Broad Institute", "Harvard", "Stanford", "Whitehead", "Dana-Farber", "Scripps")
     rows_by = {}
     for l in founders:
@@ -1102,6 +1115,8 @@ def lab_to_company_section(root: Path) -> str:
             r["inst"].setdefault(l["institution"], l["url"])
         elif l.get("person"):
             r["people"].add(l["person"])
+    for t in research:
+        rows_by.setdefault(t, {"inst": {}, "people": set()})
     def funds(t):
         names = sorted({f["specialistFund"] for f in own if f["ticker"] == t and f.get("specialistFund")})
         return ", ".join(names) or "—"
@@ -1117,21 +1132,23 @@ def lab_to_company_section(root: Path) -> str:
             elif f["kind"] == "ind" and v("drug"):
                 out.append(f"IND: {v('drug')}")
         return "; ".join(dict.fromkeys(out)) or "—"
-    order = sorted(rows_by, key=lambda t: (-any(e in i for i in rows_by[t]["inst"] for e in elite), -len(rows_by[t]["inst"]), t))
+    order = sorted(rows_by, key=lambda t: (-any(e in i for i in rows_by[t]["inst"] for e in elite), -len(rows_by[t]["inst"]),
+                                            -(research.get(t, {}).get("recentWorks") or 0), t))
     body = ""
     for t in order:
         r = rows_by[t]
         inst = ", ".join(f'<a href="{esc(u)}">{esc(i)}</a>' for i, u in sorted(r["inst"].items())) or "—"
         body += (f'<tr><td class="tk">{esc(t)}</td><td style="white-space:normal">{inst}</td><td>{esc(", ".join(sorted(r["people"])) or "—")}</td>'
+                 f'<td style="white-space:normal">{papers(t)}</td>'
                  f'<td style="white-space:normal">{esc(patents(t))}</td>'
-                 f'<td style="white-space:normal">{esc(funds(t))}</td><td style="white-space:normal">{esc(deals(t))}</td></tr>')
+                 f'<td style="white-space:normal">{esc(funds(t))}</td><td class="n">{raised(t)}</td><td style="white-space:normal">{esc(deals(t))}</td></tr>')
     n_elite = sum(any(e in i for i in rows_by[t]["inst"] for e in elite) for t in rows_by)
     return f"""
   <section class="section" id="lab" aria-labelledby="lab-h">
     <h2 id="lab-h">From lab to company</h2>
     <p>The chain Peter asked for: which university or institute the technology came from, who founded the company, whether specialist biotech funds own it, and whether pharma or the FDA has engaged. Origins and founders are quoted from each company's own 10-K (every quote checked against the filing); funds come from Schedule 13D/13G; deals and IND clearances from 8-K press releases.</p>
-    <p class="note"><span>Now:</span> {len(rows_by)} companies with a quoted research origin or founder; {n_elite} license from MIT, Broad, Harvard, Stanford, Whitehead, Dana-Farber or Scripps. A license proves where the patents came from, not that a given paper became the product. USPTO records come from the Open Data Portal: an owner record shows the company holds the patent application; "pledged to" means a lender holds a security interest in it.</p>
-    <div class="table-wrap"><table><thead><tr><th>Ticker</th><th>Research origin (licensed from)</th><th>Founders named in the 10-K</th><th>USPTO assignment records</th><th>Specialist funds holding 5%+</th><th>Pharma deal / IND (90 days)</th></tr></thead><tbody>{body}</tbody></table></div>
+    <p class="note"><span>Now:</span> {len(rows_by)} companies with a quoted research origin, a named founder or their own published papers; {n_elite} license from MIT, Broad, Harvard, Stanford, Whitehead, Dana-Farber or Scripps. A license proves where the patents came from, not that a given paper became the product. Company papers are OpenAlex works whose authors list the company as their institution (unique name match only). Equity raised is cash received from selling shares, from the cash-flow statement in SEC XBRL; offerings and PIPEs by listed companies do not file a Form D. USPTO records come from the Open Data Portal: an owner record shows the company holds the patent application; "pledged to" means a lender holds a security interest in it.</p>
+    <div class="table-wrap"><table><thead><tr><th>Ticker</th><th>Research origin (licensed from)</th><th>Founders named in the 10-K</th><th>Company papers, last 3 years</th><th>USPTO assignment records</th><th>Specialist funds holding 5%+</th><th class="n">Equity raised, 24 months</th><th>Pharma deal / IND (90 days)</th></tr></thead><tbody>{body}</tbody></table></div>
   </section>"""
 
 

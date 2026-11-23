@@ -224,6 +224,10 @@ if [ ! -f "$SCREEN_STATE" ] || [ -n "$(find "$SCREEN_STATE" -mtime +6 2>/dev/nul
   fi
   # Peter's earlier-and-smaller direction: AI-medicine companies under $1B, tagged preparation / growth / slowing.
   PYTHONPATH=scripts ai-fund-lab/.venv/bin/python scripts/small_cap_stage.py
+  # Weekly: money raised by listed companies (XBRL equity proceeds) and papers each company publishes (OpenAlex);
+  # both feed the lab-to-company chain. No model calls.
+  PYTHONPATH=scripts python3 scripts/equity_raises.py || echo "Equity-raise check failed; keeping the last result"
+  PYTHONPATH=scripts python3 scripts/company_research.py || echo "Company research lookup failed; keeping the last result"
   # Weekly: replay the order rule on 2014+ 10-K filings (deterministic; outputs/order-rule-backtest.md).
   PYTHONPATH=scripts ai-fund-lab/.venv/bin/python scripts/backtest_order_rule.py \
     || echo "Order-rule backtest failed; keeping the last result"

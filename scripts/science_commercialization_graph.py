@@ -47,7 +47,8 @@ def verified_fact(row: dict, key: str) -> dict | None:
 
 def build(frontier: dict, company_rows: list[dict], pharma: dict, clinical: dict, funding: dict,
           financials: dict, xbrl: dict, manual: dict, ownership: dict | None = None,
-          uspto: dict | None = None, institutional: dict | None = None) -> dict:
+          uspto: dict | None = None, institutional: dict | None = None, raises: dict | None = None,
+          research: dict | None = None) -> dict:
     company_by_ticker = {r["ticker"]: r for r in company_rows if r.get("ticker")}
     company_aliases = aliases(company_rows)
     records = {ticker: {"ticker": ticker, "company": row.get("company"), "discovery": [],
@@ -79,7 +80,8 @@ def build(frontier: dict, company_rows: list[dict], pharma: dict, clinical: dict
         ticker = link.get("ticker")
         if ticker not in records:
             continue
-        bucket = ("researcherCompanyRelation" if link.get("relation") == "founder" else
+        # Sponsored research is the company paying a lab: a research relationship, not money raised.
+        bucket = ("researcherCompanyRelation" if link.get("relation") in {"founder", "sponsored_research", "academic_affiliation"} else
                   "technologyOwnership" if link.get("relation") in {"inventor", "patent_assignee", "license"} else "funding")
         records[ticker][bucket].append(evidence(link.get("sourceType", "primary source"), link.get("url"),
                                                link.get("quote"), link.get("relation", "manual_verified_link"),
@@ -148,6 +150,32 @@ def build(frontier: dict, company_rows: list[dict], pharma: dict, clinical: dict
             records[ticker]["funding"].append(evidence(
                 "SEC Form D", row.get("url"), f"{row.get('name')} reported ${row.get('sold'):,.0f} sold in this offering",
                 "form_d_financing", True, soldUsd=row.get("sold"), filed=row.get("filed"), investorIdentityVerified=False))
+
+    # Papers the company's own scientists publish (scripts/company_research.py): the company does science
+    # that reaches the literature, and its authors tie researchers to it. It does not prove a paper became a product.
+    for ticker, row in (research or {}).get("companies", {}).items():
+        if ticker not in records or not row.get("verified"):
+            continue
+        top = (row.get("topWorks") or [{}])[0]
+        records[ticker]["discovery"].append(evidence(
+            "OpenAlex company institution", top.get("doi") or top.get("id") or row.get("openalexId"),
+            f"{row['recentWorks']} papers since {row['worksSince']} list {row['institution']} as an author institution; "
+            f"most cited: {top.get('title')}", "company_authored_research", True, works=row["recentWorks"],
+            openalexInstitution=row.get("openalexId")))
+        if top.get("companyAuthors"):
+            records[ticker]["researcherCompanyRelation"].append(evidence(
+                "OpenAlex author affiliation", top.get("doi") or top.get("id"),
+                f"{', '.join(top['companyAuthors'])} affiliated with {row['institution']} on {top.get('title')}",
+                "researcher_company_affiliation", True, person=top["companyAuthors"][0], institution=row["institution"]))
+
+    # Listed companies raise through offerings, ATMs and PIPEs that never file a Form D; the cash-flow statement
+    # shows the money that came in (scripts/equity_raises.py).
+    for ticker, row in (raises or {}).get("companies", {}).items():
+        if ticker in records and row.get("totalUsdM", 0) >= 5:
+            spans = "; ".join(f"{p['start']} to {p['end']}: ${p['usdM']:,.1f}M ({p['form']})" for p in row["periods"])
+            records[ticker]["funding"].append(evidence(
+                "SEC XBRL", row["periods"][-1].get("url"), f"Cash received from issuing equity (XBRL {row['periods'][-1]['tag']}): {spans}",
+                "equity_raise", True, raisedUsdM=row["totalUsdM"], investorIdentityVerified=False))
 
     for filing in (institutional or {}).get("filings", []):
         ticker = filing.get("ticker")
@@ -270,6 +298,8 @@ def main() -> None:
     p.add_argument("--ownership", default=str(ROOT / "state/technology-ownership.json"))
     p.add_argument("--uspto", default=str(ROOT / "state/uspto-assignment-validation.json"))
     p.add_argument("--institutional", default=str(ROOT / "state/institutional-ownership.json"))
+    p.add_argument("--research", default=str(ROOT / "state/company-research.json"))
+    p.add_argument("--raises", default=str(ROOT / "state/equity-raises.json"))
     p.add_argument("--small-caps", default=str(ROOT / "state/small-cap-stage.json"))
     p.add_argument("--state", default=str(ROOT / "state/science-commercialization-graph.json"))
     p.add_argument("--report", default=str(ROOT / "outputs/science-commercialization-graph.md"))
@@ -293,7 +323,8 @@ def main() -> None:
                     {"links": load(Path(args.manual_links), {"links": []}).get("links", [])
                                + load(Path(args.founders), {"links": []}).get("links", [])},
                     load(Path(args.ownership), {"companies": []}),
-                    load(Path(args.uspto), {"companies": []}), load(Path(args.institutional), {"filings": []}))
+                    load(Path(args.uspto), {"companies": []}), load(Path(args.institutional), {"filings": []}),
+                    load(Path(args.raises), {"companies": {}}), load(Path(args.research), {"companies": {}}))
     Path(args.state).parent.mkdir(parents=True, exist_ok=True)
     Path(args.report).parent.mkdir(parents=True, exist_ok=True)
     Path(args.state).write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
