@@ -1154,14 +1154,21 @@ def biodefense_section(root: Path) -> str:
         seen.add(key)
         o_rows += (f'<tr><td class="n">{esc(o["date"])}</td><td style="white-space:normal"><a href="{esc(o["url"])}">{esc(o["title"])}</a></td>'
                    f'<td>{esc(", ".join(o["fundedResponders"]) or "—")}</td></tr>')
+    h_rows = "".join(
+        f'<tr><td class="n">{esc(o["date"])}</td><td style="white-space:normal"><a href="{esc(o["url"])}">{esc(o["title"])}</a></td>'
+        f'<td>{esc(", ".join(o["fundedResponders"]) or "—")}</td></tr>' for o in data.get("cdcAlerts", []))
+    han = (f"""
+    <h3 class="bucket-h">CDC health alerts (HAN), last 12 months</h3>
+    <div class="table-wrap"><table><thead><tr><th class="n">Date</th><th>Alert</th><th>Funded responders</th></tr></thead><tbody>{h_rows}</tbody></table></div>"""
+           if h_rows else "")
     return f"""
   <section class="section" id="biodefense" aria-labelledby="bio-h">
     <h2 id="bio-h">Biodefense and outbreaks</h2>
-    <p>Where U.S. countermeasure money is going (contract actions by HHS's preparedness office, which runs BARDA and the Strategic National Stockpile, from USAspending.gov) and which outbreaks WHO is reporting. A contract is revenue for the company; an outbreak is context, not sales.</p>
+    <p>Where U.S. countermeasure money is going (contract actions by HHS's preparedness office, which runs BARDA and the Strategic National Stockpile, from USAspending.gov) and which outbreaks WHO and the CDC are warning about. A contract is revenue for the company; an outbreak is context, not sales.</p>
     <p class="note"><span>Last 90 days:</span> {s["contracts"]} contract actions of $5M or more, ${s["contractUsdM"]:,.0f}M in total, {s["listedRecipients"]} to listed companies or their parents. Outbreaks are linked to contracts by pathogen name only: Regeneron's Inmazeb, for example, treats Zaire ebolavirus and is not approved for the Bundibugyo strain now spreading.</p>
     <div class="table-wrap"><table><thead><tr><th class="n">Date</th><th>Recipient</th><th>Ticker</th><th class="n">Amount</th><th>Purpose</th></tr></thead><tbody>{c_rows}</tbody></table></div>
     <h3 class="bucket-h">WHO outbreak reports, last 60 days (latest per outbreak)</h3>
-    <div class="table-wrap"><table><thead><tr><th class="n">Date</th><th>Report</th><th>Funded responders</th></tr></thead><tbody>{o_rows}</tbody></table></div>
+    <div class="table-wrap"><table><thead><tr><th class="n">Date</th><th>Report</th><th>Funded responders</th></tr></thead><tbody>{o_rows}</tbody></table></div>{han}
   </section>"""
 
 

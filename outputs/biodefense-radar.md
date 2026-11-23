@@ -53,3 +53,17 @@
 | 2026-10-10 | [Pneumonia of undetermined etiology - the Russian Federation](https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON620) | — |
 | 2026-10-08 | [Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo](https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON619) | REGN |
 | 2026-09-25 | [Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo](https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON621) | REGN |
+
+## CDC 健康警报（HAN，近 365 天）
+
+| 日期 | 编号 | 警报 | 有合同的应对方 |
+|---|---|---|---|
+| 2026-09-10 | 533 | [Nationwide Increase in Reported Human Rabies Exposures: Rabies Post-exposure Prophylaxis Administration](https://www.cdc.gov/han/php/notices/han00533.html) | — |
+| 2026-08-11 | 532 | [Risk of Severe Arboviral Disease in Patients Receiving B Cell-Depleting or Modulating Medications](https://www.cdc.gov/han/php/notices/han00532.html) | — |
+| 2026-07-14 | 531 | [Domestically Acquired Cyclosporiasis Cases in Multiple U.S. States, 2026](https://www.cdc.gov/han/php/notices/han00531.html) | — |
+| 2026-05-19 | 530 | [Ebola Disease Outbreak in the Democratic Republic of the Congo and Uganda](https://www.cdc.gov/han/php/notices/han00530.html) | REGN |
+| 2026-05-18 | 529 | [2026 Hantavirus Outbreak: Testing for Potential Infection](https://www.cdc.gov/han/php/notices/han00529.html) | — |
+| 2026-05-09 | 528 | [2026 Multi-country Hantavirus Cluster Linked to Cruise Ship](https://www.cdc.gov/han/php/notices/han00528.html) | — |
+| 2026-04-02 | 527 | [Medetomidine in the U.S. Illegal Fentanyl Supply Increasing Risk for Overdose and Severe Withdrawal Syndrome](https://www.cdc.gov/han/php/notices/han00527.html) | — |
+| 2026-01-20 | 526 | [New World Screwworm: Outbreak Moves into Northern Mexico](https://www.cdc.gov/han/php/notices/han00526.html) | — |
+| 2025-12-03 | 525 | [First Reported Outbreak Caused by Marburg Virus in Ethiopia](https://www.cdc.gov/han/php/notices/han00525.html) | — |

@@ -7,6 +7,9 @@ diagnostic and countermeasure makers. Two official sources, no model calls:
   Preparedness and Response (ASPR, which runs BARDA and the Strategic National Stockpile), last 90 days;
   recipients are matched to listed companies by name using SEC's ticker file.
 * WHO Disease Outbreak News: official outbreak reports, last 60 days.
+* CDC Health Alert Network (HAN): U.S. advisories to clinicians and health departments, last 365 days. The
+  listing page is rendered by script and its static index stopped in 2025, but notices are numbered
+  (han00533.html), so the radar probes upward from the last number it saw until two in a row are missing.
 An outbreak and a contract that name the same pathogen are linked, so a reader sees who is funded to
 respond. A contract is revenue for the recipient; an outbreak is context, not evidence of sales.
 
@@ -29,6 +32,8 @@ REPORT = ROOT / "outputs/biodefense-radar.md"
 AGENCY = "Office of Assistant Secretary for Preparedness and Response"
 USASPENDING = "https://api.usaspending.gov/api/v2/search/spending_by_transaction/"
 WHO_DON = "https://www.who.int/api/news/diseaseoutbreaknews?$orderby=PublicationDate%20desc&$top=40"
+CDC_HAN = "https://www.cdc.gov/han/php/notices/han{n:05d}.html"
+HAN_FLOOR = 530  # 2026-05-19, Ebola in DRC/Uganda; probing starts here on the first run
 MIN_USD = 5_000_000
 # Subsidiaries whose listed parent the SEC ticker file cannot reveal by name.
 PARENTS = {"glaxosmithkline": "GSK", "sanofi": "SNY (Sanofi)", "seqirus": "CSL (ASX: CSL)", "cepheid": "DHR (Danaher)",
@@ -37,7 +42,7 @@ PARENTS = {"glaxosmithkline": "GSK", "sanofi": "SNY (Sanofi)", "seqirus": "CSL (
            "abbott": "ABT", "becton": "BDX", "roche": "Roche (SIX: ROG)", "genentech": "Roche (SIX: ROG)"}
 PATHOGENS = ("ebola", "marburg", "smallpox", "mpox", "monkeypox", "anthrax", "influenza", "h5n1", "avian", "mers",
              "coronavirus", "covid", "chikungunya", "dengue", "yellow fever", "plague", "botulinum", "nerve agent",
-             "radiation", "burn", "antifungal", "fungal", "antibiotic", "antimicrobial", "nipah", "lassa", "zika", "measles")
+             "radiation", "burn", "antifungal", "fungal", "antibiotic", "antimicrobial", "nipah", "lassa", "zika", "measles", "rabies", "arbovir", "cyclospor", "hantavirus", "screwworm")
 SUFFIX = re.compile(r"\b(inc|incorporated|corp|corporation|co|company|llc|l\.l\.c|ltd|limited|plc|lp|l\.p|holdings?|group|usa|us|the|a/s|ag|n\.v|s\.a)\b\.?", re.I)
 
 
@@ -124,7 +129,49 @@ def outbreaks(since: date, fetch=http) -> list[dict]:
     return out
 
 
-def build(today: date, sec_rows: dict | None, fetch=http) -> dict:
+def get_page(url: str) -> str | None:
+    """HTML of an official page, or None when it does not exist (404). Uses curl: cdc.gov's CDN answers
+    Python's urllib with 403 but serves curl normally."""
+    import subprocess
+    proc = subprocess.run(["curl", "-sS", "-m", "40", "-w", "\n%{http_code}", url], capture_output=True, timeout=60)
+    body, _, code = proc.stdout.decode("utf-8", "replace").rpartition("\n")
+    if code == "404":
+        return None
+    if code != "200":
+        raise RuntimeError(f"HTTP {code or proc.returncode} for {url}")
+    return body
+
+
+def han_notice(n: int, html: str) -> dict:
+    title = re.search(r"<title>([^<]*)", html)
+    title = re.sub(r"\s*\|\s*HAN\s*\|\s*CDC\s*$", "", title.group(1).strip()) if title else f"HAN {n}"
+    found = re.search(r"Distributed via the CDC Health Alert Network(?:\s|<[^>]+>)*([A-Z][a-z]+ \d{1,2}, \d{4})", html) \
+        or re.search(r'cdc:first_published" content="([A-Z][a-z]+ \d{1,2}, \d{4})', html)
+    day = datetime.strptime(found.group(1), "%B %d, %Y").date().isoformat() if found else None
+    return {"number": n, "date": day, "title": title, "url": CDC_HAN.format(n=n), "pathogens": pathogens_in(title)}
+
+
+def han_alerts(since: date, start: int, get=get_page, lookback: int = 8) -> tuple[list[dict], int]:
+    """Notices from `start` upward until two consecutive numbers are missing, plus a few before `start`
+    so a run sees the recent ones too. Returns (notices dated on or after `since`, latest number found)."""
+    found, n, misses = {}, start, 0
+    while misses < 2:
+        html = get(CDC_HAN.format(n=n))
+        if html:
+            found[n], misses = han_notice(n, html), 0
+        else:
+            misses += 1
+        n += 1
+    latest = max(found, default=start - 1)
+    for m in range(max(1, latest - lookback), start):
+        html = get(CDC_HAN.format(n=m))
+        if html:
+            found[m] = han_notice(m, html)
+    rows = sorted((r for r in found.values() if r["date"] and r["date"] >= since.isoformat()), key=lambda r: r["number"], reverse=True)
+    return rows, latest
+
+
+def build(today: date, sec_rows: dict | None, fetch=http, han_start: int = HAN_FLOOR, get=get_page) -> dict:
     index = ticker_index(sec_rows or {})
     errors = []
     try:
@@ -135,18 +182,23 @@ def build(today: date, sec_rows: dict | None, fetch=http) -> dict:
         obs = outbreaks(today - timedelta(days=60), fetch)
     except Exception as exc:
         obs, errors = [], errors + [f"WHO: {type(exc).__name__}"]
+    try:
+        han, han_latest = han_alerts(today - timedelta(days=365), han_start, get)
+    except Exception as exc:
+        han, han_latest, errors = [], han_start - 1, errors + [f"CDC HAN: {type(exc).__name__}"]
     for c in cs:
         hit = index.get(name_key(c["recipient"]))
         parent = next((v for k, v in PARENTS.items() if k in (c["recipient"] or "").lower()), None)
         c["ticker"], c["secTitle"] = (hit if hit else (parent, "listed parent" if parent else None))
-    for o in obs:
+    for o in obs + han:
         o["fundedResponders"] = sorted({c["ticker"] or c["recipient"] for c in cs if set(c["pathogens"]) & set(o["pathogens"])})
     listed = [c for c in cs if c["ticker"]]
     return {"generatedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"), "asOf": today.isoformat(),
-            "sources": {"contracts": f"USAspending.gov, awarding sub-agency: {AGENCY}", "outbreaks": "WHO Disease Outbreak News"},
+            "sources": {"contracts": f"USAspending.gov, awarding sub-agency: {AGENCY}", "outbreaks": "WHO Disease Outbreak News",
+                        "alerts": "CDC Health Alert Network"},
             "summary": {"contracts": len(cs), "contractUsdM": round(sum(c["amountM"] for c in cs), 1), "listedRecipients": len({c["ticker"] for c in listed}),
-                        "outbreaks": len(obs), "tickerMatch": bool(index), "errors": errors},
-            "contracts": cs, "outbreaks": obs}
+                        "outbreaks": len(obs), "cdcAlerts": len(han), "tickerMatch": bool(index), "errors": errors},
+            "contracts": cs, "outbreaks": obs, "cdcAlerts": han, "hanLatest": han_latest}
 
 
 def report(p: dict) -> str:
@@ -161,6 +213,9 @@ def report(p: dict) -> str:
     lines += ["", "## WHO 疫情通报", "", "| 日期 | 通报 | 有合同的应对方 |", "|---|---|---|"]
     for o in p["outbreaks"]:
         lines.append(f"| {o['date']} | [{o['title']}]({o['url']}) | {', '.join(o['fundedResponders']) or '—'} |")
+    lines += ["", "## CDC 健康警报（HAN，近 365 天）", "", "| 日期 | 编号 | 警报 | 有合同的应对方 |", "|---|---|---|---|"]
+    for o in p.get("cdcAlerts", []):
+        lines.append(f"| {o['date']} | {o['number']} | [{o['title']}]({o['url']}) | {', '.join(o['fundedResponders']) or '—'} |")
     if s["errors"]:
         lines += ["", "抓取问题：" + "；".join(s["errors"])]
     return "\n".join(lines) + "\n"
@@ -174,7 +229,8 @@ def main() -> None:
             sec_rows = http("https://www.sec.gov/files/company_tickers.json", agent=agent)
         except Exception:
             sec_rows = None
-    payload = build(date.today(), sec_rows)
+    previous = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
+    payload = build(date.today(), sec_rows, han_start=max(HAN_FLOOR, int(previous.get("hanLatest") or 0) + 1))
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     REPORT.write_text(report(payload), encoding="utf-8")
     print(json.dumps(payload["summary"], ensure_ascii=False))

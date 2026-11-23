@@ -711,7 +711,6 @@
   "Specialist biotech funds building positions": "专业生物医药基金建仓",
   "Several specialists in the same company:": "同一家公司有多家专业基金：",
   "WHO outbreak reports, last {n} days (latest per outbreak)": "WHO 疫情通报，近 {n} 天（每次疫情取最新一条）",
-  "Where U.S. countermeasure money is going (contract actions by HHS's preparedness office, which runs BARDA and the Strategic National Stockpile, from USAspending.gov) and which outbreaks WHO is reporting. A contract is revenue for the company; an outbreak is context, not sales.": "美国政府的应对资金流向哪里（HHS 应急准备办公室的合同动作，它负责 BARDA 和国家战略储备，数据来自 USAspending.gov），以及 WHO 正在通报哪些疫情。合同是公司的收入；疫情只是背景，不等于销售。",
   "{n} contract actions of ${n}M or more, ${n}M in total, {n} to listed companies or their parents. Outbreaks are linked to contracts by pathogen name only: Regeneron's Inmazeb, for example, treats Zaire ebolavirus and is not approved for the Bundibugyo strain now spreading.": "{n} 笔 ${n}M 以上的合同动作，合计 ${n}M，其中 {n} 笔给了上市公司或其母公司。疫情与合同只按病原名称匹配：例如 Regeneron 的 Inmazeb 针对 Zaire 型埃博拉，对正在扩散的 Bundibugyo 型没有获批适应症。",
   "Schedule {n}G/{n}D filings by dedicated life-science investors (RA Capital, Baker Bros, Perceptive, RTW, Commodore, BVF and others) in the companies this page follows, last {n} months. A first filing means the fund just crossed {n}% of the shares. This is ownership bought in the market or in an offering; it is not proof the company raised new money, and {n}G filers are passive by definition.": "专业生命科学投资机构（RA Capital、Baker Bros、Perceptive、RTW、Commodore、BVF 等）对本页所跟踪公司提交的 Schedule {n}G/{n}D，近 {n} 个月。首次申报表示该基金刚跨过 {n}% 持股。这是在二级市场或增发中买入的持股，不能证明公司拿到了新融资；{n}G 申报人按定义是被动投资者。",
   "{n} new positions and {n} amendments from specialist funds across {n} companies.": "专业基金新建仓 {n} 次、持股变更 {n} 次，涉及 {n} 家公司。",
@@ -741,5 +740,8 @@
   "USPTO assignment records": "USPTO 受让记录",
   "{n} companies with a quoted research origin or founder; {n} license from MIT, Broad, Harvard, Stanford, Whitehead, Dana-Farber or Scripps. A license proves where the patents came from, not that a given paper became the product. USPTO records come from the Open Data Portal: an owner record shows the company holds the patent application; \"pledged to\" means a lender holds a security interest in it.": "{n} 家公司有引用的研究来源或创始人；其中 {n} 家的技术授权来自 MIT、Broad、哈佛、斯坦福、Whitehead、Dana-Farber 或 Scripps。授权只能证明专利来源，不能证明某篇论文变成了产品。USPTO 记录来自其开放数据门户：所有权记录表示公司持有该专利申请；“pledged to”表示债权人对其持有担保权益（专利被抵押）。",
   "{n} owner records": "{n} 条所有权记录",
-  "no owner record": "无所有权记录"
+  "no owner record": "无所有权记录",
+  "Where U.S. countermeasure money is going (contract actions by HHS's preparedness office, which runs BARDA and the Strategic National Stockpile, from USAspending.gov) and which outbreaks WHO and the CDC are warning about. A contract is revenue for the company; an outbreak is context, not sales.": "美国政府的应对资金流向哪里（HHS 应急准备办公室的合同动作，它负责 BARDA 和国家战略储备，数据来自 USAspending.gov），以及 WHO 和 CDC 正在警示哪些疫情。合同是公司的收入；疫情只是背景，不等于销售。",
+  "CDC health alerts (HAN), last {n} months": "CDC 健康警报（HAN），近 {n} 个月",
+  "Alert": "警报"
 }
