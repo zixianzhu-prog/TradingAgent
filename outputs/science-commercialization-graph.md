@@ -1,17 +1,21 @@
 # 科研到商业化证据链
 
-> 已连接 56 家公司；合作或公司收入信号 17 家；研究者/公司关系 3 家；公司披露技术归属 18 家；USPTO 独立核验 0 家；13D/13G 重要股东 42 家；完整链路 0 家。
+> 已连接 56 家公司；合作或公司收入信号 17 家；研究者/公司关系 3 家；公司披露技术归属 18 家；USPTO 独立核验 7 家；13D/13G 重要股东 42 家；完整链路 0 家。
 
 > 这是可审计研究漏斗，不是股票评分。技术相似、论文提及或合作公告都不能单独证明知识产权、客户收入或买入价值。
 
 | 公司 | 科研 | 研究者/公司 | 专利/许可 | 融资 | 13D/G股东 | 药企付费/合作 | IND/临床 | SEC收入 | 当前结论 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---|
-| IRD | 0 | 0 | 6 | 0 | 8 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
+| TECX | 0 | 0 | 17 | 0 | 3 | 0 | 0 | 0 | science-linked |
+| IRD | 0 | 0 | 8 | 0 | 8 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
+| ALEC | 0 | 0 | 6 | 0 | 8 | 2 | 0 | 0 | ownership-and-pharma-validated |
+| PRME | 0 | 0 | 12 | 0 | 3 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
+| BDSX | 0 | 0 | 6 | 0 | 8 | 0 | 0 | 0 | science-linked |
 | ABCL | 0 | 5 | 3 | 0 | 2 | 0 | 2 | 1 | ownership-and-company-revenue-verified |
-| ALEC | 0 | 0 | 3 | 0 | 8 | 2 | 0 | 0 | ownership-and-pharma-validated |
 | RXRX | 0 | 0 | 1 | 0 | 8 | 0 | 3 | 1 | ownership-and-company-revenue-verified |
+| ANTX | 0 | 0 | 3 | 0 | 8 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
+| HURA | 0 | 0 | 9 | 0 | 2 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | NTRA | 0 | 2 | 0 | 1 | 8 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
-| ANTX | 0 | 0 | 2 | 0 | 8 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | CGEM | 0 | 0 | 2 | 0 | 8 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | PALI | 0 | 0 | 1 | 1 | 8 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | SDGR | 0 | 0 | 2 | 0 | 6 | 0 | 2 | 1 | ownership-and-company-revenue-verified |
@@ -19,8 +23,6 @@
 | IMTX | 0 | 0 | 1 | 1 | 8 | 0 | 0 | 0 | science-linked |
 | KALA | 0 | 0 | 3 | 0 | 7 | 0 | 0 | 0 | science-linked |
 | NAUT | 0 | 0 | 0 | 2 | 8 | 0 | 0 | 0 | evidence-fragment |
-| PRME | 0 | 0 | 6 | 0 | 3 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
-| BDSX | 0 | 0 | 1 | 0 | 8 | 0 | 0 | 0 | science-linked |
 | ELDN | 0 | 0 | 1 | 0 | 8 | 0 | 0 | 0 | science-linked |
 | RNA | 0 | 0 | 0 | 0 | 8 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | TEM | 0 | 1 | 0 | 0 | 7 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
@@ -38,11 +40,9 @@
 | NVDA | 1 | 0 | 0 | 0 | 5 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
 | ODTX | 0 | 0 | 0 | 0 | 7 | 0 | 0 | 0 | evidence-fragment |
 | SGMT | 0 | 0 | 0 | 0 | 7 | 0 | 0 | 0 | evidence-fragment |
-| HURA | 0 | 0 | 3 | 0 | 2 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | OABI | 0 | 0 | 4 | 0 | 2 | 0 | 0 | 0 | science-linked |
 | RDNT | 0 | 0 | 0 | 0 | 5 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
 | IONS | 0 | 0 | 0 | 5 | 0 | 0 | 0 | 0 | evidence-fragment |
-| TECX | 0 | 0 | 2 | 0 | 3 | 0 | 0 | 0 | science-linked |
 | IQV | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
 | ISRG | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
 | ZYME | 0 | 0 | 0 | 0 | 0 | 2 | 1 | 0 | commercial-signal-with-ownership-gap |
@@ -63,13 +63,33 @@
 | MGX | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | VIR | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | commercial-signal-with-ownership-gap |
 
+## TECX · Tectonic Therapeutic, Inc.
+
+目前只到科研/关系发现层，不能升级为商业化结论。
+
+**尚缺证据**
+- 缺论文作者/创始人与公司的原始关系证据
+- 缺融资投资人身份及资金进入的原始证据
+- 缺大药厂付费、许可或具有经济条款的合作证据
+- 缺 IND 获批或已登记临床试验证据
+- 缺经 SEC/XBRL 核验的收入证据
+
+**已核验证据**
+- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1681087/000119312526076793/tecx-20251231.htm) · license：Specifically, we have exclusively in-licensed one patent family from the President and Fellows of Harvard College and wholly own two patent families, relating to Fc-relaxin fusion protein compositions (including TX45) and methods of use thereof.
+- [SEC filing](https://www.sec.gov/Archives/edgar/data/1681087/000119312526076793/tecx-20251231.htm) · patent_portfolio：Our patent portfolio includes three patent families relating to Fc-relaxin fusion protein compositions (including TX45) and methods of use thereof, consisting of two granted U.S. patents, three pending U.S. non-provisional applications, and approximately 40 pending foreign applications.
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/67433/216) · uspto_assignment：USPTO recorded assignment 067433/0216 from GRUSWITZ, FRANZ to TECTONIC THERAPEUTIC, INC. on 2024-05-16
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/67433/204) · uspto_assignment：USPTO recorded assignment 067433/0204 from DIENER, JOHN; MUSLIN, ANTHONY J.; ALVES, WASHINGTON; KNIHTILA, RYAN to TECTONIC THERAPEUTIC, INC. on 2024-05-16
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/69261/712) · uspto_assignment：USPTO recorded assignment 069261/0712 from ALPINE MERGER SUBSIDIARY, INC.; TECTONIC THERAPEUTIC, INC. to TECTONIC OPERATING COMPANY, INC. on 2024-11-14
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/67433/216) · uspto_assignment：USPTO recorded assignment 067433/0216 from GRUSWITZ, FRANZ to TECTONIC THERAPEUTIC, INC. on 2024-05-16
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/67433/222) · uspto_assignment：USPTO recorded assignment 067433/0222 from ALVES, WASHINGTON; DIENER, JOHN; KNIHTILA, RYAN; MUSLIN, ANTHONY J. to TECTONIC THERAPEUTIC, INC. on 2024-05-16
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/69261/712) · uspto_assignment：USPTO recorded assignment 069261/0712 from ALPINE MERGER SUBSIDIARY, INC.; TECTONIC THERAPEUTIC, INC. to TECTONIC OPERATING COMPANY, INC. on 2024-11-14
+
 ## IRD · Opus Genetics, Inc.
 
 目前只到科研/关系发现层，不能升级为商业化结论。
 
 **尚缺证据**
 - 缺论文作者/创始人与公司的原始关系证据
-- 公司已在 SEC 披露专利/许可，但尚缺 USPTO 或大学技术转移材料独立复核
 - 缺融资投资人身份及资金进入的原始证据
 - 缺大药厂付费、许可或具有经济条款的合作证据
 - 缺经 SEC/XBRL 核验的收入证据
@@ -81,8 +101,69 @@
 - [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1228627/000114036126009247/ef20060643_10k.htm) · license：We exclusively license from the University of Pennsylvania and/or University of Florida certain patents and patent applications for products under development for our gene therapy program.
 - [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1228627/000114036126009247/ef20060643_10k.htm) · license：We exclusively license from the University of Pennsylvania and/or University of Florida certain patents and patent applications for products under development for our gene therapy program.
 - [SEC filing](https://www.sec.gov/Archives/edgar/data/1228627/000114036126009247/ef20060643_10k.htm) · patent_portfolio：Form 10-K For our MERTK therapeutic program, we own one patent family directed to compositions of matter and therapeutic methods using such compositions of matter.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1228627/000119312526463810/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Perceptive Advisors LLC reported beneficial ownership of 9.99% on SCHEDULE 13G/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1228627/000121390026120703/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Boxer Capital Management, LLC reported beneficial ownership of 5.4% on SCHEDULE 13G.
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/75447/730) · uspto_assignment：USPTO recorded assignment 075447/0730 from CHARIZANIS, KONSTANTINOS; SOOCH, MINA; HOFFMANN, BERNHARD; MEYER, ALAN R.; PITLICK, WILLIAM H. to OCUPHIRE PHARMA, INC. on 2026-07-29
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/76271/229) · uspto_assignment：USPTO recorded assignment 076271/0229 from OCUPHIRE PHARMA, INC. to OPUS GENETICS, INC. on 2026-07-29
+
+## ALEC · Alector, Inc.
+
+已有商业信号，但不能把合作公告当成客户收入；仍按缺口继续核验。
+
+**尚缺证据**
+- 缺论文作者/创始人与公司的原始关系证据
+- 缺融资投资人身份及资金进入的原始证据
+- 缺 IND 获批或已登记临床试验证据
+- 缺经 SEC/XBRL 核验的收入证据
+
+**已核验证据**
+- [SEC filing](https://www.sec.gov/Archives/edgar/data/1653087/000119312526071593/alec-20251231.htm) · patent_portfolio：Tau siRNA Program We own one patent family directed to our ABC-enabled tau siRNA program.
+- [SEC filing](https://www.sec.gov/Archives/edgar/data/1653087/000119312526071593/alec-20251231.htm) · patent_portfolio：GCase Program We own two patent families directed to our glucocerebrosidase (GCase) program covering engineered GCase compositions including our ABC platform technology and use of those compositions.
+- [SEC filing](https://www.sec.gov/Archives/edgar/data/1653087/000119312526071593/alec-20251231.htm) · patent_portfolio：A-beta Program We own one patent family directed to our ABC-enabled anti-amyloid beta program.
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/74695/213) · uspto_assignment：USPTO recorded assignment 074695/0213 from BIENLY, THUNGA; BROWN, ERIC; NIVITCHANYONG, TARANGSRI; ROSENTHAL, ARNON; SOKOLOVSKY, MAYA; TANG, MARGARET L.; TONG, RAYMOND KA-HANG; GONG, BELVIN; YEE, ANGIE GRACE; HADDAD, DOMINIK; LONG, HUA; SUN, JIAHONG; SHAN, LU to ALECTOR LLC on 2026-05-19
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/73782/694) · uspto_assignment：USPTO recorded assignment 073782/0694 from BIENLY, THUNGA; BROWN, ERIC; NIVITCHANYONG, TARANGSRI; ROSENTHAL, ARNON; SOKOLOVSKY, MAYA; TANG, MARGARET L.; TONG, RAYMOND KA-HANG; GONG, BELVIN; YEE, ANGIE GRACE; HADDAD, DOMINIK; LONG, HUA; SUN, JIAHONG; SHAN, LU to ALECTOR LLC on 2026-02-13
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/73782/694) · uspto_assignment：USPTO recorded assignment 073782/0694 from BIENLY, THUNGA; BROWN, ERIC; NIVITCHANYONG, TARANGSRI; ROSENTHAL, ARNON; SOKOLOVSKY, MAYA; TANG, MARGARET L.; TONG, RAYMOND KA-HANG; GONG, BELVIN; YEE, ANGIE GRACE; HADDAD, DOMINIK; LONG, HUA; SUN, JIAHONG; SHAN, LU to ALECTOR LLC on 2026-02-13
+- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1653087/000134682426000247/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：RA Capital Management, L.P. reported beneficial ownership of 5.1% on SCHEDULE 13G.
+- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1653087/000117266126004680/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Deep Track Capital, LP reported beneficial ownership of 8.61% on SCHEDULE 13G.
+
+## PRME · Prime Medicine, Inc.
+
+目前只到科研/关系发现层，不能升级为商业化结论。
+
+**尚缺证据**
+- 缺论文作者/创始人与公司的原始关系证据
+- 缺融资投资人身份及资金进入的原始证据
+- 缺大药厂付费、许可或具有经济条款的合作证据
+- 缺经 SEC/XBRL 核验的收入证据
+
+**已核验证据**
+- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1894562/000162828026013569/prme-20251231.htm) · license：In September 2019, we entered into a license agreement with Broad Institute, or the Broad License Agreement, and in May 2020, February 2021, December 2022, September 2024, and September 2025 we entered into amendments to that Broad License Agreement.
+- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1894562/000162828026013569/prme-20251231.htm) · license：Certain of the licensed patent rights are co-owned by Broad Institute with the Massachusetts Institute of Technology, or MIT, and Harvard University, or Harvard, and certain are co-owned by Broad Institute with Harvard.
+- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1894562/000162828026013569/prme-20251231.htm) · license：Certain of the licensed patent rights are co-owned by Broad Institute with the Massachusetts Institute of Technology, or MIT, and Harvard University, or Harvard, and certain are co-owned by Broad Institute with Harvard.
+- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1894562/000162828026013569/prme-20251231.htm) · license：The licensed patent rights are co-owned by Broad Institute with Harvard, The Trustees of Princeton University, or Princeton, and The Regents of the University of California, or University of California.
+- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1894562/000162828026013569/prme-20251231.htm) · license：The licensed patent rights are co-owned by Broad Institute with Harvard, The Trustees of Princeton University, or Princeton, and The Regents of the University of California, or University of California.
+- [SEC filing](https://www.sec.gov/Archives/edgar/data/1894562/000162828026013569/prme-20251231.htm) · patent_portfolio：The patent applications that we own or in-license may fail to result in issued patents with claims that cover our product candidates or uses thereof in the United States or in other foreign countries.
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/73927/780) · uspto_assignment：USPTO recorded assignment 073927/0780 from HARVEY, TYLER; KOSHELEVA, EKATERINA ALEXEEVNA to PRIME MEDICINE, INC. on 2026-02-27
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/75204/928) · uspto_assignment：USPTO recorded assignment 075204/0928 from HARVEY, TYLER; KOSHELEVA, EKATERINA ALEXEEVNA to PRIME MEDICINE, INC. on 2026-07-08
+
+## BDSX · BIODESIX INC
+
+目前只到科研/关系发现层，不能升级为商业化结论。
+
+**尚缺证据**
+- 缺论文作者/创始人与公司的原始关系证据
+- 缺融资投资人身份及资金进入的原始证据
+- 缺大药厂付费、许可或具有经济条款的合作证据
+- 缺 IND 获批或已登记临床试验证据
+- 缺经 SEC/XBRL 核验的收入证据
+
+**已核验证据**
+- [SEC filing](https://www.sec.gov/Archives/edgar/data/1439725/000119312526076547/bdsx-20251231.htm) · patent_portfolio：As of December 31, 2025, our patent portfolio includes 60 issued United States patents, 84 issued foreign patents, and 18 pending applications (including 10 foreign patent applications).
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/68033/359) · uspto_assignment：USPTO recorded assignment 068033/0359 from KOC, MATTHEW; RODER, HEINRICH to BIODESIX, INC. on 2024-07-19
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/63617/896) · uspto_assignment：USPTO recorded assignment 063617/0896 from RÖDER, HEINRICH; RÖDER, JOANNA; STEINGRIMSSON, ARNI to BIODESIX, INC. on 2023-05-11
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/66230/257) · uspto_assignment：USPTO recorded assignment 066230/0257 from KOC, MATTHEW; RODER, HEINRICH to BIODESIX, INC. on 2024-01-24
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/66230/209) · uspto_assignment：USPTO recorded assignment 066230/0209 from PESTANO, GARY A.; MELLERT, HESTIA to BIODESIX, INC. on 2024-01-24
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/65174/123) · uspto_assignment：USPTO recorded assignment 065174/0123 from CAMPBELL, THOMAS; GEORGANTAS, ROBERT W., III; RÖDER, HEINRICH; RÖDER, JOANNA; MAGUIRE, LAURA to BIODESIX, INC. on 2023-10-10
+- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1439725/000090514826004746/xslSCHEDULE_13D_X02/primary_doc.xml) · schedule_13d：SCHULER JACK W reported beneficial ownership of 22.3% on SCHEDULE 13D/A.
+- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1439725/000121390026070194/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Soleus Capital Master Fund, L.P. reported beneficial ownership of 5.1% on SCHEDULE 13G.
 
 ## ABCL · AbCellera Biologics
 
@@ -103,27 +184,6 @@
 - [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1703057/000170305726000012/abcl-20251231.htm) · license：Patent Portfolio We have developed an expansive patent portfolio with claims related to multiple aspects of our discovery and development capabilities, beginning with our first patent applications exclusively licensed from UBC in 2013.
 - [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1703057/000170305726000012/abcl-20251231.htm) · license：We are party to a royalty-bearing license agreement with the University of British Columbia that grants us exclusive rights to exploit certain patent rights that are related to our systems.
 - [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1703057/000170305726000012/abcl-20251231.htm) · license：OrthoMab As part of our agreement to purchase certain assets from Dualogics related to its OrthoMab bispecific antibody platform, we were assigned Dualogics' interests and rights to that certain Exclusive License Agreement between Dualogics and the University of North Carolina at Chapel Hill, effective February 22, 2019, or the UNC Agreement.
-
-## ALEC · Alector, Inc.
-
-已有商业信号，但不能把合作公告当成客户收入；仍按缺口继续核验。
-
-**尚缺证据**
-- 缺论文作者/创始人与公司的原始关系证据
-- 公司已在 SEC 披露专利/许可，但尚缺 USPTO 或大学技术转移材料独立复核
-- 缺融资投资人身份及资金进入的原始证据
-- 缺 IND 获批或已登记临床试验证据
-- 缺经 SEC/XBRL 核验的收入证据
-
-**已核验证据**
-- [SEC filing](https://www.sec.gov/Archives/edgar/data/1653087/000119312526071593/alec-20251231.htm) · patent_portfolio：Tau siRNA Program We own one patent family directed to our ABC-enabled tau siRNA program.
-- [SEC filing](https://www.sec.gov/Archives/edgar/data/1653087/000119312526071593/alec-20251231.htm) · patent_portfolio：GCase Program We own two patent families directed to our glucocerebrosidase (GCase) program covering engineered GCase compositions including our ABC platform technology and use of those compositions.
-- [SEC filing](https://www.sec.gov/Archives/edgar/data/1653087/000119312526071593/alec-20251231.htm) · patent_portfolio：A-beta Program We own one patent family directed to our ABC-enabled anti-amyloid beta program.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1653087/000134682426000247/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：RA Capital Management, L.P. reported beneficial ownership of 5.1% on SCHEDULE 13G.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1653087/000117266126004680/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Deep Track Capital, LP reported beneficial ownership of 8.61% on SCHEDULE 13G.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1653087/000092189526002587/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：BIOTECHNOLOGY VALUE FUND L P reported beneficial ownership of 8.4% on SCHEDULE 13G.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1653087/000119312526224270/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Polaris Venture Partners VI, L.P. reported beneficial ownership of 4.7% on SCHEDULE 13G/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1653087/000201238326001732/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：BlackRock, Inc. reported beneficial ownership of 5.2% on SCHEDULE 13G.
 
 ## RXRX · Recursion Pharmaceuticals
 
@@ -146,6 +206,46 @@
 - [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1601830/000201238326002868/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：BlackRock, Inc. reported beneficial ownership of 8.5% on SCHEDULE 13G/A.
 - [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1601830/000009375126000285/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：STATE STREET CORPORATION reported beneficial ownership of 5.5% on SCHEDULE 13G.
 
+## ANTX · AN2 Therapeutics, Inc.
+
+目前只到科研/关系发现层，不能升级为商业化结论。
+
+**尚缺证据**
+- 缺论文作者/创始人与公司的原始关系证据
+- 缺融资投资人身份及资金进入的原始证据
+- 缺大药厂付费、许可或具有经济条款的合作证据
+- 缺经 SEC/XBRL 核验的收入证据
+
+**已核验证据**
+- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1880438/000119312526110693/antx-20251231.htm) · license：In October 2023, we announced an exclusive license agreement with the University of Georgia Research Foundation to advance the development of AN2-502998, originally discovered by researchers at Anacor, in close collaboration with the University of Georgia.
+- [SEC filing](https://www.sec.gov/Archives/edgar/data/1880438/000119312526110693/antx-20251231.htm) · exclusive_license：We have sublicensed certain patents from Anacor that are owned, maintained and prosecuted by GlaxoSmithKline plc (“GSK”).
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/71941/309) · uspto_assignment：USPTO recorded assignment 071941/0309 from AUBREY, MARISSA CAROLINE; NIEMAN, JAMES A. to AN2 THERAPEUTICS, INC. on 2025-08-05
+- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1880438/000183194226000048/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Commodore Capital LP reported beneficial ownership of 9.9% on SCHEDULE 13G/A.
+- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1880438/000110465926127408/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Coastlands Capital LP reported beneficial ownership of 9.99% on SCHEDULE 13G/A.
+- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1880438/000119312526461157/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Eric Easom reported beneficial ownership of 6.2% on SCHEDULE 13G/A.
+- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1880438/000207367926000066/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Almitas Capital LLC reported beneficial ownership of 4.1% on SCHEDULE 13G/A.
+- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1880438/000183194226000014/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Commodore Capital LP reported beneficial ownership of 9.9% on SCHEDULE 13G.
+
+## HURA · TuHURA Biosciences, Inc./NV
+
+目前只到科研/关系发现层，不能升级为商业化结论。
+
+**尚缺证据**
+- 缺论文作者/创始人与公司的原始关系证据
+- 缺融资投资人身份及资金进入的原始证据
+- 缺大药厂付费、许可或具有经济条款的合作证据
+- 缺经 SEC/XBRL 核验的收入证据
+
+**已核验证据**
+- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1498382/000119312526134950/hura-20251231.htm) · license：In particular, TuHURA is a party to a March 2019 Exclusive License Agreement with Moffitt Cancer Center under which, as amended, we license patent rights co- owned by Moffitt and University of South Florida relating to ADCs for immunotherapy and Delta receptor targeted agents for molecular imaging and immunotherapy of lung cancer.
+- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1498382/000119312526134950/hura-20251231.htm) · license：License Agreement with West Virginia University Research Corporation In January 2023 but with an effective date of September 2022, TuHURA Biopharma, as predecessor in interest of us, entered into a Restated and Amended Exclusive License Agreement with WVURC (the "WVU Agreement"), which terminated and replaced the prior agreement between WVURC and TuHURA Biopharma.
+- [SEC filing](https://www.sec.gov/Archives/edgar/data/1498382/000119312526134950/hura-20251231.htm) · university_license：In particular, TuHURA is a party to a March 2019 Exclusive License Agreement with Moffitt Cancer Center under which, as amended, we license patent rights co- owned by Moffitt and University of South Florida relating to ADCs for immunotherapy and Delta receptor targeted agents for molecular imaging and immunotherapy of lung cancer.
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/74363/866) · uspto_assignment：USPTO recorded assignment 074363/0866 from BASTAWROUS, MARINA VICTOR ABDELMASEEH; LAWMAN, MICHAEL J. P.; LAWMAN, PATRICIA D.; SHAMBLOTT, MICHAEL J. to MORPHOGENESIS, INC. on 2026-04-14
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/75390/614) · uspto_assignment：USPTO recorded assignment 075390/0614 from MORPHOGENESIS, INC. to TUHURA BIOSCIENCES, INC. on 2026-04-14
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/75967/735) · uspto_assignment：USPTO recorded assignment 075967/0735 from LAWMAN, MICHAEL J. P.; LAWMAN, PATRICIA D.; ELIZABETH, MEGHAN to TUHURA BIOSCIENCES, INC. on 2026-09-10
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/75967/735) · uspto_assignment：USPTO recorded assignment 075967/0735 from LAWMAN, MICHAEL J. P.; LAWMAN, PATRICIA D.; ELIZABETH, MEGHAN to TUHURA BIOSCIENCES, INC. on 2026-09-10
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/62178/905) · uspto_assignment：USPTO recorded assignment 062178/0905 from BASTAWROUS, MARINA VICTOR ABDELMASEEH; LAWMAN, MICHAEL J.P.; LAWMAN, PATRICIA D.; SHAMBLOTT, MICHAEL J. to MORPHOGENESIS, INC. on 2022-12-22
+
 ## NTRA · Natera
 
 已有商业信号，但不能把合作公告当成客户收入；仍按缺口继续核验。
@@ -165,27 +265,6 @@
 - [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1604821/000031506626002810/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：FMR LLC reported beneficial ownership of 9.5% on SCHEDULE 13G.
 - [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1604821/000008025526000548/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：T. Rowe Price Associates, Inc. reported beneficial ownership of 6.3% on SCHEDULE 13G/A.
 - [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1604821/000210011926000780/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Vanguard Capital Management reported beneficial ownership of 5.08% on SCHEDULE 13G.
-
-## ANTX · AN2 Therapeutics, Inc.
-
-目前只到科研/关系发现层，不能升级为商业化结论。
-
-**尚缺证据**
-- 缺论文作者/创始人与公司的原始关系证据
-- 公司已在 SEC 披露专利/许可，但尚缺 USPTO 或大学技术转移材料独立复核
-- 缺融资投资人身份及资金进入的原始证据
-- 缺大药厂付费、许可或具有经济条款的合作证据
-- 缺经 SEC/XBRL 核验的收入证据
-
-**已核验证据**
-- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1880438/000119312526110693/antx-20251231.htm) · license：In October 2023, we announced an exclusive license agreement with the University of Georgia Research Foundation to advance the development of AN2-502998, originally discovered by researchers at Anacor, in close collaboration with the University of Georgia.
-- [SEC filing](https://www.sec.gov/Archives/edgar/data/1880438/000119312526110693/antx-20251231.htm) · exclusive_license：We have sublicensed certain patents from Anacor that are owned, maintained and prosecuted by GlaxoSmithKline plc (“GSK”).
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1880438/000183194226000048/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Commodore Capital LP reported beneficial ownership of 9.9% on SCHEDULE 13G/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1880438/000110465926127408/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Coastlands Capital LP reported beneficial ownership of 9.99% on SCHEDULE 13G/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1880438/000119312526461157/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Eric Easom reported beneficial ownership of 6.2% on SCHEDULE 13G/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1880438/000207367926000066/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Almitas Capital LLC reported beneficial ownership of 4.1% on SCHEDULE 13G/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1880438/000183194226000014/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Commodore Capital LP reported beneficial ownership of 9.9% on SCHEDULE 13G.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1880438/000110465926027730/xslSCHEDULE_13G_X01/primary_doc.xml) · schedule_13g：Integrated Core Strategies (US) LLC reported beneficial ownership of 6.3% on SCHEDULE 13G.
 
 ## CGEM · Cullinan Therapeutics, Inc.
 
@@ -290,92 +369,6 @@
 - [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1809196/000091957426007762/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Montanova Capital, LLC reported beneficial ownership of 5.8% on SCHEDULE 13G/A.
 - [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1809196/000119312526371236/xslSCHEDULE_13D_X02/primary_doc.xml) · schedule_13d：Perceptive Advisors LLC reported beneficial ownership of 7.6% on SCHEDULE 13D/A.
 - [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1809196/000110465926097045/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Baker Bros. Advisors LP reported beneficial ownership of 7.0% on SCHEDULE 13G/A.
-
-## KALA · KALA BIO, Inc.
-
-目前只到科研/关系发现层，不能升级为商业化结论。
-
-**尚缺证据**
-- 缺论文作者/创始人与公司的原始关系证据
-- 公司已在 SEC 披露专利/许可，但尚缺 USPTO 或大学技术转移材料独立复核
-- 缺融资投资人身份及资金进入的原始证据
-- 缺大药厂付费、许可或具有经济条款的合作证据
-- 缺 IND 获批或已登记临床试验证据
-- 缺经 SEC/XBRL 核验的收入证据
-
-**已核验证据**
-- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1479419/000110465926043782/kala-20251231x10k.htm) · license：Stanford University License Agreement As part of our acquisition of Combangio, we acquired Combangio's exclusively in-licensed patent portfolio from Stanford University.
-- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1479419/000110465926043782/kala-20251231x10k.htm) · license：patent, one foreign patent, and one foreign patent application, all related to secreted stem cell factors for tissue repairment and regeneration, and which are exclusively in-licensed from Stanford University, and which, if granted with respect to the patent applications, and if the appropriate maintenance, renewal, annuity or other governmental fees are paid, are expected to expire beginning in 2038;
-- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1479419/000110465926043782/kala-20251231x10k.htm) · license：Pursuant to the license agreement with Stanford, or the Stanford Agreement, we hold a worldwide, exclusive, sublicensable license under certain patent rights, or licensed patents, directed to methods to promote eye wound healing, to make, have made, use, import, offer to sell and sell products that are covered by the licensed patents, or licensed products, for use in all fields.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1479419/000212324926000002/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Labkowski Nachum reported beneficial ownership of 5.0% on SCHEDULE 13G.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1479419/000182912626007224/xslSCHEDULE_13D_X02/primary_doc.xml) · schedule_13d：Lazar David E. reported beneficial ownership of 3.9% on SCHEDULE 13D/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1479419/000110465926062584/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Baker Bros. Advisors LP reported beneficial ownership of 0.01% on SCHEDULE 13G/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1479419/000110465926016457/xslSCHEDULE_13G_X01/primary_doc.xml) · schedule_13g：Baker Bros. Advisors LP reported beneficial ownership of 9.99% on SCHEDULE 13G/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1479419/000182912626001059/xslSCHEDULE_13D_X01/primary_doc.xml) · schedule_13d：David E. Lazar reported beneficial ownership of 5.18% on SCHEDULE 13D.
-
-## NAUT · Nautilus Biotechnology, Inc.
-
-目前只到科研/关系发现层，不能升级为商业化结论。
-
-**尚缺证据**
-- 缺论文作者/创始人与公司的原始关系证据
-- 缺公司专利、专利受让或大学技术许可的明确证据
-- 缺大药厂付费、许可或具有经济条款的合作证据
-- 缺 IND 获批或已登记临床试验证据
-- 缺经 SEC/XBRL 核验的收入证据
-
-**已核验证据**
-- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1808805/000180880526000011/naut-20251231.htm) · sponsored_research：Fox Foundation and Weill Cornell Medicine–Qatar (WCM-Q), and The Buck Institute for Research on Aging, and an agreement with the Allen Institute, among others.
-- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1808805/000180880526000011/naut-20251231.htm) · sponsored_research：Fox Foundation and Weill Cornell Medicine–Qatar in January 2026, and entered into an agreement with the Allen Institute in July 2025.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1808805/000119312526445289/xslSCHEDULE_13D_X02/primary_doc.xml) · schedule_13d：Perceptive Advisors LLC reported beneficial ownership of 3.9% on SCHEDULE 13D/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1808805/000123191926001165/xslSCHEDULE_13D_X02/primary_doc.xml) · schedule_13d：AH Bio Fund II, L.P. reported beneficial ownership of 4.9% on SCHEDULE 13D/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1808805/000172572126000006/xslSCHEDULE_13D_X02/primary_doc.xml) · schedule_13d：AH Bio Fund II, L.P. reported beneficial ownership of 6.0% on SCHEDULE 13D/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1808805/000119312526352644/xslSCHEDULE_13D_X02/primary_doc.xml) · schedule_13d：Perceptive Advisors LLC reported beneficial ownership of 9.1% on SCHEDULE 13D/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1808805/000172572126000004/xslSCHEDULE_13D_X02/primary_doc.xml) · schedule_13d：AH Bio Fund II, L.P. reported beneficial ownership of 7.1% on SCHEDULE 13D/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1808805/000172572126000002/xslSCHEDULE_13D_X02/primary_doc.xml) · schedule_13d：AH Bio Fund II, L.P. reported beneficial ownership of 9.9% on SCHEDULE 13D/A.
-
-## PRME · Prime Medicine, Inc.
-
-目前只到科研/关系发现层，不能升级为商业化结论。
-
-**尚缺证据**
-- 缺论文作者/创始人与公司的原始关系证据
-- 公司已在 SEC 披露专利/许可，但尚缺 USPTO 或大学技术转移材料独立复核
-- 缺融资投资人身份及资金进入的原始证据
-- 缺大药厂付费、许可或具有经济条款的合作证据
-- 缺经 SEC/XBRL 核验的收入证据
-
-**已核验证据**
-- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1894562/000162828026013569/prme-20251231.htm) · license：In September 2019, we entered into a license agreement with Broad Institute, or the Broad License Agreement, and in May 2020, February 2021, December 2022, September 2024, and September 2025 we entered into amendments to that Broad License Agreement.
-- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1894562/000162828026013569/prme-20251231.htm) · license：Certain of the licensed patent rights are co-owned by Broad Institute with the Massachusetts Institute of Technology, or MIT, and Harvard University, or Harvard, and certain are co-owned by Broad Institute with Harvard.
-- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1894562/000162828026013569/prme-20251231.htm) · license：Certain of the licensed patent rights are co-owned by Broad Institute with the Massachusetts Institute of Technology, or MIT, and Harvard University, or Harvard, and certain are co-owned by Broad Institute with Harvard.
-- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1894562/000162828026013569/prme-20251231.htm) · license：The licensed patent rights are co-owned by Broad Institute with Harvard, The Trustees of Princeton University, or Princeton, and The Regents of the University of California, or University of California.
-- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1894562/000162828026013569/prme-20251231.htm) · license：The licensed patent rights are co-owned by Broad Institute with Harvard, The Trustees of Princeton University, or Princeton, and The Regents of the University of California, or University of California.
-- [SEC filing](https://www.sec.gov/Archives/edgar/data/1894562/000162828026013569/prme-20251231.htm) · patent_portfolio：The patent applications that we own or in-license may fail to result in issued patents with claims that cover our product candidates or uses thereof in the United States or in other foreign countries.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1894562/000119312526460600/xslSCHEDULE_13D_X02/primary_doc.xml) · schedule_13d：ARCH Venture Fund X, L.P. reported beneficial ownership of 8.4% on SCHEDULE 13D/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1894562/000110465926126830/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：ARK Investment Management LLC reported beneficial ownership of 5.54% on SCHEDULE 13G.
-
-## BDSX · BIODESIX INC
-
-目前只到科研/关系发现层，不能升级为商业化结论。
-
-**尚缺证据**
-- 缺论文作者/创始人与公司的原始关系证据
-- 公司已在 SEC 披露专利/许可，但尚缺 USPTO 或大学技术转移材料独立复核
-- 缺融资投资人身份及资金进入的原始证据
-- 缺大药厂付费、许可或具有经济条款的合作证据
-- 缺 IND 获批或已登记临床试验证据
-- 缺经 SEC/XBRL 核验的收入证据
-
-**已核验证据**
-- [SEC filing](https://www.sec.gov/Archives/edgar/data/1439725/000119312526076547/bdsx-20251231.htm) · patent_portfolio：As of December 31, 2025, our patent portfolio includes 60 issued United States patents, 84 issued foreign patents, and 18 pending applications (including 10 foreign patent applications).
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1439725/000090514826004746/xslSCHEDULE_13D_X02/primary_doc.xml) · schedule_13d：SCHULER JACK W reported beneficial ownership of 22.3% on SCHEDULE 13D/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1439725/000121390026070194/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Soleus Capital Master Fund, L.P. reported beneficial ownership of 5.1% on SCHEDULE 13G.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1439725/000119312526226566/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Perceptive Advisors LLC reported beneficial ownership of 4.6% on SCHEDULE 13G/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1439725/000121390026053983/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Soleus Capital Master Fund, L.P. reported beneficial ownership of 4.1% on SCHEDULE 13G/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1439725/000149315226019343/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Orin Hirschman reported beneficial ownership of 7.7% on SCHEDULE 13G.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1439725/000090514826000363/xslSCHEDULE_13D_X01/primary_doc.xml) · schedule_13d：SCHULER JACK W reported beneficial ownership of 24.0% on SCHEDULE 13D/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1439725/000089843226000061/xslSCHEDULE_13G_X01/primary_doc.xml) · schedule_13g：Telemark Asset Management, LLC reported beneficial ownership of 5.4% on SCHEDULE 13G.
 
 ## 如何补齐
 
