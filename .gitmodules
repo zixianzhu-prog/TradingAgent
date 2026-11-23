@@ -1,0 +1,4 @@
+[submodule "dashboard"]
+	path = dashboard
+	url = https://github.com/zixianzhu-prog/TradingAgent-dashboard.git
+	branch = serenity-signals-backtest
