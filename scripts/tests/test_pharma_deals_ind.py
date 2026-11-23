@@ -40,3 +40,16 @@ def test_dedupe_keeps_earliest_mention():
     m.dedupe(rows)
     dup = {r["url"]: r.get("duplicateOf") for r in rows}
     assert dup == {"a": None, "b": "a", "c": None, "d": "c", "e": None, "f": "e", "g": None}
+
+
+def test_history_keeps_confirmed_events_that_left_the_window():
+    from datetime import date
+    from pharma_deals_ind import carry_history
+    prev = {"filings": [
+        {"url": "a", "kind": "deal", "filed": "2026-08-01", "facts": {"isNewDeal": True}},
+        {"url": "b", "kind": "deal", "filed": "2026-08-02", "facts": {"isNewDeal": False}},
+        {"url": "c", "kind": "ind", "filed": "2026-08-03", "facts": {"isIndClearance": {"value": True}}, "duplicateOf": "x"},
+        {"url": "d", "kind": "ind", "filed": "2026-10-01", "facts": {"isIndClearance": True}}],
+        "history": [{"url": "e", "kind": "ind", "filed": "2022-01-01", "facts": {"isIndClearance": True}}]}
+    out = carry_history(prev, [{"url": "d"}], "2026-08-25", date(2026, 11, 23))
+    assert [r["url"] for r in out] == ["a"]  # b unconfirmed, c duplicate, d still in window, e older than 3 years

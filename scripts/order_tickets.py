@@ -147,6 +147,9 @@ def next_earnings(ticker: str, watch: dict, today: date) -> str | None:
     return None
 
 
+DILUTION_FLAG = 0.30  # equity raised in 24 months / market value (scripts/equity_raises.py)
+
+
 def patent_liens(uspto: dict) -> dict[str, list[tuple[str, str]]]:
     """Lender and latest recorded date per company, from USPTO security-interest assignments."""
     out: dict[str, list[tuple[str, str]]] = {}
@@ -244,6 +247,10 @@ def ticket(row: dict, ctx: dict, portfolio: float, today: date) -> dict:
     if risk.get("worstDay") is not None and risk["worstDay"] <= DRAWDOWN_DAY:
         size /= 2
         adjustments.append(f"worst day in 6 months {risk['worstDay']:.0%}: halved for the drawdown budget")
+    raised = (ctx.get("raises", {}).get(t) or {}).get("totalUsdM") or 0
+    if small and small.get("marketCapM") and raised / small["marketCapM"] >= DILUTION_FLAG:
+        adjustments.append(f"sold ${raised:,.0f}M of new shares in 24 months, {raised / small['marketCapM']:.0%} of today's market value: "
+                           "expect more dilution while the company burns cash")
     if small and small.get("runwayMonths") is not None and small["runwayMonths"] < RUNWAY_MONTHS:
         size = min(size, STARTER)
         adjustments.append(f"cash for {small['runwayMonths']:.0f} months: a share sale is likely, starter only")
@@ -306,6 +313,7 @@ def build(portfolio: float, price_fn=price_risk) -> dict:
            "trends": growth_trends([r["ticker"] for r in ranking]),
            "adversarial": read(ROOT / "state/serenity-adversarial.json", {}).get("companies", {}),
            "bull": {t: bull_price(f) for t, f in financials.items()},
+           "raises": read(ROOT / "state/equity-raises.json", {}).get("companies", {}),
            "liens": patent_liens(read(ROOT / "state/uspto-assignment-validation.json", {}))}
     small_rows = small_cap_rows({r["ticker"] for r in ranking})
     if small_rows:

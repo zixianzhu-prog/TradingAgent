@@ -111,7 +111,7 @@ def build(frontier: dict, company_rows: list[dict], pharma: dict, clinical: dict
                 "USPTO Assignment Center", item.get("url"), quote, "uspto_assignment", True,
                 independentAssignmentVerified=True, reelFrame=item.get("reelFrame"), recordedAt=item.get("recordedAt")))
 
-    for filing in pharma.get("filings", []):
+    for filing in pharma.get("filings", []) + pharma.get("history", []):  # history: confirmed events older than the window
         ticker = filing.get("ticker")
         if ticker not in records:
             continue

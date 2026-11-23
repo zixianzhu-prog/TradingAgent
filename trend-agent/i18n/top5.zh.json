@@ -627,7 +627,6 @@
   "add after earnings, a customer or a deal confirms the thesis, up to {n}%; never because the price rose": "财报、客户或合作验证论点后再加，最多到 {n}%；不因上涨加仓",
   "consider trimming above ${n}, where even the bull case earns less than {n}% a year": "价格高于 ${n} 时考虑减仓：到那里连乐观情景每年也赚不到 {n}%",
   "Under ${n}B: preparation and growth": "市值 {n}0 亿美元以内：准备期与增长期",
-  "Earlier and smaller: companies worth ${n}M to ${n}B from two sources. The first is AI-medicine companies whose own filings describe their own AI product. The second is drug developers whose {n}-K press releases in the last {n} days report an IND clearance or a new big-pharma deal; they are listed for that signal, not for AI. Every company is tagged by one rule. Preparation means under ${n}M of yearly revenue (a drug developer still in trials counts as preparation whatever its partner payments); growth means ${n}M+ growing at least {n}% a year; the rest are slowing. Market value is SEC-reported shares times the latest close; runway is cash and short-term investments over operating cash burn, flagged under {n} months because a share sale is then likely.": "更早、更小：市值 ${n}M 到 ${n}B 的公司，来自两个来源。一是自己的文件描述了自有 AI 产品的 AI 医疗公司；二是 {n}-K 新闻稿在最近 {n} 天内报告拿到 IND 或大药厂新合作的新药公司，它们因这个信号入选，不是因为 AI。所有公司按同一条规则标阶段。准备期指年收入低于 ${n}M（还在临床阶段的新药公司，不论合作方付了多少钱都算准备期）；增长期指收入 ${n}M 以上且每年增长至少 {n}%；其余为放缓期。市值 = SEC 披露股数 × 最新收盘价；现金跑道 = 现金和短期投资 ÷ 经营现金消耗，不到 {n} 个月会标红，因为那时很可能增发。",
   "Now:": "现在：",
   "Stage": "阶段",
   "Market value": "市值",
@@ -747,5 +746,7 @@
   "Company papers, last {n} years": "公司论文（近 {n} 年）",
   "Equity raised, {n} months": "股权融资（近 {n} 个月）",
   "({n} cites)": "（{n} 次引用）",
-  "{n}; top:": "{n}；引用最多："
+  "{n}; top:": "{n}；引用最多：",
+  "Earlier and smaller: companies worth ${n}M to ${n}B from two sources. The first is AI-medicine companies whose own filings describe their own AI product. The second is drug developers whose {n}-K press releases in the last {n} days report an IND clearance or a new big-pharma deal; they are listed for that signal, not for AI. Every company is tagged by one rule. Preparation means under ${n}M of yearly revenue (a drug developer still in trials counts as preparation whatever its partner payments); growth means ${n}M+ growing at least {n}% a year; the rest are slowing. Market value is SEC-reported shares times the latest close; runway is cash and short-term investments over operating cash burn, flagged under {n} months because a share sale is then likely. Below it: cash raised from selling shares in the last {n} months (SEC XBRL cash-flow statement), flagged when it reaches {n}% of today's market value, because existing holders were diluted and more sales usually follow.": "更早、更小：市值 ${n}M 到 ${n}B 的公司，来自两个来源。一是自己的文件描述了自有 AI 产品的 AI 医疗公司；二是 {n}-K 新闻稿在最近 {n} 天内报告拿到 IND 或大药厂新合作的新药公司，它们因这个信号入选，不是因为 AI。所有公司按同一条规则标阶段。准备期指年收入低于 ${n}M（还在临床阶段的新药公司，不论合作方付了多少钱都算准备期）；增长期指收入 ${n}M 以上且每年增长至少 {n}%；其余为放缓期。市值 = SEC 披露股数 × 最新收盘价；现金跑道 = 现金和短期投资 ÷ 经营现金消耗，不到 {n} 个月会标红，因为那时很可能增发。下方是近 {n} 个月发行股票收到的现金（SEC XBRL 现金流量表），达到当前市值 {n}% 时标红：老股东已被稀释，而且通常还会继续增发。",
+  "raised ${n}M in {n} mo ({n}% of value)": "融资 ${n}M（近 {n} 个月，占市值 {n}%）"
 }

@@ -99,3 +99,13 @@ def test_patent_liens_keep_latest_date_per_lender():
         {"assignee": "OPCM SA LLC", "recordedAt": "2026-04-21T00:00:00"}, {"assignee": "OPCM SA LLC", "recordedAt": "2025-01-01"}]},
         {"ticker": "ALEC", "securityInterests": []}]}
     assert patent_liens(u) == {"IRD": [("OPCM SA LLC", "2026-04-21")]}
+
+
+def test_heavy_dilution_is_flagged_without_changing_size():
+    ctx = {**CTX, "small": {"X": {"marketCapM": 400}}, "raises": {"X": {"totalUsdM": 200}}}
+    t = ot.ticket(row(), ctx, 100_000, date(2026, 11, 17))
+    assert any("50% of today's market value" in a for a in t["sizeAdjustments"])
+    base = ot.ticket(row(), {**CTX, "small": {"X": {"marketCapM": 400}}}, 100_000, date(2026, 11, 17))
+    assert t["positionPct"] == base["positionPct"]
+    ctx["raises"]["X"]["totalUsdM"] = 40
+    assert not any("new shares" in a for a in ot.ticket(row(), ctx, 100_000, date(2026, 11, 17))["sizeAdjustments"])

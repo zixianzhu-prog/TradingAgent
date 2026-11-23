@@ -1051,6 +1051,7 @@ def small_caps_section(root: Path) -> str:
         return ""
     gates = {r["ticker"]: r for r in load(root / "state/serenity-gate-results.json", {}).get("companies", [])}
     rnpv = {r["ticker"]: r for r in load(root / "state/rnpv-valuations.json", {}).get("companies", [])}
+    raises = load(root / "state/equity-raises.json", {}).get("companies", {})
     money = lambda v: "—" if v is None else (f"${v / 1000:.1f}B" if v >= 1000 else f"${v:,.0f}M" if v >= 10 else f"${v:.1f}M")
     rows = ""
     for r in rows_data:
@@ -1058,6 +1059,11 @@ def small_caps_section(root: Path) -> str:
         runway = "cash positive" if r.get("burnPerMonthM") == 0 else (f"{r['runwayMonths']:.0f} mo" if r.get("runwayMonths") is not None else "—")
         if r.get("financingRisk"):
             runway = f'<span class="chip alert">{runway}</span>'
+        got = (raises.get(r["ticker"]) or {}).get("totalUsdM") or 0
+        if got >= 5 and r.get("marketCapM"):
+            share = got / r["marketCapM"]
+            note = f"raised {money(got)} in 24 mo ({share:.0%} of value)"
+            runway += f'<br><span class="{"chip alert" if share >= 0.3 else "muted-note"}">{note}</span>'
         g = gates.get(r["ticker"], {})
         verdict = g.get("decision", "not reviewed")
         why = "; ".join(f'<a href="{esc(s["url"])}">{esc(s["text"])}</a>' for s in r.get("signals", [])) or "own AI product (market-wide screen)"
@@ -1071,7 +1077,7 @@ def small_caps_section(root: Path) -> str:
     return f"""
   <section class="section" id="smallcaps" aria-labelledby="smallcaps-h">
     <h2 id="smallcaps-h">Under $1B: preparation and growth</h2>
-    <p>Earlier and smaller: companies worth $50M to $1B from two sources. The first is AI-medicine companies whose own filings describe their own AI product. The second is drug developers whose 8-K press releases in the last 90 days report an IND clearance or a new big-pharma deal; they are listed for that signal, not for AI. Every company is tagged by one rule. Preparation means under $10M of yearly revenue (a drug developer still in trials counts as preparation whatever its partner payments); growth means $10M+ growing at least 20% a year; the rest are slowing. Market value is SEC-reported shares times the latest close; runway is cash and short-term investments over operating cash burn, flagged under 12 months because a share sale is then likely.</p>
+    <p>Earlier and smaller: companies worth $50M to $1B from two sources. The first is AI-medicine companies whose own filings describe their own AI product. The second is drug developers whose 8-K press releases in the last 90 days report an IND clearance or a new big-pharma deal; they are listed for that signal, not for AI. Every company is tagged by one rule. Preparation means under $10M of yearly revenue (a drug developer still in trials counts as preparation whatever its partner payments); growth means $10M+ growing at least 20% a year; the rest are slowing. Market value is SEC-reported shares times the latest close; runway is cash and short-term investments over operating cash burn, flagged under 12 months because a share sale is then likely. Below it: cash raised from selling shares in the last 24 months (SEC XBRL cash-flow statement), flagged when it reaches 30% of today's market value, because existing holders were diluted and more sales usually follow.</p>
     <p class="note"><span>Now:</span> {len(rows_data)} companies; {stages.get('growth', 0)} growth, {stages.get('preparation', 0)} preparation, {stages.get('slowing', 0)} slowing. Each was graded with the Serenity gates; none has enough primary evidence to be research-ready yet, so these are a research queue, not picks.</p>
     <div class="table-wrap"><table><thead><tr><th>Stage</th><th>Ticker</th><th>Company</th><th class="n">Market value</th><th class="n">Revenue (yearly)</th><th class="n">Growth</th><th class="n">Cash runway</th><th>Serenity</th><th>rNPV range</th></tr></thead>
     <tbody>{rows}</tbody></table></div>

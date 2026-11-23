@@ -215,6 +215,29 @@ def build(days: int, agent: str, do_extract: bool, model: str, parallel: int) ->
                         "aiPlatformDeals": sum(confirmed(r, "isNewDeal") and ((r["facts"].get("aiPlatformDeal") or {}).get("value") or "").lower().startswith("y") for r in rows)}}
 
 
+HISTORY_DAYS = 3 * 365
+
+
+def carry_history(previous: dict, rows: list[dict], start: str, today: date) -> list[dict]:
+    """Confirmed deals and IND clearances that have left the rolling window, kept for three years: a deal signed
+    four months ago still validates the company. Only primaries with a confirmed flag are kept."""
+    keep_after = (today - timedelta(days=HISTORY_DAYS)).isoformat()
+    current = {r["url"] for r in rows}
+    def confirmed(r):
+        f = r.get("facts") or {}
+        flag = "isNewDeal" if r.get("kind") == "deal" else "isIndClearance"
+        v = f.get(flag)
+        return (v is True or (isinstance(v, dict) and v.get("value") is True)) and not r.get("duplicateOf")
+    out, seen = [], set()
+    for r in previous.get("history", []) + previous.get("filings", []):
+        if r.get("url") in current or r.get("url") in seen or not confirmed(r):
+            continue
+        if keep_after <= (r.get("filed") or "") < start:
+            out.append(r)
+            seen.add(r["url"])
+    return sorted(out, key=lambda r: r.get("filed") or "", reverse=True)
+
+
 def _norm(text) -> str:
     return re.sub(r"[^a-z0-9]", "", (text or "").split("(")[0].lower())
 
@@ -295,7 +318,9 @@ def main() -> None:
     agent = os.getenv("SEC_USER_AGENT", "")
     if "@" not in agent:
         raise SystemExit("Set SEC_USER_AGENT to your own contact (SEC fair-access policy)")
+    previous = json.loads(OUTPUT.read_text(encoding="utf-8")) if OUTPUT.exists() else {}
     payload = build(args.days, agent, not args.no_extract, args.model, args.parallel)
+    payload["history"] = carry_history(previous, payload["filings"], payload["window"][0], date.today())
     OUTPUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     REPORT.write_text(report(payload), encoding="utf-8")
     print(json.dumps(payload["summary"]))
