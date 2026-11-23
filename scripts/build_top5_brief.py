@@ -66,6 +66,66 @@ def load(path: Path, default=None):
         raise
 
 
+def implied_growth(financial: dict, price: float, target: float = 0.12) -> float | None:
+    """Reverse scenario: yearly revenue growth needed to earn `target` a year from `price`,
+    holding the base case's exit multiple, margin and dilution. Fewer assumptions than the range."""
+    model = financial.get("scenario_model") or {}
+    base = (model.get("cases") or {}).get("base") or {}
+    years, revenue0, shares = model.get("horizon_years") or 5, model.get("revenue_basis_m"), financial.get("shares")
+    multiple = base.get("terminal_multiple")
+    if not (price and revenue0 and shares and multiple):
+        return None
+    per_revenue = multiple * (base.get("terminal_margin") or 1 if model.get("metric") == "ebitda" else 1)
+    equity_needed = price * shares / 1e6 * (1 + target) ** years * (1 + base.get("annual_share_dilution", 0)) ** years
+    revenue_needed = (equity_needed + model.get("net_debt_assumption_m", 0)) / per_revenue
+    return (revenue_needed / revenue0) ** (1 / years) - 1 if revenue_needed > 0 else -1.0
+
+
+def rnpv_range(r: dict | None) -> dict | None:
+    """rNPV order range (scripts/rnpv_valuation.py) for a drug developer with no revenue to model; platforms excluded."""
+    return dict(r["orderRange"]) if r and r.get("rangeUsable") else None
+
+
+def rnpv_summary(r: dict | None) -> dict | None:
+    if not r:
+        return None
+    return {"phase": r["phase"], "impliedPeakSalesM": r["impliedPeakSalesM"], "rangeUsable": r.get("rangeUsable"),
+            "platform": r.get("platform"), "upper": r["orderRange"]["upper"], "floor": r["orderRange"]["floor"]}
+
+
+def order_range(financial: dict, latest_price: float | None = None) -> dict | None:
+    """Price levels implied by the 5-year scenarios: where buying meets the return policy, and a safety floor.
+
+    upper: base case >= 12% a year and bear case no worse than -10% a year.
+    floor: the bear case does not lose money. Inputs are analyst-set assumptions, not verified forecasts.
+    """
+    model = financial.get("scenario_model") or {}
+    cases = model.get("cases") or {}
+    base, bear = cases.get("base", {}), cases.get("bear", {})
+    if base.get("price_for_policy_return") is None or bear.get("price_for_policy_return") is None:
+        return None
+    # The two levels depend only on the scenarios and share count; today's price only moves the status.
+    snapshot_price = financial.get("price")
+    price = latest_price or snapshot_price
+    scale = (snapshot_price / price) ** (1 / (model.get("horizon_years") or 5)) if price and snapshot_price else 1.0
+    upper = min(base["price_for_policy_return"], bear["price_for_policy_return"])
+    floor = min(bear.get("price_for_zero_return", upper), upper)
+    status = ("below-floor" if price <= floor else "in-range" if price <= upper
+              else "at-top" if price / upper - 1 < 0.01 else "above")
+    return {"price": round(price, 2), "upper": upper, "floor": floor, "status": status,
+            "gapToUpper": round(price / upper - 1, 3) if upper else None,
+            "baseReturn": (1 + base["annualized_return"]) * scale - 1 if base.get("annualized_return") is not None else None,
+            "bearReturn": (1 + bear["annualized_return"]) * scale - 1 if bear.get("annualized_return") is not None else None,
+            "impliedGrowth": implied_growth(financial, price),
+            "baseGrowth": base.get("revenue_cagr"), "baseMultiple": base.get("terminal_multiple"),
+            "baseMultipleBasis": base.get("terminal_multiple_basis"), "bearMultiple": bear.get("terminal_multiple"),
+            "bearMultipleBasis": bear.get("terminal_multiple_basis"), "growthSource": model.get("growth_source"),
+            "multipleMetric": "EBITDA" if model.get("metric") == "ebitda" else "sales",
+            "reportedGrowth": (financial.get("revenue_growth_pct") or 0) / 100 if financial.get("revenue_growth_pct") is not None else None,
+            "priceSource": "latest close" if latest_price else "financial snapshot",
+            "verified": bool((financial.get("scenario_inputs") or {}).get("inputs_verified"))}
+
+
 def serenity_scores(scores: dict, assessment: dict) -> dict:
     """Dimension scores derived from a citation-checked Serenity review's gate results."""
     derived = dict(scores)
@@ -118,6 +178,7 @@ def build(root: Path = ROOT) -> dict:
     theses = {row["ticker"]: row for row in thesis_file["candidates"] + thesis_file.get("expanded_deep_dives", [])}
     financials = {row["ticker"]: row for row in load(root / "state/ai-medicine-financial-scenarios.json")["companies"]}
     gates = {row["ticker"]: row for row in load(root / "state/serenity-gate-results.json")["companies"]}
+    rnpv = {row["ticker"]: row for row in load(root / "state/rnpv-valuations.json", {"companies": []})["companies"]}
     events = load(root / "state/event-revalidation.json", {"revalidationTasks": []})
     fda = load(root / "state/fda-ai-devices.json", {})
     devices = fda_counts(fda)
@@ -135,6 +196,7 @@ def build(root: Path = ROOT) -> dict:
         return (review_status.get(ticker, {}).get("claudeMemo") == "citation-checked"
                 and "-claude-" in str(assessments.get(ticker, {}).get("review_path", "")))
 
+    latest_prices = load(root / "state/market-validation.json", {}).get("companies", {})
     companies, benchmarks = [], []
     for ticker, thesis in theses.items():
         if ticker not in universe or ticker not in financials:
@@ -149,6 +211,8 @@ def build(root: Path = ROOT) -> dict:
             "segment": universe[ticker].get("segment", ""),
             "potential": potential(scores, financial),
             "serenityReviewed": reviewed,
+            "orderRange": order_range(financial, (latest_prices.get(ticker) or {}).get("last")) or rnpv_range(rnpv.get(ticker)),
+            "rnpv": rnpv_summary(rnpv.get(ticker)),
             "scoreBasis": "Serenity gates (citation-checked)" if reviewed else "analyst judgement, not yet Serenity-reviewed",
             "evidence": gate.get("substantiatedScore", 0),
             "gateDecision": gate.get("decision", "unreviewed"),
@@ -324,7 +388,7 @@ def bars(parts: dict) -> str:
 EVENT_LABEL = {"regulatory": "Regulatory", "reimbursement": "Reimbursement", "partnership": "Partnership", "m&a": "M&A",
                "clinical": "Clinical", "earnings": "Earnings", "financing": "Financing", "leadership": "Leadership",
                "legal": "Legal", "product": "Product", "analyst": "Analyst", "commentary": "Commentary",
-               "disclosure": "SEC disclosure", "filing": "SEC filing"}
+               "disclosure": "SEC disclosure", "filing": "SEC filing", "insider": "Insider trade"}
 
 
 def event_item(event: dict) -> str:
@@ -334,6 +398,45 @@ def event_item(event: dict) -> str:
     return (f'<li class="news-item"><span class="chip {tone}">{arrow} {esc(EVENT_LABEL.get(event.get("type"), event.get("type")))}</span> '
             f'<a href="{esc(event.get("url"))}" target="_blank" rel="noopener">{esc(event.get("title"))}</a> '
             f'<span class="news-meta">{esc((event.get("at") or "")[:10])} · {outlets} outlet{"s" if outlets != 1 else ""}</span></li>')
+
+
+def implied_line(o: dict) -> str:
+    """What today's price already assumes: growth needed for 12% a year, against reported and base-case growth."""
+    g = o.get("impliedGrowth")
+    if g is None:
+        return ""
+    reported = f'Last reported growth {o["reportedGrowth"]:+.0%} year over year; ' if o.get("reportedGrowth") is not None else ""
+    basis = ""
+    if o.get("baseMultipleBasis") and o.get("bearMultipleBasis"):
+        basis = (f' <span class="muted-note">Exit multiples have a source, the same rule for every company: base case {o["baseMultiple"]:g}x = '
+                 f'{esc(o["baseMultipleBasis"].split(" (")[0])}; bear case {o["bearMultiple"]:g}x = {esc(o["bearMultipleBasis"].split(", Damodaran")[0])}, '
+                 f'<a href="https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/psdata.html" rel="noopener" target="_blank">Damodaran, January 2026</a>.</span>')
+    gs = o.get("growthSource")
+    if gs:
+        assumed = (f'our base case assumes {o["baseGrowth"]:.0%}: growth fades from {gs["start"]:.0%} ({esc(gs["start_basis"])}) '
+                   f'to the industry\'s fundamental growth {gs["industry_fundamental_growth"]:.1%} over 5 years '
+                   f'(<a href="https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/fundgr.html" rel="noopener" target="_blank">Damodaran</a>; '
+                   'the fade follows the mean-reversion finding in Mauboussin, The Base Rate Book).')
+    else:
+        assumed = f'our base case assumes {o["baseGrowth"]:.0%}.'
+    return (f'<p class="implied">Priced in: to earn 12% a year from ${o["price"]:,.2f}, revenue must grow '
+            f'<strong>{g:.0%} a year for 5 years</strong> (exit at {o["baseMultiple"]:g}x {o["multipleMetric"]}). '
+            f'{reported}{assumed}{basis}</p>')
+
+
+def order_block(o: dict | None) -> str:
+    """Order range from the scenarios, with today's price against it."""
+    if not o:
+        return ""
+    chip = {"above": ("warn", f"Above range by {o['gapToUpper']:.0%}"), "in-range": ("ok", "Inside range"), "at-top": ("plain", "At the top of the range"),
+            "below-floor": ("ok", "Below safety floor")}[o["status"]]
+    return (f'<div class="order"><h4>Order range (from 5-year scenarios)</h4>'
+            f'<p><span class="chip {chip[0]}">{esc(chip[1])}</span> Price now <strong>${o["price"]:,.2f}</strong> · '
+            f'consider at or below <strong>${o["upper"]:,.2f}</strong> · safety floor <strong>${o["floor"]:,.2f}</strong></p>'
+            f'{implied_line(o)}'
+            f'<p class="muted-note">At today\'s price the base case returns {o["baseReturn"]:+.1%} a year and the bear case {o["bearReturn"]:+.1%}. '
+            'Upper: base case ≥12% a year and bear case no worse than −10%. Floor: bear case does not lose money. '
+            'Growth and exit multiples follow one sourced rule for every company (see below), not verified forecasts; this is a research range, not advice.</p></div>')
 
 
 def card(row: dict) -> str:
@@ -388,6 +491,7 @@ def card(row: dict) -> str:
   {serenity_block}
   {news_block}
   <dl class="stats">{''.join(f'<div><dt>{esc(k)}</dt><dd>{esc(v)}</dd></div>' for k, v in stats)}</dl>
+  {order_block(row.get("orderRange"))}
   <div class="pick-body">
     <section>
       <h4>Why it can win</h4>
@@ -502,6 +606,8 @@ a{color:var(--green)} a:focus-visible{outline:2px solid var(--green);outline-off
 .chip.ok{background:var(--green-soft);color:var(--green)}
 .chip.warn{background:var(--amber-soft);color:var(--amber)}
 .chip.alert{background:var(--red-soft);color:var(--red)}
+.ticket{border-top:1px solid var(--line);padding-top:10px;margin-top:14px}
+.ticket ul{margin:6px 0 0;padding-left:18px;display:grid;gap:4px;max-width:90ch}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:0}
 .stats div{background:var(--card);padding:10px 12px}
 .stats dt{font-size:11px;color:var(--muted)}
@@ -525,6 +631,8 @@ thead th{border-top:0;font-size:10px;letter-spacing:.12em;text-transform:upperca
 td.n,th.n{text-align:right}
 tr.is-top td{background:var(--green-soft)}
 td.tk{font-family:var(--mono);font-weight:700}
+.order{border:1px solid var(--line);padding:10px 12px;margin:10px 0;background:var(--card)}.order p{margin:4px 0}.order-cell{font-weight:600;font-size:12px}
+.recheck{border-left:3px solid var(--amber);padding-left:10px;margin:6px 0}.recheck li{font-size:13px}
 .tailwind-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;align-items:start}
 .tailwind-fig{margin:0}.tailwind-fig figcaption{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:8px}
 .tailwind-chart{width:100%;height:auto;display:block}.tailwind-chart .fill{fill:var(--green)}.tailwind-chart .partial .fill{fill:var(--green);opacity:.45}
@@ -559,6 +667,50 @@ footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);paddin
 """
 
 
+def radar_week(root: Path, signals: dict, days: int = 7) -> str:
+    """Every topic that jumped in the last `days` days of daily radar runs, with its dates and status."""
+    from datetime import date as _date, timedelta as _td
+
+    history = load(root / "state/emerging-signals-history.json", [])
+    if not history:
+        return ""
+    end = _date.fromisoformat((signals.get("asOf") or max(r["date"] for r in history))[:10])
+    start = end - _td(days=days - 1)
+    runs = [r for r in history if start.isoformat() <= r["date"] <= end.isoformat()]
+    confirmed = {c["topic"]: c for c in signals.get("confirmedTopics", [])}
+    topics: dict[str, dict] = {}
+    for run in sorted(runs, key=lambda r: r["date"]):
+        for sig in run.get("signals", []):
+            t = topics.setdefault(sig["label"], {"dates": [], "peak": 0, "headline": ""})
+            t["dates"].append(run["date"])
+            t["peak"] = max(t["peak"], sig.get("recent") or 0)
+            head = sig.get("headline")
+            head = head.get("title") if isinstance(head, dict) else head
+            t["headline"] = head or t["headline"]
+    if not topics:
+        return f'<p class="empty">No topic jumped between {esc(start.isoformat())} and {esc(end.isoformat())}.</p>'
+    rows = ""
+    for label, t in sorted(topics.items(), key=lambda kv: (-len(kv[1]["dates"]), kv[1]["dates"][0])):
+        if label in confirmed:
+            state = f'<span class="chip ok">Confirmed {esc(confirmed[label].get("confirmed", "")[5:])}</span>'
+        elif len(t["dates"]) > 1:
+            state = '<span class="chip warn">Several days</span>'
+        else:
+            state = '<span class="chip plain">One day</span>'
+        rows += (f'<tr><td><strong>{esc(label)}</strong></td><td>{state}</td><td class="n">{len(t["dates"])}</td>'
+                 f'<td>{esc(", ".join(d[5:] for d in t["dates"]))}</td><td class="n">{t["peak"]}</td>'
+                 f'<td style="white-space:normal">{esc((t["headline"] or "")[:110])}</td></tr>')
+    covered = len(runs)
+    n_conf = sum(1 for label in topics if label in confirmed)
+    note = (f" The radar history starts on {esc(history[0]['date'])}, so this covers {covered} daily run{'s' if covered != 1 else ''} so far."
+            if covered < days else "")
+    return (f'<h3 style="font-size:20px">Last {days} days</h3>'
+            f'<p>{len(topics)} topic{"s" if len(topics) != 1 else ""} jumped between {esc(start.isoformat())} and {esc(end.isoformat())}, '
+            f'{n_conf} confirmed.{note}</p>'
+            '<div class="table-wrap"><table><thead><tr><th>Topic</th><th>Status</th><th class="n">Days jumped</th><th>Dates</th>'
+            f'<th class="n">Peak articles (3 days)</th><th>Example headline</th></tr></thead><tbody>{rows}</tbody></table></div>')
+
+
 def radar_section(root: Path = ROOT) -> tuple[str, str]:
     """The "next theme" block: replays first (the evidence), then today's radar. Returns (html, extra css)."""
     try:
@@ -580,12 +732,13 @@ def radar_section(root: Path = ROOT) -> tuple[str, str]:
     html = f"""
   <section class="section" id="radar" aria-labelledby="radar-h">
     <h2 id="radar-h">Spotting the next theme early</h2>
-    <p>The five picks answer who leads today. The agent also watches health news, WHO and preprint servers for topics that suddenly gain attention, with no preset themes, then finds the listed companies involved through SEC filings and trial registrations and checks whether their stocks have already reacted. It uses no language model, so it can be replayed on past dates without knowing what happened next.</p>
+    <p>The six picks answer who leads today. The agent also watches health news, WHO and preprint servers for topics that suddenly gain attention, with no preset themes, then finds the listed companies involved through SEC filings and trial registrations and checks whether their stocks have already reacted. It uses no language model, so it can be replayed on past dates without knowing what happened next.</p>
     <h3 style="font-size:20px">Time-machine test</h3>
     {''.join(radar.replay_card(c) for c in cases) or '<p class="empty">No replay has been run yet.</p>'}
     <h3 style="font-size:20px">Today</h3>
     <p>{jumping} topic{'s' if jumping != 1 else ''} jumping, {confirmed} confirmed. A topic is confirmed when it jumps on two days within a week with new articles; only confirmed topics are mapped to companies. The radar covers every field, so non-medical news can appear here.</p>
     {today}
+    {radar_week(root, signals)}
     {radar.candidates_block(mapping, pricing)}
   </section>
 """
@@ -697,6 +850,7 @@ def tailwind_section(root: Path) -> str:
   </section>"""
 
 
+RELATION_WORD = {"own-product": "own", "supplier": "supplier", "customer": "customer", "mention": "mention"}
 GATE_NAMES = {"chokepoint_evidence": "Chokepoint", "pure_play": "AI purity", "counter_thesis": "Counter-thesis",
               "supply_chain_map": "Supply chain", "customer_dependency": "Customers", "multi_node_control": "Multi-node control",
               "earnings_validation": "Earnings", "management_governance": "Governance"}
@@ -727,13 +881,411 @@ def recheck_block(root: Path) -> str:
             f'<p class="call-foot">Serenity tier after the re-check: <strong>{esc(tier)}</strong></p></div></article>')
     return ('<h3 class="bucket-h">From event to Serenity re-check</h3>'
             '<p class="bucket-blurb">An FDA decision never changes a rating by itself. It reopens the gates it bears on; the re-check reads the FDA record and '
-            'summary, and every quote is matched word for word before the gate can move. Both examples below looked like good news in a headline.</p>'
+            'summary, and every quote is matched word for word before the gate can move. Both examples below looked like good news in a headline. '
+            'Other news about a reviewed company works the same way: it queues a re-check of the gates it bears on, shown on each card further down.</p>'
             f'<div class="calls">{"".join(items)}</div>')
+
+
+def early_signals_section(root: Path) -> str:
+    """Money and people: Form D private raises in health/biotech, insider open-market buys and key departures."""
+    data = load(root / "state/early-signals.json", {})
+    radar, people = data.get("fundingRadar") or {}, data.get("people") or {}
+    if not radar.get("companies") and not people:
+        return ""
+    money = lambda v: (f"${v / 1e6:,.1f}M" if v and v >= 1e6 else f"${v / 1e3:,.0f}K" if v else "—")
+    private = [c for c in radar.get("companies", []) if not c.get("listedTicker")]
+    rows = ""
+    for c in private[:10]:
+        flags = []
+        if c.get("aiName"):
+            flags.append('<span class="chip ok">AI in name</span>')
+        if c.get("newsMentions"):
+            flags.append(f'<span class="chip warn">in frontier news ×{c["newsMentions"]}</span>')
+        if c.get("young"):
+            flags.append('<span class="chip plain">founded ≤5 yrs</span>')
+        execs = ", ".join(p["name"] for p in c.get("people", [])[:2]) or "—"
+        rows += (f'<tr><td><a href="{esc(c["url"])}" target="_blank" rel="noopener"><strong>{esc(c["name"])}</strong></a><br><span class="muted-note">{esc(c.get("location") or "")}</span></td>'
+                 f'<td>{esc(c.get("industry") or "")}</td><td class="n">{money(c.get("sold"))}</td><td class="n">{esc(c.get("firstSale") or "—")}</td>'
+                 f'<td style="white-space:normal">{esc(execs)}</td><td>{" ".join(flags) or "—"}</td></tr>')
+    window = radar.get("window", {})
+    in_news = sum(1 for c in private if c.get("newsMentions"))
+    funding = (f'<h3 class="bucket-h">Who is raising money: SEC Form D</h3>'
+               f'<p class="bucket-blurb">A private company selling shares under Reg D must file Form D within 15 days of the first sale, naming its industry, the amount raised and its executives. '
+               f'{radar.get("filings", 0)} new filings from biotech, pharmaceutical and health-care companies between {esc(window.get("start", ""))} and {esc(window.get("end", ""))}, '
+               f'{money(radar.get("raisedTotal"))} sold in total. '
+               + ("None of these private companies appears by full name in the frontier-news stores, so they are found here before any news covers them. " if not in_news
+                  else f"{in_news} of these private companies appear by full name in the frontier-news stores; the rest are found here before any news covers them. ")
+               + 'Private companies cannot be bought today; they are a watch list for future listings, deals and partners of covered companies.</p>'
+               '<div class="table-wrap"><table><thead><tr><th>Company</th><th>Industry</th><th class="n">Raised</th><th class="n">First sale</th><th>Executives named</th><th>Flags</th></tr></thead>'
+               f'<tbody>{rows}</tbody></table></div>') if rows else ""
+    trades = people.get("insiderTrades", {})
+    buy_rows = "".join(
+        f'<tr><td class="tk">{esc(t)}</td><td>{esc(b.get("owner") or "")}</td><td>{esc(", ".join(r for r in b.get("roles", []) if r != "Officer") or "Officer")}</td>'
+        f'<td class="n">{esc(b.get("date") or "")}</td><td class="n">{money(b.get("value"))}</td></tr>'
+        for t, v in trades.items() for b in v.get("buys", []))
+    sells = ", ".join(f'{esc(t)} {v["sellCount"]} ({money(v["sellValue"])})' for t, v in sorted(trades.items(), key=lambda kv: -kv[1].get("sellValue", 0)) if v.get("sellCount"))
+    dep_rows = "".join(f'<tr><td>{esc(d["company"])}</td><td class="n">{esc(d["date"])}</td><td style="white-space:normal"><a href="{esc(d["url"])}" target="_blank" rel="noopener">“{esc(d["sentence"][:220])}”</a></td></tr>'
+                       for d in people.get("keyDepartures", []))
+    people_html = ('<h3 class="bucket-h">What insiders are doing</h3>'
+                   f'<p class="bucket-blurb">Covered companies since {esc(people.get("since", ""))}. An officer or director buying shares with their own money in the open market (Form 4, code P) is a positive signal; '
+                   'sales are common (tax, diversification, pre-set plans) and are listed only as counts. A CEO, CFO, CSO, president or founder leaving (8-K Item 5.02) is a negative signal. '
+                   'Both are written to the news store as official SEC events; a key departure at a reviewed company also queues a re-check of its governance gate.</p>'
+                   + ('<div class="table-wrap"><table><thead><tr><th>Ticker</th><th>Buyer</th><th>Role</th><th class="n">Date</th><th class="n">Bought</th></tr></thead>'
+                      f'<tbody>{buy_rows}</tbody></table></div>' if buy_rows else '<p class="empty">No open-market insider buying in the window.</p>')
+                   + (f'<p class="note"><span>Open-market sales in the window:</span> {sells}.</p>' if sells else "")
+                   + ('<div class="table-wrap"><table><thead><tr><th>Company</th><th class="n">Filed</th><th>Key departure (8-K Item 5.02, quoted)</th></tr></thead>'
+                      f'<tbody>{dep_rows}</tbody></table></div>' if dep_rows else ""))
+    return f"""
+  <section class="section" id="early" aria-labelledby="early-h">
+    <h2 id="early-h">Earlier signals: money and people</h2>
+    <p>Before a company makes the news, money moves and people move. New companies raise private rounds; insiders buy or leave. Both are on the public record at the SEC.</p>
+    {funding}
+    {people_html}
+  </section>"""
+
+
+def management_radar_section(root: Path) -> str:
+    """A compact people/governance view from SEC 8-K and Form 4 evidence."""
+    data = load(root / "state/management-radar.json", {})
+    companies = [row for row in data.get("companies", []) if row.get("timeline")]
+    if not companies:
+        return ""
+    labels = {"urgent-revalidate": "Urgent re-check", "revalidate": "Re-check", "monitor": "Monitor"}
+    chips = {"urgent-revalidate": "alert", "revalidate": "warn", "monitor": "plain"}
+    rows = ""
+    for company in companies[:12]:
+        latest = company["timeline"][0]
+        summary = company["summary"]
+        rows += (
+            f'<tr><td><span class="chip {chips[company["attention"]]}">{labels[company["attention"]]}</span></td>'
+            f'<td class="tk">{esc(company["ticker"])}</td><td class="n">{summary["people"]}</td>'
+            f'<td class="n">{summary["purchases"]}</td><td class="n">{summary["salesNeedingContext"]}</td>'
+            f'<td style="white-space:normal">{esc(latest.get("date") or "—")} · {esc(latest.get("title") or "")}</td>'
+            f'<td>{esc(", ".join(company.get("affectedGates", [])) or "—")}</td></tr>'
+        )
+    summary = data.get("summary", {})
+    return f"""
+  <section class="section" id="management" aria-labelledby="management-h">
+    <h2 id="management-h">Management and key-person radar</h2>
+    <p>The agent joins SEC 8-K officer changes with Form 4 transactions into a named timeline. A CEO, CSO, CMO or founder departure, repeated departures, or a board investigation reopens Serenity governance and counter-thesis gates. An insider purchase is supporting evidence only; a sale stays context-needed until its 10b5-1 plan, tax purpose, ownership percentage and concentration are checked.</p>
+    <p class="note">{summary.get("people", 0)} named filers; {summary.get("events", 0)} events; {summary.get("urgent", 0)} companies need an urgent re-check. These are research alerts, not price predictions.</p>
+    <div class="table-wrap"><table><thead><tr><th>Status</th><th>Ticker</th><th class="n">People</th><th class="n">Buys</th><th class="n">Sales needing context</th><th>Latest event</th><th>Gates reopened</th></tr></thead><tbody>{rows}</tbody></table></div>
+  </section>"""
+
+
+ACTION_WORD = {"buy": "Buy", "starter": "Starter", "wait": "Wait", "avoid": "Avoid"}
+ACTION_CHIP = {"buy": "ok", "starter": "warn", "wait": "plain", "avoid": "alert"}
+
+
+def tickets_section(root: Path) -> str:
+    """Order tickets from scripts/order_tickets.py: action, limit, size, scale plan, invalidation."""
+    data = load(root / "state/order-tickets.json", {})
+    tickets = data.get("tickets") or []
+    if not tickets:
+        return ""
+    money = lambda v: f"${v:,.2f}" if v else "—"
+    rows = ""
+    for x in tickets:
+        size = f"{x['positionPct']:.1%}" + (f" (now {x['buyNowPct']:.1%})" if x["buyNowPct"] != x["positionPct"] else "") if x["positionPct"] else "—"
+        rows += (f'<tr><td><span class="chip {ACTION_CHIP[x["action"]]}">{ACTION_WORD[x["action"]]}</span></td><td class="tk">{esc(x["ticker"])}</td>'
+                 f'<td class="n">{money(x["price"])}</td><td class="n">{money(x["limitPrice"])}</td><td class="n">{money(x["safetyFloor"])}</td>'
+                 f'<td class="n">{size}</td><td style="white-space:normal">{esc("; ".join(x["reasons"]))}</td></tr>')
+    details = ""
+    for x in tickets:
+        if x["action"] not in ("buy", "starter"):
+            continue
+        items = [f"<li><strong>Size:</strong> {x['positionPct']:.1%} of the portfolio (Serenity tier: {esc(x['serenityTier'])})"
+                 + (f"; {esc('; '.join(x['sizeAdjustments']))}" if x["sizeAdjustments"] else "") + "</li>",
+                 f"<li><strong>Add:</strong> {esc(x['scalePlan'])}</li>"]
+        if x.get("trimRule"):
+            items.append(f"<li><strong>Trim:</strong> {esc(x['trimRule'])}</li>")
+        if x.get("adversarial") and x["adversarial"].get("overall"):
+            dg = x["adversarial"].get("downgrades") or []
+            head = (f"no gate fails; {len(dg)} pass grade(s) overstated ({', '.join(dg)})" if dg else "no gate fails")
+            items.append(f"<li><strong>Second review ({esc(x['adversarial'].get('model') or 'opus')}, arguing against):</strong> "
+                         f"{esc(head)}. {esc(x['adversarial']['overall'])}</li>")
+        if x.get("flipPoints"):
+            items.append("<li><strong>Flips if:</strong> " + esc("; ".join(x["flipPoints"])) + "</li>")
+        if x.get("invalidation"):
+            items.append("<li><strong>Wrong if:</strong> " + esc("; ".join(x["invalidation"][:4])) + "</li>")
+        details += f'<div class="ticket"><h3 class="bucket-h">{esc(x["ticker"])} · {ACTION_WORD[x["action"]]}</h3><ul>{"".join(items)}</ul></div>'
+    t = data.get("totals", {})
+    return f"""
+  <section class="section" id="tickets" aria-labelledby="tickets-h">
+    <h2 id="tickets-h">Order tickets</h2>
+    <p>Each company gets the same rules. The action comes from the Serenity verdict and where the price sits against the order range. Size starts from the Serenity tier (starter 1%, standard 5%, at most 10% per name) and is cut for a recent -20% day, thin trading, under 12 months of cash, or a market value under $1B. Positions are added only after earnings, a customer or a deal confirms the thesis, never because the price rose; there are no tight stops, a broken thesis is the exit.</p>
+    <p class="note"><span>Today:</span> target {t.get('positionPct', 0):.1%} of a ${data.get('portfolioUsd', 0):,.0f} portfolio. Research suggestions for paper trading only; a person approves every ticket, and none of these sizing rules has been backtested yet.</p>
+    <div class="table-wrap"><table><thead><tr><th>Action</th><th>Ticker</th><th class="n">Price</th><th class="n">Limit</th><th class="n">Safety floor</th><th class="n">Size</th><th>Why</th></tr></thead>
+    <tbody>{rows}</tbody></table></div>
+    {details}
+  </section>"""
+
+
+STAGE_WORD = {"growth": "Growth", "preparation": "Preparation", "slowing": "Slowing"}
+
+
+def rnpv_cell(r: dict | None, money) -> str:
+    if not r:
+        return "—"
+    o = r["orderRange"]
+    implied = f'<span class="muted-note">price implies {money(r["impliedPeakSalesM"])} peak sales (phase {r["phase"]})</span>'
+    import rnpv_valuation as rv
+    line = rv.implied_share_text(r)
+    if line:
+        implied += f'<br><span class="muted-note">{esc(line)} (patients quoted from its 10-K)</span>'
+    if r.get("platform"):
+        return f"platform: not used<br>{implied}"
+    if not r.get("rangeUsable"):
+        return f"cash nearly gone: not used until it raises money<br>{implied}"
+    if not o["upper"]:
+        return f"base case worth $0 a share: burn exceeds the risk-adjusted value<br>{implied}"
+    state = {"in-range": "inside range", "below-floor": "below floor", "at-top": "at the top"}.get(o["status"], f"{o['gapToUpper']:+.0%} vs range")
+    return f'≤ ${o["upper"]:.2f} · floor ${o["floor"]:.2f}<br><span class="muted-note">{state}</span><br>{implied}'
+
+
+def small_caps_section(root: Path) -> str:
+    """AI-medicine companies under $1B by stage (scripts/small_cap_stage.py), with their Serenity verdict."""
+    data = load(root / "state/small-cap-stage.json", {})
+    rows_data = data.get("companies") or []
+    if not rows_data:
+        return ""
+    gates = {r["ticker"]: r for r in load(root / "state/serenity-gate-results.json", {}).get("companies", [])}
+    rnpv = {r["ticker"]: r for r in load(root / "state/rnpv-valuations.json", {}).get("companies", [])}
+    money = lambda v: "—" if v is None else (f"${v / 1000:.1f}B" if v >= 1000 else f"${v:,.0f}M" if v >= 10 else f"${v:.1f}M")
+    rows = ""
+    for r in rows_data:
+        growth = r["quarterYoY"] if r.get("quarterYoY") is not None else r.get("fiscalYoY")
+        runway = "cash positive" if r.get("burnPerMonthM") == 0 else (f"{r['runwayMonths']:.0f} mo" if r.get("runwayMonths") is not None else "—")
+        if r.get("financingRisk"):
+            runway = f'<span class="chip alert">{runway}</span>'
+        g = gates.get(r["ticker"], {})
+        verdict = g.get("decision", "not reviewed")
+        why = "; ".join(f'<a href="{esc(s["url"])}">{esc(s["text"])}</a>' for s in r.get("signals", [])) or "own AI product (market-wide screen)"
+        rows += (f'<tr><td><span class="chip plain">{STAGE_WORD[r["stage"]]}</span><br><span class="muted-note">{esc(r["stageDetail"])}</span></td>'
+                 f'<td class="tk">{esc(r["ticker"])}</td><td>{esc(r["company"])}<br><span class="muted-note">{why}</span></td><td class="n">{money(r["marketCapM"])}</td>'
+                 f'<td class="n">{money(r.get("revenueRunRateM")) if r.get("revenueTagged") else "not tagged"}</td>'
+                 f'<td class="n">{"—" if growth is None else f"{growth:+.0%}"}</td><td class="n">{runway}</td>'
+                 f'<td>{esc(verdict)}<br><span class="muted-note">completeness {g.get("completenessScore", "—")}</span></td>'
+                 f'<td>{rnpv_cell(rnpv.get(r["ticker"]), money)}</td></tr>')
+    stages = data.get("byStage", {})
+    return f"""
+  <section class="section" id="smallcaps" aria-labelledby="smallcaps-h">
+    <h2 id="smallcaps-h">Under $1B: preparation and growth</h2>
+    <p>Earlier and smaller: companies worth $50M to $1B from two sources. The first is AI-medicine companies whose own filings describe their own AI product. The second is drug developers whose 8-K press releases in the last 90 days report an IND clearance or a new big-pharma deal; they are listed for that signal, not for AI. Every company is tagged by one rule. Preparation means under $10M of yearly revenue (a drug developer still in trials counts as preparation whatever its partner payments); growth means $10M+ growing at least 20% a year; the rest are slowing. Market value is SEC-reported shares times the latest close; runway is cash and short-term investments over operating cash burn, flagged under 12 months because a share sale is then likely.</p>
+    <p class="note"><span>Now:</span> {len(rows_data)} companies; {stages.get('growth', 0)} growth, {stages.get('preparation', 0)} preparation, {stages.get('slowing', 0)} slowing. Each was graded with the Serenity gates; none has enough primary evidence to be research-ready yet, so these are a research queue, not picks.</p>
+    <div class="table-wrap"><table><thead><tr><th>Stage</th><th>Ticker</th><th>Company</th><th class="n">Market value</th><th class="n">Revenue (yearly)</th><th class="n">Growth</th><th class="n">Cash runway</th><th>Serenity</th><th>rNPV range</th></tr></thead>
+    <tbody>{rows}</tbody></table></div>
+    <p class="note"><span>rNPV range:</span> for drug developers with no sales to model. Approval odds and phase lengths come from the BIO/Informa/QLS 2011-2020 success-rate study; cash burn is charged only while the lead program is alive; discounted at the 12% policy return. Peak sales are unverified priors ($150M bear, $500M base, $1.5B bull), so the useful number is what today's price implies. Discovery platforms run many programs, so their one-asset value is shown but never used for an order.</p>
+  </section>"""
+
+
+def lab_to_company_section(root: Path) -> str:
+    """Peter's chain in one table: research origin -> founders -> specialist money -> pharma/clinic, all from primary filings."""
+    founders = load(root / "state/science-founders.json", {}).get("links", [])
+    if not founders:
+        return ""
+    own = load(root / "state/institutional-ownership.json", {}).get("filings", [])
+    pharma = [f for f in load(root / "state/pharma-deals-ind.json", {}).get("filings", []) if not f.get("duplicateOf")]
+    elite = ("Massachusetts Institute", "MIT", "Broad Institute", "Harvard", "Stanford", "Whitehead", "Dana-Farber", "Scripps")
+    rows_by = {}
+    for l in founders:
+        r = rows_by.setdefault(l["ticker"], {"inst": {}, "people": set()})
+        if l.get("institution"):
+            r["inst"].setdefault(l["institution"], l["url"])
+        elif l.get("person"):
+            r["people"].add(l["person"])
+    def funds(t):
+        names = sorted({f["specialistFund"] for f in own if f["ticker"] == t and f.get("specialistFund")})
+        return ", ".join(names) or "—"
+    def deals(t):
+        out = []
+        for f in pharma:
+            if f.get("ticker") != t:
+                continue
+            fx = f.get("facts", {})
+            v = lambda k: (fx.get(k) or {}).get("value") if (fx.get(k) or {}).get("verified") else None
+            if f["kind"] == "deal" and v("partner"):
+                out.append(f"deal: {v('partner')}")
+            elif f["kind"] == "ind" and v("drug"):
+                out.append(f"IND: {v('drug')}")
+        return "; ".join(dict.fromkeys(out)) or "—"
+    order = sorted(rows_by, key=lambda t: (-any(e in i for i in rows_by[t]["inst"] for e in elite), -len(rows_by[t]["inst"]), t))
+    body = ""
+    for t in order:
+        r = rows_by[t]
+        inst = ", ".join(f'<a href="{esc(u)}">{esc(i)}</a>' for i, u in sorted(r["inst"].items())) or "—"
+        body += (f'<tr><td class="tk">{esc(t)}</td><td style="white-space:normal">{inst}</td><td>{esc(", ".join(sorted(r["people"])) or "—")}</td>'
+                 f'<td style="white-space:normal">{esc(funds(t))}</td><td style="white-space:normal">{esc(deals(t))}</td></tr>')
+    n_elite = sum(any(e in i for i in rows_by[t]["inst"] for e in elite) for t in rows_by)
+    return f"""
+  <section class="section" id="lab" aria-labelledby="lab-h">
+    <h2 id="lab-h">From lab to company</h2>
+    <p>The chain Peter asked for: which university or institute the technology came from, who founded the company, whether specialist biotech funds own it, and whether pharma or the FDA has engaged. Origins and founders are quoted from each company's own 10-K (every quote checked against the filing); funds come from Schedule 13D/13G; deals and IND clearances from 8-K press releases.</p>
+    <p class="note"><span>Now:</span> {len(rows_by)} companies with a quoted research origin or founder; {n_elite} license from MIT, Broad, Harvard, Stanford, Whitehead, Dana-Farber or Scripps. A license proves where the patents came from, not that a given paper became the product; patents are not yet checked against USPTO records.</p>
+    <div class="table-wrap"><table><thead><tr><th>Ticker</th><th>Research origin (licensed from)</th><th>Founders named in the 10-K</th><th>Specialist funds holding 5%+</th><th>Pharma deal / IND (90 days)</th></tr></thead><tbody>{body}</tbody></table></div>
+  </section>"""
+
+
+def biodefense_section(root: Path) -> str:
+    """Government countermeasure contracts (ASPR/BARDA via USAspending) and WHO outbreak reports."""
+    data = load(root / "state/biodefense-radar.json", {})
+    if not data.get("contracts") and not data.get("outbreaks"):
+        return ""
+    s = data["summary"]
+    listed = [c for c in data.get("contracts", []) if c.get("ticker")]
+    c_rows = "".join(
+        f'<tr><td class="n">{esc(c["date"])}</td><td>{esc(c["recipient"])}</td><td class="tk">{esc(c["ticker"])}</td>'
+        f'<td class="n">${c["amountM"]:,.1f}M</td><td style="white-space:normal"><a href="{esc(c["url"])}">{esc(c["description"][:90])}</a></td></tr>'
+        for c in listed)
+    seen, o_rows = set(), ""
+    for o in data.get("outbreaks", []):
+        key = o["title"].split(" - ")[0].split("-")[0].strip().lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        o_rows += (f'<tr><td class="n">{esc(o["date"])}</td><td style="white-space:normal"><a href="{esc(o["url"])}">{esc(o["title"])}</a></td>'
+                   f'<td>{esc(", ".join(o["fundedResponders"]) or "—")}</td></tr>')
+    return f"""
+  <section class="section" id="biodefense" aria-labelledby="bio-h">
+    <h2 id="bio-h">Biodefense and outbreaks</h2>
+    <p>Where U.S. countermeasure money is going (contract actions by HHS's preparedness office, which runs BARDA and the Strategic National Stockpile, from USAspending.gov) and which outbreaks WHO is reporting. A contract is revenue for the company; an outbreak is context, not sales.</p>
+    <p class="note"><span>Last 90 days:</span> {s["contracts"]} contract actions of $5M or more, ${s["contractUsdM"]:,.0f}M in total, {s["listedRecipients"]} to listed companies or their parents. Outbreaks are linked to contracts by pathogen name only: Regeneron's Inmazeb, for example, treats Zaire ebolavirus and is not approved for the Bundibugyo strain now spreading.</p>
+    <div class="table-wrap"><table><thead><tr><th class="n">Date</th><th>Recipient</th><th>Ticker</th><th class="n">Amount</th><th>Purpose</th></tr></thead><tbody>{c_rows}</tbody></table></div>
+    <h3 class="bucket-h">WHO outbreak reports, last 60 days (latest per outbreak)</h3>
+    <div class="table-wrap"><table><thead><tr><th class="n">Date</th><th>Report</th><th>Funded responders</th></tr></thead><tbody>{o_rows}</tbody></table></div>
+  </section>"""
+
+
+def funds_section(root: Path) -> str:
+    """Specialist life-science funds crossing 5% (Schedule 13D/13G, scripts/institutional_ownership_agent.py)."""
+    data = load(root / "state/institutional-ownership.json", {})
+    rows_data = [f for f in data.get("filings", []) if f.get("specialistFund")]
+    if not rows_data:
+        return ""
+    new = [f for f in rows_data if f.get("initial")]
+    stake = lambda v: "—" if v is None else f"{v:.1f}%"
+    by_company = {}
+    for f in rows_data:
+        by_company.setdefault(f["ticker"], set()).add(f["specialistFund"])
+    crowded = sorted(((t, sorted(v)) for t, v in by_company.items() if len(v) >= 2), key=lambda x: -len(x[1]))
+    rows = "".join(
+        f'<tr><td class="n">{esc(f["filed"])}</td><td class="tk">{esc(f["ticker"])}</td><td>{esc(f["reportingPerson"])}</td>'
+        f'<td class="n">{stake(f.get("percent"))}</td><td>{esc(f["form"])}</td>'
+        f'<td><a href="{esc(f["url"])}">SEC</a></td></tr>' for f in new)
+    crowd = "; ".join(f'{esc(t)} ({", ".join(esc(x) for x in v)})' for t, v in crowded[:8])
+    return f"""
+  <section class="section" id="funds" aria-labelledby="funds-h">
+    <h2 id="funds-h">Specialist biotech funds building positions</h2>
+    <p>Schedule 13G/13D filings by dedicated life-science investors (RA Capital, Baker Bros, Perceptive, RTW, Commodore, BVF and others) in the companies this page follows, last 12 months. A first filing means the fund just crossed 5% of the shares. This is ownership bought in the market or in an offering; it is not proof the company raised new money, and 13G filers are passive by definition.</p>
+    <p class="note"><span>Now:</span> {len(new)} new positions and {len(rows_data) - len(new)} amendments from specialist funds across {len(by_company)} companies.</p>
+    <p class="note"><span>Several specialists in the same company:</span> {crowd or "—"}</p>
+    <div class="table-wrap"><table><thead><tr><th class="n">Filed</th><th>Ticker</th><th>Fund</th><th class="n">Stake</th><th>Form</th><th></th></tr></thead>
+    <tbody>{rows}</tbody></table></div>
+  </section>"""
+
+
+def deals_section(root: Path) -> str:
+    """IND clearances and big-pharma deals from 8-K press releases (scripts/pharma_deals_ind.py)."""
+    data = load(root / "state/pharma-deals-ind.json", {})
+    filings = data.get("filings") or []
+    v = lambda f, k: esc(((f or {}).get(k) or {}).get("value") or "—")
+    deals = [r for r in filings if r["kind"] == "deal" and (r.get("facts") or {}).get("isNewDeal") is True and not r.get("duplicateOf")]
+    inds = [r for r in filings if r["kind"] == "ind" and (r.get("facts") or {}).get("isIndClearance") is True and not r.get("duplicateOf")]
+    if not deals and not inds:
+        return ""
+    link = lambda r: f'<a href="{esc(r["url"])}" target="_blank" rel="noopener">8-K</a>'
+    deal_rows = "".join(f'<tr><td class="n">{esc(r["filed"])}</td><td>{esc(r["company"])} <span class="tk">{esc(r["ticker"] or "")}</span></td><td>{v(r["facts"], "partner")}</td>'
+                        f'<td class="n">{v(r["facts"], "upfrontUsdM")}</td><td class="n">{v(r["facts"], "milestonesUsdM")}</td><td style="white-space:normal">{v(r["facts"], "scope")}</td><td>{link(r)}</td></tr>' for r in deals)
+    ind_rows = "".join(f'<tr><td class="n">{esc(r["filed"])}</td><td>{esc(r["company"])} <span class="tk">{esc(r["ticker"] or "")}</span></td><td>{v(r["facts"], "drug")}</td>'
+                       f'<td style="white-space:normal">{v(r["facts"], "indication")}</td><td>{v(r["facts"], "nextTrial")}</td><td>{link(r)}</td></tr>' for r in inds)
+    w = data.get("window", ["", ""])
+    return f"""
+  <section class="section" id="deals" aria-labelledby="deals-h">
+    <h2 id="deals-h">Animal work done, big pharma paying</h2>
+    <p>Two early, hard signals from companies' own 8-K press releases between {esc(w[0])} and {esc(w[1])}. An IND clearance means FDA lets a drug into people: the animal work passed. A new deal with a large drug maker, with cash up front, means a buyer did its own diligence and paid. Facts were extracted by Claude and every value is kept only if its quote is found word for word in the filing.</p>
+    {('<h3 class="bucket-h">New big-pharma deals</h3><div class="table-wrap"><table><thead><tr><th class="n">Filed</th><th>Company</th><th>Partner</th><th class="n">Upfront ($M)</th><th class="n">Milestones ($M)</th><th>Scope</th><th></th></tr></thead><tbody>' + deal_rows + '</tbody></table></div>') if deal_rows else ''}
+    {('<h3 class="bucket-h">IND clearances</h3><div class="table-wrap"><table><thead><tr><th class="n">Filed</th><th>Company</th><th>Drug</th><th>Indication</th><th>Next trial</th><th></th></tr></thead><tbody>' + ind_rows + '</tbody></table></div>') if ind_rows else ''}
+  </section>"""
+
+
+def commercialization_chain_section(root: Path) -> str:
+    """Show where a scientific idea has, and has not, become a commercial business."""
+    data = load(root / "state/science-commercialization-graph.json", {})
+    companies = data.get("companies") or []
+    if not companies:
+        return ""
+    label = {"ownership-and-pharma-validated": "ownership + pharma payment",
+             "ownership-and-company-revenue-verified": "ownership + company revenue; technology share unknown",
+             "commercial-signal-with-ownership-gap": "commercial signal; ownership gap",
+             "clinical-signal-with-ownership-gap": "clinical signal; ownership gap",
+             "science-linked": "science linked; not commercial",
+             "evidence-fragment": "separate evidence only"}
+    rows = ""
+    for r in companies[:24]:
+        v = r.get("verifiedStages", {})
+        mark = lambda key: "✓" if v.get(key) else "—"
+        gaps = "; ".join(r.get("gaps", [])[:2]) or "none"
+        rows += (f'<tr><td class="tk">{esc(r["ticker"])}</td><td>{esc(r.get("company") or "")}</td>'
+                 f'<td class="n">{mark("discovery")}</td><td class="n">{mark("researcherCompanyRelation")}</td>'
+                 f'<td class="n">{mark("technologyOwnership")}</td>'
+                 f'<td class="n">{mark("funding")}</td><td class="n">{mark("institutionalOwnership")}</td><td class="n">{mark("pharmaValidation")}</td>'
+                 f'<td class="n">{mark("clinicalValidation")}</td><td class="n">{mark("revenueValidation")}</td>'
+                 f'<td style="white-space:normal"><strong>{esc(label.get(r.get("chainStatus"), r.get("chainStatus")))}</strong><br>'
+                 f'<span class="muted-note">{esc(gaps)}</span></td></tr>')
+    s = data.get("summary", {})
+    uspto = load(root / "state/uspto-assignment-validation.json", {})
+    institutional = load(root / "state/institutional-ownership.json", {})
+    pending = []
+    if uspto.get("status") == "pending-official-export":
+        pending.append("USPTO assignment validation is waiting for an official Assignment Center/ODP export")
+    if institutional.get("status") == "pending-config":
+        pending.append("13D/13G collection is waiting for SEC_USER_AGENT")
+    pending_note = f'<p class="note"><span>Configuration:</span> {esc("; ".join(pending))}.</p>' if pending else ""
+    return f"""
+  <section class="section" id="commercial-chain" aria-labelledby="commercial-chain-h">
+    <h2 id="commercial-chain-h">From scientific idea to a business somebody pays for</h2>
+    <p>This is the first-priority chain Peter asked for: paper and researcher → founder/company relation, patent or license → financing → a drug maker paying → IND or clinical trial → reported revenue. Every column requires its own primary evidence. A founder relationship is not patent ownership; a paper that sounds similar to a company's technology remains a discovery lead; a partnership announcement is not treated as customer revenue.</p>
+    <p class="note"><span>Current state:</span> {s.get('companiesLinked', 0)} companies have at least one link, {s.get('commercialSignals', 0)} have a commercial signal, {s.get('researcherCompanyVerified', 0)} have a verified researcher/founder relationship, {s.get('technologyOwnershipDisclosed', 0)} disclose patent or license rights, {s.get('usptoAssignmentVerified', 0)} have independent USPTO assignment verification, {s.get('institutionalOwnersVerified', 0)} have a verified 13D/13G owner, and {s.get('completeChains', 0)} complete every stage. Zero is an honest research gap, not a zero company score.</p>
+    {pending_note}
+    <div class="table-wrap"><table><thead><tr><th>Ticker</th><th>Company</th><th class="n">Paper</th><th class="n">Researcher / company</th><th class="n">Patent / license</th><th class="n">Funding</th><th class="n">5% owner</th><th class="n">Pharma pays</th><th class="n">Clinical</th><th class="n">Revenue</th><th>Conclusion and missing proof</th></tr></thead><tbody>{rows}</tbody></table></div>
+  </section>"""
+
+
+def mapping_validation_block(root: Path) -> str:
+    """Recall and precision of the SEC topic->company mapping, before and after the filing-reading upgrade."""
+    after = load(root / "state/topic-mapping-validation.json", {})
+    before = load(root / "state/topic-mapping-validation.before.json", {})
+    if not after.get("topics"):
+        return ""
+    pct = lambda v: f"{v:.0%}" if v is not None else "—"
+    arrow = lambda b, a: f'<span class="muted-note">{esc(b)} →</span> {esc(a)}' if b not in (None, "", "—") and b != a else esc(a)
+    rows = ""
+    for key, t in after["topics"].items():
+        b = (before.get("topics") or {}).get(key, {})
+        rb, ra = (b.get("recall") or {}).get("recall"), (t.get("recall") or {}).get("recall")
+        missed = ", ".join((t.get("recall") or {}).get("missed", [])) or "—"
+        rows += (f'<tr><td>{esc(t["label"])}</td><td class="n">{arrow(b.get("mapped"), t["mapped"])}</td>'
+                 f'<td class="n">{arrow(pct(rb) if b else None, pct(ra))}</td><td class="tk" style="white-space:normal">{esc(missed)}</td>'
+                 f'<td class="n">{arrow(pct(b.get("precisionProxy")) if b else None, pct(t["precisionProxy"]))}</td></tr>')
+    return ('<h3 class="bucket-h">How good is the topic-to-company mapping?</h3>'
+            '<p class="bucket-blurb">Recall: listed makers with two or more AI devices on the matching FDA review panel that the mapping found. '
+            'Precision (rule-based proxy): mapped companies whose filing text shows an own-product, supplier or customer link, judged by the same rules the mapping uses, not by hand. '
+            + ('Grey figures are before the agent started reading each candidate\'s filing. ' if before.get("topics") else '')
+            + 'Misses that remain are companies whose filings do not describe the work (Apple) or that file outside EDGAR full-text search (Canon ADR).</p>'
+            '<div class="table-wrap"><table><thead><tr><th>Topic</th><th class="n">Mapped</th><th class="n">Recall</th><th>Still missed</th><th class="n">Precision (proxy)</th></tr></thead>'
+            f'<tbody>{rows}</tbody></table></div>')
 
 
 def tier_word(row: dict) -> str:
     tier = ((row.get("serenityVerdict") or {}).get("tier") or "").lower()
     return "standard tier" if "standard" in tier else "starter tier" if "starter" in tier else "not reviewed"
+
+
+def order_cell(o: dict | None) -> str:
+    if not o:
+        return ""
+    state = {"above": f"{o['gapToUpper']:+.0%} vs range", "in-range": "inside range", "at-top": "at the top of the range"}.get(o["status"], "below safety floor")
+    return f'<br><span class="order-cell">Order ≤ ${o["upper"]:,.2f} · {esc(state)}</span>'
 
 
 def market_cell(m: dict | None) -> str:
@@ -760,6 +1312,54 @@ def core_articles(root: Path) -> int:
             return connection.execute("SELECT COUNT(*) FROM articles").fetchone()[0]
     except sqlite3.Error:
         return 0
+
+
+def oos_block(root: Path) -> str:
+    """Out-of-sample replay on health-care companies the rule never saw, split by how deep the discount is."""
+    ins, oos = load(root / "state/order-rule-backtest.json", {}), load(root / "state/order-rule-backtest-oos.json", {})
+    if not oos.get("rows"):
+        return ""
+    def cell(rows, lo, hi, key, filt=False):
+        v = sorted(r[key] for r in rows if r.get(key) is not None and lo < r["gap"] <= hi and (not filt or r.get("notSlowing")))
+        if not v:
+            return "—"
+        return f'{v[len(v) // 2]:+.0%} · {sum(x < -0.6 for x in v) / len(v):.0%} · n={len(v)}'
+    buckets = ((-9, -0.20, False, "Deep discount (implied growth 20+ points below base)"),
+               (-0.20, 0, False, "Mild discount (0-20 points below)"),
+               (-0.20, 0, True, "Mild discount, growth not slowing"),
+               (0, 9, False, "Above range"))
+    rows = "".join(f'<tr><td>{name}</td><td class="n">{cell(ins.get("rows", []), lo, hi, "excess1y", f)}</td>'
+                   f'<td class="n">{cell(oos["rows"], lo, hi, "excess1y", f)}</td><td class="n">{cell(oos["rows"], lo, hi, "excess3y", f)}</td></tr>'
+                   for lo, hi, f, name in buckets)
+    return f"""
+    <h3 class="bucket-h">5 · Out of sample: {oos["companies"]} health-care companies the rule never saw</h3>
+    <p class="bucket-blurb">The same rules replayed on {oos["observations"]} filings from listed health-care companies (drugs, diagnostics, biologics, devices, labs) that were not in the sample above. Each cell: median excess return vs XBI · share that lost 60%+ vs XBI · filings.</p>
+    <p class="status-banner"><strong>What held up:</strong> a deep discount was the worst bucket in both samples, so the tickets now wait on it. A mild discount with growth not slowing was the steadiest bucket in both. The slowing-growth filter still cut severe losses out of sample, but by much less than in sample, and no bucket beat XBI on average.</p>
+    <div class="table-wrap"><table><thead><tr><th>Price vs base case</th><th class="n">In sample, 1 year</th><th class="n">Out of sample, 1 year</th><th class="n">Out of sample, 3 years</th></tr></thead><tbody>{rows}</tbody></table></div>"""
+
+
+def backtest_block(root: Path) -> str:
+    """The order rule replayed on 2014-2026 10-K filings (scripts/backtest_order_rule.py)."""
+    bt = load(root / "state/order-rule-backtest.json", {})
+    if not bt.get("buckets"):
+        return ""
+    pc = lambda v: "—" if v is None else f"{v:+.1%}"
+    names = (("inRange", "In range (old rule buys)"), ("aboveRange", "Above range (wait)"),
+             ("inRangeNotSlowing", "In range, growth not slowing (new rule buys)"), ("inRangeSlowing", "In range, growth slowing (new rule waits)"))
+    rows = ""
+    for label in ("1y", "3y"):
+        for key, name in names:
+            st, sl = bt["buckets"][label].get(key, {}), bt["severeLoss"][label].get(key)
+            if st.get("n"):
+                rows += (f'<tr><td class="n">{label}</td><td>{name}</td><td class="n">{st["n"]}</td><td class="n">{pc(st["median"])}</td>'
+                         f'<td class="n">{st["hit"]:.0%}</td><td class="n">{"—" if sl is None else f"{sl:.0%}"}</td></tr>')
+    return f"""
+    <h3 class="bucket-h">4 · The order rule on 2014-2026 history</h3>
+    <p class="bucket-blurb">On the day after each 10-K, using only that filing: does a price inside the order range (the price implies no more growth than the base case) lead to better returns than XBI? {bt["observations"]} filings from {bt["companies"]} health-care companies.</p>
+    <p class="status-banner"><strong>Result: the range alone did not pick winners.</strong> In-range stocks had a lower median and more severe losses, mostly fast growers whose growth then fell well short of the base case. Requiring that growth is not slowing roughly halved the severe-loss rate, so the order tickets now apply that test. It does not make the rule beat XBI on average, and the filter was found in this same sample.</p>
+    <div class="table-wrap"><table><thead><tr><th class="n">Held</th><th>Group</th><th class="n">Filings</th><th class="n">Median excess vs XBI</th><th class="n">Beat XBI</th><th class="n">Lost 60%+ vs XBI</th></tr></thead><tbody>{rows}</tbody></table></div>
+    {oos_block(root)}
+    <p class="note">Survivorship bias: only companies listed today are in the sample. Multiples and industry growth are today's Damodaran tables. Details: <code>outputs/order-rule-backtest.md</code> and <code>outputs/order-rule-backtest-oos.md</code>.</p>"""
 
 
 def track_section(root: Path) -> str:
@@ -808,6 +1408,7 @@ def track_section(root: Path) -> str:
     <p class="bucket-blurb">Serenity tiers judge company quality over 5–10 years, not next week's price. They are scored anyway, so that in a few months we can see whether standard-tier names beat starter-tier names and XBI.</p>
     {frozen_note}
     <div class="table-wrap"><table><thead><tr><th class="n">Sessions later</th><th class="n">Standard calls</th><th class="n">Standard return</th><th class="n">Starter calls</th><th class="n">Starter return</th><th class="n">XBI</th><th class="n">Standard minus starter</th></tr></thead><tbody>{tier_rows}</tbody></table></div>
+    {backtest_block(root)}
     <p class="note">Horizons longer than one session overlap, so neighbouring observations are not independent. Full tables, rank IC and bootstrap intervals: <code>outputs/agent-benchmark-validation.md</code> and <code>outputs/investment-score-performance.md</code>.</p>
   </section>"""
 
@@ -816,10 +1417,10 @@ def render_html(payload: dict, root: Path = ROOT) -> str:
     status = load(root / "state/serenity-review-status.json", {})
     st = status.get("summary", {})
     status_line = (
-        f'<p class="status-banner"><strong>Status: no company has passed every Serenity gate.</strong> '
-        f'Serenity reviews on today\'s evidence: {st.get("current", 0)}; evidence changed since review: {st.get("stale", 0)}; '
-        f'not reviewed yet: {st.get("notReviewed", 0)}. Claude memos are research views until their quotes pass the citation check '
-        f'({st.get("claudeChecked", 0)} of {st.get("claudePending", 0) + st.get("claudeChecked", 0)} checked). Tiers below are next research steps, not buy decisions.</p>'
+        '<p class="status-banner"><strong>Research tiers, not buy decisions.</strong> '
+        "The eight evidence gates are this project's own checklist built on the Serenity method; no company passes all eight yet. "
+        f'Every company with a Serenity tier on this page has a current review whose quotes were checked word for word against its filings '
+        f'({st.get("claudeChecked", 0)} of {st.get("claudePending", 0) + st.get("claudeChecked", 0)}).</p>'
     ) if st else ""
     pending = st.get("claudePending", 0)
     checked = st.get("claudeChecked", 0)
@@ -831,10 +1432,10 @@ def render_html(payload: dict, root: Path = ROOT) -> str:
     mv = load(root / "state/market-validation.json", {}).get("companies", {})
     lt_rows = "".join(
         f'<tr><td class="tk"><a href="#{esc(r["ticker"])}">{esc(r["ticker"])}</a><br><span class="muted-note">{esc(label.split()[0])}</span></td><td>{esc(r["longTerm"]["edge"])}</td>'
-        f'<td>{esc(r["longTerm"]["counter"])}</td><td>{market_cell(mv.get(r["ticker"]))}</td><td>{esc(r["longTerm"]["next_check"])}</td></tr>'
+        f'<td>{esc(r["longTerm"]["counter"])}</td><td>{market_cell(mv.get(r["ticker"]))}{order_cell(r.get("orderRange"))}</td><td>{esc(r["longTerm"]["next_check"])}</td></tr>'
         for key, label, _ in BUCKETS for r in payload["picks"].get(key, []) if r.get("longTerm"))
     long_term_html = (f'<div class="table-wrap long-term"><table><caption>Why these six could lead by 2035, what could stop them, what the market says today, and what we check next</caption>'
-                      f'<thead><tr><th>Ticker</th><th>Why it could win (Serenity)</th><th>Biggest counter (Serenity)</th><th>Market check (OpenBB, Kronos; context only)</th><th>Next check</th></tr></thead><tbody>{lt_rows}</tbody></table></div>') if lt_rows else ""
+                      f'<thead><tr><th>Ticker</th><th>Why it could win (Serenity)</th><th>Biggest counter (Serenity)</th><th>Market check and order range (context only)</th><th>Next check</th></tr></thead><tbody>{lt_rows}</tbody></table></div>') if lt_rows else ""
     responses = load(root / "state/serenity-claude-response.json", {}).get("reviews", [])
     quotes = sum(len(g.get("support", [])) + len(g.get("counter", [])) for r in responses for g in r.get("gates", {}).values())
     tr_calls = load(root / "state/track-record.json", {}).get("serenityCalls", [])
@@ -879,6 +1480,19 @@ def render_html(payload: dict, root: Path = ROOT) -> str:
             out += "".join(f'<li class="news-item"><span class="chip ok">▲ Theme</span> {esc(t["label"])} heating up in the frontier news (exposure {t["strength"]:.0%} from its filings)</li>' for t in themes)
             return f'<ul class="news-list">{out}</ul>'
 
+        def recheck_line(r):
+            """Whether news after the review's evidence has reopened gates (news_signal_engine.news_recheck)."""
+            if not r or not r.get("evidenceThrough"):
+                return ""
+            if r["status"] != "queued":
+                return (f'<p class="call-foot"><span class="chip ok">Evidence covers the news</span> '
+                        f'review reads primary documents through {esc(r["evidenceThrough"])}; no material news since then</p>')
+            items = "".join(f'<li>{esc(e["date"])} · <strong>{esc(EVENT_LABEL.get(e["type"], e["type"]))}</strong> <span>{esc(e["title"][:90])}</span></li>' for e in r["events"][:3])
+            gates = ", ".join(g.replace("_", " ") for g in r["gates"]) or "—"
+            return (f'<div class="recheck"><p class="call-foot"><span class="chip warn">Re-check queued</span> '
+                    f'news after the review\'s evidence ({esc(r["evidenceThrough"])}) reopens: <strong>{esc(gates)}</strong></p>'
+                    f'<ul class="plain-list">{items}</ul></div>')
+
         def serenity_card(c):
             v = c["serenity"] or {}
             label, tone = TIER_LABEL.get(c["decision"], ("Serenity", "plain"))
@@ -887,6 +1501,7 @@ def render_html(payload: dict, root: Path = ROOT) -> str:
             return (f'<article class="call"><header class="call-head"><h3><span class="ticker">{esc(c["ticker"])}</span> {esc(c["company"])}</h3>'
                     f'<span class="chip {tone}">{esc(label)}</span></header>'
                     + (lambda r: f'<p class="call-foot">Claude memo: <strong>{esc(r.get("claudeMemo") or "none")}</strong> · first-round review: <strong>{esc(r.get("review", "none"))}</strong></p>')(review_of.get(c["ticker"], {}))
+                    + recheck_line(c.get("recheck"))
                     + f'<div class="call-step"><h4>1 · What the news changed</h4>{trigger_line(c)}</div>'
                     f'<div class="call-step"><h4>2 · Serenity analysis</h4><p class="call-verdict">{esc(v.get("verdict", ""))}</p>'
                     f'<dl class="mini"><div><dt>Chokepoint</dt><dd>{esc(v.get("chokepoint", "—"))}</dd></div>'
@@ -911,8 +1526,9 @@ def render_html(payload: dict, root: Path = ROOT) -> str:
         theme_rows = ""
         for t in hot:
             heads = "".join(f'<li><a href="{esc(h["url"])}" target="_blank" rel="noopener">{esc(h["title"][:95])}</a> <span class="news-meta">{esc(h["source"][:24])}</span></li>' for h in t["headlines"][:2])
-            covered = ", ".join(f'{esc(x["ticker"])} {x["strength"]:.0%}' for x in t["covered"][:6]) or "—"
-            new_names = ", ".join(esc(x["ticker"]) for x in t["uncovered"]) or "—"
+            rel = lambda x: f' <span class="muted-note">{esc(RELATION_WORD[x["relation"]])}</span>' if x.get("relation") in RELATION_WORD else ""
+            covered = ", ".join(f'{esc(x["ticker"])} {x["strength"]:.0%}{rel(x)}' for x in t["covered"][:6]) or "—"
+            new_names = ", ".join(f'{esc(x["ticker"])}{rel(x)}' for x in t["uncovered"]) or "—"
             state = '<span class="chip ok">Heating up</span>' if t["material"] else '<span class="chip plain">Early</span>'
             theme_rows += (f'<tr><td><strong>{esc(t["label"])}</strong><br>{state}</td><td class="n">{t["articles"]}</td><td class="n">{t["heat"]:+.1f}</td>'
                            f'<td style="white-space:normal;min-width:280px"><ul class="news-list">{heads}</ul></td><td style="white-space:normal">{covered}</td><td>{new_names}</td></tr>')
@@ -920,7 +1536,9 @@ def render_html(payload: dict, root: Path = ROOT) -> str:
             '<h3 class="bucket-h">What the frontier news is about</h3>'
             '<p class="bucket-blurb">Articles that name no company (new models, papers, policy, funding rounds) are grouped into AI-medicine topics. '
             'Heat compares the last 7 days with the weekly average of the three weeks before, so a topic that is always discussed does not count; only one heating up does. '
-            'Each topic then reaches the companies whose own SEC filings describe that work, weighted by how strongly.</p>'
+            'Each topic then reaches the companies whose own SEC filings describe that work, weighted by how strongly. '
+            'A phrase match is not enough: the agent opens each candidate\'s filing and keeps it only if the text shows the company makes the product (own), '
+            'supplies the companies that do (supplier) or buys it (customer); competitors named in risk factors, glossary lines and AI shells are dropped.</p>'
             '<div class="table-wrap"><table><thead><tr><th>Topic</th><th class="n">Articles, 7 days</th><th class="n">Heat</th><th>Examples</th>'
             f'<th>Covered companies (exposure)</th><th>New names to look at</th></tr></thead><tbody>{theme_rows}</tbody></table></div>'
         ) if theme_rows else ""
@@ -930,9 +1548,11 @@ def render_html(payload: dict, root: Path = ROOT) -> str:
     <h2 id="news-h">This week: frontier news, then Serenity</h2>
     <p>The news does not decide anything. It shows what changed and for whom: news that names a company becomes an event (FDA, reimbursement, partnership, clinical data, earnings, lawsuits), and frontier news that names no company is mapped to the companies whose own filings describe that work. Each change is then handed to a Serenity analysis that applies three core Serenity skills to primary filings through eight evidence gates: map the supply chain, test for a chokepoint, check customer dependence, stress-test the counter-thesis and set validation gates. <strong>The Serenity tier is a research view, not a trade.</strong> A company with material news but no Serenity analysis yet waits in the queue below instead of being rated on news alone.</p>
     {themes_html}
+    {mapping_validation_block(root)}
     {fda_block(root)}
     {recheck_block(root)}
     <h3 class="bucket-h">News-triggered companies with a Serenity verdict</h3>
+    <p class="bucket-blurb">For a company that already has a review, the agent compares each news item with the date of the latest primary document the review read. Write-ups of a quarter already in the evidence are covered; material news after it (a deal, a partnership, a trial, a board change, a newer quarterly report) puts the company in the re-check queue for the gates that news bears on. The tier shown stays until that re-check is done.</p>
     <div class="calls">{cards}</div>
     <h3 class="bucket-h">Next for Serenity analysis</h3>
     <p class="bucket-blurb">Material news this week, no Serenity analysis yet. The gates column says what the analysis must re-check first.</p>
@@ -1041,7 +1661,7 @@ def render_html(payload: dict, root: Path = ROOT) -> str:
     <p class="eyebrow">AI Medicine · 5–10 year view · Serenity research agent</p>
     <h1>Who leads AI medicine by 2035?</h1>
     {status_line}
-    <p class="lede">Peter's question: which AI-medicine companies have the highest potential over the next 5 to 10 years, and why? The answer below comes from one pipeline: frontier news finds the companies, Serenity reads their SEC filings and tests whether each controls something the industry cannot route around, market data checks whether that is already in the price, and every call is frozen so it can be scored later. The two groups follow the Serenity stock-selection skill: durable compounders and asymmetric upside.</p>
+    <p class="lede">Which AI-medicine companies have the highest potential over the next 5 to 10 years, and why? The answer below comes from one pipeline: frontier news finds the companies, Serenity reads their SEC filings and tests whether each controls something the industry cannot route around, market data checks whether that is already in the price, and every call is frozen so it can be scored later. The two groups follow the Serenity stock-selection skill: durable compounders and asymmetric upside.</p>
     <div class="answers">{answer}</div>
     {long_term_html}
     {'<p class="meta"><a href="#radar">How the agent spots the next theme early, tested on COVID-19 and mpox →</a></p>' if radar_html else ''}
@@ -1070,6 +1690,8 @@ def render_html(payload: dict, root: Path = ROOT) -> str:
     {picks_html}
   </section>
 
+{tickets_section(root)}
+
   <section class="section" aria-labelledby="rank-h">
     <h2 id="rank-h">Full ranking</h2>
     <div class="funnel">{funnel_html}</div>
@@ -1082,6 +1704,14 @@ def render_html(payload: dict, root: Path = ROOT) -> str:
   </section>
 
 {news_html}
+{early_signals_section(root)}
+{commercialization_chain_section(root)}
+{management_radar_section(root)}
+{small_caps_section(root)}
+{deals_section(root)}
+{lab_to_company_section(root)}
+{funds_section(root)}
+{biodefense_section(root)}
 {choke_html}
 {radar_html}
 {track_html}
@@ -1103,7 +1733,7 @@ def render_html(payload: dict, root: Path = ROOT) -> str:
         <ul>
           <li>Every daily view is frozen on the day it is made and scored later against XBI, XLV, SPY, a random pick and a plain momentum strategy.</li>
           <li>Each pick lists falsifiers. When one triggers, the company is re-reviewed.</li>
-          <li><strong>Limits today:</strong> dimension scores are analyst judgments (1–5) tied to cited sources; growth uses reported figures. Tracking began in November 2026, so there is no long track record yet.</li>
+          <li><strong>Limits today:</strong> for Serenity-reviewed companies, five dimension scores come from evidence-gate results by a fixed rule, and financial durability is a judgement on reported cash, debt and losses; the rule is not yet calibrated. Tracking began in November 2026, so there is no long track record yet.</li>
         </ul>
       </section>
     </div>

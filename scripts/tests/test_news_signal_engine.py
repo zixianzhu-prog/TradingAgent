@@ -75,3 +75,30 @@ def test_serenity_verdict_decides_and_unanalysed_news_is_queued(tmp_path):
     calls = {c["ticker"]: c for c in engine.recommend(companies, engine.extract_events(companies, articles, NOW), root=tmp_path)}
     assert calls["TEM"]["decision"] == "serenity-starter" and calls["TEM"]["serenity"]["chokepoint"] == "no"
     assert calls["NEW"]["decision"] == "awaiting-serenity" and calls["NEW"]["trigger"] == "positive"
+
+
+def test_insider_trades_are_not_read_as_mergers():
+    from news_signal_engine import classify
+    assert classify("An accounting chief acquired 795 Heartflow (HTFL) shares at $19.70 under an employee purchase plan.")["type"] == "insider"
+    assert classify("Director sells 10,000 shares of RadNet")["type"] == "insider"
+    assert classify("Tempus to acquire Paige in $81 million deal")["type"] == "m&a"
+
+
+def test_evidence_date_and_news_recheck():
+    from datetime import date, datetime, timezone
+    from news_signal_engine import evidence_through, news_recheck
+    packet = {"evidence": [{"url": "https://www.sec.gov/x/rdnt-20251231.htm"}, {"url": "https://www.sec.gov/x/rdnt-20260930.htm"},
+                           {"url": "https://www.sec.gov/x/htfl-20261112xex99_1.htm"}]}
+    assert evidence_through(packet) == date(2026, 11, 12)  # exhibit date beats 2026-09-30 + 40 days
+    through = date(2026, 11, 9)
+    at = lambda d: datetime.fromisoformat(d).replace(tzinfo=timezone.utc)
+    bucket = [
+        {"type": "earnings", "title": "Earnings call highlights", "at": at("2026-11-16"), "materiality": 2.0, "gates": ["earnings_validation"]},
+        {"type": "analyst", "title": "Price target raised", "at": at("2026-11-16"), "materiality": 1.0, "gates": []},
+        {"type": "m&a", "title": "Acquires ONRAD", "at": at("2026-10-27"), "materiality": 2.5, "gates": ["multi_node_control"]},
+        {"type": "partnership", "title": "New alliance", "at": at("2026-11-13"), "materiality": 2.5, "gates": ["customer_dependency"]},
+    ]
+    r = news_recheck(bucket, through)
+    assert r["status"] == "queued" and [e["title"] for e in r["events"]] == ["New alliance"] and r["gates"] == ["customer_dependency"]
+    stale = news_recheck([{"type": "earnings", "title": "Q3 results", "at": at("2026-11-04"), "materiality": 2.0, "gates": ["earnings_validation"]}], date(2026, 2, 9))
+    assert stale["status"] == "queued"  # review read only the annual report; a newer quarter must be re-checked

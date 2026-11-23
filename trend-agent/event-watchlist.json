@@ -1,6 +1,7 @@
 {
   "lookback_days": 7,
   "materiality_threshold": 60,
+  "crl_lookback_days": 180,
   "companies": [
     {
       "ticker": "NVDA",
@@ -103,6 +104,30 @@
         {"type": "partnership", "date": null, "label": "AI clinical-development customer adoption", "gates": ["customer_dependency", "chokepoint_evidence", "multi_node_control"]},
         {"type": "earnings", "date": null, "label": "technology and analytics growth update", "gates": ["earnings_validation", "pure_play", "valuation"]}
       ]
+    },
+    {
+      "ticker": "HTFL",
+      "aliases": ["HeartFlow", "HeartFlow FFRCT", "HeartFlow Plaque Analysis"],
+      "events": [
+        {"type": "earnings", "date": null, "label": "commercial adoption, reimbursement and cash update", "gates": ["earnings_validation", "customer_dependency", "cash_generation", "valuation"]},
+        {"type": "regulatory", "date": null, "label": "FDA and CPT/reimbursement update", "gates": ["chokepoint_evidence", "customer_dependency", "counter_thesis"]}
+      ]
+    },
+    {
+      "ticker": "CBLL",
+      "aliases": ["Ceribell", "Ceribell EEG", "ClarityPro"],
+      "events": [
+        {"type": "earnings", "date": null, "label": "hospital adoption, recurring revenue and cash update", "gates": ["earnings_validation", "customer_dependency", "cash_generation", "valuation"]},
+        {"type": "regulatory", "date": null, "label": "FDA and Medicare NTAP update", "gates": ["chokepoint_evidence", "customer_dependency", "counter_thesis"]}
+      ]
+    },
+    {
+      "ticker": "CAI",
+      "aliases": ["Caris Life Sciences", "Caris Molecular Intelligence"],
+      "events": [
+        {"type": "earnings", "date": null, "label": "molecular profiling volume, pharma revenue and cash update", "gates": ["earnings_validation", "customer_dependency", "cash_generation", "valuation"]},
+        {"type": "partnership", "date": null, "label": "biopharma data and companion diagnostic adoption", "gates": ["customer_dependency", "chokepoint_evidence", "multi_node_control"]}
+      ]
     }
   ],
   "event_keywords": {
@@ -114,6 +139,7 @@
     "integration": ["acquisition", "merger", "shareholder vote", "integration"],
     "leadership": ["ceo transition", "chief executive", "resignation", "resigned", "successor", "interim ceo", "辞职", "首席执行官"],
     "governance": ["board investigation", "independent investigation", "foreign intelligence effort", "governance", "董事会调查", "独立调查"],
-    "reputational": ["affair", "scandal", "misconduct", "espionage", "spy allegation", "丑闻", "婚外情", "间谍指控"]
+    "reputational": ["affair", "scandal", "misconduct", "espionage", "spy allegation", "丑闻", "婚外情", "间谍指控"],
+    "complete_response": ["complete response letter", "complete response", "CRL from the FDA"]
   }
 }

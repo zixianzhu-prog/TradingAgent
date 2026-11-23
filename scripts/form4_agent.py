@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import ssl
 import time
 import urllib.error
@@ -10,7 +11,8 @@ import xml.etree.ElementTree as ET
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
-USER_AGENT = "FocusKPI-Research-Agent/0.1"
+# www.sec.gov answers 403 without a contact in the User-Agent (SEC fair-access policy).
+USER_AGENT = os.getenv("SEC_USER_AGENT") or "FocusKPI-Research-Agent/0.1"
 CODE_LABELS = {
     "P": "公开市场买入",
     "S": "公开市场卖出",

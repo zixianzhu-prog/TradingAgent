@@ -152,13 +152,73 @@ def affected_gates(company: dict, kinds: list[str]) -> list[str]:
         "leadership": ["management_governance", "counter_thesis", "earnings_validation"],
         "governance": ["management_governance", "reputation_risk", "counter_thesis"],
         "reputational": ["management_governance", "reputation_risk", "counter_thesis"],
+        "complete_response": ["regulatory_path", "clinical_validation", "falsifiers", "valuation"],
     }
     for kind in kinds:
         gates.update(defaults.get(kind, []))
     return sorted(gates)
 
 
-def build(config: dict, articles: list[dict], today: date) -> dict:
+# FDA complete response letters (scripts/fda_crl_reasons.py). Severity decides what to re-check and
+# how urgent it is: an efficacy problem or a new trial reopens the clinical thesis; a factory problem
+# usually only delays the timeline. Unknown or redacted letters need a person to read the PDF.
+CRL_GATES = {
+    "heavy": (90, ["clinical_validation", "regulatory_path", "falsifiers", "valuation", "cash_runway"]),
+    "medium": (80, ["clinical_validation", "regulatory_path", "falsifiers"]),
+    "light": (65, ["regulatory_path", "valuation"]),
+    "unknown": (70, ["regulatory_path", "falsifiers"]),
+    "redacted": (70, ["regulatory_path", "falsifiers"]),
+}
+CRL_LABEL = {"heavy": "重：有效性不足或需新试验", "medium": "中：安全性或需补药理研究",
+             "light": "轻：生产、工厂或可用性", "unknown": "未知：需人工读原信", "redacted": "涂黑：需人工读原信"}
+
+
+def crl_tasks(config: dict, crl: dict, today: date) -> list[dict]:
+    """Re-check tasks for FDA letters about a watched company, its partner or its drug."""
+    lookback = int(config.get("crl_lookback_days", 180))
+    tasks = []
+    for letter in crl.get("rows", []):
+        issued = letter.get("issued")
+        if not issued or (today - date.fromisoformat(issued)).days > lookback or date.fromisoformat(issued) > today:
+            continue
+        listed = (letter.get("listed") or {}).get("ticker")
+        text = " ".join(filter(None, [letter.get("company"), letter.get("drug")]))
+        for company in config["companies"]:
+            direct = listed == company["ticker"]
+            alias = next((a for a in company["aliases"] + company.get("partners", []) if mentions(text, a)), None)
+            if not direct and not alias:
+                continue
+            severity = letter.get("severity") or "unknown"
+            score, gates = CRL_GATES.get(severity, CRL_GATES["unknown"])
+            reasons = ["FDA 原始信件（openFDA）", f"严重度 {CRL_LABEL.get(severity, severity)}",
+                       "上市公司代码匹配" if direct else f"名称匹配：{alias}"]
+            if letter.get("newTrialRequired"):
+                reasons.append("FDA 要求新试验")
+            if letter.get("facilityInspectionFailed"):
+                reasons.append("工厂检查未通过")
+            quotes = {k: v.get("quote") for k, v in (letter.get("reasons") or {}).items()}
+            tasks.append({
+                "eventId": hashlib.sha256(f"{company['ticker']}|crl|{letter['file']}|{issued}".encode()).hexdigest()[:16],
+                "ticker": company["ticker"],
+                "materialityScore": score,
+                "eventTypes": ["complete_response"],
+                "title": f"FDA complete response letter: {letter.get('drug') or letter.get('application')} ({letter.get('company') or 'sponsor unknown'})",
+                "url": letter.get("source", ""),
+                "source": "openFDA CRL",
+                "publishedAt": issued, "discoveredAt": issued, "knowledgeAt": issued,
+                "firstEligibleResearchDate": (date.fromisoformat(issued) + timedelta(days=1)).isoformat(),
+                "dateValidation": {"status": "letter-date", "reasons": ["date printed on the FDA letter"]},
+                "affectedGates": gates,
+                "reasons": reasons,
+                "crl": {"file": letter["file"], "application": letter.get("application"), "severity": severity,
+                        "deficiencySections": letter.get("deficiencySections", []),
+                        "newTrialQuote": letter.get("newTrialQuote"), "quotes": quotes},
+                "status": "pending-revalidation",
+            })
+    return tasks
+
+
+def build(config: dict, articles: list[dict], today: date, crl: dict | None = None) -> dict:
     threshold = int(config.get("materiality_threshold", 60))
     scheduled = []
     tasks = []
@@ -219,6 +279,10 @@ def build(config: dict, articles: list[dict], today: date) -> dict:
                 "reasons": reasons,
                 "status": "pending-revalidation",
             })
+    for task in crl_tasks(config, crl or {}, today):
+        if task["eventId"] not in seen_tasks:
+            seen_tasks.add(task["eventId"])
+            tasks.append(task)
     for event in scheduled:
         if any(
             task["ticker"] == event["ticker"] and event.get("type") in task.get("eventTypes", [])
@@ -279,8 +343,13 @@ def write_report(payload: dict, output: str) -> None:
             f"- 信息可用：{row['knowledgeAt']}；最早进入研究：{row['firstEligibleResearchDate']}",
             f"- 日期校验：{row['dateValidation']['status']}",
             f"- 重新检查：{', '.join(row['affectedGates'])}",
-            f"- 触发原因：{'；'.join(row['reasons'])}", "",
+            f"- 触发原因：{'；'.join(row['reasons'])}",
         ]
+        for kind, quote in (row.get("crl") or {}).get("quotes", {}).items():
+            lines.append(f"- FDA 原文（{kind}）：> {quote}")
+        if (row.get("crl") or {}).get("newTrialQuote"):
+            lines.append(f"- FDA 原文（新试验）：> {row['crl']['newTrialQuote']}")
+        lines.append("")
     lines += ["", "## 日期异常隔离", ""]
     if not payload.get("quarantinedEvents"):
         lines.append("当前没有日期异常事件。")
@@ -296,11 +365,13 @@ def main() -> None:
     parser.add_argument("--json-output", required=True)
     parser.add_argument("--markdown-output", required=True)
     parser.add_argument("--as-of")
+    parser.add_argument("--crl", help="state/fda-crl-reasons.json from scripts/fda_crl_reasons.py")
     args = parser.parse_args()
     today = date.fromisoformat(args.as_of) if args.as_of else date.today()
     config = json.loads(Path(args.config).read_text(encoding="utf-8"))
     articles = load_articles(args.database, int(config.get("lookback_days", 7)), today)
-    payload = build(config, articles, today)
+    crl = json.loads(Path(args.crl).read_text(encoding="utf-8")) if args.crl and Path(args.crl).exists() else None
+    payload = build(config, articles, today, crl)
     target = Path(args.json_output)
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")

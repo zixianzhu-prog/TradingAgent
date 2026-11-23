@@ -67,7 +67,8 @@ def scan_supplier(supplier: str, start: date, end: date, fetch=mapper.http_json)
         hits = screen_mod.search_all(f'"{supplier}" {phrase}', start, end, max_hits=300, fetch=fetch)
         filings |= {h.get("_source", {}).get("adsh") or h.get("_id", "").split(":")[0] for h in hits}
         for key, row in mapper.aggregate(hits).items():
-            if not screen_mod.is_operating(row) or row["sicGroup"] == "Other sector":
+            # AI-health companies often register as software (Tempus: SIC 7370), so keep software filers too.
+            if not screen_mod.is_operating(row) or (row["sicGroup"] == "Other sector" and not screen_mod.software(row)):
                 continue
             if screen_mod.core_tokens(supplier)[:1] == screen_mod.core_tokens(row["name"])[:1]:
                 continue  # the supplier's own filings
@@ -97,7 +98,9 @@ def build(as_of: date, screen: dict, fda: dict, fetch=mapper.http_json) -> dict:
             # Share of all filings naming the supplier that also carry sole/single-source language. Ubiquitous
             # names (partners, competitors) score low; a genuine bottleneck should score high.
             "mentionFilings": mentions, "dependenceShare": round(dependence_filings / mentions, 3) if mentions else None,
-            "examples": [{**r, "phrases": sorted(r["phrases"]), "inAiUniverse": r["ticker"] in ai_universe} for r in rows[:8]],
+            # Every AI-medicine dependent is listed (up to 15); a fixed top-8 cut dropped Tempus for Illumina.
+            "examples": [{**r, "phrases": sorted(r["phrases"]), "inAiUniverse": r["ticker"] in ai_universe}
+                         for r in rows[:max(8, min(15, sum(1 for x in rows if x["ticker"] in ai_universe)))]],
         })
     nodes.sort(key=lambda n: (-n["aiMedicineDependents"], -n["healthDependents"]))
     devices = fda.get("devices", [])
@@ -110,7 +113,7 @@ def build(as_of: date, screen: dict, fda: dict, fetch=mapper.http_json) -> dict:
             {"name": "FDA clearance", "evidence": f"{len(devices):,} AI-enabled device authorizations on FDA's list; {panels.most_common(1)[0][0] if panels else '—'} accounts for "
                                                   f"{(panels.most_common(1)[0][1] / max(1, len(devices))):.0%}." if devices else "FDA list not loaded",
              "status": "tracked"},
-            {"name": "Reimbursement (CMS CPT / NTAP codes)", "evidence": "Not tracked yet. Payment codes decide whether an AI product earns revenue; next data source to add.",
+            {"name": "Reimbursement (CMS CPT / NTAP codes)", "evidence": "Payment codes decide whether an AI product earns revenue. Tracked for reviewed companies from their filings (e.g. HeartFlow CPT 75580, Ceribell NTAP, Natera ADLT); a systematic CMS feed is not added yet.",
              "status": "not tracked"},
         ],
     }

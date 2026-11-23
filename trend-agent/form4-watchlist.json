@@ -14,6 +14,9 @@
     {"ticker": "RDNT", "cik": "0000790526", "name": "RadNet"},
     {"ticker": "ISRG", "cik": "0001035267", "name": "Intuitive Surgical"},
     {"ticker": "IQV", "cik": "0001478242", "name": "IQVIA"},
-    {"ticker": "NVDA", "cik": "0001045810", "name": "NVIDIA"}
+    {"ticker": "NVDA", "cik": "0001045810", "name": "NVIDIA"},
+    {"ticker": "HTFL", "cik": "0001464521", "name": "HeartFlow"},
+    {"ticker": "CBLL", "cik": "0001861107", "name": "Ceribell"},
+    {"ticker": "CAI", "cik": "0002019410", "name": "Caris Life Sciences"}
   ]
 }

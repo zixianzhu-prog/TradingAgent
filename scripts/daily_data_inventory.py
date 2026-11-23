@@ -24,6 +24,12 @@ KEY_REPORTS = (
     "outputs/finrobot-event-analysis.md",
     "outputs/agent-benchmark-validation.md",
     "outputs/ai-medicine-thesis-memory.md",
+    "outputs/scientific-frontier.md",
+    "outputs/science-commercialization-graph.md",
+    "outputs/technology-ownership.md",
+    "outputs/uspto-assignment-validation.md",
+    "outputs/institutional-ownership.md",
+    "outputs/management-radar.md",
     "dashboard/dist/data.json",
 )
 

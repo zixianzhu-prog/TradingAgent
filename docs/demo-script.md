@@ -37,7 +37,7 @@
 
 **EN**
 
-> **HeartFlow** holds the closest thing to a payment chokepoint in AI medicine: a Category I Medicare billing code, coverage for about 99% of insured lives, and a place in the cardiology guidelines. The risk is price: about fifteen times sales.
+> **HeartFlow** holds the closest thing to a payment chokepoint in AI medicine: a Category I Medicare billing code, insurer coverage policies that apply to about 99% of insured Americans, and a place in the cardiology guidelines. The risk is price: about fifteen times sales.
 > **Ceribell** has the first FDA-cleared AI device for diagnosing status epilepticus and the only cleared delirium monitor, with a Medicare add-on payment. Losses are still widening.
 > **Schrödinger**'s drug-design software is used by all top-20 pharma, with 96% retention. Software growth has slowed, and the stock is up 70% in three months.
 > **Caris** has more than a million sequenced tumour cases feeding AI products and pharma services. It disclosed a material weakness in internal controls.
@@ -48,7 +48,7 @@
 
 **中文**
 
-> **HeartFlow** 拥有 AI 医疗里最接近"支付瓶颈"的东西：I 类医保收费编码、约 99% 参保人群覆盖、写进心脏病学指南。风险是价格，约为收入的 15 倍。
+> **HeartFlow** 拥有 AI 医疗里最接近"支付瓶颈"的东西：I 类医保收费编码、适用于约 99% 美国参保人群的报销政策、写进心脏病学指南。风险是价格，约为收入的 15 倍。
 > **Ceribell** 有首个获 FDA 510(k) 许可、用于诊断癫痫持续状态的 AI 设备，也是唯一获 FDA 许可的谵妄监测设备，并有医保附加支付。亏损仍在扩大。
 > **Schrödinger** 的药物设计软件被全部前 20 大药企使用，客户留存 96%。软件增速放缓，股价 3 个月涨了 70%。
 > **Caris** 有 100 多万例肿瘤测序数据，支撑 AI 产品和药企服务。它披露了内部控制重大缺陷。
@@ -171,9 +171,9 @@
 
 ### 5b. HeartFlow and Recursion both fell. Doesn't that undermine it? · HeartFlow 和 Recursion 都跌了，这不说明有问题吗？
 
-**EN:** HeartFlow fell 19% the day after beating expectations. Serenity's main counter was valuation at about sixteen times sales, and that is the risk that showed up. Recursion's headline said "inflection point", yet it is down 23% in a month; news-first scoring would have ranked it first, and Serenity only gave it starter tier. Serenity judges company quality and names the risks. It does not time the next week.
+**EN:** HeartFlow fell 19% the day after beating expectations. Serenity's main counter was valuation at about fifteen times sales, and that is the risk that showed up. Recursion's headline said "inflection point", yet it is down 23% in a month; news-first scoring would have ranked it first, and Serenity only gave it starter tier. Serenity judges company quality and names the risks. It does not time the next week.
 
-**中文：** HeartFlow 超预期后第二天跌了 19%。Serenity 写明的最大反方就是估值，约为收入的 16 倍，这次正是这个风险兑现了。Recursion 的新闻标题说"拐点"，一个月却跌了 23%；按新闻优先打分它会排第一，而 Serenity 只给了试探级。Serenity 判断的是公司质量并点明风险，不负责预测下周涨跌。
+**中文：** HeartFlow 超预期后第二天跌了 19%。Serenity 写明的最大反方就是估值，约为收入的 15 倍，这次正是这个风险兑现了。Recursion 的新闻标题说"拐点"，一个月却跌了 23%；按新闻优先打分它会排第一，而 Serenity 只给了试探级。Serenity 判断的是公司质量并点明风险，不负责预测下周涨跌。
 
 ### 6. Isn't the COVID example cherry-picked? · 新冠案例不是挑出来的吗？
 
@@ -192,6 +192,70 @@
 **EN:** No. It monitors new SEC filings from the companies it covers and Federal Register updates from FDA, CMS and HHS that match AI-medicine terms, not every filing in the market.
 
 **中文：** 不是。它监控覆盖公司新提交的 SEC 文件，以及 FDA、CMS、HHS 在 Federal Register 上与 AI 医疗关键词匹配的更新，不是全市场所有文件。
+
+### 9. Can you run it live? · 可以现场跑一次吗？
+
+**EN:** The full run takes about ten minutes, so it ran this morning. The key steps run live in seconds: name an AI-medicine area and I will map it to companies from their SEC filings right now. See "Live demo" below.
+
+**中文：** 完整运行大约 10 分钟，今天早上已经跑过。关键步骤可以几秒钟现场跑：你说一个 AI 医疗方向，我现在就从 SEC 文件里把它映射到公司。见下方"现场演示"。
+
+---
+
+## Live demo, if asked · 现场演示（被问到时）
+
+**Before the meeting · 会前准备**
+
+```bash
+cd /Users/rezz/Documents/Codex/2026-10-27/x20-wps-highlight
+export SEC_USER_AGENT="Serenity Research Agent you@example.com"
+./run-daily-investment-agent.sh 2>&1 | tee daily-$(date +%F).log      # full run, about 10 minutes, do it in the morning
+python3 scripts/translate_page.py                                       # Chinese page
+trend-agent/.venv/bin/python scripts/live_demo.py topic "digital pathology"   # warm the cache
+trend-agent/.venv/bin/python scripts/live_demo.py topic "ECG"
+```
+
+- Make the terminal font large; open the page and one terminal side by side. 终端字号调大；页面和终端并排。
+- Record a screen capture of the three commands as a fallback if the network fails. 提前录屏三个命令，网络出问题就放录像。
+
+**Answer · 回答**
+
+**EN:** The full daily run takes about ten minutes and calls a dozen outside services, so I ran it this morning; the page shows today's results. But the key steps run live in seconds. Name any AI-medicine area.
+
+**中文：** 完整的每日运行大约 10 分钟，要连十几个外部数据源，所以我今天早上跑过了，页面上就是今天的结果。但关键步骤可以几秒钟现场跑出来。你随便说一个 AI 医疗方向。
+
+**A · Name a topic (best one) · 你说一个主题（最推荐）**
+
+```bash
+trend-agent/.venv/bin/python scripts/live_demo.py topic "<topic Peter names>"
+```
+
+About 3 seconds. Searches SEC full text now, opens up to 12 companies' annual reports, and labels each one. 约 3 秒：现场搜 SEC 全文，打开最多 12 家公司的年报，逐家判断关系。
+
+> **EN:** These companies describe building it in their own annual reports; below the line are companies that only mention it, usually in clinical-trial or risk sections, so they are dropped. Here is Tempus: the 10-K says it bought Paige, the company behind the first FDA-cleared AI pathology app.
+>
+> **中文：** 线上面这些公司在自己的年报里写明在做这件事；线下面的只是提到，通常在临床试验或风险因素里，所以被剔除。比如 Tempus：它的 10-K 写明收购了 Paige，也就是第一个获 FDA 许可的 AI 病理应用的开发商。
+
+Tested topics that show well · 已测试、效果好的主题：`digital pathology`（Tempus、Quest、SOPHiA）、`ECG`（HeartSciences、iRhythm）。If the topic is drug-heavy (for example `sepsis`), many results are drug developers that only mention it and get dropped; say so: "this is the filter doing its job." 如果主题偏药物（比如败血症），大部分会被剔除，直接说"这正是筛选在起作用"。
+
+**B · Latest FDA decisions · FDA 最新许可**
+
+```bash
+trend-agent/.venv/bin/python scripts/live_demo.py fda
+```
+
+About 4 seconds. Read-only. Mention the 1–2 week openFDA lag before anyone asks. 约 4 秒，只读。主动说明 openFDA 晚 1–2 周。
+
+**C · Change one word · 改一个字**
+
+```bash
+trend-agent/.venv/bin/python scripts/live_demo.py quote
+```
+
+Under a second, offline. HeartFlow's CPT-code quote passes; the same quote with the code changed (75580 → 75581) or one word paraphrased (reimbursed → paid) is rejected. 不到 1 秒、离线：HeartFlow 的 CPT 编码原文通过；改一个数字或同义改写一个词，都被拒绝。
+
+> **EN:** A model paraphrasing "reimbursed" as "paid" sounds harmless, but it is no longer what the company told the SEC, so the gate drops.
+>
+> **中文：** 模型把"reimbursed"复述成"paid"听起来无害，但这已经不是公司对 SEC 说的原话了，所以这道门槛会降级。
 
 ---
 

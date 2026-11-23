@@ -223,6 +223,12 @@ def main() -> None:
     finrobot_event_analysis = {"providerMode": "disabled", "events": [], "summary": {}}
     daily_data_inventory = load(ROOT / "state/daily-data-inventory.json", {"storage": {}, "reports": [], "benchmarkOutcomes": []})
     market_profiles = load(ROOT / "state/market-profiles.json", {"profiles": [], "summary": {}})
+    scientific_frontier = load(ROOT / "state/scientific-frontier.json", {"works": [], "pubmed": [], "graph": {"nodes": [], "edges": []}, "summary": {}})
+    science_commercialization = load(ROOT / "state/science-commercialization-graph.json", {"companies": [], "graph": {"nodes": [], "edges": []}, "summary": {}})
+    technology_ownership = load(ROOT / "state/technology-ownership.json", {"companies": [], "summary": {}})
+    uspto_assignment_validation = load(ROOT / "state/uspto-assignment-validation.json", {"companies": [], "summary": {}})
+    institutional_ownership = load(ROOT / "state/institutional-ownership.json", {"filings": [], "summary": {}})
+    management_radar = load(ROOT / "state/management-radar.json", {"companies": [], "summary": {}})
     predictions, performance = performance_rows(ROOT / "state/investment-score-history.db")
     stocks = market_rows(ai_medicine_market, theme_links, company_news, serenity, "ai_medicine")
     stocks += market_rows(nvidia_market, theme_links, company_news, serenity, "nvidia")
@@ -284,6 +290,12 @@ def main() -> None:
         "finrobotEventAnalysis": finrobot_event_analysis,
         "dailyDataInventory": daily_data_inventory,
         "marketProfiles": market_profiles,
+        "scientificFrontier": scientific_frontier,
+        "scienceCommercialization": science_commercialization,
+        "technologyOwnership": technology_ownership,
+        "usptoAssignmentValidation": uspto_assignment_validation,
+        "institutionalOwnership": institutional_ownership,
+        "managementRadar": management_radar,
         "aiMedicinePeerScreen": ai_medicine_peer_screen,
         "aiMedicineThesisMemory": ai_medicine_thesis_memory,
         "serenityGate": serenity_gate_payload,

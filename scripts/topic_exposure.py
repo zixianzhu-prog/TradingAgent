@@ -59,17 +59,52 @@ def fda_exposure(root: Path) -> dict[str, dict]:
     return out
 
 
+KEEP = {"own-product": 1.0, "supplier": 0.8, "customer": 0.6, "mention": 0.5, "unread": 0.5}
+
+
+def read_relations(found: dict[str, dict], topic_key: str) -> dict[str, dict]:
+    """Open each candidate's filing and keep only companies whose text supports the link.
+
+    A phrase match alone kept competitors' risk factors, glossary lines and AI shells; the
+    filing-level reading (validate_topic_mapping.classify_filing) drops those and records the
+    relation. Without SEC_USER_AGENT only cached filings are read; the rest stay as "unread".
+    """
+    import os
+
+    import prepare_claude_review as claude
+    from validate_topic_mapping import classify_filing
+
+    allow_fetch = "@" in os.getenv("SEC_USER_AGENT", "")
+    kept = {}
+    for ticker, entry in found.items():
+        try:
+            text = claude.filing_text(entry["url"], allow_fetch=allow_fetch) or ""
+        except Exception:
+            text = ""
+        view = classify_filing(text, topic_key) if text else {"relation": "unread", "aiMentions": 0, "topicMentions": 0, "example": ""}
+        relation = view["relation"]
+        if relation not in KEEP:
+            continue
+        kept[ticker] = {**entry, "relation": relation, "topicMentions": view["topicMentions"], "aiMentions": view["aiMentions"],
+                        "evidence": view["example"][:400], "strength": round(entry["strength"] * KEEP[relation], 2)}
+    return kept
+
+
 def build(as_of: date, root: Path = ROOT, fetch=mapper.http_json) -> dict:
     start = as_of - timedelta(days=455)
     topics = {}
     for topic in TOPICS:
         try:
             companies = fda_exposure(root) if topic.get("fda_devices") else filing_exposure(topic["filings"], start, as_of, fetch=fetch, device=topic.get("device", False))
+            candidates = len(companies)
+            if not topic.get("fda_devices"):
+                companies = read_relations(companies, topic["key"])
             status = "ok"
         except Exception as exc:
-            companies, status = {}, f"error: {str(exc)[:120]}"
+            companies, candidates, status = {}, 0, f"error: {str(exc)[:120]}"
         ranked = dict(sorted(companies.items(), key=lambda kv: (-kv[1]["strength"], -kv[1]["filings"]))[:60])
-        topics[topic["key"]] = {"label": topic["label"], "status": status, "companies": ranked}
+        topics[topic["key"]] = {"label": topic["label"], "status": status, "phraseCandidates": candidates,
+                                "keptAfterReading": len(companies), "companies": ranked}
     return {"asOf": as_of.isoformat(), "window": {"start": start.isoformat(), "end": as_of.isoformat()},
             "fullExposureFilings": FULL_EXPOSURE_FILINGS, "topics": topics}
 

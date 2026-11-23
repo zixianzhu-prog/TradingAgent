@@ -5,7 +5,9 @@ The recommendation comes from the Serenity analysis of that company (chokepoint 
 not, which counter-theses hold, the sizing tier the skills imply), stored in
 state/serenity-claude-verdicts.json. A company with material news but no Serenity
 analysis yet is queued for one (state/serenity-analysis-queue.json) instead of being
-recommended on news alone.
+recommended on news alone. A company that already has one, but has material news dated after
+its review's latest primary document, is queued for a gate re-check
+(state/serenity-news-recheck-queue.json); the card says which.
 
 Earlier design notes (still accurate for the news layer):
 
@@ -44,7 +46,7 @@ import sqlite3
 import sys
 import urllib.parse
 from dataclasses import replace
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -78,6 +80,8 @@ STOP = set("a an and the of for to in on at by with as is are its it from after 
 # (type, pattern, default direction, materiality, gates it bears on). First match wins, so order matters.
 EVENT_RULES = [
     ("legal", r"lawsuit|sued|class action|investigation|subpoena|short seller|short report|recall|warning letter", -1, 2.5, ["management_governance", "counter_thesis"]),
+    # Insider trades ("CFO acquired 795 shares under an employee purchase plan") read as M&A on "acquired".
+    ("insider", r"employee (?:stock )?purchase plan|\bespp\b|(?:acquired|bought|sold|purchased) [\d,]+ (?:\w+ )?shares|\binsider (?:buy|sell|purchase|sale|trad)|form 4\b|(?:director|officer|ceo|cfo|chief \w+) (?:buys|sells|bought|sold)", 0, 0.5, ["management_governance"]),
     ("regulatory", r"\bfda\b|clearance|cleared|510\(k\)|de novo|breakthrough device|approv|ce mark", 1, 3.0, ["chokepoint_evidence", "supply_chain_map"]),
     # Analyst actions mention "Partners" (Leerink Partners) and must not read as partnerships.
     ("analyst", r"maintains|reiterates|price target|raises target|initiates coverage|\brating\b|upgrade|downgrade", 0, 1.0, []),
@@ -315,9 +319,9 @@ def extract_themes(companies: list[dict], articles: list[dict], as_of: datetime,
             "material": (len(topic["recent"]) >= 3 and len(sources) >= 2 and heat > 0)
                         or any(a["source"].startswith("Federal Register") and " Rule:" in a["title"] for a in topic["recent"]),
             "headlines": topic["recent"][:4],
-            "covered": [{"ticker": t, "strength": v["strength"]} for t, v in exposed.items() if t in covered][:8],
+            "covered": [{"ticker": t, "strength": v["strength"], "relation": v.get("relation")} for t, v in exposed.items() if t in covered][:8],
             # Only names that passed the market-wide screen's size and liquidity test; micro caps are not shown.
-            "uncovered": [{"ticker": t, "company": v["company"], "strength": v["strength"]} for t, v in exposed.items() if t not in covered and t in investable][:5],
+            "uncovered": [{"ticker": t, "company": v["company"], "strength": v["strength"], "relation": v.get("relation")} for t, v in exposed.items() if t not in covered and t in investable][:5],
         }
     return out
 
@@ -348,12 +352,73 @@ def serenity_tier(tier_text: str) -> str:
     return "serenity-watch"
 
 
+# News types that can change a Serenity conclusion. Analyst notes, commentary and insider trades do not.
+RECHECK_TYPES = {"earnings", "legal", "regulatory", "reimbursement", "m&a", "leadership", "financing",
+                 "partnership", "clinical", "product", "filing", "disclosure"}
+PERIOD_ENDS = {"0331", "0630", "0930", "1231"}
+FILING_LAG_DAYS = 40  # a 10-Q/10-K usually reaches EDGAR 30-45 days after its period ends
+SAME_QUARTER_DAYS = 45  # earnings news this soon after the evidence date is about the quarter already read
+
+
+def evidence_through(packet: dict) -> date | None:
+    """Latest date the review's primary documents speak for.
+
+    SEC file names carry a date: a period end (rdnt-20260930.htm, filed ~40 days later) or the
+    document date of an 8-K exhibit (htfl-20261112xex99_1.htm). FDA passages carry publishedAt.
+    """
+    latest = None
+    for passage in packet.get("evidence", []):
+        found = re.search(r"(20\d{2})(\d{2})(\d{2})", passage.get("url", "").rsplit("/", 1)[-1])
+        day = None
+        if found:
+            try:
+                day = date(int(found.group(1)), int(found.group(2)), int(found.group(3)))
+            except ValueError:
+                day = None
+            if day and found.group(2) + found.group(3) in PERIOD_ENDS:
+                day = day + timedelta(days=FILING_LAG_DAYS)
+        elif passage.get("publishedAt"):
+            try:
+                day = date.fromisoformat(str(passage["publishedAt"])[:10])
+            except ValueError:
+                day = None
+        if day and (latest is None or day > latest):
+            latest = day
+    return latest
+
+
+def news_recheck(bucket: list[dict], through: date | None) -> dict:
+    """Material news dated after the review's evidence reopens the gates it bears on."""
+    if through is None:
+        return {"status": "no-review-evidence", "evidenceThrough": None, "events": [], "gates": []}
+    fresh = []
+    for e in bucket:
+        at = e.get("at")
+        day = at.date() if isinstance(at, datetime) else (date.fromisoformat(str(at)[:10]) if at else None)
+        periodic = e.get("type") == "earnings" or (e.get("type") == "filing" and re.search(r"10-[QK]|20-F|6-K", e.get("title", "")))
+        # Earnings-call write-ups and analyses of a quarter whose report is already in the evidence add nothing new.
+        if periodic and day and (day - through).days <= SAME_QUARTER_DAYS:
+            continue
+        if day and day > through and e.get("type") in RECHECK_TYPES and e.get("materiality", 0) >= 1.0:
+            fresh.append({"title": e["title"], "type": e["type"], "date": day.isoformat(), "url": e.get("url"),
+                          "gates": e.get("gates") or ["earnings_validation"]})
+    gates = sorted({g for e in fresh for g in e["gates"]})
+    return {"status": "queued" if fresh else "current", "evidenceThrough": through.isoformat(), "events": fresh[:5], "gates": gates}
+
+
 def recommend(companies: list[dict], events: dict[str, list[dict]], root: Path = ROOT, themes: dict | None = None) -> list[dict]:
     gates = {r["ticker"]: r for r in json.loads((root / "state/serenity-gate-results.json").read_text(encoding="utf-8")).get("companies", [])}
     top5_path = root / "state/ai-medicine-top5.json"
     ranked = {r["ticker"]: r for r in json.loads(top5_path.read_text(encoding="utf-8")).get("ranking", [])} if top5_path.exists() else {}
     verdict_path = root / "state/serenity-claude-verdicts.json"
     verdicts = {r["ticker"]: r for r in json.loads(verdict_path.read_text(encoding="utf-8")).get("companies", [])} if verdict_path.exists() else {}
+    manifest_path = root / "state/serenity-claude-queue.json"
+    packets = {}
+    if manifest_path.exists():
+        for entry in json.loads(manifest_path.read_text(encoding="utf-8")).get("companies", []):
+            path = root / entry.get("packetPath", "")
+            if path.exists():
+                packets[entry["ticker"]] = json.loads(path.read_text(encoding="utf-8"))
     calls = []
     for company in companies:
         ticker = company["ticker"]
@@ -407,6 +472,8 @@ def recommend(companies: list[dict], events: dict[str, list[dict]], root: Path =
             "themes": via[:3], "driver": ("company news" if material_pos or material_neg else "theme" if material_themes else "none"),
             "trigger": trigger, "decision": decision,
             "serenity": ({k: verdict.get(k) for k in ("chokepoint", "countersHolding", "bucket", "tier", "verdict", "memo")} if verdict else None),
+            # Reviewed companies: does news after the review's latest primary document reopen any gates?
+            "recheck": news_recheck(bucket, evidence_through(packets[ticker])) if verdict and ticker in packets else None,
         })
     order = {"serenity-standard": 0, "serenity-starter": 1, "serenity-watch": 2, "awaiting-serenity": 3, "warning": 4, "no catalyst": 5}
     calls.sort(key=lambda c: (order[c["decision"]], -c["newsSignal"]))
@@ -464,6 +531,10 @@ def main() -> None:
               "hasSerenityMemo": bool(c["serenity"])}
              for c in calls if c["trigger"] != "none" and (not c["serenity"] or c["trigger"] == "negative")]
     (ROOT / "state/serenity-analysis-queue.json").write_text(json.dumps({"generatedAt": payload["generatedAt"], "queue": sorted(queue, key=lambda q: -abs(q["newsSignal"]))}, indent=2, ensure_ascii=False), encoding="utf-8")
+    # Reviewed companies with material news dated after their review's evidence: re-check those gates.
+    rechecks = [{"ticker": c["ticker"], "company": c["company"], "tier": (c.get("serenity") or {}).get("tier"), **c["recheck"]}
+                for c in payload["calls"] if (c.get("recheck") or {}).get("status") == "queued"]
+    (ROOT / "state/serenity-news-recheck-queue.json").write_text(json.dumps({"generatedAt": payload["generatedAt"], "queue": rechecks}, indent=2, ensure_ascii=False), encoding="utf-8")
     Path(args.json_output).parent.mkdir(parents=True, exist_ok=True)
     Path(args.json_output).write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
     write_markdown(payload, Path(args.markdown_output))

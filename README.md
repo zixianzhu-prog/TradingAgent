@@ -24,7 +24,7 @@
 ## 总体架构
 
 ```text
-RSS / RSSHub / changedetection.io / FDA / SEC / ClinicalTrials.gov / Form 4
+RSS / RSSHub / changedetection.io / OpenAlex / PubMed / FDA / SEC / ClinicalTrials.gov / Form 4
                               │
                               ▼
                   trend-agent：抓取、去重、时间戳
@@ -66,6 +66,7 @@ RSS / RSSHub / changedetection.io / FDA / SEC / ClinicalTrials.gov / Form 4
 | [changedetection.io](https://github.com/dgtlmoon/changedetection.io) | 监控重要网页变化 | **Webhook 接口已实现**，变化进入 `trend-agent` |
 | [RSSHub](https://github.com/DIYgod/RSSHub) | 将不同网站转换成统一 RSS 信息源 | **Feed 接口已实现**，可接自建 RSSHub 路由 |
 | Serenity/Aleabit skills | 供应链卡位、选股、研究流程、进出场、仓位和风险框架 | **方法论已转成确定性门槛**；当前核心使用 research-process、stock-selection 和 chokepoint-thesis |
+| [OpenAlex](https://docs.openalex.org/) + [PubMed](https://www.ncbi.nlm.nih.gov/books/NBK25501/) | 追踪前沿论文、作者、机构、基金与新技术方向 | **直接接入科研发现层**；技术重合只能产生公司候选，不能自动成为商业证据 |
 | FinMem | 分层记忆、历史决策引用和反思思想 | **借鉴架构、独立实现**；没有复制或运行其完整交易代码 |
 
 ### 最初 X 文章对应的十仓库路线
@@ -232,12 +233,58 @@ AI Medicine 同行的“研究优先分”使用另一套公开公式：AI Medic
 
 ## 如何运行
 
-### 在当前已经配置好的工作区运行一次完整流程
+### 在当前已经配置好的工作区运行一次标准流程
 
 ```bash
 cd "/Users/rezz/Documents/Codex/2026-10-27/x20-wps-highlight"
 ./run-daily-investment-agent.sh
 ```
+
+默认是 `collect` 模式：抓取、规则计算、市场数据、证据包和报告均会更新，但不会调用 Claude、TradingAgents 或任何模型 API，适合每天低成本运行。
+
+只有需要重新做深度辩论和模型抽取时才运行：
+
+```bash
+AGENT_MODE=deep ./run-daily-investment-agent.sh
+```
+
+`deep` 模式仍使用已有订阅登录，并缓存未变化的结果；它不会连接券商。科研发现报告位于
+[`outputs/scientific-frontier.md`](outputs/scientific-frontier.md)，结构化关系图保存在
+`state/scientific-frontier.json`。
+
+第一优先级的“科研到商业化”链路由
+[`scripts/science_commercialization_graph.py`](scripts/science_commercialization_graph.py) 构建。它把论文/研究者、
+专利或技术许可证据、Form D 融资、8-K 药企付款、IND/ClinicalTrials.gov 临床进展和 SEC XBRL 收入放在同一家公司下，
+输出 [`outputs/science-commercialization-graph.md`](outputs/science-commercialization-graph.md) 和
+`state/science-commercialization-graph.json`。技术相似只进入发现层；合作公告不等于客户收入；没有原始材料的关系会显示为缺口，
+不会被自动打成通过。已经核验的创始人、专利受让或大学许可关系可加入
+`trend-agent/science-commercialization-links.json`，且必须附原文、链接和 `verified` 状态。
+
+[`scripts/technology_ownership_agent.py`](scripts/technology_ownership_agent.py) 会先从已保存的 SEC 证据包中提取严格的创始人、
+“we own…” 专利组合及独家许可原句，输出 [`outputs/technology-ownership.md`](outputs/technology-ownership.md)。
+“可能无法保护专利”“即使我们持有专利”等风险或假设句会被排除。SEC 披露只能证明公司这样披露，仍会保留
+“等待 USPTO 专利受让记录或大学技术转移材料独立复核”的缺口。
+
+独立核验队列位于 [`outputs/uspto-assignment-validation.md`](outputs/uspto-assignment-validation.md)。USPTO 在 2026 年要求
+Open Data Portal 登录/API Key；当前实现不会绕过认证。可以在官方 Assignment Center 按受让人检索，把 reel/frame、
+assignor、assignee、recorded date 和官方 URL 规范化加入 `trend-agent/uspto-assignment-evidence.json`，系统下一次运行就会更新
+`independentAssignmentVerified`。没有官方记录时保持 pending，不解释成“没有专利”。
+
+[`scripts/institutional_ownership_agent.py`](scripts/institutional_ownership_agent.py) 监控 SEC Schedule 13D/13G 重要股东。
+运行前需要设置 SEC 要求的联系信息：
+
+```bash
+SEC_USER_AGENT='SerenityResearch your-email@example.com' \
+  trend-agent/.venv/bin/python scripts/institutional_ownership_agent.py
+```
+
+或者只配置一次，后续每日脚本自动读取本地且 Git 忽略的文件：
+
+```bash
+./scripts/save_sec_user_agent.sh
+```
+
+13D/13G 证明重要股东持有超过申报门槛的受益所有权，但不代表这些资金进入公司；因此它与 Form D/增发融资分栏展示。
 
 正常完成后，终端会列出主要报告路径。最重要的结果是：
 
@@ -251,6 +298,11 @@ cd "/Users/rezz/Documents/Codex/2026-10-27/x20-wps-highlight"
 - [`outputs/daily-investment-agent.md`](outputs/daily-investment-agent.md)：当日综合报告。
 - [`outputs/hidden-gems.md`](outputs/hidden-gems.md)：Serenity 冷门小中盘候选与待验证缺口。
 - [`outputs/market-profile-audit.md`](outputs/market-profile-audit.md)：市值、成交额、波动和数据新鲜度审计。
+- [`outputs/management-radar.md`](outputs/management-radar.md)：核心人物、8-K 管理层变动、Form 4 买卖及受影响的 Serenity 门槛。
+- [`outputs/science-commercialization-graph.md`](outputs/science-commercialization-graph.md)：论文 → 技术归属 → 融资 → 药企付款 → 临床 → 收入的可审计证据链和缺口。
+- [`outputs/technology-ownership.md`](outputs/technology-ownership.md)：SEC 原文中的创始人、专利组合和独家许可证据，以及独立复核边界。
+- [`outputs/uspto-assignment-validation.md`](outputs/uspto-assignment-validation.md)：待核验的专利受让队列、官方记录和导入状态。
+- [`outputs/institutional-ownership.md`](outputs/institutional-ownership.md)：13D/13G 重要股东、持股比例及主动/被动申报类别。
 - [`outputs/daily-data-inventory.md`](outputs/daily-data-inventory.md)：新闻、冻结预测、主题队列、回填样本和原始运行文件台账。
 - [`docs/blind-research-benchmark.md`](docs/blind-research-benchmark.md)：与通用 GPT/Claude 联网深研进行同股票池、同截止时间盲测的协议；样本成熟前不宣称预测更准。
 
@@ -270,13 +322,13 @@ python3 scripts/run_tradingagents_full_review.py --tickers RDNT --force --limit 
 
 默认使用已经登录的 ChatGPT 订阅、`gpt-5.6-luna` 快速模型和 `gpt-5.6-sol` 深度模型。默认单轮辩论已覆盖全部角色；`--depth 3` 或 `5` 会增加辩论轮数，但耗时和额度消耗明显上升。完整报告保存在 `work/TradingAgents/data/logs/reports/`，结构化结果写入 `state/tradingagents-reviews.json` 并显示在股票详情 UI。
 
-每日标准流程默认最多轮换审查一家公司：
+深度模式默认最多轮换审查一家公司：
 
 ```bash
-./run-daily-investment-agent.sh
+AGENT_MODE=deep ./run-daily-investment-agent.sh
 ```
 
-默认七天内不会重复审查同一家公司。临时不调用模型时可以运行 `RUN_TRADINGAGENTS_FULL_REVIEW=0 ./run-daily-investment-agent.sh`。TradingAgents 结论是独立验证意见，不会绕过 Serenity 的证据、估值和事件门槛。
+默认七天内不会重复审查同一家公司。普通 `./run-daily-investment-agent.sh` 不调用模型。TradingAgents 结论是独立验证意见，不会绕过 Serenity 的证据、估值和事件门槛。
 
 ### 打开 Dashboard
 
