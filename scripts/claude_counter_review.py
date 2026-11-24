@@ -158,6 +158,8 @@ def main() -> None:
         if not answer:
             return t, None, 0, "no answer"
         gate, dropped = to_gate(answer, passages, valuation_check(tickets.get(t)))
+        if ser.failed_run(gate, dropped):
+            return t, None, dropped, f"none of {dropped} quotes matched the filings (a failed run, not evidence)"
         return t, gate, dropped, ""
 
     with ThreadPoolExecutor(max_workers=3) as pool:

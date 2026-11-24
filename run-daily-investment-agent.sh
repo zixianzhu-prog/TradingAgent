@@ -253,10 +253,15 @@ if [ ! -f "$SCREEN_STATE" ] || [ -n "$(find "$SCREEN_STATE" -mtime +6 2>/dev/nul
     if [ -n "$QUEUE" ]; then
       PYTHONPATH=scripts python3 scripts/claude_customer_review.py --tickers $QUEUE || echo "Customer-gate review failed; keeping the last grades"
       PYTHONPATH=scripts python3 scripts/claude_management_review.py --proxy --tickers $QUEUE || echo "Governance review failed; keeping the last grades"
+      PYTHONPATH=scripts python3 scripts/claude_chain_review.py --tickers $QUEUE || echo "Supply-chain/earnings review failed; keeping the last grades"
     fi
     # Opus argues against the memos behind live tickets (cached on unchanged evidence); a verified hard-gate fail makes the ticket wait.
     PYTHONPATH=scripts python3 scripts/claude_adversarial_review.py --model "${CLAUDE_ADVERSARIAL_MODEL:-opus}" \
       || echo "Adversarial review failed; keeping the last result"
+    # Counter-thesis gate re-graded after the adversarial pass, so its challenges are read as passages.
+    if [ -n "$QUEUE" ]; then
+      PYTHONPATH=scripts python3 scripts/claude_counter_review.py --tickers $QUEUE || echo "Counter-thesis review failed; keeping the last grades"
+    fi
   fi
   # Upstream bottleneck map and Serenity evidence packets for newly shortlisted names.
   PYTHONPATH=scripts trend-agent/.venv/bin/python scripts/ai_medicine_chokepoints.py

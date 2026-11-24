@@ -37,6 +37,11 @@ def read(path, default):
     return json.loads(p.read_text()) if p.is_file() else default
 
 
+def failed_run(gate: dict, dropped: int) -> bool:
+    """A model re-grade whose every quote failed verification is a broken run, not evidence; keep the last grade."""
+    return bool(dropped) and not (gate.get("support") or gate.get("counter"))
+
+
 def digest(value):
     return hashlib.sha256(json.dumps(value, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
 

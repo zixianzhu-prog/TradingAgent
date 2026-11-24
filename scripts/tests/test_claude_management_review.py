@@ -56,3 +56,12 @@ def test_proxy_passages_include_resolution_text(monkeypatch):
     monkeypatch.setattr(m.pcr, "filing_text", lambda url, allow=True: text)
     ps = m.proxy_passages("https://www.sec.gov/x", limit=1)
     assert any("automatically converted" in p["text"] for p in ps)
+
+
+def test_roster_chunk_skips_exhibit_index():
+    import claude_management_review as cmr
+    exhibits = "12.1 Certification of Chief Executive Officer 12.2 Certification of Chief Financial Officer"
+    roster = "Name Position Jurgi Camblong Chief Executive Officer and Director Ross Muken Chief Financial Officer"
+    text = roster + " " + "x" * 5000 + " " + exhibits
+    assert "Ross Muken" in cmr.roster_chunk(text)
+    assert cmr.roster_chunk(exhibits) == ""

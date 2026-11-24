@@ -149,6 +149,48 @@ def proxy_passages(url: str, allow_fetch: bool = True, limit: int = 16) -> list[
             for _, c in keep]
 
 
+def roster_chunk(text: str, span: int = 1500) -> str:
+    """The first passage naming both a Chief Executive Officer and a Chief Financial Officer outside the exhibit index."""
+    ceo = [m.start() for m in re.finditer(r"Chief Executive Officer", text)]
+    cfo = [m.start() for m in re.finditer(r"Chief Financial Officer", text)]
+    for a in ceo:
+        for b in cfo:
+            if abs(a - b) <= span:
+                start, end = max(0, min(a, b) - 600), max(a, b) + 600
+                chunk = text[start:end]
+                if not re.search(r"[Cc]ertification", chunk):
+                    return chunk
+    return ""
+
+
+OFFICER = re.compile(r"Chief (?:Executive|Financial) Officer|\bCEO\b|\bCFO\b|promoted|appointed|succe(?:ed|ssor)", re.I)
+
+
+def six_k_passages(cik: str, agent: str, allow_fetch: bool = True, limit: int = 4) -> list[dict]:
+    """Officer mentions in the documents of the latest 6-K (the cover plus its exhibits)."""
+    import beneficiary_mapper as mapper
+    subs = mapper.http_json(f"https://data.sec.gov/submissions/CIK{int(cik):010d}.json", agent)
+    recent = subs.get("filings", {}).get("recent", {})
+    row = next((r for r in zip(recent.get("form", []), recent.get("accessionNumber", []), recent.get("filingDate", [])) if r[0] == "6-K"), None)
+    if not row:
+        return []
+    base = f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{row[1].replace('-', '')}/"
+    try:
+        names = [i["name"] for i in mapper.http_json(base + "index.json", agent)["directory"]["item"] if i["name"].endswith(".htm") and "index" not in i["name"]]
+    except Exception:
+        return []
+    out = []
+    for name in names:
+        text = pcr.filing_text(base + name, allow_fetch) or ""
+        for m in OFFICER.finditer(text):
+            chunk = text[max(0, m.start() - 500):m.start() + 500]
+            if not any(chunk[:200] in o["text"] for o in out):
+                out.append({"id": "sk_" + ser.digest([base + name, chunk])[:16], "url": base + name, "event": f"6-K filed {row[2]}: {name}", "text": chunk})
+            if len(out) >= limit:
+                return out
+    return out
+
+
 def signature_passages(cik: str, agent: str, allow_fetch: bool = True) -> list[dict]:
     """The signature block of the latest 10-Q/10-K: who signed as principal executive and financial officer, last quarter."""
     import claude_serenity_memo as csm
@@ -156,6 +198,12 @@ def signature_passages(cik: str, agent: str, allow_fetch: bool = True) -> list[d
     filings = sorted(csm.latest_filings(cik, agent), key=lambda f: f[1], reverse=True)
     for form, filed, url in filings:
         text = pcr.filing_text(url, allow_fetch) or ""
+        if form.startswith(("20-F", "40-F")):
+            # Foreign filers sign no quarterly report: the officer roster sits in Item 6 of the annual report, and the latest
+            # 6-K results release says who leads the company now.
+            chunk = roster_chunk(text)
+            out = [{"id": "sg_" + ser.digest([url, chunk])[:16], "url": url, "event": f"{form} filed {filed}: senior management", "text": chunk}] if chunk else []
+            return out + six_k_passages(cik, agent, allow_fetch)
         hits = [m.start() for m in re.finditer(r"Principal (?:Executive|Financial) Officer|Chief Financial Officer", text)]
         if hits:
             start = max(0, hits[-1] - 1500)
@@ -312,6 +360,8 @@ def main() -> None:
         if not answer:
             return ticker, None, 0, gate
         new, dropped = to_gate(answer, passages)
+        if ser.failed_run(new, dropped):
+            return ticker, None, dropped, gate
         return ticker, new, dropped, gate
 
     with ThreadPoolExecutor(max_workers=args.parallel) as pool:
