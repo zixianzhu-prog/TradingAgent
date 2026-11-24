@@ -26,3 +26,13 @@ def test_form4_only_pass_is_capped_at_partial():
     gate = {"status": "pass", "reason": "r", "missing": [],
             "support": [{"url": "https://www.sec.gov/a/x-10k.htm", "quote": "CEO since 2012"}]}
     assert cmr.cap_pass(gate)["status"] == "pass"
+
+
+def test_proxy_passages_include_resolution_text(monkeypatch):
+    import claude_management_review as m
+    filler = "The board met five times. " * 120
+    text = ("Ms. A is an independent director. Related person transactions are reviewed. " * 3 + filler
+            + "The notes were automatically converted upon the completion of our initial public offering. " + filler)
+    monkeypatch.setattr(m.pcr, "filing_text", lambda url, allow=True: text)
+    ps = m.proxy_passages("https://www.sec.gov/x", limit=1)
+    assert any("automatically converted" in p["text"] for p in ps)

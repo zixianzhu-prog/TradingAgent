@@ -1,6 +1,6 @@
 # 模拟订单条件（研究用，需人工确认）
 
-生成：2026-11-24T00:15；假设组合规模 $100,000。只在模拟盘执行，真实交易关闭。
+生成：2026-11-24T01:15；假设组合规模 $100,000。只在模拟盘执行，真实交易关闭。
 
 > 规则对每家公司相同：动作由 Serenity 结论和价格相对下单区间决定；仓位按 Serenity 分档（试探 1%、标准 5%、单只上限 10%），再按单日回撤、日成交额和现金跑道下调；只在财报、客户或合作披露验证后加仓；不设紧止损，论点被证伪才退出。
 
@@ -16,14 +16,14 @@
 | **等待** | CBLL | $28.77 | $24.62 | $16.11 | — | Price $28.77 is 17% above $24.62; it implies 20% growth a year against 16% in the base case |
 | **等待** | ISRG | $416.49 | $301.66 | $247.15 | — | Price $416.49 is 38% above $301.66; it implies 20% growth a year against 12% in the base case |
 | **等待** | RDNT | $72.45 | $58.63 | $34.62 | — | Price $72.45 is 24% above $58.63; it implies 13% growth a year against 9% in the base case |
-| **等待** | GEHC | $81.31 | — | — | — | No valuation range (no 5-year scenario model), so no limit price |
-| **等待** | NTRA | $292.39 | — | — | — | No valuation range (no 5-year scenario model), so no limit price |
-| **等待** | RXRX | $2.66 | — | — | — | No valuation range: discovery platform, a one-asset rNPV understates it; today's price implies $23,938M peak sales for the lead asset |
-| **等待** | CERT | $10.71 | — | — | — | No valuation range (no 5-year scenario model), so no limit price |
-| **等待** | GH | $154.17 | — | — | — | Evidence incomplete: primary-source completeness 45 is below the bar |
-| **等待** | ABCL | $10.53 | — | — | — | No valuation range: discovery platform, a one-asset rNPV understates it; today's price implies $32,515M peak sales for the lead asset |
+| **等待** | GEHC | $80.64 | — | — | — | No valuation range (no 5-year scenario model), so no limit price |
+| **等待** | NTRA | $273.40 | — | — | — | No valuation range (no 5-year scenario model), so no limit price |
+| **等待** | RXRX | $2.45 | — | — | — | No valuation range: discovery platform, a one-asset rNPV understates it; today's price implies $23,938M peak sales for the lead asset |
+| **等待** | CERT | $10.55 | — | — | — | No valuation range (no 5-year scenario model), so no limit price |
+| **等待** | GH | $145.83 | — | — | — | Evidence incomplete: primary-source completeness 45 is below the bar |
+| **等待** | ABCL | $9.69 | — | — | — | No valuation range: discovery platform, a one-asset rNPV understates it; today's price implies $32,515M peak sales for the lead asset |
 | **等待** | IRD | $3.97 | $2.42 | $0.68 | — | Price $3.97 is 64% above the rNPV base value $2.42; it implies $2,162M peak sales for the lead asset |
-| **回避** | IQV | $251.92 | — | — | — | Serenity verdict is reject: a gate is contradicted by a primary source |
+| **回避** | IQV | $245.82 | — | — | — | Serenity verdict is reject: a gate is contradicted by a primary source |
 
 ## CAI · 模拟试探仓 0.5%（$500）
 

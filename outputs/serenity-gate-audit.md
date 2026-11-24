@@ -33,7 +33,7 @@
 | HCAT | watch | 36/100 | 68/100 | 49/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | HIMS | watch | 14/100 | 39/100 | 24/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | HNGE | watch | 29/100 | 55/100 | 39/100 | supply_chain_map, customer_dependency | 无 | 是 |
-| HTFL | watch | 85/100 | 66/100 | 77/100 | 无 | 无 | 是 |
+| HTFL | watch | 85/100 | 68/100 | 78/100 | 无 | 无 | 是 |
 | HURA | watch | 10/100 | 65/100 | 32/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | HYPR | watch | 43/100 | 66/100 | 52/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | IBIO | watch | 26/100 | 66/100 | 42/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
@@ -58,9 +58,9 @@
 | RDNT | watch | 80/100 | 65/100 | 74/100 | 无 | 无 | 是 |
 | RMD | watch | 41/100 | 58/100 | 48/100 | supply_chain_map, customer_dependency | 无 | 是 |
 | RNA | watch | 0/100 | 62/100 | 25/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
-| RXRX | watch | 82/100 | 68/100 | 76/100 | earnings_validation | 无 | 是 |
+| RXRX | watch | 82/100 | 77/100 | 80/100 | earnings_validation | 无 | 是 |
 | RYTM | watch | 14/100 | 42/100 | 25/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
-| SDGR | watch | 53/100 | 69/100 | 59/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
+| SDGR | watch | 53/100 | 71/100 | 60/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | SGMT | watch | 17/100 | 71/100 | 39/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | SOPH | watch | 48/100 | 54/100 | 50/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | TECX | watch | 19/100 | 56/100 | 34/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
