@@ -1,6 +1,6 @@
 # 科研到商业化证据链
 
-> 已连接 57 家公司；合作或公司收入信号 17 家；研究者/公司关系 13 家；公司披露技术归属 18 家；USPTO 独立核验 7 家；13D/13G 重要股东 42 家；完整链路 0 家。
+> 已连接 57 家公司；合作或公司收入信号 17 家；研究者/公司关系 16 家；公司披露技术归属 18 家；USPTO 独立核验 7 家；13D/13G 重要股东 42 家；完整链路 0 家。
 
 > 这是可审计研究漏斗，不是股票评分。技术相似、论文提及或合作公告都不能单独证明知识产权、客户收入或买入价值。
 
@@ -11,21 +11,22 @@
 | IRD | 0 | 0 | 8 | 1 | 8 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | PRME | 0 | 0 | 12 | 1 | 3 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | ABCL | 1 | 6 | 3 | 1 | 2 | 0 | 2 | 1 | ownership-and-company-revenue-verified |
+| RXRX | 1 | 1 | 1 | 1 | 8 | 0 | 3 | 1 | ownership-and-company-revenue-verified |
 | BDSX | 0 | 0 | 6 | 1 | 8 | 0 | 0 | 0 | science-linked |
 | NTRA | 1 | 3 | 0 | 1 | 8 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
-| RXRX | 0 | 0 | 1 | 1 | 8 | 0 | 3 | 1 | ownership-and-company-revenue-verified |
+| SDGR | 1 | 1 | 2 | 1 | 6 | 0 | 2 | 1 | ownership-and-company-revenue-verified |
 | FATE | 1 | 1 | 5 | 1 | 4 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | HURA | 0 | 0 | 9 | 1 | 2 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | ANTX | 0 | 0 | 3 | 0 | 8 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | CGEM | 0 | 0 | 2 | 1 | 8 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | PALI | 0 | 0 | 1 | 2 | 8 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
-| SDGR | 0 | 0 | 2 | 1 | 6 | 0 | 2 | 1 | ownership-and-company-revenue-verified |
+| TEM | 1 | 2 | 0 | 1 | 7 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
 | KALA | 0 | 0 | 3 | 1 | 7 | 0 | 0 | 0 | science-linked |
 | GH | 1 | 1 | 0 | 1 | 6 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
 | IMTX | 0 | 1 | 1 | 0 | 8 | 0 | 0 | 0 | science-linked |
 | NAUT | 0 | 2 | 0 | 0 | 8 | 0 | 0 | 0 | science-linked |
 | ODTX | 1 | 1 | 0 | 1 | 7 | 0 | 0 | 0 | science-linked |
-| TEM | 0 | 1 | 0 | 1 | 7 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
+| SGMT | 1 | 1 | 0 | 1 | 7 | 0 | 0 | 0 | science-linked |
 | YARW | 0 | 0 | 1 | 1 | 8 | 0 | 0 | 0 | science-linked |
 | ANIK | 1 | 1 | 0 | 0 | 6 | 1 | 0 | 0 | commercial-signal-with-ownership-gap |
 | CERT | 1 | 1 | 0 | 0 | 6 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
@@ -37,7 +38,6 @@
 | RNA | 0 | 0 | 0 | 0 | 8 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | GEHC | 0 | 0 | 0 | 0 | 7 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
 | HCAT | 0 | 0 | 0 | 0 | 8 | 0 | 0 | 0 | evidence-fragment |
-| SGMT | 0 | 0 | 0 | 1 | 7 | 0 | 0 | 0 | evidence-fragment |
 | AGMB | 0 | 0 | 0 | 0 | 7 | 0 | 0 | 0 | evidence-fragment |
 | NVDA | 1 | 0 | 0 | 0 | 5 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
 | OABI | 0 | 0 | 4 | 1 | 2 | 0 | 0 | 0 | science-linked |
@@ -159,6 +159,25 @@
 - [OpenAlex author affiliation](https://doi.org/10.1080/19420862.2024.2394229) · researcher_company_affiliation：Alaa Amash, Gesa Volkers, Patrick J. Farber, Daniel Griffin affiliated with AbCellera (Canada) on Developability considerations for bispecific and multispecific antibodies
 - [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1703057/000170305726000012/abcl-20251231.htm) · license：Patent Portfolio We have developed an expansive patent portfolio with claims related to multiple aspects of our discovery and development capabilities, beginning with our first patent applications exclusively licensed from UBC in 2013.
 
+## RXRX · Recursion Pharmaceuticals
+
+已有商业信号，但不能把合作公告当成客户收入；仍按缺口继续核验。
+
+**尚缺证据**
+- 公司已在 SEC 披露专利/许可，但尚缺 USPTO 或大学技术转移材料独立复核
+- 缺大药厂付费、许可或具有经济条款的合作证据
+- 公司总收入已核验，但尚不能证明收入来自相关 AI/科研技术
+
+**已核验证据**
+- [OpenAlex company institution](https://doi.org/10.1101/2025.06.14.659707) · company_authored_research：73 papers since 2023-11-24 list Recursion (United States) as an author institution; most cited: Boltz-2: Towards Accurate and Efficient Binding Affinity Prediction
+- [OpenAlex author affiliation](https://doi.org/10.1101/2025.06.14.659707) · researcher_company_affiliation：Stephan Thaler, Julien Roy, Dominique Beaini affiliated with Recursion (United States) on Boltz-2: Towards Accurate and Efficient Binding Affinity Prediction
+- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/rxrx-20251231.htm) · license：10-K 001-40323 10.21 February 29, 2024 10.26#^ Amended and Restated License Agreement between the Registrant and University of Utah Research Foundation, dated February 9, 2016.
+- [SEC XBRL](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/) · equity_raise：Cash received from issuing equity (XBRL ProceedsFromIssuanceOfCommonStock): 2024-01-01 to 2024-12-31: $300.4M (10-K); 2025-01-01 to 2025-12-31: $528.9M (10-K); 2026-01-01 to 2026-09-30: $85.5M (10-Q)
+- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1601830/000110465926126833/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：ARK Investment Management LLC reported beneficial ownership of 8.36% on SCHEDULE 13G/A.
+- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1601830/000009375126000711/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：STATE STREET CORPORATION reported beneficial ownership of 5.6% on SCHEDULE 13G.
+- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1601830/000009375126000530/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：STATE STREET CORPORATION reported beneficial ownership of 6.6% on SCHEDULE 13G.
+- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1601830/000210012126000994/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Vanguard Portfolio Management reported beneficial ownership of 5.97% on SCHEDULE 13G.
+
 ## BDSX · BIODESIX INC
 
 目前只到科研/关系发现层，不能升级为商业化结论。
@@ -199,25 +218,24 @@
 - [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1604821/000031506626002940/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：FMR LLC reported beneficial ownership of 10.5% on SCHEDULE 13G/A.
 - [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1604821/000031506626002810/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：FMR LLC reported beneficial ownership of 9.5% on SCHEDULE 13G.
 
-## RXRX · Recursion Pharmaceuticals
+## SDGR · Schrodinger
 
 已有商业信号，但不能把合作公告当成客户收入；仍按缺口继续核验。
 
 **尚缺证据**
-- 缺论文作者/创始人与公司的原始关系证据
 - 公司已在 SEC 披露专利/许可，但尚缺 USPTO 或大学技术转移材料独立复核
 - 缺大药厂付费、许可或具有经济条款的合作证据
 - 公司总收入已核验，但尚不能证明收入来自相关 AI/科研技术
 
 **已核验证据**
-- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/rxrx-20251231.htm) · license：10-K 001-40323 10.21 February 29, 2024 10.26#^ Amended and Restated License Agreement between the Registrant and University of Utah Research Foundation, dated February 9, 2016.
-- [SEC XBRL](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/) · equity_raise：Cash received from issuing equity (XBRL ProceedsFromIssuanceOfCommonStock): 2024-01-01 to 2024-12-31: $300.4M (10-K); 2025-01-01 to 2025-12-31: $528.9M (10-K); 2026-01-01 to 2026-09-30: $85.5M (10-Q)
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1601830/000110465926126833/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：ARK Investment Management LLC reported beneficial ownership of 8.36% on SCHEDULE 13G/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1601830/000009375126000711/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：STATE STREET CORPORATION reported beneficial ownership of 5.6% on SCHEDULE 13G.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1601830/000009375126000530/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：STATE STREET CORPORATION reported beneficial ownership of 6.6% on SCHEDULE 13G.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1601830/000210012126000994/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Vanguard Portfolio Management reported beneficial ownership of 5.97% on SCHEDULE 13G.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1601830/000210011926001441/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Vanguard Capital Management reported beneficial ownership of 5.09% on SCHEDULE 13G.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1601830/000201238326002868/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：BlackRock, Inc. reported beneficial ownership of 8.5% on SCHEDULE 13G/A.
+- [OpenAlex company institution](https://doi.org/10.1038/s41596-024-01011-0) · company_authored_research：204 papers since 2023-11-24 list Schrodinger (United States) as an author institution; most cited: The HADDOCK2.4 web server for integrative modeling of biomolecular complexes
+- [OpenAlex author affiliation](https://doi.org/10.1038/s41596-024-01011-0) · researcher_company_affiliation：João Rodrigues, Gydo C. P. van Zundert affiliated with Schrodinger (United States) on The HADDOCK2.4 web server for integrative modeling of biomolecular complexes
+- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) · license：The Prior Columbia License Agreements provided for our rights and obligations with respect to certain patents, software code, technology and improvements that it licenses from Columbia University and that are used in, and integrated into, our software solutions and computational platform.
+- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) · license：The 2003 Columbia Agreement grants us a worldwide, exclusive license to the protein local optimization program software code, or the PLOP Code, developed at Columbia University and the University of California and all software code comprising improvements to the PLOP Code that are developed by Columbia University or the University of California, or the PLOP Improvements, in each case, to reproduce, use, execute, copy, compile, operate, sublicense, and distribute in connection with the marketing and sale of our products and services, to develop improvements thereto, and to conduct research and backup disaster recovery.
+- [SEC XBRL](https://www.sec.gov/Archives/edgar/data/1490978/000149097825000014/) · equity_raise：Cash received from issuing equity (XBRL ProceedsFromIssuanceOfCommonStock): 2024-01-01 to 2024-12-31: $8.9M (10-K)
+- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1490978/000110465926128339/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Rubric Capital Management LP reported beneficial ownership of 3.02% on SCHEDULE 13G/A.
+- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1490978/000110465926062525/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Rubric Capital Management LP reported beneficial ownership of 9.28% on SCHEDULE 13G/A.
+- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1490978/000121465926005311/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Sumitomo Mitsui Trust Group, Inc. reported beneficial ownership of 4.9% on SCHEDULE 13G/A.
 
 ## FATE · FATE THERAPEUTICS INC
 
@@ -317,46 +335,25 @@
 - [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1357459/000210011926001634/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Vanguard Capital Management reported beneficial ownership of 5.16% on SCHEDULE 13G.
 - [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1357459/000183194226000040/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Commodore Capital LP reported beneficial ownership of 0.0% on SCHEDULE 13G/A.
 
-## SDGR · Schrodinger
+## TEM · Tempus AI
 
 已有商业信号，但不能把合作公告当成客户收入；仍按缺口继续核验。
 
 **尚缺证据**
-- 缺论文作者/创始人与公司的原始关系证据
-- 公司已在 SEC 披露专利/许可，但尚缺 USPTO 或大学技术转移材料独立复核
+- 缺公司专利、专利受让或大学技术许可的明确证据
 - 缺大药厂付费、许可或具有经济条款的合作证据
+- 缺 IND 获批或已登记临床试验证据
 - 公司总收入已核验，但尚不能证明收入来自相关 AI/科研技术
 
 **已核验证据**
-- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) · license：The Prior Columbia License Agreements provided for our rights and obligations with respect to certain patents, software code, technology and improvements that it licenses from Columbia University and that are used in, and integrated into, our software solutions and computational platform.
-- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) · license：The 2003 Columbia Agreement grants us a worldwide, exclusive license to the protein local optimization program software code, or the PLOP Code, developed at Columbia University and the University of California and all software code comprising improvements to the PLOP Code that are developed by Columbia University or the University of California, or the PLOP Improvements, in each case, to reproduce, use, execute, copy, compile, operate, sublicense, and distribute in connection with the marketing and sale of our products and services, to develop improvements thereto, and to conduct research and backup disaster recovery.
-- [SEC XBRL](https://www.sec.gov/Archives/edgar/data/1490978/000149097825000014/) · equity_raise：Cash received from issuing equity (XBRL ProceedsFromIssuanceOfCommonStock): 2024-01-01 to 2024-12-31: $8.9M (10-K)
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1490978/000110465926128339/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Rubric Capital Management LP reported beneficial ownership of 3.02% on SCHEDULE 13G/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1490978/000110465926062525/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Rubric Capital Management LP reported beneficial ownership of 9.28% on SCHEDULE 13G/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1490978/000121465926005311/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Sumitomo Mitsui Trust Group, Inc. reported beneficial ownership of 4.9% on SCHEDULE 13G/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1490978/000210012126000696/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Vanguard Portfolio Management reported beneficial ownership of 6.04% on SCHEDULE 13G.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1490978/000010290926002283/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：The Vanguard Group reported beneficial ownership of 0.0% on SCHEDULE 13G/A.
-
-## KALA · KALA BIO, Inc.
-
-目前只到科研/关系发现层，不能升级为商业化结论。
-
-**尚缺证据**
-- 缺论文作者/创始人与公司的原始关系证据
-- 公司已在 SEC 披露专利/许可，但尚缺 USPTO 或大学技术转移材料独立复核
-- 缺大药厂付费、许可或具有经济条款的合作证据
-- 缺 IND 获批或已登记临床试验证据
-- 缺经 SEC/XBRL 核验的收入证据
-
-**已核验证据**
-- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1479419/000110465926043782/kala-20251231x10k.htm) · license：Stanford University License Agreement As part of our acquisition of Combangio, we acquired Combangio's exclusively in-licensed patent portfolio from Stanford University.
-- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1479419/000110465926043782/kala-20251231x10k.htm) · license：patent, one foreign patent, and one foreign patent application, all related to secreted stem cell factors for tissue repairment and regeneration, and which are exclusively in-licensed from Stanford University, and which, if granted with respect to the patent applications, and if the appropriate maintenance, renewal, annuity or other governmental fees are paid, are expected to expire beginning in 2038;
-- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1479419/000110465926043782/kala-20251231x10k.htm) · license：Pursuant to the license agreement with Stanford, or the Stanford Agreement, we hold a worldwide, exclusive, sublicensable license under certain patent rights, or licensed patents, directed to methods to promote eye wound healing, to make, have made, use, import, offer to sell and sell products that are covered by the licensed patents, or licensed products, for use in all fields.
-- [SEC XBRL](https://www.sec.gov/Archives/edgar/data/1479419/000110465926098783/) · equity_raise：Cash received from issuing equity (XBRL ProceedsFromIssuanceOfConvertiblePreferredStock): 2024-01-01 to 2024-12-31: $3.4M (10-K); 2025-01-01 to 2025-12-31: $9.1M (10-K); 2026-01-01 to 2026-06-30: $4.1M (10-Q)
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1479419/000212324926000002/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Labkowski Nachum reported beneficial ownership of 5.0% on SCHEDULE 13G.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1479419/000182912626007224/xslSCHEDULE_13D_X02/primary_doc.xml) · schedule_13d：Lazar David E. reported beneficial ownership of 3.9% on SCHEDULE 13D/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1479419/000110465926062584/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Baker Bros. Advisors LP reported beneficial ownership of 0.01% on SCHEDULE 13G/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1479419/000110465926016457/xslSCHEDULE_13G_X01/primary_doc.xml) · schedule_13g：Baker Bros. Advisors LP reported beneficial ownership of 9.99% on SCHEDULE 13G/A.
+- [OpenAlex company institution](https://doi.org/10.1126/science.adi5199) · company_authored_research：312 papers since 2023-11-24 list Tempus Labs (United States) as an author institution; most cited: Single-cell genomics and regulatory networks for 388 human brains
+- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) · founder：We were founded by Eric Lefkofsky under the name Bioin, LLC in Delaware in August 2015.
+- [OpenAlex author affiliation](https://doi.org/10.1126/science.adi5199) · researcher_company_affiliation：Lijun Cheng, Mary Flaherty, Sophia C. Gaynor-Gillett, Jennifer R. Moran affiliated with Tempus Labs (United States) on Single-cell genomics and regulatory networks for 388 human brains
+- [SEC XBRL](https://www.sec.gov/Archives/edgar/data/1717115/000095017025025603/) · equity_raise：Cash received from issuing equity (XBRL ProceedsFromIssuanceInitialPublicOffering): 2024-01-01 to 2024-12-31: $382.0M (10-K)
+- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1717115/000110465926123788/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：ARK Investment Management LLC reported beneficial ownership of 4.91% on SCHEDULE 13G/A.
+- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1717115/000149315226049107/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Bradley A. Keywell reported beneficial ownership of 3.46% on SCHEDULE 13G/A.
+- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1717115/000119312526310289/xslSCHEDULE_13D_X02/primary_doc.xml) · schedule_13d：Tempus AI, Inc. reported beneficial ownership of 12.6% on SCHEDULE 13D/A.
+- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1717115/000108887526000035/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：BAILLIE GIFFORD &amp; CO reported beneficial ownership of 5.0% on SCHEDULE 13G/A.
 
 ## 如何补齐
 
