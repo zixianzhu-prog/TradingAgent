@@ -360,6 +360,8 @@ else
 fi
 # Forward record: freeze today's tickets (append-only, committed) and score earlier calls against XBI.
 PYTHONPATH=scripts ai-fund-lab/.venv/bin/python scripts/ticket_ledger.py || echo "ticket ledger skipped"
+# Is every source on schedule? A stale price, ticket, gate or news feed puts a red alert at the top of the page.
+python3 scripts/data_freshness.py || echo "Freshness check failed"
 # Rebuild the page so it shows today's tickets (they are computed from the ranking the first build wrote).
 trend-agent/.venv/bin/python scripts/build_top5_brief.py
 python3 scripts/translate_page.py

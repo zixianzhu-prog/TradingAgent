@@ -74,7 +74,7 @@ def price_risk(tickers: list[str]) -> dict[str, dict]:
             sub = (frame[t] if len(tickers) > 1 else frame).dropna(subset=["Close"])
             daily = sub["Close"].pct_change().dropna().tail(126)
             out[t] = {"worstDay": round(float(daily.min()), 3), "advUsd": float((sub["Close"] * sub["Volume"]).tail(60).mean()),
-                      "price": round(float(sub["Close"].iloc[-1]), 2)}
+                      "price": round(float(sub["Close"].iloc[-1]), 2), "priceDate": str(sub.index[-1].date())}
         except Exception:
             continue
     return out
@@ -347,6 +347,7 @@ def build(portfolio: float, price_fn=price_risk) -> dict:
     tickets.sort(key=lambda x: (order[x["action"]], x.get("rank") or 99))
     return {"generatedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"), "portfolioUsd": portfolio,
             "method": __doc__.split("\n\n")[2].strip(), "tickets": tickets,
+            "pricesAsOf": max((r["priceDate"] for r in ctx["risk"].values() if r.get("priceDate")), default=None),
             "totals": {"positionPct": round(sum(x["positionPct"] for x in tickets), 4),
                        "buyNowPct": round(sum(x["buyNowPct"] for x in tickets), 4),
                        "byAction": {a: sum(x["action"] == a for x in tickets) for a in order}}}

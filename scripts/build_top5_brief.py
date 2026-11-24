@@ -559,6 +559,11 @@ a{color:var(--green)} a:focus-visible{outline:2px solid var(--green);outline-off
 .via-theme{font-size:13px;color:var(--muted);margin:0}
 .call-step{display:grid;gap:8px;padding-top:10px;border-top:1px solid var(--line)}
 .status-banner{max-width:75ch;font-size:14px;padding:12px 14px;background:var(--amber-soft);color:var(--ink);margin:0}
+.fresh-alert{max-width:75ch;font-size:14px;padding:12px 14px;background:var(--red-soft);color:var(--ink);margin:0;border-left:4px solid var(--red)}
+.fresh-alert strong{color:var(--red)}
+.fresh{font-size:12px;color:var(--muted);max-width:75ch}
+.fresh summary{cursor:pointer}
+.fresh table{font-size:12px;margin-top:8px}
 .call-verdict{font-family:var(--serif);font-size:16px;line-height:1.45}
 .mini{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin:0}
 .mini dt{font-size:11px;color:var(--muted)} .mini dd{margin:2px 0 0;font-size:13px;font-weight:600}
@@ -1084,6 +1089,37 @@ def small_caps_section(root: Path) -> str:
     <tbody>{rows}</tbody></table></div>
     <p class="note"><span>rNPV range:</span> for drug developers with no sales to model. Approval odds and phase lengths come from the BIO/Informa/QLS 2011-2020 success-rate study; cash burn is charged only while the lead program is alive; discounted at the 12% policy return. Peak sales are unverified priors ($150M bear, $500M base, $1.5B bull), so the useful number is what today's price implies. Discovery platforms run many programs, so their one-asset value is shown but never used for an order.</p>
   </section>"""
+
+
+def freshness_section(root: Path) -> str:
+    """Red alert when a source the calls depend on is past its schedule; otherwise a one-line all-clear with the table."""
+    data = load(root / "state/data-freshness.json", {})
+    rows = data.get("sources") or []
+    if not rows:
+        return ""
+    bad = [r for r in rows if r["status"] != "fresh"]
+
+    def when(r):
+        return f'last {esc(r["asOf"])}, {r["ageDays"]} days ago' if r["asOf"] else "no date found"
+
+    table = "".join(
+        f'<tr><td>{esc(r["label"])}</td><td>{esc(r["asOf"] or "—")}</td><td class="n">{"" if r["ageDays"] is None else r["ageDays"]}</td>'
+        f'<td>{esc(r["cadence"])}</td><td>{CHIP[r["status"]]}</td><td>{esc(r["feeds"])}</td></tr>' for r in rows)
+    details = ('<details class="fresh"><summary>Data freshness: ' + f'{data.get("fresh", 0)} of {len(rows)} sources on schedule (checked {esc(data.get("today", ""))})</summary>'
+               '<div class="table-wrap"><table><thead><tr><th>Source</th><th>Last data</th><th class="n">Days old</th><th>Schedule</th><th>Status</th><th>Feeds</th></tr></thead>'
+               f'<tbody>{table}</tbody></table></div></details>')
+    critical = [r for r in bad if r["critical"]]
+    if not critical:
+        note = ("" if not bad else '<p class="fresh">Behind schedule, not affecting the calls: '
+                + "; ".join(f'{esc(r["label"])} ({when(r)})' for r in bad) + ".</p>")
+        return note + details
+    items = "; ".join(f'<strong>{esc(r["label"])}</strong> ({when(r)}; feeds {esc(r["feeds"])})' for r in critical)
+    return (f'<p class="fresh-alert"><strong>Stale data.</strong> {items}. Treat the affected calls as out of date until the next run refreshes them.</p>'
+            + details)
+
+
+CHIP = {"fresh": '<span class="chip ok">on schedule</span>', "stale": '<span class="chip alert">stale</span>',
+        "missing": '<span class="chip alert">missing</span>'}
 
 
 def candidate_filter_section(root: Path) -> str:
@@ -1822,6 +1858,7 @@ def render_html(payload: dict, root: Path = ROOT) -> str:
   <header class="intro">
     <p class="eyebrow">AI Medicine · 5–10 year view · Serenity research agent</p>
     <h1>Who leads AI medicine by 2035?</h1>
+    {freshness_section(root)}
     {status_line}
     <p class="lede">Which AI-medicine companies have the highest potential over the next 5 to 10 years, and why? The answer below comes from one pipeline: frontier news finds the companies, Serenity reads their SEC filings and tests whether each controls something the industry cannot route around, market data checks whether that is already in the price, and every call is frozen so it can be scored later. The two groups follow the Serenity stock-selection skill: durable compounders and asymmetric upside.</p>
     <div class="answers">{answer}</div>
