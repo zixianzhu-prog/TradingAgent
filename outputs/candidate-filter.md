@@ -6,14 +6,14 @@
 
 | 公司 | 轨道 | 产业链位置 | AI 判断 | 硬证据 | Serenity 完整度 |
 |---|---|---|---|---|---:|
-| HTFL · Heartflow, Inc. | ai | Imaging & devices | AI is core (medical_decision) | FDA-cleared AI device; revenue $292M a year | 85 |
+| HTFL · Heartflow, Inc. | ai | Imaging & devices | AI is core (medical_decision) | FDA-cleared AI device; revenue $292M a year | 90 |
+| RDNT · RadNet, Inc. | ai | Imaging & devices | AI is core (medical_decision) | FDA-cleared AI device; revenue $2,553M a year | 90 |
+| CBLL · Ceribell, Inc. | ai | Imaging & devices | AI is core (medical_decision) | FDA-cleared AI device; revenue $117M a year | 87 |
 | CAI · Caris Life Sciences, Inc. | ai | Diagnostics | AI is core (medical_decision) | revenue $1,102M a year | 82 |
 | RXRX · RECURSION PHARMACEUTICALS, INC. | ai | Drug discovery | AI is core (research_development) | revenue $74M a year; registered clinical trial | 82 |
-| RDNT · RadNet, Inc. | ai | Imaging & devices | AI is core (medical_decision) | FDA-cleared AI device; revenue $2,553M a year | 80 |
-| CBLL · Ceribell, Inc. | ai | Imaging & devices | AI is core (medical_decision) | FDA-cleared AI device; revenue $117M a year | 77 |
-| TEM · Tempus AI, Inc. | ai | Diagnostics | AI is core (medical_decision) | FDA-cleared AI device; revenue $1,602M a year | 69 |
-| SDGR · Schrodinger, Inc. | ai | Drug discovery | AI is core (research_development) | revenue $258M a year; registered clinical trial | 53 |
-| SOPH · SOPHiA GENETICS SA | ai | Diagnostics | AI is core (medical_decision) | revenue $77M a year | 48 |
+| TEM · Tempus AI, Inc. | ai | Diagnostics | AI is core (medical_decision) | FDA-cleared AI device; revenue $1,602M a year | 74 |
+| SDGR · Schrodinger, Inc. | ai | Drug discovery | AI is core (research_development) | revenue $258M a year; registered clinical trial | 63 |
+| SOPH · SOPHiA GENETICS SA | ai | Diagnostics | AI is core (medical_decision) | revenue $77M a year | 53 |
 | IRD · Opus Genetics, Inc. | drug | Drug developer | drug developer listed for an IND or pharma deal; AI not required | revenue $14M a year; pharma deal or IND; registered clinical trial | 43 |
 | CARL · CARLSMED, INC. | ai | Imaging & devices | AI is core (medical_decision) | FDA-cleared AI device; revenue $86M a year | 41 |
 | GRAL · GRAIL, Inc. | ai | Diagnostics | AI is core (medical_decision) | revenue $147M a year | 38 |

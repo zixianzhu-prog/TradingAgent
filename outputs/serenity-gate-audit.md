@@ -15,9 +15,9 @@
 | ATRC | watch | 34/100 | 58/100 | 44/100 | supply_chain_map, customer_dependency | 无 | 是 |
 | AVXL | watch | 10/100 | 58/100 | 29/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | BDSX | watch | 19/100 | 65/100 | 37/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
-| CAI | watch | 82/100 | 73/100 | 78/100 | customer_dependency | 无 | 是 |
+| CAI | watch | 82/100 | 70/100 | 77/100 | customer_dependency | 无 | 是 |
 | CARL | watch | 41/100 | 78/100 | 56/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
-| CBLL | watch | 77/100 | 73/100 | 75/100 | customer_dependency | 无 | 是 |
+| CBLL | watch | 87/100 | 71/100 | 81/100 | customer_dependency | 无 | 是 |
 | CCLD | reject | 26/100 | 66/100 | 42/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | CERT | watch | 77/100 | 69/100 | 74/100 | earnings_validation | 无 | 是 |
 | CGEM | watch | 24/100 | 54/100 | 36/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
@@ -33,7 +33,7 @@
 | HCAT | watch | 36/100 | 68/100 | 49/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | HIMS | watch | 14/100 | 39/100 | 24/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | HNGE | watch | 29/100 | 55/100 | 39/100 | supply_chain_map, customer_dependency | 无 | 是 |
-| HTFL | watch | 85/100 | 68/100 | 78/100 | 无 | 无 | 是 |
+| HTFL | research-ready | 90/100 | 66/100 | 80/100 | 无 | 无 | 是 |
 | HURA | watch | 10/100 | 65/100 | 32/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | HYPR | watch | 43/100 | 66/100 | 52/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | IBIO | watch | 26/100 | 66/100 | 42/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
@@ -55,16 +55,16 @@
 | PHG | watch | 14/100 | 40/100 | 24/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | PRCT | watch | 36/100 | 69/100 | 49/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | PRME | watch | 0/100 | 77/100 | 31/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
-| RDNT | watch | 80/100 | 65/100 | 74/100 | 无 | 无 | 是 |
+| RDNT | research-ready | 90/100 | 63/100 | 79/100 | 无 | 无 | 是 |
 | RMD | watch | 41/100 | 58/100 | 48/100 | supply_chain_map, customer_dependency | 无 | 是 |
 | RNA | watch | 0/100 | 62/100 | 25/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
-| RXRX | watch | 82/100 | 77/100 | 80/100 | earnings_validation | 无 | 是 |
+| RXRX | watch | 82/100 | 75/100 | 79/100 | earnings_validation | 无 | 是 |
 | RYTM | watch | 14/100 | 42/100 | 25/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
-| SDGR | watch | 53/100 | 71/100 | 60/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
+| SDGR | watch | 63/100 | 68/100 | 65/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | SGMT | watch | 17/100 | 71/100 | 39/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
-| SOPH | watch | 48/100 | 54/100 | 50/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
+| SOPH | watch | 53/100 | 47/100 | 51/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | TECX | watch | 19/100 | 56/100 | 34/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
-| TEM | watch | 69/100 | 71/100 | 70/100 | customer_dependency | 无 | 是 |
+| TEM | watch | 74/100 | 69/100 | 72/100 | customer_dependency | 无 | 是 |
 | TLX | watch | 31/100 | 66/100 | 45/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | WGS | watch | 33/100 | 56/100 | 42/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | WRBY | watch | 26/100 | 58/100 | 39/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |

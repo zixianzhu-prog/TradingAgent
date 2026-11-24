@@ -1154,7 +1154,7 @@ CEO和CFO评估认为截至2025年12月31日内部控制有效（基于COSO 2013
 
 ## CAI · complete
 
-审查记录：`state/serenity-reviews/CAI-claude-31a66425015365a2dfa7.json`
+审查记录：`state/serenity-reviews/CAI-claude-c3de3cc85f286ab3b81d.json`
 
 ### supply_chain_map: pass
 
@@ -1210,23 +1210,11 @@ CEO和CFO评估认为截至2025年12月31日内部控制有效（基于COSO 2013
 
 ### management_governance: partial
 
-10-K披露的财务报告内部控制重大缺陷在通道证据中始终未见解决；代理声明（DEF 14A）新增揭示CEO之子（SVP HR Michael Halbert）离职时公司支付约43.6万美元相关方款项、CEO之兄（Jon S. Halbert）在董事会任职等关联方事项，依规则此类未解决相关方事项维持partial；四项内部人士销售均属到期前强制行权覆税抛售（Spetzler/总裁）或非CEO/CFO级高管的期权行权变现（Brille/副董事长，Denton/高级副总裁），且各人均保留大量持仓，不构成独立治理负面信号。
+按 Serenity 规则：一手材料尚未证明领导层连续。通道确认David Dean Halbert仍以CEO兼董事会主席身份在任（代理声明及10-Q均有引用）；所有通道均未披露开放性政府或监管调查，亦无CEO/CFO/董事长职位空缺或继任未定情形。然而，全部通道均未提及CFO职位或任职者姓名，CFO连续性仍无法从现有证据中确认；财务报告内部控制重大缺陷亦持续未见整改记录。
 
-- 支持 [ev_8d2fce7be499a35f](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-20251231.htm) (primary-document): We have identified a material weakness in our internal control over financial reporting.
-- 支持 [ev_995f5f32819a060d](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000032/cai-20260423.htm) (primary-document): We paid Mr. M. Halbert an aggregate of $435,930 (inclusive of his 2025 bonus paid in early 2026) in cash compensation for his services to us in 2025
-- 支持 [ev_253ae0aa40b490df](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000032/cai-20260423.htm) (primary-document): David Dean Halbert, our Founder, Chairman, and Chief Executive Officer, is the brother of Jon S. Halbert, a member of our board of directors.
 - 支持 [ev_2dee1de182900397](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000032/cai-20260423.htm) (primary-document): David Dean Halbert serves as both our Chief Executive Officer and as Chairman of our Board of Directors.
-- 反证 [ev_46482dd51752a17a](https://www.sec.gov/Archives/edgar/data/2019410/000207195326000007/xslF345X06/wk-form4_1788555596.xml) (primary-document): The sales reported on this Form 4 were effected pursuant to a broker-assisted sell-to-cover exercise of fully vested stock options scheduled to expire on September 12, 2026. The shares were sold solely to cover the aggregate exercise price and applicable tax withholding obligations. The Reporting Person retained all remaining shares acquired upon exercise.
-- 反证 [ev_9f38840b30a1e47e](https://www.sec.gov/Archives/edgar/data/2019410/000207195326000007/xslF345X06/wk-form4_1788555596.xml) (primary-document): The shares were sold solely to cover the aggregate exercise price and applicable tax withholding obligations. The Reporting Person retained all remaining shares acquired upon exercise.
-- 反证 [ev_4ab5b9d8e0eb0995](https://www.sec.gov/Archives/edgar/data/2019410/000207195926000008/xslF345X06/wk-form4_1789682909.xml) (primary-document): The stock option is fully vested and exercisable. Remarks: Vice Chairman and Executive Vice President
-- 反证 [ev_88b572dac5e0c32f](https://www.sec.gov/Archives/edgar/data/2019410/000207195926000008/xslF345X06/wk-form4_1789682909.xml) (primary-document): Common Stock 500,000 I By Trust
-- 反证 [ev_a4533161b4fe2271](https://www.sec.gov/Archives/edgar/data/2019410/000207192326000007/xslF345X06/wk-form4_1790197601.xml) (primary-document): Senior Vice President, General Counsel, and Secretary
-- 反证 [ev_db0f82e35dc82baf](https://www.sec.gov/Archives/edgar/data/2019410/000207192326000007/xslF345X06/wk-form4_1790197601.xml) (primary-document): Common Stock 09/22/2026 S 7,500 D $ 31.8168 (1) 174,855 (2) D
-- 反证 [ev_7316d08858601d3a](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000032/cai-20260423.htm) (primary-document): our Board of Directors has affirmatively determined that each of the following directors does not have a relationship that would interfere with the exercise of independent judgment in carrying out the responsibilities of a director and that each of these directors is “independent”
-- 反证 [ev_796c0e1d0df32c16](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000032/cai-20260423.htm) (primary-document): Our Board of directors has appointed Peter M. Castleman to serve as our lead independent director.
-- 反证 [ev_f16b50ceadf3782b](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000032/cai-20260423.htm) (primary-document): In November 2025, in connection with Mr. M. Halbert's voluntary departure from Caris to pursue other opportunities, we entered into a transition, resignation and release agreement with Mr. M. Halbert.
-- 缺口：A subsequent periodic filing (10-K or 10-Q) confirming that the previously identified material weakness in internal control over financial reporting has been fully remediated.
-- 证伪条件：A filing disclosing that the material weakness has been remediated and that internal controls over financial reporting are now effective would support upgrading to pass, provided no new unresolved related-party transactions or succession concerns emerge.
+- 支持 [ev_2dee1de182900397](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000032/cai-20260423.htm) (primary-document): David Dean Halbert serves as both our Chief Executive Officer and as Chairman of our Board of Directors.
+- 缺口：CFO（首席财务官）或同等职位在所有通道中均未提及，无法确认CFO连续性
 
 ## CARL · complete
 
@@ -1338,7 +1326,7 @@ XBRL数据提供了实际财务结果：Q3 2026收入2155万美元同比增长64
 
 ## CBLL · complete
 
-审查记录：`state/serenity-reviews/CBLL-claude-c256f80773c34157c957.json`
+审查记录：`state/serenity-reviews/CBLL-claude-9ce74efb5f81a0ca2101.json`
 
 ### supply_chain_map: pass
 
@@ -1397,18 +1385,14 @@ XBRL数据提供了实际财务结果：Q3 2026收入2155万美元同比增长64
 - 证伪条件：NTAP 到期后医院使用量下降
 - 证伪条件：竞品已获许可的自动癫痫检测功能（如 encevis）进入 ICU 和急诊快速脑电场景并获得报销
 
-### management_governance: unknown
+### management_governance: pass
 
-Parvizi担任董事及联合创始人期间收取咨询费的关联交易问题，在所有已提供段落中未见任何终止或解决的记录，仍是维持partial的核心依据；三笔内部人出售均有10b5-1计划背书或充足持股背景，不构成独立治理信号。
+按 Serenity 规则：领导层连续，且无未结调查或未定继任。2026年4月6日代理声明（DEF 14A）确认Chao任CEO、Blumberg任CFO、Robertson任董事会主席，三职均有在任证据；通篇段落未披露任何公开调查，Iancovici辞职仅涉及普通董事席位，非关键高管职位，无继任悬空问题。注意：最新高管状态证据截至2026年4月，三份11月Form 4均为董事股票交易，无法独立证明高管职务在2026年11月的持续状态。
 
-- 支持 [ev_2411fb96358430b1](https://www.sec.gov/Archives/edgar/data/1861107/000119312526445555/cbll-20260930.htm) (primary-document): The Company paid Dr. Parvizi, a Director and Co-Founder of the Company, for consulting services
-- 反证 [ev_53fc2e5ee7412a00](https://www.sec.gov/Archives/edgar/data/1861107/000119312526465905/xslF345X06/ownership.xml) (primary-document): The transactions reported in this Form 4 were effected pursuant to a Rule 10b5-1 trading plan adopted by the Reporting Person on August 12, 2026.
-- 反证 [ev_a9beca9ffdced50a](https://www.sec.gov/Archives/edgar/data/1861107/000119312526465905/xslF345X06/ownership.xml) (primary-document): 882,911 I By Innovation ACP Trust
-- 反证 [ev_5115f464b804d6de](https://www.sec.gov/Archives/edgar/data/1861107/000119312526461156/xslF345X06/ownership.xml) (primary-document): The transactions reported in this Form 4 were effected pursuant to a Rule 10b5-1 trading plan adopted by the Reporting Person.
-- 反证 [ev_86e6b4d4e020fd58](https://www.sec.gov/Archives/edgar/data/1861107/000119312526163290/cbll-20260420.htm) (primary-document): Each of the members of our Compensation Committee is independent under the applicable rules and regulations of Nasdaq and is a “non-employee director” as defined in Rule 16b-3 promulgated under the Exchange Act.
-- 缺口：代理声明（DEF 14A）的关联交易详细披露部分未出现在所提供段落中，无法确认Parvizi咨询费安排是否已于2025财年后终止或在2026年代理声明中被再次列示
-- 缺口：引用不存在或原文无法匹配
-- 证伪条件：代理声明或10-Q明确披露Parvizi咨询协议已终止且无后续付款
+- 支持 [ev_9692ffd439d7c745](https://www.sec.gov/Archives/edgar/data/1861107/000119312526163290/cbll-20260420.htm) (primary-document): The following is biographical information for our executive officers as of April 6, 2026: Name Age Position Xingjuan (Jane) Chao, Ph.D. 46 President, Chief Executive Officer, Co-Founder, and Director Scott Blumberg 44 Chief Financial Officer
+- 支持 [ev_47a90dbbd7315cdf](https://www.sec.gov/Archives/edgar/data/1861107/000119312526163290/cbll-20260420.htm) (primary-document): In 2025, our NEOs and their positions were as follows: • Xingjuan (Jane) Chao, Ph.D., President, Chief Executive Officer, and Co-Founder; • Scott Blumberg, Chief Financial Officer; and • Raymond Woo, Ph.D., Chief Technology Officer.
+- 支持 [ev_1f6d56fa27258256](https://www.sec.gov/Archives/edgar/data/1861107/000119312526163290/cbll-20260420.htm) (primary-document): Ms. Robertson currently serves as the Chair of the Board. In that role, Ms. Robertson presides over the executive sessions of the Board and serves as a liaison between management and the Board.
+- 支持 [ev_a629f5ab415304f0](https://www.sec.gov/Archives/edgar/data/1861107/000119312526163290/cbll-20260420.htm) (primary-document): Former Director Lucian Iancovici, M.D. (1) — — (1) Dr. Iancovici resigned from service on the Board on December 31, 2025.
 
 ## CCLD · complete
 
@@ -2938,7 +2922,7 @@ Q3 2026财报强劲：营收$2.35亿，同比增长52.4%；净利润$5740万（�
 
 ## HTFL · complete
 
-审查记录：`state/serenity-reviews/HTFL-claude-e4004dddc2f788b254a7.json`
+审查记录：`state/serenity-reviews/HTFL-claude-5a16695d01f5b4cd6d9c.json`
 
 ### supply_chain_map: pass
 
@@ -2990,32 +2974,16 @@ Q3 收入增长 57%，毛利率 83.6%。
 - 证伪条件：斑块分析覆盖停滞在 75% 以下
 - 证伪条件：医保支付标准下调
 
-### management_governance: partial
+### management_governance: pass
 
-新Form 4确认CEO（Farquhar，售后持有251,983股）、CFO（Verghese，售后持有149,587股）、CMO（Rogers，含多个信托）均在职并持有大量股权，全部出售均依据Rule 10b5-1计划执行；代理声明确认六位非执行董事符合纳斯达克独立性标准，且2025年可转换票据已于IPO完成时自动转换为普通股，原债务关系已消除；但Lightcap与Tansey的关联实体仍以"主要股东"身份持股，同时二人担任薪酬委员会成员，代理声明在薪酬委员会利益冲突栏中仍专门披露该结构性关系，无文件明确宣布该关联已解除，依规则维持partial。
+按 Serenity 规则：领导层连续，且无未结调查或未定继任。通道文件确认：Farquhar（CEO）与Verghese（CFO）于2026年11月仍以各自职务提交Form 4，代理声明确认Weldon任董事会主席（任期至2028年）；所有文件均未披露任何政府、监管机构或董事会层面的公开调查，亦无职位空缺或未命名继任者的高管变动；主要治理风险为薪酬委员会成员Lightcap与Tansey控制公司主要股东实体，且含CFO在内的多名董事/高管参与了IPO前关联方融资。
 
+- 支持 [ev_0f2a3aece7a9c478](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000168/xslF345X06/form4.xml) (primary-document): Relationship of Reporting Person(s) to Issuer (Check all applicable) X Director 10% Owner X Officer (give title below) Other (specify below) Chief Executive Officer
+- 支持 [ev_65ddc8fb3a55e593](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000166/xslF345X06/form4.xml) (primary-document): Relationship of Reporting Person(s) to Issuer (Check all applicable) Director 10% Owner X Officer (give title below) Other (specify below) Chief Financial Officer
 - 支持 [ev_87b994d2fe944e2c](https://www.sec.gov/Archives/edgar/data/1464521/000119312526189307/d54880ddef14a.htm) (primary-document): John C.M. Farquhar 54 President, Chief Executive Officer & Director Vikram Verghese 42 Chief Financial Officer Campbell D.K. Rogers, M.D. 64 Chief Medical Officer
-- 支持 [ev_bede2355270c4d1c](https://www.sec.gov/Archives/edgar/data/1464521/000119312526189307/d54880ddef14a.htm) (primary-document): The Board has affirmatively determined that each of Julie A. Cullivan, Jeffrey C. Lightcap, Casey M. Tansey, Timothy C. Barabe, William C. Weldon and Wayne J. Riley, M.D. is independent within the meaning of the applicable Nasdaq listing standards
 - 支持 [ev_fe60fe626eea4aa4](https://www.sec.gov/Archives/edgar/data/1464521/000119312526189307/d54880ddef14a.htm) (primary-document): The Board believes that the current Board leadership structure, with Mr. Weldon serving as our Chair and Mr. Farquhar serving as our Chief Executive Officer, provides effective independent oversight of management.
-- 支持 [ev_82f8bb43ec5a377b](https://www.sec.gov/Archives/edgar/data/1464521/000119312526189307/d54880ddef14a.htm) (primary-document): all members of the audit committee, the nominating and corporate governance committee and the compensation committee are Independent Directors
-- 支持 [ev_bcd385b08fb7309a](https://www.sec.gov/Archives/edgar/data/1464521/000119312526189307/d54880ddef14a.htm) (primary-document): overseeing CEO and management succession planning
-- 支持 [ev_7bafc81641521b5d](https://www.sec.gov/Archives/edgar/data/1464521/000119312526189307/d54880ddef14a.htm) (primary-document): all of our directors and employees are prohibited from engaging in short-sales, transactions in put or call options, hedging transactions or other inherently speculative transactions in Heartflow stock
-- 支持 [ev_4427ad0f565c7b56](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000168/xslF345X06/form4.xml) (primary-document): The transaction reported in this Form 4 was effected pursuant to a Rule 10b5-1 trading plan adopted by the Reporting Person on September 12, 2025.
-- 支持 [ev_a6ce31c3291afbab](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000166/xslF345X06/form4.xml) (primary-document): The transaction reported in this Form 4 was effected pursuant to a Rule 10b5-1 trading plan adopted by the Reporting Person on June 4, 2026.
-- 支持 [ev_0a0bc1ebea8f4335](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000175/xslF345X06/form4.xml) (primary-document): The transaction reported in this Form 4 was effected pursuant to a Rule 10b5-1 trading plan adopted by the Reporting Person on June 16, 2026
-- 支持 [ev_7ad55c573bb0dd3b](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000168/xslF345X06/form4.xml) (primary-document): Common Stock 11/10/2026 S 38,900 (3) D $ 55.74 251,983 D
-- 支持 [ev_8e169e3c6c9a79b0](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000166/xslF345X06/form4.xml) (primary-document): Common Stock. 11/09/2026 S (2) 3,587 D $ 53.15 149,587 D
-- 支持 [ev_843b594ff0f32ca7](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000175/xslF345X06/form4.xml) (primary-document): Common Stock 46,159 I By CR Asset Protection Trust of 2023
-- 支持 [ev_6926bb3a5cc0f364](https://www.sec.gov/Archives/edgar/data/1464521/000119312526189307/d54880ddef14a.htm) (primary-document): All of the transactions described in this section occurred prior to the adoption of this policy and our initial public offering, but are reviewed on a regular basis by the audit committee.
-- 支持 [ev_7d112287fddb4f2f](https://www.sec.gov/Archives/edgar/data/1464521/000119312526189307/d54880ddef14a.htm) (primary-document): The aggregate principal amount outstanding under the 2025 Convertible Notes were automatically converted upon the completion of our initial public offering into shares of our common stock without interest.
-- 反证 [ev_15f12cd0f6cdb752](https://www.sec.gov/Archives/edgar/data/1464521/000119312526189307/d54880ddef14a.htm) (primary-document): Mr. Jeffrey C. Lightcap was a controlling member of HCPCIV 1, LLC, which was one of our principal stockholders in 2025.
-- 反证 [ev_c63a13a0bf1822fb](https://www.sec.gov/Archives/edgar/data/1464521/000119312526189307/d54880ddef14a.htm) (primary-document): Mr. Casey M. Tansey is a controlling member of U.S. Venture Partners Funds, one of our principal stockholders.
-- 反证 [ev_5347b36f1505a472](https://www.sec.gov/Archives/edgar/data/1464521/000119312526189307/d54880ddef14a.htm) (primary-document): we issued an aggregate of $98.3 million in principal amount of subordinated convertible promissory notes (the “2025 Convertible Notes”) to investors, including related parties
-- 反证 [ev_8fa36198b15eb20c](https://www.sec.gov/Archives/edgar/data/1464521/000119312526189307/d54880ddef14a.htm) (primary-document): Mr. Jeffrey C. Lightcap was a controlling member of HCPCIV 1, LLC, which was one of our principal stockholders in 2025. See “Certain Relationships and Related Party Transactions—2025 Convertible Promissory Notes Financing” and “Certain Relationships and Related Party Transactions—Series F and Series F-1 Redeemable Convertible Preferred Stock Financing” for a description of the note purchase agreements and Series F and Series F-1 redeemable convertible preferred stock purchase agreements we entered into with HCPCIV 1, LLC in connection with our initial public offering. Mr. Casey M. Tansey is a controlling member of U.S. Venture Partners Funds, one of our principal stockholders.
-- 缺口：无文件披露HCPCIV 1, LLC或U.S. Venture Partners Funds自IPO后是否已降至5%以下、不再构成principal stockholder，以确认Lightcap/Tansey的结构性关联是否已消除
-- 缺口：无文件显示Lightcap或Tansey已退出薪酬委员会，或董事会正式宣布上述关联不再构成相关方关系
-- 证伪条件：一份SEC文件（如Form 4、SC 13G/A或13F）显示HCPCIV 1和U.S. Venture Partners持股已降至5%以下，且Lightcap/Tansey不再被代理声明列入薪酬委员会利益冲突披露，可支持升至pass
-- 证伪条件：一份修订代理声明或8-K披露Lightcap/Tansey已辞任薪酬委员会，可消除结构性关联方关系
+- 支持 [ev_9e1fc550f01bcf15](https://www.sec.gov/Archives/edgar/data/1464521/000119312526189307/d54880ddef14a.htm) (primary-document): Class III directors consist of William C. Weldon and Wayne J. Riley, M.D., whose terms expire at the 2028 annual meeting of stockholders.
+- 支持 [ev_1e8a37612e5a3b2a](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000168/xslF345X06/form4.xml) (primary-document): The option vests and becomes exercisable in monthly installments until July 1, 2027, subject to continued service through the applicable vesting date. /s/ Nga Van, by power of attorney 11/10/2026
 
 ## HURA · complete
 
@@ -5111,7 +5079,7 @@ Prime Medicine拥有Prime Editing平台技术和LNP肝脏递送平台，但这�
 
 ## RDNT · complete
 
-审查记录：`state/serenity-reviews/RDNT-claude-f59ceb1b8883476f466e.json`
+审查记录：`state/serenity-reviews/RDNT-claude-68ea39ef2d9a8f3122a0.json`
 
 ### supply_chain_map: pass
 
@@ -5161,27 +5129,16 @@ Q3 2026 服务收入 6.383 亿美元，同比增长 22%；同店收入增长 9.6
 - 反证 [ev_da4d05ee0489c769](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): Medicare payment and coverage policies in the final rule could result in reimbursement reductions
 - 证伪条件：DeepHealth 外部收入增速低于核心业务
 
-### management_governance: unknown
+### management_governance: pass
 
-CEO Berger长期兼任董事会主席，并通过BRMG间接持有近乎全部加州/亚利桑那州设施医疗服务公司99%权益，该关联交易结构在最新proxy中仍无消除披露；COO Patel出售股份未勾选10b5-1计划，构成一定隐患，但其职级为EVP/COO而非CEO/CFO，且出售后仍直接持有155,514股，属部分减持，危害程度有限；整体治理隐患持续未解除，维持partial。
+按 Serenity 规则：领导层连续，且无未结调查或未定继任。Proxy声明（DEF 14A）确认Berger担任CEO兼董事会主席、Stolper担任CFO均在任，无未结调查或法律程序披露，CEO/CFO/董事长职位均无空缺或未定继任；2026年1月1日生效的职位变更仅涉及下级高管（Forthuber、Hames、Patel），核心领导层未变动。主要持续性治理风险为CEO兼任主席的权力集中、CEO通过BRMG持有加州/亚利桑那几乎所有医疗服务的重大关联交易、关联方审批程序非正式，以及COO Patel 11月公开市场出售股份未使用10b5-1计划。
 
-- 支持 [ev_12ed9bb57b9bd560](https://www.sec.gov/Archives/edgar/data/790526/000168316826003086/radnet_idef14a.htm) (primary-document): Lawrence L. Levitt, Laura P. Jacobs, Gregory E. Spurlock and David L. Swartz each qualifies as an independent director in accordance with the NASDAQ and the SEC rules.
-- 支持 [ev_94ef6c35011f2a92](https://www.sec.gov/Archives/edgar/data/790526/000168316826003086/radnet_idef14a.htm) (primary-document): our Nominating and Governance Committee. which consists solely of independent directors, reviews, evaluates, and determines whether or not to approve any transaction between RadNet and its directors, director nominees, executive officers and greater than 5% beneficial owners
-- 支持 [ev_2a8c5413a1d2bdbd](https://www.sec.gov/Archives/edgar/data/790526/000168316826008638/xslF345X06/ownership.xml) (primary-document): EVP, Chief Operating Officer
-- 支持 [ev_a8fa66b3098029e3](https://www.sec.gov/Archives/edgar/data/790526/000168316826003086/radnet_idef14a.htm) (primary-document): There are no family relationships among any of our executive officers and directors.
-- 反证 [ev_1817e32d604c876c](https://www.sec.gov/Archives/edgar/data/790526/000168316826003086/radnet_idef14a.htm) (primary-document): Howard G. Berger, M.D., is our President and Chief Executive Officer, a Chairman of our Board of Directors, and also owns, indirectly, 99% of the equity interests in Beverly Radiology Medical Group III (“ BRMG ”). BRMG is a professional general partnership responsible for the professional medical services at nearly all of our facilities located in California and Arizona
-- 反证 [ev_47a5e5371754fce4](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): professional corporations owned or controlled by individuals within our senior management
-- 反证 [ev_9e84c4c26b3040d4](https://www.sec.gov/Archives/edgar/data/790526/000168316826003086/radnet_idef14a.htm) (primary-document): Our Chairman of the Board of Directors, Dr. Berger, also serves as our Chief Executive Officer.
-- 反证 [ev_1c345cb5a64ac402](https://www.sec.gov/Archives/edgar/data/790526/000168316826008638/xslF345X06/ownership.xml) (primary-document): Check this box to indicate that a transaction was made pursuant to a contract, instruction or written plan for the purchase or sale of equity securities of the issuer that is intended to satisfy the affirmative defense conditions of Rule 10b5-1(c).
-- 反证 [ev_0cc316170d26a1db](https://www.sec.gov/Archives/edgar/data/790526/000168316826008638/xslF345X06/ownership.xml) (primary-document): Common Stock 11/11/2026 S 44,661 D $ 78.51 (1) 155,514 D
-- 缺口：No formal CEO succession plan disclosed in proxy or any other filing — Berger has held combined Chairman/CEO role for ~40 years with no successor identified
-- 缺口：BRMG related-party arrangement (Berger's 99% ownership providing services at nearly all CA/AZ facilities) has not been restructured or terminated; no passage shows resolution
-- 缺口：10b5-1 plan checkbox unchecked on Patel's Form 4 — no explanation provided for absence of a pre-arranged trading plan
-- 缺口：引用不存在或原文无法匹配
-- 证伪条件：A proxy or 8-K disclosing a formal CEO succession plan or separation of Chairman and CEO roles would reduce leadership-continuity risk
-- 证伪条件：A filing showing termination or arm's-length restructuring of the BRMG arrangement would remove the principal related-party concern
-- 证伪条件：Evidence that Patel's sale was executed under a previously adopted 10b5-1 plan (e.g., an amendment to the Form 4 checking the box, or a plan adoption disclosure) would neutralize the insider-sale concern
-- 证伪条件：Any 8-K or Form 4/8 disclosing a CEO or CFO departure or an open regulatory/legal investigation would push the gate to fail
+- 支持 [ev_23f5d928746d2cca](https://www.sec.gov/Archives/edgar/data/790526/000168316826003086/radnet_idef14a.htm) (primary-document): Howard G. Berger, M.D. - President and Chief Executive Officer (our principal executive officer) · Mark D. Stolper - Executive Vice President and Chief Financial Officer (our principal financial officer)
+- 支持 [ev_9e84c4c26b3040d4](https://www.sec.gov/Archives/edgar/data/790526/000168316826003086/radnet_idef14a.htm) (primary-document): Our Chairman of the Board of Directors, Dr. Berger, also serves as our Chief Executive Officer.
+- 支持 [ev_ec71b4cc364be3cc](https://www.sec.gov/Archives/edgar/data/790526/000168316826003086/radnet_idef14a.htm) (primary-document): None of our current directors or executive officers have been, during the past 10 years, involved in any legal proceedings required to be disclosed pursuant to Item 401(t) of Regulation S-K.
+- 支持 [ev_341052c9f1f40de5](https://www.sec.gov/Archives/edgar/data/790526/000168316826003086/radnet_idef14a.htm) (primary-document): There have been no material proceedings to which any director, executive officer or affiliate of the Company, any owner of record or beneficially of more than five percent of any class of voting securities of the Company, or any associate of any such director, executive officer, affiliate of the Company, or security holder is a party adverse to the Company or any of its subsidiaries or has a material interest adverse to the Company or any of its subsidiaries.
+- 支持 [ev_3eca75137def773e](https://www.sec.gov/Archives/edgar/data/790526/000168316826003086/radnet_idef14a.htm) (primary-document): three of the above Named Executive Officers had their job titles changed effective as of January 1, 2026 as shown below. Name New Title Stephen Forthuber President and Chief Executive Officer – Eastern Operations Norman Hames President and Chief Executive Officer – Western Operations Mital Patel Executive Vice President and Chief Operating Officer
+- 支持 [ev_e7a8ac79c4fd2004](https://www.sec.gov/Archives/edgar/data/790526/000168316826003086/radnet_idef14a.htm) (primary-document): We maintain emergency succession plans for the CEO and other executive committee members.
 
 ## RMD · complete
 
@@ -5402,7 +5359,7 @@ Atrium是临床阶段药物开发公司，专注遗传性心肌病RNA疗法。�
 
 ## RXRX · complete
 
-审查记录：`state/serenity-reviews/RXRX-claude-6c90525ee454bba89751.json`
+审查记录：`state/serenity-reviews/RXRX-claude-f8b4a51cf8b18cdcb7f0.json`
 
 ### supply_chain_map: pass
 
@@ -5459,22 +5416,14 @@ Atrium是临床阶段药物开发公司，专注遗传性心肌病RNA疗法。�
 
 ### management_governance: partial
 
-双重股权结构（A/B类股）在文件中未见解决；现任董事长Gibson不参加连任、任期届满后接任人选无任何文件记载，董事会主席继任问题悬而未决。
+按 Serenity 规则：继任未定，不能评为通过。CEO（Najat Khan）与CFO（Ben Taylor）经2026年4月21日代理委托书确认在任，无开放性调查披露；但董事会主席Gibson不寻求连任且无具名继任人，接任人选待董事会另行任命，构成未决继任问题。此外存在创始人关联方顾问协议、双重股权结构及联合创始人董事兼任大型药企高管等其他治理事项。
 
-- 支持 [ev_78f81b864e15be22](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000065/rxrx-20260430.htm) (primary-document): Najat Khan, our current Chief Executive Officer and President
-- 支持 [ev_3f9fd17058687948](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000065/rxrx-20260430.htm) (primary-document): Christopher Gibson, our former Chief Executive Officer and President and current Chair of the Board
-- 支持 [ev_2ca69b715d667e42](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000065/rxrx-20260430.htm) (primary-document): Blake Borgeson, Zachary Bogue, Namandjé Bumpus, Zavain Dar, Robert Hershberg, Dean Li, Franziska Michor, and Elaine Sun, representing eight of our ten directors, do not have a relationship that would interfere with the exercise of independent judgment
-- 支持 [ev_2f1685c39c7e8d21](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000065/rxrx-20260430.htm) (primary-document): The Board of Directors is currently chaired by Christopher Gibson and Robert Hershberg serves as Vice Chair and Lead Independent Director.
-- 支持 [ev_aabb8653b7fc86f9](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000065/rxrx-20260430.htm) (primary-document): Elaine Sun is an audit committee financial expert, as that term is defined under the SEC rules implementing Section 407 of the Sarbanes-Oxley Act of 2002
 - 支持 [ev_caf1f88f36228cc4](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000065/rxrx-20260430.htm) (primary-document): Name Age Position Najat Khan 42 Chief Executive Officer and President Ben Taylor 48 Chief Financial Officer and President of Recursion UK David Hallett 56 Chief Scientific Officer
-- 支持 [ev_b0418b6f725871b4](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000065/rxrx-20260430.htm) (primary-document): FAMILY RELATIONSHIPS There are no family relationships between or among any of our directors or executive officers.
-- 支持 [ev_84b5c0049766760c](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000065/rxrx-20260430.htm) (primary-document): the ownership of our Class A and Class B common stock
-- 反证 [ev_4e73b25a539aaf5c](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000065/rxrx-20260430.htm) (primary-document): Christopher Gibson, Ph.D. , is our co-founder and Chair of the Board, as of January 1, 2026. From 2013 through 2025, Dr. Gibson served as Chief Executive Officer of the Company.
+- 支持 [ev_a26c6da34310582d](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000065/rxrx-20260430.htm) (primary-document): The following table sets forth information for our executive officers as of April 21, 2026:
 - 反证 [ev_0abaa2b30bb04421](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000065/rxrx-20260430.htm) (primary-document): Dr. Gibson is not standing for re-election and his current term will expire at the Annual Meeting.
-- 缺口：No passage identifies who will become Board Chair after Gibson's term expires at the Annual Meeting
-- 缺口：No passage confirms resolution or elimination of the dual-class (Class A / Class B) share structure
-- 证伪条件：A passage explicitly naming Gibson's successor as Board Chair
-- 证伪条件：A passage showing the dual-class structure has been collapsed or that Class B supervoting rights have been eliminated
+- 反证 [ev_c5d66dbf69ee3b0a](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000065/rxrx-20260430.htm) (primary-document): Upon Dr. Gibson’s departure from the Board following the Annual Meeting, Dr. Hershberg will continue as Lead Independent Director until such time that the Board appoints a new Chair.
+- 反证 [ev_8a8336ae5223c4b3](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000065/rxrx-20260430.htm) (primary-document): We currently expect and intend the positions of Chair of the Board of Directors and Chief Executive Officer to continue to be held by two individuals in the future.
+- 缺口：No passage confirms whether a new Board Chair was appointed after Gibson's departure at the 2026 Annual Meeting; proxy filed April 30 2026 but Annual Meeting date not stated — post-meeting chair status unknown from these passages alone.
 
 ## RYTM · complete
 
@@ -5570,7 +5519,7 @@ SEC一手材料提供了带日期的实际公司级收入、利润、现金或�
 
 ## SDGR · complete
 
-审查记录：`state/serenity-reviews/SDGR-claude-fc684f649a6c91fc26ea.json`
+审查记录：`state/serenity-reviews/SDGR-claude-bd2e97865e0dcd1f841e.json`
 
 ### supply_chain_map: partial
 
@@ -5624,21 +5573,16 @@ SEC一手材料提供了带日期的实际公司级收入、利润、现金或�
 - 反证 [ev_1377e22320236927](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000076/sdgr-20260930.htm) (primary-document): If our customers fail to renew their agreements, renew their agreements upon less favorable terms or at lower fee levels, or fail to purchase new software solutions and licenses from us, our revenues may decline and our future revenues may be negatively impacted.
 - 证伪条件：2027 年软件收入增速低于 5%
 
-### management_governance: unknown
+### management_governance: pass
 
-两笔内部人卖出均由EVP级高管（非CEO/CFO）依据10b5-1计划执行，交易后仍持有大量股份，不构成看跌信号；但代理声明仍明确确认董事Friesner因在过去三年内某12个月期间获取咨询费超过12万美元而不具独立性，本批次文件未提供该安排已终止或费用已降至门槛以下的证据，持续关联方支付问题未解决，通道规则要求维持partial。
+按 Serenity 规则：领导层连续，且无未结调查或未定继任。2026年4月代理声明（DEF 14A）确认Ramy Farid现任总裁兼CEO、Richie Jain自2025年5月起任CFO均在职；Porges已于2025年9月依协议离职，Jain在其离职前已就任CFO，继任明确；文件中未披露任何政府、监管或董事会调查；两份Form 4仅记录高管按10b5-1计划的常规期权行权及股票出售，不涉及领导层变动。
 
-- 支持 [ev_0e682116788d106f](https://www.sec.gov/Archives/edgar/data/1490978/000179817926000007/xslF345X06/wk-form4_1794520216.xml) (primary-document): EVP, Chief Scientific Officer, Platform
-- 支持 [ev_4e2349f9a608cb05](https://www.sec.gov/Archives/edgar/data/1490978/000179817926000007/xslF345X06/wk-form4_1794520216.xml) (primary-document): These transactions were effected pursuant to a Rule 10b5-1 trading plan adopted by the reporting person on November 25, 2025.
-- 支持 [ev_be98027658dc587f](https://www.sec.gov/Archives/edgar/data/1490978/000179817926000007/xslF345X06/wk-form4_1794520216.xml) (primary-document): Includes 49,824 unvested RSUs.
-- 支持 [ev_32649bc8c8113a87](https://www.sec.gov/Archives/edgar/data/1490978/000179777726000007/xslF345X06/wk-form4_1794345358.xml) (primary-document): These transactions were effected pursuant to a Rule 10b5-1 trading plan adopted by the reporting person on August 10, 2026.
-- 支持 [ev_a4a1c8e0195487d6](https://www.sec.gov/Archives/edgar/data/1490978/000179777726000007/xslF345X06/wk-form4_1794345358.xml) (primary-document): Common Stock 11/09/2026 S (1) 21,599 D $ 33.112 (5) 52,683 (6) D
-- 支持 [ev_05ff6eb0701e520e](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000026/sdgr-20260427.htm) (primary-document): reviewing and making recommendations to our board of directors with respect to management succession planning at the request of our board of directors
-- 反证 [ev_92ce284fc3d5ef07](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000026/sdgr-20260427.htm) (primary-document): Dr. Friesner is not an independent director under these rules because he has received more than $120,000 in consulting fees from us during a 12-month period within the last three years.
-- 缺口：No passage confirms whether the Friesner consulting arrangement has been terminated or reduced below the $120,000 threshold in 2026
-- 缺口：No disclosure of current consulting fee amount or contract expiry for Friesner in the available passages
-- 缺口：引用不存在或原文无法匹配
-- 证伪条件：A subsequent proxy or 8-K disclosing that Friesner's consulting arrangement has ended or that fees paid in any trailing 12-month period no longer exceed $120,000 would remove the independence disqualification and allow upgrade to pass
+- 支持 [ev_0d200d33df6084dc](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000026/sdgr-20260427.htm) (primary-document): Dr. Farid is not an independent director under these rules because he is our president and chief executive officer
+- 支持 [ev_10b9c301db29aaa0](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000026/sdgr-20260427.htm) (primary-document): Richie Jain , age 42, has served as our executive vice president and chief financial officer and treasurer since May 2025
+- 支持 [ev_42f7be69ec5ccacb](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000026/sdgr-20260427.htm) (primary-document): Ramy Farid $730,000 —% 95% (2) 5% 112,500 (3) 56,250 (4) 112,500 (5) Richie Jain $535,000 —% 55% —% 34,250 (3) 17,130 (4) 34,250 (5)
+- 支持 [ev_65f8dc571b28d3be](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000026/sdgr-20260427.htm) (primary-document): Richie Jain , age 42, has served as our executive vice president and chief financial officer and treasurer since May 2025 and previously served as our senior vice president, strategic finance and head of corporate and business development from February 2024 to May 2025.
+- 支持 [ev_5504a78b26976507](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000026/sdgr-20260427.htm) (primary-document): On September 5, 2025, we entered into the separation agreement with Dr. Porges, which confirms the terms of his separation from the company.
+- 支持 [ev_717bcdb21df7d38c](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000026/sdgr-20260427.htm) (primary-document): Geoffrey Porges(6) — — — — — — —
 
 ## SGMT · complete
 
@@ -5748,7 +5692,7 @@ SGMT为preparation阶段Phase 3公司，亏损属预期。公司披露截至2026
 
 ## SOPH · complete
 
-审查记录：`state/serenity-reviews/SOPH-claude-a254e26bcd3015759dda.json`
+审查记录：`state/serenity-reviews/SOPH-claude-10e3cc702943e09bc2a3.json`
 
 ### supply_chain_map: partial
 
@@ -5798,25 +5742,13 @@ SGMT为preparation阶段Phase 3公司，亏损属预期。公司披露截至2026
 - 证伪条件：12 个月内再次融资
 - 证伪条件：美国收入增速跌破 20%
 
-### management_governance: unknown
+### management_governance: partial
 
-三份 Form 4 再次确认现任 CLO、CSO、CMO 均依 10b5-1 计划例行出售，售后持仓分别为 330,081、537,493、190,993 股，均为部门负责人而非 CEO/CFO，不构成负面信号；但全部材料仍仅为交易记录，对 CEO 连续性、继任安排、董事会独立性及关联方事项均无任何披露，此前 CEO 变更疑点未获一手材料（6-K、DEF 14A）核实，上限维持 partial。
+按 Serenity 规则：一手材料尚未证明领导层连续。全部六份通道文件均为 Form 4 内部人交易记录，申报人为 CLO、CSO、CMO，三人均非 CEO 或 CFO；通道材料中不存在任何涉及 CEO、CFO、董事会主席在任状态、调查披露或继任安排的内容，CEO/CFO 连续性疑点依据现有材料仍无法核实。
 
-- 支持 [ev_2f3447a6ec08bfed](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000364/xslF345X06/wk-form4_1794949249.xml) (primary-document): Transaction made pursuant to duly adopted trading plan under Rule 10b5-1(c).
-- 支持 [ev_5c27cbc3c4eee42f](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000362/xslF345X06/wk-form4_1794862930.xml) (primary-document): Chief Scientific Officer
-- 支持 [ev_dbe4e6c5918f10e1](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000362/xslF345X06/wk-form4_1794862930.xml) (primary-document): Transaction made pursuant to duly adopted trading plan under Rule 10b5-1(c).
-- 支持 [ev_f424e10c82e5262e](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000361/xslF345X06/wk-form4_1794862875.xml) (primary-document): Chief Medical Officer
-- 支持 [ev_9209527759c66b88](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000361/xslF345X06/wk-form4_1794862875.xml) (primary-document): Transaction made pursuant to duly adopted trading plan under Rule 10b5-1(c).
-- 缺口：CEO/CFO 的 Form 4 或任何公告，以核实 CEO 连续性及现任高管阵容
-- 缺口：DEF 14A（代理声明）：董事会独立性、继任计划、关联方交易
-- 缺口：6-K 或 20-F：管理层变动、双重股权结构或重大内控披露
-- 缺口：引用不存在或原文无法匹配
-- 缺口：引用不存在或原文无法匹配
-- 缺口：引用不存在或原文无法匹配
-- 缺口：引用不存在或原文无法匹配
-- 证伪条件：DEF 14A 确认独立董事多数、无未解决关联方支付、有正式继任计划，可支持升至 pass
-- 证伪条件：6-K 或新闻稿明确说明 CEO 职位稳定且无开放性继任问题，可支持升至 pass
-- 证伪条件：任何披露未补救重大内控缺陷或双重股权控制的文件，将使评级下调至 fail
+- 缺口：CEO currently in office — not evidenced by any passage
+- 缺口：CFO currently in office — not evidenced by any passage
+- 缺口：Board chair identity and status — not evidenced by any passage
 
 ## TECX · complete
 
@@ -5922,7 +5854,7 @@ Tectonic是临床阶段生物技术公司，专注于GPCR靶向生物制剂。�
 
 ## TEM · complete
 
-审查记录：`state/serenity-reviews/TEM-claude-8f40cab700d1b3d3583c.json`
+审查记录：`state/serenity-reviews/TEM-claude-fc0eb5d54afa3da348a0.json`
 
 ### supply_chain_map: pass
 
@@ -5978,25 +5910,15 @@ Q3 2026 总收入 4.115 亿美元，同比增长 23%（季报原文），增长�
 - 证伪条件：扣除 Pathos 后数据业务增速转负
 - 证伪条件：Illumina 供应中断
 
-### management_governance: partial
+### management_governance: pass
 
-三笔新交易均为RSU归属时公司强制代扣税款出售，非自愿减仓，不构成治理负面信号；但双重股权结构导致投票权集中、Pathos关联方收入截至2026年Q3仍持续、Lefkofsky关联实体飞机租用安排未终止，三项结构性问题均未化解，维持partial。
+按 Serenity 规则：领导层连续，且无未结调查或未定继任。2026年11月17日的三份Form 4及代理声明（DEF 14A）均确认Lefkofsky仍任CEO兼董事长、Rogers仍任CFO，领导层连续在任；通道内无任何开放调查或未定继任披露。结构性治理风险包括双重股权集中投票权、Pathos AI持续关联方收入、Lefkofsky关联实体飞机租赁，以及Fukushima兼任Pathos AI顾问等，均已记录。
 
-- 支持 [ev_2055ff2a5d1f8678](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): The dual class structure of our common stock has the effect of concentrating voting control
-- 支持 [ev_d216b0da8b88f30c](https://www.sec.gov/Archives/edgar/data/1717115/000119312526442624/tem-20260930.htm) (primary-document): Includes related party revenue from Pathos AI, Inc. of $ 22,061 and $ 24,907 for the three months ended September 30, 2026 and 2025, respectively.
-- 支持 [ev_031530a7c3aab574](https://www.sec.gov/Archives/edgar/data/1717115/000119312526145528/d23945ddef14a.htm) (primary-document): Mr. Fukushima served as the chief executive officer of Pathos AI, Inc. from July 2021 to May 2025 and currently serves as an advisor and a member of the board of directors of Pathos AI, Inc.
-- 支持 [ev_a0732b058e4f0d3b](https://www.sec.gov/Archives/edgar/data/1717115/000119312526145528/d23945ddef14a.htm) (primary-document): we charter for business use an aircraft owned by 346 Investment Partners LLC, an entity affiliated with and controlled by Mr. Lefkofsky, through a third-party aircraft management company, which in turn reimburses 346 Investment Partners LLC at market rates. For the fiscal year ended December 31, 2025, we paid the third-party aircraft management company approximately $0.5 million pursuant to this arrangement.
-- 反证 [ev_2d1953964a0d2546](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000046/xslF345X06/form4-11192026_111124.xml) (primary-document): This sale is mandated by the Issuer's election under its equity incentive plans to require the satisfaction of minimum statutory tax withholding obligations to be funded by a "sell to cover" transaction and does not represent a discretionary sale by the Reporting Person.
-- 反证 [ev_781e11a572679665](https://www.sec.gov/Archives/edgar/data/1717115/000202463026000029/xslF345X06/form4-11192026_061107.xml) (primary-document): This sale is mandated by the Issuer's election under its equity incentive plans to require the satisfaction of minimum statutory tax withholding obligations to be funded by a "sell to cover" transaction and does not represent a discretionary sale by the Reporting Person.
-- 反证 [ev_881a610b89c284ce](https://www.sec.gov/Archives/edgar/data/1717115/000202416926000025/xslF345X06/form4-11192026_111115.xml) (primary-document): This sale is mandated by the Issuer's election under its equity incentive plans to require the satisfaction of minimum statutory tax withholding obligations to be funded by a "sell to cover" transaction and does not represent a discretionary sale by the Reporting Person.
-- 反证 [ev_402081bc7a94902b](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000046/xslF345X06/form4-11192026_111124.xml) (primary-document): Class A Common Stock 8,487,783 I By Gray Media, LLC (5) Class A Common Stock 14,715,469 I By Blue Media, LLC (5) Class A Common Stock 794,631 I By Lefkofsky Family Foundation (5)
-- 反证 [ev_973a27467bf89c6d](https://www.sec.gov/Archives/edgar/data/1717115/000119312526145528/d23945ddef14a.htm) (primary-document): our Board affirmatively determined that Peter J. Barris, Eric D. Belcher, Jennifer A. Doudna, David R. Epstein, Wayne A.I. Frederick, Scott Gottlieb, Theodore J. Leonsis and Nadja West are “independent” in accordance with Nasdaq listing standards applicable to boards of directors in general.
-- 缺口：No passage confirms whether Pathos AI revenue terms have been renegotiated to fully arm's-length or the relationship terminated.
-- 缺口：No passage addresses any dual-class sunset provision or reclassification.
-- 缺口：No proxy or 8-K addresses CEO succession planning or Lefkofsky continuity risk.
-- 证伪条件：An 8-K or amended proxy showing the Pathos commercial relationship terminated or restructured by an independent committee at fully arm's-length terms would remove one partial flag.
-- 证伪条件：A charter amendment eliminating or sunsetting the dual-class structure would remove the voting-concentration concern.
-- 证伪条件：Disclosure that the aircraft charter arrangement with 346 Investment Partners LLC has been discontinued would reduce related-party exposure.
+- 支持 [ev_af7805abe25e662e](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000046/xslF345X06/form4-11192026_111124.xml) (primary-document): Officer (give title below) Other (specify below) CEO and Chairman
+- 支持 [ev_bc36a257f372ab47](https://www.sec.gov/Archives/edgar/data/1717115/000202463026000029/xslF345X06/form4-11192026_061107.xml) (primary-document): Officer (give title below) Other (specify below) Chief Financial Officer
+- 支持 [ev_e333c66db31e2993](https://www.sec.gov/Archives/edgar/data/1717115/000119312526145528/d23945ddef14a.htm) (primary-document): Name Age Position Eric Lefkofsky 56 Chief Executive Officer, Founder and Director Ryan Fukushima 40 Chief Executive Officer, Data Tom Schoenherr 52 Chief Executive Officer, Diagnostics Andrew Polovin 52 Executive Vice President, Chief Legal Officer and Secretary James Rogers 40 Chief Financial Officer
+- 支持 [ev_bd6ff1cb922d867e](https://www.sec.gov/Archives/edgar/data/1717115/000119312526145528/d23945ddef14a.htm) (primary-document): James Rogers has served as our Chief Financial Officer since April 2021.
+- 支持 [ev_7fd000fd7fc4eff7](https://www.sec.gov/Archives/edgar/data/1717115/000119312526145528/d23945ddef14a.htm) (primary-document): Each executive officer serves at the discretion of our Board and holds office until the executive officer’s successor is duly elected and qualified or until the executive officer’s earlier resignation or removal.
 
 ## TLX · complete
 

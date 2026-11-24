@@ -5,12 +5,32 @@ def test_to_gate_keeps_only_quotes_found_in_the_filing(monkeypatch):
     text = "On October 22, 2026, Jane Doe notified the Company that she will resign as President."
     monkeypatch.setattr(cmr.pcr, "filing_text", lambda url, allow_fetch=True: text)
     passages = [{"id": "ev_1", "url": "https://www.sec.gov/x.htm", "text": text}]
-    answer = {"status": "partial", "reason": "r", "support": [],
-              "counter": [{"id": "ev_1", "quote": "she will resign as President"}, {"id": "ev_1", "quote": "invented words"},
-                          {"id": "ev_9", "quote": "unknown id"}]}
+    answer = {"continuity": {"confirmed": False, "evidence": []}, "investigation": {"open": False, "evidence": []},
+              "succession": {"unresolved": True, "evidence": [{"id": "ev_1", "quote": "she will resign as President"},
+                                                               {"id": "ev_1", "quote": "invented words"}, {"id": "ev_9", "quote": "x"}]},
+              "otherRisks": [], "reason": "r"}
     gate, dropped = cmr.to_gate(answer, passages)
     assert gate["counter"] == [{"url": "https://www.sec.gov/x.htm", "quote": "she will resign as President"}]
-    assert dropped == 2
+    assert dropped == 2 and gate["status"] == "partial" and "继任未定" in gate["reason"]
+
+
+def test_serenity_rubric_applied_mechanically():
+    assert cmr.serenity_status(True, False, False)[0] == "pass"
+    assert cmr.serenity_status(True, True, False)[0] == "partial"   # open investigation
+    assert cmr.serenity_status(True, False, True)[0] == "partial"   # unresolved succession
+    assert cmr.serenity_status(False, False, False)[0] == "partial"  # continuity not shown
+
+
+def test_other_risks_are_recorded_but_do_not_block_pass(monkeypatch):
+    text = "John Roe serves as our Chief Executive Officer. We have Class B shares with ten votes per share."
+    monkeypatch.setattr(cmr.pcr, "filing_text", lambda url, allow_fetch=True: text)
+    passages = [{"id": "px_1", "url": "https://www.sec.gov/def14a.htm", "text": text}]
+    answer = {"continuity": {"confirmed": True, "evidence": [{"id": "px_1", "quote": "John Roe serves as our Chief Executive Officer"}]},
+              "investigation": {"open": False, "evidence": []}, "succession": {"unresolved": False, "evidence": []},
+              "otherRisks": [{"id": "px_1", "quote": "Class B shares with ten votes per share", "note": "双重股权"}], "reason": "r"}
+    gate, _ = cmr.to_gate(answer, passages)
+    assert gate["status"] == "pass" and gate["otherRisks"][0]["note"] == "双重股权"
+    assert gate["counter"] == [] and gate["missing"] == []  # recorded, not counter-evidence to the rubric
 
 
 def test_event_passages_skip_non_sec_links(monkeypatch):
