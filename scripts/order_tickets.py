@@ -174,10 +174,22 @@ def patent_liens(uspto: dict) -> dict[str, list[tuple[str, str]]]:
     return out
 
 
+def refresh_range(o: dict, risk: dict, range_date: str | None) -> dict:
+    """Re-place a newer price in the order range. Upper and floor come from the scenarios only, so they hold;
+    the scenario returns stay as computed at the range's price date."""
+    price, day = risk.get("price"), risk.get("priceDate")
+    if not o or not o.get("upper") or not price or not day or (range_date and day <= range_date):
+        return {**o, "priceDate": range_date} if o else o
+    upper, floor = o["upper"], o.get("floor") or 0
+    status = ("below-floor" if price <= floor else "in-range" if price <= upper
+              else "at-top" if price / upper - 1 < 0.01 else "above")
+    return {**o, "price": round(price, 2), "status": status, "gapToUpper": round(price / upper - 1, 3), "priceDate": day}
+
+
 def ticket(row: dict, ctx: dict, portfolio: float, today: date) -> dict:
     t = row["ticker"]
-    o = row.get("orderRange") or {}
     risk = ctx["risk"].get(t, {})
+    o = refresh_range(row.get("orderRange") or {}, risk, (ctx.get("rangeDates") or {}).get(t))
     small = ctx["small"].get(t)
     reasons, adjustments = [], []
     decision = row.get("gateDecision")
@@ -297,7 +309,7 @@ def ticket(row: dict, ctx: dict, portfolio: float, today: date) -> dict:
     return {
         "ticker": t, "company": row.get("company"), "rank": row.get("rank"), "potential": row.get("potential"),
         "action": action, "reasons": reasons, "serenityDecision": decision, "serenityTier": tier,
-        "price": o.get("price") or risk.get("price"), "limitPrice": o.get("upper") if action in ("buy", "starter", "wait") and o else None,
+        "price": o.get("price") or risk.get("price"), "priceDate": o.get("priceDate") or risk.get("priceDate"), "limitPrice": o.get("upper") if action in ("buy", "starter", "wait") and o else None,
         "safetyFloor": o.get("floor"), "positionPct": size, "buyNowPct": now_part, "positionUsd": round(size * portfolio),
         "sizeAdjustments": adjustments, "scalePlan": scale, "scaleCues": deal_cues, "nextEarnings": earnings,
         "invalidation": falsifiers + [f"open counter-point: {c}" for c in counters] + [f"FDA rejection letter: {c}" for c in crl]
@@ -329,7 +341,8 @@ def build(portfolio: float, price_fn=price_risk) -> dict:
         f = r.get("facts") or {}
         if r.get("ticker") and (f.get("isNewDeal") is True or f.get("isIndClearance") is True):
             deals.setdefault(r["ticker"], []).append(r)
-    ctx = {"risk": price_fn([r["ticker"] for r in ranking]) if ranking else {},
+    ctx = {"rangeDates": {t: (c or {}).get("asOf") for t, c in read(ROOT / "state/market-validation.json", {}).get("companies", {}).items()},
+           "risk": price_fn([r["ticker"] for r in ranking]) if ranking else {},
            "small": {r["ticker"]: r for r in read(SMALL_CAPS, {}).get("companies", [])},
            "events": events, "departures": departures, "deals": deals, "watch": read(WATCHLIST, {}),
            "trends": growth_trends([r["ticker"] for r in ranking]),
@@ -347,7 +360,7 @@ def build(portfolio: float, price_fn=price_risk) -> dict:
     tickets.sort(key=lambda x: (order[x["action"]], x.get("rank") or 99))
     return {"generatedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"), "portfolioUsd": portfolio,
             "method": __doc__.split("\n\n")[2].strip(), "tickets": tickets,
-            "pricesAsOf": max((r["priceDate"] for r in ctx["risk"].values() if r.get("priceDate")), default=None),
+            "pricesAsOf": min((x["priceDate"] for x in tickets if x.get("priceDate")), default=None),  # the oldest price a ticket uses
             "totals": {"positionPct": round(sum(x["positionPct"] for x in tickets), 4),
                        "buyNowPct": round(sum(x["buyNowPct"] for x in tickets), 4),
                        "byAction": {a: sum(x["action"] == a for x in tickets) for a in order}}}

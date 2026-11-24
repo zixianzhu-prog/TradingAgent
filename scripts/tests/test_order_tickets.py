@@ -125,3 +125,13 @@ def test_recent_crls_window():
                     {"listed": {"ticker": "B"}, "issued": "2024-01-01", "severity": "heavy", "drug": "y"},
                     {"listed": None, "issued": "2026-05-01", "severity": "light"}]}
     assert list(ot.recent_crls(crl, date(2026, 11, 17))) == ["A"]
+
+
+def test_refresh_range_uses_newer_price():
+    import order_tickets as ot
+    o = {"price": 57.42, "upper": 62.92, "floor": 45.44, "status": "in-range", "gapToUpper": -0.087}
+    newer = ot.refresh_range(o, {"price": 64.0, "priceDate": "2026-11-24"}, "2026-11-23")
+    assert newer["price"] == 64.0 and newer["status"] == "above" and newer["priceDate"] == "2026-11-24"
+    same = ot.refresh_range(o, {"price": 64.0, "priceDate": "2026-11-23"}, "2026-11-23")
+    assert same["price"] == 57.42 and same["priceDate"] == "2026-11-23"
+    assert ot.refresh_range({}, {"price": 1, "priceDate": "2026-11-24"}, None) == {}
