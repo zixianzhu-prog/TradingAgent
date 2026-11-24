@@ -1154,7 +1154,7 @@ CEO和CFO评估认为截至2025年12月31日内部控制有效（基于COSO 2013
 
 ## CAI · complete
 
-审查记录：`state/serenity-reviews/CAI-claude-c3de3cc85f286ab3b81d.json`
+审查记录：`state/serenity-reviews/CAI-claude-cff7e4ec2be891b047f6.json`
 
 ### supply_chain_map: pass
 
@@ -1171,12 +1171,16 @@ CEO和CFO评估认为截至2025年12月31日内部控制有效（基于COSO 2013
 - 支持 [ev_b77ed4426b98bf65](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-20251231.htm) (primary-document): MI Cancer Seek has obtained FDA approval for use as a companion diagnostic device
 - 反证 [ev_99eb15cf6c686904](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-20251231.htm) (primary-document): The precision oncology industry is intensely competitive.
 
-### customer_dependency: partial
+### customer_dependency: pass
 
-有合作协议，但缺少客户集中度数据。
+按 Serenity 规则：一手文件披露了客户采用或使用。通道中存在实质性采用证据：公司已确认来自协作安排的收入（2025年$11.4M、2024年$16.2M），并向医院、机构及生物制药客户提供分子分析服务并收取费用；但未披露具体案例量或客户数量。同时存在显著的客户集中风险，前三大商业付款方合计占收入约70%，且生物制药协议可随时终止。
 
-- 支持 [ev_c656030114553082](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-20251231.htm) (primary-document): We have entered into a collaboration agreement with Everlywell to expand access to Caris Detect.
-- 缺口：客户与付款方集中度
+- 支持 [ev_6b5902a128d379dd](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-20251231.htm) (primary-document): For the years ended December 31, 2025, 2024, and 2023, the Company recognized collaboration revenue of $ 11.4 million, $ 16.2 million, and $ 5.8 million, respectively, which is included in revenue from pharma research and development services on the consolidated statements of operations
+- 支持 [ev_9ca1cb80960da805](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm) (primary-document): For the three months ended September 30, 2026 and 2025 , the Company recognized collaboration revenue of $ 1.5 million and $ — million , respectively, and $ 4.1 million and $ 6.9 million for the nin
+- 支持 [ev_be8f3217456713c0](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-20251231.htm) (primary-document): The Company derives revenue from two distinct channels: • Molecular profiling services involving the provision of precision oncology solutions utilizing MI Profile and Caris Assure. • Pharma research and development services involving delivery of laboratory, strategic data, and research services to biopharmaceutical customers.
+- 支持 [ev_6bddc139894087e7](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm) (primary-document): The Company derives revenue from two distinct channels: • Molecular profiling services involving the provision of precision oncology solutions utilizing MI Profile, Caris Assure, Caris Detect, Caris MI Clarity and Caris ChromoSeq • Pharma research and development services involving delivery of laboratory, strategic data, and research services to biopharmaceutical customers
+- 支持 [ev_aefe7f0416e2701d](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-20251231.htm) (primary-document): The Company is party to various collaboration and licensing agreements under which the Company out-licenses certain know-how and molecular data. The collaboration arrangements are intended to solidify the Company’s third-party partnerships to align oncology capabilities and create industry-leading molecular oncology research platforms to accelerate drug development and novel research.
+- 支持 [ev_38e58c63ecdcd652](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-20251231.htm) (primary-document): We deploy our proprietary profiling and signature offerings to analyze tissue and blood samples provided by biopharma partners, identify potential drug targets and help biopharma partners develop drug therapeutics through our drug target and therapeutic discovery business, Caris Discovery.
 
 ### pure_play: pass
 
@@ -1326,7 +1330,7 @@ XBRL数据提供了实际财务结果：Q3 2026收入2155万美元同比增长64
 
 ## CBLL · complete
 
-审查记录：`state/serenity-reviews/CBLL-claude-9ce74efb5f81a0ca2101.json`
+审查记录：`state/serenity-reviews/CBLL-claude-6bb12db42646a85283ff.json`
 
 ### supply_chain_map: pass
 
@@ -1345,13 +1349,13 @@ XBRL数据提供了实际财务结果：Q3 2026收入2155万美元同比增长64
 - 反证 [ev_7b37c7ff6410c044](https://www.accessdata.fda.gov/cdrh_docs/pdf26/K261712.pdf) (primary-document): the subject device does not include any automatic seizure or spike detection functions and is claiming a subset of functions compared to the predicate device
 - 反证 [ev_7c88c2dc65d29a26](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K261712) (primary-document): Decision Substantially Equivalent (SESE)
 
-### customer_dependency: partial
+### customer_dependency: pass
 
-为医院和付款方节省成本，并获得 NTAP 新技术附加支付；缺少医院客户集中度。
+按 Serenity 规则：一手文件披露了客户采用或使用。文件披露截至2025年12月31日已部署逾600家医院，截至2026年9月30日增至逾700家，2025年全年收入8906万美元，构成明确的产品采用证据。未发现任何合作伙伴关系公告。
 
-- 支持 [ev_b1e3905befc1cdfa](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): We have demonstrated that the Ceribell System can deliver cost savings for hospitals and payers by decreasing the average hospital length of stay
-- 支持 [ev_2ec129bdf4de865a](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): subsequently received a New Technology Add-on Payment
-- 缺口：医院客户数量与集中度
+- 支持 [ev_1e3bb72577f60435](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): As of December 31, 2025, we have successfully deployed the Ceribell System to more than 600 hospitals, ranging from top academic centers to small community hospitals.
+- 支持 [ev_b985533a9d0ef40c](https://www.sec.gov/Archives/edgar/data/1861107/000119312526445555/cbll-20260930.htm) (primary-document): As of September 30, 2026, the Ceribell System has been adopted by more than 700 hospitals, ranging from top academic centers to small community hospitals.
+- 支持 [ev_b6f0f05022a6ffaa](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): EEG recorders and EEG headbands, point in time $ 67,335 $ 50,079 EEG portal and Clarity subscriptions, over time 21,728 15,365 Total Revenue $ 89,063 $ 65,444
 
 ### pure_play: pass
 
@@ -5519,7 +5523,7 @@ SEC一手材料提供了带日期的实际公司级收入、利润、现金或�
 
 ## SDGR · complete
 
-审查记录：`state/serenity-reviews/SDGR-claude-bd2e97865e0dcd1f841e.json`
+审查记录：`state/serenity-reviews/SDGR-claude-23a6cb55aa8f843be5b4.json`
 
 ### supply_chain_map: partial
 
@@ -5537,13 +5541,15 @@ SEC一手材料提供了带日期的实际公司级收入、利润、现金或�
 - 支持 [ev_30e5c6d64af2a165](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): our gross dollar retention rate for our commercial customers was 96%
 - 反证 [ev_5dd7c574e5f263f6](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): Insilico Medicine, Inc., Iktos, XtalPi Inc., AbCellera, Inductive Bio, Inc.
 
-### customer_dependency: partial
+### customer_dependency: pass
 
-前 20 大药企贡献 37% 软件收入。（Opus 对抗复核下调为 partial：The memo says top-20 pharma = 37% of software revenue, but the 10-Q shows extreme AR conce；Customers have no renewal obligation and contracts can be terminated on notice — the 'stic）
+按 Serenity 规则：一手文件披露了客户采用或使用。SDGR披露了实质性客户采用证据：2025年ACV达1.985亿美元，商业客户群ACV 1.774亿美元，软件客户总留存率96%，20个活跃付费合作药物发现项目；命名合作伙伴仅有Novartis（属合作公告，不单独构成采用证明）。另有客户集中度风险（单一客户曾占应收账款68%）及合同可随时终止的条款风险。
 
-- 支持 [ev_7335aaf240a1105c](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): $73.7 million, or 37%, of our software revenue
-- 反证 [ev_008b0c57ddeaa13c](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000076/sdgr-20260930.htm) (primary-document): As of September 30, 2026, two customers accounted for 31 % and 24 % of total accounts receivable, respectively.
-- 反证 [ev_8edd40076feeed26](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000076/sdgr-20260930.htm) (primary-document): Our customers have no obligation to renew their product licenses or subscriptions for our software solutions after the license term expires, which is typically after one year, and many of our contracts may be terminated or reduced in scope either immediately or upon notice.
+- 支持 [ev_698a39b97d277c4e](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): Our ACV was $198.5 million and $190.8 million for the years ended December 31, 2025 and 2024, respectively.
+- 支持 [ev_ccc9c717fc887ccf](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): Our top 20 pharma industry cohort had an ACV of $80.8 million in 2025 compared to $70.0 million in 2024, and our commercial customer cohort had an ACV of $177.4 million in 2025 compared to $165.8 million in 2024.
+- 支持 [ev_79713784534d6dcf](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): For the years ended December 31, 2025 and 2024, our gross dollar retention rate for our commercial customers was 96%.
+- 支持 [ev_db37bec26f051bc7](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): our net dollar retention rate for our commercial customers was 100% for the year ended December 31, 2025, compared to 113% for the year ended December 31, 2024.
+- 支持 [ev_5f6562e2264812d0](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): We are also party to a research collaboration and license agreement with Novartis for the discovery, research and preclinical development of small molecule compounds for targets in certain specified therapeutic areas, which also provides for joint ownership rights to certain intellectual property generated through the collaboration in certain scenarios.
 
 ### pure_play: pass
 
@@ -5692,7 +5698,7 @@ SGMT为preparation阶段Phase 3公司，亏损属预期。公司披露截至2026
 
 ## SOPH · complete
 
-审查记录：`state/serenity-reviews/SOPH-claude-10e3cc702943e09bc2a3.json`
+审查记录：`state/serenity-reviews/SOPH-claude-30ffa5d40bab0dd70b53.json`
 
 ### supply_chain_map: partial
 
@@ -5708,11 +5714,14 @@ SGMT为preparation阶段Phase 3公司，亏损属预期。公司披露截至2026
 
 - 反证 [ev_89316529114e1993](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): There are a number of healthcare technology companies providing bioinformatics analysis solutions, applications, services, and products
 
-### customer_dependency: partial
+### customer_dependency: pass
 
-客户数与净收入留存率来自季度新闻稿，未纳入本证据包。
+按 Serenity 规则：一手文件披露了客户采用或使用。披露的采用证据包括：截至2025年12月31日核心基因组客户528家（2024年472家）、平台分析量391,698次、生物制药客户4家；无合作伙伴公告披露。
 
-- 缺口：客户数与留存率的一手原文
+- 支持 [ev_e083a50e5bd11226](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): Core Genomics Customers 528 472
+- 支持 [ev_cafc9fa8448e00a7](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): Analysis volume increased to 391,698 in the year ended December 31, 2025 from 352,628 in the year ended December 31, 2024.
+- 支持 [ev_201c89314bb9114b](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): We served four biopharma customers accross multiple programs during the fiscal year ended December 31, 2025.
+- 支持 [ev_749f3cf370d6d90a](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): Net dollar retention increased to 115% as of December 31, 2025 from 104% as of December 31, 2024.
 
 ### pure_play: pass
 
@@ -5854,7 +5863,7 @@ Tectonic是临床阶段生物技术公司，专注于GPCR靶向生物制剂。�
 
 ## TEM · complete
 
-审查记录：`state/serenity-reviews/TEM-claude-fc0eb5d54afa3da348a0.json`
+审查记录：`state/serenity-reviews/TEM-claude-dad1ffb24153627d52ce.json`
 
 ### supply_chain_map: pass
 
@@ -5871,13 +5880,20 @@ Tectonic是临床阶段生物技术公司，专注于GPCR靶向生物制剂。�
 - 支持 [ev_fa3c0e570c458eb1](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): we have become one of the largest sequences of cancer patients in the United States in just a few years.
 - 反证 [ev_60163a1b9066ec96](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): more in line with other NGS providers who have adopted similar strategies, such as FMI and Guardant.
 
-### customer_dependency: partial
+### customer_dependency: pass
 
-大药企有最低采购承诺。关联方收入见治理门槛。（Opus 对抗复核下调为 partial：The SB Tempus data license generating $25M/yr expires March 31, 2026, creating a near-term）
+按 Serenity 规则：一手文件披露了客户采用或使用。通道中存在大量已披露的产品实际使用证据：截至2026年9月，逾9,000名医生及250家以上生物科技/制药公司已付费使用，多条产品线收入持续增长，非可撤销多年合同余额达5.14亿美元；同时披露了AstraZeneca主服务协议及Personalis商业化合作协议作为合作公告。
 
-- 支持 [ev_301169c868e74591](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): AstraZeneca has committed to spend a minimum of $220 million on such products and services
-- 支持 [ev_fe9d7fb9829ebbaf](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): GSK has committed to spend a minimum of $180 million on such products and services
-- 反证 [ev_f61ce86bcaaa978d](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): Under the Data License Agreement, SB Tempus paid the Company ¥ 7.5 billion ($ 47.9 million) in exchange for the license to an initial records batch, which is recorded in deferred revenue and will be recognized into Data and applications revenue over the term of the license subscription which ends on March 31, 2026. For the years ended December 31, 2025, 2024 and 2023, the Company recognized $ 25.0 million, $ 16.6 million and $ 0 , respectively, in Data and applications revenue related to the Data License Agreement.
+- 支持 [ev_a52cc11f1b7c6953](https://www.sec.gov/Archives/edgar/data/1717115/000119312526442624/tem-20260930.htm) (primary-document): Since our inception, our offerings have been used by more than 9,000 physicians and we have worked with over 250 biotech companies, as well as 19 of the 20 largest public pharmaceutical companies based on 2025 revenue
+- 支持 [ev_d2e5642b282e0dfe](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): The Company recognized revenue from Insights products of $ 257.7 million, $ 186.8 million and $ 117.6 million for the years ended December 31, 2025, 2024 and 2023, respectively.
+- 支持 [ev_274c898ea064faaf](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): The Company recognized revenue from Trials products of $ 38.5 million, $ 42.4 million and $ 45.6 million for the years ended December 31, 2025, 2024 and 2023, respectively.
+- 支持 [ev_3588bef4a6d1339a](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): The Company recognized revenue from Next of $ 20.1 million, $ 12.3 million and $ 5.1 million for the years ended December 31, 2025, 2024 and 2023, respectively.
+- 支持 [ev_b9447509c5380c65](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): The Company’s remaining performance obligations related to multi-year contracts was $ 348.1 million as of December 31, 2025
+- 支持 [ev_ae30055a56ae2fb2](https://www.sec.gov/Archives/edgar/data/1717115/000119312526442624/tem-20260930.htm) (primary-document): The Company recognized revenue from Insights products of $ 88.9 million and $ 69.0 million for the three months ended September 30, 2026 and 2025, respectively and $ 237.9 million and $ 175.7 million for the nine months ended September 30, 2026 and 2025, respectively.
+- 支持 [ev_195ab74679ce578c](https://www.sec.gov/Archives/edgar/data/1717115/000119312526442624/tem-20260930.htm) (primary-document): The Company recognized revenue from Next of $ 9.6 million and $ 3.2 million for the three months ended September 30, 2026 and 2025, respectively and $ 21.6 million and $ 11.6 million for the nine months ended September 30, 2026 and 2025, respectively.
+- 支持 [ev_37b6b91572196634](https://www.sec.gov/Archives/edgar/data/1717115/000119312526442624/tem-20260930.htm) (primary-document): The Company recognized Diagnostics revenue for direct bill orders of $ 31.0 million and $ 17.5 million for the three months ended September 30, 2026 and 2025, respectively. The Company recognized Diagnostics revenue for direct bill orders of $ 77.7 million and $ 49.9 million for the nine months ended September 30, 2026 and 2025, respectively.
+- 支持 [ev_b9b1108cc7b76675](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): in conjunction with the signing of a November 2021 Master Services Agreement (“the MSA”) with customer AstraZeneca AB (“AstraZeneca”)
+- 支持 [ev_ee9200ac7c7bedc8](https://www.sec.gov/Archives/edgar/data/1717115/000119312526442624/tem-20260930.htm) (primary-document): In November 2023, the Company entered into a Commercialization and Reference Laboratory Agreement with Personalis, which was subsequently amended in August 2024 and July 2025. The Company agreed to pay up to $ 12.0 million to Personalis over three years as certain milestones are met, all of which has been paid as of July 2025.
 
 ### pure_play: partial
 

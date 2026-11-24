@@ -248,6 +248,12 @@ if [ ! -f "$SCREEN_STATE" ] || [ -n "$(find "$SCREEN_STATE" -mtime +6 2>/dev/nul
     # Founders and university/institute licenses quoted from 10-Ks (cached per filing).
     PYTHONPATH=scripts python3 scripts/science_founders.py --model "${CLAUDE_EXTRACT_MODEL:-sonnet}" \
       || echo "Founder/licensor extraction failed; keeping the last links"
+    # Serenity rubric re-grades for the deep-review queue: the model reports quoted facts, code applies the rubric.
+    QUEUE=$(python3 -c "import json;print(' '.join(json.load(open('state/candidate-filter.json')).get('deepReview',[])))" 2>/dev/null || true)
+    if [ -n "$QUEUE" ]; then
+      PYTHONPATH=scripts python3 scripts/claude_customer_review.py --tickers $QUEUE || echo "Customer-gate review failed; keeping the last grades"
+      PYTHONPATH=scripts python3 scripts/claude_management_review.py --proxy --tickers $QUEUE || echo "Governance review failed; keeping the last grades"
+    fi
     # Opus argues against the memos behind live tickets (cached on unchanged evidence); a verified hard-gate fail makes the ticket wait.
     PYTHONPATH=scripts python3 scripts/claude_adversarial_review.py --model "${CLAUDE_ADVERSARIAL_MODEL:-opus}" \
       || echo "Adversarial review failed; keeping the last result"
