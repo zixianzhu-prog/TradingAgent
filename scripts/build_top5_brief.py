@@ -1294,6 +1294,29 @@ def candidate_filter_section(root: Path) -> str:
   </section>"""
 
 
+def inventor_block(root: Path) -> str:
+    """Founders, scientists and paper authors who are named inventors on USPTO applications (scripts/inventor_chain.py)."""
+    data = load(root / "state/inventor-chain.json", {})
+    rows = [(t, r) for t, c in (data.get("companies") or {}).items() for r in c["people"] if r["companyPatents"] or r["licensorPatents"]]
+    if not rows:
+        return ""
+    rows.sort(key=lambda x: (-x[1]["licensorPatents"], -x[1]["companyPatents"]))
+    s = data.get("summary", {})
+    body = "".join(
+        f'<tr><td class="tk">{esc(t)}</td><td>{esc(r["person"])}</td><td>{esc(", ".join(r["roles"]))}</td>'
+        f'<td class="n">{r["companyPatents"]}</td><td class="n">{r["licensorPatents"]}</td>'
+        f'<td style="white-space:normal">{esc(", ".join(r["licensors"])) or "—"}</td>'
+        f'<td style="white-space:normal">{esc((r["examples"][0]["title"] or "")[:70].capitalize()) if r["examples"] else "—"}</td></tr>'
+        for t, r in rows)
+    return (f'<h3 class="bucket-h">Inventors: from paper to patent to company</h3>'
+            f'<p class="bucket-blurb">{s.get("peopleSearched", 0)} founders, scientists and frequent paper authors searched as inventors in the USPTO Open Data Portal. '
+            "A person counts only when the application is filed by the company itself or by a university the company's 10-K names as its licensor; "
+            "other applications under the same name may be someone else and are not counted. A licensor patent with a company founder as inventor is direct evidence "
+            "that the technology came from that lab.</p>"
+            '<div class="table-wrap"><table><thead><tr><th>Ticker</th><th>Person</th><th>Role</th><th class="n">Company applications</th>'
+            f'<th class="n">Licensor applications</th><th>Licensor</th><th>Example</th></tr></thead><tbody>{body}</tbody></table></div>')
+
+
 def lab_to_company_section(root: Path) -> str:
     """Peter's chain in one table: research origin -> founders -> specialist money -> pharma/clinic, all from primary filings."""
     founders = load(root / "state/science-founders.json", {}).get("links", [])
@@ -1364,6 +1387,7 @@ def lab_to_company_section(root: Path) -> str:
     <p>The chain Peter asked for: which university or institute the technology came from, who founded the company, whether specialist biotech funds own it, and whether pharma or the FDA has engaged. Origins and founders are quoted from each company's own 10-K (every quote checked against the filing); funds come from Schedule 13D/13G; deals and IND clearances from 8-K press releases.</p>
     <p class="note"><span>Now:</span> {len(rows_by)} companies with a quoted research origin, a named founder or their own published papers; {n_elite} license from MIT, Broad, Harvard, Stanford, Whitehead, Dana-Farber or Scripps. A license proves where the patents came from, not that a given paper became the product. Company papers are OpenAlex works whose authors list the company as their institution (unique name match only). Equity raised is cash received from selling shares, from the cash-flow statement in SEC XBRL; offerings and PIPEs by listed companies do not file a Form D. USPTO records come from the Open Data Portal: an owner record shows the company holds the patent application; "pledged to" means a lender holds a security interest in it.</p>
     <div class="table-wrap"><table><thead><tr><th>Ticker</th><th>Research origin (licensed from)</th><th>Founders named in the 10-K</th><th>Company papers, last 3 years</th><th>USPTO assignment records</th><th>Specialist funds holding 5%+</th><th class="n">Equity raised, 24 months</th><th>Pharma deal / IND (90 days)</th></tr></thead><tbody>{body}</tbody></table></div>
+  {inventor_block(root)}
   </section>"""
 
 

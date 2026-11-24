@@ -248,6 +248,8 @@ if [ ! -f "$SCREEN_STATE" ] || [ -n "$(find "$SCREEN_STATE" -mtime +6 2>/dev/nul
   PYTHONPATH=scripts python3 scripts/company_research.py || note_fail "Company research lookup failed; keeping the last result"
   # Key people: officer titles from SEC Forms 3/4/5, founders from 10-Ks, their PubMed papers; LinkedIn linked, never fetched.
   PYTHONPATH=scripts python3 scripts/key_people.py || note_fail "Key-people tracker failed; keeping the last result"
+  # Weekly: founders, scientists and paper authors searched as USPTO inventors (needs USPTO_API_KEY in the environment).
+  PYTHONPATH=scripts python3 scripts/inventor_chain.py || note_fail "Inventor chain failed; keeping the last result"
   # Weekly: replay the order rule on 2014+ 10-K filings (deterministic; outputs/order-rule-backtest.md).
   PYTHONPATH=scripts ai-fund-lab/.venv/bin/python scripts/backtest_order_rule.py \
     || note_fail "Order-rule backtest failed; keeping the last result"

@@ -555,7 +555,7 @@
   "founded ≤{n} yrs": "成立 ≤{n} 年",
   "What insiders are doing": "内部人在做什么",
   "Buyer": "买入人",
-  "Role": "职位",
+  "Role": "身份",
   "Date": "日期",
   "Bought": "买入金额",
   "Chief Financial Officer": "首席财务官",
@@ -938,5 +938,16 @@
   "Multi-node control": "多节点控制",
   "Governance": "治理",
   "fail": "不通过",
-  "·": "·"
+  "·": "·",
+  "Inventors: from paper to patent to company": "发明人：从论文到专利到公司",
+  "{n} founders, scientists and frequent paper authors searched as inventors in the USPTO Open Data Portal. A person counts only when the application is filed by the company itself or by a university the company's {n}-K names as its licensor; other applications under the same name may be someone else and are not counted. A licensor patent with a company founder as inventor is direct evidence that the technology came from that lab.": "在 USPTO 开放数据平台按发明人检索了 {n} 位创始人、科学家和高频论文作者。只有申请人是公司本身、或公司 {n}-K 列明的授权方大学时才算同一个人；同名的其他申请可能是别人，不计入。授权方专利的发明人是公司创始人，就是技术来自该实验室的直接证据。",
+  "Person": "人物",
+  "Company applications": "公司申请",
+  "Licensor applications": "授权方申请",
+  "Licensor": "授权方",
+  "Example": "例子",
+  "founder": "创始人",
+  "scientist": "科学家",
+  "paper author": "论文作者",
+  "founder ({n}-K)": "创始人（{n}-K）"
 }
