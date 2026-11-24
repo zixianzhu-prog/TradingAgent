@@ -10,10 +10,10 @@
 | CAI · Caris Life Sciences, Inc. | ai | Diagnostics | AI is core (medical_decision) | revenue $1,102M a year | 90 |
 | HTFL · Heartflow, Inc. | ai | Imaging & devices | AI is core (medical_decision) | FDA-cleared AI device; revenue $292M a year | 90 |
 | RDNT · RadNet, Inc. | ai | Imaging & devices | AI is core (medical_decision) | FDA-cleared AI device; revenue $2,553M a year | 90 |
+| TEM · Tempus AI, Inc. | ai | Diagnostics | AI is core (medical_decision) | FDA-cleared AI device; revenue $1,602M a year | 90 |
 | RXRX · RECURSION PHARMACEUTICALS, INC. | ai | Drug discovery | AI is core (research_development) | revenue $74M a year; registered clinical trial | 82 |
-| TEM · Tempus AI, Inc. | ai | Diagnostics | AI is core (medical_decision) | FDA-cleared AI device; revenue $1,602M a year | 82 |
-| SDGR · Schrodinger, Inc. | ai | Drug discovery | AI is core (research_development) | revenue $258M a year; registered clinical trial | 71 |
-| SOPH · SOPHiA GENETICS SA | ai | Diagnostics | AI is core (medical_decision) | revenue $77M a year | 61 |
+| SDGR · Schrodinger, Inc. | ai | Drug discovery | AI is core (research_development) | revenue $258M a year; registered clinical trial | 79 |
+| SOPH · SOPHiA GENETICS SA | ai | Diagnostics | AI is core (medical_decision) | revenue $77M a year | 69 |
 | IRD · Opus Genetics, Inc. | drug | Drug developer | drug developer listed for an IND or pharma deal; AI not required | revenue $14M a year; pharma deal or IND; registered clinical trial | 43 |
 | CARL · CARLSMED, INC. | ai | Imaging & devices | AI is core (medical_decision) | FDA-cleared AI device; revenue $86M a year | 41 |
 | GRAL · GRAIL, Inc. | ai | Diagnostics | AI is core (medical_decision) | revenue $147M a year | 38 |

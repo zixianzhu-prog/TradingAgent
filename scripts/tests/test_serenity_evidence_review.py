@@ -50,3 +50,12 @@ def test_claude_review_is_not_marked_stale_by_new_codex_packet(tmp_path, monkeyp
     ser.prepare_codex([{"ticker": "RXRX", "name": "Recursion"}], [], False)
     manifest = json.loads((tmp_path / "state/serenity-codex-inbox.json").read_text())
     assert manifest["companies"][0]["status"] == "claude-reviewed"
+
+
+def test_counter_thesis_pass_rests_on_sourced_counter_evidence():
+    ct = lambda counter, falsifiers: {"gates": {"counter_thesis": {"status": "pass", "reason": "examined", "support": [],
+                                                                  "counter": counter, "missing": [], "falsifiers": falsifiers}}}
+    ref = [{"id": "ev_real", "quote": P["text"]}]
+    assert validate(ct(ref, ["growth turns negative"]), [P])["counter_thesis"]["status"] == "pass"
+    assert validate(ct(ref, []), [P])["counter_thesis"]["status"] == "partial"  # falsifiers still required
+    assert validate(ct([], ["x"]), [P])["counter_thesis"]["status"] == "unknown"  # no sourced counter-evidence

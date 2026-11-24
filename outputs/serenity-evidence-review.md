@@ -5523,7 +5523,7 @@ SEC一手材料提供了带日期的实际公司级收入、利润、现金或�
 
 ## SDGR · complete
 
-审查记录：`state/serenity-reviews/SDGR-claude-23a6cb55aa8f843be5b4.json`
+审查记录：`state/serenity-reviews/SDGR-claude-83b45d7973d7c7f49fa4.json`
 
 ### supply_chain_map: partial
 
@@ -5570,14 +5570,32 @@ SEC一手材料提供了带日期的实际公司级收入、利润、现金或�
 
 - 缺口：Q3 季报原文
 
-### counter_thesis: partial
+### counter_thesis: pass
 
-大客户数量下降等反方已检验。（Opus 对抗复核下调为 partial：The memo claims the counter-thesis (large customer decline) was examined, but the 10-Q sho）
+按 Serenity 规则：供应、需求、替代、地缘、估值均已检验，有证伪条件和有出处的反证（不代表风险消失）。文段显示SDGR的反向论点集中在三点：（1）软件营收结构性转型导致近期收入下滑已被管理层承认；（2）客户高度集中叠加年度可终止合同，使营收可持续性脆弱；（3）AI替代竞争和地缘政治风险（中国CMO依赖、BIOSECURE法案）对药物发现业务形成双重压力。
 
-- 支持 [ev_eb5e7b5a3b91d35c](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): The average ACV per commercial customer with an ACV of over $1.0 million grew to $3.9 million
-- 反证 [ev_262dd4b4de7c4505](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): we had 27 commercial customers with an ACV of at least $1.0 million
-- 反证 [ev_1377e22320236927](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000076/sdgr-20260930.htm) (primary-document): If our customers fail to renew their agreements, renew their agreements upon less favorable terms or at lower fee levels, or fail to purchase new software solutions and licenses from us, our revenues may decline and our future revenues may be negatively impacted.
-- 证伪条件：2027 年软件收入增速低于 5%
+- 反证 [ev_04836fd92c0de175](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): We do not own or operate manufacturing facilities for the production of any product candidates, nor do we have plans to develop our own manufacturing operations. We rely and expect to continue to rely on third-party contract manufacturers for all of our required raw materials, drug substance, and finished drug product for the preclinical and clinical development of any development candidates we develop ourselves. We do not currently have any agreements with third-party manufacturers for the long-term supply of any of our product candidates.
+- 反证 [ev_45a02da8253e1429](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): some of our manufacturers and suppliers are located in China. Trade tensions and conflicts between the United States and China have been escalated in recent years and, as such, we are exposed to the possibility of product supply disruption and increased costs and expenses in the event of changes to the laws, rules, regulations and policies of the governments of the United States or China
+- 反证 [ev_f63a1884f35fc6e5](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): In December 2025, as part of the National Defense Authorization Act for FY 2026, President Trump signed into law the BIOSECURE Act, which prohibits, subject to limited exceptions, the direct or indirect use of U.S. federal government contract, grant, and loan funds for purchasing biotechnology equipment and services from certain Chinese biotechnology companies of concern
+- 反证 [ev_bbb5bb85ae398946](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): We outsource substantially all of the infrastructure relating to our hosted software solutions to third-party hosting services. Customers of our hosted software solutions need to be able to access our computational platform at any time, without interruption or degradation of performance
+- 反证 [ev_7ef51fee9b523db3](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000076/sdgr-20260930.htm) (primary-document): On-premise software $ 13,371 $ 15,928 $ 36,848 $ 57,094 Hosted software 17,239 11,585 44,469 33,585 Software maintenance 4,570 6,826 16,110 20,400 Professional services 2,973 1,589 8,830 5,852 Total software revenue $ 38,153 $ 35,928 $ 106,257 $ 116,931
+- 反证 [ev_014cc2546d580275](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): we expect revenue to decline in the near-term as the transition progresses
+- 反证 [ev_ee428f00959eb534](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000076/sdgr-20260930.htm) (primary-document): our sales cycles can be as long as nine to twelve months or longer. Further, the length of time that potential customers devote to their testing and evaluation, contract negotiation, and budgeting processes varies significantly, depending on the size of the organization and the nature of their needs
+- 反证 [ev_8edd40076feeed26](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000076/sdgr-20260930.htm) (primary-document): Our customers have no obligation to renew their product licenses or subscriptions for our software solutions after the license term expires, which is typically after one year, and many of our contracts may be terminated or reduced in scope either immediately or upon notice.
+- 反证 [ev_ff31316740135418](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000076/sdgr-20260930.htm) (primary-document): we are facing increasing competition from companies utilizing AI and other computational approaches for drug discovery. Some of these competitors are involved in drug discovery themselves and/or with partners, and others develop software or other tools utilizing AI which can be used, directly or indirectly, in drug discovery. To the extent these other AI approaches to drug discovery prove to be successful, or more successful, than our approach, the demand for our platform could be adversely affected
+- 反证 [ev_549ef7531fa0b865](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): Our software solutions face competition from competitors in the business of selling or providing simulation and modeling software to biopharmaceutical companies. These competitors include BIOVIA, a brand of Dassault Systèmes SE, or BIOVIA, Chemical Computing Group (US) Inc., Cresset Biomolecular Discovery Limited, Cadence Design Systems, Inc., Optibrium Limited, Cyrus Biotechnology, Inc., Molsoft LLC, Insilico Medicine, Inc., Iktos, XtalPi Inc., AbCellera, Inductive Bio, Inc., Chemaxon, Revvity, Inc., and Simulations Plus, Inc.
+- 反证 [ev_d46f01c353b17d7e](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): obtaining broad patents in the United States covering software innovations is more challenging than before. In addition to increasing uncertainty with regard to our ability to obtain future patents, this combination of events has created uncertainty with respect to the value of patents, once obtained.
+- 反证 [ev_3ba3c8cf039a248c](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): United States $ 152,963 $ 114,869 $ 161,961 APAC 26,181 25,802 24,569 EMEA 75,164 65,650 29,135 Rest of World 1,561 1,218 1,001 $ 255,869 $ 207,539 $ 216,666
+- 反证 [ev_0bc36fb180d952fb](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): We have sales operations in the United States, Europe, Japan, India, and South Korea and we also have established distribution channels in other important markets, including China.
+- 反证 [ev_35931d1609d25f2b](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000076/sdgr-20260930.htm) (primary-document): the U.S. and China reached a one-year agreement with an expiration of November 10, 2026, that includes the continued suspension of the heightened reciprocal tariffs on China and delayed enforcement of new U.S. export rules targeting affiliates of blacklisted firms
+- 反证 [ev_bcfa5e5302fca856](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000076/sdgr-20260930.htm) (primary-document): Sustained uncertainty about, or the further escalation of, trade and political tensions between the United States and China could result in a disadvantageous research and manufacturing environment in China, particularly for U.S. based companies, including retaliatory restrictions that hinder or potentially inhibit our ability to rely on CMOs and other service providers that operate in China.
+- 证伪条件：软件总营收连续两个季度同比正增长（扭转2026年前九个月同比下滑趋势）
+- 证伪条件：两家头部客户（合计占Q3 2026营收35%）中任一客户不续约或大幅缩减合同规模
+- 证伪条件：以AI为基础的竞争对手（如Insilico Medicine、XtalPi）在药物发现准确性基准测试中持续优于Schrödinger平台
+- 证伪条件：BIOSECURE法案执行导致公司现有中国CMO合作关系中断，药物发现服务收入下滑
+- 证伪条件：托管软件向订阅模式的过渡完成后，年化软件ARR未能弥补在途确认收入的缺口（即2027年及以后软件收入仍未恢复增长）
+- 证伪条件：美中贸易协议到期（2026年11月10日）后双方关系重新恶化，中国分销渠道收入显著萎缩
+- 证伪条件：公司宣布放弃SGR-1505或SGR-3515合作伙伴谈判，药物发现部门收入来源进一步收窄
 
 ### management_governance: pass
 
@@ -5698,7 +5716,7 @@ SGMT为preparation阶段Phase 3公司，亏损属预期。公司披露截至2026
 
 ## SOPH · complete
 
-审查记录：`state/serenity-reviews/SOPH-claude-30ffa5d40bab0dd70b53.json`
+审查记录：`state/serenity-reviews/SOPH-claude-0e766b21ba799332e755.json`
 
 ### supply_chain_map: partial
 
@@ -5741,15 +5759,34 @@ SGMT为preparation阶段Phase 3公司，亏损属预期。公司披露截至2026
 
 - 支持 [ev_0643c1781bd8da3c](https://www.sec.gov/Archives/edgar/data/1840706/000162828026052125/soph-20260630_d2.htm) (primary-document): These unaudited interim condensed consolidated financial statements have been prepared on a going concern basis.
 
-### counter_thesis: partial
+### counter_thesis: pass
 
-融资与债务风险已检验。（Opus 对抗复核下调为 partial：Memo claims pass because financing and debt risks were examined, but the 20-F surfaces add）
+按 Serenity 规则：供应、需求、替代、地缘、估值均已检验，有证伪条件和有出处的反证（不代表风险消失）。文件证据表明SOPH的反论已被逐维检验：供应端对Azure存在实质依赖且切换成本高，需求端短期合同结构与报销不确定性削弱营收能见度，替代威胁来自资源雄厚的大型企业，地缘政治层面瑞士→美国关税峰值曾达39%并直接冲击毛利率；上述风险已被识别但尚未消除。
 
-- 支持 [ev_c77d49738f50e8b6](https://www.sec.gov/Archives/edgar/data/1840706/000162828026052125/soph-20260630_d2.htm) (primary-document): The Company was in full compliance with all covenants contained in the Perceptive Credit Agreement as of June 30, 2026.
-- 反证 [ev_b4d80e773306d947](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): pursuant to which we may sell, from time to time, ordinary shares having an aggregate offering price of $50.0 million
-- 反证 [ev_26218805c085ae77](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): If our licensors fail to obtain and maintain a patent or other protection for the proprietary intellectual property we license from such licensor, we could lose our rights to such intellectual property or the exclusivity of such rights, and our competitors could market competing technology using such intellectual property.
-- 证伪条件：12 个月内再次融资
-- 证伪条件：美国收入增速跌破 20%
+- 反证 [ev_c7da2e0dc2fedb5d](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): we currently use Microsoft Corporation (“Microsoft”) and Microsoft Azure Services for a substantial portion of our computing, storage, data processing, networking and other services
+- 反证 [ev_8398d22dd0f0f23f](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): Any transition to new cloud providers would be difficult to implement and would cause us to incur significant delays and expense.
+- 反证 [ev_354f1607c69c35be](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): We rely, and expect that we will continue to rely, on third parties for the manufacturing and supply of our products offered with our SOPHiA DDM Platform
+- 反证 [ev_92ce9d3428415a2c](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): third-party manufacturers may fail to deliver the required commercial quantities of materials on a timely basis and at commercially reasonable prices, and we may be unable to find one or more replacement manufacturers capable of production at a substantially equivalent cost in substantially equivalent volumes and quality on a timely basis
+- 反证 [ev_12eb01dd1d6550f5](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): Our platform production environment currently runs on Microsoft Azure. As our platform architecture is vendor-agnostic, we could readily deploy our solutions onto any cloud infrastructure
+- 反证 [ev_c1d5b89055863b80](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): The majority of the platform revenue is derived from contracts with an original expected length of one year or less.
+- 反证 [ev_cb21c1ca4493821b](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): Revenues from one customer, a distributor for the Company, represented approximately $ 8.7 million and $ 8.2 million of the Company’s total revenues for the fiscal years ended December 31, 2025 and 2024, respectively.
+- 反证 [ev_7d5f6d8ba8644d55](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): It is difficult to predict what CMS, state Medicaid programs, and other third-party payors will decide with respect to coverage and reimbursement for novel platforms, applications, products, and services such as ours.
+- 反证 [ev_436635fdba34814b](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): We expect to experience pricing pressures in connection with the sale of any products that we develop due to the trend toward managed healthcare, the increasing influence of health maintenance organizations
+- 反证 [ev_d9edf812fa925018](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): We also face competition from companies that have developed software analytics platforms for genomics data, such as Agilent, Fabric Genomics, Illumina, Qiagen Digital Insights, Velsera Inc., Congenica Ltd and Thermo Fisher.
+- 反证 [ev_e3e1da4907481437](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): our competitors are likely to develop technology, platforms, applications, products, and services that offer features and functionality similar to ours. Improvements in existing competitive technology, platforms, applications, products, and services or the introduction of new competitive technology, platforms, applications, products, and services may make it more difficult for us to compete for sales, particularly if competitors demonstrate better accuracy, reliability, convenience or effectiveness or price their platforms, applications, products, and services less expensively.
+- 反证 [ev_9ad315cc2882d7b8](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): under our license agreements with Normandie Valorisation, Normandie Valorisation controls the prosecution, maintenance and defense of the patents licensed to us pursuant to the agreements.
+- 反证 [ev_ac26c8aadccac17b](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): loss of competitive advantage if competitors offer superior or more current solutions
+- 反证 [ev_7d39ca325f485598](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): An initial 31% tariff was announced on goods imported into the U.S. from Switzerland, where our headquarters are located, which was subsequently increased to 39% by Executive Order on July 31, 2025. On December 10, 2025 Switzerland announced an agreement with the U.S. to reduce the tariffs to 15% retroactive to November 14, 2025.
+- 反证 [ev_268bbfbccd2967ea](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): our sale of bundles to the United States are currently subject to additional costs due to the tariffs, leading to increases in our cost of revenue and decreases in our gross margin if we are unable to fully offset such costs by increasing our prices.
+- 反证 [ev_34e5b28bc7cacdbd](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): the majority of our bundles assembled at and shipped from our headquarters in Rolle, Switzerland. While the majority of our revenues are generated from the EMEA region and are not directly impacted by these tariffs
+- 反证 [ev_6811ae9c6df0500b](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): we are currently defending against patent infringement claims brought by Guardant Health in multiple jurisdictions
+- 证伪条件：美国关税恢复至高于15%的水平，导致美国业务（约占总收入17%）毛利率出现可量化的显著下滑
+- 证伪条件：Guardant Health专利诉讼在任一司法管辖区胜诉，法院发出禁令迫使公司停售或实质性修改相关产品
+- 证伪条件：EMEA地区平台合同年度续约率下降，收入增长停滞或出现绝对值下滑
+- 证伪条件：主要分销商客户（单一客户收入约870万美元，占总收入约11%）流失或大幅削减采购
+- 证伪条件：重要竞争对手（如Roche、Illumina）推出精度经同行评审验证更高、价格更低的竞争平台并可量化地抢占市场份额
+- 证伪条件：CMS或欧洲主要国家医保机构正式拒绝或限制对SOPHiA DDM Platform的覆盖报销
+- 证伪条件：微软Azure发生重大服务中断或终止与公司的合同，导致平台大规模、长时间宕机
 
 ### management_governance: partial
 
@@ -5863,7 +5900,7 @@ Tectonic是临床阶段生物技术公司，专注于GPCR靶向生物制剂。�
 
 ## TEM · complete
 
-审查记录：`state/serenity-reviews/TEM-claude-dad1ffb24153627d52ce.json`
+审查记录：`state/serenity-reviews/TEM-claude-c661774b1b88276556de.json`
 
 ### supply_chain_map: pass
 
@@ -5915,16 +5952,29 @@ Q3 2026 总收入 4.115 亿美元，同比增长 23%（季报原文），增长�
 - 支持 [ev_cba6f53043f47e8e](https://www.sec.gov/Archives/edgar/data/1717115/000119312526442624/tem-20260930.htm) (primary-document): Total net revenue $ 411,537 $ 334,206 $ 1,142,139 $ 904,578
 - 支持 [ev_85a6aff966b8b9c0](https://www.sec.gov/Archives/edgar/data/1717115/000119312526442624/tem-20260930.htm) (primary-document): was due to increased volume of clinical oncology and hereditary tests performed in Diagnostics and increased data deliveries in our Data and applications product line
 
-### counter_thesis: partial
+### counter_thesis: pass
 
-杠杆、医保与供应商集中风险已检验。（Opus 对抗复核下调为 partial：The memo claims leverage risk is 'tested' but the passages reveal a Google note with accel）
+按 Serenity 规则：供应、需求、替代、地缘、估值均已检验，有证伪条件和有出处的反证（不代表风险消失）。文件中可提取的反论证据集中于三点：Illumina单一供应商集中度极高（供给侧脆弱性）、付款率不足六成且政府正主动压价（需求侧不确定）、多家资金充裕的竞争者已存在（替代威胁）；地缘政治风险目前主要体现在美国国内政策层面，国际收入占比尚可忽略。
 
-- 支持 [ev_e4009fd2d75ac3e1](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): Approximately 26% of our clinical oncology tests were for Medicare beneficiaries
-- 反证 [ev_f11fdab9f02e2d4e](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): $750.0 million outstanding aggregate principal amount of 0.75% Convertible Senior Notes due 2030
-- 反证 [ev_be2ff850c1128bb7](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): Purchases from this supplier accounted for approximately 33%, 39% and 33% of total vendor payments
-- 反证 [ev_8fb4a2ade3f15ae8](https://www.sec.gov/Archives/edgar/data/1717115/000119312526442624/tem-20260930.htm) (primary-document): The Outstanding Amount under the Second Amended Note is due and payable on the earlier of (1) December 31, 2030 , which is the maturity date of the Amended Note, (2) upon the occurrence and during the continuance of an event of default, and (3) upon the occurrence of an acceleration event, which includes any termination by the Company of its Google Cloud Platform agreement.
-- 证伪条件：扣除 Pathos 后数据业务增速转负
-- 证伪条件：Illumina 供应中断
+- 反证 [ev_49eea2d56f85a914](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): We rely on Illumina as the sole supplier of the sequencers and as the sole provider of maintenance and repair services for these sequencers. Any disruption in operations of Illumina or other sole or limited suppliers or termination or suspension of our relationships with them could materially and adversely impact our supply chain and laboratory operations of our diagnostic testing business and thus our ability to conduct our business and generate revenue.
+- 反证 [ev_9392ae83e3a27574](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): Purchases from this supplier accounted for approximately 33%, 39% and 33% of total vendor payments for the years ended December 31, 2025, 2024 and 2023, respectively.
+- 反证 [ev_1578eaba9725d715](https://www.sec.gov/Archives/edgar/data/1717115/000119312526442624/tem-20260930.htm) (primary-document): the announcement of substantial new tariffs and other restrictive trade policies, to the extent such current and future tariffs apply to hardware, networking infrastructure or other technology infrastructure used by us or our third-party vendors, could raise costs, constrain supply or affect service reliability.
+- 反证 [ev_67beadc84003522a](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): As of December 31, 2025, we had received payment on approximately 55% of our clinical oncology next generation sequencing, or NGS, tests and 50% of our hereditary tests across all payers performed from January 1, 2023 through December 31, 2024.
+- 反证 [ev_2f01388ccb7ad046](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): We believe it may take several years to achieve broad coverage and adequate contracted reimbursement with a majority of payers for our tests. However, coverage policies and third-party reimbursement rates may change at any time.
+- 反证 [ev_3ee350736b1adceb](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): Such actions and policies may, among other things, significantly reduce U.S. medical device prices, potentially impacting manufacturers’ global pricing strategies and profitability, while increasing their operational costs and compliance risks.
+- 反证 [ev_5a05ebf5c8e899b3](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): Payers may resist reimbursement for our tests in favor of less expensive tests, require pre-authorization for our tests, or impose additional pricing pressure on and substantial administrative burden for reimbursement for our tests.
+- 反证 [ev_f0e44e4c1da375cf](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): Our competitors with respect to our Applications products include Roche Holdings, Inc., Caris Life Sciences, Guardant Health, Inc., Illumina, Inc., and others, with respect to our TO test, and Myriad Genetics, Inc., Caris Life Sciences, and others, with respect to our HRD test.
+- 反证 [ev_ee2a5271ecf0957f](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): Some of our competitors and potential competitors may have longer operating histories; larger customer bases; greater brand recognition and market penetration; substantially greater financial, technological and research and development resources and selling and marketing capabilities; and more experience dealing with third-party payers.
+- 反证 [ev_bcb276e46555e524](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): Increased competition and cost-saving initiatives on the part of governmental entities and other third-party payers are likely to result in pricing pressures, which could harm our sales or ability to gain market share.
+- 反证 [ev_379ddc5d525fa9b9](https://www.sec.gov/Archives/edgar/data/1717115/000119312526442624/tem-20260930.htm) (primary-document): The majority of our revenue is generated in the United States. Through September 30, 2026, we have generated an insignificant amount of revenues denominated in foreign currencies.
+- 反证 [ev_56d2e97a0f62a708](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): The current administration is pursuing policies to reduce regulations and expenditures across government agencies including at the Department of Health and Human Services, the FDA, CMS and related agencies.
+- 反证 [ev_201cefed70ab49ef](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): In many countries outside of the United States, reimbursement systems vary significantly by country and by region within some countries, and reimbursement approvals must be obtained on a country-by-country basis and various coverage, pricing and reimbursement approvals are required for our tests to be available to patients in significant volume.
+- 证伪条件：Illumina中断供货或大幅涨价，导致Tempus测序产能明显下降
+- 证伪条件：CMS或主要商业保险方大幅削减NGS检测报销价格（低于当前$1,600均值）或撤销覆盖
+- 证伪条件：付款率（当前肿瘤NGS约55%）在未来报告期出现下滑而非上升
+- 证伪条件：Guardant Health、Caris Life Sciences或Myriad Genetics在肿瘤NGS市场赢得规模性份额并显著压低市场价格
+- 证伪条件：Data & applications业务净收入留存率（NRR）跌破100%，显示制药客户不续约
+- 证伪条件：美国政府通过立法明确削减基因组诊断的Medicare报销额度
 
 ### management_governance: pass
 

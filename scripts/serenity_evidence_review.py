@@ -322,7 +322,10 @@ def validate(raw, passages):
         if errors:
             state = "unknown"
             missing += errors
-        elif state == "pass" and (not any(r["primary"] for r in refs["support"]) or missing):
+        # counter_thesis is supported by its sourced counter-evidence: Serenity's rubric asks for the counter-case
+        # to be examined with sourced counter-evidence and falsifiers, so primary counter quotes are its support.
+        elif state == "pass" and (not any(r["primary"] for r in refs["support"] + (refs["counter"] if gate == "counter_thesis" else []))
+                                  or missing):
             state = "partial" if refs["support"] else "unknown"
             missing.append("通过需要直接相关的原始披露及完整证据")
         if state == "pass" and gate == "counter_thesis" and (not refs["counter"] or not item.get("falsifiers")):
