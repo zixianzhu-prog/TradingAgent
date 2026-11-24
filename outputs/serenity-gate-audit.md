@@ -60,9 +60,9 @@
 | RNA | watch | 0/100 | 62/100 | 25/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | RXRX | watch | 82/100 | 75/100 | 79/100 | earnings_validation | 无 | 是 |
 | RYTM | watch | 14/100 | 42/100 | 25/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
-| SDGR | watch | 79/100 | 57/100 | 70/100 | supply_chain_map, earnings_validation | 无 | 是 |
+| SDGR | watch | 87/100 | 66/100 | 79/100 | earnings_validation | 无 | 是 |
 | SGMT | watch | 17/100 | 71/100 | 39/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
-| SOPH | watch | 69/100 | 54/100 | 63/100 | supply_chain_map, earnings_validation | 无 | 是 |
+| SOPH | watch | 77/100 | 52/100 | 67/100 | earnings_validation | 无 | 是 |
 | TECX | watch | 19/100 | 56/100 | 34/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | TEM | research-ready | 90/100 | 57/100 | 77/100 | 无 | 无 | 是 |
 | TLX | watch | 31/100 | 66/100 | 45/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |

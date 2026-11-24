@@ -5523,16 +5523,22 @@ SEC一手材料提供了带日期的实际公司级收入、利润、现金或�
 
 ## SDGR · complete
 
-审查记录：`state/serenity-reviews/SDGR-claude-83b45d7973d7c7f49fa4.json`
+审查记录：`state/serenity-reviews/SDGR-claude-f39a866cc56f6fa24c8c.json`
 
-### supply_chain_map: partial
+### supply_chain_map: pass
 
-下游覆盖学术机构与全部前 20 大药企；平台可扩展到云计算。（Opus 对抗复核下调为 partial：The memo claims the platform is extensible to cloud, but the 10-K reveals complete depende；China supply chain risk is explicitly flagged — some manufacturers/suppliers are in China,）
+按 Serenity 规则：上游投入、公司产品、下游用户均有具体关系的一手证据。地图：上游为哥伦比亚大学授权IP（嵌入核心物理/AI软件）及第三方CRO与合同制造商（支持药物管线）；产品为计算预测建模平台（Glide、Prime等具名软件）加自有管线SGR-1505/3515；下游以生物制药公司为主，Novartis为代表命名客户。结果对论点基本一致：2025年软件收入1.995亿美元（+11%）、顶级20家药企ACV 8080万美元、商业客户总留存率96%均支持"卖铲子"逻辑，药物发现收入+107%支持管线上行空间；但2026年前三季度软件收入同比下滑（1.063亿 vs 1.169亿）且管理层明确预期近期收入下降，对论点构成压力。
 
-- 支持 [ev_f4c3bb2cfdef0862](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): more than 1,750 academic institutions
-- 支持 [ev_65f6106d800b8a62](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): ability to scale these calculations to leverage large cloud computing environments
-- 反证 [ev_2e69c642cc42dab6](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): We do not own or operate manufacturing facilities for the production of any product candidates, nor do we have plans to develop our own manufacturing operations. We rely and expect to continue to rely on third-party contract manufacturers for all of our required raw materials, drug substance, and finished drug product
-- 反证 [ev_81500cb5de3a29f8](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): some of our manufacturers and suppliers are located in China. Trade tensions and conflicts between the United States and China have been escalated in recent years and, as such, we are exposed to the possibility of product supply disruption and increased costs
+- 支持 [ev_7d97c0f8cbe30418](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): Columbia University granted us and our affiliates an exclusive license (subject to specified non-commercial rights retained by Columbia University, on behalf of itself and other institutions, and any rights of the United States government), under Columbia University’s rights in specified software, or the Licensed Software, and patents, or the Licensed Patents, to develop, make, use, market, license, sell, distribute and otherwise commercially exploit products that
+- 支持 [ev_d115eedcaf080e03](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): certain patents, software code, technology, and improvements thereto that we license from Columbia University and that are used in, and integrated into, our software solutions, and our physics-based computational platform
+- 支持 [ev_ac9f1e77277933c0](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): agreements with the Bill & Melinda Gates Foundation entered into during the year ended December 31, 2024, aimed to accelerate the expansion of our computational software platform, and the extension of the agreement with Gates Ventures, LLC
+- 支持 [ev_f9614471e5b9e6e7](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): our computational predictive modeling technology and enterprise informatics platform
+- 支持 [ev_d215d49d588cb962](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): the electronic structure software program PS-GVB v1.0, the IMPACT software program used in the Glide ligand-protein docking program, the PrimeX protein modelling program, the QSite QM/MM program, the Combiglide automated library generation program, the Prime and PrimeX protein modelling programs, the Membrane Permeability model and the products that implement the water site analysis method, or collectively, the Licensed Products
+- 支持 [ev_6defd256d5725ab7](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000076/sdgr-20260930.htm) (primary-document): Beyond our planned investments to complete our ongoing Phase 1 dose-escalation clinical trials of SGR-1505 and SGR-3515, we do not intend to initiate additional clinical trials or advance our other proprietary preclinical programs into clinical trials independently.
+- 支持 [ev_f046a11a64a812cb](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): We sell our solutions primarily to biopharmaceutical companies, and our sales cycles can be as long as nine t
+- 支持 [ev_8b2a6bb1a9a7075a](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): in November 2024, we entered into an expanded, three-year, software agreement with Novartis, which is more fully described in "— Collaboration Agreements ." The three-year agreement substantially increases Novartis' access to our computational predictive modeling technology and enterprise informatics platform to industry-leading scale.
+- 支持 [ev_91f74d0dcc63a0fc](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): Our top 20 pharma industry cohort had an ACV of $80.8 million in 2025 compared to $70.0 million in 2024
+- 支持 [ev_736d5c4439d4bfb7](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000076/sdgr-20260930.htm) (primary-document): The licenses that our customers purchase from us provide them the ability to perform a certain number of calculations used in the design of molecules for drug discovery or materials science.
 
 ### chokepoint_evidence: partial
 
@@ -5566,9 +5572,18 @@ SEC一手材料提供了带日期的实际公司级收入、利润、现金或�
 
 ### earnings_validation: partial
 
-软件增长放缓（见备忘录），本证据包未纳入季报原文。
+按 Serenity 规则：实际结果有的支持、有的不支持论点。地图：上游为哥伦比亚大学授权IP（嵌入核心物理/AI软件）及第三方CRO与合同制造商（支持药物管线）；产品为计算预测建模平台（Glide、Prime等具名软件）加自有管线SGR-1505/3515；下游以生物制药公司为主，Novartis为代表命名客户。结果对论点基本一致：2025年软件收入1.995亿美元（+11%）、顶级20家药企ACV 8080万美元、商业客户总留存率96%均支持"卖铲子"逻辑，药物发现收入+107%支持管线上行空间；但2026年前三季度软件收入同比下滑（1.063亿 vs 1.169亿）且管理层明确预期近期收入下降，对论点构成压力。
 
-- 缺口：Q3 季报原文
+- 支持 [ev_bba7837c9bf8ef57](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): Total software products and services 199,500 180,365 19,135 11%
+- 支持 [ev_1a6130195bf0a82a](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): Total revenues $ 255,869 $ 207,539 $ 48,330 23%
+- 支持 [ev_606fb4af2a7d3981](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): our commercial customer cohort had an ACV of $177.4 million in 2025 compared to $165.8 million in 2024
+- 支持 [ev_91f74d0dcc63a0fc](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): Our top 20 pharma industry cohort had an ACV of $80.8 million in 2025 compared to $70.0 million in 2024
+- 支持 [ev_30e5c6d64af2a165](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): our gross dollar retention rate for our commercial customers was 96%
+- 支持 [ev_e3d7bc88766fa157](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): Our net dollar retention rate for our commercial customers was 100% for the year ended December 31, 2025, compared to 113% for the year ended December 31, 2024.
+- 支持 [ev_ed545ecef276fa64](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): Total drug discovery 56,369 27,174 29,195 107%
+- 支持 [ev_03a0802e8ef843b0](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): The increase in revenues for drug discovery services during the year ended December 31, 2025 as compared to the year ended December 31, 2024 was primarily due to the Novartis collaboration services that began in November 2024 and the progress of new and existing collaborations.
+- 反证 [ev_b69c6d7f3da18cc8](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000076/sdgr-20260930.htm) (primary-document): Total software revenue $ 38,153 $ 35,928 $ 106,257 $ 116,931
+- 缺口：按 Serenity 规则：实际结果有的支持、有的不支持论点
 
 ### counter_thesis: pass
 
@@ -5716,15 +5731,21 @@ SGMT为preparation阶段Phase 3公司，亏损属预期。公司披露截至2026
 
 ## SOPH · complete
 
-审查记录：`state/serenity-reviews/SOPH-claude-cd3aa091f1a26707b15a.json`
+审查记录：`state/serenity-reviews/SOPH-claude-f81ef8532f1f6db09193.json`
 
-### supply_chain_map: partial
+### supply_chain_map: pass
 
-云服务为 Microsoft，平台兼容多家测序仪厂商。（Opus 对抗复核下调为 partial：Memo grades pass for vendor-agnostic cloud, but the 20-F discloses material switching cost）
+按 Serenity 规则：上游投入、公司产品、下游用户均有具体关系的一手证据。图谱：上游依赖微软Azure等云服务商及IDT/Qiagen/NEB等消耗品供应商，以及第三方制造商和七家整合访问实验室；产品为SOPHiA DDM云原生多模态AI分析平台及生物制药应用套件；下游覆盖医院、参考实验室和制药/生物技术/CRO客户。结果方面，2025财年平台收入7490万美元（同比+18%）、分析量增长11%、NDR升至115%均与论点一致；但2025年生物制药收入同比小幅下降70万美元，与论点中"支持生物制药项目"的增长含义不符。
 
-- 支持 [ev_6c0ed12a395095d6](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): we currently use Microsoft Corporation
-- 支持 [ev_e4677ecd16db9297](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): NGS test kits, sequencers and sample materials from different manufacturers
-- 反证 [ev_8ae076a5ae776740](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): If our arrangements with cloud providers were terminated, we could experience interruptions on our platform and in our ability to make our content available to users, as well as delays and additional expenses in arranging for alternative cloud infrastructure services.
+- 支持 [ev_4f864bd7c5cada91](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): Our platform production environment currently runs on Microsoft Azure. As our platform architecture is vendor-agnostic, we could readily deploy our solutions onto any cloud infrastructure, as well as on-premise if necessary. We have ongoing research and development projects on all major cloud solution providers, including Microsoft Azure, Amazon Web Services and Google Cloud Platform.
+- 支持 [ev_0cc27983787ca261](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): we work with Integrated DNA Technologies (“IDT”), Qiagen, New England Biolabs (“NEB”), Watchmaker Genomics, Inc. and others for consumables and hardware equipment.
+- 支持 [ev_9f26d4c4b0a5c369](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): Our platform is a cloud-native software platform. To deploy our platform, we rely on cloud-based service providers.
+- 支持 [ev_9b07d891647fd746](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): These radiomics features can then be aggregated with genomics, clinical and biological data from the same patient.
+- 支持 [ev_cb4cb6716d214edc](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): Leveraging both our SOPHiA DDM Platform genomic applications and our customers’ own proprietary data through our AI/ML-powered multimodal analytics capabilities, we help customers solve development complexities and bottlenecks across the biopharma value chain.
+- 支持 [ev_a5db6e7859130fde](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): we offer four branded applications: SOPHiA Insights, SOPHiA Trial Match, SOPHiA Awareness and SOPHiA CDx, to address the needs of our biopharmaceutical and biotechnology customers, including diagnostic assay development, clinical trial matching and application, drug and therapeutic design optimization, and diagnostic assay deployment.
+- 支持 [ev_d8405732c2b84740](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): We also derive revenue from the sale of licenses for our Alamut suite of genomics mutations interpretation software.
+- 支持 [ev_aec9b0b791c82e93](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): Our clinical customers include academic and non-academic hospitals (including comprehensive cancer centers and children’s hospitals), and reference and specialty laboratories.
+- 支持 [ev_d4ffde5af156767d](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): In the biopharma market, we currently serve three types of customers: pharmaceutical companies, biotechnology companies, and CROs.
 
 ### chokepoint_evidence: partial
 
@@ -5755,9 +5776,15 @@ SGMT为preparation阶段Phase 3公司，亏损属预期。公司披露截至2026
 
 ### earnings_validation: partial
 
-持续亏损，依赖融资。
+按 Serenity 规则：实际结果有的支持、有的不支持论点。图谱：上游依赖微软Azure等云服务商及IDT/Qiagen/NEB等消耗品供应商，以及第三方制造商和七家整合访问实验室；产品为SOPHiA DDM云原生多模态AI分析平台及生物制药应用套件；下游覆盖医院、参考实验室和制药/生物技术/CRO客户。结果方面，2025财年平台收入7490万美元（同比+18%）、分析量增长11%、NDR升至115%均与论点一致；但2025年生物制药收入同比小幅下降70万美元，与论点中"支持生物制药项目"的增长含义不符。
 
-- 支持 [ev_0643c1781bd8da3c](https://www.sec.gov/Archives/edgar/data/1840706/000162828026052125/soph-20260630_d2.htm) (primary-document): These unaudited interim condensed consolidated financial statements have been prepared on a going concern basis.
+- 支持 [ev_a206f4802b12b922](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): Revenue was $77.3 million for the year ended December 31, 2025, compared to $65.2 million for the year ended December 31, 2024.
+- 支持 [ev_f52d1b7aa075b602](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): SOPHiA DDM Platform revenue was $74.9 million for the year ended December 31, 2025 compared to $63.5 million for the year ended December 31, 2024.
+- 支持 [ev_025dfbeb93997cac](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): Analysis volume increased to 391,698 in the year ended December 31, 2025 from 352,628 in the year ended December 31, 2024. We observed an increase in chargeable analysis volume of 11% for the year ended December 31, 2025, as compared to the year ended December 31, 2024.
+- 支持 [ev_6f02b44432974081](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): Core Genomics Customers increased to 528 as of December 31, 2025 from 472 as of December 31, 2024.
+- 支持 [ev_749f3cf370d6d90a](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): Net dollar retention increased to 115% as of December 31, 2025 from 104% as of December 31, 2024.
+- 反证 [ev_45e25191b318e5bc](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): partially offset by a slight decrease in biopharma revenue of $0.7 million.
+- 缺口：按 Serenity 规则：实际结果有的支持、有的不支持论点
 
 ### counter_thesis: pass
 
