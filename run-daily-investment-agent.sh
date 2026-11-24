@@ -228,6 +228,8 @@ if [ ! -f "$SCREEN_STATE" ] || [ -n "$(find "$SCREEN_STATE" -mtime +6 2>/dev/nul
   # both feed the lab-to-company chain. No model calls.
   PYTHONPATH=scripts python3 scripts/equity_raises.py || echo "Equity-raise check failed; keeping the last result"
   PYTHONPATH=scripts python3 scripts/company_research.py || echo "Company research lookup failed; keeping the last result"
+  # Key people: officer titles from SEC Forms 3/4/5, founders from 10-Ks, their PubMed papers; LinkedIn linked, never fetched.
+  PYTHONPATH=scripts python3 scripts/key_people.py || echo "Key-people tracker failed; keeping the last result"
   # Weekly: replay the order rule on 2014+ 10-K filings (deterministic; outputs/order-rule-backtest.md).
   PYTHONPATH=scripts ai-fund-lab/.venv/bin/python scripts/backtest_order_rule.py \
     || echo "Order-rule backtest failed; keeping the last result"

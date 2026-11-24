@@ -1158,6 +1158,37 @@ def lab_to_company_section(root: Path) -> str:
   </section>"""
 
 
+def key_people_section(root: Path) -> str:
+    """Peter's "track the core people": roster from SEC Forms 3/4/5, founders from 10-Ks, papers from PubMed (scripts/key_people.py)."""
+    data = load(root / "state/key-people.json", {})
+    companies = data.get("companies") or {}
+    if not companies:
+        return ""
+    def person(p):
+        pp = p.get("papers") or {}
+        paper = ""
+        if pp.get("count"):
+            r = (pp.get("recent") or [{}])[0]
+            paper = f' · <a href="{esc(r.get("url") or "")}">{pp["count"]} paper{"s" if pp["count"] > 1 else ""}</a>'
+        founder = " · founder" if p.get("founder") and "Founder" not in (p.get("title") or "") else ""
+        return (f'<a href="{esc(p["linkedin"])}">{esc(p["name"])}</a> <span class="muted-note">{esc((p.get("title") or "officer")[:40])}'
+                f'{founder}{paper}</span>')
+    rows = ""
+    for t, c in sorted(companies.items(), key=lambda kv: (-sum((p.get("papers") or {}).get("count", 0) > 0 for p in kv[1]["people"]), kv[0])):
+        people = c["people"][:5]
+        left = "; ".join(f'<a href="{esc(d.get("url") or "")}">{esc(d.get("date") or "")} {esc(d.get("title") or "")}</a>' for d in c.get("departures", []))
+        rows += (f'<tr><td class="tk">{esc(t)}</td><td style="white-space:normal">{"<br>".join(person(p) for p in people)}</td>'
+                 f'<td style="white-space:normal">{left or "—"}</td></tr>')
+    s = data.get("summary", {})
+    return f"""
+  <section class="section" id="people" aria-labelledby="people-h">
+    <h2 id="people-h">Key people</h2>
+    <p>Who runs each company and what they publish. The roster comes from SEC Forms 3, 4 and 5 filed in the last four quarters (each filing carries the officer's title), plus founders quoted from the 10-K. Papers are PubMed articles from the last three years where both the author's name and the company as affiliation match. Each name links to a LinkedIn search for following by hand; LinkedIn does not allow automated collection, so nothing is fetched from it.</p>
+    <p class="note"><span>Now:</span> {s.get("keyPeople", 0)} people at {s.get("companies", 0)} companies; {s.get("withPapers", 0)} published under the company's name in the last three years; {s.get("departures", 0)} key departure in the management radar.</p>
+    <div class="table-wrap"><table><thead><tr><th>Ticker</th><th>Key people (LinkedIn search · title · papers)</th><th>Recent departure</th></tr></thead><tbody>{rows}</tbody></table></div>
+  </section>"""
+
+
 def biodefense_section(root: Path) -> str:
     """Government countermeasure contracts (ASPR/BARDA via USAspending) and WHO outbreak reports."""
     data = load(root / "state/biodefense-radar.json", {})
@@ -1750,6 +1781,7 @@ def render_html(payload: dict, root: Path = ROOT) -> str:
 {deals_section(root)}
 {lab_to_company_section(root)}
 {funds_section(root)}
+{key_people_section(root)}
 {biodefense_section(root)}
 {choke_html}
 {radar_html}
