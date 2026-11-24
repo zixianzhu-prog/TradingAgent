@@ -150,6 +150,18 @@ def next_earnings(ticker: str, watch: dict, today: date) -> str | None:
 DILUTION_FLAG = 0.30  # equity raised in 24 months / market value (scripts/equity_raises.py)
 
 
+def recent_crls(crl: dict, today: date, days: int = 365) -> dict[str, list[dict]]:
+    """FDA rejection letters to listed companies in the last year, with the severity graded from the letter."""
+    since = (today - timedelta(days=days)).isoformat()
+    out: dict[str, list[dict]] = {}
+    for r in crl.get("rows", []):
+        t = (r.get("listed") or {}).get("ticker")
+        if t and (r.get("issued") or "") >= since:
+            out.setdefault(t, []).append({"issued": r["issued"], "severity": r.get("severity"), "drug": r.get("drug"),
+                                          "quote": r.get("newTrialQuote")})
+    return out
+
+
 def patent_liens(uspto: dict) -> dict[str, list[tuple[str, str]]]:
     """Lender and latest recorded date per company, from USPTO security-interest assignments."""
     out: dict[str, list[tuple[str, str]]] = {}
@@ -222,6 +234,14 @@ def ticket(row: dict, ctx: dict, portfolio: float, today: date) -> dict:
         b = adv["blocking"][0]
         action = "wait"
         reasons.append(f"Adversarial review ({adv.get('model', 'opus')}) would fail {b['gate']}: {b['argument'][:160]}")
+    # FDA rejection letter asking for a new trial (outputs/crl-drift-study.md): such stocks kept lagging XBI by a
+    # median 20 points over the next year, while letters asking for label or manufacturing fixes barely did.
+    heavy = [c for c in ctx.get("crls", {}).get(t, []) if c["severity"] == "heavy"]
+    if action in ("buy", "starter") and heavy:
+        action = "wait"
+        c = heavy[0]
+        reasons.append(f"FDA rejection letter {c['issued']} ({c['drug']}) asks for a new trial: in the 2012-2026 study such stocks "
+                       "lagged XBI by a median 20 points over the next year")
     # Backtest, confirmed out of sample (outputs/order-rule-backtest-oos.md): when the price implies growth more than
     # 20 points below the base case, outcomes were the worst of any bucket; the market usually knows something.
     if action in ("buy", "starter") and o and o.get("impliedGrowth") is not None and o.get("baseGrowth") is not None \
@@ -282,6 +302,8 @@ def ticket(row: dict, ctx: dict, portfolio: float, today: date) -> dict:
         "sizeAdjustments": adjustments, "scalePlan": scale, "scaleCues": deal_cues, "nextEarnings": earnings,
         "invalidation": falsifiers + [f"open counter-point: {c}" for c in counters] + [f"FDA rejection letter: {c}" for c in crl]
                         + [f"key departure: {d}" for d in departures]
+                        + [f"FDA rejection letter {c['issued']} ({c['severity']}): {c['drug']}"
+                           for c in ctx.get("crls", {}).get(t, []) if c["severity"] != "heavy"]
                         + [f"patents pledged to {who} (USPTO, recorded {when}): a default hands the IP to the lender"
                            for who, when in ctx.get("liens", {}).get(t, [])],
         "flipPoints": flip_points(o, row.get("rnpv")),
@@ -313,6 +335,7 @@ def build(portfolio: float, price_fn=price_risk) -> dict:
            "trends": growth_trends([r["ticker"] for r in ranking]),
            "adversarial": read(ROOT / "state/serenity-adversarial.json", {}).get("companies", {}),
            "bull": {t: bull_price(f) for t, f in financials.items()},
+           "crls": recent_crls(read(ROOT / "state/fda-crl-reasons.json", {}), today),
            "raises": read(ROOT / "state/equity-raises.json", {}).get("companies", {}),
            "liens": patent_liens(read(ROOT / "state/uspto-assignment-validation.json", {}))}
     small_rows = small_cap_rows({r["ticker"] for r in ranking})

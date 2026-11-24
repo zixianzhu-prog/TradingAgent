@@ -109,3 +109,19 @@ def test_heavy_dilution_is_flagged_without_changing_size():
     assert t["positionPct"] == base["positionPct"]
     ctx["raises"]["X"]["totalUsdM"] = 40
     assert not any("new shares" in a for a in ot.ticket(row(), ctx, 100_000, date(2026, 11, 17))["sizeAdjustments"])
+
+
+def test_heavy_fda_rejection_turns_ticket_to_wait_light_is_a_note():
+    ctx = {**CTX, "crls": {"X": [{"issued": "2026-10-01", "severity": "heavy", "drug": "D1", "quote": "conduct a new trial"}]}}
+    t = ot.ticket(row(), ctx, 100_000, date(2026, 11, 17))
+    assert t["action"] == "wait" and any("new trial" in r for r in t["reasons"])
+    ctx = {**CTX, "crls": {"X": [{"issued": "2026-10-01", "severity": "light", "drug": "D1", "quote": None}]}}
+    t = ot.ticket(row(), ctx, 100_000, date(2026, 11, 17))
+    assert t["action"] == "buy" and any("FDA rejection letter 2026-10-01 (light)" in i for i in t["invalidation"])
+
+
+def test_recent_crls_window():
+    crl = {"rows": [{"listed": {"ticker": "A"}, "issued": "2026-01-01", "severity": "heavy", "drug": "x"},
+                    {"listed": {"ticker": "B"}, "issued": "2024-01-01", "severity": "heavy", "drug": "y"},
+                    {"listed": None, "issued": "2026-05-01", "severity": "light"}]}
+    assert list(ot.recent_crls(crl, date(2026, 11, 17))) == ["A"]
