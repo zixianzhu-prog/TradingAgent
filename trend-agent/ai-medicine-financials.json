@@ -184,7 +184,38 @@
       "bear_case": "Services weakness persists, software growth fades and customers treat new AI features as replaceable rather than workflow-critical.",
       "sources": [
         "https://ir.certara.com/news-releases/news-release-details/certara-reports-third-quarter-2026-financial-results"
-      ]
+      ],
+      "scenario_inputs": {
+        "horizon_years": 5,
+        "metric": "sales",
+        "inputs_verified": false,
+        "net_debt_assumption_m": 76.3,
+        "net_debt_assumption_note": "SEC XBRL 2026-09-30: long-term debt $291M less cash $215M.",
+        "probability_basis": "Analyst-set priors for slow-growing biosimulation software; not empirical probabilities. Growth and multiples are replaced by sourced calibration.",
+        "cases": {
+          "bear": {
+            "probability": 0.35,
+            "revenue_cagr": 0.05,
+            "annual_share_dilution": 0.01,
+            "terminal_margin": null,
+            "terminal_multiple": 3.0
+          },
+          "base": {
+            "probability": 0.45,
+            "revenue_cagr": 0.1,
+            "annual_share_dilution": 0.01,
+            "terminal_margin": null,
+            "terminal_multiple": 5.0
+          },
+          "bull": {
+            "probability": 0.2,
+            "revenue_cagr": 0.15,
+            "annual_share_dilution": 0.0,
+            "terminal_margin": null,
+            "terminal_multiple": 7.0
+          }
+        }
+      }
     },
     {
       "ticker": "NTRA",
@@ -208,7 +239,38 @@
       "bear_case": "Growth decelerates, reimbursement or litigation pressure increases, or premium valuation compresses before earnings scale.",
       "sources": [
         "https://investor.natera.com/news/news-details/2026/Natera-Reports-Third-Quarter-2026-Financial-Results/default.aspx"
-      ]
+      ],
+      "scenario_inputs": {
+        "horizon_years": 5,
+        "metric": "sales",
+        "inputs_verified": false,
+        "net_debt_assumption_m": -1097.2,
+        "net_debt_assumption_note": "Cash and securities $1,097M (latest quarter); SEC XBRL shows no long-term debt after 2023, so treated as net cash. Verify before an investment conclusion.",
+        "probability_basis": "Analyst-set priors for a fast-growing, loss-making testing company; not empirical probabilities. Growth and multiples are replaced by sourced calibration.",
+        "cases": {
+          "bear": {
+            "probability": 0.35,
+            "revenue_cagr": 0.05,
+            "annual_share_dilution": 0.03,
+            "terminal_margin": null,
+            "terminal_multiple": 3.0
+          },
+          "base": {
+            "probability": 0.45,
+            "revenue_cagr": 0.1,
+            "annual_share_dilution": 0.02,
+            "terminal_margin": null,
+            "terminal_multiple": 5.0
+          },
+          "bull": {
+            "probability": 0.2,
+            "revenue_cagr": 0.15,
+            "annual_share_dilution": 0.01,
+            "terminal_margin": null,
+            "terminal_multiple": 7.0
+          }
+        }
+      }
     },
     {
       "ticker": "SOPH",
@@ -288,7 +350,38 @@
       "bear_case": "Screening growth remains expensive, reimbursement stalls or competition prevents volume from becoming durable cash generation.",
       "sources": [
         "https://investors.guardanthealth.com/press-releases/press-releases/2026/Guardant-Health-Reports-Third-Quarter-2026-Financial-Results-and-Increases-2026-Revenue-Guidance/default.aspx"
-      ]
+      ],
+      "scenario_inputs": {
+        "horizon_years": 5,
+        "metric": "sales",
+        "inputs_verified": false,
+        "net_debt_assumption_m": 402.4,
+        "net_debt_assumption_note": "SEC XBRL 2026-09-30: convertible notes $1,502M less cash and securities $1,100M.",
+        "probability_basis": "Analyst-set priors for a loss-making cancer-testing company with convertible debt; not empirical probabilities. Growth and multiples are replaced by sourced calibration.",
+        "cases": {
+          "bear": {
+            "probability": 0.35,
+            "revenue_cagr": 0.05,
+            "annual_share_dilution": 0.04,
+            "terminal_margin": null,
+            "terminal_multiple": 3.0
+          },
+          "base": {
+            "probability": 0.45,
+            "revenue_cagr": 0.1,
+            "annual_share_dilution": 0.03,
+            "terminal_margin": null,
+            "terminal_multiple": 5.0
+          },
+          "bull": {
+            "probability": 0.2,
+            "revenue_cagr": 0.15,
+            "annual_share_dilution": 0.02,
+            "terminal_margin": null,
+            "terminal_multiple": 7.0
+          }
+        }
+      }
     },
     {
       "ticker": "GEHC",
@@ -320,7 +413,38 @@
       "sources": [
         "https://investor.gehealthcare.com/news-releases/news-release-details/ge-healthcare-reports-third-quarter-2026-financial-results",
         "https://www.fda.gov/medical-devices/artificial-intelligence-enabled-medical-devices/list-artificial-intelligence-enabled-medical-devices"
-      ]
+      ],
+      "scenario_inputs": {
+        "horizon_years": 5,
+        "metric": "sales",
+        "inputs_verified": false,
+        "net_debt_assumption_m": 7147.0,
+        "net_debt_assumption_note": "SEC XBRL 2026-09-30: long-term debt $9,973M less cash $2,826M.",
+        "probability_basis": "Analyst-set priors for a mature equipment maker with a small AI share; not empirical probabilities. Growth and multiples are replaced by sourced calibration.",
+        "cases": {
+          "bear": {
+            "probability": 0.35,
+            "revenue_cagr": 0.05,
+            "annual_share_dilution": 0.0,
+            "terminal_margin": null,
+            "terminal_multiple": 3.0
+          },
+          "base": {
+            "probability": 0.45,
+            "revenue_cagr": 0.1,
+            "annual_share_dilution": 0.0,
+            "terminal_margin": null,
+            "terminal_multiple": 5.0
+          },
+          "bull": {
+            "probability": 0.2,
+            "revenue_cagr": 0.15,
+            "annual_share_dilution": 0.0,
+            "terminal_margin": null,
+            "terminal_multiple": 7.0
+          }
+        }
+      }
     },
     {
       "ticker": "RDNT",

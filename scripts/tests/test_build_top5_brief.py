@@ -194,3 +194,19 @@ def test_fiscal_year_revenue_keeps_annual_10k_values_only():
         {"start": "2025-01-01", "end": "2025-09-30", "val": 120.0e6, "form": "10-Q", "filed": "2025-11-01"},
     ]}}}}}
     assert cg.fiscal_year_revenue(facts) == [("2024", 125.8), ("2025", 176.0)]
+
+
+def test_slow_grower_is_not_assumed_to_speed_up():
+    import calibrate_growth as cg
+    m = cg.growth_paths(start=0.04, fundamental=0.072, historical=0.18)
+    assert m["cagr"]["bear"] == 0.04 and m["cagr"]["base"] == 0.04 and m["cagr"]["bull"] > 0.04
+
+
+def test_mature_company_keeps_its_own_multiple():
+    import calibrate_multiples as cm
+    snap = {"data_date": "Jan 2026", "industries": {"Healthcare Products": {"ps": 4.36, "firms": 204}}}
+    rows = [{"ticker": "GEHC", "price": 17.0, "shares": 100e6, "quarterly_revenue_m": 250.0, "scenario_inputs": {"metric": "sales"}},
+            {"ticker": "P1", "price": 80.0, "shares": 100e6, "quarterly_revenue_m": 250.0},
+            {"ticker": "P2", "price": 90.0, "shares": 100e6, "quarterly_revenue_m": 250.0}]
+    out = cm.calibrate(rows, snap)["companies"]["GEHC"]
+    assert out["base"] == round(cm.price_to_sales(rows[0]), 2) and out["bull"] <= 1.5 * out["base"] + 0.01 and out["bear"] < out["base"]

@@ -893,5 +893,7 @@
   "{n}-year scenarios set {n}-{n}-{n}": "{n} 年情景设定于 {n}-{n}-{n}",
   "Steps that failed in the last run and kept their previous result: ": "上次运行中失败、沿用上一次结果的步骤：",
   "The last daily run stopped early": "上次每日运行中途停止",
-  "fetch errors": "抓取出错"
+  "fetch errors": "抓取出错",
+  "No valuation range: discovery platform; a sales multiple or one-asset rNPV would mislead. Today's price: market value ${n}M less cash ${n}M leaves ${n}M paid for the platform and pipeline; {n}x annualized partner revenue (${n}M). A range needs verified partner milestones and per-asset value.": "没有估值区间：药物发现平台，用市销率或单一资产 rNPV 都会误导。按今天的价格：市值 ${n}M 减去现金 ${n}M，相当于为平台和管线支付 ${n}M；是年化合作收入（${n}M）的 {n} 倍。要给出区间，需要核实合作里程碑付款和每个资产的价值。",
+  "No valuation range: discovery platform; a sales multiple or one-asset rNPV would mislead. Today's price: market value ${n}M less cash ${n}M leaves ${n}M paid for the platform and pipeline; {n}x annualized partner revenue (${n}M); cash covers {n} years of operating burn (${n}M a year). A range needs verified partner milestones and per-asset value.": "没有估值区间：药物发现平台，用市销率或单一资产 rNPV 都会误导。按今天的价格：市值 ${n}M 减去现金 ${n}M，相当于为平台和管线支付 ${n}M；是年化合作收入（${n}M）的 {n} 倍；现金可覆盖 {n} 年经营消耗（每年 ${n}M）。要给出区间，需要核实合作里程碑付款和每个资产的价值。"
 }

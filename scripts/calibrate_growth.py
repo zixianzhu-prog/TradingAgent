@@ -144,6 +144,8 @@ def cagr_of_path(path: list[float]) -> float:
 def growth_paths(start: float, fundamental: float, historical: float) -> dict:
     """Yearly growth for each case, then the equivalent 5-year CAGR."""
     bull_end, base_end = max(historical, fundamental), fundamental
+    # A company growing slower than its industry is not assumed to speed up in the bear or base case: both hold today's rate.
+    base_end = min(base_end, start)
     bull = [start + (bull_end - start) * (y / HORIZON) for y in range(1, HORIZON + 1)]
     base = [start + (base_end - start) * (y / HORIZON) for y in range(1, HORIZON + 1)]
     bear = [start + (base_end - start) * min(1.0, y / 2) for y in range(1, HORIZON + 1)]

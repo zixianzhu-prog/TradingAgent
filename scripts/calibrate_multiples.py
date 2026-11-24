@@ -43,7 +43,14 @@ INDUSTRY = {
     "SDGR": "Heathcare Information and Technology",
     "SOPH": "Heathcare Information and Technology",
     "RDNT": "Hospitals/Healthcare Facilities",
+    "GEHC": "Healthcare Products",
+    "NTRA": "Healthcare Products",    # genetic testing; Damodaran's support-services group (0.37x) is insurers and distributors
+    "GH": "Healthcare Products",
+    "CERT": "Heathcare Information and Technology",  # biosimulation software
 }
+# Mature companies where AI is a small part of revenue: the base case keeps today's own multiple (no AI re-rating),
+# the bear case is the lower of the industry and 75% of today's, the bull case at most the lowest of industry, peers and 1.5x today's.
+MATURE = {"GEHC": "medical-equipment maker; AI is a small part of revenue"}
 # Peers: AI-medicine universe companies with a sales multiple. NVDA is a supplier, not a peer.
 PEER_EXCLUDE = {"NVDA"}
 
@@ -108,6 +115,19 @@ def calibrate(companies: list[dict], snapshot: dict) -> dict:
         industry = INDUSTRY[ticker]
         sector = industries[industry]["ps"]
         bear = min(sector, median)                      # never above the base case
+        own = price_to_sales(row)
+        if ticker in MATURE and own:
+            bull = max(own, min(sector, median, 1.5 * own))
+            out[ticker] = {
+                "metric": "sales", "bear": round(min(sector, 0.75 * own), 2), "base": round(own, 2), "bull": round(bull, 2),
+                "basis": {
+                    "bear": f"lower of {industry} price/sales {sector:g}x (Damodaran {snapshot['data_date']}) and 75% of today's {own:.1f}x",
+                    "base": f"today's own price/sales {own:.1f}x kept: {MATURE[ticker]}, so no AI re-rating",
+                    "bull": f"at most the lowest of the industry ({sector:g}x), the AI-medicine peer median ({median:g}x) and 1.5x today's",
+                },
+                "sector_industry": industry, "mature": True,
+            }
+            continue
         out[ticker] = {
             "metric": "sales",
             "bear": bear, "base": median, "bull": max(q3, median),

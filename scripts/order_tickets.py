@@ -186,6 +186,28 @@ def refresh_range(o: dict, risk: dict, range_date: str | None) -> dict:
     return {**o, "price": round(price, 2), "status": status, "gapToUpper": round(price / upper - 1, 3), "priceDate": day}
 
 
+# Drug-discovery platforms: revenue is partner payments and the value sits in many early assets, so neither a sales multiple
+# nor a one-asset rNPV gives a usable range. The ticket states what today's price implies instead.
+PLATFORMS = {"RXRX", "ABCL"}
+
+
+def platform_note(fin: dict, price: float | None) -> str | None:
+    shares, cash = fin.get("shares"), fin.get("cash_and_securities_m")
+    if not price or not shares or cash is None:
+        return None
+    cap = price * shares / 1e6
+    ev = cap - cash
+    revenue = (fin.get("quarterly_revenue_m") or 0) * 4
+    burn = -(fin.get("quarterly_operating_cash_flow_m") or 0) * 4
+    parts = [f"market value ${cap:,.0f}M less cash ${cash:,.0f}M leaves ${ev:,.0f}M paid for the platform and pipeline"]
+    if revenue > 0:
+        parts.append(f"{ev / revenue:,.0f}x annualized partner revenue (${revenue:,.0f}M)")
+    if burn > 0:
+        parts.append(f"cash covers {cash / burn:.1f} years of operating burn (${burn:,.0f}M a year)")
+    return ("No valuation range: discovery platform; a sales multiple or one-asset rNPV would mislead. Today's price: "
+            + "; ".join(parts) + ". A range needs verified partner milestones and per-asset value.")
+
+
 def ticket(row: dict, ctx: dict, portfolio: float, today: date) -> dict:
     t = row["ticker"]
     risk = ctx["risk"].get(t, {})
@@ -214,7 +236,10 @@ def ticket(row: dict, ctx: dict, portfolio: float, today: date) -> dict:
         )
     elif not o:
         rn = row.get("rnpv") or {}
-        if rn.get("platform"):
+        note = platform_note((ctx.get("financials") or {}).get(t, {}), risk.get("price")) if t in PLATFORMS else None
+        if note:
+            action, reasons = "wait", [note]
+        elif rn.get("platform"):
             action, reasons = "wait", [f"No valuation range: discovery platform, a one-asset rNPV understates it; today's price implies ${rn['impliedPeakSalesM']:,.0f}M peak sales for the lead asset"]
         else:
             action, reasons = "wait", ["No valuation range (no 5-year scenario model), so no limit price"]
@@ -341,7 +366,7 @@ def build(portfolio: float, price_fn=price_risk) -> dict:
         f = r.get("facts") or {}
         if r.get("ticker") and (f.get("isNewDeal") is True or f.get("isIndClearance") is True):
             deals.setdefault(r["ticker"], []).append(r)
-    ctx = {"rangeDates": {t: (c or {}).get("asOf") for t, c in read(ROOT / "state/market-validation.json", {}).get("companies", {}).items()},
+    ctx = {"financials": financials, "rangeDates": {t: (c or {}).get("asOf") for t, c in read(ROOT / "state/market-validation.json", {}).get("companies", {}).items()},
            "risk": price_fn([r["ticker"] for r in ranking]) if ranking else {},
            "small": {r["ticker"]: r for r in read(SMALL_CAPS, {}).get("companies", [])},
            "events": events, "departures": departures, "deals": deals, "watch": read(WATCHLIST, {}),

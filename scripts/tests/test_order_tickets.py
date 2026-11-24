@@ -135,3 +135,11 @@ def test_refresh_range_uses_newer_price():
     same = ot.refresh_range(o, {"price": 64.0, "priceDate": "2026-11-23"}, "2026-11-23")
     assert same["price"] == 57.42 and same["priceDate"] == "2026-11-23"
     assert ot.refresh_range({}, {"price": 1, "priceDate": "2026-11-24"}, None) == {}
+
+
+def test_platform_note_states_what_price_implies():
+    import order_tickets as ot
+    fin = {"shares": 600e6, "cash_and_securities_m": 750.0, "quarterly_revenue_m": 18.6, "quarterly_operating_cash_flow_m": -119.0}
+    note = ot.platform_note(fin, 3.0)
+    assert "$1,050M paid for the platform" in note and "14x annualized partner revenue" in note and "1.6 years" in note
+    assert ot.platform_note({}, 3.0) is None
