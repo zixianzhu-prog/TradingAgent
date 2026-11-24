@@ -682,7 +682,7 @@
   "Above range (wait)": "高于区间（等待）",
   "Beat XBI": "跑赢 XBI",
   "Group": "组别",
-  "Held": "持有期",
+  "Held": "持有",
   "In range (old rule buys)": "在区间内（旧规则会下单）",
   "In range, growth not slowing (new rule buys)": "在区间内且增速未放缓（新规则下单）",
   "In range, growth slowing (new rule waits)": "在区间内但增速放缓（新规则等待）",
@@ -949,5 +949,11 @@
   "founder": "创始人",
   "scientist": "科学家",
   "paper author": "论文作者",
-  "founder ({n}-K)": "创始人（{n}-K）"
+  "founder ({n}-K)": "创始人（{n}-K）",
+  "Quarterly 13F: adds and trims below 5%": "季度 13F：5% 以下的加仓和减仓",
+  "{n} specialist funds, quarter ended {n}-{n}-{n} against the quarter before. {n}F covers every position of a fund managing over ${n}M, so it shows buying and selling that never reaches the {n}% filing line. It is filed up to {n} days after quarter end, so it shows what a fund held then, not now. Issuers are matched to companies by name. Context only, like the {n}D/{n}G list above.": "{n} 家专业基金，{n}-{n}-{n} 季度末对比上一季度。管理规模超过 ${n}M 的基金每季度都要在 {n}F 里披露全部持仓，所以能看到没碰到 {n}% 申报线的买卖。{n}F 最晚在季度结束后 {n} 天提交，反映的是当时的持仓，不是现在。发行人按名称匹配到公司。和上面的 {n}D/{n}G 一样，只作背景参考。",
+  "New": "新建仓",
+  "Added {n}%+": "加仓 {n}%+",
+  "Trimmed {n}%+": "减仓 {n}%+",
+  "Exited": "清仓"
 }

@@ -1522,6 +1522,36 @@ def biodefense_section(root: Path) -> str:
   </section>"""
 
 
+FUND_SUFFIX = {"Capital", "Management", "Advisors", "Investments", "Group", "Partners", "Global", "Asset", "Funds", "Fund", "Investors", "LLC", "LP"}
+
+
+def thirteen_f_block(root: Path) -> str:
+    """Quarter-on-quarter 13F changes by specialist funds (scripts/fund_13f.py)."""
+    data = load(root / "state/fund-13f.json", {})
+    companies = data.get("companies") or {}
+    if not companies:
+        return ""
+    word = {"new": "new", "added": "added", "trimmed": "trimmed", "exited": "exited", "held": "held"}
+    tone = {"new": "ok", "added": "ok", "trimmed": "warn", "exited": "alert", "held": "plain"}
+
+    def cell(rows, kind):
+        names = [" ".join(w for w in r["fund"].replace(".", "").split() if w not in FUND_SUFFIX) for r in rows if r["change"] == kind]
+        return f'<span class="chip {tone[kind]}">{len(names)}</span> {esc(", ".join(names))}' if names else "—"
+
+    order = sorted(companies, key=lambda t: (-sum(r["change"] in ("new", "added") for r in companies[t]), t))
+    body = "".join(f'<tr><td class="tk">{esc(t)}</td>' + "".join(f'<td style="white-space:normal">{cell(companies[t], k)}</td>' for k in ("new", "added", "trimmed", "exited"))
+                   + f'<td class="n">{sum(r["change"] == "held" for r in companies[t])}</td></tr>' for t in order)
+    s = data.get("summary", {})
+    period = max((f["period"] for f in data.get("funds", [])), default="")
+    return (f'<h3 class="bucket-h">Quarterly 13F: adds and trims below 5%</h3>'
+            f'<p class="bucket-blurb">{s.get("funds", 0)} specialist funds, quarter ended {esc(period)} against the quarter before. '
+            "13F covers every position of a fund managing over $100M, so it shows buying and selling that never reaches the 5% filing line. "
+            "It is filed up to 45 days after quarter end, so it shows what a fund held then, not now. Issuers are matched to companies by name. "
+            "Context only, like the 13D/13G list above.</p>"
+            '<div class="table-wrap"><table><thead><tr><th>Ticker</th><th>New</th><th>Added 10%+</th><th>Trimmed 10%+</th><th>Exited</th><th class="n">Held</th></tr></thead>'
+            f'<tbody>{body}</tbody></table></div>')
+
+
 def funds_section(root: Path) -> str:
     """Specialist life-science funds crossing 5% (Schedule 13D/13G, scripts/institutional_ownership_agent.py)."""
     data = load(root / "state/institutional-ownership.json", {})
@@ -1547,6 +1577,7 @@ def funds_section(root: Path) -> str:
     <p class="note"><span>Several specialists in the same company:</span> {crowd or "—"}</p>
     <div class="table-wrap"><table><thead><tr><th class="n">Filed</th><th>Ticker</th><th>Fund</th><th class="n">Stake</th><th>Form</th><th></th></tr></thead>
     <tbody>{rows}</tbody></table></div>
+    {thirteen_f_block(root)}
   </section>"""
 
 
