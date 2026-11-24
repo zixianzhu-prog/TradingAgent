@@ -37,6 +37,9 @@ def read(path, default):
     return json.loads(p.read_text()) if p.is_file() else default
 
 
+MIN_QUOTE = 20  # shorter quotes ("CEO and Chairman") prove too little and fail import
+
+
 def failed_run(gate: dict, dropped: int) -> bool:
     """A model re-grade whose every quote failed verification is a broken run, not evidence; keep the last grade."""
     return bool(dropped) and not (gate.get("support") or gate.get("counter"))
@@ -319,7 +322,7 @@ def validate(raw, passages):
             for ref in (item.get(side, []) if isinstance(item.get(side, []), list) else [None]):
                 passage = index.get(ref.get("id")) if isinstance(ref, dict) else None
                 quote = clean(ref.get("quote", "")) if isinstance(ref, dict) else ""
-                if not passage or len(quote) < 20 or quote not in clean(passage["text"]):
+                if not passage or len(quote) < MIN_QUOTE or quote not in clean(passage["text"]):
                     errors.append("引用不存在或原文无法匹配")
                     continue
                 refs[side].append({"id": passage["id"], "quote": quote, "url": passage["url"], "provenance": passage["provenance"], "primary": passage["primary"], "publishedAt": passage["publishedAt"], "observedAt": passage["observedAt"]})
