@@ -15,6 +15,24 @@ if [ "${FREE_KB:-0}" -lt "$MIN_FREE_KB" ]; then
   echo "Free generated caches or disk space, then run again. No market workflow was started." >&2
   exit 2
 fi
+# Run status: soft failures (a step fails and the last result is kept) are listed; an abort is recorded by the exit hook.
+# The page reads state/run-status.json and shows a red line, so a partial run is never read as a complete one.
+RUN_STATUS="$PROJECT_DIR/state/run-status.json"
+RUN_FAILS="$PROJECT_DIR/state/run-failures.txt"
+: > "$RUN_FAILS"
+note_fail() { echo "$1"; echo "$1" >> "$RUN_FAILS"; }
+write_status() {
+  python3 - "$RUN_STATUS" "$RUN_FAILS" "$1" "$AGENT_MODE" <<'PY'
+import json, sys
+from datetime import datetime, timezone
+path, fails, state, mode = sys.argv[1:5]
+lines = [l.strip() for l in open(fails, encoding="utf-8") if l.strip()]
+json.dump({"at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "state": state, "mode": mode, "softFailures": lines},
+          open(path, "w", encoding="utf-8"), indent=2)
+PY
+}
+write_status running
+trap 'code=$?; if [ "$code" -ne 0 ]; then write_status "aborted (exit $code)"; fi' EXIT
 cd "$PROJECT_DIR/trend-agent"
 ./trend-agent cycle \
   --sources sources.ai-medicine.json \
@@ -43,7 +61,7 @@ trend-agent/.venv/bin/python scripts/emerging_signal_detector.py \
 # explicitly labelled company candidates. This layer uses public structured APIs,
 # not an LLM, and cannot pass a Serenity gate by itself.
 trend-agent/.venv/bin/python scripts/scientific_frontier_agent.py \
-  || echo "Scientific frontier refresh failed; keeping the last saved graph"
+  || note_fail "Scientific frontier refresh failed; keeping the last saved graph"
 trend-agent/.venv/bin/python scripts/beneficiary_mapper.py \
   --signals state/emerging-signals.json \
   --top-signals 3
@@ -217,53 +235,53 @@ if [ ! -f "$SCREEN_STATE" ] || [ -n "$(find "$SCREEN_STATE" -mtime +6 2>/dev/nul
   # Claude subscription, cached per filing). Feeds the small-cap list below as a second candidate source.
   if [ "$AGENT_MODE" = "deep" ]; then
     PYTHONPATH=scripts trend-agent/.venv/bin/python scripts/pharma_deals_ind.py --days 90 --parallel 3 --model "${CLAUDE_EXTRACT_MODEL:-sonnet}" \
-      || echo "IND/deal tracker failed; small-cap list uses the last saved result"
+      || note_fail "IND/deal tracker failed; small-cap list uses the last saved result"
   else
     PYTHONPATH=scripts trend-agent/.venv/bin/python scripts/pharma_deals_ind.py --days 90 --no-extract \
-      || echo "IND/deal search failed; small-cap list uses the last saved result"
+      || note_fail "IND/deal search failed; small-cap list uses the last saved result"
   fi
   # Peter's earlier-and-smaller direction: AI-medicine companies under $1B, tagged preparation / growth / slowing.
   PYTHONPATH=scripts ai-fund-lab/.venv/bin/python scripts/small_cap_stage.py
   # Weekly: money raised by listed companies (XBRL equity proceeds) and papers each company publishes (OpenAlex);
   # both feed the lab-to-company chain. No model calls.
-  PYTHONPATH=scripts python3 scripts/equity_raises.py || echo "Equity-raise check failed; keeping the last result"
-  PYTHONPATH=scripts python3 scripts/company_research.py || echo "Company research lookup failed; keeping the last result"
+  PYTHONPATH=scripts python3 scripts/equity_raises.py || note_fail "Equity-raise check failed; keeping the last result"
+  PYTHONPATH=scripts python3 scripts/company_research.py || note_fail "Company research lookup failed; keeping the last result"
   # Key people: officer titles from SEC Forms 3/4/5, founders from 10-Ks, their PubMed papers; LinkedIn linked, never fetched.
-  PYTHONPATH=scripts python3 scripts/key_people.py || echo "Key-people tracker failed; keeping the last result"
+  PYTHONPATH=scripts python3 scripts/key_people.py || note_fail "Key-people tracker failed; keeping the last result"
   # Weekly: replay the order rule on 2014+ 10-K filings (deterministic; outputs/order-rule-backtest.md).
   PYTHONPATH=scripts ai-fund-lab/.venv/bin/python scripts/backtest_order_rule.py \
-    || echo "Order-rule backtest failed; keeping the last result"
+    || note_fail "Order-rule backtest failed; keeping the last result"
   # Same rules on health-care companies outside that sample (state/serenity-source-cache/xbrl-oos, scripts/backtest_universe.py).
   PYTHONPATH=scripts ai-fund-lab/.venv/bin/python scripts/backtest_order_rule.py --xbrl-dir state/serenity-source-cache/xbrl-oos \
     --state state/order-rule-backtest-oos.json --report outputs/order-rule-backtest-oos.md --label out-of-sample \
-    || echo "Out-of-sample backtest failed; keeping the last result"
+    || note_fail "Out-of-sample backtest failed; keeping the last result"
   # Patient counts from 10-Ks for rNPV peak sales: only companies without an entry in trend-agent/rnpv-overrides.json
   # (Claude Code on your subscription, Sonnet; deep mode only).
   if [ "$AGENT_MODE" = "deep" ]; then
     PYTHONPATH=scripts python3 scripts/rnpv_patients.py --model "${CLAUDE_EXTRACT_MODEL:-sonnet}" \
-      || echo "rNPV patient extraction failed; keeping existing overrides"
+      || note_fail "rNPV patient extraction failed; keeping existing overrides"
     # Who sells the lead drug: a partner (company earns royalties) or the company itself. Only unchecked companies.
     PYTHONPATH=scripts python3 scripts/rnpv_patients.py --economics --model "${CLAUDE_EXTRACT_MODEL:-sonnet}" \
-      || echo "Partner-economics check failed; keeping existing overrides"
+      || note_fail "Partner-economics check failed; keeping existing overrides"
     # Founders and university/institute licenses quoted from 10-Ks (cached per filing).
     PYTHONPATH=scripts python3 scripts/science_founders.py --model "${CLAUDE_EXTRACT_MODEL:-sonnet}" \
-      || echo "Founder/licensor extraction failed; keeping the last links"
+      || note_fail "Founder/licensor extraction failed; keeping the last links"
     # Serenity rubric re-grades for the deep-review queue: the model reports quoted facts, code applies the rubric.
     QUEUE=$(python3 -c "import json;print(' '.join(json.load(open('state/candidate-filter.json')).get('deepReview',[])))" 2>/dev/null || true)
     if [ -n "$QUEUE" ]; then
-      PYTHONPATH=scripts python3 scripts/claude_customer_review.py --tickers $QUEUE || echo "Customer-gate review failed; keeping the last grades"
-      PYTHONPATH=scripts python3 scripts/claude_management_review.py --proxy --tickers $QUEUE || echo "Governance review failed; keeping the last grades"
-      PYTHONPATH=scripts python3 scripts/claude_chain_review.py --tickers $QUEUE || echo "Supply-chain/earnings review failed; keeping the last grades"
+      PYTHONPATH=scripts python3 scripts/claude_customer_review.py --tickers $QUEUE || note_fail "Customer-gate review failed; keeping the last grades"
+      PYTHONPATH=scripts python3 scripts/claude_management_review.py --proxy --tickers $QUEUE || note_fail "Governance review failed; keeping the last grades"
+      PYTHONPATH=scripts python3 scripts/claude_chain_review.py --tickers $QUEUE || note_fail "Supply-chain/earnings review failed; keeping the last grades"
     fi
     # Opus argues against the memos behind live tickets (cached on unchanged evidence); a verified hard-gate fail makes the ticket wait.
     PYTHONPATH=scripts python3 scripts/claude_adversarial_review.py --model "${CLAUDE_ADVERSARIAL_MODEL:-opus}" \
-      || echo "Adversarial review failed; keeping the last result"
+      || note_fail "Adversarial review failed; keeping the last result"
     # Counter-thesis gate re-graded after the adversarial pass, so its challenges are read as passages.
     if [ -n "$QUEUE" ]; then
-      PYTHONPATH=scripts python3 scripts/claude_counter_review.py --tickers $QUEUE || echo "Counter-thesis review failed; keeping the last grades"
+      PYTHONPATH=scripts python3 scripts/claude_counter_review.py --tickers $QUEUE || note_fail "Counter-thesis review failed; keeping the last grades"
     fi
     # Blind test: freeze this week's calls from the agent, a plain web-search model and a mechanical rule (once a week).
-    PYTHONPATH=scripts python3 scripts/blind_test.py --freeze || echo "Blind-test freeze failed; it retries on the next deep run"
+    PYTHONPATH=scripts python3 scripts/blind_test.py --freeze || note_fail "Blind-test freeze failed; it retries on the next deep run"
   fi
   # Upstream bottleneck map and Serenity evidence packets for newly shortlisted names.
   PYTHONPATH=scripts trend-agent/.venv/bin/python scripts/ai_medicine_chokepoints.py
@@ -287,7 +305,7 @@ PYTHONPATH=scripts trend-agent/.venv/bin/python scripts/technology_ownership_age
 PYTHONPATH=scripts trend-agent/.venv/bin/python scripts/uspto_assignment_validation.py
 PYTHONPATH=scripts trend-agent/.venv/bin/python scripts/institutional_ownership_agent.py
 # Biodefense: ASPR/BARDA contract actions (USAspending) and WHO outbreak reports; no model calls.
-PYTHONPATH=scripts python3 scripts/biodefense_radar.py || echo "Biodefense radar failed; keeping the last result"
+PYTHONPATH=scripts python3 scripts/biodefense_radar.py || note_fail "Biodefense radar failed; keeping the last result"
 # Join papers, researchers, ownership evidence, financing, pharma payments,
 # clinical progress and SEC revenue into one auditable company-level chain.
 # Missing ownership evidence stays explicit and never becomes a positive score.
@@ -299,7 +317,7 @@ trend-agent/.venv/bin/python scripts/serenity_review_status.py
 trend-agent/.venv/bin/python scripts/build_top5_brief.py
 # rNPV order ranges for drug developers with no revenue (deterministic; uses the ranking just built).
 PYTHONPATH=scripts ai-fund-lab/.venv/bin/python scripts/rnpv_valuation.py \
-  || echo "rNPV valuation failed; keeping the last saved ranges"
+  || note_fail "rNPV valuation failed; keeping the last saved ranges"
 python3 scripts/translate_page.py  # Chinese copy: dashboard/dist/top5.zh.html
 # Emerging-signal radar page (dashboard/dist/radar.html): today's signals, mapped companies, replays.
 trend-agent/.venv/bin/python scripts/build_radar_page.py
@@ -356,15 +374,16 @@ PYTHONPATH=scripts ai-fund-lab/.venv/bin/python scripts/order_tickets.py
 # Sonnet reads new 10-Ks only in deep mode; otherwise cached AI judgments are reused.
 if [ "$AGENT_MODE" = "deep" ]; then
   PYTHONPATH=scripts ai-fund-lab/.venv/bin/python scripts/candidate_filter.py --model "${CLAUDE_EXTRACT_MODEL:-sonnet}" \
-    || echo "Candidate filter failed; keeping the last result"
+    || note_fail "Candidate filter failed; keeping the last result"
 else
-  PYTHONPATH=scripts ai-fund-lab/.venv/bin/python scripts/candidate_filter.py --no-model || echo "Candidate filter failed; keeping the last result"
+  PYTHONPATH=scripts ai-fund-lab/.venv/bin/python scripts/candidate_filter.py --no-model || note_fail "Candidate filter failed; keeping the last result"
 fi
 # Forward record: freeze today's tickets (append-only, committed) and score earlier calls against XBI.
-PYTHONPATH=scripts ai-fund-lab/.venv/bin/python scripts/ticket_ledger.py || echo "ticket ledger skipped"
-PYTHONPATH=scripts ai-fund-lab/.venv/bin/python scripts/blind_test.py --score || echo "blind-test scoring skipped"
+PYTHONPATH=scripts ai-fund-lab/.venv/bin/python scripts/ticket_ledger.py || note_fail "ticket ledger skipped"
+PYTHONPATH=scripts ai-fund-lab/.venv/bin/python scripts/blind_test.py --score || note_fail "blind-test scoring skipped"
+write_status "finishing"  # the final page build shows any soft failures recorded so far
 # Is every source on schedule? A stale price, ticket, gate or news feed puts a red alert at the top of the page.
-python3 scripts/data_freshness.py || echo "Freshness check failed"
+python3 scripts/data_freshness.py || note_fail "Freshness check failed"
 # Rebuild the page so it shows today's tickets (they are computed from the ranking the first build wrote).
 trend-agent/.venv/bin/python scripts/build_top5_brief.py
 python3 scripts/translate_page.py
@@ -382,6 +401,7 @@ trend-agent/.venv/bin/python scripts/daily_data_inventory.py \
   --json-output state/daily-data-inventory.json \
   --markdown-output outputs/daily-data-inventory.md
 
+write_status complete
 echo "Daily report: $PROJECT_DIR/outputs/daily-investment-agent.md"
 echo "Performance report: $PROJECT_DIR/outputs/investment-score-performance.md"
 echo "Benchmark report: $PROJECT_DIR/outputs/agent-benchmark-validation.md"

@@ -275,10 +275,10 @@ def _v(facts: dict, key: str) -> str:
 
 def report(payload: dict) -> str:
     s = payload["summary"]
-    lines = ["# IND 获批与大药厂合作（SEC 8-K）", "",
+    lines = ["# IND 生效与大药厂合作（SEC 8-K）", "",
              f"窗口：{payload['window'][0]} 至 {payload['window'][1]}。来源：公司自己的 8-K 新闻稿（SEC 全文检索），事实由 Claude 抽取，"
              "每条事实的引文都逐字核对过原文，对不上的不保留。", "",
-             f"IND 获批 {s['indConfirmed']} 条（检索到 {s['indFilings']} 份文件）；大药厂新合作 {s['dealsConfirmed']} 条（检索到 {s['dealFilings']} 份），"
+             f"IND 生效 {s['indConfirmed']} 条（检索到 {s['indFilings']} 份文件）；大药厂新合作 {s['dealsConfirmed']} 条（检索到 {s['dealFilings']} 份），"
              f"其中合作方为 AI/计算平台付费的 {s['aiPlatformDeals']} 条。", "",
              "## 大药厂新合作", "",
              "| 日期 | 公司 | 合作方 | 首付款（百万美元） | 里程碑（百万美元） | 范围 | 为 AI 平台付费 | 市值/阶段 | 公告 |",
@@ -291,7 +291,7 @@ def report(payload: dict) -> str:
         size = f"${sc['marketCapM']}M · {sc['stage']}" if sc else ("AI 医疗池" if r["inUniverse"] else "")
         lines.append(f"| {r['filed']} | {r['company']} ({r['ticker'] or '—'}) | {_v(f, 'partner')} | {_v(f, 'upfrontUsdM')} | "
                      f"{_v(f, 'milestonesUsdM')} | {_v(f, 'scope')[:80]} | {_v(f, 'aiPlatformDeal')} | {size} | [8-K]({r['url']}) |")
-    lines += ["", "## IND 获批（动物实验通过，进入人体试验）", "",
+    lines += ["", "## IND 生效（FDA 未阻止进入人体试验；不代表药物有效）", "",
               "| 日期 | 公司 | 药物 | 适应症 | 下一步试验 | 类型 | 市值/阶段 | 公告 |", "|---|---|---|---|---|---|---|---|"]
     for r in payload["filings"]:
         f = r.get("facts") or {}

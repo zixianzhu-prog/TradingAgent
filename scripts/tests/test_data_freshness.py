@@ -30,3 +30,16 @@ def test_weekend_gap_within_price_limit(tmp_path):
     write(tmp_path, "state/order-tickets.json", {"generatedAt": "2026-11-23T10:00:00+00:00", "pricesAsOf": "2026-11-20"})
     rows = {r["label"]: r for r in df.check(date(2026, 11, 23), tmp_path)["sources"]}
     assert rows["Market prices"]["status"] == "fresh"
+
+
+def test_fetch_errors_mark_source_degraded(tmp_path):
+    write(tmp_path, "state/order-tickets.json", {"generatedAt": "2026-11-24T10:00:00+00:00", "pricesAsOf": "2026-11-24"})
+    write(tmp_path, "state/serenity-gate-results.json", {"generatedAt": "2026-11-24T10:00:00+00:00", "summary": {"errors": 3}})
+    rows = {r["label"]: r for r in df.check(date(2026, 11, 24), tmp_path)["sources"]}
+    assert rows["Serenity gates"]["status"] == "degraded" and rows["Serenity gates"]["errors"] == 3
+    assert df.error_count({"errors": []}) == 0 and df.error_count({"errors": ["dns"]}) == 1
+
+
+def test_aborted_run_raises_alert(tmp_path):
+    write(tmp_path, "state/run-status.json", {"state": "aborted (exit 1)", "softFailures": []})
+    assert df.check(date(2026, 11, 24), tmp_path)["alert"]

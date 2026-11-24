@@ -218,6 +218,60 @@ def crl_tasks(config: dict, crl: dict, today: date) -> list[dict]:
     return tasks
 
 
+WIRES = ("globenewswire", "business wire", "businesswire", "pr newswire", "prnewswire", "accesswire")
+
+
+def is_primary(task: dict, aliases: list[str]) -> bool:
+    """The company's own release or filing: an SEC source, its newsroom, or a wire release whose title starts with its name."""
+    source, title = task.get("source", "").lower(), task.get("title", "").lower()
+    if source.startswith("sec ") or task.get("crl"):
+        return True
+    if any(a.lower() in source for a in aliases):
+        return True
+    return any(w in source for w in WIRES) and any(title.startswith(a.lower()) for a in aliases)
+
+
+def _day(task: dict) -> date:
+    stamp = parse_timestamp(task.get("publishedAt")) or parse_timestamp(task.get("knowledgeAt"))
+    return stamp.date() if stamp else date.min
+
+
+def cluster_tasks(tasks: list[dict], aliases_by_ticker: dict[str, list[str]], before: int = 7, after: int = 3, loose: int = 5) -> list[dict]:
+    """One task per real event. The company's own releases anchor events; press coverage joins the anchor that shares an
+    event type and falls from `before` days ahead of it to `after` days behind it (nearest wins). Coverage with no
+    anchor is grouped with other coverage of the same type within `loose` days. Reprints never count as new events."""
+    out = []
+    for ticker in dict.fromkeys(t["ticker"] for t in tasks):
+        rows = sorted((t for t in tasks if t["ticker"] == ticker), key=_day)
+        aliases = aliases_by_ticker.get(ticker, [])
+        anchors = [dict(t, coverage=[]) for t in rows if is_primary(t, aliases)]
+        loose_groups: list[dict] = []
+        for t in rows:
+            if is_primary(t, aliases):
+                continue
+            fits = [a for a in anchors if set(a["eventTypes"]) & set(t["eventTypes"])
+                    and -after <= (_day(a) - _day(t)).days <= before]
+            if fits:
+                home = min(fits, key=lambda a: (-len(set(a["eventTypes"]) & set(t["eventTypes"])), abs((_day(a) - _day(t)).days)))
+            else:
+                home = next((g for g in loose_groups if set(g["eventTypes"]) & set(t["eventTypes"])
+                             and abs((_day(t) - _day(g["coverage"][-1] if g["coverage"] else g)).days) <= loose), None)
+                if home is None:
+                    loose_groups.append(dict(t, coverage=[]))
+                    continue
+            home["coverage"].append(t)
+        for event in anchors + loose_groups:
+            members = [event] + event["coverage"]
+            lead = dict(event)
+            lead["coverage"] = [{k: m.get(k) for k in ("title", "url", "source", "publishedAt")} for m in event["coverage"]]
+            lead["articles"] = len(members)
+            lead["materialityScore"] = max(m["materialityScore"] for m in members)
+            lead["affectedGates"] = sorted({g for m in members for g in m.get("affectedGates", [])})
+            lead["primarySource"] = is_primary(event, aliases)
+            out.append(lead)
+    return out
+
+
 def build(config: dict, articles: list[dict], today: date, crl: dict | None = None) -> dict:
     threshold = int(config.get("materiality_threshold", 60))
     scheduled = []
@@ -289,6 +343,8 @@ def build(config: dict, articles: list[dict], today: date, crl: dict | None = No
             for task in tasks
         ):
             event["status"] = "evidence-received"
+    articles = len(tasks)
+    tasks = cluster_tasks(tasks, {c["ticker"]: c.get("aliases", []) for c in config["companies"]})
     tasks.sort(key=lambda row: (row["materialityScore"], row["publishedAt"]), reverse=True)
     scheduled.sort(key=lambda row: (row["daysUntil"] is None, row["daysUntil"] if row["daysUntil"] is not None else 9999))
     return {
@@ -302,6 +358,7 @@ def build(config: dict, articles: list[dict], today: date, crl: dict | None = No
             "dueSoon": sum(row["status"] in {"due-soon", "overdue-awaiting-evidence"} for row in scheduled),
             "evidenceReceived": sum(row["status"] == "evidence-received" for row in scheduled),
             "pendingTasks": len(tasks),
+            "articlesBehindTasks": articles,
             "quarantinedDates": len(quarantined),
             "companies": len(config["companies"]),
         },
@@ -338,7 +395,8 @@ def write_report(payload: dict, output: str) -> None:
     for row in payload["revalidationTasks"]:
         lines += [
             f"### {row['ticker']} · {row['materialityScore']}/100",
-            f"- [{row['title']}]({row['url']})",
+            f"- [{row['title']}]({row['url']})" + ("（公司一手发布）" if row.get("primarySource") else "（媒体报道，无对应公司发布）"),
+            f"- 同一事件的报道：{row.get('articles', 1)} 篇" + ("；" + "；".join(f"[{c['source']}]({c['url']})" for c in row.get("coverage", [])[:6]) if row.get("coverage") else ""),
             f"- 事件类型：{', '.join(row['eventTypes']) or 'unclassified'}",
             f"- 信息可用：{row['knowledgeAt']}；最早进入研究：{row['firstEligibleResearchDate']}",
             f"- 日期校验：{row['dateValidation']['status']}",

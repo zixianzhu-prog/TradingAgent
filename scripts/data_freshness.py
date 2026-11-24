@@ -64,6 +64,18 @@ def read_date(data, key: str) -> date | None:
     return as_date(value)
 
 
+def error_count(data) -> int:
+    """Errors the source recorded about its own fetches (an int, a list, or a dict of them), wherever it keeps them."""
+    if not isinstance(data, dict):
+        return 0
+    value = data.get("errors", (data.get("summary") or {}).get("errors") if isinstance(data.get("summary"), dict) else None)
+    if isinstance(value, bool) or value is None:
+        return 0
+    if isinstance(value, (int, float)):
+        return int(value)
+    return len(value) if isinstance(value, (list, dict)) else 0
+
+
 def check(today: date, root: Path = ROOT) -> dict:
     rows = []
     for label, rel, key, cadence, limit, critical, feeds in SOURCES:
@@ -74,13 +86,19 @@ def check(today: date, root: Path = ROOT) -> dict:
             data = None
         as_of = read_date(data, key)
         age = (today - as_of).days if as_of else None
-        status = "missing" if as_of is None else ("stale" if age > limit else "fresh")
-        rows.append({"label": label, "file": rel, "asOf": as_of.isoformat() if as_of else None, "ageDays": age,
+        errors = error_count(data)
+        status = "missing" if as_of is None else ("stale" if age > limit else "degraded" if errors else "fresh")
+        rows.append({"label": label, "file": rel, "asOf": as_of.isoformat() if as_of else None, "ageDays": age, "errors": errors,
                      "cadence": cadence, "limitDays": limit, "critical": critical, "feeds": feeds, "status": status})
     bad = [r for r in rows if r["status"] != "fresh"]
+    try:
+        run = json.loads((root / "state/run-status.json").read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        run = {}
+    aborted = str(run.get("state", "")).startswith("aborted")
     return {"generatedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"), "today": today.isoformat(),
-            "sources": rows, "stale": [r["label"] for r in bad],
-            "alert": any(r["critical"] for r in bad), "fresh": len(rows) - len(bad)}
+            "sources": rows, "stale": [r["label"] for r in bad], "run": run,
+            "alert": any(r["critical"] for r in bad) or aborted, "fresh": len(rows) - len(bad)}
 
 
 def main() -> None:

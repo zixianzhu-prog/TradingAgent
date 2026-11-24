@@ -173,6 +173,17 @@ def fda_counts(fda: dict) -> dict[str, int]:
     return counts
 
 
+def repriced(financial: dict, market: dict) -> dict:
+    """Market value and price/sales moved from the scenario snapshot to the latest close, so every price-based number on a
+    card shares one date. Shares and revenue do not move with the price."""
+    cap, ps, snap, day = financial.get("market_cap_m"), financial.get("price_to_sales_approx"), financial.get("price"), financial.get("price_date")
+    last, asof = market.get("last"), market.get("asOf")
+    if last and snap and asof and (not day or asof > day):
+        k = last / snap
+        return {"marketCapM": round(cap * k, 1) if cap else cap, "priceToSales": round(ps * k, 1) if ps else ps, "priceDate": asof}
+    return {"marketCapM": cap, "priceToSales": ps, "priceDate": day}
+
+
 def build(root: Path = ROOT) -> dict:
     universe = {row["ticker"]: row for row in load(root / "trend-agent/ai-medicine-universe.json")["companies"]}
     thesis_file = load(root / "trend-agent/ai-medicine-theses.json")
@@ -231,9 +242,7 @@ def build(root: Path = ROOT) -> dict:
                 "period": financial.get("financial_period"),
                 "quarterlyRevenueM": financial.get("quarterly_revenue_m"),
                 "revenueGrowthPct": financial.get("revenue_growth_pct"),
-                "marketCapM": financial.get("market_cap_m"),
-                "priceToSales": financial.get("price_to_sales_approx"),
-                "priceDate": financial.get("price_date"),
+                **repriced(financial, latest_prices.get(ticker) or {}),
                 "valuation": financial.get("valuation_label", ""),
             },
         }
@@ -280,6 +289,7 @@ def build(root: Path = ROOT) -> dict:
         for row in universe.values() if row["ticker"] not in theses
     ]
     price_dates = sorted({row["numbers"]["priceDate"] for row in companies if row["numbers"]["priceDate"]})
+    scenario_dates = sorted({f.get("price_date") for f in financials.values() if f.get("price_date")})
     return {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "question": "Which AI-medicine companies have the highest potential over the next 5-10 years, and why?",
@@ -287,6 +297,7 @@ def build(root: Path = ROOT) -> dict:
         "scoreNoise": SCORE_NOISE,
         "lowEvidenceThreshold": LOW_EVIDENCE,
         "priceDate": price_dates[-1] if price_dates else None,
+        "scenarioDate": scenario_dates[-1] if scenario_dates else None,
         "funnel": {
             "screened": len(universe),
             "deepReviewed": len(companies) + len(benchmarks),
@@ -1100,6 +1111,8 @@ def freshness_section(root: Path) -> str:
     bad = [r for r in rows if r["status"] != "fresh"]
 
     def when(r):
+        if r["status"] == "degraded":
+            return f'updated {esc(r["asOf"])} but {r["errors"]} fetch errors'
         return f'last {esc(r["asOf"])}, {r["ageDays"]} days ago' if r["asOf"] else "no date found"
 
     table = "".join(
@@ -1108,18 +1121,27 @@ def freshness_section(root: Path) -> str:
     details = ('<details class="fresh"><summary>Data freshness: ' + f'{data.get("fresh", 0)} of {len(rows)} sources on schedule (checked {esc(data.get("today", ""))})</summary>'
                '<div class="table-wrap"><table><thead><tr><th>Source</th><th>Last data</th><th class="n">Days old</th><th>Schedule</th><th>Status</th><th>Feeds</th></tr></thead>'
                f'<tbody>{table}</tbody></table></div></details>')
+    run = data.get("run") or {}
+    fails = run.get("softFailures") or []
+    run_note = ""
+    if str(run.get("state", "")).startswith("aborted"):
+        run_note = (f'<p class="fresh-alert"><strong>The last daily run stopped early</strong> ({esc(run["state"])}, {esc(run.get("at", "")[:16])} UTC). '
+                    "Sections it did not reach still show the previous run.</p>")
+    elif fails:
+        run_note = ('<p class="fresh">Steps that failed in the last run and kept their previous result: ' + "; ".join(esc(f) for f in fails) + ".</p>")
     critical = [r for r in bad if r["critical"]]
     if not critical:
+        details = run_note + details
         note = ("" if not bad else '<p class="fresh">Behind schedule, not affecting the calls: '
                 + "; ".join(f'{esc(r["label"])} ({when(r)})' for r in bad) + ".</p>")
         return note + details
     items = "; ".join(f'<strong>{esc(r["label"])}</strong> ({when(r)}; feeds {esc(r["feeds"])})' for r in critical)
-    return (f'<p class="fresh-alert"><strong>Stale data.</strong> {items}. Treat the affected calls as out of date until the next run refreshes them.</p>'
+    return run_note + (f'<p class="fresh-alert"><strong>Stale data.</strong> {items}. Treat the affected calls as out of date until the next run refreshes them.</p>'
             + details)
 
 
 CHIP = {"fresh": '<span class="chip ok">on schedule</span>', "stale": '<span class="chip alert">stale</span>',
-        "missing": '<span class="chip alert">missing</span>'}
+        "missing": '<span class="chip alert">missing</span>', "degraded": '<span class="chip warn">fetch errors</span>'}
 
 
 def blind_test_section(root: Path) -> str:
@@ -1170,6 +1192,23 @@ def blind_test_section(root: Path) -> str:
   <div class="table-wrap"><table><thead><tr><th>Ticker</th><th>{names["A"]}</th><th>{names["B"]}</th><th>{names["C"]}</th></tr></thead><tbody>{rows}</tbody></table></div>
   {f'<p class="note">The plain model also suggested, outside the list: <strong>{esc(", ".join(extras))}</strong></p>' if extras else ""}
 </section>"""
+
+
+def early_candidates(root: Path, limit: int = 5) -> str:
+    """Peter's under-$1B list: companies worth less than $1B that pass every hard check of the candidate filter and are not
+    rejected, ranked by how much of the Serenity evidence is in. A separate list from the 5-10 year ranking above."""
+    companies = load(root / "state/candidate-filter.json", {}).get("companies", {})
+    rows = companies.values() if isinstance(companies, dict) else companies
+    picks = sorted((c for c in rows if (c.get("marketCapM") or 1e9) < 1000 and c.get("serenity") != "reject"
+                    and c.get("checks") and all(k["pass"] for k in c["checks"])), key=lambda c: -(c.get("completeness") or 0))[:limit]
+    if not picks:
+        return ""
+    links = "".join(
+        f'<a href="#smallcaps"><span class="r">#{i}</span><span class="t">{esc(c["ticker"])}</span><span class="c">{esc(c["company"])}</span>'
+        f'<span class="s">{money(c["marketCapM"])} · {"AI product" if c.get("track") == "ai" else "IND or pharma deal"} · evidence {c.get("completeness") or 0}%</span></a>'
+        for i, c in enumerate(picks, 1))
+    return (f'<div class="answer-group"><p class="answer-label">Under $1B · early candidates (passed the hard filter, ranked by evidence so far)</p>'
+            f'<nav class="answer" aria-label="Under $1B early candidates">{links}</nav></div>')
 
 
 def candidate_filter_section(root: Path) -> str:
@@ -1449,8 +1488,8 @@ def deals_section(root: Path) -> str:
     w = data.get("window", ["", ""])
     return f"""
   <section class="section" id="deals" aria-labelledby="deals-h">
-    <h2 id="deals-h">Animal work done, big pharma paying</h2>
-    <p>Two early, hard signals from companies' own 8-K press releases between {esc(w[0])} and {esc(w[1])}. An IND clearance means FDA lets a drug into people: the animal work passed. A new deal with a large drug maker, with cash up front, means a buyer did its own diligence and paid. Facts were extracted by Claude and every value is kept only if its quote is found word for word in the filing.</p>
+    <h2 id="deals-h">Cleared for human trials, big pharma paying</h2>
+    <p>Two early, hard signals from companies' own 8-K press releases between {esc(w[0])} and {esc(w[1])}. An IND clearance means FDA did not stop the drug from starting human trials. It does not show the drug works, and it is years and several trial phases away from approval. A new deal with a large drug maker, with cash up front, means a buyer did its own diligence and paid. Facts were extracted by Claude and every value is kept only if its quote is found word for word in the filing.</p>
     {('<h3 class="bucket-h">New big-pharma deals</h3><div class="table-wrap"><table><thead><tr><th class="n">Filed</th><th>Company</th><th>Partner</th><th class="n">Upfront ($M)</th><th class="n">Milestones ($M)</th><th>Scope</th><th></th></tr></thead><tbody>' + deal_rows + '</tbody></table></div>') if deal_rows else ''}
     {('<h3 class="bucket-h">IND clearances</h3><div class="table-wrap"><table><thead><tr><th class="n">Filed</th><th>Company</th><th>Drug</th><th>Indication</th><th>Next trial</th><th></th></tr></thead><tbody>' + ind_rows + '</tbody></table></div>') if ind_rows else ''}
   </section>"""
@@ -1582,6 +1621,7 @@ def oos_block(root: Path) -> str:
     return f"""
     <h3 class="bucket-h">5 · Out of sample: {oos["companies"]} health-care companies the rule never saw</h3>
     <p class="bucket-blurb">The same rules replayed on {oos["observations"]} filings from listed health-care companies (drugs, diagnostics, biologics, devices, labs) that were not in the sample above. Each cell: median excess return vs XBI · share that lost 60%+ vs XBI · filings.</p>
+    <p class="status-banner"><strong>Bottom line: the valuation rule has not shown a stable, significant excess return.</strong> No bucket beat XBI on average, mean and median returns differ widely, the same company appears in many years, the sample holds only companies listed today, multiples are today&#39;s, and the rule was adjusted after part of these results were seen. Treat it as a risk filter, not as proof of an edge.</p>
     <p class="status-banner"><strong>What held up:</strong> a deep discount was the worst bucket in both samples, so the tickets now wait on it. A mild discount with growth not slowing was the steadiest bucket in both. The slowing-growth filter still cut severe losses out of sample, but by much less than in sample, and no bucket beat XBI on average.</p>
     <div class="table-wrap"><table><thead><tr><th>Price vs base case</th><th class="n">In sample, 1 year</th><th class="n">Out of sample, 1 year</th><th class="n">Out of sample, 3 years</th></tr></thead><tbody>{rows}</tbody></table></div>"""
 
@@ -1711,6 +1751,7 @@ def render_html(payload: dict, root: Path = ROOT) -> str:
         f'<div class="answer-group"><p class="answer-label">5–10 year ranking · {esc(label)}</p><nav class="answer" aria-label="{esc(label)}">{answer_links(payload["picks"][key])}</nav></div>'
         for key, label, _ in BUCKETS if payload["picks"].get(key)
     )
+    answer += early_candidates(root)
     TIER_LABEL = {"serenity-standard": ("Serenity: standard tier", "ok"), "serenity-starter": ("Serenity: starter tier", "warn"),
                   "serenity-watch": ("Serenity: watch", "plain")}
     news = payload.get("news") or {}
@@ -1915,7 +1956,7 @@ def render_html(payload: dict, root: Path = ROOT) -> str:
     {long_term_html}
     {'<p class="meta"><a href="#radar">How the agent spots the next theme early, tested on COVID-19 and mpox →</a></p>' if radar_html else ''}
     {'<p class="meta"><a href="#track">Track record: frozen calls scored on real trading days →</a></p>' if track_html else ''}
-    <div class="meta"><span>Data as of {esc(payload['priceDate'] or generated)}</span><span>Financials: latest reported quarter</span><span>Updated daily by the research agent</span><span>Research only, not investment advice</span></div>
+    <div class="meta"><span>Prices as of {esc(payload['priceDate'] or generated)}</span>{f"<span>5-year scenarios set {esc(payload['scenarioDate'])}</span>" if payload.get('scenarioDate') else ''}<span>Financials: latest reported quarter</span><span>Updated daily by the research agent</span><span>Research only, not investment advice</span></div>
   </header>
 
 {tailwind_section(root)}

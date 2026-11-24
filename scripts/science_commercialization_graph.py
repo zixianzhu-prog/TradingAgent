@@ -218,7 +218,7 @@ def build(frontier: dict, company_rows: list[dict], pharma: dict, clinical: dict
         if not verified["pharmaValidation"]:
             row["gaps"].append("缺大药厂付费、许可或具有经济条款的合作证据")
         if not verified["clinicalValidation"]:
-            row["gaps"].append("缺 IND 获批或已登记临床试验证据")
+            row["gaps"].append("缺 IND 生效或已登记临床试验证据")
         if not verified["revenueValidation"]:
             row["gaps"].append("缺经 SEC/XBRL 核验的收入证据")
         if verified["revenueValidation"] and not any(x.get("aiSpecificRevenue") for x in row["revenueValidation"]):
