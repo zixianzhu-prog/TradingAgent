@@ -122,6 +122,24 @@
 - 计算口径：Price date: 2026-11-13. P/S denominator is latest quarter annualized (not TTM) (379.6M). Annualizing one quarter can distort seasonal businesses. Runway is a simple cash/burn proxy, not company guidance. EV/EBITDA and OCF yield appear only when meaningful inputs exist. Metrics are not directly comparable across business models.
 - 官方来源：[来源 1](https://ir.certara.com/news-releases/news-release-details/certara-reports-third-quarter-2026-financial-results)
 
+### CERT 五年数值情景（sales终值法）
+终值倍数来源：bear = Damodaran industry P/S; base = median of AI-medicine peers; bull = top quartile of peers（行业：Heathcare Information and Technology）。
+
+增速来源：起点 4.0%（latest quarter year over year），start = the company's own reported growth; bear/base fade to Damodaran industry fundamental growth, bull to the industry's 5-year revenue CAGR；行业基本增速 5.3%，行业 5 年收入 CAGR 15.6%。
+
+
+| 情景 | 主观权重 | 收入CAGR | 年稀释 | 终值利润率 | 终值倍数 | 五年收入 | 每股年化回报敏感度 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| bear | 35% | 4.0% | 1.0% | n/a | 4.7x | $461.8M | 1.8% |
+| base | 45% | 4.0% | 1.0% | n/a | 8.2x | $461.8M | 14.2% |
+| bull | 20% | 10.9% | 0.0% | n/a | 14.1x | $636.5M | 37.4% |
+
+**默认期望财富口径：17.4%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：14.5%。
+
+排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $13.13（相对当前 10.1%）；悲观达到门槛所需价格 $22.12（相对当前 85.4%）。
+
+权重依据：Analyst-set priors for slow-growing biosimulation software; not empirical probabilities. Growth and multiples are replaced by sourced calibration. 净负债假设：SEC XBRL 2026-09-30: long-term debt $291M less cash $215M. Illustrative per-share exclusion test, not a DCF or target price. Growth, dilution, probabilities and terminal multiples are analyst-set assumptions, not evidence-generated forecasts. Passing cannot upgrade a company; failing can only keep it from upgrade.
+
 ## NTRA
 
 - 估值判断：premium; execution-sensitive
@@ -134,6 +152,24 @@
 - 数据状态：current_q3_2026
 - 计算口径：Price date: 2026-11-13. P/S denominator is full-year guidance (3020.0M). Annualizing one quarter can distort seasonal businesses. Runway is a simple cash/burn proxy, not company guidance. EV/EBITDA and OCF yield appear only when meaningful inputs exist. Metrics are not directly comparable across business models.
 - 官方来源：[来源 1](https://investor.natera.com/news/news-details/2026/Natera-Reports-Third-Quarter-2026-Financial-Results/default.aspx)
+
+### NTRA 五年数值情景（sales终值法）
+终值倍数来源：bear = Damodaran industry P/S; base = median of AI-medicine peers; bull = top quartile of peers（行业：Healthcare Products）。
+
+增速来源：起点 34.1%（latest quarter year over year），start = the company's own reported growth; bear/base fade to Damodaran industry fundamental growth, bull to the industry's 5-year revenue CAGR；行业基本增速 7.2%，行业 5 年收入 CAGR 18.4%。
+
+
+| 情景 | 主观权重 | 收入CAGR | 年稀释 | 终值利润率 | 终值倍数 | 五年收入 | 每股年化回报敏感度 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| bear | 35% | 9.8% | 3.0% | n/a | 4.4x | $4821.9M | -16.0% |
+| base | 45% | 17.7% | 2.0% | n/a | 8.2x | $6833.2M | 2.5% |
+| bull | 20% | 24.6% | 1.0% | n/a | 14.1x | $9073.4M | 21.9% |
+
+**默认期望财富口径：3.6%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：-0.1%。
+
+排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $202.48（相对当前 -35.7%）；悲观达到门槛所需价格 $222.85（相对当前 -29.2%）。
+
+权重依据：Analyst-set priors for a fast-growing, loss-making testing company; not empirical probabilities. Growth and multiples are replaced by sourced calibration. 净负债假设：Cash and securities $1,097M (latest quarter); SEC XBRL shows no long-term debt after 2023, so treated as net cash. Verify before an investment conclusion. Illustrative per-share exclusion test, not a DCF or target price. Growth, dilution, probabilities and terminal multiples are analyst-set assumptions, not evidence-generated forecasts. Passing cannot upgrade a company; failing can only keep it from upgrade.
 
 ## SOPH
 
@@ -179,6 +215,24 @@
 - 计算口径：Price date: 2026-11-13. P/S denominator is full-year guidance (1365.0M). Annualizing one quarter can distort seasonal businesses. Runway is a simple cash/burn proxy, not company guidance. EV/EBITDA and OCF yield appear only when meaningful inputs exist. Metrics are not directly comparable across business models.
 - 官方来源：[来源 1](https://investors.guardanthealth.com/press-releases/press-releases/2026/Guardant-Health-Reports-Third-Quarter-2026-Financial-Results-and-Increases-2026-Revenue-Guidance/default.aspx)
 
+### GH 五年数值情景（sales终值法）
+终值倍数来源：bear = Damodaran industry P/S; base = median of AI-medicine peers; bull = top quartile of peers（行业：Healthcare Products）。
+
+增速来源：起点 32.9%（fiscal 2025 over 2024），start = the company's own reported growth; bear/base fade to Damodaran industry fundamental growth, bull to the industry's 5-year revenue CAGR；行业基本增速 7.2%，行业 5 年收入 CAGR 18.4%。
+
+
+| 情景 | 主观权重 | 收入CAGR | 年稀释 | 终值利润率 | 终值倍数 | 五年收入 | 每股年化回报敏感度 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| bear | 35% | 9.7% | 4.0% | n/a | 4.4x | $2168.5M | -18.2% |
+| base | 45% | 17.3% | 3.0% | n/a | 8.2x | $3028.7M | 0.8% |
+| bull | 20% | 24.1% | 2.0% | n/a | 14.1x | $4022.7M | 20.2% |
+
+**默认期望财富口径：1.9%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：-2.0%。
+
+排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $88.40（相对当前 -41.1%）；悲观达到门槛所需价格 $93.14（相对当前 -37.9%）。
+
+权重依据：Analyst-set priors for a loss-making cancer-testing company with convertible debt; not empirical probabilities. Growth and multiples are replaced by sourced calibration. 净负债假设：SEC XBRL 2026-09-30: convertible notes $1,502M less cash and securities $1,100M. Illustrative per-share exclusion test, not a DCF or target price. Growth, dilution, probabilities and terminal multiples are analyst-set assumptions, not evidence-generated forecasts. Passing cannot upgrade a company; failing can only keep it from upgrade.
+
 ## GEHC
 
 - 估值判断：not obviously premium on sales; inspect quality and dilution
@@ -191,6 +245,24 @@
 - 数据状态：current_q3_2026_primary_source
 - 计算口径：Price date: 2026-11-13. P/S denominator is latest quarter annualized (not TTM) (22048.0M). Annualizing one quarter can distort seasonal businesses. Runway is a simple cash/burn proxy, not company guidance. EV/EBITDA and OCF yield appear only when meaningful inputs exist. Metrics are not directly comparable across business models.
 - 官方来源：[来源 1](https://investor.gehealthcare.com/news-releases/news-release-details/ge-healthcare-reports-third-quarter-2026-financial-results) · [来源 2](https://www.fda.gov/medical-devices/artificial-intelligence-enabled-medical-devices/list-artificial-intelligence-enabled-medical-devices)
+
+### GEHC 五年数值情景（sales终值法）
+终值倍数来源：bear = Damodaran industry P/S; base = median of AI-medicine peers; bull = top quartile of peers（行业：Healthcare Products）。
+
+增速来源：起点 4.8%（fiscal 2025 over 2024），start = the company's own reported growth; bear/base fade to Damodaran industry fundamental growth, bull to the industry's 5-year revenue CAGR；行业基本增速 7.2%，行业 5 年收入 CAGR 18.4%。
+
+
+| 情景 | 主观权重 | 收入CAGR | 年稀释 | 终值利润率 | 终值倍数 | 五年收入 | 每股年化回报敏感度 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| bear | 35% | 4.8% | 0.0% | n/a | 1.3x | $27925.7M | -5.5% |
+| base | 45% | 4.8% | 0.0% | n/a | 1.7x | $27925.7M | 1.5% |
+| bull | 20% | 12.9% | 0.0% | n/a | 2.5x | $40478.4M | 20.7% |
+
+**默认期望财富口径：4.8%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：2.9%。
+
+排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $50.51（相对当前 -39.0%）；悲观达到门槛所需价格 $105.87（相对当前 27.9%）。
+
+权重依据：Analyst-set priors for a mature equipment maker with a small AI share; not empirical probabilities. Growth and multiples are replaced by sourced calibration. 净负债假设：SEC XBRL 2026-09-30: long-term debt $9,973M less cash $2,826M. Illustrative per-share exclusion test, not a DCF or target price. Growth, dilution, probabilities and terminal multiples are analyst-set assumptions, not evidence-generated forecasts. Passing cannot upgrade a company; failing can only keep it from upgrade.
 
 ## RDNT
 

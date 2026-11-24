@@ -26,7 +26,7 @@
 | FRNM | watch | 43/100 | 79/100 | 57/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | GEHC | watch | 77/100 | 73/100 | 75/100 | supply_chain_map | 无 | 是 |
 | GENB | watch | 31/100 | 70/100 | 47/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
-| GH | watch | 33/100 | 64/100 | 45/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
+| GH | watch | 38/100 | 64/100 | 48/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | GLUE | watch | 33/100 | 71/100 | 48/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | GRAL | watch | 38/100 | 65/100 | 49/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | GSK | reject | 14/100 | 54/100 | 30/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
@@ -58,7 +58,7 @@
 | RDNT | research-ready | 90/100 | 63/100 | 79/100 | 无 | 无 | 是 |
 | RMD | watch | 41/100 | 58/100 | 48/100 | supply_chain_map, customer_dependency | 无 | 是 |
 | RNA | watch | 0/100 | 62/100 | 25/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
-| RXRX | watch | 82/100 | 75/100 | 79/100 | earnings_validation | 无 | 是 |
+| RXRX | watch | 82/100 | 74/100 | 79/100 | earnings_validation | 无 | 是 |
 | RYTM | watch | 14/100 | 42/100 | 25/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | SDGR | watch | 87/100 | 66/100 | 79/100 | earnings_validation | 无 | 是 |
 | SGMT | watch | 17/100 | 71/100 | 39/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |

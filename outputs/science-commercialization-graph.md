@@ -6,14 +6,14 @@
 
 | 公司 | 科研 | 研究者/公司 | 专利/许可 | 融资 | 13D/G股东 | 药企付费/合作 | IND/临床 | SEC收入 | 当前结论 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| NTRA | 1 | 34 | 0 | 1 | 8 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
 | TECX | 0 | 0 | 17 | 1 | 3 | 0 | 0 | 0 | science-linked |
 | ALEC | 1 | 1 | 6 | 1 | 8 | 2 | 0 | 0 | ownership-and-pharma-validated |
 | IRD | 0 | 0 | 8 | 1 | 8 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | PRME | 0 | 0 | 12 | 1 | 3 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
+| RXRX | 1 | 2 | 1 | 1 | 8 | 0 | 3 | 1 | ownership-and-company-revenue-verified |
 | ABCL | 1 | 6 | 3 | 1 | 2 | 0 | 2 | 1 | ownership-and-company-revenue-verified |
-| RXRX | 1 | 1 | 1 | 1 | 8 | 0 | 3 | 1 | ownership-and-company-revenue-verified |
 | BDSX | 0 | 0 | 6 | 1 | 8 | 0 | 0 | 0 | science-linked |
-| NTRA | 1 | 3 | 0 | 1 | 8 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
 | SDGR | 1 | 1 | 2 | 1 | 6 | 0 | 2 | 1 | ownership-and-company-revenue-verified |
 | FATE | 1 | 1 | 5 | 1 | 4 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | HURA | 0 | 0 | 9 | 1 | 2 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
@@ -39,9 +39,9 @@
 | GEHC | 0 | 0 | 0 | 0 | 7 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
 | HCAT | 0 | 0 | 0 | 0 | 8 | 0 | 0 | 0 | evidence-fragment |
 | AGMB | 0 | 0 | 0 | 0 | 7 | 0 | 0 | 0 | evidence-fragment |
-| NVDA | 1 | 0 | 0 | 0 | 5 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
 | OABI | 0 | 0 | 4 | 1 | 2 | 0 | 0 | 0 | science-linked |
 | RDNT | 0 | 0 | 0 | 1 | 5 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
+| NVDA | 0 | 0 | 0 | 0 | 5 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
 | IONS | 0 | 0 | 0 | 5 | 0 | 0 | 0 | 0 | evidence-fragment |
 | AVXL | 1 | 1 | 0 | 0 | 2 | 0 | 0 | 0 | science-linked |
 | HYPR | 1 | 1 | 0 | 0 | 2 | 0 | 0 | 0 | science-linked |
@@ -63,6 +63,26 @@
 | MDCX | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | commercial-signal-with-ownership-gap |
 | MGX | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | VIR | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | commercial-signal-with-ownership-gap |
+
+## NTRA · Natera
+
+已有商业信号，但不能把合作公告当成客户收入；仍按缺口继续核验。
+
+**尚缺证据**
+- 缺公司专利、专利受让或大学技术许可的明确证据
+- 缺大药厂付费、许可或具有经济条款的合作证据
+- 缺 IND 获批或已登记临床试验证据
+- 公司总收入已核验，但尚不能证明收入来自相关 AI/科研技术
+
+**已核验证据**
+- [OpenAlex company institution](https://doi.org/10.1038/s41591-024-03254-6) · company_authored_research：381 papers since 2023-11-24 list Natera (United States) as an author institution; most cited: ctDNA-based molecular residual disease and survival in resectable colorectal cancer
+- [OpenAlex author affiliation](https://doi.org/10.1038/s41392-026-03076-7) · researcher_company_affiliation：Shuting Li is affiliated with Central South University on Next-generation multispecific antibodies for oncology: mechanisms and clinical translation
+- [OpenAlex author affiliation](https://doi.org/10.1038/s41392-026-03076-7) · researcher_company_affiliation：Shuting Li is affiliated with Xiangya Hospital Central South University on Next-generation multispecific antibodies for oncology: mechanisms and clinical translation
+- [OpenAlex author affiliation](https://doi.org/10.1038/s41392-026-03076-7) · researcher_company_affiliation：Lanhua Tang is affiliated with Central South University on Next-generation multispecific antibodies for oncology: mechanisms and clinical translation
+- [OpenAlex author affiliation](https://doi.org/10.1038/s41392-026-03076-7) · researcher_company_affiliation：Lanhua Tang is affiliated with Xiangya Hospital Central South University on Next-generation multispecific antibodies for oncology: mechanisms and clinical translation
+- [OpenAlex author affiliation](https://doi.org/10.1038/s41392-026-03076-7) · researcher_company_affiliation：Hong Shen is affiliated with Central South University on Next-generation multispecific antibodies for oncology: mechanisms and clinical translation
+- [OpenAlex author affiliation](https://doi.org/10.1038/s41392-026-03076-7) · researcher_company_affiliation：Hong Shen is affiliated with Xiangya Hospital Central South University on Next-generation multispecific antibodies for oncology: mechanisms and clinical translation
+- [OpenAlex author affiliation](https://doi.org/10.1038/s41392-026-03076-7) · researcher_company_affiliation：Shan Zeng is affiliated with Central South University on Next-generation multispecific antibodies for oncology: mechanisms and clinical translation
 
 ## TECX · Tectonic Therapeutic, Inc.
 
@@ -140,6 +160,25 @@
 - [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/73927/780) · uspto_assignment：USPTO recorded assignment 073927/0780 from HARVEY, TYLER; KOSHELEVA, EKATERINA ALEXEEVNA to PRIME MEDICINE, INC. on 2026-02-27
 - [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/75204/928) · uspto_assignment：USPTO recorded assignment 075204/0928 from HARVEY, TYLER; KOSHELEVA, EKATERINA ALEXEEVNA to PRIME MEDICINE, INC. on 2026-07-08
 
+## RXRX · Recursion Pharmaceuticals
+
+已有商业信号，但不能把合作公告当成客户收入；仍按缺口继续核验。
+
+**尚缺证据**
+- 公司已在 SEC 披露专利/许可，但尚缺 USPTO 或大学技术转移材料独立复核
+- 缺大药厂付费、许可或具有经济条款的合作证据
+- 公司总收入已核验，但尚不能证明收入来自相关 AI/科研技术
+
+**已核验证据**
+- [OpenAlex company institution](https://doi.org/10.1101/2025.06.14.659707) · company_authored_research：73 papers since 2023-11-24 list Recursion (United States) as an author institution; most cited: Boltz-2: Towards Accurate and Efficient Binding Affinity Prediction
+- [SEC filing](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000065/rxrx-20260430.htm) · founder_company：COMMITTEE MEMBERSHIP Research and Development Technology Corporate Social Responsibility DIRECTOR SINCE 2013 AGE 43 Christopher Gibson, Ph.D. , is our co-founder and Chair of the Board, as of January 1, 2026.
+- [OpenAlex author affiliation](https://doi.org/10.1101/2025.06.14.659707) · researcher_company_affiliation：Stephan Thaler, Julien Roy, Dominique Beaini affiliated with Recursion (United States) on Boltz-2: Towards Accurate and Efficient Binding Affinity Prediction
+- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/rxrx-20251231.htm) · license：10-K 001-40323 10.21 February 29, 2024 10.26#^ Amended and Restated License Agreement between the Registrant and University of Utah Research Foundation, dated February 9, 2016.
+- [SEC XBRL](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/) · equity_raise：Cash received from issuing equity (XBRL ProceedsFromIssuanceOfCommonStock): 2024-01-01 to 2024-12-31: $300.4M (10-K); 2025-01-01 to 2025-12-31: $528.9M (10-K); 2026-01-01 to 2026-09-30: $85.5M (10-Q)
+- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1601830/000110465926126833/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：ARK Investment Management LLC reported beneficial ownership of 8.36% on SCHEDULE 13G/A.
+- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1601830/000009375126000711/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：STATE STREET CORPORATION reported beneficial ownership of 5.6% on SCHEDULE 13G.
+- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1601830/000009375126000530/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：STATE STREET CORPORATION reported beneficial ownership of 6.6% on SCHEDULE 13G.
+
 ## ABCL · AbCellera Biologics
 
 已有商业信号，但不能把合作公告当成客户收入；仍按缺口继续核验。
@@ -158,25 +197,6 @@
 - [SEC filing](https://www.sec.gov/Archives/edgar/data/1703057/000170305726000012/abcl-20251231.htm) · founder_company：Hansen is qualified to serve on our Board of Directors because of the perspective and experience he brings as a co-founder and our Chief Executive Officer.
 - [OpenAlex author affiliation](https://doi.org/10.1080/19420862.2024.2394229) · researcher_company_affiliation：Alaa Amash, Gesa Volkers, Patrick J. Farber, Daniel Griffin affiliated with AbCellera (Canada) on Developability considerations for bispecific and multispecific antibodies
 - [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1703057/000170305726000012/abcl-20251231.htm) · license：Patent Portfolio We have developed an expansive patent portfolio with claims related to multiple aspects of our discovery and development capabilities, beginning with our first patent applications exclusively licensed from UBC in 2013.
-
-## RXRX · Recursion Pharmaceuticals
-
-已有商业信号，但不能把合作公告当成客户收入；仍按缺口继续核验。
-
-**尚缺证据**
-- 公司已在 SEC 披露专利/许可，但尚缺 USPTO 或大学技术转移材料独立复核
-- 缺大药厂付费、许可或具有经济条款的合作证据
-- 公司总收入已核验，但尚不能证明收入来自相关 AI/科研技术
-
-**已核验证据**
-- [OpenAlex company institution](https://doi.org/10.1101/2025.06.14.659707) · company_authored_research：73 papers since 2023-11-24 list Recursion (United States) as an author institution; most cited: Boltz-2: Towards Accurate and Efficient Binding Affinity Prediction
-- [OpenAlex author affiliation](https://doi.org/10.1101/2025.06.14.659707) · researcher_company_affiliation：Stephan Thaler, Julien Roy, Dominique Beaini affiliated with Recursion (United States) on Boltz-2: Towards Accurate and Efficient Binding Affinity Prediction
-- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/rxrx-20251231.htm) · license：10-K 001-40323 10.21 February 29, 2024 10.26#^ Amended and Restated License Agreement between the Registrant and University of Utah Research Foundation, dated February 9, 2016.
-- [SEC XBRL](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/) · equity_raise：Cash received from issuing equity (XBRL ProceedsFromIssuanceOfCommonStock): 2024-01-01 to 2024-12-31: $300.4M (10-K); 2025-01-01 to 2025-12-31: $528.9M (10-K); 2026-01-01 to 2026-09-30: $85.5M (10-Q)
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1601830/000110465926126833/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：ARK Investment Management LLC reported beneficial ownership of 8.36% on SCHEDULE 13G/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1601830/000009375126000711/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：STATE STREET CORPORATION reported beneficial ownership of 5.6% on SCHEDULE 13G.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1601830/000009375126000530/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：STATE STREET CORPORATION reported beneficial ownership of 6.6% on SCHEDULE 13G.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1601830/000210012126000994/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Vanguard Portfolio Management reported beneficial ownership of 5.97% on SCHEDULE 13G.
 
 ## BDSX · BIODESIX INC
 
@@ -197,26 +217,6 @@
 - [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/65174/123) · uspto_assignment：USPTO recorded assignment 065174/0123 from CAMPBELL, THOMAS; GEORGANTAS, ROBERT W., III; RÖDER, HEINRICH; RÖDER, JOANNA; MAGUIRE, LAURA to BIODESIX, INC. on 2023-10-10
 - [SEC XBRL](https://www.sec.gov/Archives/edgar/data/1439725/000119312526449763/) · equity_raise：Cash received from issuing equity (XBRL ProceedsFromIssuanceOfCommonStock): 2024-01-01 to 2024-12-31: $55.6M (10-K); 2025-01-01 to 2025-12-31: $7.3M (10-K); 2026-01-01 to 2026-09-30: $30.4M (10-Q)
 - [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1439725/000090514826004746/xslSCHEDULE_13D_X02/primary_doc.xml) · schedule_13d：SCHULER JACK W reported beneficial ownership of 22.3% on SCHEDULE 13D/A.
-
-## NTRA · Natera
-
-已有商业信号，但不能把合作公告当成客户收入；仍按缺口继续核验。
-
-**尚缺证据**
-- 缺公司专利、专利受让或大学技术许可的明确证据
-- 缺大药厂付费、许可或具有经济条款的合作证据
-- 缺 IND 获批或已登记临床试验证据
-- 公司总收入已核验，但尚不能证明收入来自相关 AI/科研技术
-
-**已核验证据**
-- [OpenAlex company institution](https://doi.org/10.1038/s41591-024-03254-6) · company_authored_research：381 papers since 2023-11-24 list Natera (United States) as an author institution; most cited: ctDNA-based molecular residual disease and survival in resectable colorectal cancer
-- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1604821/000110465926020881/ntra-20251231x10k.htm) · founder：Matthew Rabinowitz, the Company's executive chairman and co-founder, is the chairman of the board and founder of MyOme, and a beneficial holder of approximately 20.4 % of the outstanding shares of MyOme on a fully dilutive basis;
-- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1604821/000110465926020881/ntra-20251231x10k.htm) · founder：Jonathan Sheena, the Company's co-founder and a member of the Company's board of directors, is a stockholder and a member of the board of directors of MyOme;
-- [OpenAlex author affiliation](https://doi.org/10.1038/s41591-024-03254-6) · researcher_company_affiliation：George Laliotis, Vasily N. Aushev, Shruti Sharma, Adham Adel Jurdi affiliated with Natera (United States) on ctDNA-based molecular residual disease and survival in resectable colorectal cancer
-- [SEC Form D](https://www.sec.gov/Archives/edgar/data/2162058/000216205826000001/primary_doc.xml) · form_d_financing：Contrast Cube Inc. reported $310,000 sold in this offering
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1604821/000008025526000696/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：T. Rowe Price Associates, Inc. reported beneficial ownership of 4.7% on SCHEDULE 13G/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1604821/000031506626002940/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：FMR LLC reported beneficial ownership of 10.5% on SCHEDULE 13G/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1604821/000031506626002810/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：FMR LLC reported beneficial ownership of 9.5% on SCHEDULE 13G.
 
 ## SDGR · Schrodinger
 

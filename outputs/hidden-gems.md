@@ -6,19 +6,19 @@
 
 | 股票 | 主题 | 市值 | 60日平均成交额 | 7日文章 | Serenity角色 | 融资风险 | 分数 | 状态 |
 |---|---|---:|---:|---:|---|---|---:|---|
-| CERT | AI 医疗与智能药物研发 | $1.82B | $25.90M | 0 | model-informed drug-development infrastructure challenger | low | 83 | watch |
-| RXRX | AI 医疗与智能药物研发 | $2.00B | $93.92M | 0 | AI-native discovery platform with asymmetric clinical upside | medium | 78 | watch |
-| SDGR | AI 医疗与智能药物研发 | $2.19B | $59.49M | 0 | drug-discovery software infrastructure | medium | 78 | watch |
-| ABCL | AI 医疗与智能药物研发 | $3.64B | $50.84M | 0 | antibody discovery platform watchlist | medium | 65 | watch |
-| SOPH | AI 医疗与智能药物研发 | $0.66B | $5.17M | 0 | decentralized clinical-data platform challenger | high | 60 | watch |
+| CERT | AI 医疗与智能药物研发 | $1.82B | $26.02M | 0 | model-informed drug-development infrastructure challenger | low | 83 | watch |
+| RXRX | AI 医疗与智能药物研发 | $2.00B | $93.91M | 0 | AI-native discovery platform with asymmetric clinical upside | medium | 78 | watch |
+| SDGR | AI 医疗与智能药物研发 | $2.19B | $59.76M | 0 | drug-discovery software infrastructure | medium | 78 | watch |
+| SOPH | AI 医疗与智能药物研发 | $0.66B | $5.13M | 0 | decentralized clinical-data platform challenger | high | 68 | watch |
+| ABCL | AI 医疗与智能药物研发 | $3.64B | $50.29M | 0 | antibody discovery platform watchlist | medium | 65 | watch |
 
 ## 必须继续验证
 
 - **CERT**：earnings validation
 - **RXRX**：earnings validation
 - **SDGR**：earnings validation
+- **SOPH**：earnings validation
 - **ABCL**：confirmed customer dependency, earnings validation
-- **SOPH**：confirmed customer dependency, earnings validation
 
 ## 解释边界
 

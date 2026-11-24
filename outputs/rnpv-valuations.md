@@ -1,6 +1,6 @@
 # rNPV 下单区间（无收入的药物开发公司）
 
-生成时间：2026-11-23T19:37:38+00:00。成功率与阶段时长：BIO, Informa Pharma Intelligence & QLS, Clinical Development Success Rates 2011-2020 (2021)。
+生成时间：2026-11-24T17:51:19+00:00。成功率与阶段时长：BIO, Informa Pharma Intelligence & QLS, Clinical Development Success Rates 2011-2020 (2021)。
 峰值销售是未核实的分析师先验（熊 150 / 基准 500 / 牛 1500 百万美元），除非标注了来源；“现价隐含峰值销售”是反推结果，用来判断市场假设是否合理。
 
 | 代码 | 阶段 | 获批概率 | 距上市(年) | 现价 | 下单上限 | 安全底线 | 状态 | 现价隐含峰值销售 | 备注 |

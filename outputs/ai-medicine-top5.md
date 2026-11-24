@@ -1,23 +1,23 @@
 # AI Medicine: 5–10 Year Leaders
 
-> Which AI-medicine companies have the highest potential over the next 5-10 years, and why? Research only, not investment advice. Data as of 2026-11-13.
+> Which AI-medicine companies have the highest potential over the next 5-10 years, and why? Research only, not investment advice. Data as of 2026-11-24.
 
 | # | Ticker | Company | Potential | Evidence | Flag |
 | ---: | --- | --- | ---: | ---: | --- |
-| 1 | HTFL | HeartFlow | 84.7 | 77 |  |
-| 2 | CAI | Caris Life Sciences | 81.7 | 78 |  |
-| 3 | CBLL | Ceribell | 81.7 | 75 |  |
+| 1 | CBLL | Ceribell | 86.3 | 86 |  |
+| 2 | CAI | Caris Life Sciences | 86.3 | 86 |  |
+| 3 | HTFL | HeartFlow | 84.7 | 80 |  |
 | 4 | ISRG | Intuitive Surgical | 79.7 | 72 |  |
-| 5 | RDNT | RadNet / DeepHealth | 78.3 | 74 |  |
-| 6 | GEHC | GE HealthCare Technologies | 76.3 | 75 |  |
-| 7 | NTRA | Natera | 75.0 | 72 |  |
-| 8 | SDGR | Schrodinger | 74.7 | 59 |  |
-| 9 | TEM | Tempus AI | 73.7 | 70 |  |
-| 10 | IQV | IQVIA | 70.3 | 65 |  |
-| 11 | RXRX | Recursion Pharmaceuticals | 69.3 | 76 |  |
-| 12 | SOPH | SOPHiA GENETICS | 68.0 | 50 |  |
+| 5 | SDGR | Schrodinger | 79.3 | 79 |  |
+| 6 | RDNT | RadNet / DeepHealth | 78.3 | 79 |  |
+| 7 | TEM | Tempus AI | 78.3 | 77 |  |
+| 8 | GEHC | GE HealthCare Technologies | 76.3 | 75 |  |
+| 9 | NTRA | Natera | 75.0 | 72 |  |
+| 10 | SOPH | SOPHiA GENETICS | 72.7 | 67 |  |
+| 11 | IQV | IQVIA | 70.3 | 65 |  |
+| 12 | RXRX | Recursion Pharmaceuticals | 69.3 | 79 |  |
 | 13 | CERT | Certara | 67.3 | 74 |  |
-| 14 | GH | Guardant Health | 61.3 | 45 | evidence incomplete |
+| 14 | GH | Guardant Health | 61.3 | 48 | evidence incomplete |
 | 15 | ABCL | AbCellera Biologics | 58.0 | 64 |  |
 
 ## 2. CAI — Caris Life Sciences
@@ -54,7 +54,7 @@ Sources: https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-
 
 Sources: https://isrg.intuitive.com/news-releases/news-release-details/intuitive-announces-third-quarter-earnings-6, https://isrg.intuitive.com/static-files/42b1fa2c-4c6e-4dd7-90b9-acceda8baded, https://www.fda.gov/medical-devices/artificial-intelligence-enabled-medical-devices/list-artificial-intelligence-enabled-medical-devices
 
-## 5. RDNT — RadNet / DeepHealth
+## 6. RDNT — RadNet / DeepHealth
 
 **Chokepoint:** Controls multiple connected nodes—care delivery, workflow, data and AI software—but Digital Health is still a small share of total revenue and must prove independent economics.
 
@@ -71,24 +71,7 @@ Sources: https://isrg.intuitive.com/news-releases/news-release-details/intuitive
 
 Sources: https://www.radnet.com/newsroom/press-releases/q3-2026-results, https://www.radnet.com/about/history, https://www.fda.gov/medical-devices/artificial-intelligence-enabled-medical-devices/list-artificial-intelligence-enabled-medical-devices
 
-## 1. HTFL — HeartFlow
-
-**Chokepoint:** A payment chokepoint: the scarce asset is the billing code, coverage and clinical evidence, not the algorithm alone.
-
-**Why it can win:** The closest thing to a reimbursement chokepoint in AI medicine: its AI coronary analysis (FFR-CT) is paid under a Category I CPT code, insurers' coverage policies for it apply to about 99% of insured US lives, and it is written into cardiology guidelines. Its second product, plaque analysis, got its own Category I code in 2026 and is covered for about 75%. Every CT scanner and hospital that adopts it makes it harder to displace.
-
-**Why now:** Q3 2026 revenue grew 57% with an 83.6% gross margin, and more than 1,800 institutions have adopted it.
-
-**Strongest case against:** At roughly fifteen times sales the price already assumes years of dominance; scanner makers or cheaper AI rivals could substitute the analysis.
-
-**We are wrong if:**
-- Revenue growth falls below 25% within four quarters
-- A scanner maker bundles an equivalent reimbursed analysis
-- CMS cuts the CPT 75580 payment rate
-
-Sources: https://www.sec.gov/Archives/edgar/data/1464521/000146452126000042/htfl-20251231x10k.htm, https://www.sec.gov/Archives/edgar/data/0001464521/000146452126000171/htfl-20261112xex99_1.htm
-
-## 3. CBLL — Ceribell
+## 1. CBLL — Ceribell
 
 **Chokepoint:** A clinical-workflow chokepoint in the ICU and emergency room: rapid EEG where hospitals often have no neurologist on site.
 
@@ -105,7 +88,24 @@ Sources: https://www.sec.gov/Archives/edgar/data/1464521/000146452126000042/htfl
 
 Sources: https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm, https://www.sec.gov/Archives/edgar/data/1861107/000119312526445555/cbll-20260930.htm
 
-## 8. SDGR — Schrodinger
+## 3. HTFL — HeartFlow
+
+**Chokepoint:** A payment chokepoint: the scarce asset is the billing code, coverage and clinical evidence, not the algorithm alone.
+
+**Why it can win:** The closest thing to a reimbursement chokepoint in AI medicine: its AI coronary analysis (FFR-CT) is paid under a Category I CPT code, insurers' coverage policies for it apply to about 99% of insured US lives, and it is written into cardiology guidelines. Its second product, plaque analysis, got its own Category I code in 2026 and is covered for about 75%. Every CT scanner and hospital that adopts it makes it harder to displace.
+
+**Why now:** Q3 2026 revenue grew 57% with an 83.6% gross margin, and more than 1,800 institutions have adopted it.
+
+**Strongest case against:** At roughly fifteen times sales the price already assumes years of dominance; scanner makers or cheaper AI rivals could substitute the analysis.
+
+**We are wrong if:**
+- Revenue growth falls below 25% within four quarters
+- A scanner maker bundles an equivalent reimbursed analysis
+- CMS cuts the CPT 75580 payment rate
+
+Sources: https://www.sec.gov/Archives/edgar/data/1464521/000146452126000042/htfl-20251231x10k.htm, https://www.sec.gov/Archives/edgar/data/0001464521/000146452126000171/htfl-20261112xex99_1.htm
+
+## 5. SDGR — Schrodinger
 
 **Chokepoint:** A horizontal discovery layer used across multiple customers and drug programs; more diversified than betting on one molecule.
 

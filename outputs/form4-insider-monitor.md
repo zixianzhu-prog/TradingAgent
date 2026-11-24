@@ -2,17 +2,55 @@
 
 > 只把 P（公开市场买入）与 S（公开市场卖出）视为主动市场交易；A/M/F/G 等授予、行权、纳税或赠与不会被误报为买卖。新申报仅触发研究，不改变评级、不下单。
 
-模式：`monitor`；近期开表 45 份；本次新增 0 份；已确认公开市场交易 92 笔；读取错误 0。
+模式：`monitor`；近期开表 45 份；本次新增 5 份；已确认公开市场交易 123 笔；读取错误 0。
 
 ## 公开市场交易
 
 | 日期 | 股票 | 内部人 | 类型 | 股数 | 价格 | 金额 | 申报 |
 |---|---|---|---|---:|---:|---:|---|
+| 2026-11-19 | NVDA | Teter Timothy S. | S 公开市场卖出 | 1,434 | $146.03 | $209,407 | [SEC](https://www.sec.gov/Archives/edgar/data/1045810/000169684126000016/xslF345X06/wk-form4_1795470863.xml) |
+| 2026-11-19 | NVDA | Teter Timothy S. | S 公开市场卖出 | 4,217 | $147.24 | $620,917 | [SEC](https://www.sec.gov/Archives/edgar/data/1045810/000169684126000016/xslF345X06/wk-form4_1795470863.xml) |
+| 2026-11-19 | NVDA | Teter Timothy S. | S 公开市场卖出 | 4,860 | $148.48 | $721,615 | [SEC](https://www.sec.gov/Archives/edgar/data/1045810/000169684126000016/xslF345X06/wk-form4_1795470863.xml) |
+| 2026-11-19 | NVDA | Teter Timothy S. | S 公开市场卖出 | 2,760 | $149.35 | $412,197 | [SEC](https://www.sec.gov/Archives/edgar/data/1045810/000169684126000016/xslF345X06/wk-form4_1795470863.xml) |
+| 2026-11-19 | NVDA | Teter Timothy S. | S 公开市场卖出 | 1,160 | $150.41 | $174,476 | [SEC](https://www.sec.gov/Archives/edgar/data/1045810/000169684126000016/xslF345X06/wk-form4_1795470863.xml) |
+| 2026-11-19 | NVDA | Teter Timothy S. | S 公开市场卖出 | 930 | $151.75 | $141,128 | [SEC](https://www.sec.gov/Archives/edgar/data/1045810/000169684126000016/xslF345X06/wk-form4_1795470863.xml) |
+| 2026-11-19 | NVDA | Teter Timothy S. | S 公开市场卖出 | 4,104 | $152.70 | $626,671 | [SEC](https://www.sec.gov/Archives/edgar/data/1045810/000169684126000016/xslF345X06/wk-form4_1795470863.xml) |
+| 2026-11-19 | NVDA | Teter Timothy S. | S 公开市场卖出 | 2,971 | $153.37 | $455,649 | [SEC](https://www.sec.gov/Archives/edgar/data/1045810/000169684126000016/xslF345X06/wk-form4_1795470863.xml) |
+| 2026-11-19 | NVDA | Teter Timothy S. | S 公开市场卖出 | 1,459 | $154.60 | $225,559 | [SEC](https://www.sec.gov/Archives/edgar/data/1045810/000169684126000016/xslF345X06/wk-form4_1795470863.xml) |
+| 2026-11-19 | NVDA | Teter Timothy S. | S 公开市场卖出 | 2,312 | $155.56 | $359,656 | [SEC](https://www.sec.gov/Archives/edgar/data/1045810/000169684126000016/xslF345X06/wk-form4_1795470863.xml) |
+| 2026-11-19 | NVDA | Teter Timothy S. | S 公开市场卖出 | 2,383 | $156.71 | $373,440 | [SEC](https://www.sec.gov/Archives/edgar/data/1045810/000169684126000016/xslF345X06/wk-form4_1795470863.xml) |
+| 2026-11-19 | NVDA | Teter Timothy S. | S 公开市场卖出 | 1,410 | $157.49 | $222,068 | [SEC](https://www.sec.gov/Archives/edgar/data/1045810/000169684126000016/xslF345X06/wk-form4_1795470863.xml) |
+| 2026-11-19 | GH | POTTER MYRTLE S | S 公开市场卖出 | 9,400 | $145.14 | $1,364,316 | [SEC](https://www.sec.gov/Archives/edgar/data/1576280/000121413026000006/xslF345X06/wk-form4_1795474050.xml) |
+| 2026-11-19 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 17,827 | $60.06 | $1,070,690 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
+| 2026-11-19 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 6,398 | $60.96 | $390,022 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
+| 2026-11-19 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 3,802 | $62.01 | $235,762 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
+| 2026-11-19 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 14,094 | $62.81 | $885,244 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
+| 2026-11-19 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 9,632 | $64.01 | $616,544 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
+| 2026-11-19 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 4,958 | $65.00 | $322,270 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
+| 2026-11-19 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 789 | $65.70 | $51,837 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
+| 2026-11-19 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 41,686 | $60.06 | $2,503,661 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
+| 2026-11-19 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 15,078 | $60.96 | $919,155 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
+| 2026-11-19 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 8,958 | $62.01 | $555,486 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
+| 2026-11-19 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 33,157 | $62.81 | $2,082,591 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
+| 2026-11-19 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 22,629 | $64.01 | $1,448,482 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
+| 2026-11-20 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 11,641 | $65.00 | $756,665 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
+| 2026-11-19 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 1,851 | $65.70 | $121,611 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
+| 2026-11-19 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 2,350 | $60.06 | $141,141 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
+| 2026-11-19 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 830 | $60.96 | $50,597 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
+| 2026-11-19 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 486 | $62.01 | $30,137 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
+| 2026-11-19 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 1,834 | $62.81 | $115,194 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
+| 2026-11-19 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 1,254 | $64.01 | $80,269 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
+| 2026-11-19 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 644 | $65.00 | $41,860 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
+| 2026-11-19 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 102 | $65.70 | $6,701 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
+| 2026-11-19 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 15,491 | $60.06 | $930,389 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
+| 2026-11-19 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 5,568 | $60.96 | $339,425 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
+| 2026-11-12 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 3,307 | $62.01 | $205,067 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
+| 2026-11-19 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 12,262 | $62.81 | $770,176 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
+| 2026-11-19 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 8,378 | $64.01 | $536,276 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
+| 2026-11-19 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 4,309 | $65.00 | $280,085 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
+| 2026-11-19 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 685 | $65.70 | $45,004 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) |
 | 2026-11-19 | ISRG | Brosius Mark | S 公开市场卖出 | 46 | $420.95 | $19,364 | [SEC](https://www.sec.gov/Archives/edgar/data/1035267/000201030026000041/xslF345X06/edgardoc.xml) |
 | 2026-11-20 | ISRG | Brosius Mark | S 公开市场卖出 | 46 | $407.24 | $18,733 | [SEC](https://www.sec.gov/Archives/edgar/data/1035267/000201030026000041/xslF345X06/edgardoc.xml) |
-| 2026-11-17 | TEM | Rogers James William | S 公开市场卖出 | 2,225 | $62.33 | $138,684 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000202463026000029/xslF345X06/form4-11192026_061107.xml) |
-| 2026-11-17 | TEM | Rogers James William | S 公开市场卖出 | 4,240 | $63.23 | $268,095 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000202463026000029/xslF345X06/form4-11192026_061107.xml) |
-| 2026-11-17 | TEM | Rogers James William | S 公开市场卖出 | 614 | $64.02 | $39,308 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000202463026000029/xslF345X06/form4-11192026_061107.xml) |
 | 2026-11-17 | TEM | Polovin Andrew | S 公开市场卖出 | 2,103 | $62.33 | $131,080 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000202416926000025/xslF345X06/form4-11192026_111115.xml) |
 | 2026-11-17 | TEM | Polovin Andrew | S 公开市场卖出 | 4,020 | $63.23 | $254,185 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000202416926000025/xslF345X06/form4-11192026_111115.xml) |
 | 2026-11-17 | TEM | Polovin Andrew | S 公开市场卖出 | 581 | $64.02 | $37,196 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000202416926000025/xslF345X06/form4-11192026_111115.xml) |
@@ -31,14 +69,10 @@
 | 2026-11-17 | HTFL | Rogers Campbell | S 公开市场卖出 | 24,188 | $46.39 | $1,122,081 | [SEC](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000175/xslF345X06/form4.xml) |
 | 2026-11-17 | HTFL | Rogers Campbell | S 公开市场卖出 | 5,654 | $46.39 | $262,289 | [SEC](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000175/xslF345X06/form4.xml) |
 | 2026-11-17 | HTFL | Rogers Campbell | S 公开市场卖出 | 6,503 | $46.39 | $301,674 | [SEC](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000175/xslF345X06/form4.xml) |
-| 2026-11-17 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 5,367 | $62.33 | $334,525 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000046/xslF345X06/form4-11192026_111124.xml) |
-| 2026-11-17 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 10,225 | $63.23 | $646,527 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000046/xslF345X06/form4-11192026_111124.xml) |
-| 2026-11-17 | TEM | LEFKOFSKY ERIC P | S 公开市场卖出 | 1,482 | $64.02 | $94,878 | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000046/xslF345X06/form4-11192026_111124.xml) |
 | 2026-11-16 | ISRG | Brosius Mark | S 公开市场卖出 | 46 | $444.38 | $20,441 | [SEC](https://www.sec.gov/Archives/edgar/data/1035267/000201030026000039/xslF345X06/edgardoc.xml) |
 | 2026-11-17 | ISRG | Brosius Mark | S 公开市场卖出 | 46 | $437.33 | $20,117 | [SEC](https://www.sec.gov/Archives/edgar/data/1035267/000201030026000039/xslF345X06/edgardoc.xml) |
 | 2026-11-18 | ISRG | Brosius Mark | S 公开市场卖出 | 46 | $430.63 | $19,809 | [SEC](https://www.sec.gov/Archives/edgar/data/1035267/000201030026000039/xslF345X06/edgardoc.xml) |
 | 2026-11-16 | SOPH | Van Well Daan | S 公开市场卖出 | 1,224 | $7.73 | $9,462 | [SEC](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000364/xslF345X06/wk-form4_1794949249.xml) |
-| 2026-11-16 | GH | Azar Alex M II | S 公开市场卖出 | 69 | $149.56 | $10,320 | [SEC](https://www.sec.gov/Archives/edgar/data/1576280/000140225626000014/xslF345X06/wk-form4_1794956280.xml) |
 | 2026-11-16 | CBLL | Parvizi Josef | S 公开市场卖出 | 25,000 | $26.02 | $650,500 | [SEC](https://www.sec.gov/Archives/edgar/data/1861107/000119312526465905/xslF345X06/ownership.xml) |
 | 2026-11-13 | SOPH | Xu Zhenyu | S 公开市场卖出 | 4,000 | $7.96 | $31,821 | [SEC](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000362/xslF345X06/wk-form4_1794862930.xml) |
 | 2026-11-12 | SOPH | Menu Philippe | S 公开市场卖出 | 5,000 | $7.68 | $38,400 | [SEC](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000361/xslF345X06/wk-form4_1794862875.xml) |
@@ -93,9 +127,6 @@
 | 2026-11-02 | NTRA | Sheena Jonathan | S 公开市场卖出 | 3 | $388.20 | $1,165 | [SEC](https://www.sec.gov/Archives/edgar/data/1604821/000164664926000043/xslF345X06/form4-11042026_091115.xml) |
 | 2026-11-02 | NTRA | Sheena Jonathan | S 公开市场卖出 | 109 | $400.29 | $43,632 | [SEC](https://www.sec.gov/Archives/edgar/data/1604821/000164664926000043/xslF345X06/form4-11042026_091115.xml) |
 | 2026-09-22 | CAI | Denton John Russel | S 公开市场卖出 | 7,500 | $31.82 | $238,626 | [SEC](https://www.sec.gov/Archives/edgar/data/2019410/000207192326000007/xslF345X06/wk-form4_1790197601.xml) |
-| 2026-09-21 | NVDA | Teter Timothy S. | S 公开市场卖出 | 12,483 | $222.19 | $2,773,638 | [SEC](https://www.sec.gov/Archives/edgar/data/1045810/000169684126000014/xslF345X06/wk-form4_1790196985.xml) |
-| 2026-09-21 | NVDA | Teter Timothy S. | S 公开市场卖出 | 13,478 | $223.05 | $3,006,253 | [SEC](https://www.sec.gov/Archives/edgar/data/1045810/000169684126000014/xslF345X06/wk-form4_1790196985.xml) |
-| 2026-09-21 | NVDA | Teter Timothy S. | S 公开市场卖出 | 4,499 | $223.75 | $1,006,642 | [SEC](https://www.sec.gov/Archives/edgar/data/1045810/000169684126000014/xslF345X06/wk-form4_1790196985.xml) |
 | 2026-09-17 | CAI | Brille Brian J | S 公开市场卖出 | 400,000 | $30.33 | $12,132,080 | [SEC](https://www.sec.gov/Archives/edgar/data/2019410/000207195926000008/xslF345X06/wk-form4_1789682909.xml) |
 | 2026-09-03 | CAI | Spetzler David Baxley | S 公开市场卖出 | 393,100 | $24.76 | $9,733,313 | [SEC](https://www.sec.gov/Archives/edgar/data/2019410/000207195326000007/xslF345X06/wk-form4_1788555596.xml) |
 | 2026-09-03 | CAI | Spetzler David Baxley | S 公开市场卖出 | 84,900 | $25.32 | $2,149,676 | [SEC](https://www.sec.gov/Archives/edgar/data/2019410/000207195326000007/xslF345X06/wk-form4_1788555596.xml) |
@@ -103,26 +134,26 @@
 
 ## 最近申报（含非市场交易）
 
+- 2026-11-23 · NVDA · Teter Timothy S. · S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1045810/000169684126000016/xslF345X06/wk-form4_1795470863.xml) **NEW**
+- 2026-11-23 · GH · MIGNONE ROBERTO · M 期权行权或转换 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1576280/000125839426000022/xslF345X06/wk-form4_1795474020.xml) **NEW**
+- 2026-11-23 · GH · POTTER MYRTLE S · S 公开市场卖出 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1576280/000121413026000006/xslF345X06/wk-form4_1795474050.xml) **NEW**
+- 2026-11-23 · TEM · LEFKOFSKY ERIC P · 无非衍生交易明细 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000050/xslF345X06/form4-11232026_091138.xml) **NEW**
+- 2026-11-23 · TEM · LEFKOFSKY ERIC P · S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml) **NEW**
 - 2026-11-20 · ISRG · Brosius Mark · S 公开市场卖出, S 公开市场卖出 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1035267/000201030026000041/xslF345X06/edgardoc.xml)
 - 2026-11-19 · CERT · Mohammed Faiz · 无非衍生交易明细 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1827090/000214391526000006/xslF345X06/form4-11192026_091107.xml)
-- 2026-11-19 · TEM · Rogers James William · S 公开市场卖出, S 公开市场卖出, S 公开市场卖出 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1717115/000202463026000029/xslF345X06/form4-11192026_061107.xml)
 - 2026-11-19 · TEM · Polovin Andrew · S 公开市场卖出, S 公开市场卖出, S 公开市场卖出 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1717115/000202416926000025/xslF345X06/form4-11192026_111115.xml)
 - 2026-11-19 · GH · Monroe Terilyn J. · S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1576280/000165295626000022/xslF345X06/wk-form4_1795128262.xml)
 - 2026-11-19 · HTFL · Rogers Campbell · S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, M 期权行权或转换, M 期权行权或转换, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000175/xslF345X06/form4.xml)
-- 2026-11-19 · TEM · LEFKOFSKY ERIC P · S 公开市场卖出, S 公开市场卖出, S 公开市场卖出 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000046/xslF345X06/form4-11192026_111124.xml)
 - 2026-11-18 · GEHC · Sandy Neal Joseph · A 授予/奖励 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1932393/000216457626000005/xslF345X06/wk-form4_1795043062.xml)
 - 2026-11-18 · ISRG · Brosius Mark · S 公开市场卖出, S 公开市场卖出, S 公开市场卖出 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1035267/000201030026000039/xslF345X06/edgardoc.xml)
-- 2026-11-18 · GH · Hidalgo Medina Manuel · M 期权行权或转换 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1576280/000186552526000032/xslF345X06/wk-form4_1795041418.xml)
 - 2026-11-18 · RXRX · Taylor Ben R · F 以股份支付税款 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000157/xslF345X06/wk-form4_1795040147.xml)
 - 2026-11-18 · RXRX · Hallett David · F 以股份支付税款 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000156/xslF345X06/wk-form4_1795040124.xml)
 - 2026-11-18 · RXRX · Khan Najat · F 以股份支付税款 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000155/xslF345X06/wk-form4_1795040105.xml)
 - 2026-11-17 · SOPH · Van Well Daan · S 公开市场卖出 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000364/xslF345X06/wk-form4_1794949249.xml)
-- 2026-11-17 · GH · Azar Alex M II · S 公开市场卖出 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1576280/000140225626000014/xslF345X06/wk-form4_1794956280.xml)
 - 2026-11-17 · CBLL · Parvizi Josef · S 公开市场卖出 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1861107/000119312526465905/xslF345X06/ownership.xml)
 - 2026-11-16 · SOPH · Xu Zhenyu · S 公开市场卖出 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000362/xslF345X06/wk-form4_1794862930.xml)
 - 2026-11-16 · SOPH · Menu Philippe · S 公开市场卖出 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000361/xslF345X06/wk-form4_1794862875.xml)
 - 2026-11-16 · ABCL · Booth Andrew · M 期权行权或转换, G 赠与 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1703057/000183441126000013/xslF345X06/wk-form4_1794845662.xml)
-- 2026-11-13 · ABCL · Thermopylae Holdings Ltd. · G 赠与 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1703057/000183444926000011/xslF345X06/wk-form4_1794611774.xml)
 
 ## 解释规则
 

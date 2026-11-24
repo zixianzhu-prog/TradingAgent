@@ -1,6 +1,6 @@
 # 管理层与核心人物雷达
 
-> 截至 2026-11-23；覆盖 16 家公司、39 名已读取申报人、38 个事件。紧急重审 2 家，普通重审 0 家；待读取 Form 4 共 0 份。
+> 截至 2026-11-24；覆盖 16 家公司、38 名已读取申报人、39 个事件。紧急重审 2 家，普通重审 0 家；待读取 Form 4 共 0 份。
 
 > 这是治理研究触发器，不是涨跌预测。Form 4 卖出不会自动视为看空；重大离职和调查只会重新打开对应的 Serenity 门槛。
 
@@ -11,10 +11,10 @@
 | 监控 | ISRG | 2 | 6 | 0 | 6 | — |
 | 监控 | HTFL | 3 | 5 | 0 | 5 | — |
 | 监控 | CAI | 3 | 4 | 0 | 4 | — |
+| 监控 | TEM | 2 | 4 | 0 | 4 | — |
 | 监控 | CBLL | 3 | 3 | 0 | 3 | — |
 | 监控 | NTRA | 1 | 3 | 0 | 3 | — |
 | 监控 | SOPH | 3 | 3 | 0 | 3 | — |
-| 监控 | TEM | 3 | 3 | 0 | 3 | — |
 | 监控 | GH | 3 | 2 | 0 | 2 | — |
 | 监控 | SDGR | 3 | 2 | 0 | 2 | — |
 | 监控 | ABCL | 2 | 1 | 1 | 0 | — |
@@ -25,12 +25,12 @@
 
 ## NVDA · 紧急重审
 
+- 2026-11-19 · **Teter Timothy S. open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1045810/000169684126000016/xslF345X06/wk-form4_1795470863.xml)
+  - 1,434 shares; value $209,407; code S
 - 2026-11-12 · **CEO transition and permanent successor search** · revalidate · event watchlist
   - Configured material event; verify against the cited primary filing.
 - 2026-11-10 · **Independent board investigation** · revalidate · event watchlist
   - Configured material event; verify against the cited primary filing.
-- 2026-09-21 · **Teter Timothy S. open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1045810/000169684126000014/xslF345X06/wk-form4_1790196985.xml)
-  - 12,483 shares; value $2,773,638; code S
 
 ## GEHC · 紧急重审
 
@@ -76,6 +76,17 @@
 - 2026-09-03 · **Spetzler David Baxley open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/2019410/000207195326000007/xslF345X06/wk-form4_1788555596.xml)
   - 393,100 shares; value $9,733,313; code S
 
+## TEM · 监控
+
+- 2026-11-20 · **LEFKOFSKY ERIC P open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml)
+  - 11,641 shares; value $756,665; code S
+- 2026-11-19 · **LEFKOFSKY ERIC P open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml)
+  - 17,827 shares; value $1,070,690; code S
+- 2026-11-17 · **Polovin Andrew open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1717115/000202416926000025/xslF345X06/form4-11192026_111115.xml)
+  - 2,103 shares; value $131,080; code S
+- 2026-11-12 · **LEFKOFSKY ERIC P open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml)
+  - 3,307 shares; value $205,067; code S
+
 ## CBLL · 监控
 
 - 2026-11-16 · **Parvizi Josef open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1861107/000119312526465905/xslF345X06/ownership.xml)
@@ -103,21 +114,12 @@
 - 2026-11-12 · **Menu Philippe open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000361/xslF345X06/wk-form4_1794862875.xml)
   - 5,000 shares; value $38,400; code S
 
-## TEM · 监控
-
-- 2026-11-17 · **Rogers James William open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1717115/000202463026000029/xslF345X06/form4-11192026_061107.xml)
-  - 2,225 shares; value $138,684; code S
-- 2026-11-17 · **Polovin Andrew open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1717115/000202416926000025/xslF345X06/form4-11192026_111115.xml)
-  - 2,103 shares; value $131,080; code S
-- 2026-11-17 · **LEFKOFSKY ERIC P open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000046/xslF345X06/form4-11192026_111124.xml)
-  - 5,367 shares; value $334,525; code S
-
 ## GH · 监控
 
+- 2026-11-19 · **POTTER MYRTLE S open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1576280/000121413026000006/xslF345X06/wk-form4_1795474050.xml)
+  - 9,400 shares; value $1,364,316; code S
 - 2026-11-18 · **Monroe Terilyn J. open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1576280/000165295626000022/xslF345X06/wk-form4_1795128262.xml)
   - 500 shares; value $70,320; code S
-- 2026-11-16 · **Azar Alex M II open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1576280/000140225626000014/xslF345X06/wk-form4_1794956280.xml)
-  - 69 shares; value $10,320; code S
 
 ## SDGR · 监控
 

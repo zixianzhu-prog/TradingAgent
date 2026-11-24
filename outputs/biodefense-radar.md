@@ -1,8 +1,8 @@
 # 生物安全与疫情雷达
 
-截至 2026-11-23。来源：USAspending.gov, awarding sub-agency: Office of Assistant Secretary for Preparedness and Response；WHO Disease Outbreak News。
+截至 2026-11-24。来源：USAspending.gov, awarding sub-agency: Office of Assistant Secretary for Preparedness and Response；WHO Disease Outbreak News。
 
-近 90 天 ASPR/BARDA 合同动作 28 笔（≥500 万美元），合计 $923M，其中 8 家上市公司；近 60 天 WHO 疫情通报 11 条。合同是收款方的收入；疫情只是背景，不等于销售。
+近 90 天 ASPR/BARDA 合同动作 27 笔（≥500 万美元），合计 $916M，其中 8 家上市公司；近 60 天 WHO 疫情通报 13 条。合同是收款方的收入；疫情只是背景，不等于销售。
 疫情与合同按病原名称匹配，较粗：例如 Regeneron 的 Inmazeb 针对 Zaire 型埃博拉，对 Bundibugyo 型没有获批适应症，需逐一核对毒株。
 
 ## 政府应对合同
@@ -31,7 +31,6 @@
 | 2026-09-30 | ADVANCED TECHNOLOGY INTERNATIONAL | 非上市/未匹配 | $8.9M | — | [OT TASK ORDER 2](https://www.usaspending.gov/award/CONT_AWD_75A50123F61002_7505_75A50123D00005_7505) |
 | 2026-09-30 | HIKMA PHARMACEUTICALS USA INC. | Hikma (LSE: HIK) | $7.5M | — | [FY26 SNS PHARMACEUTICAL LOGISTIC REPLENISHMENT - DIAZEPAM](https://www.usaspending.gov/award/CONT_AWD_75A50326C00012_7505_-NONE-_-NONE-) |
 | 2026-09-08 | MEDLINE INDUSTRIES, LP | 非上市/未匹配 | $7.1M | — | [BPA CALL ORDER FOR RESP IV ADULT](https://www.usaspending.gov/award/CONT_AWD_75A50326F63012_7505_75A50121A00003_7505) |
-| 2026-08-25 | BATTELLE MEMORIAL INSTITUTE | 非上市/未匹配 | $6.8M | — | [RTOR BIO-AMT-2311: ADVANCED DEVELOPMENT AND VALIDATION OF ASSAYS TO AS](https://www.usaspending.gov/award/CONT_AWD_75A50126F61010_7505_75A50122D00017_7505) |
 | 2026-09-30 | THE STRONGHOLD GROUP LLC | 非上市/未匹配 | $6.7M | — | [BULK PHARMACEUTICAL BUY FOR SNS WAREHOUSES (THE STRONGHOLD GROUP LLC)](https://www.usaspending.gov/award/CONT_AWD_75A50326C00011_7505_-NONE-_-NONE-) |
 | 2026-09-30 | SOUTHERNBELLE ROOM, LLC | 非上市/未匹配 | $6.2M | — | [BULK PHRAMA REPLENISHMENT 2](https://www.usaspending.gov/award/CONT_AWD_75A50326C00014_7505_-NONE-_-NONE-) |
 | 2026-09-21 | SANOFI VACCINES US INC. | SNY (Sanofi) | $6.0M | influenza | [MANUFACTURE AND STABILITY STUDIES OF THIMEROSAL-FREE PANDEMIC INFLUENZ](https://www.usaspending.gov/award/CONT_AWD_75A50126F61014_7505_75A50122D00003_7505) |
@@ -42,6 +41,8 @@
 
 | 日期 | 通报 | 有合同的应对方 |
 |---|---|---|
+| 2026-11-24 | [Influenza A(H5N1) - United States of America](https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON629) | ADVANCED TECHNOLOGY INTERNATIONAL, SAPPHIROS LLC, SNY (Sanofi) |
+| 2026-11-23 | [Circulating vaccine-derived poliovirus type 1 – Syrian Arab Republic](https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON628) | — |
 | 2026-11-20 | [Ebola disease caused by Bundibugyo virus- Democratic Republic of the Congo, Kenya and Nigeria](https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON630) | REGN |
 | 2026-11-17 | [Chikungunya virus disease - Switzerland](https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON627) | — |
 | 2026-11-13 | [Middle East respiratory syndrome (MERS) – Qatar](https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON626) | — |

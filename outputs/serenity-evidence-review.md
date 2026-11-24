@@ -2172,7 +2172,7 @@ GENB主要专注于AI驱动的生成式药物发现，收入来自合作协议�
 
 ## GH · complete
 
-审查记录：`state/serenity-reviews/GH-claude-6091fe3d75bd2a8dd7f0.json`
+审查记录：`state/serenity-reviews/GH-claude-3588ae11347d1297dd98.json`
 
 ### supply_chain_map: partial
 
@@ -2257,21 +2257,14 @@ GENB主要专注于AI驱动的生成式药物发现，收入来自合作协议�
 - 证伪条件：Illumina终止与GH的供应协议
 - 证伪条件：主要商业保险公司拒绝报销GH核心检测产品
 
-### management_governance: unknown
+### management_governance: partial
 
-两笔内部人出售均在10b5-1计划下执行，Monroe为首席人事官（非CEO/CFO），Azar为董事（非高管），均不构成领导力稳定性的负面信号；联合CEO架构、三级交错董事会及PCAOB审计独立性等治理结构证据仍成立，但管理层个人背景、激励结构及继任规划的正面证据依然缺失，维持partial评级。
+按 Serenity 规则：一手材料尚未证明领导层连续。通道文件中联合CEO架构经章程条款证实，但未出现任何CEO或CFO的具体姓名及在职确认；Monroe为首席人事官，Potter为董事，两者均不是CEO/CFO；无调查披露，无继任空缺迹象；CEO/CFO个人在职情况无法从现有通道中得出结论。
 
 - 支持 [ev_7e80a3f28aa94c27](https://www.sec.gov/Archives/edgar/data/1576280/000157628026000013/gh-20251231.htm) (primary-document): a special meeting of stockholders may be called only by our board of directors, its chairman, or our co-chief executive officers
-- 支持 [ev_2aed21498808ecdf](https://www.sec.gov/Archives/edgar/data/1576280/000157628026000013/gh-20251231.htm) (primary-document): our board of directors is divided into three classes, Class I, Class II and Class III, with each class serving staggered three-year terms
-- 支持 [ev_1f992784e5cbe0d1](https://www.sec.gov/Archives/edgar/data/1576280/000157628026000013/gh-20251231.htm) (primary-document): We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws
-- 支持 [ev_123d693d5f59d2cb](https://www.sec.gov/Archives/edgar/data/1576280/000165295626000022/xslF345X06/wk-form4_1795128262.xml) (primary-document): Check this box to indicate that a transaction was made pursuant to a contract, instruction or written plan for the purchase or sale of equity securities of the issuer that is intended to satisfy the affirmative defense conditions of Rule 10b5-1(c)
-- 支持 [ev_4786e26d345b615d](https://www.sec.gov/Archives/edgar/data/1576280/000165295626000022/xslF345X06/wk-form4_1795128262.xml) (primary-document): Chief People Officer
-- 支持 [ev_6f649a52426a7abf](https://www.sec.gov/Archives/edgar/data/1576280/000140225626000014/xslF345X06/wk-form4_1794956280.xml) (primary-document): Check this box to indicate that a transaction was made pursuant to a contract, instruction or written plan for the purchase or sale of equity securities of the issuer that is intended to satisfy the affirmative defense conditions of Rule 10b5-1(c)
-- 缺口：Individual executive biographical disclosures or qualifications for co-CEOs and key officers
-- 缺口：Compensation and equity incentive alignment details (e.g., vesting schedules, performance metrics)
-- 缺口：Succession planning disclosures or board-level continuity policies
-- 缺口：CEO/CFO ownership levels and transaction history for full ownership context
-- 缺口：引用不存在或原文无法匹配
+- 缺口：CEO姓名及在职确认
+- 缺口：CFO姓名及在职确认
+- 缺口：董事长具体身份确认
 
 ## GLUE · complete
 
@@ -4157,95 +4150,97 @@ AI 用于 Panorama 检测的结果判定，是诊断业务中的辅助组件，�
 
 ## NVDA · complete
 
-审查记录：`state/serenity-reviews/NVDA-claudecli-46253b0f7b73cd9295b1.json`
+审查记录：`state/serenity-reviews/NVDA-claudecli-3125230aa3039c464d4d.json`
 
 ### supply_chain_map: unknown
 
-上游供应商（TSMC、Kinsus、Samsung Electro-Mechanics、Amkor、SPIL、Foxconn）负责晶圆制造、先进封装和基板；产品为 Vera Rubin GPU/CPU 加速计算平台；下游客户包括 CoreWeave、Google Cloud、Microsoft Azure、Oracle Cloud Infrastructure、Meta、Anthropic 等超大规模云厂商，供应链三段关系均有原始证据支撑。
+证据清晰呈现三层结构：上游为台积电（晶圆）、Kinsus/三星电机（基板）、Amkor/SPIL（先进封装）、富士康（整机制造）；公司产品为Vera Rubin GPU系统、Vera CPU、Spectrum-X网络及CUDA平台；下游客户包括CoreWeave、Google Cloud、Microsoft Azure、Oracle Cloud、Meta、OpenAI等超大规模云厂商，关系均有具体协议或部署记录支撑。
 
 - 支持 [ev_31f917bd900135e4](https://nvidianews.nvidia.com/news/nvidia-expands-commitments-with-supply-chain-partners-to-support-ai-infrastructure-buildout) (primary-feed): Working with Amkor Technology, Foxconn, Kinsus Interconnect Technology, Samsung Electro-Mechanics , Siliconware Precision Industries (SPIL) and TSMC, NVIDIA is expanding manufacturing capacity across substrates, advanced packaging, wafer and contract manufacturing
 - 支持 [ev_a24bc3ab83af5791](https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027) (primary-document): racks running at partners including CoreWeave, Google Cloud, Microsoft Azure, Oracle Cloud Infrastructure and Nebius
-- 缺口：各节点采购金额占比及单一供应商集中度披露
-- 缺口：基板/封装产能利用率数据
+- 缺口：各上游供应商的收入占比与集中度数据
+- 缺口：NVIDIA对TSMC先进制程的依赖度量化指标
 - 缺口：引用不存在或原文无法匹配
-- 证伪条件：若 TSMC 或 CoWoS 产能严重受限导致出货推迟，上游瓶颈将转移至 NVDA 自身
+- 证伪条件：若TSMC或关键基板供应商出现重大产能中断且NVIDIA无替代来源，将削弱供应链韧性评级
 
-### chokepoint_evidence: unknown
+### chokepoint_evidence: partial
 
-CUDA 生态拥有 1100 万开发者构成软件层转换成本；MLPerf 基准全面领先体现性能护城河。但证据未提供 GPU 市场份额具体数字，也未量化 AMD 或定制 ASIC 的替代周期，无法确认 NVDA 本身是物理供应链瓶颈节点。
+证据显示CUDA生态系统拥有超过1100万开发者，构成较高的软件层切换壁垒；但证据未提供NVIDIA在AI训练/推理算力市场的具体份额数字，也未量化从CUDA迁移至竞争平台的时间成本或替代周期。按照Serenity框架，AI相关性本身不足以判定为卡脖子节点，缺乏市场集中度数据，只能评为partial。
 
 - 支持 [ev_7a9799f5130ef1e4](https://blogs.nvidia.com/blog/20-years-cuda/) (primary-document): more than 11 million developers build on CUDA across the computing stack
-- 缺口：AI 训练 GPU 全球市场份额具体百分比
-- 缺口：AMD 或自研 ASIC 替代周期的原始披露
-- 缺口：设计胜出锁定期限数据
-- 缺口：引用不存在或原文无法匹配
-- 证伪条件：若超大规模客户披露自研 ASIC 在训练场景取代 NVDA GPU 的具体时间表
+- 支持 [ev_3f42693d51e540f2](https://blogs.nvidia.com/blog/20-years-cuda/) (primary-document): With 1,000+ NVIDIA CUDA-X libraries, developers are now reshaping industries
+- 缺口：NVIDIA GPU在AI训练/推理市场的全球份额数据
+- 缺口：从CUDA迁移至竞争平台的重新认证周期
+- 缺口：AMD/Intel/自研芯片替代GPU的技术可行性证据
+- 证伪条件：若超大规模云厂商大规模部署自研AI芯片并显著减少NVIDIA采购，则chokepoint地位受到实质威胁
 
 ### customer_dependency: unknown
 
-Q3 FY27 财报及新闻稿中明确点名 CoreWeave、Google Cloud、Microsoft Azure、Oracle Cloud Infrastructure、Meta、Anthropic、OpenAI 等为 Vera Rubin 实际部署客户，属于已披露的真实采购关系，非仅为合作意向公告。
+证据中明确点名多个超大规模云厂商和AI原生公司，均有具体产品部署记录，不仅是合作公告。CoreWeave、Google Cloud、Microsoft Azure、Oracle Cloud、Meta、OpenAI、AWS等均作为Vera Rubin或Vera CPU客户被具名披露，客户依赖关系充分。
 
-- 支持 [ev_a24bc3ab83af5791](https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027) (primary-document): Meta planning expanded deployment of Vera Rubin, Vera CPUs, NVIDIA Spectrum-X™ networking and NVIDIA BlueField ® -4
 - 支持 [ev_a24bc3ab83af5791](https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027) (primary-document): leading AI natives, cloud providers and neoclouds, including CoreWeave, Meta, Nebius, Nscale, OpenAI and Verda, are building with NVIDIA Vera CPUs
-- 缺口：前五大客户收入集中度（10-Q 未在此包中全文提供）
-- 缺口：合同期限与采购承诺金额
+- 缺口：前五大客户的营收集中度（是否有单一客户超过10%）
+- 缺口：长期供货协议的具体条款和锁定期
 - 缺口：引用不存在或原文无法匹配
-- 证伪条件：若某一超大规模客户正式宣布削减 NVDA 采购份额并转向自研芯片
+- 缺口：引用不存在或原文无法匹配
+- 证伪条件：若某主要超大规模客户公开宣布将NVIDIA GPU替换为自研芯片并披露时间表，则客户依赖关系出现实质裂缝
 
-### pure_play: partial
+### pure_play: unknown
 
-Q3 FY27 总营收 115.8B 美元中数据中心营收为 107.6B 美元，占比约 92.9%；边缘计算仅 8.2B 美元占 7.1%。AI 加速计算主题收入集中度极高，非多元化集团。
+数据中心业务季度收入1076亿美元，占季度总收入1158亿美元约93%，高度集中于AI/加速计算主题；边缘计算（82亿美元，约7%）为次要分部，不构成实质稀释。整体收入结构与AI基础设施主题高度一致。
 
-- 支持 [ev_18276e0fe24d4bae](https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027) (primary-document): Revenue of $115.8 billion, up 103% from a year ago Data Center revenue of $107.6 billion, up 110% from a year ago
-- 支持 [ev_0e4cebc94bc28d3a](https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027) (primary-document): omputing revenue was $8.2 billion, up 14% from the previous quarter and up 42% from a year ago
-- 缺口：游戏/专业可视化细分营收的完整拆分（此包未含完整 10-Q 分部附注）
-- 缺口：通过需要直接相关的原始披露及完整证据
-- 证伪条件：若非 AI 业务营收占比大幅上升并稀释数据中心主题敞口
+- 支持 [ev_18276e0fe24d4bae](https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027) (primary-document): Data Center revenue of $107.6 billion, up 110% from a year ago
+- 支持 [ev_18276e0fe24d4bae](https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027) (primary-document): Revenue of $115.8 billion, up 103% from a year ago
+- 缺口：数据中心收入内部AI推理vs训练vs其他的细分占比
+- 缺口：引用不存在或原文无法匹配
+- 证伪条件：若边缘/消费类分部占比大幅提升至30%以上，将削弱纯正AI基础设施标签
 
 ### multi_node_control: unknown
 
-NVDA 同时控制 GPU 计算节点（Vera Rubin）、CPU 节点（Vera CPU）、网络节点（Spectrum-X）、DPU 节点（BlueField-4）以及软件生态节点（CUDA 及 1000+ CUDA-X 库），已跨越至少两个相互关联的供应链节点。
+证据显示NVIDIA同时控制GPU（Vera Rubin）、CPU（Vera CPU）、网络（Spectrum-X、BlueField DPU）及软件平台（CUDA/CUDA-X），跨越AI工厂供应链中的多个相连节点。然而NVIDIA为无晶圆厂模式，制造节点依赖TSMC等代工，对晶圆制造节点的控制属于设计层面而非实物生产层面。按照rubric对控制的严格定义，partial更为审慎。
 
-- 支持 [ev_3f42693d51e540f2](https://blogs.nvidia.com/blog/20-years-cuda/) (primary-document): With 1,000+ NVIDIA CUDA-X libraries, developers are now reshaping industries and giving machines the power to see, learn and reason
-- 缺口：各节点对总利润的独立贡献拆分，以验证每节点均具独立护城河
+- 支持 [ev_a24bc3ab83af5791](https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027) (primary-document): leading AI natives, cloud providers and neoclouds, including CoreWeave, Meta, Nebius, Nscale, OpenAI and Verda, are building with NVIDIA Vera CPUs
+- 支持 [ev_7a9799f5130ef1e4](https://blogs.nvidia.com/blog/20-years-cuda/) (primary-document): more than 11 million developers build on CUDA across the computing stack
+- 缺口：NVIDIA自有或独家控制的物理制造节点证据
+- 缺口：网络与GPU节点之间的供应链互锁机制（如捆绑销售协议）
 - 缺口：引用不存在或原文无法匹配
-- 证伪条件：若网络或 DPU 业务被证明高度依赖第三方知识产权且可被竞争对手替代
+- 证伪条件：若客户可在不采购NVIDIA网络设备的情况下单独部署Vera Rubin GPU，则各节点之间的互锁控制不成立
 
 ### earnings_validation: partial
 
-Q3 FY27（截至 2026 年 10 月 25 日）财报显示营收 115.8B 美元同比增长 103%，净利润 65.3B 美元，毛利率 74.8%；前九个月净利润 183.3B 美元。数据来自官方新闻稿及 SEC 10-Q，完全支持 AI 加速计算需求爆发的投资论点。
+Q3 FY2027（截至2026年10月25日）财报提供充分的有日期实际财务数据：季度收入1158亿美元、同比增103%、净利润653亿美元、毛利率74.8%；九个月累计收入2937亿美元。数据来自经审阅的合并利润表，完全支持超高速增长论点。
 
 - 支持 [ev_18276e0fe24d4bae](https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027) (primary-document): Revenue of $115.8 billion, up 103% from a year ago
+- 支持 [ev_328262b3ee5fcca9](https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027) (primary-document): Revenue $ 115,844 $ 57,006 $ 293,681 $ 147,811
 - 支持 [ev_328262b3ee5fcca9](https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027) (primary-document): Net income $ 65,287 $ 31,910 $ 183,297 $ 77,107
 - 支持 [ev_18276e0fe24d4bae](https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027) (primary-document): GAAP and non-GAAP gross margins were 74.8% and 74.9%, respectively
-- 缺口：自由现金流完整数字（现金流量表在此包中被截断）
+- 缺口：自由现金流完整数字（现金流量表在证据中被截断）
 - 缺口：通过需要直接相关的原始披露及完整证据
-- 证伪条件：若下季度毛利率大幅低于指引区间 71-72% 下限，则成本压力将质疑可持续性
+- 证伪条件：若下季度收入指引1300亿美元大幅落空，则增长轨迹论点受损
 
 ### counter_thesis: unknown
 
-证据揭示两项重大反论：（1）中国数据中心收入已被完全排除在 Q4 指引之外，出口管制风险已实质化；（2）Jensen Huang 曾遭外国情报机构针对，管理层稳定性一度受冲击。但证据包未覆盖 AMD 或定制 ASIC 替代路径的具体时间表、估值合理性分析及需求端系统性压力测试，反论考察不完整。
+证据显示一项重要反论：中国市场已被完全排除在收入指引之外，出口管制构成实质性需求侧风险；另外Jensen Huang遭外国情报渗透事件引发治理风险。但证据中未见对竞争性替代路径（AMD GPU、自研ASIC）的系统性审查，也未见对估值风险或需求周期性的压力测试，反论检验不完整，评为partial。
 
 - 支持 [ev_a24bc3ab83af5791](https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027) (primary-document): NVIDIA is not assuming any Data Center compute revenue from China in its outlook
 - 支持 [ev_79e00ca107c914f4](https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors) (primary-document): The NVIDIA Board is initiating an independent investigation in light of recent reporting that founder and CEO Jensen Huang has been the target of a foreign intelligence effort
-- 缺口：AMD MI 系列及 Google/Meta 自研 ASIC 对 NVDA 训练市场份额的量化影响
-- 缺口：估值倍数分析（P/E、EV/Sales 相对历史分位）
-- 缺口：超大规模 CapEx 削减情景的营收敏感性分析
+- 缺口：AMD/Intel及自研芯片对NVIDIA市场份额的实际侵蚀数据
+- 缺口：AI资本支出周期性放缓的情景分析
+- 缺口：估值相对盈利增速的合理性论证
 - 缺口：引用不存在或原文无法匹配
-- 证伪条件：若某超大规模客户正式披露削减 NVDA GPU 采购比例并转向自研加速芯片
-- 证伪条件：若出口管制进一步扩展至欧洲或其他地区导致可寻址市场大幅收缩
+- 证伪条件：超大规模云厂商公开披露削减NVIDIA采购预算并转向自研芯片；出口管制范围扩大至当前非中国市场
 
 ### management_governance: unknown
 
-Jensen Huang 于 2026 年 11 月 23 日获董事会全票复职，继任危机暂时解除；但由独立律所 Wachtell 主导的外国情报渗透调查明确声明将进行至结论，政府调查亦在持续配合中，调查结果尚未公布。依据评分规则，存在未解决调查期间管治评级不得通过。
+Jensen Huang已于2026年11月23日恢复CEO职务，但独立调查委员会明确声明调查将继续进行至结论，属于未结案调查。按照rubric规则，存在未结案调查不得评为pass。公司同步新设国家安全及出口管制监督委员会，并启动首席合规官职位搜寻，治理架构持续演变中。
 
 - 支持 [ev_82a475349174de34](https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director) (primary-document): Jensen Huang has been reinstated as President and Chief Executive Officer and as a member of the Board. The Board of Directors voted unanimously to reinstate Mr. Huang
-- 反证 [ev_7096a0a30c7e47b4](https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director) (primary-document): NVIDIA will continue to cooperate with ongoing government investigations and inquiries.
-- 缺口：独立调查的预计完成时间及可能处置结果
-- 缺口：Chief Compliance Officer 职位填补进展
+- 反证 [ev_7096a0a30c7e47b4](https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director) (primary-document): NVIDIA will continue to cooperate with ongoing government investigations and inquiries
+- 缺口：独立调查的具体调查范围与预计完成时间
+- 缺口：新任首席合规官的委任进展
 - 缺口：引用不存在或原文无法匹配
 - 缺口：引用不存在或原文无法匹配
-- 证伪条件：若独立调查发现实质性合规违规或政府提起正式指控，管治风险将升级为实质障碍
+- 证伪条件：若独立调查发现实质性违规事项并导致Jensen Huang再次离职，或美国政府调查升级为正式起诉，治理风险将由partial升为fail
 
 ## OABI · complete
 
@@ -5362,15 +5357,22 @@ Atrium是临床阶段药物开发公司，专注遗传性心肌病RNA疗法。�
 
 ## RXRX · complete
 
-审查记录：`state/serenity-reviews/RXRX-claude-a74c5255fc8331de9419.json`
+审查记录：`state/serenity-reviews/RXRX-claude-2336196215efaa40167d.json`
 
 ### supply_chain_map: pass
 
-10-K 披露了上游（单一来源原料药、外包生产、云）与核心自动化实验室；下游合作方见客户依赖门槛。
+按 Serenity 规则：上游投入、公司产品、下游用户均有具体关系的一手证据。通道揭示了RXRX的上游输入（Tempus去识别化临床记录、Takeda授权化合物TAK-733、第三方CDMO药物制造、第三方平台试剂设备供应商）、公司产品（Phenomap生物图谱、TxFM AI模型及REC-4881/REC-1245临床资产）以及下游用户（Sanofi免疫学小分子合作、Roche神经科学Phenomap、Tempus肿瘤学TxFM许可）之间的具体关系。实际财务数据中，2025年全年总收入同比增长27%（7.47亿美元）、Roche 3000万美元Phenomap验收里程碑（2025年第四季度）、Sanofi 1000万美元免疫学候选药物里程碑（2026年第三季度）及TxFM 1200万美元许可费（2026年9月）均与论点"合作里程碑及临床资产提供多种获胜路径"一致，但2026年前九个月运营收入同比下降19%与论点相悖，持续扩大的净亏损（2025年6.45亿美元）与论点无直接关联。
 
-- 支持 [ev_d1b984a1f3baa6ab](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/rxrx-20251231.htm) (primary-document): the API used in our drug candidates, are obtained from single-source suppliers.
-- 支持 [ev_2c66309189a7721a](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/rxrx-20251231.htm) (primary-document): we have obtained drug substance and drug product for our drug candidates from third party contract manufacturers.
-- 支持 [ev_54171fe3bfd7cb6c](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/rxrx-20251231.htm) (primary-document): using our automated high throughput labs, which can run over 2 million experiments per week
+- 支持 [ev_3c47e48a9db71793](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): Tempus will also provide the Company with access to a certain number of de-identified pathology records with linked clinical data during the term of the TxFM License Agreement.
+- 支持 [ev_a29027d388134e7c](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/rxrx-20251231.htm) (primary-document): we obtained an exclusive (even as to Takeda and its affiliates), worldwide, sublicensable under certain conditions, transferable, royalty-bearing license to certain Takeda patents, know-how and materials related to develop, manufacture and commercialize Takeda’s clinical-stage compound known as TAK-733, a non-ATP-competitive allosteric inhibitor of MEK1 and MEK2
+- 支持 [ev_f2bd4d83f8603fea](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/rxrx-20251231.htm) (primary-document): Cost of revenue consists of the Company’s costs to provide services for drug discovery required under performance obligations with partnership customers.
+- 支持 [ev_5c9cc242598fca8e](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/rxrx-20251231.htm) (primary-document): the acceptance fee for the completion of a Phenomap for one of our neuroscience performance obligations
+- 支持 [ev_f9af4ab25e97f4ed](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): the Company granted Tempus a non-exclusive, non-sublicensable, non-transferable, worldwide license to the Company's TxFM Model solely for use within the field of oncology.
+- 支持 [ev_8b0af9c428298ce0](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): Clinical FAP REC-4881 5,750 2,101 3,649 >100% 12,705 6,925 5,780 83 % RBM39 REC-1245 3,996 1,193 2,803 >100% 9,657 5,643 4,014 71 %
+- 支持 [ev_58fa039e1e225d58](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/rxrx-20251231.htm) (primary-document): the increase in revenue compared to the prior year was due to revenue recognized from our partnership with Sanofi.
+- 支持 [ev_2ac7a1a89452b02f](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): the increase in revenue compared to the prior period was primarily due to our Sanofi partnership, for which the Company achieved a $10.0 million milestone for an immunology small molecule development candidate.
+- 支持 [ev_e82d4ded48c79845](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/rxrx-20251231.htm) (primary-document): the increase in revenue compared to the prior year was due to revenue recognized from our partnership with Roche. We recognized revenue related to the acceptance fee for the completion of a Phenomap for one of our neuroscience performance obligations.
+- 支持 [ev_9ff4fbd79fa4b366](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): the Company granted Tempus a non-exclusive, non-sublicensable, non-transferable, worldwide license to the Company's TxFM Model solely for use within the field of oncology. Permitted uses include diagnostic applications, clinical applications, and Tempus's internal research and development.
 
 ### chokepoint_evidence: partial
 
@@ -5402,10 +5404,15 @@ Atrium是临床阶段药物开发公司，专注遗传性心肌病RNA疗法。�
 
 ### earnings_validation: partial
 
-财报验证了合作研发收入与持续亏损，未验证“平台产出药物”的核心论点。
+按 Serenity 规则：实际结果有的支持、有的不支持论点。通道揭示了RXRX的上游输入（Tempus去识别化临床记录、Takeda授权化合物TAK-733、第三方CDMO药物制造、第三方平台试剂设备供应商）、公司产品（Phenomap生物图谱、TxFM AI模型及REC-4881/REC-1245临床资产）以及下游用户（Sanofi免疫学小分子合作、Roche神经科学Phenomap、Tempus肿瘤学TxFM许可）之间的具体关系。实际财务数据中，2025年全年总收入同比增长27%（7.47亿美元）、Roche 3000万美元Phenomap验收里程碑（2025年第四季度）、Sanofi 1000万美元免疫学候选药物里程碑（2026年第三季度）及TxFM 1200万美元许可费（2026年9月）均与论点"合作里程碑及临床资产提供多种获胜路径"一致，但2026年前九个月运营收入同比下降19%与论点相悖，持续扩大的净亏损（2025年6.45亿美元）与论点无直接关联。
 
-- 支持 [ev_05feddc7f23f26af](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/rxrx-20251231.htm) (primary-document): To date our operating revenue has primarily been generated through funded research and development agreements
-- 反证 [ev_0477b1ddf6fb372b](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/rxrx-20251231.htm) (primary-document): We had an accumulated deficit of $2.1 billion as of December 31, 2025.
+- 支持 [ev_07abf13fef349093](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/rxrx-20251231.htm) (primary-document): Total revenue 74,681 58,839 44,575 15,842 26.9 % 14,264 32.0 %
+- 支持 [ev_e9b6a309b8dd60ed](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): the $ 30.0 million variable consideration for the second acceptance fee until the map was accepted, which was during the fourth quarter of 2025.
+- 支持 [ev_539b9e08d4320f14](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): Total revenue 18,552 5,175 32,694 39,143
+- 支持 [ev_2ac7a1a89452b02f](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): the increase in revenue compared to the prior period was primarily due to our Sanofi partnership, for which the Company achieved a $10.0 million milestone for an immunology small molecule development candidate.
+- 支持 [ev_063432cb068a83ff](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): Tempus will pay the Company a non-refundable license fee of $ 12.0 million in two installments of
+- 反证 [ev_f911148ff5db62c1](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): Operating revenue $ 18,055 $ 4,983 $ 13,072 >100% $ 31,659 $ 38,905 $ (7,246) (19) %
+- 缺口：按 Serenity 规则：实际结果有的支持、有的不支持论点
 
 ### counter_thesis: pass
 
@@ -5731,7 +5738,7 @@ SGMT为preparation阶段Phase 3公司，亏损属预期。公司披露截至2026
 
 ## SOPH · complete
 
-审查记录：`state/serenity-reviews/SOPH-claude-f81ef8532f1f6db09193.json`
+审查记录：`state/serenity-reviews/SOPH-claude-e0f8541e0193d6321370.json`
 
 ### supply_chain_map: pass
 
@@ -5817,13 +5824,14 @@ SGMT为preparation阶段Phase 3公司，亏损属预期。公司披露截至2026
 
 ### management_governance: partial
 
-按 Serenity 规则：一手材料尚未证明领导层连续。通道材料仅含三份高管（CLO、CSO、CMO）Form 4 交易记录及一份20-F附件目录。20-F附件目录仅列出"首席执行官认证"和"首席财务官认证"条目，未披露姓名，无法确认 CEO/CFO 当前在任；材料中未发现任何调查披露或继任空缺信息。
+按 Serenity 规则：一手材料尚未证明领导层连续。2026年11月的6-K引述Ross Muken为CEO，确认其于2026年7月由总裁升任，CEO继任已命名且完成；CFO George Cardoza仅于2026年3月申报的20-F（信息截至2026年2月15日）中出现，当前通道材料无其11月在任确认，连续性不完整；无调查披露，无悬空继任缺位。
 
-- 支持 [ev_c49f1fbb7be636ad](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): 12.1 Certification of Principal Executive Officer Pursuant to Rules 13a-14(a) and 15d-14(a) under the Securities Exchange Act of 1934, as Adopted Pursuant to Section 302 of the Sarbanes-Oxley Act of 2002 12.2 Certification of Principal Financial Officer Pursuant to Rules 13a-14(a) and 15d-14(a) under the Securities Exchange Act of 1934, as Adopted Pursuant to Section 302 of the Sarbanes-Oxley Act of 2002
-- 缺口：CEO姓名及当前在任状态
-- 缺口：CFO姓名及当前在任状态
-- 缺口：董事会主席身份及在任状态
-- 缺口：是否存在政府或监管调查的直接披露文件（如20-F正文风险因素章节）
+- 支持 [ev_be7b6e3566a0664a](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000350/sophiageneticssaex993q32026.htm) (primary-document): said Ross Muken, Chief Executive Officer of SOPHiA GENETICS
+- 支持 [ev_37e44de940fc1a2a](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): George Cardoza Chief Financial Officer 64
+- 支持 [ev_a9bc5210ea5a74e1](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): Ages are as of February 15, 2026.
+- 支持 [ev_0dca9e8ecc5ed3d1](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000350/sophiageneticssaex991q32026.htm) (primary-document): As announced in January 2026, the Company’s President was promoted to CEO in July 2026 and, from that date, assumed the role of CODM.
+- 支持 [ev_be7b6e3566a0664a](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000350/sophiageneticssaex993q32026.htm) (primary-document): said Ross Muken, Chief Executive Officer of SOPHiA GENETICS
+- 缺口：CFO George Cardoza 在2026年11月的在任状态——仅见于2026年2月15日的20-F，当前6-K（2026年11月）未确认
 
 ## TECX · complete
 
@@ -5929,7 +5937,7 @@ Tectonic是临床阶段生物技术公司，专注于GPCR靶向生物制剂。�
 
 ## TEM · complete
 
-审查记录：`state/serenity-reviews/TEM-claude-c661774b1b88276556de.json`
+审查记录：`state/serenity-reviews/TEM-claude-aaa15fe83f865651bc57.json`
 
 ### supply_chain_map: pass
 
@@ -6007,11 +6015,11 @@ Q3 2026 总收入 4.115 亿美元，同比增长 23%（季报原文），增长�
 
 ### management_governance: pass
 
-按 Serenity 规则：领导层连续，且无未结调查或未定继任。2026年11月17日的三份Form 4及代理声明（DEF 14A）均确认Lefkofsky仍任CEO兼董事长、Rogers仍任CFO，领导层连续在任；通道内无任何开放调查或未定继任披露。结构性治理风险包括双重股权集中投票权、Pathos AI持续关联方收入、Lefkofsky关联实体飞机租赁，以及Fukushima兼任Pathos AI顾问等，均已记录。
+按 Serenity 规则：领导层连续，且无未结调查或未定继任。本批通道（四份Form 4及DEF 14A）显示：Lefkofsky仍以"CEO and Chairman"身份提交Form 4（截至2026年11月20日），Rogers经DEF 14A确认持续担任CFO；通道内无任何开放调查或未定继任披露。结构性治理风险包括：Lefkofsky集CEO、董事长、10%以上股东于一身，以及其对346 Long LLC等多个关联实体的控制关系。
 
-- 支持 [ev_af7805abe25e662e](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000046/xslF345X06/form4-11192026_111124.xml) (primary-document): Officer (give title below) Other (specify below) CEO and Chairman
-- 支持 [ev_bc36a257f372ab47](https://www.sec.gov/Archives/edgar/data/1717115/000202463026000029/xslF345X06/form4-11192026_061107.xml) (primary-document): Officer (give title below) Other (specify below) Chief Financial Officer
-- 支持 [ev_e333c66db31e2993](https://www.sec.gov/Archives/edgar/data/1717115/000119312526145528/d23945ddef14a.htm) (primary-document): Name Age Position Eric Lefkofsky 56 Chief Executive Officer, Founder and Director Ryan Fukushima 40 Chief Executive Officer, Data Tom Schoenherr 52 Chief Executive Officer, Diagnostics Andrew Polovin 52 Executive Vice President, Chief Legal Officer and Secretary James Rogers 40 Chief Financial Officer
+- 支持 [ev_bc36a257f372ab47](https://www.sec.gov/Archives/edgar/data/1717115/000202463026000029/xslF345X06/form4-11192026_061107.xml) (primary-document): Chief Financial Officer
+- 支持 [ev_a61c31f55632e4a9](https://www.sec.gov/Archives/edgar/data/1717115/000119312526145528/d23945ddef14a.htm) (primary-document): Eric Lefkofsky 56 Chief Executive Officer, Founder and Director
+- 支持 [ev_7378b22ab04e98a3](https://www.sec.gov/Archives/edgar/data/1717115/000119312526145528/d23945ddef14a.htm) (primary-document): James Rogers 40 Chief Financial Officer
 - 支持 [ev_bd6ff1cb922d867e](https://www.sec.gov/Archives/edgar/data/1717115/000119312526145528/d23945ddef14a.htm) (primary-document): James Rogers has served as our Chief Financial Officer since April 2021.
 - 支持 [ev_7fd000fd7fc4eff7](https://www.sec.gov/Archives/edgar/data/1717115/000119312526145528/d23945ddef14a.htm) (primary-document): Each executive officer serves at the discretion of our Board and holds office until the executive officer’s successor is duly elected and qualified or until the executive officer’s earlier resignation or removal.
 

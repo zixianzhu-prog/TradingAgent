@@ -1,6 +1,6 @@
 # 研究者、创始人与技术归属证据
 
-> 读取 308 家公司的最新证据包；创始人/公司关系 2 条；公司披露的专利或许可 9 条。
+> 读取 357 家公司的最新证据包；创始人/公司关系 3 条；公司披露的专利或许可 9 条。
 
 > 只有明确的 SEC 原句才会进入本表。公司披露的专利/许可仍需 USPTO 专利受让记录或大学技术转移材料做独立复核。
 
@@ -16,4 +16,5 @@
 | HURA | university_license | company-disclosed | [In particular, TuHURA is a party to a March 2019 Exclusive License Agreement with Moffitt Cancer Center under which, as amended, we license patent rights co- owned by Moffitt and University of South Florida relating to ADCs for immunotherapy and Delta receptor targeted agents for molecular imaging and immunotherapy of lung cancer.](https://www.sec.gov/Archives/edgar/data/1498382/000119312526134950/hura-20251231.htm) |
 | IRD | patent_portfolio | company-disclosed | [Form 10-K For our MERTK therapeutic program, we own one patent family directed to compositions of matter and therapeutic methods using such compositions of matter.](https://www.sec.gov/Archives/edgar/data/1228627/000114036126009247/ef20060643_10k.htm) |
 | PRME | patent_portfolio | company-disclosed | [The patent applications that we own or in-license may fail to result in issued patents with claims that cover our product candidates or uses thereof in the United States or in other foreign countries.](https://www.sec.gov/Archives/edgar/data/1894562/000162828026013569/prme-20251231.htm) |
+| RXRX | founder_company | company-disclosed | [COMMITTEE MEMBERSHIP Research and Development Technology Corporate Social Responsibility DIRECTOR SINCE 2013 AGE 43 Christopher Gibson, Ph.D. , is our co-founder and Chair of the Board, as of January 1, 2026.](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000065/rxrx-20260430.htm) |
 | TECX | patent_portfolio | company-disclosed | [Our patent portfolio includes three patent families relating to Fc-relaxin fusion protein compositions (including TX45) and methods of use thereof, consisting of two granted U.S. patents, three pending U.S. non-provisional applications, and approximately 40 pending foreign applications.](https://www.sec.gov/Archives/edgar/data/1681087/000119312526076793/tecx-20251231.htm) |
