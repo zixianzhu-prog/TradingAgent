@@ -1,0 +1,5 @@
+{
+  "schemaVersion": 1,
+  "instructions": "Only add a ticker-specific view when its source, exact quote and original publication time are visible. Performance begins when this project first freezes the view, never retroactively from an old article.",
+  "calls": []
+}

@@ -451,7 +451,14 @@ def order_block(o: dict | None) -> str:
             'Growth and exit multiples follow one sourced rule for every company (see below), not verified forecasts; this is a research range, not advice.</p></div>')
 
 
-def card(row: dict) -> str:
+CARD_ACTION = {"buy": ("Buy", "ok"), "starter": ("Starter", "warn"), "wait": ("Wait", "plain"), "avoid": ("Avoid", "alert")}
+CARD_DECISION = {"research-ready": ("Research-ready", "ok"), "watch": ("Watch", "warn"), "revalidate": ("Re-check", "alert"),
+                 "reject": ("Reject", "alert")}
+
+
+def card(row: dict, ticket: dict | None = None, gates: dict | None = None) -> str:
+    """Four layers, one line of conclusion each: why it was found, what the Serenity evidence says, what the price says,
+    and what happens next. The full memo sits underneath, collapsed."""
     n = row["numbers"]
     stats = [
         (f"{n['period']} revenue" if n["period"] else "Quarterly revenue", money(n["quarterlyRevenueM"])),
@@ -461,30 +468,42 @@ def card(row: dict) -> str:
     ]
     if row.get("fdaAiDevices"):
         stats.append(("FDA AI devices", str(row["fdaAiDevices"])))
-    chips = []
-    if row["lowEvidence"]:
-        chips.append('<span class="chip warn">Evidence incomplete</span>')
-    if row["openEvents"]:
-        chips.append('<span class="chip alert">Open event</span>')
-    if row.get("aiUnverified"):
-        chips.append('<span class="chip warn">AI not confirmed by market screen</span>')
-    elif row.get("aiConfirmedInFilings"):
-        chips.append('<span class="chip plain">AI confirmed in filings, not core</span>')
-    if not chips:
-        chips.append('<span class="chip ok">Evidence on file</span>')
+    lt = row.get("longTerm") or {}
+    # 1. Why it was found
+    news = "".join(event_item(e) for e in row.get("newsEvents", [])[:2])
+    found = (f'<p>{esc(row["chokepoint"])}</p><p class="via-theme">{esc(row["whyNow"])}</p>'
+             + (f'<ul class="news-list">{news}</ul>' if news else ""))
+    # 2. Serenity evidence
+    states = gates or (row.get("serenityVerdict") or {}).get("gates") or {}
+    passed = [GATE_NAMES.get(g, g) for g, v in states.items() if v == "pass"]
+    open_ = [f'<span>{esc(GATE_NAMES.get(g, g))}</span> <span>{esc(v)}</span>' for g, v in states.items() if v != "pass"]
+    label, tone = CARD_DECISION.get(row.get("gateDecision") or "", ("Not reviewed", "plain"))
+    evidence = (f'<p><span class="chip {tone}">{label}</span> {len(passed)} of {len(states)} evidence gates pass'
+                + (". Open: " + " · ".join(open_) if open_ else ".") + "</p>" if states else
+                f'<p><span class="chip {tone}">{label}</span> No gate review yet.</p>')
+    if lt.get("counter"):
+        evidence += f'<p class="via-theme">Biggest counter-point: <span>{esc(lt["counter"])}</span></p>'
+    # 3. Price
+    if ticket:
+        a_label, a_tone = CARD_ACTION.get(ticket["action"], (ticket["action"], "plain"))
+        size = f' {ticket["positionPct"]:.1%}' if ticket.get("positionPct") else ""
+        price = (f'<p><span class="chip {a_tone}">{a_label}{size}</span> {esc((ticket.get("reasons") or [""])[0])}</p>')
+    else:
+        price = '<p><span class="chip plain">No ticket</span> No order ticket for this company yet.</p>'
+    price += f'<dl class="stats">{"".join(f"<div><dt>{esc(k)}</dt><dd>{esc(v)}</dd></div>" for k, v in stats)}</dl>' + order_block(row.get("orderRange"))
+    # 4. Next trigger
+    triggers = [esc(lt["next_check"])] if lt.get("next_check") else []
+    triggers += [f"Open re-check: {esc(e['title'])}" for e in row["openEvents"][:2]]
+    nxt = (f'<ul class="plain-list">{"".join(f"<li>{t}</li>" for t in triggers)}</ul>' if triggers else '<p class="via-theme">No dated trigger on file.</p>')
+    if row["falsifiers"]:
+        nxt += f'<p class="via-theme">Wrong if: <span>{esc(row["falsifiers"][0])}</span></p>'
     falsifiers = "".join(f"<li>{esc(item)}</li>" for item in row["falsifiers"])
     sources = "".join(
         f'<li><a href="{esc(url)}" rel="noopener" target="_blank">{esc(url.split("/")[2] if "//" in url else url)}</a></li>'
         for url in row["sources"]
     )
     v = row.get("serenityVerdict")
-    serenity_block = (f'<div class="news-block"><h4>Serenity analysis</h4><p class="via-theme"><strong>{esc(v.get("tier", ""))}</strong> · chokepoint: {esc(v.get("chokepoint", ""))}. '
-                      f'{esc(v.get("verdict", ""))} Counters that hold: {esc("; ".join(v.get("countersHolding", [])))}.</p></div>' if v else
-                      '<div class="news-block"><h4>Serenity analysis</h4><p class="via-theme">Not done yet for this company.</p></div>')
-    news_block = (f'<div class="news-block"><h4>In the news, last two weeks</h4><ul class="news-list">{"".join(event_item(e) for e in row.get("newsEvents", []))}</ul></div>'
-                  if row.get("newsEvents") else "")
-    events = "".join(f"<li>{esc(event['title'])}</li>" for event in row["openEvents"])
-    events_block = f'<div class="events"><h4>Unresolved before upgrading</h4><ul>{events}</ul></div>' if events else ""
+    memo = (f'<h4>Serenity memo</h4><p>{esc(v.get("verdict", ""))} Counters that hold: {esc("; ".join(v.get("countersHolding", [])))}.</p>' if v else "")
     return f"""
 <article class="pick" id="{esc(row['ticker'])}">
   <header class="pick-head">
@@ -498,30 +517,31 @@ def card(row: dict) -> str:
       <div><span class="big muted">{row['evidence']}</span><span class="cap">Evidence</span></div>
     </div>
   </header>
-  <p class="angle">{esc(row['chokepoint'])}</p>
-  <div class="chips">{''.join(chips)}</div>
-  {serenity_block}
-  {news_block}
-  <dl class="stats">{''.join(f'<div><dt>{esc(k)}</dt><dd>{esc(v)}</dd></div>' for k, v in stats)}</dl>
-  {order_block(row.get("orderRange"))}
-  <div class="pick-body">
-    <section>
-      <h4>Why it can win</h4>
-      <p>{esc(row['thesis'])}</p>
-      <h4>Why now</h4>
-      <p>{esc(row['whyNow'])}</p>
-      <div class="dims">{bars(row['potential']['parts'])}</div>
-    </section>
-    <section class="against">
-      <h4>Strongest case against</h4>
-      <p>{esc(row['bearCase'])}</p>
-      <h4>We are wrong if</h4>
-      <ul>{falsifiers}</ul>
-      {events_block}
-      <h4>Sources</h4>
-      <ul class="sources">{sources}</ul>
-    </section>
-  </div>
+  <ol class="layers">
+    <li><h4>Why it was found</h4>{found}</li>
+    <li><h4>Serenity evidence</h4>{evidence}</li>
+    <li><h4>Price today</h4>{price}</li>
+    <li><h4>Next trigger</h4>{nxt}</li>
+  </ol>
+  <details class="memo">
+    <summary>Full memo: thesis, case against, score parts, sources</summary>
+    <div class="pick-body">
+      <section>
+        <h4>Why it can win</h4>
+        <p>{esc(row['thesis'])}</p>
+        {memo}
+        <div class="dims">{bars(row['potential']['parts'])}</div>
+      </section>
+      <section class="against">
+        <h4>Strongest case against</h4>
+        <p>{esc(row['bearCase'])}</p>
+        <h4>We are wrong if</h4>
+        <ul>{falsifiers}</ul>
+        <h4>Sources</h4>
+        <ul class="sources">{sources}</ul>
+      </section>
+    </div>
+  </details>
 </article>"""
 
 
@@ -630,6 +650,13 @@ a{color:var(--green)} a:focus-visible{outline:2px solid var(--green);outline-off
 .stats dt{font-size:11px;color:var(--muted)}
 .stats dd{margin:2px 0 0;font-weight:700;font-variant-numeric:tabular-nums}
 .pick-body{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.layers{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid var(--line)}
+.layers>li{display:grid;grid-template-columns:150px 1fr;gap:6px 18px;padding:14px 0;border-bottom:1px solid var(--line)}
+.layers>li>h4{grid-row:span 4;padding-top:3px}
+.layers>li>*:not(h4){grid-column:2}
+.memo summary{cursor:pointer;font-size:13px;color:var(--green);font-weight:600}
+.memo[open] summary{margin-bottom:16px}
+@media (max-width:640px){.layers>li{grid-template-columns:1fr}.layers>li>*:not(h4){grid-column:1}.layers>li>h4{grid-row:auto}}
 .pick-body section{display:grid;gap:10px;align-content:start}
 .pick-body p,.pick-body li{font-size:14px}
 .pick-body ul{margin:0;padding-left:18px;display:grid;gap:4px}
@@ -1191,6 +1218,34 @@ def blind_test_section(root: Path) -> str:
   <h3 class="bucket-h">Calls frozen for the week of {esc(week)} (action and confidence 0–100)</h3>
   <div class="table-wrap"><table><thead><tr><th>Ticker</th><th>{names["A"]}</th><th>{names["B"]}</th><th>{names["C"]}</th></tr></thead><tbody>{rows}</tbody></table></div>
   {f'<p class="note">The plain model also suggested, outside the list: <strong>{esc(", ".join(extras))}</strong></p>' if extras else ""}
+</section>"""
+
+
+def opinion_benchmark_section(root: Path) -> str:
+    """Forward-only public commentator and specialist-fund comparison."""
+    data = load(root / "state/opinion-benchmark.json", {})
+    if not data:
+        return ""
+    profiles = {r["id"]: r for r in load(root / "trend-agent/opinion-leaders.json", {}).get("publicOpinion", [])}
+    calls = data.get("calls", [])
+    call_rows = "".join(
+        f'<tr><td>{esc(c["evaluationStart"])}</td><td>{esc(profiles.get(c["leaderId"], {}).get("name", c["leaderId"]))}</td>'
+        f'<td class="tk">{esc(c["ticker"])}</td><td>{esc(c["stance"])}</td><td class="n">{c["confidence"]:.0f}</td>'
+        f'<td><a href="{esc(c["sourceUrl"])}">source</a></td></tr>' for c in calls[-30:])
+    if not call_rows:
+        call_rows = '<tr><td colspan="6">No ticker-specific view has been frozen yet. The test starts now and does not backfill old calls.</td></tr>'
+    funds = data.get("fundSignals", [])
+    fund_rows = "".join(
+        f'<tr><td>{esc(r.get("filed") or "")}</td><td>{esc(r["fund"])}</td><td class="tk">{esc(r.get("ticker") or "")}</td>'
+        f'<td>{esc(r.get("form") or "")}</td><td class="n">{"—" if r.get("percent") is None else format(r["percent"] / 100, ".1%")}</td>'
+        f'<td>{"initial" if r.get("initial") else "amendment"}</td></tr>' for r in funds[:20])
+    return f"""<section class="section" id="opinion-benchmark" aria-labelledby="opinion-h">
+  <h2 id="opinion-h">Public biotech views vs Serenity</h2>
+  <p>Brad Loncar is the industry radar, Adam Feuerstein the clinical skeptic, and Peter Kolchinsky/RA Capital the science, economics and policy view. A view enters the test only with a ticker, direction, original timestamp, exact quote and falsifier. Its return starts when this project first freezes it—not from an old article date. Baker Bros, RA Capital, Perceptive, RTW and Cormorant filings are shown separately as capital context, never as automatic recommendations.</p>
+  <div class="table-wrap"><table><thead><tr><th>Freeze date</th><th>Source</th><th>Ticker</th><th>View</th><th class="n">Confidence</th><th>Original</th></tr></thead><tbody>{call_rows}</tbody></table></div>
+  <h3 class="bucket-h">Selected specialist-fund ownership (Schedule 13D/13G)</h3>
+  <div class="table-wrap"><table><thead><tr><th>Date</th><th>Fund</th><th>Ticker</th><th>Filing</th><th class="n">Stake</th><th>Type</th></tr></thead><tbody>{fund_rows or '<tr><td colspan="6">No matching filings.</td></tr>'}</tbody></table></div>
+  <p class="note">Current sample: {len(calls)} frozen public calls and {len(funds)} matching fund filings. Performance appears only after 20/60/120/250 trading sessions; until then no source is described as more accurate.</p>
 </section>"""
 
 
@@ -1849,6 +1904,8 @@ def render_html(payload: dict, root: Path = ROOT) -> str:
     {f'<h3 class="bucket-h">Negative news, re-analysis needed</h3><div class="table-wrap"><table><thead><tr><th>Ticker</th><th class="n">News signal</th><th>What changed</th><th>Gates to re-check</th></tr></thead><tbody>{queue_rows(warnings_)}</tbody></table></div>' if warnings_ else ''}
     <p class="note">News events are classified by keyword rules, so some headlines are misread; each links to its source. Serenity verdicts come from memos that quote 10-K, 20-F and 10-Q text. {citation_note} Sizing tiers describe what the skills imply and are not advice.</p>
   </section>"""
+    tickets = {t["ticker"]: t for t in load(root / "state/order-tickets.json", {}).get("tickets", [])}
+    gate_states = {r["ticker"]: r.get("gateStates") for r in load(root / "state/serenity-gate-results.json", {}).get("companies", [])}
     picks_html = ""
     for key, label, blurb in BUCKETS:
         rows_in = payload["picks"].get(key, [])
@@ -1858,7 +1915,7 @@ def render_html(payload: dict, root: Path = ROOT) -> str:
         if key == "asymmetric" and payload.get("screen") and payload["screen"].get("queue"):
             names = ", ".join(q["ticker"] for q in payload["screen"]["queue"] if q.get("capBand", "").startswith("Sweet spot"))[:200]
             extra = f'<p class="note">Sweet-spot names found by the market-wide screen but not reviewed yet, such as {esc(names)}, can only join this bucket after a Serenity review.</p>'
-        picks_html += f'<h3 class="bucket-h" id="bucket-{key}">{esc(label)}</h3><p class="bucket-blurb">{esc(blurb)}</p>{extra}<div class="picks">{"".join(card(r) for r in rows_in)}</div>'
+        picks_html += f'<h3 class="bucket-h" id="bucket-{key}">{esc(label)}</h3><p class="bucket-blurb">{esc(blurb)}</p>{extra}<div class="picks">{"".join(card(r, tickets.get(r["ticker"]), gate_states.get(r["ticker"])) for r in rows_in)}</div>'
     choke_html = ""
     cp = payload.get("chokepoints")
     if cp and cp.get("nodes"):
@@ -1999,6 +2056,7 @@ def render_html(payload: dict, root: Path = ROOT) -> str:
 {management_radar_section(root)}
 {candidate_filter_section(root)}
 {blind_test_section(root)}
+{opinion_benchmark_section(root)}
 {small_caps_section(root)}
 {deals_section(root)}
 {lab_to_company_section(root)}

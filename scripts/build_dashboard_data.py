@@ -228,6 +228,7 @@ def main() -> None:
     technology_ownership = load(ROOT / "state/technology-ownership.json", {"companies": [], "summary": {}})
     uspto_assignment_validation = load(ROOT / "state/uspto-assignment-validation.json", {"companies": [], "summary": {}})
     institutional_ownership = load(ROOT / "state/institutional-ownership.json", {"filings": [], "summary": {}})
+    opinion_benchmark = load(ROOT / "state/opinion-benchmark.json", {"calls": [], "fundSignals": [], "summary": {}})
     management_radar = load(ROOT / "state/management-radar.json", {"companies": [], "summary": {}})
     predictions, performance = performance_rows(ROOT / "state/investment-score-history.db")
     stocks = market_rows(ai_medicine_market, theme_links, company_news, serenity, "ai_medicine")
@@ -295,6 +296,7 @@ def main() -> None:
         "technologyOwnership": technology_ownership,
         "usptoAssignmentValidation": uspto_assignment_validation,
         "institutionalOwnership": institutional_ownership,
+        "opinionBenchmark": opinion_benchmark,
         "managementRadar": management_radar,
         "aiMedicinePeerScreen": ai_medicine_peer_screen,
         "aiMedicineThesisMemory": ai_medicine_thesis_memory,

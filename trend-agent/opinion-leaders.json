@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "publicOpinion": [
+    {
+      "id": "brad-loncar",
+      "name": "Brad Loncar",
+      "organization": "BiotechTV",
+      "role": "industry-radar",
+      "use": "行业趋势、公司采访和技术采用线索；不是自动买入信号",
+      "sources": ["https://www.biotechtv.com/brad-loncar", "https://x.com/bradloncar"]
+    },
+    {
+      "id": "adam-feuerstein",
+      "name": "Adam Feuerstein",
+      "organization": "STAT",
+      "role": "clinical-skeptic",
+      "use": "临床数据、管理层宣传和监管风险的反方检查；不是自动卖出信号",
+      "sources": ["https://www.statnews.com/staff/adam-feuerstein/", "https://x.com/adamfeuerstein"]
+    },
+    {
+      "id": "peter-kolchinsky",
+      "name": "Peter Kolchinsky",
+      "organization": "RA Capital",
+      "role": "science-economics-policy",
+      "use": "科学价值、药品经济性、监管政策和长期产业结构",
+      "sources": ["https://www.racap.com/invest-with-ra-capital", "https://www.racap.com/news-events"]
+    }
+  ],
+  "capitalBehavior": [
+    {"id": "baker-bros", "name": "Baker Brothers", "aliases": ["Baker Bros", "Baker Brothers"]},
+    {"id": "ra-capital", "name": "RA Capital", "aliases": ["RA Capital"]},
+    {"id": "perceptive", "name": "Perceptive Advisors", "aliases": ["Perceptive"]},
+    {"id": "rtw", "name": "RTW Investments", "aliases": ["RTW"]},
+    {"id": "cormorant", "name": "Cormorant Asset Management", "aliases": ["Cormorant"]}
+  ],
+  "rules": {
+    "evaluationHorizonsSessions": [20, 60, 120, 250],
+    "benchmark": "XBI",
+    "minimumQuoteCharacters": 20,
+    "performanceStartsAt": "later-of-publication-discovery-freeze",
+    "positionsAreContextNotRecommendations": true,
+    "linkedinMode": "manual-review-only"
+  }
+}
