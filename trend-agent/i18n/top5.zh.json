@@ -861,5 +861,22 @@
   "missing": "缺失",
   "Stale data.": "数据过期。",
   "Treat the affected calls as out of date until the next run refreshes them.": "在下次运行刷新前，受影响的判断应视为过时。",
-  "Behind schedule, not affecting the calls: ": "未按时更新、但不影响判断："
+  "Behind schedule, not affecting the calls: ": "未按时更新、但不影响判断：",
+  "A backtest cannot be blind for a language model, which has read what happened next, so this test only runs forward. Every week three groups give calls on the same deep-review list, frozen in an append-only file before prices move: this agent's order tickets; Claude Sonnet with web search and one standard prompt, without this project's data or rules; and a mechanical rule that buys the three cheapest names by price/sales. Each risk quote is opened at its source and searched for word for word; a quote that is reworded but whose figures all appear on the page counts as \"figures only\".": "对语言模型来说回测不可能是盲的，因为它已经读过后来发生的事，所以这个测试只往后做。每周三组对同一份深审名单给出判断，在价格变动前写入只追加的文件：本 agent 的下单单；只开联网搜索、用一段标准提示、看不到本项目数据和规则的 Claude Sonnet；以及一条买入市销率最低三家的机械规则。每条风险引用都会打开原网页逐字查找；措辞改了但数字都能在页面上找到的，记为“仅数字吻合”。",
+  "Blind test: this agent against asking a model directly": "盲测：本 agent 对比直接问大模型",
+  "Calls frozen for the week of {n}-{n}-{n} (action and confidence {n}–{n})": "{n}-{n}-{n} 这一周冻结的判断（动作和信心 {n}–{n}）",
+  "Cheapest price/sales": "市销率最低",
+  "Citations found word for word": "逐字找到的引用",
+  "Claude + web search": "Claude + 联网搜索",
+  "Crashes held / seen": "持有的崩盘股 / 出现的崩盘股",
+  "Criteria set before the first week: at {n} weeks this agent must beat the plain model on citation accuracy and on not holding names that fall {n}% or more; at {n} weeks its confidence must rank {n}-day returns (correlation above {n}, t above {n}). If not, this page will say it has not been shown to beat asking a model directly.": "第一周之前定下的标准：{n} 周时，本 agent 的引用准确率要高于普通大模型，且持有跌幅 {n}% 以上的股票不多于它；{n} 周时，它的信心分要能给 {n} 日收益排序（相关系数高于 {n}，t 大于 {n}）。做不到，本页就写明“没有证明比直接问大模型更好”。",
+  "Figures on the page": "数字能在页面上找到",
+  "The plain model also suggested, outside the list: ": "普通大模型还额外推荐了名单外的：",
+  "This agent": "本 agent",
+  "Weeks": "周数",
+  "{n} of {n} weeks frozen: too early to compare. Citation accuracy is the only early read.": "已冻结 {n} / {n} 周：现在比较还太早。引用准确率是唯一可以先看的指标。",
+  "{n}-day excess vs XBI": "{n} 日相对 XBI 超额",
+  "Word for word / figures only / not found / page unreachable": "逐字吻合 / 仅数字吻合 / 未找到 / 页面打不开",
+  "wait (no ticket)": "等待（无下单单）",
+  "Scoring starts after the first week.": "第一周之后开始计分。"
 }

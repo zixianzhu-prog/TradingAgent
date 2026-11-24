@@ -1122,6 +1122,56 @@ CHIP = {"fresh": '<span class="chip ok">on schedule</span>', "stale": '<span cla
         "missing": '<span class="chip alert">missing</span>'}
 
 
+def blind_test_section(root: Path) -> str:
+    """Weekly blind test: this agent vs a plain web-search model vs a mechanical rule, frozen in advance."""
+    path = root / "outputs/blind-test-ledger.jsonl"
+    if not path.exists():
+        return ""
+    ledger = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+    if not ledger:
+        return ""
+    result = load(root / "state/blind-test.json", {})
+    week = max(r["week"] for r in ledger)
+    latest = {r["group"]: {c["ticker"]: c for c in r["calls"]} for r in ledger if r["week"] == week}
+    names = {"A": "This agent", "B": "Claude + web search", "C": "Cheapest price/sales"}
+    universe = next(r["universe"] for r in ledger if r["week"] == week)
+    extras = sorted({t for c in latest.get("B", {}).values() if c.get("extra") for t in [c["ticker"]]})
+
+    def cell(group, t):
+        c = latest.get(group, {}).get(t)
+        if not c:
+            return "—"
+        label = esc(c["action"]) + (" (no ticket)" if c.get("noTicket") else "")
+        return f'{label} <span class="r">{c["confidence"]:.0f}</span>' if c.get("confidence") is not None else label
+
+    rows = "".join(f'<tr><td class="tk">{esc(t)}</td>' + "".join(f"<td>{cell(g, t)}</td>" for g in "ABC") + "</tr>" for t in universe)
+    groups = result.get("groups", {})
+    score_rows = ""
+    for g in "ABC":
+        r = groups.get(g)
+        if not r:
+            continue
+        c = r["citations"]
+        acc = f'{r["citationAccuracy"]:.0%}' if r["citationAccuracy"] is not None else "—"
+        b20 = (r["basketExcess"] or {}).get("20")
+        figs = f'{r["figuresOnPage"]:.0%}' if r.get("figuresOnPage") is not None else "—"
+        score_rows += (f'<tr><td>{names[g]}</td><td class="n">{r["weeks"]}</td><td class="n">{acc}</td><td class="n">{figs}</td>'
+                       f'<td class="n">{c["verified"]} / {c.get("numbers_only", 0)} / {c["not_found"]} / {c["fetch_failed"]}</td>'
+                       f'<td class="n">{"—" if not b20 else format(b20["mean"], "+.1%")}</td><td class="n">{r["crashesHeld"]} / {r["crashes"]}</td></tr>')
+    board = ('<div class="table-wrap"><table><thead><tr><th>Group</th><th class="n">Weeks</th><th class="n">Citations found word for word</th>'
+             '<th class="n">Figures on the page</th><th class="n">Word for word / figures only / not found / page unreachable</th><th class="n">20-day excess vs XBI</th><th class="n">Crashes held / seen</th></tr></thead>'
+             f'<tbody>{score_rows}</tbody></table></div>') if score_rows else ""
+    return f"""<section class="bucket" id="blind">
+  <h2>Blind test: this agent against asking a model directly</h2>
+  <p class="bucket-blurb">A backtest cannot be blind for a language model, which has read what happened next, so this test only runs forward. Every week three groups give calls on the same deep-review list, frozen in an append-only file before prices move: this agent's order tickets; Claude Sonnet with web search and one standard prompt, without this project's data or rules; and a mechanical rule that buys the three cheapest names by price/sales. Each risk quote is opened at its source and searched for word for word; a quote that is reworded but whose figures all appear on the page counts as "figures only".</p>
+  <p class="status-banner"><strong>{esc(result.get("verdict") or "Scoring starts after the first week.")}</strong> Criteria set before the first week: at 26 weeks this agent must beat the plain model on citation accuracy and on not holding names that fall 30% or more; at 52 weeks its confidence must rank 60-day returns (correlation above 0.05, t above 2). If not, this page will say it has not been shown to beat asking a model directly.</p>
+  {board}
+  <h3 class="bucket-h">Calls frozen for the week of {esc(week)} (action and confidence 0–100)</h3>
+  <div class="table-wrap"><table><thead><tr><th>Ticker</th><th>{names["A"]}</th><th>{names["B"]}</th><th>{names["C"]}</th></tr></thead><tbody>{rows}</tbody></table></div>
+  {f'<p class="note">The plain model also suggested, outside the list: <strong>{esc(", ".join(extras))}</strong></p>' if extras else ""}
+</section>"""
+
+
 def candidate_filter_section(root: Path) -> str:
     """Hard filter before deep review (scripts/candidate_filter.py): which watch-list names deserve research time."""
     data = load(root / "state/candidate-filter.json", {})
@@ -1907,6 +1957,7 @@ def render_html(payload: dict, root: Path = ROOT) -> str:
 {commercialization_chain_section(root)}
 {management_radar_section(root)}
 {candidate_filter_section(root)}
+{blind_test_section(root)}
 {small_caps_section(root)}
 {deals_section(root)}
 {lab_to_company_section(root)}

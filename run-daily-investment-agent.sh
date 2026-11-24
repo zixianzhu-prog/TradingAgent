@@ -262,6 +262,8 @@ if [ ! -f "$SCREEN_STATE" ] || [ -n "$(find "$SCREEN_STATE" -mtime +6 2>/dev/nul
     if [ -n "$QUEUE" ]; then
       PYTHONPATH=scripts python3 scripts/claude_counter_review.py --tickers $QUEUE || echo "Counter-thesis review failed; keeping the last grades"
     fi
+    # Blind test: freeze this week's calls from the agent, a plain web-search model and a mechanical rule (once a week).
+    PYTHONPATH=scripts python3 scripts/blind_test.py --freeze || echo "Blind-test freeze failed; it retries on the next deep run"
   fi
   # Upstream bottleneck map and Serenity evidence packets for newly shortlisted names.
   PYTHONPATH=scripts trend-agent/.venv/bin/python scripts/ai_medicine_chokepoints.py
@@ -360,6 +362,7 @@ else
 fi
 # Forward record: freeze today's tickets (append-only, committed) and score earlier calls against XBI.
 PYTHONPATH=scripts ai-fund-lab/.venv/bin/python scripts/ticket_ledger.py || echo "ticket ledger skipped"
+PYTHONPATH=scripts ai-fund-lab/.venv/bin/python scripts/blind_test.py --score || echo "blind-test scoring skipped"
 # Is every source on schedule? A stale price, ticket, gate or news feed puts a red alert at the top of the page.
 python3 scripts/data_freshness.py || echo "Freshness check failed"
 # Rebuild the page so it shows today's tickets (they are computed from the ranking the first build wrote).
