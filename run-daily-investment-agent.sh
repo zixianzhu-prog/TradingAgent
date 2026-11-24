@@ -339,6 +339,14 @@ trend-agent/.venv/bin/python scripts/build_top5_brief.py
 python3 scripts/translate_page.py  # Chinese copy: dashboard/dist/top5.zh.html
 # Order tickets (research suggestions, paper only): action, limit, size, scale plan, invalidation per company.
 PYTHONPATH=scripts ai-fund-lab/.venv/bin/python scripts/order_tickets.py
+# Hard filter before deep review: AI as product, hard evidence, tradability, survival; deep-review queue of up to 15.
+# Sonnet reads new 10-Ks only in deep mode; otherwise cached AI judgments are reused.
+if [ "$AGENT_MODE" = "deep" ]; then
+  PYTHONPATH=scripts ai-fund-lab/.venv/bin/python scripts/candidate_filter.py --model "${CLAUDE_EXTRACT_MODEL:-sonnet}" \
+    || echo "Candidate filter failed; keeping the last result"
+else
+  PYTHONPATH=scripts ai-fund-lab/.venv/bin/python scripts/candidate_filter.py --no-model || echo "Candidate filter failed; keeping the last result"
+fi
 # Forward record: freeze today's tickets (append-only, committed) and score earlier calls against XBI.
 PYTHONPATH=scripts ai-fund-lab/.venv/bin/python scripts/ticket_ledger.py || echo "ticket ledger skipped"
 # Rebuild the page so it shows today's tickets (they are computed from the ranking the first build wrote).

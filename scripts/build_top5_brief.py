@@ -1086,6 +1086,34 @@ def small_caps_section(root: Path) -> str:
   </section>"""
 
 
+def candidate_filter_section(root: Path) -> str:
+    """Hard filter before deep review (scripts/candidate_filter.py): which watch-list names deserve research time."""
+    data = load(root / "state/candidate-filter.json", {})
+    cs = data.get("companies") or {}
+    if not cs:
+        return ""
+    money = lambda v: "—" if not v else (f"${v / 1000:.1f}B" if v >= 1000 else f"${v:,.0f}M")
+    q_rows = "".join(
+        f'<tr><td class="tk">{esc(t)}</td><td>{esc(cs[t]["company"])}<br><span class="muted-note">{esc(cs[t]["segment"] or "")}</span></td>'
+        f'<td class="n">{money(cs[t].get("marketCapM"))}</td><td style="white-space:normal">{esc(cs[t]["checks"][0]["detail"])}</td>'
+        f'<td style="white-space:normal">{esc(cs[t]["checks"][1]["detail"])}</td><td class="n">{cs[t].get("completeness")}</td></tr>'
+        for t in data.get("deepReview", []))
+    out_rows = "".join(f'<tr><td class="tk">{esc(t)}</td><td style="white-space:normal">{esc(c["firstFailure"])}</td></tr>'
+                       for t, c in sorted(cs.items()) if not c["pass"])
+    s = data.get("summary", {})
+    others = [t for t in data.get("eligible", []) if t not in data.get("deepReview", [])]
+    return f"""
+  <section class="section" id="filter" aria-labelledby="filter-h">
+    <h2 id="filter-h">Deep-review queue</h2>
+    <p>Every company with a Serenity gate review must pass five checks before more research time goes into it. AI must be the company's own product used for medical decisions, life-science research or clinical work: Claude reads the AI sentences of the latest annual report and its supporting quote must appear in the filing; a feature counts only with an FDA-cleared AI device. There must be hard evidence (an FDA-cleared AI device, $10M+ revenue, a pharma deal or IND, or a registered trial). The stock must be tradable ($50M+ market value, $0.5M+ a day) and survivable (6+ months of cash, price of $1+, shares sold in 24 months under 100% of market value). Drug developers listed for an IND or pharma deal skip the AI check. Of those that pass, companies up to $20B are ranked by Serenity evidence completeness and the top {len(data.get("deepReview", []))} form the queue; larger ones stay as benchmarks.</p>
+    <p class="note"><span>Now:</span> {s.get("companies", 0)} reviewed, {s.get("passed", 0)} pass, {len(data.get("deepReview", []))} in the queue. Passed but outside the queue:</p>
+    <p class="muted-note">{esc(", ".join(others)) or "—"}</p>
+    <div class="table-wrap"><table><thead><tr><th>Ticker</th><th>Company</th><th class="n">Market value</th><th>AI check</th><th>Hard evidence</th><th class="n">Completeness</th></tr></thead><tbody>{q_rows}</tbody></table></div>
+    <h3 class="bucket-h">Filtered out, with the first failed check</h3>
+    <div class="table-wrap"><table><thead><tr><th>Ticker</th><th>Reason</th></tr></thead><tbody>{out_rows}</tbody></table></div>
+  </section>"""
+
+
 def lab_to_company_section(root: Path) -> str:
     """Peter's chain in one table: research origin -> founders -> specialist money -> pharma/clinic, all from primary filings."""
     founders = load(root / "state/science-founders.json", {}).get("links", [])
@@ -1841,6 +1869,7 @@ def render_html(payload: dict, root: Path = ROOT) -> str:
 {early_signals_section(root)}
 {commercialization_chain_section(root)}
 {management_radar_section(root)}
+{candidate_filter_section(root)}
 {small_caps_section(root)}
 {deals_section(root)}
 {lab_to_company_section(root)}
