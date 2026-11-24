@@ -304,6 +304,10 @@ fi
 PYTHONPATH=scripts trend-agent/.venv/bin/python scripts/technology_ownership_agent.py
 PYTHONPATH=scripts trend-agent/.venv/bin/python scripts/uspto_assignment_validation.py
 PYTHONPATH=scripts trend-agent/.venv/bin/python scripts/institutional_ownership_agent.py
+# Public commentators and specialist-fund behavior are independent benchmarks.
+# Calls score only forward from the day this project first freezes them.
+PYTHONPATH=scripts ai-fund-lab/.venv/bin/python scripts/opinion_benchmark.py \
+  || note_fail "Opinion-leader benchmark failed; keeping the last frozen ledger"
 # Biodefense: ASPR/BARDA contract actions (USAspending) and WHO outbreak reports; no model calls.
 PYTHONPATH=scripts python3 scripts/biodefense_radar.py || note_fail "Biodefense radar failed; keeping the last result"
 # Join papers, researchers, ownership evidence, financing, pharma payments,

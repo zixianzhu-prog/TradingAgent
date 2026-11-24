@@ -303,6 +303,7 @@ SEC_USER_AGENT='SerenityResearch your-email@example.com' \
 - [`outputs/technology-ownership.md`](outputs/technology-ownership.md)：SEC 原文中的创始人、专利组合和独家许可证据，以及独立复核边界。
 - [`outputs/uspto-assignment-validation.md`](outputs/uspto-assignment-validation.md)：待核验的专利受让队列、官方记录和导入状态。
 - [`outputs/institutional-ownership.md`](outputs/institutional-ownership.md)：13D/13G 重要股东、持股比例及主动/被动申报类别。
+- [`outputs/opinion-benchmark.md`](outputs/opinion-benchmark.md)：Brad Loncar、Adam Feuerstein、Peter Kolchinsky/RA Capital 的个股公开观点，以及 Baker Bros、RA Capital、Perceptive、RTW、Cormorant 的 SEC 持仓行为；观点从首次发现日起向前冻结，对比 XBI 和同日 Serenity 判断，不事后回填。
 - [`outputs/daily-data-inventory.md`](outputs/daily-data-inventory.md)：新闻、冻结预测、主题队列、回填样本和原始运行文件台账。
 - [`docs/blind-research-benchmark.md`](docs/blind-research-benchmark.md)：与通用 GPT/Claude 联网深研进行同股票池、同截止时间盲测的协议；样本成熟前不宣称预测更准。
 
