@@ -754,5 +754,22 @@
   "Recent departure": "近期离职",
   "Founder ({n}-K)": "创始人（{n}-K）",
   "Who runs each company and what they publish. The roster comes from SEC Forms {n}, {n} and {n} filed in the last four quarters (each filing carries the officer's title), plus founders quoted from the {n}-K. Papers are PubMed articles from the last three years where both the author's name and the company as affiliation match. Each name links to a LinkedIn search for following by hand; LinkedIn does not allow automated collection, so nothing is fetched from it.": "每家公司由谁在管、他们发表了什么。名单来自近四个季度提交的 SEC Form {n}、{n}、{n}（每份申报都写明职务），再加上 {n}-K 中引用的创始人。论文是 PubMed 近三年的文章，要求作者姓名和公司署名同时匹配。每个名字都链接到 LinkedIn 搜索，供人工关注；LinkedIn 不允许自动抓取，所以不从那里读取任何内容。",
-  "{n} people at {n} companies; {n} published under the company's name in the last three years; {n} key departure in the management radar.": "{n} 家公司共 {n} 位核心人物；{n} 位近三年以公司名义发表过论文；管理层雷达中有 {n} 起核心人物离职。"
+  "{n} people at {n} companies; {n} published under the company's name in the last three years; {n} key departure in the management radar.": "{n} 家公司共 {n} 位核心人物；{n} 位近三年以公司名义发表过论文；管理层雷达中有 {n} 起核心人物离职。",
+  ": covers the cited reasons": "：提到了 FDA 指出的原因",
+  ": does not mention the new trial": "：没有提 FDA 要求的新试验",
+  ": omits efficacy, manufacturing": "：漏提有效性、生产问题",
+  ": omits manufacturing": "：漏提生产问题",
+  ": omits manufacturing, pharmacology": "：漏提生产、药理问题",
+  "All {n} letters:": "全部 {n} 封：",
+  "FDA rejections, read in FDA's words": "FDA 拒批信：按 FDA 原文解读",
+  "FDA's reasons (quote)": "FDA 给出的原因（原文）",
+  "Severity": "严重度",
+  "What the company said": "公司怎么说",
+  "heavy": "重",
+  "light": "轻",
+  "medium": "中",
+  "new trial": "需新试验",
+  "redacted": "涂黑",
+  "Why the FDA did not approve, from the complete response letters it publishes, not from the company's press release. Heavy means FDA found the efficacy evidence insufficient or asked for a new trial; medium means a safety issue or missing pharmacology studies; light means manufacturing, device usability or paperwork. Each row quotes the letter; quotes are read from FDA's scanned PDFs, so a redacted factory name can show up as stray characters. Tickers are matched to the letter's company by name, so check the company name under each ticker. Where the company filed an {n}-K about it, the agent checks whether the company named the same problems.": "FDA 为什么没批：依据 FDA 公开的拒批信（CRL）原文，而不是公司新闻稿。“重”= FDA 认为有效性证据不足或要求新试验；“中”= 安全性问题或缺药理研究；“轻”= 生产、器械可用性或资料问题。每行引用信件原文；原文来自 FDA 扫描的 PDF，被涂黑的工厂名可能显示为乱码。股票代码按公司名匹配，请核对代码下方的公司名。如果公司就此提交了 {n}-K，agent 会检查公司是否说出了同样的问题。",
+  "{n} heavy (later approved {n}%), {n} medium ({n}%), {n} light ({n}%), {n} unclassified or redacted. After a heavy letter the stock lagged XBI by a median {n}% over the next year; after a light one by {n}%. Of {n} letters with a company {n}-K, {n} left out at least one problem FDA cited, and {n} did not mention the new trial FDA asked for. A ticket waits after a heavy letter in the last {n} months.": "{n} 封重（后来获批 {n}%），{n} 封中（{n}%），{n} 封轻（{n}%），{n} 封无法分类或被涂黑。收到重度拒批信后，股价此后一年中位数落后 XBI {n}%；轻度的落后 {n}%。在 {n} 封有公司 {n}-K 的信中，{n} 封漏提了 FDA 指出的至少一个问题，{n} 封没有提 FDA 要求的新试验。近 {n} 个月收到重度拒批信的公司，单据会改为等待。"
 }

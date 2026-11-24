@@ -19,7 +19,8 @@ from __future__ import annotations
 import argparse
 import html
 import json
-from datetime import datetime, timezone
+import re
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -1158,6 +1159,69 @@ def lab_to_company_section(root: Path) -> str:
   </section>"""
 
 
+REASON_WORD = {"efficacy": "efficacy", "safety": "safety", "manufacturing": "manufacturing", "pharmacology": "pharmacology",
+               "usability": "usability"}
+SEVERITY_CHIP = {"heavy": "alert", "medium": "warn", "light": "ok"}
+
+
+def clean_drug(name) -> str:
+    """openFDA metadata sometimes puts a sentence fragment where the drug name belongs."""
+    name = (name or "").strip()
+    if not name or name == "?" or len(name) > 50 or re.match(r"(the|each|a|an|for|treatment|prescribing)\b", name, re.I):
+        return "—"
+    return name
+
+
+def fda_crl_section(root: Path) -> str:
+    """FDA complete response letters to listed companies: why, how severe, and what the company left out (scripts/fda_crl_reasons.py)."""
+    data = load(root / "state/fda-crl-reasons.json", {})
+    rows_data = data.get("rows") or []
+    if not rows_data:
+        return ""
+    since = (date.today() - timedelta(days=548)).isoformat()
+    listed = sorted((r for r in rows_data if r.get("listed") and (r.get("issued") or "") >= since), key=lambda r: r["issued"], reverse=True)
+    tickets = {t["ticker"]: t["action"] for t in load(root / "state/order-tickets.json", {}).get("tickets", [])}
+    rows = ""
+    for r in listed:
+        t = r["listed"]["ticker"]
+        sev = r.get("severity") or "unknown"
+        reasons = r.get("reasons") or {}
+        main = next((k for k in ("efficacy", "safety", "pharmacology", "manufacturing", "usability") if k in reasons), None)
+        quote = (r.get("newTrialQuote") if r.get("newTrialRequired") else None) or (reasons.get(main) or {}).get("quote") or ""
+        cited = ", ".join(REASON_WORD[k] for k in reasons if k in REASON_WORD) or "—"
+        d = r.get("disclosure") or {}
+        if d.get("url"):
+            notes = []
+            if d.get("omitted"):
+                notes.append("omits " + ", ".join(d["omitted"]))
+            if d.get("companyMentionsNewTrial") is False:
+                notes.append("does not mention the new trial")
+            said = f'<a href="{esc(d["url"])}">8-K</a>: ' + (esc("; ".join(notes)) if notes else "covers the cited reasons")
+        else:
+            said = "—"
+        held = f'<br><span class="chip warn">ticket: {esc(tickets[t])}</span>' if t in tickets else ""
+        rows += (f'<tr><td class="n">{esc(r["issued"])}</td><td class="tk">{esc(t)}<br><span class="muted-note">{esc((r.get("company") or "")[:40])}</span>{held}</td><td>{esc(clean_drug(r.get("drug")))}</td>'
+                 f'<td><span class="chip {SEVERITY_CHIP.get(sev, "plain")}">{esc(sev)}</span>{"<br>new trial" if r.get("newTrialRequired") else ""}</td>'
+                 f'<td style="white-space:normal">{esc(cited)}' + (f'<br><span class="muted-note">&ldquo;{esc(quote[:220])}&rdquo;</span>' if quote else "") + '</td>'
+                 f'<td style="white-space:normal">{said}</td></tr>')
+    sev = data.get("bySeverity", {})
+    later = data.get("laterApprovedBySeverity", {})
+    pct = lambda k: f'{later[k]["approved"] / later[k]["total"]:.0%}' if later.get(k, {}).get("total") else "—"
+    drift = load(root / "state/crl-drift-study.json", {}).get("groups", {})
+    heavy12 = (drift.get("severity: heavy", {}).get("12m") or {}).get("median")
+    light12 = (drift.get("severity: light", {}).get("12m") or {}).get("median")
+    drift_txt = (f" After a heavy letter the stock lagged XBI by a median {abs(heavy12):.0%} over the next year; after a light one by {abs(light12):.0%}."
+                 if heavy12 is not None and light12 is not None else "")
+    c = data.get("disclosureComparison", {})
+    return f"""
+  <section class="section" id="fda" aria-labelledby="fda-h">
+    <h2 id="fda-h">FDA rejections, read in FDA's words</h2>
+    <p>Why the FDA did not approve, from the complete response letters it publishes, not from the company's press release. Heavy means FDA found the efficacy evidence insufficient or asked for a new trial; medium means a safety issue or missing pharmacology studies; light means manufacturing, device usability or paperwork. Each row quotes the letter; quotes are read from FDA's scanned PDFs, so a redacted factory name can show up as stray characters. Tickers are matched to the letter's company by name, so check the company name under each ticker. Where the company filed an 8-K about it, the agent checks whether the company named the same problems.</p>
+    <p class="note"><span>All {data.get("letters", 0)} letters:</span> {sev.get("heavy", 0)} heavy (later approved {pct("heavy")}), {sev.get("medium", 0)} medium ({pct("medium")}), {sev.get("light", 0)} light ({pct("light")}), {sev.get("unknown", 0) + sev.get("redacted", 0)} unclassified or redacted.{drift_txt} Of {c.get("compared", 0)} letters with a company 8-K, {c.get("withOmissions", 0)} left out at least one problem FDA cited, and {c.get("newTrialOmitted", 0)} did not mention the new trial FDA asked for. A ticket waits after a heavy letter in the last 12 months.</p>
+    <div class="table-wrap"><table><thead><tr><th class="n">Date</th><th>Ticker</th><th>Drug</th><th>Severity</th><th>FDA's reasons (quote)</th><th>What the company said</th></tr></thead><tbody>{rows}</tbody></table></div>
+  </section>"""
+
+
 def key_people_section(root: Path) -> str:
     """Peter's "track the core people": roster from SEC Forms 3/4/5, founders from 10-Ks, papers from PubMed (scripts/key_people.py)."""
     data = load(root / "state/key-people.json", {})
@@ -1781,6 +1845,7 @@ def render_html(payload: dict, root: Path = ROOT) -> str:
 {deals_section(root)}
 {lab_to_company_section(root)}
 {funds_section(root)}
+{fda_crl_section(root)}
 {key_people_section(root)}
 {biodefense_section(root)}
 {choke_html}
