@@ -299,6 +299,7 @@ SEC_USER_AGENT='SerenityResearch your-email@example.com' \
 - [`outputs/hidden-gems.md`](outputs/hidden-gems.md)：Serenity 冷门小中盘候选与待验证缺口。
 - [`outputs/market-profile-audit.md`](outputs/market-profile-audit.md)：市值、成交额、波动和数据新鲜度审计。
 - [`outputs/management-radar.md`](outputs/management-radar.md)：核心人物、8-K 管理层变动、Form 4 买卖及受影响的 Serenity 门槛。
+- [`outputs/people-signal-tracker.md`](outputs/people-signal-tracker.md)：借鉴 [Academic Tracker](https://moseleybioinformaticslab.github.io/academic_tracker/) 的快照/增量方法，把 SEC 人物名单、[PubMed](https://pubmed.ncbi.nlm.nih.gov/) 和 [OpenAlex](https://github.com/J535D165/pyalex) 论文合并成待人工确认的变化队列；LinkedIn 只生成按人物重要性轮换的每周搜索清单，从不自动抓取。
 - [`outputs/science-commercialization-graph.md`](outputs/science-commercialization-graph.md)：论文 → 技术归属 → 融资 → 药企付款 → 临床 → 收入的可审计证据链和缺口。
 - [`outputs/technology-ownership.md`](outputs/technology-ownership.md)：SEC 原文中的创始人、专利组合和独家许可证据，以及独立复核边界。
 - [`outputs/uspto-assignment-validation.md`](outputs/uspto-assignment-validation.md)：待核验的专利受让队列、官方记录和导入状态。

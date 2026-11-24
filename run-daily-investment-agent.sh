@@ -257,6 +257,9 @@ if [ ! -f "$SCREEN_STATE" ] || [ -n "$(find "$SCREEN_STATE" -mtime +6 2>/dev/nul
   PYTHONPATH=scripts python3 scripts/company_research.py || note_fail "Company research lookup failed; keeping the last result"
   # Key people: officer titles from SEC Forms 3/4/5, founders from 10-Ks, their PubMed papers; LinkedIn linked, never fetched.
   PYTHONPATH=scripts python3 scripts/key_people.py || note_fail "Key-people tracker failed; keeping the last result"
+  # Academic-Tracker-style snapshot/delta layer: join SEC, PubMed and cached OpenAlex authorship into a human review queue.
+  # LinkedIn remains link-only and is never fetched; events do not auto-grade Serenity gates.
+  PYTHONPATH=scripts python3 scripts/people_signal_tracker.py || note_fail "People-signal queue failed; keeping the last result"
   # Weekly: founders, scientists and paper authors searched as USPTO inventors (needs USPTO_API_KEY in the environment).
   PYTHONPATH=scripts python3 scripts/inventor_chain.py || note_fail "Inventor chain failed; keeping the last result"
   # Weekly: specialist funds' quarterly 13F adds and trims in covered companies.
