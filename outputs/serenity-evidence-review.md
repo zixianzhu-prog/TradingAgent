@@ -1154,7 +1154,7 @@ CEO和CFO评估认为截至2025年12月31日内部控制有效（基于COSO 2013
 
 ## CAI · complete
 
-审查记录：`state/serenity-reviews/CAI-claude-cff7e4ec2be891b047f6.json`
+审查记录：`state/serenity-reviews/CAI-claude-d0fdacdba550527e6a84.json`
 
 ### supply_chain_map: pass
 
@@ -1212,13 +1212,12 @@ CEO和CFO评估认为截至2025年12月31日内部控制有效（基于COSO 2013
 - 证伪条件：收入增速跌破 30%
 - 证伪条件：内控缺陷未在下一份年报前整改
 
-### management_governance: partial
+### management_governance: pass
 
-按 Serenity 规则：一手材料尚未证明领导层连续。通道确认David Dean Halbert仍以CEO兼董事会主席身份在任（代理声明及10-Q均有引用）；所有通道均未披露开放性政府或监管调查，亦无CEO/CFO/董事长职位空缺或继任未定情形。然而，全部通道均未提及CFO职位或任职者姓名，CFO连续性仍无法从现有证据中确认；财务报告内部控制重大缺陷亦持续未见整改记录。
+按 Serenity 规则：领导层连续，且无未结调查或未定继任。10-Q签署页（2026-11-04）明确确认David Dean Halbert仍以CEO兼主席在任，Luke Power以CFO兼首席会计官在任；所有通道均未披露开放性调查，亦无职位空缺或继任未定情形；存在CEO兼任主席、家族关联及关联方交易等治理事项，已记录于otherRisks。
 
 - 支持 [ev_2dee1de182900397](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000032/cai-20260423.htm) (primary-document): David Dean Halbert serves as both our Chief Executive Officer and as Chairman of our Board of Directors.
-- 支持 [ev_2dee1de182900397](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000032/cai-20260423.htm) (primary-document): David Dean Halbert serves as both our Chief Executive Officer and as Chairman of our Board of Directors.
-- 缺口：CFO（首席财务官）或同等职位在所有通道中均未提及，无法确认CFO连续性
+- 支持 [ev_3250e30b40b43824](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm) (primary-document): By: /s/ David Dean Halbert David Dean Halbert Founder, Chairman, and Chief Executive Officer (Principal Executive Officer) Date: November 04, 2026 By: /s/ Luke Power Luke Power Senior Vice President, Chief Financial Officer, and Chief Accounting Officer (Principal Financial and Accounting Officer)
 
 ## CARL · complete
 
@@ -5363,7 +5362,7 @@ Atrium是临床阶段药物开发公司，专注遗传性心肌病RNA疗法。�
 
 ## RXRX · complete
 
-审查记录：`state/serenity-reviews/RXRX-claude-f8b4a51cf8b18cdcb7f0.json`
+审查记录：`state/serenity-reviews/RXRX-claude-a74c5255fc8331de9419.json`
 
 ### supply_chain_map: pass
 
@@ -5420,14 +5419,15 @@ Atrium是临床阶段药物开发公司，专注遗传性心肌病RNA疗法。�
 
 ### management_governance: partial
 
-按 Serenity 规则：继任未定，不能评为通过。CEO（Najat Khan）与CFO（Ben Taylor）经2026年4月21日代理委托书确认在任，无开放性调查披露；但董事会主席Gibson不寻求连任且无具名继任人，接任人选待董事会另行任命，构成未决继任问题。此外存在创始人关联方顾问协议、双重股权结构及联合创始人董事兼任大型药企高管等其他治理事项。
+按 Serenity 规则：继任未定，不能评为通过。CEO（Najat Khan）与CFO（Ben Taylor）经2026年4月21日代理委托书及2026年11月2日10-Q签署确认在任，无开放性调查披露；但董事会主席Gibson不寻求连任且无具名继任人，接任人选待董事会另行任命，构成未决继任问题。
 
+- 支持 [ev_758aec7c922db4ec](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): By: /s/ Najat Khan Najat Khan Chief Executive Officer (Principal Executive Officer) By: /s/ Ben Taylor Ben Taylor Chief Financial Officer (Principal Financial and Accounting Officer)
 - 支持 [ev_caf1f88f36228cc4](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000065/rxrx-20260430.htm) (primary-document): Name Age Position Najat Khan 42 Chief Executive Officer and President Ben Taylor 48 Chief Financial Officer and President of Recursion UK David Hallett 56 Chief Scientific Officer
 - 支持 [ev_a26c6da34310582d](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000065/rxrx-20260430.htm) (primary-document): The following table sets forth information for our executive officers as of April 21, 2026:
 - 反证 [ev_0abaa2b30bb04421](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000065/rxrx-20260430.htm) (primary-document): Dr. Gibson is not standing for re-election and his current term will expire at the Annual Meeting.
 - 反证 [ev_c5d66dbf69ee3b0a](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000065/rxrx-20260430.htm) (primary-document): Upon Dr. Gibson’s departure from the Board following the Annual Meeting, Dr. Hershberg will continue as Lead Independent Director until such time that the Board appoints a new Chair.
 - 反证 [ev_8a8336ae5223c4b3](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000065/rxrx-20260430.htm) (primary-document): We currently expect and intend the positions of Chair of the Board of Directors and Chief Executive Officer to continue to be held by two individuals in the future.
-- 缺口：No passage confirms whether a new Board Chair was appointed after Gibson's departure at the 2026 Annual Meeting; proxy filed April 30 2026 but Annual Meeting date not stated — post-meeting chair status unknown from these passages alone.
+- 缺口：一手材料未证明 CEO、CFO 在任
 
 ## RYTM · complete
 
@@ -5716,7 +5716,7 @@ SGMT为preparation阶段Phase 3公司，亏损属预期。公司披露截至2026
 
 ## SOPH · complete
 
-审查记录：`state/serenity-reviews/SOPH-claude-0e766b21ba799332e755.json`
+审查记录：`state/serenity-reviews/SOPH-claude-cd3aa091f1a26707b15a.json`
 
 ### supply_chain_map: partial
 
@@ -5790,11 +5790,13 @@ SGMT为preparation阶段Phase 3公司，亏损属预期。公司披露截至2026
 
 ### management_governance: partial
 
-按 Serenity 规则：一手材料尚未证明领导层连续。全部六份通道文件均为 Form 4 内部人交易记录，申报人为 CLO、CSO、CMO，三人均非 CEO 或 CFO；通道材料中不存在任何涉及 CEO、CFO、董事会主席在任状态、调查披露或继任安排的内容，CEO/CFO 连续性疑点依据现有材料仍无法核实。
+按 Serenity 规则：一手材料尚未证明领导层连续。通道材料仅含三份高管（CLO、CSO、CMO）Form 4 交易记录及一份20-F附件目录。20-F附件目录仅列出"首席执行官认证"和"首席财务官认证"条目，未披露姓名，无法确认 CEO/CFO 当前在任；材料中未发现任何调查披露或继任空缺信息。
 
-- 缺口：CEO currently in office — not evidenced by any passage
-- 缺口：CFO currently in office — not evidenced by any passage
-- 缺口：Board chair identity and status — not evidenced by any passage
+- 支持 [ev_c49f1fbb7be636ad](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): 12.1 Certification of Principal Executive Officer Pursuant to Rules 13a-14(a) and 15d-14(a) under the Securities Exchange Act of 1934, as Adopted Pursuant to Section 302 of the Sarbanes-Oxley Act of 2002 12.2 Certification of Principal Financial Officer Pursuant to Rules 13a-14(a) and 15d-14(a) under the Securities Exchange Act of 1934, as Adopted Pursuant to Section 302 of the Sarbanes-Oxley Act of 2002
+- 缺口：CEO姓名及当前在任状态
+- 缺口：CFO姓名及当前在任状态
+- 缺口：董事会主席身份及在任状态
+- 缺口：是否存在政府或监管调查的直接披露文件（如20-F正文风险因素章节）
 
 ## TECX · complete
 

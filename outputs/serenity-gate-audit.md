@@ -15,7 +15,7 @@
 | ATRC | watch | 34/100 | 58/100 | 44/100 | supply_chain_map, customer_dependency | 无 | 是 |
 | AVXL | watch | 10/100 | 58/100 | 29/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | BDSX | watch | 19/100 | 65/100 | 37/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
-| CAI | watch | 90/100 | 71/100 | 82/100 | 无 | 无 | 是 |
+| CAI | research-ready | 95/100 | 72/100 | 86/100 | 无 | 无 | 是 |
 | CARL | watch | 41/100 | 78/100 | 56/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | CBLL | research-ready | 95/100 | 72/100 | 86/100 | 无 | 无 | 是 |
 | CCLD | reject | 26/100 | 66/100 | 42/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
@@ -62,7 +62,7 @@
 | RYTM | watch | 14/100 | 42/100 | 25/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | SDGR | watch | 79/100 | 57/100 | 70/100 | supply_chain_map, earnings_validation | 无 | 是 |
 | SGMT | watch | 17/100 | 71/100 | 39/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
-| SOPH | watch | 69/100 | 48/100 | 61/100 | supply_chain_map, earnings_validation | 无 | 是 |
+| SOPH | watch | 69/100 | 54/100 | 63/100 | supply_chain_map, earnings_validation | 无 | 是 |
 | TECX | watch | 19/100 | 56/100 | 34/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | TEM | research-ready | 90/100 | 57/100 | 77/100 | 无 | 无 | 是 |
 | TLX | watch | 31/100 | 66/100 | 45/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |

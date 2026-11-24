@@ -139,9 +139,29 @@ def proxy_passages(url: str, allow_fetch: bool = True, limit: int = 16) -> list[
     # Also every passage saying an issue was settled, so a resolved related-party deal is not graded as open.
     settled = [i for i, c in enumerate(chunks) if RESOLVED.search(c) and i not in picked]
     picked |= set(settled[:4])
+    # Continuity needs the CEO and the CFO named in office: make sure a passage naming each is included.
+    for role in (r"Chief Executive Officer", r"Chief Financial Officer"):
+        named = [i for i, c in enumerate(chunks) if re.search(role, c)]
+        if named and not picked & set(named):
+            picked.add(named[0])
     keep = sorted((i, chunks[i]) for i in picked)
     return [{"id": "px_" + ser.digest([url, c])[:16], "url": url, "event": "latest proxy statement (DEF 14A)", "text": c}
             for _, c in keep]
+
+
+def signature_passages(cik: str, agent: str, allow_fetch: bool = True) -> list[dict]:
+    """The signature block of the latest 10-Q/10-K: who signed as principal executive and financial officer, last quarter."""
+    import claude_serenity_memo as csm
+
+    filings = sorted(csm.latest_filings(cik, agent), key=lambda f: f[1], reverse=True)
+    for form, filed, url in filings:
+        text = pcr.filing_text(url, allow_fetch) or ""
+        hits = [m.start() for m in re.finditer(r"Principal (?:Executive|Financial) Officer|Chief Financial Officer", text)]
+        if hits:
+            start = max(0, hits[-1] - 1500)
+            chunk = text[start:hits[-1] + 500]
+            return [{"id": "sg_" + ser.digest([url, chunk])[:16], "url": url, "event": f"{form} filed {filed}: signatures", "text": chunk}]
+    return []
 
 
 def current_quote_passages(gate: dict) -> list[dict]:
@@ -262,7 +282,7 @@ def main() -> None:
         todo += [(t, []) for t in (args.tickers or []) if t in citations["companies"] and t not in have]
     else:
         todo = [(t, ev) for t, ev in todo if ev and citations["companies"][t].get("managementEventsHash") != events_key(ev)]
-    proxies = {}
+    proxies, signatures = {}, {}
     if args.proxy:
         import beneficiary_mapper as mapper
 
@@ -274,6 +294,10 @@ def main() -> None:
             except Exception:
                 proxies[t] = None
             print(f"  {t}: proxy {proxies[t] or 'none (foreign filer or no annual meeting yet)'}")
+            try:
+                signatures[t] = signature_passages(ciks[t], agent) if t in ciks else []
+            except Exception:
+                signatures[t] = []
     if not todo:
         CITATIONS.write_text(json.dumps(citations, ensure_ascii=False, indent=2), encoding="utf-8")
         print(json.dumps({"reviewed": 0, "note": "no new management events"}))
@@ -283,7 +307,7 @@ def main() -> None:
     def one(item):
         ticker, events = item
         gate = citations["companies"][ticker]["gates"].get(GATE, {"status": "unknown", "reason": ""})
-        passages = event_passages(events) + current_quote_passages(gate) + (proxy_passages(proxies[ticker]) if proxies.get(ticker) else [])
+        passages = event_passages(events) + current_quote_passages(gate) + (proxy_passages(proxies[ticker]) if proxies.get(ticker) else []) + signatures.get(ticker, [])
         answer = ask(ticker, gate, events, passages, args.model)
         if not answer:
             return ticker, None, 0, gate

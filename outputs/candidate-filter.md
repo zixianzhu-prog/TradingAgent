@@ -6,8 +6,8 @@
 
 | 公司 | 轨道 | 产业链位置 | AI 判断 | 硬证据 | Serenity 完整度 |
 |---|---|---|---|---|---:|
+| CAI · Caris Life Sciences, Inc. | ai | Diagnostics | AI is core (medical_decision) | revenue $1,102M a year | 95 |
 | CBLL · Ceribell, Inc. | ai | Imaging & devices | AI is core (medical_decision) | FDA-cleared AI device; revenue $117M a year | 95 |
-| CAI · Caris Life Sciences, Inc. | ai | Diagnostics | AI is core (medical_decision) | revenue $1,102M a year | 90 |
 | HTFL · Heartflow, Inc. | ai | Imaging & devices | AI is core (medical_decision) | FDA-cleared AI device; revenue $292M a year | 90 |
 | RDNT · RadNet, Inc. | ai | Imaging & devices | AI is core (medical_decision) | FDA-cleared AI device; revenue $2,553M a year | 90 |
 | TEM · Tempus AI, Inc. | ai | Diagnostics | AI is core (medical_decision) | FDA-cleared AI device; revenue $1,602M a year | 90 |
