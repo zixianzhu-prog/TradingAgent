@@ -1,0 +1,412 @@
+{
+  "generated_at": "2026-11-25T17:07:53.407849+00:00",
+  "mode": "dry-run",
+  "data_provider": "openbb",
+  "results": [
+    {
+      "signal": {
+        "ticker": "TEM",
+        "score": 0.07865823373014602,
+        "direction": "hold",
+        "price": 53.06999969482422,
+        "stop_price": 40.214001246861045,
+        "reasons": [
+          "close=53.07",
+          "MA20=69.54",
+          "MA50=72.07",
+          "ATR14=6.43",
+          "Kronos5D=+3.10%"
+        ],
+        "as_of": "2026-11-25"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "SDGR",
+        "score": 0.6077057354837014,
+        "direction": "hold",
+        "price": 24.547199249267578,
+        "stop_price": 19.348913737705775,
+        "reasons": [
+          "close=24.55",
+          "MA20=27.94",
+          "MA50=27.69",
+          "ATR14=2.60",
+          "Kronos5D=+1.65%"
+        ],
+        "as_of": "2026-11-25"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "RXRX",
+        "score": 0.0,
+        "direction": "hold",
+        "price": 2.5250000953674316,
+        "stop_price": 1.935000215257917,
+        "reasons": [
+          "close=2.53",
+          "MA20=3.28",
+          "MA50=3.68",
+          "ATR14=0.29",
+          "Kronos5D=+6.80%"
+        ],
+        "as_of": "2026-11-25"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "CERT",
+        "score": 1.0,
+        "direction": "hold",
+        "price": 10.75,
+        "stop_price": 9.61385713304792,
+        "reasons": [
+          "close=10.75",
+          "MA20=11.30",
+          "MA50=10.19",
+          "ATR14=0.57",
+          "Kronos5D=+2.03%"
+        ],
+        "as_of": "2026-11-25"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "NTRA",
+        "score": 0.0,
+        "direction": "hold",
+        "price": 294.70001220703125,
+        "stop_price": 251.94315011160714,
+        "reasons": [
+          "close=294.70",
+          "MA20=329.61",
+          "MA50=372.48",
+          "ATR14=21.38",
+          "Kronos5D=+1.98%"
+        ],
+        "as_of": "2026-11-25"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "SOPH",
+        "score": 0.04124071661558354,
+        "direction": "hold",
+        "price": 6.215000152587891,
+        "stop_price": 5.033428737095424,
+        "reasons": [
+          "close=6.22",
+          "MA20=7.19",
+          "MA50=7.47",
+          "ATR14=0.59",
+          "Kronos5D=+4.64%"
+        ],
+        "as_of": "2026-11-25"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "GH",
+        "score": 0.0,
+        "direction": "hold",
+        "price": 152.30499267578125,
+        "stop_price": 133.00070190429688,
+        "reasons": [
+          "close=152.30",
+          "MA20=157.33",
+          "MA50=166.01",
+          "ATR14=9.65",
+          "Kronos5D=+1.18%"
+        ],
+        "as_of": "2026-11-25"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "ABCL",
+        "score": 0.0,
+        "direction": "hold",
+        "price": 10.4399995803833,
+        "stop_price": 8.785714013235909,
+        "reasons": [
+          "close=10.44",
+          "MA20=11.46",
+          "MA50=12.25",
+          "ATR14=0.83",
+          "Kronos5D=+0.51%"
+        ],
+        "as_of": "2026-11-25"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "GEHC",
+        "score": 1.0,
+        "direction": "buy",
+        "price": 82.9000015258789,
+        "stop_price": 78.99928501674107,
+        "reasons": [
+          "close=82.90",
+          "MA20=81.90",
+          "MA50=73.29",
+          "ATR14=1.95",
+          "Kronos5D=+0.45%"
+        ],
+        "as_of": "2026-11-25"
+      },
+      "order": {
+        "ticker": "GEHC",
+        "side": "buy",
+        "quantity": 241,
+        "reference_price": 82.9000015258789,
+        "stop_price": 78.99928501674107,
+        "take_profit_price": 90.70143454415458,
+        "signal_score": 1.0,
+        "reasons": [
+          "close=82.90",
+          "MA20=81.90",
+          "MA50=73.29",
+          "ATR14=1.95",
+          "Kronos5D=+0.45%"
+        ]
+      },
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "RDNT",
+        "score": 0.8713900146179697,
+        "direction": "hold",
+        "price": 71.91000366210938,
+        "stop_price": 65.16786084856305,
+        "reasons": [
+          "close=71.91",
+          "MA20=74.73",
+          "MA50=72.49",
+          "ATR14=3.37",
+          "Kronos5D=+0.72%"
+        ],
+        "as_of": "2026-11-25"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "ISRG",
+        "score": 0.851806116557837,
+        "direction": "hold",
+        "price": 423.0111999511719,
+        "stop_price": 393.57262747628346,
+        "reasons": [
+          "close=423.01",
+          "MA20=438.73",
+          "MA50=426.24",
+          "ATR14=14.72",
+          "Kronos5D=+0.53%"
+        ],
+        "as_of": "2026-11-25"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "IQV",
+        "score": 0.3680343750839391,
+        "direction": "hold",
+        "price": 249.9499969482422,
+        "stop_price": 232.84715270996094,
+        "reasons": [
+          "close=249.95",
+          "MA20=262.95",
+          "MA50=265.88",
+          "ATR14=8.55",
+          "Kronos5D=+1.41%"
+        ],
+        "as_of": "2026-11-25"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "NVDA",
+        "score": 0.0,
+        "direction": "hold",
+        "price": 143.6199951171875,
+        "stop_price": 111.95571245465959,
+        "reasons": [
+          "close=143.62",
+          "MA20=172.19",
+          "MA50=203.54",
+          "ATR14=15.83",
+          "Kronos5D=+10.38%"
+        ],
+        "as_of": "2026-11-25"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "HTFL",
+        "score": 0.5932609883453842,
+        "direction": "hold",
+        "price": 45.619998931884766,
+        "stop_price": 37.97499901907785,
+        "reasons": [
+          "close=45.62",
+          "MA20=52.05",
+          "MA50=51.65",
+          "ATR14=3.82",
+          "Kronos5D=-0.31%"
+        ],
+        "as_of": "2026-11-25"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "CBLL",
+        "score": 1.0,
+        "direction": "hold",
+        "price": 29.59000015258789,
+        "stop_price": 27.150000163487025,
+        "reasons": [
+          "close=29.59",
+          "MA20=27.25",
+          "MA50=26.04",
+          "ATR14=1.22",
+          "Kronos5D=-3.38%"
+        ],
+        "as_of": "2026-11-25"
+      },
+      "order": null,
+      "fill": null
+    },
+    {
+      "signal": {
+        "ticker": "CAI",
+        "score": 0.0,
+        "direction": "hold",
+        "price": 17.43000030517578,
+        "stop_price": 13.876429149082728,
+        "reasons": [
+          "close=17.43",
+          "MA20=24.65",
+          "MA50=28.32",
+          "ATR14=1.78",
+          "Kronos5D=+3.92%"
+        ],
+        "as_of": "2026-11-25"
+      },
+      "order": null,
+      "fill": null
+    }
+  ],
+  "kronos": {
+    "TEM": {
+      "last_close": 53.06999969482422,
+      "predicted_close": 54.71769714355469,
+      "forecast_return": 0.03104762498973912
+    },
+    "SDGR": {
+      "last_close": 24.547199249267578,
+      "predicted_close": 24.952669143676758,
+      "forecast_return": 0.016517969740327043
+    },
+    "RXRX": {
+      "last_close": 2.5250000953674316,
+      "predicted_close": 2.6967501640319824,
+      "forecast_return": 0.0680198266050196
+    },
+    "CERT": {
+      "last_close": 10.75,
+      "predicted_close": 10.968300819396973,
+      "forecast_return": 0.02030705296716029
+    },
+    "NTRA": {
+      "last_close": 294.70001220703125,
+      "predicted_close": 300.5423889160156,
+      "forecast_return": 0.019824826830614484
+    },
+    "SOPH": {
+      "last_close": 6.215000152587891,
+      "predicted_close": 6.503185272216797,
+      "forecast_return": 0.04636928601021961
+    },
+    "GH": {
+      "last_close": 152.30499267578125,
+      "predicted_close": 154.10243225097656,
+      "forecast_return": 0.011801580129560119
+    },
+    "ABCL": {
+      "last_close": 10.4399995803833,
+      "predicted_close": 10.492766380310059,
+      "forecast_return": 0.005054291383872034
+    },
+    "GEHC": {
+      "last_close": 82.9000015258789,
+      "predicted_close": 83.27375793457031,
+      "forecast_return": 0.004508521131627807
+    },
+    "RDNT": {
+      "last_close": 71.91000366210938,
+      "predicted_close": 72.43065643310547,
+      "forecast_return": 0.0072403385409705034
+    },
+    "ISRG": {
+      "last_close": 423.0111999511719,
+      "predicted_close": 425.2444152832031,
+      "forecast_return": 0.005279329087005236
+    },
+    "IQV": {
+      "last_close": 249.9499969482422,
+      "predicted_close": 253.47154235839844,
+      "forecast_return": 0.014088999612532405
+    },
+    "NVDA": {
+      "last_close": 143.6199951171875,
+      "predicted_close": 158.5303497314453,
+      "forecast_return": 0.10381809720917778
+    },
+    "HTFL": {
+      "last_close": 45.619998931884766,
+      "predicted_close": 45.4798469543457,
+      "forecast_return": -0.0030721609123297577
+    },
+    "CBLL": {
+      "last_close": 29.59000015258789,
+      "predicted_close": 28.590225219726562,
+      "forecast_return": -0.03378759471800441
+    },
+    "CAI": {
+      "last_close": 17.43000030517578,
+      "predicted_close": 18.113845825195312,
+      "forecast_return": 0.03923382145991505
+    }
+  },
+  "portfolio": {
+    "cash": 100000.0,
+    "positions": {}
+  }
+}

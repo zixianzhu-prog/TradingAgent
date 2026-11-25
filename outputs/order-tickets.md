@@ -1,6 +1,6 @@
 # 模拟订单条件（研究用，需人工确认）
 
-生成：2026-11-24T18:06；假设组合规模 $100,000。只在模拟盘执行，真实交易关闭。
+生成：2026-11-25T17:13；假设组合规模 $100,000。只在模拟盘执行，真实交易关闭。
 
 > 规则对每家公司相同：动作由 Serenity 结论和价格相对下单区间决定；仓位按 Serenity 分档（试探 1%、标准 5%、单只上限 10%），再按单日回撤、日成交额和现金跑道下调；只在财报、客户或合作披露验证后加仓；不设紧止损，论点被证伪才退出。
 
@@ -8,26 +8,26 @@
 
 | 动作 | 股票 | 价格 | 限价 | 安全底线 | 仓位（现在） | 理由 |
 |---|---|---:|---:|---:|---:|---|
-| **模拟买入** | TEM | $55.14 | $62.92 | $45.44 | 1.0%（1.0%） | Price $55.14 is inside the order range (consider at or below $62.92) |
-| **模拟试探仓** | CAI | $18.40 | $31.61 | $23.38 | 0.5%（0.5%） | Price $18.4 is below the safety floor $23.38: cheaper than the bear case, so a starter only until a fundamental problem is ruled out |
-| **模拟试探仓** | SDGR | $24.74 | $26.75 | $23.59 | 1.0%（1.0%） | Price $24.74 is inside the order range (consider at or below $26.75)；Serenity verdict is watch (gates still open): starter only until the up |
-| **模拟试探仓** | SOPH | $6.36 | $7.95 | $5.77 | 0.5%（0.5%） | Price $6.36 is inside the order range (consider at or below $7.95)；Serenity verdict is watch (gates still open): starter only until the upgr |
-| **模拟试探仓** | CERT | $11.04 | $13.13 | $13.06 | 1.0%（1.0%） | Price $11.04 is below the safety floor $13.06: cheaper than the bear case, so a starter only until a fundamental problem is ruled out |
-| **等待** | CBLL | $29.64 | $24.62 | $16.11 | — | Price $29.64 is 20% above $24.62; it implies 21% growth a year against 16% in the base case |
-| **等待** | HTFL | $46.09 | $32.38 | $20.90 | — | Price $46.09 is 42% above $32.38; it implies 28% growth a year against 19% in the base case |
-| **等待** | ISRG | $433.48 | $301.66 | $247.15 | — | Price $433.48 is 44% above $301.66; it implies 21% growth a year against 12% in the base case |
-| **等待** | RDNT | $72.82 | $58.63 | $34.62 | — | Price $72.82 is 24% above $58.63; it implies 13% growth a year against 9% in the base case |
-| **等待** | GEHC | $82.45 | $50.51 | $50.51 | — | Price $82.45 is 63% above $50.51; it implies 14% growth a year against 5% in the base case |
-| **等待** | NTRA | $294.89 | $202.48 | $131.59 | — | Price $294.89 is 46% above $202.48; it implies 27% growth a year against 18% in the base case |
-| **等待** | RXRX | $2.70 | — | — | — | No valuation range: discovery platform; a sales multiple or one-asset rNPV would mislead. Today's price: market value $1,683M less cash $749 |
-| **等待** | GH | $154.10 | $88.40 | $55.00 | — | Evidence incomplete: primary-source completeness 48 is below the bar |
-| **等待** | ABCL | $10.89 | — | — | — | No valuation range: discovery platform; a sales multiple or one-asset rNPV would mislead. Today's price: market value $3,529M less cash $790 |
+| **模拟买入** | TEM | $53.35 | $62.92 | $45.44 | 1.0%（1.0%） | Price $53.35 is inside the order range (consider at or below $62.92) |
+| **模拟试探仓** | CAI | $17.41 | $31.61 | $23.38 | 0.5%（0.5%） | Price $17.41 is below the safety floor $23.38: cheaper than the bear case, so a starter only until a fundamental problem is ruled out |
+| **模拟试探仓** | SDGR | $24.63 | $26.75 | $23.59 | 1.0%（1.0%） | Price $24.63 is inside the order range (consider at or below $26.75)；Serenity verdict is watch (gates still open): starter only until the up |
+| **模拟试探仓** | SOPH | $6.24 | $7.95 | $5.77 | 0.5%（0.5%） | Price $6.24 is inside the order range (consider at or below $7.95)；Serenity verdict is watch (gates still open): starter only until the upgr |
+| **模拟试探仓** | CERT | $10.77 | $13.13 | $13.06 | 1.0%（1.0%） | Price $10.77 is below the safety floor $13.06: cheaper than the bear case, so a starter only until a fundamental problem is ruled out |
+| **等待** | CBLL | $29.62 | $24.62 | $16.11 | — | Price $29.62 is 20% above $24.62; it implies 21% growth a year against 16% in the base case |
+| **等待** | HTFL | $45.70 | $32.38 | $20.90 | — | Price $45.7 is 41% above $32.38; it implies 27% growth a year against 19% in the base case |
+| **等待** | ISRG | $424.09 | $301.66 | $247.15 | — | Price $424.09 is 41% above $301.66; it implies 21% growth a year against 12% in the base case |
+| **等待** | RDNT | $72.11 | $58.63 | $34.62 | — | Price $72.11 is 23% above $58.63; it implies 13% growth a year against 9% in the base case |
+| **等待** | GEHC | $82.96 | $50.51 | $50.51 | — | Price $82.96 is 64% above $50.51; it implies 14% growth a year against 5% in the base case |
+| **等待** | NTRA | $294.55 | $202.48 | $131.59 | — | Price $294.55 is 46% above $202.48; it implies 27% growth a year against 18% in the base case |
+| **等待** | RXRX | $2.54 | — | — | — | No valuation range: discovery platform; a sales multiple or one-asset rNPV would mislead. Today's price: market value $1,583M less cash $749 |
+| **等待** | GH | $152.14 | $88.40 | $55.00 | — | Evidence incomplete: primary-source completeness 48 is below the bar |
+| **等待** | ABCL | $10.51 | — | — | — | No valuation range: discovery platform; a sales multiple or one-asset rNPV would mislead. Today's price: market value $3,406M less cash $790 |
 | **等待** | IRD | $3.97 | $2.42 | $0.68 | — | Price $3.97 is 64% above the rNPV base value $2.42; it implies $2,162M peak sales for the lead asset |
-| **回避** | IQV | $256.53 | — | — | — | Serenity verdict is reject: a gate is contradicted by a primary source |
+| **回避** | IQV | $250.95 | — | — | — | Serenity verdict is reject: a gate is contradicted by a primary source |
 
 ## TEM · 模拟买入 1.0%（$1,000）
 
-- 理由：Price $55.14 is inside the order range (consider at or below $62.92)
+- 理由：Price $53.35 is inside the order range (consider at or below $62.92)
 - Serenity：research-ready，分档 starter
 - 加仓：add after earnings, a customer or a deal confirms the thesis, up to 5%; never because the price rose
 - 减仓：consider trimming above $148.88, where even the bull case earns less than 12% a year
@@ -35,7 +35,7 @@
 
 ## CAI · 模拟试探仓 0.5%（$500）
 
-- 理由：Price $18.4 is below the safety floor $23.38: cheaper than the bear case, so a starter only until a fundamental problem is ruled out
+- 理由：Price $17.41 is below the safety floor $23.38: cheaper than the bear case, so a starter only until a fundamental problem is ruled out
 - Serenity：research-ready，分档 starter
 - 仓位调整：worst day in 6 months -22%: halved for the drawdown budget
 - 加仓：add after earnings, a customer or a deal confirms the thesis, up to 5%; never because the price rose
@@ -44,7 +44,7 @@
 
 ## SDGR · 模拟试探仓 1.0%（$1,000）
 
-- 理由：Price $24.74 is inside the order range (consider at or below $26.75)；Serenity verdict is watch (gates still open): starter only until the upgrade condition in the memo is met
+- 理由：Price $24.63 is inside the order range (consider at or below $26.75)；Serenity verdict is watch (gates still open): starter only until the upgrade condition in the memo is met
 - Serenity：watch，分档 starter
 - 加仓：add after earnings, a customer or a deal confirms the thesis, up to 5%; never because the price rose
 - 减仓：consider trimming above $60.11, where even the bull case earns less than 12% a year
@@ -52,7 +52,7 @@
 
 ## SOPH · 模拟试探仓 0.5%（$500）
 
-- 理由：Price $6.36 is inside the order range (consider at or below $7.95)；Serenity verdict is watch (gates still open): starter only until the upgrade condition in the memo is met
+- 理由：Price $6.24 is inside the order range (consider at or below $7.95)；Serenity verdict is watch (gates still open): starter only until the upgrade condition in the memo is met
 - Serenity：watch，分档 starter
 - 仓位调整：market value $457M, under $1B: smaller cap
 - 加仓：add after earnings, a customer or a deal confirms the thesis, up to 5%; never because the price rose
@@ -61,7 +61,7 @@
 
 ## CERT · 模拟试探仓 1.0%（$1,000）
 
-- 理由：Price $11.04 is below the safety floor $13.06: cheaper than the bear case, so a starter only until a fundamental problem is ruled out
+- 理由：Price $10.77 is below the safety floor $13.06: cheaper than the bear case, so a starter only until a fundamental problem is ruled out
 - Serenity：watch，分档 starter
 - 加仓：add after earnings, a customer or a deal confirms the thesis, up to 5%; never because the price rose
 - 减仓：consider trimming above $33.1, where even the bull case earns less than 12% a year

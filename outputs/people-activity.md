@@ -1,0 +1,42 @@
+# 公司和核心人物的公开活动（近 60 天）
+
+生成：2026-11-24T18:54:20+00:00
+
+15 家公司；公司层面活动 12 条，核心人物活动 0 条。只是曝光，不是价值证据；用于决定接下来读什么、听什么。
+
+## CAI · Caris Life Sciences, Inc.
+
+- 2026-11-16 [Caris Life Sciences Presented Research Demonstrating the Value of Whole Transcriptome Sequencing in Precision Oncology at the Association of Molecular Pathology 2026 Annual Meeting](https://news.google.com/rss/articles/CBMi3gJBVV95cUxNdG9KMWFJV2dKbUF0QmdyeFVUTFZEV2txaDRhbFREV2h1VzVRUUxCQzVaVlRLM3RpeVMxdW44UXp0b0oyMTBlU0czYXZ1X0E4RzM3QjUtZGU3UXh5aVRnUGJZT2JybFZqM3YzUlRxZzFnd3h5MGZiTjdMcmsyQm0xT1BKUnV0UF9lZzJXQ2wtUkttRkJ4cFdrQUl6UHY5U3R2eS1pQlRGOVQwVmEybU1WYVRwYXVocDRGYUQ3SENoWV9aMFlaYi1lWVVTeE1XV2J2a04welZqLWVXWm50a1N5WVEwaTZUNG54Y29DbG9MUlJOU3ZWdmhHbE9IdXlIR0RSOHRiX1FwcXdfOEFWNnAtTnJCQ29GeG03dXpKRWJEWVZvNENZdnJ3SzJfWXhCSVQ1UUx1ejd4akdDWU5HcWhFeGZlSXo0MTgtLXVsSmp6d3hyNUVBQktYSmdzNlFzUQ?oc=5)
+- 2026-10-14 [Caris Life Sciences to Present Eight Studies Highlighting the Power of AI, Multi-Omics and Precision Medicine at ESMO 2026](https://news.google.com/rss/articles/CBMiiAJBVV95cUxNS1VFUzJxdmdKdWFsczk4MzhQRXVUaTJ5QlNCeUdkaVhSYnhHbkVUTkJJNDVNM2xhdDdXQTczYmFjZ3RnSjVVRVVEeFRnZnJyc0VJZ0xnU0dZdTFiV2tVN3lwdTZBbjAweHUtNXZKclg5dFI3TXl0YTZMNHA0T0hLS09Fdm9PRFg2Smp0Y0NXVnlIc1VONFQtM2Eyd0VZaGs3ZEYtT2E3NG44VklLXzdTTk1FQzBkQmpwaGhjbGpjTWJ4UlJwUXowTWtCQThndnl1Z3ZNYnViSFNIRVBCQUF5b2tZbDdKZmoxbmFlNnoyYXYtaG1tbkxtd0RQQl9lQjgwUkpRSzMxVTk?oc=5)
+
+## HTFL · Heartflow, Inc.
+
+- 2026-11-02 [Heartflow to Present Clinical Data Findings at TCT |](https://news.google.com/rss/articles/CBMiiAFBVV95cUxQYkE0M01pSjFnYUVwaktoZ1RRdmxxZ0pBbXgxVkMzX3o4TkYxby1oRFRwRnAzZ0IzU0RqdGJrTGxwOFNsOGJhNlFTbkIxMlNJOFpBTmV6d1FIUzZSTkRpUDBMZDZmU0lLVlZMZmc2VzU4d0l5Uk5HbmhwM1hHZUNoeXQ3eDRveWhL?oc=5)
+
+## RXRX · RECURSION PHARMACEUTICALS, INC.
+
+- 2026-11-11 [Recursion to Participate in Upcoming Investor Conferences](https://news.google.com/rss/articles/CBMirwFBVV95cUxNWDFYQjA1cjN3a1Q2dlFpaXl6T2hKTGFvZmtiR3hBY0k0bUVsM3ZfbHhpcndZdWN2MFFESFo3TXNtblZJODdsdjdIRkdzRnkyZFhrbEpHMkYyOHowckhGanA4ODAxa1JNdjRnOVBDZXlWbzl1WE5kbEJJRDJJTDNGVm9ZUm9OZ2tXOEFzVEJMVm5sVjBJWF9jT25SM1dza1FVYjNrdTNhNVIydThER0FZ?oc=5)
+
+## IRD · Opus Genetics, Inc.
+
+- 2026-11-24 [Opus Genetics to Present at the Piper Sandler Annual Healthcare Conference and Barclays Virtual Ophthalmology Day](https://news.google.com/rss/articles/CBMijAFBVV95cUxQVlZUREJ1NEFvVUEtWERSRjJNSXVBSERyVnhtWlE4Mlg0YkVUYm1rZFZTZGJRR2lqdFdGVWhlQ1VRUmo4aHFvTkJjTHZEQ3VqMFNXeUlwVmViUGpMcHdWUzY4ZkpPZGZsNkxYbTNHaDNwUlVGX0pkdXRKcWJjODU5Q1RURDlra1E3dmNRdw?oc=5)
+- 2026-10-16 [RTP’s Opus Genetics Presents Gene Therapy Data for Inherited Retinal Diseases at Retina in Rio 2026](https://news.google.com/rss/articles/CBMiwAFBVV95cUxPaUhaclpVOWdkSTkyUU81QUF1bnNuSUtzSzFJa1lhdzI5X2prb3AtUEMyYXJvY2VEM2tlYjY2aEtEbkROWWRHVEc2U0VMTXVlSnM2b0xHTXhXX0s3c214TnQ5bkxIZ0tsTVoxRGwwVERGbE9oVUpCbDJVVFQtdzA2TW1UQlVrb0lxcW1Vbno2VE9Id1lXcTBwM29lZGNXNHdoTDZ1V19FMUkzQWZnT3RtSFpLWTNETmlDa2JxN01yLTM?oc=5)
+
+## GRAL · GRAIL, Inc.
+
+- 2026-10-05 [GRAIL to Present New Data From NHS-Galleri and PATHFINDER 2 at EDCC and ESMO Congress 2026](https://news.google.com/rss/articles/CBMi3wFBVV95cUxNeWxaRlNhNUdqbFlVNVU3MTYxTDNERVU1OUk2dWpydklTZ3dIdlNMYmJ3RHJyaUl2VXNPWmhUUFVEUVl2LURYdDFxZWNNVjB3TExMNlNtdjhwNHUxTEpUMERIeG1vYmlISFU0ZWVjaFBqMk9JdUFnUzVmWjNPMkYzM1dyQWxCcnFEODV3dngxMDBtaGp2cHh1UDZVcHR0OWtLczhUQ0tzLXFZWkp3UXlmVmEzdGNSMU1rajR2M0NLYWRxbFMwaVdvRGtMbXNSZ3AyM09NbUxmSnRJTjU5SUk0?oc=5)
+
+## PRCT · PROCEPT BioRobotics Corp
+
+- 2026-11-18 [PROCEPT BioRobotics® to Participate in the Piper Sandler 38th Annual Healthcare Conference on December 2, 2026](https://news.google.com/rss/articles/CBMiqgFBVV95cUxNTVVfc3E0M2RDczByN2RlLXJlbVFual9ZdjVQLUQwSnp3YWtKTWFkcDM1cENOajVEMVJTN29IZWxFMUZNMjJWR21BMHFNc3RsU3V5S0FETC0yQzRxUV9Oa2lnQm5adk1IWXdUdU1vRGFub2ptaWNGQlRjNUZaZ3E4YUdGakJoU2o3QWEtR1lXYjZ5bDJuNVpPOENsV0FNYmZac3VOblg3cWQyZw?oc=5)
+
+## GLUE · Monte Rosa Therapeutics, Inc.
+
+- 2026-11-09 [Monte Rosa Therapeutics Presents Preclinical Data at ACR Convergence 2026 on the Potential of MRT-8102 in Gout](https://news.google.com/rss/articles/CBMiqAFBVV95cUxOQ3hBRmMzU3hKbmdmVl9DYUpVT240Sm8xQXRqdmU3TlgxWVV3cnBGRnZ0bHpWX2txdFRZRTRVM3pwSnZTemYwRkltMl9zcGJPeXQwakJXM2JRYmdaM2d5OW9UVWZkM3ZxcFpxZWpiTnpuZ09KWHJNMDZ3dHU2R2ZISkpTT1Q3SVY5ZlFuYmtqX3N0cVdjZzAyWWZhVDVHSUxybHo4cGFHRFM?oc=5)
+- 2026-11-06 [Monte Rosa Therapeutics to present preclinical data on MRT-8102 inflammation therapy at ACR26](https://news.google.com/rss/articles/CBMihwFBVV95cUxPbkZ5S3NwQlI4NDJBSkNCd0pnTjdPOENkTTEzQUlQMjJtTVFfdkt6ejZFYUlXdHVWZG1uNzVRaXc3QlBsLWd4TmM2aW0zOGtRaDBGLUFTbVZKN25xZThVSWl5RkR1WEJGdE9CLTdQZUxUTUxyb1ZWUS15TnBEa2tJbUhyMVBvVzg?oc=5)
+- 2026-09-30 [Monte Rosa Therapeutics to Present Results of MRT-8102 GFORCE-1 Phase 1 Study in Subjects with Elevated Cardiovascular Disease Risk](https://news.google.com/rss/articles/CBMi7wFBVV95cUxOQmFCUWkxQ2FvTU0ydmJDczJRbUQ5MDhsR1VINmw5YnJfcldMQktuWFE1NlFTVjFZTl9xOTF1OEJPb3ZmZXFPRmhVWE5wUjgzTTZFMHB5elV0YXFPVHBqTWdJZFdueHJlVEtkeE1zYm5SeXNsdmxzLThwQ01CQ2padXBfZWlwbkxES2JfXzBnSkV5SjZtRGVMX3VaV2s1ZmU2UkF6dEF1eXU4YkNUT3ZPR0Vsdmt5Nlk1bzVZRDVuQ1NNMnRIUHlIOTFDMl9RdWhDVWJEclM1elNnVE9FblkwYzVIdGE3Y2ZlZDVVaWtEZw?oc=5)
+
+## GENB · Generate Biomedicines, Inc.
+
+- 2026-10-22 [Generate Biomedicines to Participate in November Investor Conferences](https://news.google.com/rss/articles/CBMisgFBVV95cUxPYmd3bTlSbnF3MXhpdXVXYWh0WFJRRmlvTERlSGxFZkdqZWhGdG9yMlFtNlJrQjBQaFdLTzYwMHRtTW1UTE85V2oxQmRBY2lxakVMa2dOeXFmZnZTcm5pSE5BQnBmWnJ2SWRKa1pLeUpYTXh4TUNXb1pGR0ZTa0ZvNUp2WTVSVThJUjZfdU1JSVl3dU0xOXd3c2diRmppWVNUWWpieHBhNXFMYzFqSUw5MFlB?oc=5)
+

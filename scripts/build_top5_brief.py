@@ -1317,6 +1317,75 @@ def inventor_block(root: Path) -> str:
             f'<th class="n">Licensor applications</th><th>Licensor</th><th>Example</th></tr></thead><tbody>{body}</tbody></table></div>')
 
 
+def patent_life_block(root: Path) -> str:
+    """Patent life from USPTO file wrappers (scripts/patent_status.py)."""
+    data = load(root / "state/patent-status.json", {})
+    rows = data.get("companies") or {}
+    if not rows:
+        return ""
+    order = sorted(rows, key=lambda t: (-(rows[t]["grantedTotal"] or 0)))
+    def cnt(c, k):
+        return ("" if c.get("complete", True) else "≥") + str(c[k])
+    body = "".join(
+        f'<tr><td class="tk">{esc(t)}</td><td class="n">{c["grantedTotal"]:,}</td><td class="n">{cnt(c, "expireBy2031")}</td>'
+        f'<td class="n">{cnt(c, "expireBy2036")}</td><td class="n">{esc(c["earliestLiveExpiry"] or "—")}</td><td class="n">{esc(c["medianExpiry"] or "—")}</td>'
+        f'<td class="n">{"—" if c["terminalDisclaimerShare"] is None else format(c["terminalDisclaimerShare"], ".0%")}</td></tr>'
+        for t in order for c in [rows[t]])
+    return ('<h3 class="bucket-h">Patent life</h3>'
+            '<p class="bucket-blurb">Granted US patents filed by each company (or its patent-holding subsidiary), from USPTO file wrappers. '
+            "Expiry is estimated as 20 years from the effective filing date plus the term adjustment; a terminal disclaimer can make it earlier. "
+            "Companies with more than 100 patents are sampled from both ends (50 oldest, 50 newest), so their counts are minimums and no median is shown. "
+            "This says how long protection lasts, not whether it covers the core product or would survive a challenge.</p>"
+            '<div class="table-wrap"><table><thead><tr><th>Ticker</th><th class="n">Granted</th><th class="n">Expire by 2030</th><th class="n">Expire by 2035</th>'
+            f'<th class="n">Earliest live expiry</th><th class="n">Median expiry</th><th class="n">Terminal disclaimers</th></tr></thead><tbody>{body}</tbody></table></div>')
+
+
+def diagnostics_section(root: Path) -> str:
+    """Unit economics of diagnostics companies (scripts/diagnostics_economics.py)."""
+    data = load(root / "state/diagnostics-economics.json", {})
+    rows = data.get("companies") or {}
+    if not rows:
+        return ""
+    body = ""
+    for t, c in rows.items():
+        f = c.get("facts", {})
+        pt = (c.get("perTest") or [None])[0]
+        vol = f.get("volume", [])
+        gm = f.get("grossMargin", [])
+        payer = f.get("payer", [])
+        vol_txt = f'{vol[0]["value"]:,.0f} · {esc(vol[0]["period"])}' if vol else "—"
+        body += (f'<tr><td class="tk">{esc(t)}</td>'
+                 f'<td style="white-space:normal">{vol_txt}</td>'
+                 f'<td class="n">{"$" + format(pt["revenuePerTest"], ",") if pt else "—"}</td>'
+                 f'<td style="white-space:normal">{(esc(str(gm[0]["value"])) + "% · " + esc(gm[0]["period"])) if gm else "—"}</td>'
+                 f'<td style="white-space:normal">{esc(payer[0]["note"]) if payer else "—"}</td></tr>')
+    return f"""
+  <section class="section" id="diagnostics" aria-labelledby="diagnostics-h">
+    <h2 id="diagnostics-h">Diagnostics: tests, price per test, margin, payers</h2>
+    <p>A diagnostics company is worth what it earns per test times how many tests it runs, after what payers actually pay. These figures are quoted from each company's latest 10-K and 10-Q; every number kept was found word for word in the filing. Revenue per test is computed only when the test count and the testing revenue cover the same period and the same scope (the whole company or one named test line). Nothing here is graded; it is the input a diagnostics valuation needs.</p>
+    <div class="table-wrap"><table><thead><tr><th>Ticker</th><th>Tests (period)</th><th class="n">Revenue per test</th><th>Gross margin</th><th>Payer fact</th></tr></thead><tbody>{body}</tbody></table></div>
+  </section>"""
+
+
+def people_activity_block(root: Path) -> str:
+    """Conference talks and other public appearances (scripts/people_activity.py)."""
+    data = load(root / "state/people-activity.json", {})
+    rows = data.get("companies") or {}
+    items = []
+    for t, r in rows.items():
+        items += [(x["date"] or "", t, x.get("person"), x["headline"], x["url"]) for x in r.get("peopleTalks", [])]
+        items += [(x["date"] or "", t, None, x["headline"], x["url"]) for x in r.get("companyTalks", [])]
+    if not items:
+        return ""
+    items.sort(reverse=True)
+    lis = "".join(f'<li><span class="r">{esc(d)}</span> <strong>{esc(t)}</strong>{(" · " + esc(p)) if p else ""}: '
+                  f'<a href="{esc(u)}" rel="noopener" target="_blank">{esc(h)}</a></li>' for d, t, p, h, u in items[:20])
+    return ('<h3 class="bucket-h">Where they are speaking</h3>'
+            f'<p class="bucket-blurb">Conference presentations, fireside chats, keynotes and academic talks in the last {data.get("lookbackDays", 60)} days, '
+            "found by news search for each queued company and its founders and scientists. Visibility, not evidence: it says what to read or listen to next.</p>"
+            f'<ul class="plain-list">{lis}</ul>')
+
+
 def lab_to_company_section(root: Path) -> str:
     """Peter's chain in one table: research origin -> founders -> specialist money -> pharma/clinic, all from primary filings."""
     founders = load(root / "state/science-founders.json", {}).get("links", [])
@@ -1388,6 +1457,7 @@ def lab_to_company_section(root: Path) -> str:
     <p class="note"><span>Now:</span> {len(rows_by)} companies with a quoted research origin, a named founder or their own published papers; {n_elite} license from MIT, Broad, Harvard, Stanford, Whitehead, Dana-Farber or Scripps. A license proves where the patents came from, not that a given paper became the product. Company papers are OpenAlex works whose authors list the company as their institution (unique name match only). Equity raised is cash received from selling shares, from the cash-flow statement in SEC XBRL; offerings and PIPEs by listed companies do not file a Form D. USPTO records come from the Open Data Portal: an owner record shows the company holds the patent application; "pledged to" means a lender holds a security interest in it.</p>
     <div class="table-wrap"><table><thead><tr><th>Ticker</th><th>Research origin (licensed from)</th><th>Founders named in the 10-K</th><th>Company papers, last 3 years</th><th>USPTO assignment records</th><th>Specialist funds holding 5%+</th><th class="n">Equity raised, 24 months</th><th>Pharma deal / IND (90 days)</th></tr></thead><tbody>{body}</tbody></table></div>
   {inventor_block(root)}
+  {patent_life_block(root)}
   </section>"""
 
 
@@ -1482,6 +1552,7 @@ def key_people_section(root: Path) -> str:
     <p>Who runs each company and what they publish. The roster comes from SEC Forms 3, 4 and 5 filed in the last four quarters (each filing carries the officer's title), plus founders quoted from the 10-K. Papers are PubMed articles from the last three years where both the author's name and the company as affiliation match. Each name links to a LinkedIn search for following by hand; LinkedIn does not allow automated collection, so nothing is fetched from it.</p>
     <p class="note"><span>Now:</span> {s.get("keyPeople", 0)} people at {s.get("companies", 0)} companies; {s.get("withPapers", 0)} published under the company's name in the last three years; {s.get("departures", 0)} key departure in the management radar.</p>
     <div class="table-wrap"><table><thead><tr><th>Ticker</th><th>Key people (LinkedIn search · title · papers)</th><th>Recent departure</th></tr></thead><tbody>{rows}</tbody></table></div>
+  {people_activity_block(root)}
   </section>"""
 
 
@@ -2115,6 +2186,7 @@ def render_html(payload: dict, root: Path = ROOT) -> str:
 {small_caps_section(root)}
 {deals_section(root)}
 {lab_to_company_section(root)}
+{diagnostics_section(root)}
 {funds_section(root)}
 {fda_crl_section(root)}
 {key_people_section(root)}

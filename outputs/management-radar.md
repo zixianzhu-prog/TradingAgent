@@ -1,6 +1,6 @@
 # 管理层与核心人物雷达
 
-> 截至 2026-11-24；覆盖 16 家公司、38 名已读取申报人、39 个事件。紧急重审 2 家，普通重审 0 家；待读取 Form 4 共 0 份。
+> 截至 2026-11-25；覆盖 16 家公司、37 名已读取申报人、39 个事件。紧急重审 2 家，普通重审 0 家；待读取 Form 4 共 0 份。
 
 > 这是治理研究触发器，不是涨跌预测。Form 4 卖出不会自动视为看空；重大离职和调查只会重新打开对应的 Serenity 门槛。
 
@@ -14,7 +14,7 @@
 | 监控 | TEM | 2 | 4 | 0 | 4 | — |
 | 监控 | CBLL | 3 | 3 | 0 | 3 | — |
 | 监控 | NTRA | 1 | 3 | 0 | 3 | — |
-| 监控 | SOPH | 3 | 3 | 0 | 3 | — |
+| 监控 | SOPH | 2 | 3 | 0 | 3 | — |
 | 监控 | GH | 3 | 2 | 0 | 2 | — |
 | 监控 | SDGR | 3 | 2 | 0 | 2 | — |
 | 监控 | ABCL | 2 | 1 | 1 | 0 | — |
@@ -107,12 +107,12 @@
 
 ## SOPH · 监控
 
+- 2026-11-23 · **Van Well Daan open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000366/xslF345X06/wk-form4_1795554087.xml)
+  - 1,623 shares; value $10,655; code S
 - 2026-11-16 · **Van Well Daan open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000364/xslF345X06/wk-form4_1794949249.xml)
   - 1,224 shares; value $9,462; code S
 - 2026-11-13 · **Xu Zhenyu open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000362/xslF345X06/wk-form4_1794862930.xml)
   - 4,000 shares; value $31,821; code S
-- 2026-11-12 · **Menu Philippe open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000361/xslF345X06/wk-form4_1794862875.xml)
-  - 5,000 shares; value $38,400; code S
 
 ## GH · 监控
 

@@ -71,3 +71,9 @@ def test_run_without_key_keeps_last_live_records():
     recs, counts, last = cached_api_records(prev)
     assert recs == [{k: v for k, v in rec.items() if k != "independentAssignmentVerified"}]
     assert counts == {"IRD": 36} and last == "2026-11-23"
+
+
+def test_applicant_match_needs_every_company_word():
+    import uspto_assignment_validation as u
+    assert u.applicant_words("Tempus AI, Inc.") <= u.applicant_words("TEMPUS AI, INC.")
+    assert not u.applicant_words("Tempus AI, Inc.") <= u.applicant_words("TEMPUS STEEL LTD")

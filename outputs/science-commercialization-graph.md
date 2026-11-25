@@ -13,7 +13,7 @@
 | PRME | 0 | 0 | 12 | 1 | 3 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | RXRX | 1 | 2 | 1 | 1 | 8 | 0 | 3 | 1 | ownership-and-company-revenue-verified |
 | ABCL | 1 | 6 | 3 | 1 | 2 | 0 | 2 | 1 | ownership-and-company-revenue-verified |
-| BDSX | 0 | 0 | 6 | 1 | 8 | 0 | 0 | 0 | science-linked |
+| BDSX | 0 | 0 | 6 | 1 | 7 | 0 | 0 | 0 | science-linked |
 | SDGR | 1 | 1 | 2 | 1 | 6 | 0 | 2 | 1 | ownership-and-company-revenue-verified |
 | FATE | 1 | 1 | 5 | 1 | 4 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | HURA | 0 | 0 | 9 | 1 | 2 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
@@ -71,7 +71,7 @@
 **尚缺证据**
 - 缺公司专利、专利受让或大学技术许可的明确证据
 - 缺大药厂付费、许可或具有经济条款的合作证据
-- 缺 IND 获批或已登记临床试验证据
+- 缺 IND 生效或已登记临床试验证据
 - 公司总收入已核验，但尚不能证明收入来自相关 AI/科研技术
 
 **已核验证据**
@@ -91,7 +91,7 @@
 **尚缺证据**
 - 缺论文作者/创始人与公司的原始关系证据
 - 缺大药厂付费、许可或具有经济条款的合作证据
-- 缺 IND 获批或已登记临床试验证据
+- 缺 IND 生效或已登记临床试验证据
 - 缺经 SEC/XBRL 核验的收入证据
 
 **已核验证据**
@@ -109,7 +109,7 @@
 已有商业信号，但不能把合作公告当成客户收入；仍按缺口继续核验。
 
 **尚缺证据**
-- 缺 IND 获批或已登记临床试验证据
+- 缺 IND 生效或已登记临床试验证据
 - 缺经 SEC/XBRL 核验的收入证据
 
 **已核验证据**
@@ -205,7 +205,7 @@
 **尚缺证据**
 - 缺论文作者/创始人与公司的原始关系证据
 - 缺大药厂付费、许可或具有经济条款的合作证据
-- 缺 IND 获批或已登记临床试验证据
+- 缺 IND 生效或已登记临床试验证据
 - 缺经 SEC/XBRL 核验的收入证据
 
 **已核验证据**
@@ -216,7 +216,7 @@
 - [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/66230/209) · uspto_assignment：USPTO recorded assignment 066230/0209 from PESTANO, GARY A.; MELLERT, HESTIA to BIODESIX, INC. on 2024-01-24
 - [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/65174/123) · uspto_assignment：USPTO recorded assignment 065174/0123 from CAMPBELL, THOMAS; GEORGANTAS, ROBERT W., III; RÖDER, HEINRICH; RÖDER, JOANNA; MAGUIRE, LAURA to BIODESIX, INC. on 2023-10-10
 - [SEC XBRL](https://www.sec.gov/Archives/edgar/data/1439725/000119312526449763/) · equity_raise：Cash received from issuing equity (XBRL ProceedsFromIssuanceOfCommonStock): 2024-01-01 to 2024-12-31: $55.6M (10-K); 2025-01-01 to 2025-12-31: $7.3M (10-K); 2026-01-01 to 2026-09-30: $30.4M (10-Q)
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1439725/000090514826004746/xslSCHEDULE_13D_X02/primary_doc.xml) · schedule_13d：SCHULER JACK W reported beneficial ownership of 22.3% on SCHEDULE 13D/A.
+- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1439725/000121390026070194/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Soleus Capital Master Fund, L.P. reported beneficial ownership of 5.1% on SCHEDULE 13G.
 
 ## SDGR · Schrodinger
 
@@ -342,7 +342,7 @@
 **尚缺证据**
 - 缺公司专利、专利受让或大学技术许可的明确证据
 - 缺大药厂付费、许可或具有经济条款的合作证据
-- 缺 IND 获批或已登记临床试验证据
+- 缺 IND 生效或已登记临床试验证据
 - 公司总收入已核验，但尚不能证明收入来自相关 AI/科研技术
 
 **已核验证据**

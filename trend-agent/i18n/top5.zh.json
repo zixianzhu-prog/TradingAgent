@@ -955,5 +955,20 @@
   "New": "新建仓",
   "Added {n}%+": "加仓 {n}%+",
   "Trimmed {n}%+": "减仓 {n}%+",
-  "Exited": "清仓"
+  "Exited": "清仓",
+  "A diagnostics company is worth what it earns per test times how many tests it runs, after what payers actually pay. These figures are quoted from each company's latest {n}-K and {n}-Q; every number kept was found word for word in the filing. Revenue per test is computed only when the test count and the testing revenue cover the same period and the same scope (the whole company or one named test line). Nothing here is graded; it is the input a diagnostics valuation needs.": "诊断公司的价值取决于每次检测赚多少钱、做多少次检测，以及付款方实际付多少。下面的数字引自每家公司最新的 {n}-K 和 {n}-Q，保留的每个数字都在原文里逐字找到。只有检测量和检测收入属于同一期间、同一口径（全公司或同一条检测线）时，才计算每次检测收入。这里不打分，是诊断公司估值需要的输入。",
+  "Conference presentations, fireside chats, keynotes and academic talks in the last {n} days, found by news search for each queued company and its founders and scientists. Visibility, not evidence: it says what to read or listen to next.": "最近 {n} 天的会议演讲、炉边对话、主题演讲和学术报告，按深审队列里每家公司及其创始人、科学家的名字检索新闻得到。这只是曝光，不是证据，用来决定接下来读什么、听什么。",
+  "Diagnostics: tests, price per test, margin, payers": "诊断公司：检测量、每次检测收入、毛利率、付款方",
+  "Earliest live expiry": "最早到期（有效专利）",
+  "Expire by {n}": "{n} 年前到期",
+  "Granted": "已授权",
+  "Granted US patents filed by each company (or its patent-holding subsidiary), from USPTO file wrappers. Expiry is estimated as {n} years from the effective filing date plus the term adjustment; a terminal disclaimer can make it earlier. Companies with more than {n} patents are sampled from both ends ({n} oldest, {n} newest), so their counts are minimums and no median is shown. This says how long protection lasts, not whether it covers the core product or would survive a challenge.": "每家公司（或其持有专利的子公司）名下的已授权美国专利，来自 USPTO 案卷。到期日按有效申请日后 {n} 年加专利期调整估算；提交过终端声明的可能更早到期。专利超过 {n} 件的公司从两端抽样（最早 {n} 件、最新 {n} 件），所以数量是下限，也不显示中位数。这只说明保护能持续多久，不说明是否覆盖核心产品、能否经受无效挑战。",
+  "Gross margin": "毛利率",
+  "Median expiry": "到期中位数",
+  "Patent life": "专利寿命",
+  "Payer fact": "付款方事实",
+  "Revenue per test": "每次检测收入",
+  "Terminal disclaimers": "终端声明占比",
+  "Tests (period)": "检测量（期间）",
+  "Where they are speaking": "他们在哪里公开发言"
 }

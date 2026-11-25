@@ -1,8 +1,8 @@
 # 生物安全与疫情雷达
 
-截至 2026-11-24。来源：USAspending.gov, awarding sub-agency: Office of Assistant Secretary for Preparedness and Response；WHO Disease Outbreak News。
+截至 2026-11-25。来源：USAspending.gov, awarding sub-agency: Office of Assistant Secretary for Preparedness and Response；WHO Disease Outbreak News。
 
-近 90 天 ASPR/BARDA 合同动作 27 笔（≥500 万美元），合计 $916M，其中 8 家上市公司；近 60 天 WHO 疫情通报 13 条。合同是收款方的收入；疫情只是背景，不等于销售。
+近 90 天 ASPR/BARDA 合同动作 27 笔（≥500 万美元），合计 $916M，其中 8 家上市公司；近 60 天 WHO 疫情通报 12 条。合同是收款方的收入；疫情只是背景，不等于销售。
 疫情与合同按病原名称匹配，较粗：例如 Regeneron 的 Inmazeb 针对 Zaire 型埃博拉，对 Bundibugyo 型没有获批适应症，需逐一核对毒株。
 
 ## 政府应对合同
@@ -53,7 +53,6 @@
 | 2026-10-15 | [Middle East respiratory syndrome coronavirus - Kingdom of Saudi Arabia](https://www.who.int/emergencies/disease-outbreak-news/item/middle-east-respiratory-syndrome-coronavirus---kingdom-of-saudi-arabia) | — |
 | 2026-10-10 | [Pneumonia of undetermined etiology - the Russian Federation](https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON620) | — |
 | 2026-10-08 | [Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo](https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON619) | REGN |
-| 2026-09-25 | [Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo](https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON621) | REGN |
 
 ## CDC 健康警报（HAN，近 365 天）
 

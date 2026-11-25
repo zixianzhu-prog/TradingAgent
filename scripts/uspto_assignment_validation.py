@@ -34,6 +34,12 @@ def base_name(name: str) -> str:
     return re.sub(r"\s+", " ", SUFFIX.sub("", name or "").replace(",", " ")).strip()
 
 
+def applicant_words(name: str) -> set[str]:
+    """Significant words of an applicant name: every one of the company's words must appear, so "Tempus" does not
+    match "Tempus Steel Ltd" unless the company is called that."""
+    return {w for w in re.sub(r"[^a-z0-9 ]", " ", base_name(name).lower()).split() if len(w) > 1}
+
+
 def odp_get(url: str, key: str) -> dict:
     """GET an Open Data Portal endpoint; the key goes only in the request header, never to disk or logs."""
     req = urllib.request.Request(url, headers={"X-API-KEY": key, "Accept": "application/json", "User-Agent": "serenity-research-agent"})
@@ -51,11 +57,11 @@ def odp_records(ticker: str, name: str, key: str, fetch=odp_get, max_apps: int =
     """Applications filed by the company (applicant field) and their recorded assignments from USPTO ODP.
     Returns (records in the import format, number of applications found)."""
     query = base_name(name)
-    first = query.split()[0].lower() if query else ""
+    wanted = applicant_words(query)
     url = f"{ODP}/search?" + urllib.parse.urlencode({"q": f'applicationMetaData.firstApplicantName:"{query}"', "limit": 25})
     found = fetch(url, key)
     apps = [a for a in found.get("patentFileWrapperDataBag", [])
-            if first and first in (a.get("applicationMetaData", {}).get("firstApplicantName") or "").lower()]
+            if wanted and wanted <= applicant_words(a.get("applicationMetaData", {}).get("firstApplicantName") or "")]
     records = []
     for app in apps[:max_apps]:
         number, meta = app.get("applicationNumberText"), app.get("applicationMetaData", {})

@@ -1221,111 +1221,102 @@ CEO和CFO评估认为截至2025年12月31日内部控制有效（基于COSO 2013
 
 ## CARL · complete
 
-审查记录：`state/serenity-reviews/CARL-claudecli-59c963d7d783227d074f.json`
+审查记录：`state/serenity-reviews/CARL-claude-7dfdf0357d7805a12de4.json`
 
-### supply_chain_map: partial
+### supply_chain_map: unknown
 
-证据显示了产品（aprevo椎间融合器+插入器械+数字手术规划）和下游客户类型（医院和门诊手术中心），也提及了合同制造和第三方服务作为上游。但缺乏具体供应商名称、地理集中度或替代周期数据。
+等待按 Serenity 原文重评（模型的初评是 partial，不作为结论）。证据显示下游客户为医院和门诊手术中心，产品为aprevo椎间融合植入物及配套器械，上游依赖合同制造商和第三方服务，但上游供应商身份、集中度及具体关系未披露，供应链地图不完整。
 
-- 支持 [ev_65958018e8052c93](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): Cost of sales includes the costs of creating patient-specific digital surgical plans and the manufacturing costs of our aprevo interbody implants and the accompanying inserter instruments
-- 支持 [ev_65958018e8052c93](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): contract manufacturing and other third-party services, packaging, shipping, provision for excess and obsolete inventory
-- 支持 [ev_0820d5aa6a7ef9f9](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): designing, manufacturing, and marketing of aprevo, a comprehensive technology platform for spine fusion surgical procedures
-- 缺口：具体上游供应商名称及其全球数量
-- 缺口：关键原材料的地理集中度
-- 缺口：合同制造商的替代周期和依赖度
-- 证伪条件：发现aprevo植入物使用的材料或制造工艺广泛可得无集中度
-- 证伪条件：公司披露多家可互换的合同制造商
+- 支持 [ev_3fbe3399abcfbc3f](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): The Company has one business activity and operates as a single operating and reportable segment: the designing, manufacturing, and marketing of aprevo, a comprehensive technology platform for spine fusion surgical procedures.
+- 支持 [ev_ea06868f9a39d17a](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): We sell our aprevo interbody implants and accompanying inserter instruments to customers under standard pricing schedules.
+- 缺口：等待按 Serenity 原文重评
+- 缺口：具体上游供应商名称及地理集中度
+- 缺口：关键原材料（钛、PEEK等）的来源信息
+- 缺口：合同制造商身份及替代难度
+- 缺口：未在原文中找到引用：cost of sales include allocations for personnel, software, c
+- 证伪条件：若上游原材料供应商高度集中且不可替代，则chokepoint成立；反之则削弱thesis
 
-### chokepoint_evidence: unknown
+### chokepoint_evidence: partial
 
-证据中无任何供应集中度或替代壁垒的数据。专利段落反而强调IP可能被挑战无效化或绕过，表明公司自身缺乏不可替代的技术壁垒。FDA设备许可仅证明产品已获批不构成瓶颈证据。仅有AI相关性不足以通过此门。
+公司拥有45项授权专利及约120项待审专利，构成一定IP壁垒，但证据中无任何关于供应集中度、全球市场份额或替代周期的量化数据；单凭专利组合不构成Serenity意义上的chokepoint。
 
-- 反证 [ev_474085fa27557c19](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): its issuance is not conclusive as to its validity or its enforceability, and it may not provide us with adequate proprietary protection or competitive advantages against competitors with similar products
-- 反证 [ev_474085fa27557c19](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): We cannot offer any assurances that the breadth of our issued patents will be sufficient to stop a competitor from developing, manufacturing, and commercializing one or more products
-- 缺口：全球AI辅助脊柱手术规划市场的供应商数量和市场份额数据
-- 缺口：患者定制椎间融合器的替代供应商分析
-- 缺口：技术替代周期
-- 缺口：反证只是通用风险条款或记录字段，不是针对公司的直接反证
-- 证伪条件：发现Carlsmed在AI脊柱规划领域占有超50%市场份额且替代周期超过2年
-- 证伪条件：发现其数字分割技术有不可绕过的专利壁垒
+- 支持 [ev_b145955f050aab51](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): our patent portfolio contained 45 total issued patents and approximately 120 pending patent applications relating to the aprevo Technology Platform
+- 支持 [ev_e0f31b0ed209fdcd](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): These issued patents are expected to expire between 2037 and 2045
+- 反证 [ev_56306e4d01b972fa](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): We cannot offer any assurances that the breadth of our issued patents will be sufficient to stop a competitor from developing, manufacturing, and commercializing one or more products, services, or technologies in a non-infringing manner
+- 缺口：全球市场份额或供应集中度数据
+- 缺口：替代产品的技术壁垒及重新认证周期
+- 缺口：与竞争对手的差异化量化对比
+- 证伪条件：若有竞争对手已推出非侵权个性化脊柱植入物平台并获医院采用，则chokepoint不成立
 
 ### customer_dependency: unknown
 
-证据中未披露任何具体客户名称采用量或设计锁定关系。仅有泛泛的医院和门诊手术中心描述，无法确认下游对Carlsmed产品的具体依赖程度。
+等待按 Serenity 原文重评（模型的初评是 partial，不作为结论）。证据仅披露客户类别（医院和门诊手术中心），无具体命名客户、单一客户收入集中度或设计锁定协议，无法评估客户依赖度的强度。
 
-- 支持 [ev_0820d5aa6a7ef9f9](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): The Company typically derives its current revenues from selling aprevo to its hospital and ambulatory surgical center customers
-- 缺口：具名的医院系统或ASC客户及其采购规模
-- 缺口：客户集中度数据
-- 缺口：外科医生培训切换成本导致的锁定效应证据
-- 证伪条件：发现客户高度分散且无切换壁垒
-- 证伪条件：披露前几大客户收入占比极高但关系不稳定
+- 支持 [ev_15e0260c4ff54378](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): The Company typically derives its current revenues from selling aprevo to its hospital and ambulatory surgical center customers.
+- 缺口：等待按 Serenity 原文重评
+- 缺口：命名的主要客户及各自收入占比
+- 缺口：客户合同期限及设计锁定条款
+- 缺口：前五大客户集中度披露
+- 证伪条件：若前三大客户贡献超过50%收入且有任一客户流失或转向竞品的记录，则customer_dependency风险显著
 
 ### pure_play: pass
 
-公司明确披露仅有一个运营和报告分部，100%收入来自aprevo脊柱融合AI平台。属于纯正的AI医疗器械纯粹标的。
+公司明确披露仅有单一报告分部，所有收入均来自aprevo平台，属于100%纯正主题敞口，无多元化稀释。
 
-- 支持 [ev_0820d5aa6a7ef9f9](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): The Company has one business activity and operates as a single operating and reportable segment: the designing, manufacturing, and marketing of aprevo, a comprehensive technology platform for spine fusion surgical procedures
-- 支持 [ev_65958018e8052c93](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): We sell our aprevo interbody implants and accompanying inserter instruments to customers under standard pricing schedules
-- 证伪条件：公司进入与AI脊柱融合无关的新业务线稀释主题敞口
+- 支持 [ev_3fbe3399abcfbc3f](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): The Company has one business activity and operates as a single operating and reportable segment: the designing, manufacturing, and marketing of aprevo, a comprehensive technology platform for spine fusion surgical procedures.
+- 证伪条件：若公司披露新业务线或收购非脊柱业务，则纯正性降低
 
 ### multi_node_control: partial
 
-公司同时拥有AI数字手术规划平台和患者定制植入物制造，可视为软件加硬件两个相连节点。但制造依赖合同制造商，上游材料控制缺失，不构成真正的多节点供应链控制。
+公司控制了技术平台/IP节点（个性化数字手术规划软件）和最终产品销售节点，但核心制造依赖合同制造商，非内部控制；证据不支持完整的两节点内部控制主张。
 
-- 支持 [ev_65958018e8052c93](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): Cost of sales includes the costs of creating patient-specific digital surgical plans and the manufacturing costs of our aprevo interbody implants
-- 反证 [ev_36bb39f21c7a4e9a](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): we purchase equipment or materials, including hardware and software, from suppliers, and the design of these equipment or materials may be outside of our direct control
-- 缺口：公司是否自有制造能力还是完全依赖合同制造
-- 缺口：AI平台与植入物之间是否形成闭环控制
-- 缺口：是否控制关键上游材料或工艺
-- 证伪条件：发现AI规划软件和植入物制造均可由第三方独立替代
-- 证伪条件：发现公司完全外包制造
+- 支持 [ev_64ea7d43d60c968c](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): Cost of Sales Cost of sales includes the costs of creating patient-specific digital surgical plans and the manufacturing costs of our aprevo interbody implants
+- 支持 [ev_b206b7a28a34b560](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): aprevo personalized surgery platform and software run thereon, personalized spinal implants, and any other inventions that are commercially important to our business.
+- 缺口：公司是否内部控制植入物制造工序的证据
+- 缺口：制造节点与软件/设计节点之间的集成度描述
+- 缺口：未在原文中找到引用：cost of sales include allocations for personnel, software, c
+- 证伪条件：若合同制造商可被竞争对手共同使用，则制造节点不构成排他控制
 
-### earnings_validation: partial
+### earnings_validation: unknown
 
-XBRL数据提供了实际财务结果：Q3 2026收入2155万美元同比增长64.9%，增长强劲。但净亏损1225万美元每季，现金3595万美元，9个月经营现金流出2904万美元。增长趋势支持AI医疗设备采纳故事，但缺乏将增长归因于AI技术壁垒的数据，且盈利尚未实现。
+等待按 Serenity 原文重评（模型的初评是 partial，不作为结论）。公司已有实际商业收入并报告了真实财务数据（2026年前三季净亏损3145万美元），现金及等价物8030万美元，债务1560万美元，但证据中无具体收入数字，无法验证收入增长轨迹是否支持thesis。
 
-- 支持 [ev_ec2e60166b31f002](https://data.sec.gov/api/xbrl/companyfacts/CIK0001794546.json) (sec-companyfacts): Revenue (RevenueFromContractWithCustomerIncludingAssessedTax): 21,554,000 for 2026-07-01 to 2026-09-30
-- 支持 [ev_ec2e60166b31f002](https://data.sec.gov/api/xbrl/companyfacts/CIK0001794546.json) (sec-companyfacts): Same quarter a year earlier (2025-07-01 to 2025-09-30): 13,074,000, a change of +64.9%
-- 支持 [ev_ec2e60166b31f002](https://data.sec.gov/api/xbrl/companyfacts/CIK0001794546.json) (sec-companyfacts): Cash and equivalents (CashAndCashEquivalentsAtCarryingValue): 35,945,000 for as of 2026-09-30
-- 反证 [ev_ec2e60166b31f002](https://data.sec.gov/api/xbrl/companyfacts/CIK0001794546.json) (sec-companyfacts): Net income (loss) (NetIncomeLoss): -12,245,000 for 2026-07-01 to 2026-09-30
-- 反证 [ev_ec2e60166b31f002](https://data.sec.gov/api/xbrl/companyfacts/CIK0001794546.json) (sec-companyfacts): Operating cash flow (NetCashProvidedByUsedInOperatingActivities): -29,039,000 for 2026-01-01 to 2026-09-30
-- 缺口：毛利率趋势及是否改善
-- 缺口：收入增长中AI技术驱动的具体贡献比例
-- 缺口：实现盈亏平衡的时间表
-- 证伪条件：收入增速大幅放缓至低于20%
-- 证伪条件：现金消耗加速导致跑道低于12个月且无融资计划
+- 支持 [ev_476e17a2d5d5ba69](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): As of September 30, 2026, we had $80.3 million of cash, cash equivalents, restricted cash, short-term investments and marketable securities, $15.6 million of principal outstanding under our credit facility, and an accumulated deficit of $132.3 million.
+- 支持 [ev_83ad2d11cb014d22](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): Net loss $ (31,451 ) $ (21,021 ) $ (10,430 ) 49.6 %
+- 反证 [ev_19c085f0c46d0ab7](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): We have incurred net losses and negative cash flows from operations since our inception.
+- 缺口：等待按 Serenity 原文重评
+- 缺口：具体季度/年度收入数字
+- 缺口：毛利率的实际数值
+- 缺口：收入增长率数据
+- 证伪条件：若收入增速低于运营支出增速且现金消耗加速，则盈利路径受质疑
 
-### counter_thesis: partial
+### counter_thesis: unknown
 
-证据中可识别多项风险：专利可被挑战或绕过IP护城河不确定；CMS拒绝TPT报销申请报销路径受阻；持续亏损现金3595万美元但每季烧约1000万美元；依赖第三方合同制造。但缺乏竞争格局分析估值压力测试和替代技术路径评估，反论证尚不完整。
+等待按 Serenity 原文重评（模型的初评是 partial，不作为结论）。证据中有具体的不利事实：CMS拒绝了aprevo颈椎产品的过渡性附加支付申请（2025年11月），且存在高管离职产生的重大过渡成本；竞争风险以风险因素形式提及但无具名竞争对手抢占份额的具体事实；供给侧、地缘政治和估值风险未在证据中覆盖。
 
-- 支持 [ev_474085fa27557c19](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): Patents, if issued, may be challenged, deemed unenforceable, invalidated, narrowed, or circumvented
-- 支持 [ev_65958018e8052c93](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): Our requested Transitional Pass-Through ("TPT") payment for aprevo cervical in outpatient settings was not approved by CMS in its November 2025 OPPS Final Rule
-- 支持 [ev_36bb39f21c7a4e9a](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): Our competitors, many of which have substantially greater resources and have made substantial investments in patent portfolios, trade secrets, trademarks, and competing technologies
-- 反证 [ev_ec2e60166b31f002](https://data.sec.gov/api/xbrl/companyfacts/CIK0001794546.json) (sec-companyfacts): Revenue (RevenueFromContractWithCustomerIncludingAssessedTax): 21,554,000 for 2026-07-01 to 2026-09-30
-- 缺口：主要竞争对手的AI脊柱手术产品对比
-- 缺口：当前486M市值的估值合理性分析
-- 缺口：AI脊柱规划技术的替代路径时间表
-- 证伪条件：大型脊柱器械公司推出等效AI规划加定制植入物平台
-- 证伪条件：CMS持续拒绝差异化报销限制定价权
-- 证伪条件：现金跑道不足被迫稀释性增发
-- 证伪条件：关键专利被无效化或竞争对手成功绕过
-- 证伪条件：收入增速因市场饱和或竞争而骤降
+- 支持 [ev_f2d616b65697e3ea](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): Our requested Transitional Pass-Through ("TPT") payment for aprevo cervical in outpatient settings was not approved by CMS in its November 2025 OPPS Final Rule
+- 支持 [ev_c5c34e5fec526ce1](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): Executive transition costs 2,390 — 2,390 **
+- 支持 [ev_8b4537637d1c0e2a](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): Our competitors, many of which have substantially greater resources and have made substantial investments in patent portfolios, trade secrets, trademarks, and competing technologies
+- 缺口：等待按 Serenity 原文重评
+- 缺口：具名竞争对手及其产品蚕食市场份额的证据
+- 缺口：地缘政治风险（如关键材料出口限制）分析
+- 缺口：估值相对同类公司的对比
+- 缺口：需求端风险（脊柱手术量趋势）量化分析
+- 证伪条件：若CMS持续拒绝TPT并推广至住院报销，定价能力将受系统性压制
+- 证伪条件：若主要执行官离职导致客户关系断裂或商业化进度延迟，thesis受损
 
-### management_governance: partial
+### management_governance: unknown
 
-证据显示CEO和CFO评估了披露控制并认为有效，无会计分歧或调查记录。但缺乏管理层背景任期继任计划等关键治理信息。作为近期上市公司尚无管理层内控评估报告（过渡期豁免），治理成熟度有待观察。
+等待按 Serenity 原文重评（模型的初评是 partial，不作为结论）。10-K披露披露控制有效，内控状态良好；但2026年Q3发生重大高管过渡事件（产生239万美元成本及加速归属股份），继任者身份及业务连续性未在证据中说明，治理存在未解决的继任风险。
 
-- 支持 [ev_1ce600e308376456](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): our Chief Executive Officer and Chief Financial Officer have concluded that these disclosures controls were effective at a reasonable assurance level as of December 31, 2025
-- 支持 [ev_1ce600e308376456](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): Changes in and Disagreements With Accountants on Accounting and Financial Disclosure. None.
-- 反证 [ev_1ce600e308376456](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): This Annual Report does not include a report of management's assessment regarding internal control over financial reporting or an attestation report of the company's registered public accounting firm due to a transition period
-- 缺口：CEO和关键高管的任期背景和行业经验
-- 缺口：董事会独立性和组成
-- 缺口：继任计划和关键人物依赖风险
-- 缺口：内部人交易模式
-- 证伪条件：发现关键高管大量减持或离职
-- 证伪条件：内控出现重大缺陷或重述财报
-- 证伪条件：监管调查或治理丑闻
+- 支持 [ev_db71d997e59cac31](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): our Chief Executive Officer and Chief Financial Officer have concluded that these disclosures controls were effective at a reasonable assurance level as of December 31, 2025.
+- 反证 [ev_c5c34e5fec526ce1](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): Executive transition costs 2,390 — 2,390 **
+- 反证 [ev_541aa1a38a4b9f83](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): Less: accelerated shares from executive transition (959 ) — (959 ) **
+- 缺口：等待按 Serenity 原文重评
+- 缺口：离任高管的具体职位及继任者信息
+- 缺口：新管理层的相关经验和资质
+- 缺口：董事会独立性及薪酬结构披露
+- 证伪条件：若离任者为CEO或CCO等关键商业化负责人且继任者未宣布，则治理风险显著升级
 
 ## CBLL · complete
 
@@ -2268,229 +2259,194 @@ GENB主要专注于AI驱动的生成式药物发现，收入来自合作协议�
 
 ## GLUE · complete
 
-审查记录：`state/serenity-reviews/GLUE-claudecli-770891df5d11ecd36cbe.json`
+审查记录：`state/serenity-reviews/GLUE-claude-2a8ec0d5dff801e03587.json`
 
-### supply_chain_map: partial
+### supply_chain_map: unknown
 
-10-K披露了上游依赖（合同生产商、乌克兰和中国供应商提供药物物质/产品）、公司核心产品（MGD分子胶降解剂）以及下游客户（Roche、Novartis合作协议）。但未具名关键供应商，缺乏具体的物料-节点映射。
+等待按 Serenity 原文重评（模型的初评是 partial，不作为结论）。上游依赖CRO和CMO（部分为独家供应商，含乌克兰和中国供应商）、公司产品（QuEEN平台+MGD候选药物）、下游合作伙伴（Roche/Novartis）可识别，但无商业终端客户，管线尚未获批，完整商业供应链尚未成型。
 
-- 支持 [ev_546134fa25481de8](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): we do not currently have arrangements in place for a redundant or second-source supply of all drug product or drug substance
-- 支持 [ev_caf7183d6e80a95e](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): We also have a supplier based in China which supplies us with services and materials to support the ongoing expansion of our library of MGDs
-- 支持 [ev_e6ef0c36017aa695](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): we entered into a collaboration and license agreement, or the Roche Agreement, with Roche for the discovery and development of MGDs against targets in cancer and neurological diseases
-- 缺口：具名的合同生产商及其地理位置
-- 缺口：药物物质和药物产品各环节的具体供应商数量
-- 缺口：从原料到成品的完整物料流图
-- 证伪条件：发现公司实际拥有多家冗余供应商，降低供应链集中度
-- 证伪条件：关键供应商被收购或停产导致供应链中断
+- 支持 [ev_b988258c2c1f5402](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): The drug substance and drug product in our product candidates are supplied to us from a small number of suppliers, and in some cases sole source suppliers.
+- 支持 [ev_04f9a2a2d4c9d414](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): We currently have a supplier based in Ukraine which supplies us with services and materials related to the ongoing expansion of our library of MGDs.
+- 支持 [ev_e11529fa34136ba0](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): we entered into a collaboration and license agreement, or the Roche Agreement, with Roche for the discovery and development of MGDs against targets in cancer and neurological diseases.
+- 缺口：等待按 Serenity 原文重评
+- 缺口：商业终端客户（无获批产品）
+- 缺口：CMO具体名称及产能
+- 缺口：下游经销商或医院采购披露
+- 证伪条件：若任一独家CMO停产且公司披露无法找到替代供应商
 
-### chokepoint_evidence: unknown
+### chokepoint_evidence: partial
 
-GLUE是一家生物技术药物发现公司，不控制任何上游物理瓶颈节点。10-K反而表明公司自身面临供应集中风险（单一来源供应商、乌克兰/中国地缘政治风险）。专利保护存在但面临挑战，不构成Serenity方法论要求的供应浓度或替代壁垒型chokepoint。
+公司拥有53个专利家族覆盖QuEEN引擎和多个项目，存在一定IP壁垒，但无证据显示在任何原材料或供应节点具有市场集中度或实质性替代壁垒；专利本身可被设计绕过，不构成Serenity方法论所要求的咽喉要道。
 
-- 反证 [ev_546134fa25481de8](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): It may be difficult for us to assess their ability to timely meet our demand in the future based on past performance
-- 反证 [ev_b84213068232740c](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): Competitors may also contest our patents by arguing before an administrative patent authority or judge that the invention was not patent-eligible, was not novel, was obvious
-- 缺口：公司在任何供应链节点的全球市场份额数据
-- 缺口：MGD技术平台相对于竞争对手PROTAC/其他降解剂的替代壁垒量化证据
-- 缺口：下游客户无法绕开GLUE技术的具体证据
-- 缺口：反证只是通用风险条款或记录字段，不是针对公司的直接反证
-- 证伪条件：公司MGD平台被证明为唯一能针对某类靶点的降解技术，形成事实垄断
-- 证伪条件：多家竞争对手开发出同等MGD平台，彻底消除稀缺性
+- 支持 [ev_fdc0f05305dc4afc](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): we owned fifty-three patent families related to our QuEEN TM discovery engine, our CCNE1 program, our CDK2 program, our NEK7 program, our VAV1 program, our GSPT1 program
+- 反证 [ev_e6561707c069a442](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): a third party may develop a competitive drug or product that provides benefits similar to one or more of our current or future product candidates but that has a different composition or otherwise falls outside the scope of our patent protection.
+- 缺口：全球MGD分子胶降解剂市场份额数据
+- 缺口：替代平台如PROTAC的竞争强度披露
+- 缺口：独家供应节点的浓度证明
+- 证伪条件：若竞争对手的MGD平台获监管批准并吸引同类大药企合作
 
-### customer_dependency: partial
+### customer_dependency: unknown
 
-Roche和Novartis两大全球制药巨头均已签署合作/许可协议，并支付了大额前期款项（Roche $50M + $12M里程碑；Novartis $150M前期款）。Q3 2026协作收入$54.4M同比增长326%，表明下游客户实际付费且依赖度在提升。
+等待按 Serenity 原文重评（模型的初评是 partial，不作为结论）。Roche（已收取50M预付款加12M里程碑款）和Novartis（2024年已收150M预付款）均为已披露的真实合作伙伴，有实际资金流转记录；但这些均为R&D合作协议，非商业销售客户关系，无商业采购或终端用户采用数据。
 
-- 支持 [ev_e6ef0c36017aa695](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): We received an upfront payment of $50.0 million and milestone payments of $12.0 million from Roche under the terms of the Roche Agreement
-- 支持 [ev_e6ef0c36017aa695](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): In December 2024, we received a $150 million non-refundable upfront payment
-- 支持 [ev_1f641be580067132](https://data.sec.gov/api/xbrl/companyfacts/CIK0001826457.json) (sec-companyfacts): Revenue (RevenueFromContractWithCustomerIncludingAssessedTax): 54,366,000 for 2026-07-01 to 2026-09-30
-- 支持 [ev_e6ef0c36017aa695](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): we are entitled to receive from Novartis up to $2.1 billion in development, regulatory, and sales milestones
-- 缺口：除Roche和Novartis外是否有其他合作客户
-- 缺口：客户集中度风险的量化（前两大客户占收入比例）
-- 缺口：通过需要直接相关的原始披露及完整证据
-- 证伪条件：Roche或Novartis终止合作协议
-- 证伪条件：临床试验失败导致里程碑付款无法触发
+- 支持 [ev_225a6e7547033302](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): We received an upfront payment of $50.0 million and milestone payments of $12.0 million from Roche under the terms of the Roche Agreement
+- 支持 [ev_11056bb3853936ad](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): In December 2024, the Company received a $ 150 million non-refundable upfront payment.
+- 缺口：等待按 Serenity 原文重评
+- 缺口：商业产品销售客户（无获批产品）
+- 缺口：Roche/Novartis合作以外的第三条收入来源
+- 证伪条件：若Roche或Novartis披露正式终止合作协议
 
-### pure_play: unknown
+### pure_play: pass
 
-公司明确为单一经营和报告分部，专注于MGD分子胶降解剂的开发。所有收入均来自MGD相关协作，无其他业务线稀释主题敞口。
+公司明确披露仅有单一经营分部，全部收入来自MGD合作协议，无多元化业务，是分子胶降解剂领域的纯粹标的。
 
-- 支持 [ev_f6ecf85ccd814b96](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): The Company manages its operations as a single operating and reportable segment committed to developing a portfolio of novel and proprietary MGDs
-- 缺口：引用不存在或原文无法匹配
-- 证伪条件：公司进入与MGD无关的新治疗领域或业务线
+- 支持 [ev_c8a83ad7d12df95e](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): The Company manages its operations as a single operating and reportable segment committed to developing a portfolio of novel and proprietary MGDs.
+- 支持 [ev_78bdbd8bd328fdb3](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): Revenue: Collaboration revenue $ 123,672 $ 75,622
+- 证伪条件：若公司进入非MGD业务领域并产生独立分部收入
 
 ### multi_node_control: unknown
 
-GLUE是药物发现平台公司，拥有QuEEN发现引擎和多条MGD管线，但这些属于同一节点（药物发现/开发）的多个产品，而非对供应链上下游多个相连节点的控制。公司依赖外部合同生产商，不控制生产节点。
+公司将制造完全外包给合同制造商，自身不控制原材料、原料药或制剂生产节点，仅控制研发平台和IP；无证据显示公司在供应链中控制两个相互连接的节点。
 
-- 反证 [ev_546134fa25481de8](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): we have no control over the ability of our contract manufacturers to maintain adequate quality control, quality assurance and qualified personnel
-- 缺口：公司向上游原料或生产整合的证据
-- 缺口：公司控制下游商业化渠道的证据
-- 缺口：反证只是通用风险条款或记录字段，不是针对公司的直接反证
-- 证伪条件：公司收购或自建GMP生产设施，实现发现+生产的双节点控制
-- 证伪条件：公司获得下游分销或商业化能力
+- 反证 [ev_3c858cc01bf00aea](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): We may not control the manufacturing process of, and may be completely dependent on, our contract manufacturing partners for compliance with cGMP requirements
+- 缺口：公司自有制造设施的披露
+- 缺口：纵向整合节点的具体证据
+- 缺口：供应链内两个以上受控节点的描述
+- 证伪条件：若公司披露收购CMO或建立自有制造能力
 
-### earnings_validation: partial
+### earnings_validation: unknown
 
-准备阶段公司。FY2025协作收入$123.7M，Q3 2026收入$54.4M（同比+326%），Q3 2026实现净利润$3.1M。XBRL报告现金$45.2M（仅现金等价物），但公司持有大量短期投资（上下文显示总流动资金$577.7M，约42.5个月跑道）。YTD运营现金流为负$122.5M，说明烧钱速度较快。公司能够资助下一个里程碑，但长期盈利依赖临床进展和里程碑触发，尚未完全验证投资论点。
+等待按 Serenity 原文重评（模型的初评是 partial，不作为结论）。公司为临床阶段，亏损属预期；2025年全年合作收入1.237亿美元、净亏损3860万美元；截至2026年9月30日现金及有价证券5.826亿美元，管理层预计现金跑道延伸至2029年，可支持下一阶段里程碑，财务状况稳健。评为partial而非pass因无商业产品收入验证投资论点。
 
-- 支持 [ev_1f641be580067132](https://data.sec.gov/api/xbrl/companyfacts/CIK0001826457.json) (sec-companyfacts): Net income (loss) (NetIncomeLoss): 3,063,000 for 2026-07-01 to 2026-09-30; form 10-Q filed 2026-11-05
-- 支持 [ev_b82ba6e9093bd82f](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): Collaboration revenue $ 123,672 $ 75,622
-- 支持 [ev_1f641be580067132](https://data.sec.gov/api/xbrl/companyfacts/CIK0001826457.json) (sec-companyfacts): Operating cash flow (NetCashProvidedByUsedInOperatingActivities): -122,461,000 for 2026-01-01 to 2026-09-30
-- 支持 [ev_1f641be580067132](https://data.sec.gov/api/xbrl/companyfacts/CIK0001826457.json) (sec-companyfacts): Cash and equivalents (CashAndCashEquivalentsAtCarryingValue): 45,180,000 for as of 2026-09-30
-- 反证 [ev_f6ecf85ccd814b96](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): Net loss $ ( 38,626 ) $ ( 72,700 )
-- 缺口：包含短期投资在内的总流动资金明细（10-Q引用）
-- 缺口：2026年全年收入指引或里程碑付款预期时间表
-- 缺口：各管线里程碑达成对收入的具体影响测算
-- 证伪条件：Novartis或Roche终止协议导致协作收入归零
-- 证伪条件：临床失败导致里程碑付款无法触发，烧钱耗尽现金
-- 证伪条件：2026 Offering所募资金低于预期
+- 支持 [ev_c4544634b93f740a](https://www.sec.gov/Archives/edgar/data/1826457/000119312526448568/glue-20260930.htm) (primary-document): As of September 30, 2026, we had an accumulated deficit of $562.1 million and had $582.6 million in cash, cash equivalents, restricted cash and marketable securities. We anticipate that our existing cash and cash equivalents and marketable securities support our cash runway into 2029.
+- 支持 [ev_78bdbd8bd328fdb3](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): Revenue: Collaboration revenue $ 123,672 $ 75,622
+- 反证 [ev_71ef730543934640](https://www.sec.gov/Archives/edgar/data/1826457/000119312526448568/glue-20260930.htm) (primary-document): For the nine months ended September 30, 2026, we reported a net loss of $84.8 million
+- 缺口：等待按 Serenity 原文重评
+- 缺口：具体里程碑触发时间表与现金消耗对照
+- 缺口：MRT-2359/MRT-8102试验结果读出数据
+- 证伪条件：若Roche/Novartis终止合作导致里程碑收入消失且现金加速消耗超出2029跑道
 
-### counter_thesis: partial
+### counter_thesis: unknown
 
-已从供应、需求、替代、地缘政治和估值多角度压力测试。主要风险：1）单一来源供应商+乌克兰/中国地缘政治风险可能中断供应链；2）专利可能被挑战或绕开；3）高度依赖Roche/Novartis两大客户，协议终止即收入消失；4）临床Phase 2失败风险（MRT-2359、MRT-8102尚在进行中）；5）FY2025仍为净亏损$38.6M。反面论点已被检视，风险未消除但跑道充足（>12个月），不存在紧迫融资风险。
+等待按 Serenity 原文重评（模型的初评是 partial，不作为结论）。文件部分披露了竞争替代风险（竞争对手绕过专利）、地缘政治供应风险（乌克兰/中国供应商）和集中客户风险（依赖Roche/Novartis）；但缺乏系统性的需求侧、估值和替代路径压力测试，反论证不完整。
 
-- 支持 [ev_caf7183d6e80a95e](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): We currently have a supplier based in Ukraine which supplies us with services and materials related to the ongoing expansion of our library of MGDs
-- 支持 [ev_b84213068232740c](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): If a court or administrative patent authority agrees, we would lose our protection of those challenged patents
-- 支持 [ev_546134fa25481de8](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): our single-source and dual source suppliers will be able to meet our demand for their products, either because of the nature of our agreements with those suppliers
-- 支持 [ev_dc0d80abff63d187](https://clinicaltrials.gov/study/NCT05546268) (clinicaltrials-gov): Study of Oral MRT-2359 in Selected Cancer Patients. Highest listed phase: Phase 2. Overall status: ACTIVE_NOT_RECRUITING
-- 反证 [ev_e6ef0c36017aa695](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): we are eligible to receive additional contingent payments from Roche upon the occurrence of defined research, development, regulatory and sales-based events exceeding $2 billion
-- 缺口：竞争对手PROTAC/其他降解剂平台的直接对比数据
-- 缺口：目标适应症市场规模及竞争格局分析
-- 缺口：通过需要直接相关的原始披露及完整证据
-- 证伪条件：MRT-2359或MRT-8102 Phase 2数据readout显示无效或严重安全性问题
-- 证伪条件：Roche行使退出权终止合作
-- 证伪条件：Novartis放弃MRT-6160的Phase 2开发
-- 证伪条件：竞争对手MGD平台获得FDA突破性疗法认定
-- 证伪条件：美中贸易制裁升级切断中国供应商
+- 支持 [ev_1ed7ec47b028eef3](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): continued Ukrainian geopolitical developments, including military activities related to Russia’s invasion of Ukraine, could adversely affect the ability for such supplier to meet our ongoing demand.
+- 支持 [ev_022e452546adf8dd](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): Competitors may challenge our issued patents or may file patent applications before we do.
+- 反证 [ev_103faa15a048ef55](https://www.sec.gov/Archives/edgar/data/1826457/000119312526448568/glue-20260930.htm) (primary-document): We anticipate that our existing cash and cash equivalents and marketable securities support our cash runway into 2029.
+- 缺口：等待按 Serenity 原文重评
+- 缺口：PROTAC等其他蛋白降解模式的竞争格局分析
+- 缺口：Novartis/Roche终止合作的具体触发条款
+- 缺口：估值对比（EV/pipeline）
+- 证伪条件：若竞争对手的同类MGD候选药物在相同适应症先于公司获批
+- 证伪条件：若Roche行使终止权且不支付进一步里程碑
 
-### management_governance: partial
+### management_governance: unknown
 
-CEO Markus Warmuth在任并签署8-K（2026年11月5日），管理层评估FY2025内控有效。但公司仍为'新兴成长型公司'，无独立审计师对内控的鉴证报告。代理声明（Part III）尚未提交，董事会详细构成和治理信息不在证据包内。CEO有10b5-1交易计划（出售最多32,000股），规模较小，无异常信号。
+等待按 Serenity 原文重评（模型的初评是 partial，不作为结论）。内部控制截至2025年12月31日被管理层评估为有效，CEO Markus Warmuth已按规则10b5-1采纳合规交易计划；公司设有三级交错董事会及多项反收购条款；但证据中无完整董事会成员组成、独立性、薪酬或继任规划披露，治理评估不完整。
 
-- 支持 [ev_190c281476e11cef](https://www.sec.gov/Archives/edgar/data/1826457/000119312526448527/glue-20261105.htm) (primary-document): By: /s/ Markus Warmuth Markus Warmuth President and Chief Executive Officer
-- 支持 [ev_5544ccb277c82e75](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): Based on this assessment, our management concluded that, as of December 31, 2025, our internal control over financial reporting was effective
-- 支持 [ev_5544ccb277c82e75](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): Markus Warmuth Chief Executive Officer Adopt May 14, 2025 August 13, 2025 - August 13, 2026 Y Up to 32,000 shares of common stock to be sold
-- 反证 [ev_5544ccb277c82e75](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): This Annual Report on Form 10-K does not include an attestation report of our independent registered public accounting firm due to a transition period
-- 缺口：董事会成员完整名单及独立性评估
-- 缺口：高管团队完整背景（CSO、CMO等关键科学/医学领导）
-- 缺口：代理声明中的薪酬和治理细节
-- 证伪条件：CEO或关键高管突然离职
-- 证伪条件：SEC调查或内控重大缺陷披露
-- 证伪条件：独立审计师出具否定意见
+- 支持 [ev_a6522dc31dc79d3a](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): our management concluded that, as of December 31, 2025, our internal control over financial reporting was effective.
+- 支持 [ev_2575255d82622c2a](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): Markus Warmuth Chief Executive Officer Adopt May 14, 2025 August 13, 2025 - August 13, 2026 Y Up to 32,000 shares of common stock to be sold
+- 支持 [ev_f92baca864d01fdc](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): a board of directors divided into three classes serving staggered three-year terms, such that not all members of the board will be elected at one time
+- 缺口：等待按 Serenity 原文重评
+- 缺口：董事会成员名单及独立董事占比
+- 缺口：高管薪酬结构及激励对齐情况
+- 缺口：继任规划披露
+- 证伪条件：若SEC或DOJ对公司或高管发起正式调查
+- 证伪条件：若CEO等关键人员突然离职且未披露继任安排
 
 ## GRAL · complete
 
-审查记录：`state/serenity-reviews/GRAL-claudecli-85e6ea0b42183574bd3d.json`
+审查记录：`state/serenity-reviews/GRAL-claude-d52777dd3dac09bf2e8f.json`
 
-### supply_chain_map: partial
+### supply_chain_map: unknown
 
-证据显示GRAIL有两个收入来源（Screening筛查和Developmental Services开发服务），客户分为商业和政府渠道，美国和国际市场。XBRL标签显示Illumina曾为关联方（2024-06-24剥离）。但缺乏上游具体投入物（测序试剂、仪器供应商）的映射，无法完整描绘供应链。
+等待按 Serenity 原文重评（模型的初评是 pass，不作为结论）。上游供应商明确：Illumina（测序仪及试剂）、Madison（血液采集管）、Twist（DNA探针）均为独家供应商；产品为Galleri多癌早期检测测试；下游用户为美国境内逾两万名处方医生网络。上下游关系具体、完整。
 
-- 支持 [ev_0527d953ce045617](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): Short-term marketable securities 759,700 654,703
-- 支持 [ev_89cd6e64e2a6b160](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): gral:ScreeningRevenueMember 2026-07-01 2026-09-30
-- 支持 [ev_89cd6e64e2a6b160](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): gral:DevelopmentalServicesRevenueMember 2026-07-01 2026-09-30
-- 支持 [ev_1cb2fab96340f5e7](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): country:US gral:ScreeningRevenueMember 2026-01-01 2026-09-30
-- 支持 [ev_543c155464909631](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): gral:ReportableSegmentMember gral:ScreeningRevenueMember 2026-07-01 2026-09-30
-- 缺口：上游关键投入物（测序仪器、试剂、样本采集耗材）的具体供应商及集中度
-- 缺口：下游具体医院/健康系统/保险覆盖客户的名称和依赖关系
-- 缺口：GRAIL Galleri检测产品在供应链中的具体位置描述
-- 证伪条件：发现GRAIL上游有多个可替代供应商，不存在供应集中风险
-- 证伪条件：发现GRAIL产品可被多种竞品轻易替代，无供应链壁垒
+- 支持 [ev_a53bf79e5e3bd9bc](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): Illumina, Inc. is our sole supplier of sequencers and certain laboratory reagents, Madison (who acquired our blood collection tube manufacturer Streck, Inc. in 2023) is our sole supplier of tubes used for sample collection and Twist is the sole supplier of our DNA probes
+- 支持 [ev_2afd918c7bb93c9d](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): established a network of more than 20,000 prescribers across the United States in a pre-reimbursement setting
+- 缺口：等待按 Serenity 原文重评
+- 缺口：下游医疗系统/医院客户的具体合同关系或采购数量
+- 缺口：国际市场分销商身份披露
+- 证伪条件：若出现主要下游客户解约或处方医生网络萎缩的具体披露，则降级
 
-### chokepoint_evidence: unknown
+### chokepoint_evidence: partial
 
-证据中没有任何段落显示GRAIL控制供应链瓶颈或拥有替代壁垒。GRAIL是液体活检/多癌早筛的检测服务提供商，属于供应链下游消费者而非瓶颈控制者。仅有AI相关性不足以通过此门。
+GRAIL在多癌早期检测领域拥有专利组合，并依赖专有甲基化分析技术，具有一定替代壁垒。但证据中无市场份额数据证明GRAIL控制供应节点的集中度；相反，公司本身处于独家供应商的下游，且专利受到欧洲反对程序挑战，替代路径未被排除。
 
-- 缺口：GRAIL在多癌早筛市场的供应集中度数据（全球竞争对手数量、市场份额）
-- 缺口：技术替代壁垒的具体证据（专利独占性、数据护城河的量化描述）
-- 缺口：下游客户无法绕过GRAIL的具体证据
-- 证伪条件：出现多个液体活检竞品（Exact Sciences、Guardant等）获得同等或更优的MCED检测批准
-- 证伪条件：GRAIL核心检测技术被开源或通用化
+- 支持 [ev_a3f49efdb3fae765](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): Two additional oppositions have been recently filed by anonymous opponents in connection with another two of our in-licensed European patents relating to Galleri, and these oppositions are currently pending
+- 反证 [ev_28044552c690e70f](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): Third parties may be able to circumvent our owned or exclusively in-licensed patents by developing similar or alternative technologies or tests in a non-infringing manner
+- 反证 [ev_fdf8f2d69aa15af0](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): Third parties could in the future also set up laboratories outside the countries in which we have filed patent applications in order to compete without infringing upon our intellectual property
+- 缺口：GRAIL在多癌早期检测市场的量化份额或竞争格局数据
+- 缺口：Galleri技术相对竞品的可替代性评估
+- 证伪条件：若有命名竞争对手获得FDA批准并进入同类市场的具体披露，则降为fail
 
-### customer_dependency: partial
+### customer_dependency: unknown
 
-XBRL标签明确显示存在单一客户集中风险（OneCustomerMember覆盖收入和应收账款），Illumina曾为关联方贡献收入。但证据未披露该客户名称、集中度百分比或设计锁定机制。仅有集中度标签支持partial。
+等待按 Serenity 原文重评（模型的初评是 partial，不作为结论）。营收数据证实存在真实商业客户（2025年全年筛查收入1.368亿美元，同比增长）；处方医生网络超两万人；但无具体命名的企业级客户，三季报XBRL标签显示存在单客户集中风险，三星投资协议尚待CFIUS审批，尚未关闭，构成不确定性。
 
-- 支持 [ev_659995c1de1b2b1a](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): us-gaap:CustomerConcentrationRiskMember gral:OneCustomerMember us-gaap:SalesRevenueNetMember 2026-07-01 2026-09-30
-- 支持 [ev_659995c1de1b2b1a](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): us-gaap:CustomerConcentrationRiskMember gral:OneCustomerMember us-gaap:AccountsReceivableMember 2026-01-01 2026-09-30
-- 支持 [ev_543c155464909631](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): gral:IlluminaInc.Member gral:ScreeningRevenueMember us-gaap:RelatedPartyMember 2025-07-01 2025-09-30
-- 缺口：单一客户的名称及其占收入比例
-- 缺口：除集中度风险标签外的具体客户采用/使用Galleri检测的披露
-- 缺口：保险覆盖/报销决定对客户依赖性的影响
-- 证伪条件：该单一大客户终止合作或大幅减少采购
-- 证伪条件：CMS或主要商业保险拒绝报销Galleri检测
+- 支持 [ev_85ae5fa120e9bf7d](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): United States Screening $ 136,760 $ 108,536 $ 75,000
+- 支持 [ev_2afd918c7bb93c9d](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): established a network of more than 20,000 prescribers across the United States in a pre-reimbursement setting
+- 反证 [ev_40f5ff19fd786839](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): in late 2025, one of our pharmaceutical partners terminated its phase 3 trial due to low enrollment, for which our methylation technology was used as a potential companion diagno
+- 反证 [ev_a2a3c9c2377d8665](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): there is no assurance that these agreements or the collaborations they govern will achieve our goals or be on terms that prove to be economically or strategically beneficial to us
+- 缺口：等待按 Serenity 原文重评
+- 缺口：具体命名的大型医疗系统或雇主客户及其合同金额
+- 缺口：Galleri单客户集中度的百分比披露
+- 证伪条件：若三星投资正式失败或主要制药合作方进一步退出并伴随收入下滑的具体数字，则降为fail
 
-### pure_play: partial
+### pure_play: pass
 
-GRAIL的两个收入来源（Screening和Developmental Services）均与多癌早期检测相关，重组计划也聚焦'核心MCED业务'。这暗示高主题集中度。但缺乏各业务分部的收入占比数据来量化AI医学主题敞口。
+公司仅一个可报告运营分部；2025年筛查收入占总营收超过92%（1.388亿/1.472亿），开发服务收入持续下降，业务高度集中于Galleri癌症筛查主题。
 
-- 支持 [ev_543c155464909631](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): gral:ReportableSegmentMember gral:DevelopmentalServicesRevenueMember 2026-07-01 2026-09-30
-- 支持 [ev_54fc01d940b9bdff](https://www.sec.gov/Archives/edgar/data/1699031/000169903125000193/gral-20250930.htm) (primary-document): gral:RestructuringPlanCoreMCEDBusinessMember 2025-01-01 2025-09-30
-- 支持 [ev_6ea13ac8afac6d8a](https://data.sec.gov/api/xbrl/companyfacts/CIK0001699031.json) (sec-companyfacts): Revenue (RevenueFromContractWithCustomerExcludingAssessedTax): 37,535,000 for 2026-07-01 to 2026-09-30
-- 缺口：Screening vs Developmental Services各自的收入金额或百分比
-- 缺口：GRAIL产品中AI/机器学习技术的具体贡献和不可替代性说明
-- 证伪条件：发现Developmental Services收入与AI医学主题无关且占比过大
-- 证伪条件：GRAIL大幅进入与癌症早筛无关的业务领域
+- 支持 [ev_20c0a71fc7a3a8ee](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): The Company operates and manages its business as one reportable operating segment
+- 支持 [ev_d873997503017b24](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): United States Screening $ 136,760 $ 108,536 $ 75,000 Development Services 333 2,280 3,679
+- 证伪条件：若公司宣布实质性多元化并购使非筛查业务收入超过30%，则重新评估
 
 ### multi_node_control: unknown
 
-证据中未显示GRAIL控制供应链中两个以上相连节点。GRAIL运营检测服务和开发服务，但这些是同一业务的不同收入类型，不构成供应链上下游的多节点控制。
+证据中无法找到GRAIL控制两个或两个以上相互连接供应链节点的具体描述。公司定位为实验室检测服务提供商，测序仪、采集管、DNA探针均依赖独家外部供应商，公司本身不拥有上游制造节点。甲基化分析算法与实验室处理虽可视为两个能力，但证据未将其描述为对供应链节点的控制。
 
-- 缺口：GRAIL是否自有测序平台或试剂生产能力的证据
-- 缺口：GRAIL是否同时控制样本采集、检测分析和报告解读等多个节点的证据
-- 缺口：垂直整合程度的具体披露
-- 证伪条件：GRAIL核心检测依赖第三方平台（如Illumina测序仪），无法自主控制关键节点
+- 反证 [ev_d08c77df0d0cf062](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): We rely on Illumina as the sole supplier of the next-generation sequencers and associated Illumina-supplied reagents we use to perform our genomic tests
+- 缺口：公司纵向整合供应链节点（如内部测序或探针制造）的任何证据
 
-### earnings_validation: partial
+### earnings_validation: unknown
 
-有实际Q3 2026财务数据：收入$37.5M（同比+3.7%），净亏损-$103.6M，现金$29M但短期有价证券$759.7M（流动性充足）。然而收入增长仅3.7%，远不能验证高增长AI医学论点。公司仍在大幅亏损，经营现金流YTD -$242M。财务数据存在但不支持强增长论点。
+等待按 Serenity 原文重评（模型的初评是 partial，不作为结论）。营收实现并持续增长（2023年9310万→2024年1.256亿→2025年1.472亿美元；2026年前三季度约1.23亿美元，同比继续增长），证实商业需求。但每股净亏损仍显著（2026年前三季度$(6.84)），尚未盈利；FDA正式批准仍待定，当前处于预报销商业化阶段，未来收入可持续性取决于监管结果。
 
-- 支持 [ev_6ea13ac8afac6d8a](https://data.sec.gov/api/xbrl/companyfacts/CIK0001699031.json) (sec-companyfacts): Revenue (RevenueFromContractWithCustomerExcludingAssessedTax): 37,535,000 for 2026-07-01 to 2026-09-30; form 10-Q filed 2026-11-05
-- 支持 [ev_6ea13ac8afac6d8a](https://data.sec.gov/api/xbrl/companyfacts/CIK0001699031.json) (sec-companyfacts): Same quarter a year earlier (2025-07-01 to 2025-09-30): 36,194,000, a change of +3.7%
-- 支持 [ev_6ea13ac8afac6d8a](https://data.sec.gov/api/xbrl/companyfacts/CIK0001699031.json) (sec-companyfacts): Net income (loss) (NetIncomeLoss): -103,568,000 for 2026-07-01 to 2026-09-30
-- 支持 [ev_0527d953ce045617](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): Cash and cash equivalents $ 28,976 $ 249,727
-- 支持 [ev_0527d953ce045617](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): Accumulated deficit ( 10,518,683 ) ( 10,211,681 )
-- 反证 [ev_6ea13ac8afac6d8a](https://data.sec.gov/api/xbrl/companyfacts/CIK0001699031.json) (sec-companyfacts): Operating cash flow (NetCashProvidedByUsedInOperatingActivities): -242,459,000 for 2026-01-01 to 2026-09-30
-- 反证 [ev_6ea13ac8afac6d8a](https://data.sec.gov/api/xbrl/companyfacts/CIK0001699031.json) (sec-companyfacts): R&D expense (ResearchAndDevelopmentExpense): 44,073,000 for 2026-07-01 to 2026-09-30
-- 缺口：收入增长加速的趋势数据（逐季对比）
-- 缺口：毛利率或单位经济学数据以验证规模化路径
-- 缺口：管理层对收入增长驱动因素的定性说明
-- 证伪条件：收入增速持续放缓至个位数或转负
-- 证伪条件：短期有价证券因市场波动大幅缩水导致流动性危机
-- 证伪条件：运营现金流烧钱速度加快使现有资金不足以支撑至盈利
+- 支持 [ev_02cbc9ad9506e471](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): Total $ 147,172 $ 125,595 $ 93,105
+- 支持 [ev_bf31a6dbcd3008a3](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): United States Screening $ 36,143 $ 32,570 $ 116,316 $ 95,482
+- 反证 [ev_ca25cd3b115c65d4](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): Net loss per share Basic and Diluted $ ( 2.21 ) $ ( 2.46 ) $ ( 6.84 ) $ ( 8.73 )
+- 反证 [ev_93e9aba0e82e7366](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): in September 2026 we launched a promotional pricing program ahead of the FDA 27 advisory committee meeting
+- 缺口：等待按 Serenity 原文重评
+- 缺口：现金余额及运营亏损率以判断资金充足性
+- 缺口：FDA咨询委员会会议结果及批准时间表
+- 缺口：毛利率趋势的具体数字
+- 证伪条件：若当期现金不足12个月运营所需且无已披露的融资安排，则降为fail
 
-### counter_thesis: partial
+### counter_thesis: unknown
 
-基于证据可识别多个重大反面风险：(1)收入增长极慢（+3.7%），与$5.2B市值严重不匹配；(2)季度净亏损$103.6M远超季度收入$37.5M；(3)累计亏损超$105亿；(4)现金从$249.7M降至$29M（9个月降88%），虽有$759.7M有价证券缓冲；(5)单一客户集中风险；(6)核心MCED业务正在重组。反面论点已被审视。
+等待按 Serenity 原文重评（模型的初评是 partial，不作为结论）。证据提供了多项具体反向论点材料：一家制药合作方因入组率低终止三期试验；欧洲专利受到匿名方反对并上诉；三星投资面临CFIUS审查不确定性；定价促销压低ASP；公司依赖三家独家供应商。供应侧、需求侧及专利侧反论均有文字支撑，但地缘政治及估值压力未见直接证据。
 
-- 支持 [ev_6ea13ac8afac6d8a](https://data.sec.gov/api/xbrl/companyfacts/CIK0001699031.json) (sec-companyfacts): Cash and equivalents (CashAndCashEquivalentsAtCarryingValue): 28,976,000 for as of 2026-09-30
-- 支持 [ev_0527d953ce045617](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): Accumulated deficit ( 10,518,683 ) ( 10,211,681 )
-- 支持 [ev_659995c1de1b2b1a](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): us-gaap:CustomerConcentrationRiskMember gral:OneCustomerMember us-gaap:SalesRevenueNetMember 2026-01-01 2026-09-30
-- 支持 [ev_54fc01d940b9bdff](https://www.sec.gov/Archives/edgar/data/1699031/000169903125000193/gral-20250930.htm) (primary-document): gral:RestructuringPlanCoreMCEDBusinessMember 2025-07-01 2025-09-30
-- 反证 [ev_0527d953ce045617](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): Short-term marketable securities 759,700 654,703
-- 缺口：竞争对手（Exact Sciences Cologuard、Guardant Shield等）的市场份额和进展对比
-- 缺口：FDA审批路径和时间线的不确定性分析
-- 缺口：地缘政治或监管变化对液体活检行业的影响评估
-- 缺口：通过需要直接相关的原始披露及完整证据
-- 证伪条件：FDA拒绝批准Galleri作为处方筛查检测
-- 证伪条件：CMS决定不覆盖多癌早筛检测
-- 证伪条件：竞争对手率先获批并占领市场
-- 证伪条件：现金+有价证券耗尽前未能实现收入显著增长，被迫大幅稀释融资
-- 证伪条件：单一大客户流失导致收入骤降
+- 支持 [ev_aed287659e741dd3](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): one of our pharmaceutical partners terminated its phase 3 trial due to low enrollment, for which our methylation technology was used as a potential companion diagno
+- 支持 [ev_7fc29bc789f72097](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): We also rely on Madison as the sole supplier of our blood collection tubes and Twist as the sole supplier of our DNA panels
+- 支持 [ev_bd89ef2321607db0](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): The challengers have filed an appeal, which is currently pending
+- 反证 [ev_a32c3e24321bf954](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): We believe this commercial network represents a significant opportunity to drive further demand for Galleri
+- 缺口：等待按 Serenity 原文重评
+- 缺口：FDA不批准情景下的具体财务影响量化
+- 缺口：主要竞争对手产品管线及上市时间表
+- 缺口：估值相对可比公司的合理性讨论
+- 证伪条件：若出现命名竞争对手获批同类多癌筛查测试并抢夺市场份额的具体披露
 
-### management_governance: partial
+### management_governance: unknown
 
-证据仅显示CFO Aaron Freidin签署了8-K报告。公司进行了核心MCED业务重组（含裁员和其他重组费用）。缺乏CEO身份、董事会构成、高管变动历史等关键治理信息。重组表明管理层在调整战略方向，但无法充分评估领导层稳定性。
+等待按 Serenity 原文重评（模型的初评是 partial，不作为结论）。10-K披露CEO Robert Ragusa将于2026年6月1日退休，Joshua Ofman博士（原公司总裁）接任；过渡安排有序，Ragusa将以高级顾问身份协助至2027年3月。内部控制经管理层评估有效（截至2025年12月31日）。但接任CEO系2026年3月宣布、6月生效，三季报（2026年11月）未提供新CEO治理状况的更新，接任后管理层稳定性无额外证据。
 
-- 支持 [ev_641efa06b51c0bd7](https://www.sec.gov/Archives/edgar/data/1699031/000162828026070118/gral-20261104.htm) (primary-document): Name: Aaron Freidin Title: Chief Financial Officer
-- 支持 [ev_40953ade3876dd75](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): gral:RestructuringPlanCoreMCEDBusinessMember 2024-08-09 2024-12-31
-- 缺口：CEO身份及任期
-- 缺口：董事会构成和独立性
-- 缺口：高管团队变动历史（特别是Illumina剥离后）
-- 缺口：任何正在进行的调查或诉讼对管理层的影响
-- 证伪条件：发现CEO或其他关键高管近期离职
-- 证伪条件：发现SEC调查或重大诉讼影响公司治理
-- 证伪条件：发现Illumina剥离后治理结构存在重大缺陷
+- 支持 [ev_5c5e800055bc400e](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): On March 10, 2026, the Board of Directors appointed Joshua Ofman, M.D., MSHS, age 61, to serve as Chief Executive Officer of the Company, effective June 1, 2026
+- 支持 [ev_04c963c33cc6e327](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): our management concluded that our internal control over financial reporting was effective as of December 31, 2025
+- 支持 [ev_2993833b9017059b](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): Dr. Ofman has served as the Company's President since June 2021
+- 缺口：等待按 Serenity 原文重评
+- 缺口：2026年6月接任后管理层稳定性及战略连续性的披露
+- 缺口：独立注册会计师对内部控制的证明报告（公司仍为新兴成长公司，豁免此要求）
+- 证伪条件：若出现关键高管离职潮或针对管理层的监管调查披露，则降为fail
 
 ## GSK · complete
 
@@ -4861,110 +4817,104 @@ XBRL标签数据仅包含会计科目名称和日期标记，未包含可读的�
 
 ## PRCT · complete
 
-审查记录：`state/serenity-reviews/PRCT-claudecli-a8b64cfa8a25a1401f5a.json`
+审查记录：`state/serenity-reviews/PRCT-claude-55c25a9c172d781f808a.json`
 
-### supply_chain_map: partial
+### supply_chain_map: unknown
 
-证据显示PRCT的产品线（HYDROS机器人系统、手柄耗材、服务）和下游地理分布（美国/国际），但缺乏上游供应商、关键零部件来源的具体披露。仅能从SEC文件推断产品→医院的下游关系，上游输入完全缺失。
+等待按 Serenity 原文重评（模型的初评是 partial，不作为结论）。上游：公司依赖众多全球单一来源供应商提供零部件与子组件；自身在加州圣何塞工厂制造AquaBeam/HYDROS机器人系统及一次性手柄；下游：通过第三方物流发货给全球医院客户，每台系统附带第三方超声系统。节点关系已基本勾勒，但上游供应商未具名，下游客户未披露具体医院名称，关系不完整。
 
-- 支持 [ev_c6adc9a5e1203e3f](https://www.sec.gov/Archives/edgar/data/1588978/000158897826000039/prct-20260930.htm) (primary-document): country:US prct:SystemSalesAndLeasesMember 2026-07-01 2026-09-30
-- 支持 [ev_c6adc9a5e1203e3f](https://www.sec.gov/Archives/edgar/data/1588978/000158897826000039/prct-20260930.htm) (primary-document): country:US prct:HandPiecesAndOtherConsumablesMember 2026-07-01 2026-09-30
-- 支持 [ev_c6adc9a5e1203e3f](https://www.sec.gov/Archives/edgar/data/1588978/000158897826000039/prct-20260930.htm) (primary-document): country:US prct:ServiceRevenueMember 2026-07-01 2026-09-30
-- 支持 [ev_22e9714eed59588d](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K251082) (fda-ai-device-list): Device: HYDROS Robotic System (HY1000); HYDROS Handpiece (HH1000); HYDROS TRUS Probe (HU1000)
-- 缺口：上游关键零部件供应商名称及集中度
-- 缺口：制造环节外包vs自产的披露
-- 缺口：关键原材料或芯片来源信息
-- 证伪条件：发现PRCT关键部件（如超声探头、机器人执行器）依赖单一供应商且有替代方案
+- 支持 [ev_44211201980a25d3](https://www.sec.gov/Archives/edgar/data/1588978/000158897826000009/prct-20251231.htm) (primary-document): We directly manufacture our robotic systems, the handpiece and other accessories at our facility in San Jose, California
+- 支持 [ev_be11ab86422ced41](https://www.sec.gov/Archives/edgar/data/1588978/000158897826000009/prct-20251231.htm) (primary-document): We rely on third-party suppliers, almost all of whom are single source suppliers, to provide us with certain components, sub-assemblies and materials for our products
+- 支持 [ev_09524bb21281ed09](https://www.sec.gov/Archives/edgar/data/1588978/000158897826000039/prct-20260930.htm) (primary-document): Each robotic system is shipped to our customers with a third-party manufactured ultrasound system and probe
+- 支持 [ev_8bc2d4b5f8a49c6a](https://www.sec.gov/Archives/edgar/data/1588978/000158897826000039/prct-20260930.htm) (primary-document): We utilize a well-known third-party logistics provider located in the United States and the Netherlands to ship our products to our customers globally
+- 缺口：等待按 Serenity 原文重评
+- 缺口：上游关键单一来源供应商的具体名称及供应内容
+- 缺口：下游具体医院客户或战略合作医疗系统名称
+- 缺口：各节点之间的合同或协议细节
+- 证伪条件：披露某关键单一来源供应商中断供货导致生产停滞
+- 证伪条件：主要客户取消采购或退回系统的具体事件
 
 ### chokepoint_evidence: unknown
 
-证据中没有任何关于供应集中度或替代壁垒的具体数据。PRCT是手术机器人公司，市场上存在Intuitive Surgical等强劲竞争对手。FDA AI设备清关仅证明产品获批，不构成供应链瓶颈证据。仅有AI相关性不足以通过此门。
+证据中没有任何段落表明PRCT在其所在供应链中控制了一个瓶颈节点。专利条款讨论的是PRCT自身专利保护的不确定性和潜在侵权风险，而非PRCT作为他人供应链的卡喉点。单一来源供应商条款反映的是PRCT对上游供应商的依赖风险，与Serenity方法论所要求的供应集中度或替代壁垒相悖。
 
-- 缺口：PRCT在手术机器人/水刀技术领域的全球市场份额数据
-- 缺口：竞争对手替代产品的技术壁垒或转换成本分析
-- 缺口：任何表明供应端集中度的定量证据
-- 证伪条件：发现水刀前列腺手术技术有多家竞争者提供可直接替代的产品
-- 证伪条件：发现医院可以低成本从HYDROS切换到其他机器人平台
+- 缺口：PRCT在某一物理输入节点的全球市场份额数据
+- 缺口：BPH手术机器人领域的供应集中度或替代周期数据
+- 缺口：证明PRCT产品无法被替代的具体技术壁垒证据
+- 证伪条件：出现直接竞争产品获得FDA清关并被主要医院采购的具体事实
+- 证伪条件：PRCT所使用的核心技术被证明可以低成本替代
 
 ### customer_dependency: unknown
 
-证据仅披露了美国和国际两个地理维度的收入分布，没有任何具名客户、医院系统、采购合同或设计锁定的披露。XBRL中存在地理集中度风险标签，但无具体客户层面的依赖数据。
+等待按 Serenity 原文重评（模型的初评是 partial，不作为结论）。证据显示装机量达1095台（美国858台），且收入客户分散（无单一客户超过10%营收），表明产品已实现商业化采用。但没有任何具体客户名称、医院系统名称或关键客户关系被披露，仅有总量数据，不满足已披露客户关系的完整标准。
 
-- 支持 [ev_2ba63343a3f09050](https://www.sec.gov/Archives/edgar/data/1588978/000158897826000039/prct-20260930.htm) (primary-document): us-gaap:GeographicConcentrationRiskMember us-gaap:SalesRevenueNetMember country:US 2026-07-01 2026-09-30
-- 缺口：前十大客户或超过10%收入的单一客户披露
-- 缺口：具名医院系统或医疗集团的采购/部署信息
-- 缺口：装机量或活跃使用机构数量数据
-- 证伪条件：发现收入高度依赖少数几家医院集团，存在客户集中风险
+- 支持 [ev_c2aaf22068f587e6](https://www.sec.gov/Archives/edgar/data/1588978/000158897826000039/prct-20260930.htm) (primary-document): we had an install base of 1,095 robotic systems globally, including 858 in the United States
+- 支持 [ev_b17a62c88300f468](https://www.sec.gov/Archives/edgar/data/1588978/000158897826000009/prct-20251231.htm) (primary-document): No customers accounted for more than 10% of revenue during the year ended December 31, 2025, 2024 and 2023
+- 缺口：等待按 Serenity 原文重评
+- 缺口：具体医院或医疗系统客户名称
+- 缺口：重要客户的合同规模或长期采购协议
+- 缺口：装机医院的再购买率或耗材消耗量数据
+- 证伪条件：主要采购医疗系统公开取消订单或转向竞争产品
+- 证伪条件：美国泌尿外科协会指南将Aquablation降级或移除推荐
 
 ### pure_play: partial
 
-PRCT所有收入线（系统销售/租赁、手柄耗材、服务）均围绕HYDROS机器人手术平台，属于纯粹的手术机器人公司。但在AI医疗主题下，其AI成分仅体现在FDA AI设备清关记录，实际AI对收入的贡献比例不明。作为手术机器人纯粹标的可pass，但作为AI医疗纯粹标的证据不足。
+证据显示PRCT全部营收来源于AquaBeam/HYDROS机器人系统及配套耗材，业务完全聚焦于前列腺增生BPH的Aquablation治疗领域，无其他业务板块或收入来源的披露，属于该治疗领域的纯粹标的。
 
-- 支持 [ev_22e9714eed59588d](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K251082) (fda-ai-device-list): FDA AI-enabled medical-device authorization record. Manufacturer: Procept Biorobotics
-- 支持 [ev_c85edb17fa532e6a](https://www.sec.gov/Archives/edgar/data/1588978/000158897826000030/prct-20260630.htm) (primary-document): Cash and cash equivalents $ 227,914 $ 286,503 Accounts receivable, net 107,606 83,533 Inventory 77,061 70,694
-- 缺口：AI功能对HYDROS产品差异化定价的具体贡献
-- 缺口：AI相关收入占总收入的比例
-- 缺口：与非AI手术替代方案（如传统TURP）的竞争定位分析
-- 证伪条件：发现HYDROS的核心价值在于水刀技术而非AI，AI仅为辅助功能
+- 支持 [ev_517581ef049ad1b4](https://www.sec.gov/Archives/edgar/data/1588978/000158897826000039/prct-20260930.htm) (primary-document): We generated revenue of $275.9 million and incurred a net loss of $85.0 million for the nine months ended September 30, 2026
+- 支持 [ev_52fcbac75ea743a0](https://www.sec.gov/Archives/edgar/data/1588978/000158897826000039/prct-20260930.htm) (primary-document): The Company received U.S. Food and Drug Administration clearance in December 2017 to market its AquaBeam ® Robotic System, an automated surgical robot providing tissue removal for the treatment of benign prostatic hyperplasia
+- 缺口：明确的业务分部财务披露以确认无其他收入来源
+- 缺口：通过需要直接相关的原始披露及完整证据
+- 证伪条件：公司宣布进入其他治疗领域导致资本分散
+- 证伪条件：BPH业务收入占比大幅下降
 
-### multi_node_control: partial
+### multi_node_control: unknown
 
-PRCT运营"刀片+刀架"模式：同时销售机器人系统（资本设备）、一次性手柄耗材和售后服务。这构成设备→耗材→服务的纵向整合，但本质是单一产品平台的商业模式延伸，不等于控制供应链上多个独立节点。缺乏上游材料或核心技术节点的控制证据。
+证据中无任何信息表明PRCT控制供应链中两个或以上相连节点。公司在圣何塞自产机器人，但关键零部件完全依赖外部单一来源供应商，不控制上游；下游配送依赖第三方物流。制造加配送不构成Serenity方法论意义上的多节点控制，因为后者需要对相互关联的瓶颈节点拥有所有权或战略掌控。
 
-- 支持 [ev_8eb90ccfea541151](https://www.sec.gov/Archives/edgar/data/1588978/000158897826000030/prct-20260630.htm) (primary-document): country:US prct:SystemSalesAndLeasesMember 2026-01-01 2026-06-30
-- 支持 [ev_8eb90ccfea541151](https://www.sec.gov/Archives/edgar/data/1588978/000158897826000030/prct-20260630.htm) (primary-document): country:US prct:HandPiecesAndOtherConsumablesMember 2026-01-01 2026-06-30
-- 缺口：上游关键技术（如超声、机器人控制）的自研vs外购比例
-- 缺口：任何垂直整合至供应链上游节点的证据
-- 缺口：专利或技术壁垒构成的多节点控制文件
-- 证伪条件：发现PRCT的核心硬件模块全部外购，仅做系统集成
+- 缺口：PRCT对上游原材料或关键子组件供应商的控股或长期独家控制证据
+- 缺口：纵向整合多个价值链节点的具体披露
+- 证伪条件：证明PRCT仅为单一产品制造商不控制任何上游关键供应节点的具体披露
 
-### earnings_validation: partial
+### earnings_validation: unknown
 
-有明确的实际财务数据：Q3 2026收入$98.3M（同比+18%），但净亏损$26.5M，YTD经营现金流-$66.4M。公司现金$218M对比年化烧钱约$88M，跑道约2.5年。收入在增长但尚未盈利，无法完全验证投资论点。
+等待按 Serenity 原文重评（模型的初评是 partial，不作为结论）。PRCT是已商业化公司，前三季度营收2.759亿美元同比增长约19%，现金2.184亿美元。但9个月经营现金流出6630万美元年化约8800万，净亏损8500万美元且同比扩大（2025年同期6570万），亏损扩大速度快于收入增长。现金跑道约2.5年，短期无融资风险，但盈利路径尚未显现，对商业化增长论点的支撑不完整。
 
-- 支持 [ev_ae5937dc1f4c4422](https://data.sec.gov/api/xbrl/companyfacts/CIK0001588978.json) (sec-companyfacts): Revenue (RevenueFromContractWithCustomerExcludingAssessedTax): 98,291,000 for 2026-07-01 to 2026-09-30
-- 支持 [ev_ae5937dc1f4c4422](https://data.sec.gov/api/xbrl/companyfacts/CIK0001588978.json) (sec-companyfacts): Same quarter a year earlier (2025-07-01 to 2025-09-30): 83,327,000, a change of +18.0%
-- 支持 [ev_ae5937dc1f4c4422](https://data.sec.gov/api/xbrl/companyfacts/CIK0001588978.json) (sec-companyfacts): Net income (loss) (NetIncomeLoss): -26,516,000 for 2026-07-01 to 2026-09-30
-- 支持 [ev_ae5937dc1f4c4422](https://data.sec.gov/api/xbrl/companyfacts/CIK0001588978.json) (sec-companyfacts): Cash and equivalents (CashAndCashEquivalentsAtCarryingValue): 218,369,000 for as of 2026-09-30
-- 支持 [ev_ae5937dc1f4c4422](https://data.sec.gov/api/xbrl/companyfacts/CIK0001588978.json) (sec-companyfacts): Operating cash flow (NetCashProvidedByUsedInOperatingActivities): -66,363,000 for 2026-01-01 to 2026-09-30
-- 反证 [ev_fb2ecf4905f85fd7](https://news.google.com/rss/articles/CBMi4AFBVV95cUxQbEd2UWdSQ29xSlFUNVpMNmdXVHBUNEFzTk5mcV9jaDI3ZkV3RVlQNnhuX2MwVmI3SnZQeDg3TjliQ05IcTdFM3FUR3luRkV4MW5WTV9WY254VVJTZ1hUeW5ncENtSGtpNzdrMi0zTkJXdFZ2Vy1BLWNqbjlDaVlwTEhyRmtYZ2YySmVjVmJqSExaS0pNTmppbnIxampnVXl3Zks3UUVYT3ltd3loNDBBbndfaUUxTXRqbUdXcTZBSVRld0EzdUNtY182V2s0S2tJVWlQS3RJZWM5V2hyOFRCSA?oc=5) (news-feed): PROCEPT BioRobotics Corporation Reports Q3 Revenue $98.3M, vs. FactSet Est of $100.5M
-- 缺口：毛利率趋势及盈利路径时间表
-- 缺口：装机量增长率与耗材复购率数据
-- 缺口：管理层对盈亏平衡时间点的指引
-- 证伪条件：收入增速持续放缓至个位数且亏损扩大
-- 证伪条件：现金跑道缩短至12个月以下且无融资安排
+- 支持 [ev_5ab6751384ec02fc](https://www.sec.gov/Archives/edgar/data/1588978/000158897826000039/prct-20260930.htm) (primary-document): We generated revenue of $275.9 million and incurred a net loss of $85.0 million for the nine months ended September 30, 2026, compared to revenue of $231.7 million and a net loss of $65.7 million for the nine months ended September 30, 2025
+- 反证 [ev_ad483a8c7ea44464](https://www.sec.gov/Archives/edgar/data/1588978/000158897826000039/prct-20260930.htm) (primary-document): Loss from operations ( 27,376 ) ( 23,192 ) ( 87,372 ) ( 72,818 )
+- 反证 [ev_4de00e0080a6841f](https://www.sec.gov/Archives/edgar/data/1588978/000158897826000039/prct-20260930.htm) (primary-document): Net cash used in operating activities ( 66,363 ) ( 38,658 )
+- 缺口：等待按 Serenity 原文重评
+- 缺口：毛利率趋势数据以判断规模化盈利可行性
+- 缺口：管理层对盈亏平衡时间节点的具体指引
+- 缺口：耗材服务收入与系统销售收入的分拆数据
+- 缺口：未在原文中找到引用：Cash, cash equivalents and restricted cash $ 221,407 $ 297,3
+- 证伪条件：营收增速持续低于运营费用增速导致亏损无法收窄
+- 证伪条件：现金余额在无新融资的情况下降至不足12个月运营所需
 
-### counter_thesis: partial
+### counter_thesis: unknown
 
-可识别的风险包括：1）Q3收入低于分析师预期（$98.3M vs $100.5M预期）；2）持续亏损且现金消耗较快（YTD -$66M）；3）$51.7M长期债务；4）竞争激烈且快速变化的环境。但缺乏对替代技术、竞争对手定价压力、监管风险的系统性分析。
+等待按 Serenity 原文重评（模型的初评是 partial，不作为结论）。供应端反论有证据支撑：几乎所有关键零部件依赖单一来源供应商且未获监管批准的备用供应商。但需求侧、替代路径、地缘政治及估值压力测试均缺乏具体证据。竞争风险的相关表述为通用性风险因素语言，不符合引用标准。
 
-- 支持 [ev_fb2ecf4905f85fd7](https://news.google.com/rss/articles/CBMi4AFBVV95cUxQbEd2UWdSQ29xSlFUNVpMNmdXVHBUNEFzTk5mcV9jaDI3ZkV3RVlQNnhuX2MwVmI3SnZQeDg3TjliQ05IcTdFM3FUR3luRkV4MW5WTV9WY254VVJTZ1hUeW5ncENtSGtpNzdrMi0zTkJXdFZ2Vy1BLWNqbjlDaVlwTEhyRmtYZ2YySmVjVmJqSExaS0pNTmppbnIxampnVXl3Zks3UUVYT3ltd3loNDBBbndfaUUxTXRqbUdXcTZBSVRld0EzdUNtY182V2s0S2tJVWlQS3RJZWM5V2hyOFRCSA?oc=5) (news-feed): PROCEPT BioRobotics Corporation Reports Q3 Revenue $98.3M, vs. FactSet Est of $100.5M
-- 支持 [ev_ae5937dc1f4c4422](https://data.sec.gov/api/xbrl/companyfacts/CIK0001588978.json) (sec-companyfacts): Net income (loss) (NetIncomeLoss): -26,516,000 for 2026-07-01 to 2026-09-30
-- 支持 [ev_c85edb17fa532e6a](https://www.sec.gov/Archives/edgar/data/1588978/000158897826000030/prct-20260630.htm) (primary-document): Moreover, we operate in a very competitive and rapidly changing environment. New risks emer
-- 支持 [ev_ae5937dc1f4c4422](https://data.sec.gov/api/xbrl/companyfacts/CIK0001588978.json) (sec-companyfacts): R&D expense (ResearchAndDevelopmentExpense): 20,011,000 for 2026-07-01 to 2026-09-30
-- 反证 [ev_ae5937dc1f4c4422](https://data.sec.gov/api/xbrl/companyfacts/CIK0001588978.json) (sec-companyfacts): Revenue (RevenueFromContractWithCustomerExcludingAssessedTax): 98,291,000 for 2026-07-01 to 2026-09-30
-- 反证 [ev_ae5937dc1f4c4422](https://data.sec.gov/api/xbrl/companyfacts/CIK0001588978.json) (sec-companyfacts): Cash and equivalents (CashAndCashEquivalentsAtCarryingValue): 218,369,000 for as of 2026-09-30
-- 缺口：Intuitive Surgical等竞争对手在BPH领域的产品规划
-- 缺口：Rezum等替代微创疗法的市场份额趋势
-- 缺口：估值倍数与同类公司对比分析
-- 缺口：地缘政治或供应链中断对制造的影响评估
-- 证伪条件：竞争对手推出等效或更优的水刀/机器人BPH手术方案
-- 证伪条件：关键临床数据显示HYDROS长期疗效不优于现有替代方案
-- 证伪条件：医保报销政策变化导致医院采购意愿下降
-- 证伪条件：收入增长持续低于预期导致现金跑道不足
+- 支持 [ev_007af02c4ceb99d1](https://www.sec.gov/Archives/edgar/data/1588978/000158897826000009/prct-20251231.htm) (primary-document): We rely on third-party suppliers, almost all of whom are single source suppliers, to provide us with certain components, sub-assemblies and materials for our products. These components, sub-assemblies and materials are critical, and, for certain items, there are relatively few alternative sources of supply
+- 支持 [ev_8feebf9327f962a3](https://www.sec.gov/Archives/edgar/data/1588978/000158897826000009/prct-20251231.htm) (primary-document): We have not been qualified or obtained necessary regulatory approvals for additional suppliers for most of these components, sub-assemblies and materials
+- 缺口：等待按 Serenity 原文重评
+- 缺口：竞争产品如激光前列腺手术市场份额变化的具体数据
+- 缺口：主要市场医保报销政策变化对需求的影响分析
+- 缺口：估值相对于增长预期的合理性分析
+- 证伪条件：具名竞争对手发布可比疗效数据并被主要医院采购
+- 证伪条件：美国CMS削减Aquablation治疗报销码或报销额度
 
-### management_governance: partial
+### management_governance: unknown
 
-证据中仅出现首席法务官Alaleh Nouri签署8-K的信息，未发现CEO/CFO变动、调查或治理问题的披露。但也缺乏管理层稳定性、董事会构成、高管变动等正面证据。公司为大型加速申报人，合规义务较完整。
+等待按 Serenity 原文重评（模型的初评是 pass，不作为结论）。PricewaterhouseCoopers出具清洁审计意见，确认2025年12月31日内部控制有效；管理层CEO和CFO自评披露控制程序有效；无任何未决调查、重大缺陷或管理层继任危机的相关披露。
 
-- 支持 [ev_0f72595861e0b1d1](https://www.sec.gov/Archives/edgar/data/1588978/000158897826000036/prct-20261104.htm) (primary-document): By: /s/ Alaleh Nouri Alaleh Nouri Chief Legal Officer and Secretary
-- 支持 [ev_dadb12c0c7105b2f](https://www.sec.gov/Archives/edgar/data/1588978/000158897826000039/prct-20260930.htm) (primary-document): Large accelerated filer ☒ Accelerated filer ☐ Non-accelerated filer ☐ Smaller reporting company ☐ Emerging growth company ☐
-- 缺口：CEO和CFO身份及任期信息
-- 缺口：董事会构成及独立董事比例
-- 缺口：高管近期变动或继任计划
-- 缺口：内部人交易模式（Form 4数据）
-- 证伪条件：发现关键高管近期离职或正在接受调查
-- 证伪条件：发现重大内控缺陷或审计意见保留
+- 支持 [ev_e2f533e5769dd0cf](https://www.sec.gov/Archives/edgar/data/1588978/000158897826000009/prct-20251231.htm) (primary-document): the Company maintained, in all material respects, effective internal control over financial reporting as of December 31, 2025
+- 支持 [ev_783e87aebccf4bf1](https://www.sec.gov/Archives/edgar/data/1588978/000158897826000009/prct-20251231.htm) (primary-document): our Chief Executive Officer and our Chief Financial Officer have concluded that, as of December 31, 2025, our disclosure controls and procedures were effective at the reasonable assurance level
+- 缺口：等待按 Serenity 原文重评
+- 缺口：董事会成员背景及独立性的具体披露
+- 缺口：近期管理层变动或继任计划的信息
+- 证伪条件：SEC或DOJ对公司高管发起调查的具体披露
+- 证伪条件：审计师出具有保留意见或发现重大缺陷
 
 ## PRME · complete
 
@@ -5738,7 +5688,7 @@ SGMT为preparation阶段Phase 3公司，亏损属预期。公司披露截至2026
 
 ## SOPH · complete
 
-审查记录：`state/serenity-reviews/SOPH-claude-e0f8541e0193d6321370.json`
+审查记录：`state/serenity-reviews/SOPH-claude-7d84213d4e865edb773e.json`
 
 ### supply_chain_map: pass
 
@@ -5824,14 +5774,15 @@ SGMT为preparation阶段Phase 3公司，亏损属预期。公司披露截至2026
 
 ### management_governance: partial
 
-按 Serenity 规则：一手材料尚未证明领导层连续。2026年11月的6-K引述Ross Muken为CEO，确认其于2026年7月由总裁升任，CEO继任已命名且完成；CFO George Cardoza仅于2026年3月申报的20-F（信息截至2026年2月15日）中出现，当前通道材料无其11月在任确认，连续性不完整；无调查披露，无悬空继任缺位。
+按 Serenity 规则：一手材料尚未证明领导层连续。CEO Ross Muken由Q3 2026文件（6-K）明确确认在任；CFO George Cardoza仅在截至2026年2月15日的20-F中确认在任，当前通道（Q3 2026）无其在任证据，CFO连续性不完整。无调查披露，无悬空或未命名的继任缺位。
 
 - 支持 [ev_be7b6e3566a0664a](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000350/sophiageneticssaex993q32026.htm) (primary-document): said Ross Muken, Chief Executive Officer of SOPHiA GENETICS
+- 支持 [ev_0dca9e8ecc5ed3d1](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000350/sophiageneticssaex991q32026.htm) (primary-document): As announced in January 2026, the Company’s President was promoted to CEO in July 2026 and, from that date, assumed the role of CODM.
 - 支持 [ev_37e44de940fc1a2a](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): George Cardoza Chief Financial Officer 64
 - 支持 [ev_a9bc5210ea5a74e1](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): Ages are as of February 15, 2026.
 - 支持 [ev_0dca9e8ecc5ed3d1](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000350/sophiageneticssaex991q32026.htm) (primary-document): As announced in January 2026, the Company’s President was promoted to CEO in July 2026 and, from that date, assumed the role of CODM.
 - 支持 [ev_be7b6e3566a0664a](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000350/sophiageneticssaex993q32026.htm) (primary-document): said Ross Muken, Chief Executive Officer of SOPHiA GENETICS
-- 缺口：CFO George Cardoza 在2026年11月的在任状态——仅见于2026年2月15日的20-F，当前6-K（2026年11月）未确认
+- 缺口：CFO George Cardoza在2026年2月15日之后（尤其Q3 2026）的在任确认
 
 ## TECX · complete
 

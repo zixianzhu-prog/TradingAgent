@@ -1,6 +1,6 @@
 # Blind test scoreboard
 
-Generated 2026-11-24T17:51:54+00:00. Weeks frozen: 1.
+Generated 2026-11-25T17:12:10+00:00. Weeks frozen: 1.
 
 **Verdict:** 1 of 26 weeks frozen: too early to compare. Citation accuracy is the only early read.
 

@@ -252,6 +252,9 @@ if [ ! -f "$SCREEN_STATE" ] || [ -n "$(find "$SCREEN_STATE" -mtime +6 2>/dev/nul
   PYTHONPATH=scripts python3 scripts/inventor_chain.py || note_fail "Inventor chain failed; keeping the last result"
   # Weekly: specialist funds' quarterly 13F adds and trims in covered companies.
   PYTHONPATH=scripts python3 scripts/fund_13f.py || note_fail "13F holdings failed; keeping the last result"
+  # Weekly: patent life from USPTO file wrappers (needs USPTO_API_KEY) and where companies and key people are speaking.
+  PYTHONPATH=scripts python3 scripts/patent_status.py || note_fail "Patent status failed; keeping the last result"
+  PYTHONPATH=scripts python3 scripts/people_activity.py || note_fail "People activity failed; keeping the last result"
   # Weekly: replay the order rule on 2014+ 10-K filings (deterministic; outputs/order-rule-backtest.md).
   PYTHONPATH=scripts ai-fund-lab/.venv/bin/python scripts/backtest_order_rule.py \
     || note_fail "Order-rule backtest failed; keeping the last result"
@@ -284,6 +287,8 @@ if [ ! -f "$SCREEN_STATE" ] || [ -n "$(find "$SCREEN_STATE" -mtime +6 2>/dev/nul
     if [ -n "$QUEUE" ]; then
       PYTHONPATH=scripts python3 scripts/claude_counter_review.py --tickers $QUEUE || note_fail "Counter-thesis review failed; keeping the last grades"
     fi
+    # Diagnostics unit economics quoted from 10-K/10-Q (tests, revenue per test, margin, payers).
+    PYTHONPATH=scripts python3 scripts/diagnostics_economics.py || note_fail "Diagnostics economics failed; keeping the last result"
     # Blind test: freeze this week's calls from the agent, a plain web-search model and a mechanical rule (once a week).
     PYTHONPATH=scripts python3 scripts/blind_test.py --freeze || note_fail "Blind-test freeze failed; it retries on the next deep run"
   fi

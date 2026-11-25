@@ -1,6 +1,6 @@
 # SEC 13D/13G 重要股东雷达
 
-> 状态：ok。覆盖队列 44 家；文件 247 份；13D 31；13G 216。
+> 状态：partial。覆盖队列 44 家；文件 246 份；13D 30；13G 216。
 
 > 13D/13G 证明重要股东的受益所有权，不等于公司获得新融资。13D 可能带有影响控制的意图；13G 通常是被动或合格机构申报。
 
@@ -72,6 +72,7 @@
 
 | 日期 | 公司 | 文件 | 申报人 | 持股比例 | 类型 | 来源 |
 |---|---|---|---|---:|---|---|
+| 2026-11-24 | IBIO | SCHEDULE 13G/A | Coastlands Capital LP | 13.01% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1420720/000110465926131475/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-20 | YARW | SCHEDULE 13D/A | AI Biotechnology LLC | 1.16% | potential-control-or-active | [SEC](https://www.sec.gov/Archives/edgar/data/1566044/000119312526470747/xslSCHEDULE_13D_X02/primary_doc.xml) |
 | 2026-11-17 | YARW | SCHEDULE 13G/A | Logos Global Management LP | 9.99% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1566044/000093583626000626/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | SDGR | SCHEDULE 13G/A | Rubric Capital Management LP | 3.02% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1490978/000110465926128339/xslSCHEDULE_13G_X02/primary_doc.xml) |
@@ -115,7 +116,6 @@
 | 2026-11-13 | OM | SCHEDULE 13G/A | AQR Capital Management, LLC | 1.83% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1484612/000116755726000250/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-12 | SOPH | SCHEDULE 13D/A | Schindel Yair Chaim | 6.20% | potential-control-or-active | [SEC](https://www.sec.gov/Archives/edgar/data/1840706/000117891326005168/xslSCHEDULE_13D_X02/primary_doc.xml) |
 | 2026-11-12 | IRD | SCHEDULE 13G/A | Adage Capital Management, L.P. | 2.71% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1228627/000091957426007560/xslSCHEDULE_13G_X02/primary_doc.xml) |
-| 2026-11-12 | BDSX | SCHEDULE 13D/A | SCHULER JACK W | 22.30% | potential-control-or-active | [SEC](https://www.sec.gov/Archives/edgar/data/1439725/000090514826004746/xslSCHEDULE_13D_X02/primary_doc.xml) |
 | 2026-11-10 | RXRX | SCHEDULE 13G | STATE STREET CORPORATION | 5.60% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1601830/000009375126000711/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-10 | CGEM | SCHEDULE 13G | STATE STREET CORPORATION | 4.00% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1789972/000009375126000639/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-09 | PALI | SCHEDULE 13G/A | Soleus Capital Master Fund, L.P. | 8.60% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1357459/000121390026117542/xslSCHEDULE_13G_X02/primary_doc.xml) |
@@ -225,7 +225,6 @@
 | 2026-05-15 | ANTX | SCHEDULE 13G/A | Almitas Capital LLC | 4.10% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1880438/000207367926000066/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-05-15 | RNA | SCHEDULE 13G | RA Capital Management, L.P. | 5.60% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/2093101/000134682426000145/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-05-15 | IBIO | SCHEDULE 13G/A | Logos Global Management LP | 0.00% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1420720/000093583626000283/xslSCHEDULE_13G_X02/primary_doc.xml) |
-| 2026-05-15 | IBIO | SCHEDULE 13G/A | Point72 Asset Management, L.P. | 0.00% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1420720/000091957426003474/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-05-15 | ELDN | SCHEDULE 13G/A | BIOTECHNOLOGY VALUE FUND L P | 9.99% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1404281/000092189526001390/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-05-15 | KALA | SCHEDULE 13G/A | Baker Bros. Advisors LP | 0.01% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1479419/000110465926062584/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-05-15 | HCAT | SCHEDULE 13G/A | Stoney Lonesome HF LP | 8.60% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1636422/000092189526001411/xslSCHEDULE_13G_X02/primary_doc.xml) |
