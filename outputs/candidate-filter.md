@@ -14,15 +14,15 @@
 | SDGR · Schrodinger, Inc. | ai | Drug discovery | AI is core (research_development) | revenue $258M a year; registered clinical trial | 87 |
 | RXRX · RECURSION PHARMACEUTICALS, INC. | ai | Drug discovery | AI is core (research_development) | revenue $74M a year; registered clinical trial | 82 |
 | SOPH · SOPHiA GENETICS SA | ai | Diagnostics | AI is core (medical_decision) | revenue $77M a year | 77 |
-| IRD · Opus Genetics, Inc. | drug | Drug developer | drug developer listed for an IND or pharma deal; AI not required | revenue $14M a year; pharma deal or IND; registered clinical trial | 43 |
-| ANIK · Anika Therapeutics, Inc. | drug | Medical devices & supplies | drug developer listed for an IND or pharma deal; AI not required | revenue $122M a year; pharma deal or IND | 33 |
-| GENB · Generate Biomedicines, Inc. | ai | Drug discovery | AI is core (research_development) | pharma deal or IND | 31 |
-| ODTX · Odyssey Therapeutics, Inc. | ai | Drug discovery | AI is core (research_development) | registered clinical trial | 31 |
-| ELDN · Eledon Pharmaceuticals, Inc. | drug | Drug developer | drug developer listed for an IND or pharma deal; AI not required | pharma deal or IND; registered clinical trial | 29 |
-| HNGE · Hinge Health, Inc. | ai | Imaging & devices | AI is core (clinical_workflow) | revenue $588M a year | 29 |
-| ANTX · AN2 Therapeutics, Inc. | drug | Drug developer | drug developer listed for an IND or pharma deal; AI not required | pharma deal or IND; registered clinical trial | 24 |
+| CARL · CARLSMED, INC. | ai | Imaging & devices | AI is core (medical_decision) | FDA-cleared AI device; revenue $86M a year | 66 |
+| GRAL · GRAIL, Inc. | ai | Diagnostics | AI is core (medical_decision) | revenue $147M a year | 54 |
+| OABI · OmniAb, Inc. | ai | Drug discovery | AI is core (research_development) | revenue $19M a year | 52 |
+| GENB · Generate Biomedicines, Inc. | ai | Drug discovery | AI is core (research_development) | pharma deal or IND | 51 |
+| GLUE · Monte Rosa Therapeutics, Inc. | ai | Drug discovery | AI is core (research_development) | revenue $218M a year; registered clinical trial | 49 |
+| HNGE · Hinge Health, Inc. | ai | Imaging & devices | AI is core (clinical_workflow) | revenue $588M a year | 44 |
+| ODTX · Odyssey Therapeutics, Inc. | ai | Drug discovery | AI is core (research_development) | registered clinical trial | 36 |
 
-通过但不在队列（大公司作对标，或完整度排在后面）：GEHC, ISRG, IQV, RMD, MRNA, CGEM, CARL, OABI, TECX, SGMT, GLUE, GRAL, MDT, PHG, YARW, ALEC, PRCT, RNA
+通过但不在队列（大公司作对标，或完整度排在后面）：GEHC, ISRG, IQV, IRD, RMD, ANIK, ELDN, MRNA, ANTX, CGEM, TECX, SGMT, MDT, PHG, YARW, ALEC, PRCT, RNA
 
 ## 未通过
 

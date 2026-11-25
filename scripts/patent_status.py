@@ -8,6 +8,10 @@ company's name must appear in the applicant name, so "Tempus" does not pick up "
 * terminal disclaimer filed (event DIST): the patent may expire earlier, tied to an earlier family member;
 * already expired or lapsed (status text), e.g. for unpaid maintenance fees.
 
+The granted count is the number whose applicant really matches the company; above 100 it is estimated from the share
+of matching records in the sample. Expiry is an estimate: patent-term extensions, the exact priority chain and which
+patent a terminal disclaimer ties to are not resolved.
+
 Per company: granted count, how many of the sampled utility patents expire before 2031 and before 2036, the median
 expiry, and the share with terminal disclaimers. What this cannot tell: whether a patent covers the core product,
 how easily it can be designed around, or whether it would survive a challenge; those need the claims and are left
@@ -76,9 +80,12 @@ def fetch_page(name: str, key: str, fetch=usv.odp_get, limit: int = 100, sort: s
                 continue
             raise
     wanted = usv.applicant_words(name)
-    apps = [a for a in found.get("patentFileWrapperDataBag", [])
-            if wanted and wanted <= usv.applicant_words(a.get("applicationMetaData", {}).get("firstApplicantName") or "")]
-    return apps, int(found.get("count") or 0)
+    raw = found.get("patentFileWrapperDataBag", [])
+    apps = [a for a in raw if wanted and wanted <= usv.applicant_words(a.get("applicationMetaData", {}).get("firstApplicantName") or "")]
+    count = int(found.get("count") or 0)
+    # The portal's count is for the phrase query; scale it by the share of returned records that really match the company.
+    matched_count = len(apps) if count <= len(raw) else round(count * len(apps) / len(raw)) if raw else 0
+    return apps, matched_count
 
 
 def fetch_granted(ticker: str, name: str, key: str, fetch=usv.odp_get, pause: float = PAUSE) -> tuple[list[dict], int, bool]:
@@ -91,7 +98,7 @@ def fetch_granted(ticker: str, name: str, key: str, fetch=usv.odp_get, pause: fl
         total += count
         for a in newest:
             apps[a.get("applicationNumberText")] = a
-        if count > 100:
+        if count > len(newest) and count > 100:
             complete = False
             time.sleep(pause)
             oldest, _ = fetch_page(applicant, key, fetch, 50, "applicationMetaData.effectiveFilingDate asc")

@@ -190,6 +190,11 @@ def assemble() -> dict[str, dict]:
     return out
 
 
+def deep_review_queue(passed: list[dict]) -> list[str]:
+    """AI companies only: drug developers found through an IND or a pharma deal stay on the signal pages, not in the queue."""
+    return [c["ticker"] for c in passed if c.get("track") == "ai" and (c.get("marketCapM") or 0) <= QUEUE_MAX_CAP_M][:QUEUE_SIZE]
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     parser.add_argument("--model", default="sonnet")
@@ -242,7 +247,7 @@ def main() -> None:
         c["aiProduct"] = cache.get(c["ticker"])
         c.update(check(c))
     passed = sorted((c for c in companies.values() if c["pass"]), key=lambda c: -(c.get("completeness") or 0))
-    queue = [c["ticker"] for c in passed if (c.get("marketCapM") or 0) <= QUEUE_MAX_CAP_M][:QUEUE_SIZE]
+    queue = deep_review_queue(passed)
     payload = {"generatedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                "summary": {"companies": len(companies), "passed": len(passed),
                            "failedBy": {n: sum(1 for c in companies.values() if c["checks"][i]["pass"] is False and

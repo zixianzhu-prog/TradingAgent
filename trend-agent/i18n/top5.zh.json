@@ -970,5 +970,9 @@
   "Revenue per test": "每次检测收入",
   "Terminal disclaimers": "终端声明占比",
   "Tests (period)": "检测量（期间）",
-  "Where they are speaking": "他们在哪里公开发言"
+  "Where they are speaking": "他们在哪里公开发言",
+  "Company conference radar": "公司会议雷达",
+  "Conference presentations, fireside chats, keynotes and academic talks in the last {n} days, found by news search for each queued company and its founders and scientists. So far it finds company events ({n}) far more than named people ({n}), because headlines rarely name scientists; it is not yet full people tracking. Visibility, not evidence: it says what to read or listen to next.": "最近 {n} 天的会议演讲、炉边对话、主题演讲和学术报告，按深审队列里每家公司及其创始人、科学家的名字检索新闻得到。目前找到的公司活动（{n} 条）远多于点名到具体人物的活动（{n} 条），因为新闻标题很少写科学家的名字，所以还不算完整的人物追踪。这只是曝光，不是证据，用来决定接下来读什么、听什么。",
+  "Under ${n}B · early AI candidates (passed the hard filter, ranked by evidence so far)": "市值 ${n}B 以下 · 早期 AI 候选（通过硬过滤，按已有证据排序）",
+  "Companies with more than {n} patents are sampled from both ends ({n} oldest, {n} newest): their totals (≈) are estimated from the share of records that match the company, their expiry counts are minimums and no median is shown. Expiry is an estimate: term extensions and the exact priority chain are not resolved.": "专利超过 {n} 件的公司从两端抽样（最早 {n} 件、最新 {n} 件）：总数（≈）按样本中与公司匹配的比例估算，到期数量是下限，也不显示中位数。到期日是估算，没有处理专利期延长和精确的优先权链。"
 }

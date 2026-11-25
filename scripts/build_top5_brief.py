@@ -1254,15 +1254,15 @@ def early_candidates(root: Path, limit: int = 5) -> str:
     rejected, ranked by how much of the Serenity evidence is in. A separate list from the 5-10 year ranking above."""
     companies = load(root / "state/candidate-filter.json", {}).get("companies", {})
     rows = companies.values() if isinstance(companies, dict) else companies
-    picks = sorted((c for c in rows if (c.get("marketCapM") or 1e9) < 1000 and c.get("serenity") != "reject"
+    picks = sorted((c for c in rows if c.get("track") == "ai" and (c.get("marketCapM") or 1e9) < 1000 and c.get("serenity") != "reject"
                     and c.get("checks") and all(k["pass"] for k in c["checks"])), key=lambda c: -(c.get("completeness") or 0))[:limit]
     if not picks:
         return ""
     links = "".join(
         f'<a href="#smallcaps"><span class="r">#{i}</span><span class="t">{esc(c["ticker"])}</span><span class="c">{esc(c["company"])}</span>'
-        f'<span class="s">{money(c["marketCapM"])} · {"AI product" if c.get("track") == "ai" else "IND or pharma deal"} · evidence {c.get("completeness") or 0}%</span></a>'
+        f'<span class="s">{money(c["marketCapM"])} · AI product · evidence {c.get("completeness") or 0}%</span></a>'
         for i, c in enumerate(picks, 1))
-    return (f'<div class="answer-group"><p class="answer-label">Under $1B · early candidates (passed the hard filter, ranked by evidence so far)</p>'
+    return (f'<div class="answer-group"><p class="answer-label">Under $1B · early AI candidates (passed the hard filter, ranked by evidence so far)</p>'
             f'<nav class="answer" aria-label="Under $1B early candidates">{links}</nav></div>')
 
 
@@ -1327,14 +1327,14 @@ def patent_life_block(root: Path) -> str:
     def cnt(c, k):
         return ("" if c.get("complete", True) else "≥") + str(c[k])
     body = "".join(
-        f'<tr><td class="tk">{esc(t)}</td><td class="n">{c["grantedTotal"]:,}</td><td class="n">{cnt(c, "expireBy2031")}</td>'
+        f'<tr><td class="tk">{esc(t)}</td><td class="n">{"" if c.get("complete", True) else "≈"}{c["grantedTotal"]:,}</td><td class="n">{cnt(c, "expireBy2031")}</td>'
         f'<td class="n">{cnt(c, "expireBy2036")}</td><td class="n">{esc(c["earliestLiveExpiry"] or "—")}</td><td class="n">{esc(c["medianExpiry"] or "—")}</td>'
         f'<td class="n">{"—" if c["terminalDisclaimerShare"] is None else format(c["terminalDisclaimerShare"], ".0%")}</td></tr>'
         for t in order for c in [rows[t]])
     return ('<h3 class="bucket-h">Patent life</h3>'
             '<p class="bucket-blurb">Granted US patents filed by each company (or its patent-holding subsidiary), from USPTO file wrappers. '
             "Expiry is estimated as 20 years from the effective filing date plus the term adjustment; a terminal disclaimer can make it earlier. "
-            "Companies with more than 100 patents are sampled from both ends (50 oldest, 50 newest), so their counts are minimums and no median is shown. "
+            "Companies with more than 100 patents are sampled from both ends (50 oldest, 50 newest): their totals (≈) are estimated from the share of records that match the company, their expiry counts are minimums and no median is shown. Expiry is an estimate: term extensions and the exact priority chain are not resolved. "
             "This says how long protection lasts, not whether it covers the core product or would survive a challenge.</p>"
             '<div class="table-wrap"><table><thead><tr><th>Ticker</th><th class="n">Granted</th><th class="n">Expire by 2030</th><th class="n">Expire by 2035</th>'
             f'<th class="n">Earliest live expiry</th><th class="n">Median expiry</th><th class="n">Terminal disclaimers</th></tr></thead><tbody>{body}</tbody></table></div>')
@@ -1380,9 +1380,12 @@ def people_activity_block(root: Path) -> str:
     items.sort(reverse=True)
     lis = "".join(f'<li><span class="r">{esc(d)}</span> <strong>{esc(t)}</strong>{(" · " + esc(p)) if p else ""}: '
                   f'<a href="{esc(u)}" rel="noopener" target="_blank">{esc(h)}</a></li>' for d, t, p, h, u in items[:20])
-    return ('<h3 class="bucket-h">Where they are speaking</h3>'
+    s = data.get("summary", {})
+    return ('<h3 class="bucket-h">Company conference radar</h3>'
             f'<p class="bucket-blurb">Conference presentations, fireside chats, keynotes and academic talks in the last {data.get("lookbackDays", 60)} days, '
-            "found by news search for each queued company and its founders and scientists. Visibility, not evidence: it says what to read or listen to next.</p>"
+            "found by news search for each queued company and its founders and scientists. "
+            f'So far it finds company events ({s.get("companyTalks", 0)}) far more than named people ({s.get("peopleTalks", 0)}), because headlines rarely name scientists; '
+            "it is not yet full people tracking. Visibility, not evidence: it says what to read or listen to next.</p>"
             f'<ul class="plain-list">{lis}</ul>')
 
 

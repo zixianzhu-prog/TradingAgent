@@ -44,3 +44,10 @@ def test_ai_sentences_pick_only_ai_text():
 def test_feature_ai_needs_fda_device():
     assert not check(base(aiProduct={"verdict": "feature", "use": "research_development"}, fdaAiDevices=0))["pass"]
     assert check(base(aiProduct={"verdict": "feature", "use": "clinical_workflow"}, fdaAiDevices=2))["pass"]
+
+
+def test_queue_is_ai_only():
+    import candidate_filter as cf
+    passed = [{"ticker": "IRD", "track": "drug", "marketCapM": 400}, {"ticker": "CARL", "track": "ai", "marketCapM": 500},
+              {"ticker": "ISRG", "track": "ai", "marketCapM": 150000}]
+    assert cf.deep_review_queue(passed) == ["CARL"]

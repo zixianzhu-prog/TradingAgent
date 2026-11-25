@@ -1,6 +1,6 @@
 # 模拟订单条件（研究用，需人工确认）
 
-生成：2026-11-25T17:13；假设组合规模 $100,000。只在模拟盘执行，真实交易关闭。
+生成：2026-11-25T17:56；假设组合规模 $100,000。只在模拟盘执行，真实交易关闭。
 
 > 规则对每家公司相同：动作由 Serenity 结论和价格相对下单区间决定；仓位按 Serenity 分档（试探 1%、标准 5%、单只上限 10%），再按单日回撤、日成交额和现金跑道下调；只在财报、客户或合作披露验证后加仓；不设紧止损，论点被证伪才退出。
 
@@ -19,11 +19,11 @@
 | **等待** | RDNT | $72.11 | $58.63 | $34.62 | — | Price $72.11 is 23% above $58.63; it implies 13% growth a year against 9% in the base case |
 | **等待** | GEHC | $82.96 | $50.51 | $50.51 | — | Price $82.96 is 64% above $50.51; it implies 14% growth a year against 5% in the base case |
 | **等待** | NTRA | $294.55 | $202.48 | $131.59 | — | Price $294.55 is 46% above $202.48; it implies 27% growth a year against 18% in the base case |
-| **等待** | RXRX | $2.54 | — | — | — | No valuation range: discovery platform; a sales multiple or one-asset rNPV would mislead. Today's price: market value $1,583M less cash $749 |
+| **等待** | RXRX | $2.59 | — | — | — | No valuation range: discovery platform; a sales multiple or one-asset rNPV would mislead. Today's price: market value $1,615M less cash $749 |
 | **等待** | GH | $152.14 | $88.40 | $55.00 | — | Evidence incomplete: primary-source completeness 48 is below the bar |
-| **等待** | ABCL | $10.51 | — | — | — | No valuation range: discovery platform; a sales multiple or one-asset rNPV would mislead. Today's price: market value $3,406M less cash $790 |
+| **等待** | ABCL | $10.56 | — | — | — | No valuation range: discovery platform; a sales multiple or one-asset rNPV would mislead. Today's price: market value $3,422M less cash $790 |
 | **等待** | IRD | $3.97 | $2.42 | $0.68 | — | Price $3.97 is 64% above the rNPV base value $2.42; it implies $2,162M peak sales for the lead asset |
-| **回避** | IQV | $250.95 | — | — | — | Serenity verdict is reject: a gate is contradicted by a primary source |
+| **回避** | IQV | $252.91 | — | — | — | Serenity verdict is reject: a gate is contradicted by a primary source |
 
 ## TEM · 模拟买入 1.0%（$1,000）
 
