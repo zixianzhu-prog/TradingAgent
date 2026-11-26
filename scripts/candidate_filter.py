@@ -223,12 +223,23 @@ def main() -> None:
                 if not annual:
                     return t, None, "no SEC report"
                 url = annual[0][2]
-                if cache.get(t, {}).get("filing") == url and t not in (args.recheck or []):
-                    return t, cache[t], "cached"
-                text = pcr.filing_text(url, allow_fetch=True) or ""
-                picked = ai_sentences(text)
+                cached = cache.get(t, {})
+                # A "none" from the 10-K alone is re-read once with the 10-Q fallback (a reverse merger's 10-K is the shell's).
+                stale_none = cached.get("reason") == "no AI sentence in the 10-K"
+                if cached.get("filing") == url and t not in (args.recheck or []) and not stale_none:
+                    return t, cached, "cached"
+                # The 10-K first; if it has no AI sentence (e.g. a shell company's 10-K before a merger), the latest 10-Q.
+                order = [annual[0]] + [f for f in filings if f[0] == "10-Q" and f != annual[0]][:1]
+                text, picked = "", []
+                for form, _, link in order:
+                    text = pcr.filing_text(link, allow_fetch=True) or ""
+                    picked = ai_sentences(text)
+                    if picked:
+                        url = link
+                        break
                 if not picked:
-                    return t, {"filing": url, "verdict": "none", "use": "none", "quote": None, "reason": "no AI sentence in the 10-K"}, "no AI text"
+                    return t, {"filing": annual[0][2], "verdict": "none", "use": "none", "quote": None,
+                               "reason": "no AI sentence in the 10-K or latest 10-Q"}, "no AI text"
                 ans = ask(t, c["company"], picked, args.model) or {}
                 if ans and not pcr.locate(text, ans.get("quote") or ""):
                     ans = {**ans, "verdict": "unverified", "reason": "quote not found in the filing"}

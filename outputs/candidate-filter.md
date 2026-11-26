@@ -1,6 +1,6 @@
 # 深审前硬过滤
 
-> 66 家有 Serenity 门槛审阅的公司中，32 家通过全部检查，进入深审名单。首个未通过的检查：ai_product 28, hard_evidence 0, tradable 0, survivable 6, value_chain 0。
+> 66 家有 Serenity 门槛审阅的公司中，32 家通过全部检查，进入深审名单。首个未通过的检查：ai_product 27, hard_evidence 1, tradable 0, survivable 6, value_chain 0。
 
 ## 深审队列（市值 ≤ $20B，按 Serenity 完整度取前 15）
 
@@ -39,7 +39,7 @@
 | CCLD · CareCloud, Inc. | AI is feature (clinical_workflow) |
 | CERT · Certara | AI is feature (research_development) |
 | FATE · FATE THERAPEUTICS INC | price $0.98, delisting risk |
-| FRNM · Freenome, Inc. | AI is none (none) |
+| FRNM · Freenome, Inc. | no FDA device, revenue, pharma deal, IND or trial |
 | GH · Guardant Health | AI is feature (research_development) |
 | GSK · GSK plc | AI is feature (research_development) |
 | HCAT · Health Catalyst, Inc. | AI is feature (clinical_workflow) |
