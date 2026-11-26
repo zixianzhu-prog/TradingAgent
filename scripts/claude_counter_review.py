@@ -71,10 +71,37 @@ def gate_passages(filings: list[tuple[str, str, str]], challenges: list[dict], l
     return out
 
 
-def valuation_check(ticket: dict | None) -> dict:
+def scenario_check(row: dict | None) -> dict:
+    """No order ticket (the company is outside the ranked list): the 5-year scenario model is the valuation test."""
+    m = (row or {}).get("scenario_model") or {}
+    cases = m.get("cases") or {}
+    if not cases.get("base") or not cases.get("bear"):
+        return {"examined": False, "summary": "没有估值区间或改判条件"}
+    pct = lambda x: f"{x:+.1%}" if isinstance(x, (int, float)) else "—"
+    base, bear = cases["base"], cases["bear"]
+    summary = (f"现价 ${row.get('price'):.2f}；5 年情景模型：熊市年化 {pct(bear.get('annualized_return'))}，基准年化 "
+               f"{pct(base.get('annualized_return'))}，概率加权 {pct(m.get('probability_weighted_case_annualized_return'))}；"
+               f"基准达到 12% 年化需要股价 ≤ ${base.get('price_for_policy_return')}")
+    return {"examined": True, "summary": summary, "source": "state/ai-medicine-financial-scenarios.json"}
+
+
+def rnpv_check(row: dict | None) -> dict:
+    """Drug developers without revenue: the rNPV model (what today's price implies for the lead asset's peak sales)."""
+    v = (row or {}).get("valuePerShare") or {}
+    if not row or not v or not row.get("impliedPeakSalesM"):
+        return {"examined": False, "summary": "没有估值区间或改判条件"}
+    summary = (f"现价 ${row['price']:.2f}；rNPV（领先资产 {row.get('phase')} 期）每股价值 熊 ${v.get('bear')} / 基准 ${v.get('base')} / 牛 "
+               f"${v.get('bull')}；现价隐含领先资产峰值销售约 ${row['impliedPeakSalesM']:,.0f}M")
+    if row.get("notes"):
+        summary += "；" + "；".join(row["notes"])
+    return {"examined": True, "summary": summary, "source": "state/rnpv-valuations.json"}
+
+
+def valuation_check(ticket: dict | None, scenario: dict | None = None, rnpv: dict | None = None) -> dict:
     """The agent's own valuation stress test for this name, as numbers (not a filing quote)."""
     if not ticket or not (ticket.get("limitPrice") or ticket.get("flipPoints")):
-        return {"examined": False, "summary": "没有估值区间或改判条件"}
+        check = scenario_check(scenario)
+        return check if check["examined"] else rnpv_check(rnpv)
     parts = [f"现价 ${ticket.get('price')}", f"限价 ${ticket.get('limitPrice')}" if ticket.get("limitPrice") else None]
     return {"examined": True, "summary": "；".join(p for p in parts if p) + ("；改判条件：" + "；".join(ticket.get("flipPoints") or []) if ticket.get("flipPoints") else ""),
             "source": "state/order-tickets.json"}
@@ -148,6 +175,10 @@ def main() -> None:
     citations = json.loads(CITATIONS.read_text(encoding="utf-8"))
     adversarial = json.loads(ADVERSARIAL.read_text(encoding="utf-8")).get("companies", {}) if ADVERSARIAL.exists() else {}
     tickets = {t["ticker"]: t for t in json.loads(TICKETS.read_text(encoding="utf-8")).get("tickets", [])} if TICKETS.exists() else {}
+    scenario_path = ROOT / "state/ai-medicine-financial-scenarios.json"
+    scenarios = {r["ticker"]: r for r in json.loads(scenario_path.read_text(encoding="utf-8")).get("companies", [])} if scenario_path.exists() else {}
+    rnpv_path = ROOT / "state/rnpv-valuations.json"
+    rnpvs = {r["ticker"]: r for r in json.loads(rnpv_path.read_text(encoding="utf-8")).get("companies", [])} if rnpv_path.exists() else {}
     ciks = {str(r["ticker"]).upper(): str(r["cik_str"]) for r in mapper.http_json("https://www.sec.gov/files/company_tickers.json", agent).values()}
 
     def one(t):
@@ -157,7 +188,7 @@ def main() -> None:
         answer = ask(t, passages, args.model)
         if not answer:
             return t, None, 0, "no answer"
-        gate, dropped = to_gate(answer, passages, valuation_check(tickets.get(t)))
+        gate, dropped = to_gate(answer, passages, valuation_check(tickets.get(t), scenarios.get(t), rnpvs.get(t)))
         if ser.failed_run(gate, dropped):
             return t, None, dropped, f"none of {dropped} quotes matched the filings (a failed run, not evidence)"
         return t, gate, dropped, ""

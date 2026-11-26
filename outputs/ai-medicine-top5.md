@@ -4,14 +4,14 @@
 
 | # | Ticker | Company | Potential | Evidence | Flag |
 | ---: | --- | --- | ---: | ---: | --- |
-| 1 | CBLL | Ceribell | 86.3 | 86 |  |
-| 2 | CAI | Caris Life Sciences | 86.3 | 86 |  |
+| 1 | CAI | Caris Life Sciences | 86.3 | 86 |  |
+| 2 | CBLL | Ceribell | 86.3 | 77 |  |
 | 3 | HTFL | HeartFlow | 84.7 | 80 |  |
 | 4 | ISRG | Intuitive Surgical | 79.7 | 72 |  |
 | 5 | SDGR | Schrodinger | 79.3 | 79 |  |
 | 6 | RDNT | RadNet / DeepHealth | 78.3 | 79 |  |
 | 7 | TEM | Tempus AI | 78.3 | 77 |  |
-| 8 | GEHC | GE HealthCare Technologies | 76.3 | 75 |  |
+| 8 | GEHC | GE HealthCare Technologies | 76.3 | 66 |  |
 | 9 | NTRA | Natera | 75.0 | 72 |  |
 | 10 | SOPH | SOPHiA GENETICS | 72.7 | 67 |  |
 | 11 | IQV | IQVIA | 70.3 | 65 |  |
@@ -19,6 +19,23 @@
 | 13 | CERT | Certara | 67.3 | 74 |  |
 | 14 | GH | Guardant Health | 61.3 | 48 | evidence incomplete |
 | 15 | ABCL | AbCellera Biologics | 58.0 | 64 |  |
+
+## 1. CAI — Caris Life Sciences
+
+**Chokepoint:** A data network across testing, AI products and pharma services, similar to Tempus but with its own sequencing scale.
+
+**Why it can win:** More than a million sequenced tumour cases feed both AI products and pharma services, and FDA companion-diagnostic approvals put its tests inside treatment decisions. The data asset grows with every test.
+
+**Why now:** Q3 2026 revenue grew 27% to $275M and the quarter was profitable.
+
+**Strongest case against:** A disclosed material weakness in internal control, a $393M term loan and dependence on a few sequencer suppliers.
+
+**We are wrong if:**
+- The material weakness is not remediated by the next annual report
+- Revenue growth falls below 15%
+- Pharma services revenue declines
+
+Sources: https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-20251231.htm, https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm
 
 ## 4. ISRG — Intuitive Surgical
 
@@ -54,24 +71,7 @@ Sources: https://isrg.intuitive.com/news-releases/news-release-details/intuitive
 
 Sources: https://www.radnet.com/newsroom/press-releases/q3-2026-results, https://www.radnet.com/about/history, https://www.fda.gov/medical-devices/artificial-intelligence-enabled-medical-devices/list-artificial-intelligence-enabled-medical-devices
 
-## 7. TEM — Tempus AI
-
-**Chokepoint:** An information chokepoint: the scarce asset is not a single model, but permissioned longitudinal clinical and molecular data connected to real diagnostic workflows.
-
-**Why it can win:** The strongest long-duration candidate because it combines diagnostics, multimodal clinical data, AI models and workflow distribution. Every additional test, patient record and health-system integration can improve the data network and the usefulness of its models.
-
-**Why now:** Recent results show continuing oncology volume growth, expanding minimal-residual-disease testing, growth in data licensing and new health-system integrations.
-
-**Strongest case against:** The apparent data flywheel may be weaker than expected if hospitals restrict data reuse, competitors gain similar datasets, or diagnostic growth fails to produce durable margins and cash flow.
-
-**We are wrong if:**
-- Diagnostic volume growth stalls for two consecutive reported quarters
-- Data-and-services growth materially trails total company growth
-- Gross margin or cash-flow progress deteriorates despite higher volume
-
-Sources: https://investors.tempus.com/news/news-details/2026/Tempus-Reports-Second-Quarter-2026-Results-07-30-2026/default.aspx, https://investors.tempus.com/files/doc_financials/2026/q3/TEM-Q3-26-Financial-Results_11-1.pdf, https://investors.tempus.com/news/news-details/2026/Tempus-Reports-Third-Quarter-2026-Results/default.aspx
-
-## 1. CBLL — Ceribell
+## 2. CBLL — Ceribell
 
 **Chokepoint:** A clinical-workflow chokepoint in the ICU and emergency room: rapid EEG where hospitals often have no neurologist on site.
 
@@ -87,23 +87,6 @@ Sources: https://investors.tempus.com/news/news-details/2026/Tempus-Reports-Seco
 - NTAP payment is not renewed
 
 Sources: https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm, https://www.sec.gov/Archives/edgar/data/1861107/000119312526445555/cbll-20260930.htm
-
-## 2. CAI — Caris Life Sciences
-
-**Chokepoint:** A data network across testing, AI products and pharma services, similar to Tempus but with its own sequencing scale.
-
-**Why it can win:** More than a million sequenced tumour cases feed both AI products and pharma services, and FDA companion-diagnostic approvals put its tests inside treatment decisions. The data asset grows with every test.
-
-**Why now:** Q3 2026 revenue grew 27% to $275M and the quarter was profitable.
-
-**Strongest case against:** A disclosed material weakness in internal control, a $393M term loan and dependence on a few sequencer suppliers.
-
-**We are wrong if:**
-- The material weakness is not remediated by the next annual report
-- Revenue growth falls below 15%
-- Pharma services revenue declines
-
-Sources: https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-20251231.htm, https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm
 
 ## 3. HTFL — HeartFlow
 
@@ -121,5 +104,22 @@ Sources: https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-
 - CMS cuts the CPT 75580 payment rate
 
 Sources: https://www.sec.gov/Archives/edgar/data/1464521/000146452126000042/htfl-20251231x10k.htm, https://www.sec.gov/Archives/edgar/data/0001464521/000146452126000171/htfl-20261112xex99_1.htm
+
+## 5. SDGR — Schrodinger
+
+**Chokepoint:** A horizontal discovery layer used across multiple customers and drug programs; more diversified than betting on one molecule.
+
+**Why it can win:** A picks-and-shovels approach to AI medicine: pharma customers use its physics-based and AI software across many programs, while its proprietary pipeline preserves additional upside.
+
+**Why now:** Software ACV growth, pharmaceutical collaborations and continuing product development provide commercial evidence outside any one clinical asset.
+
+**Strongest case against:** Pharma customers may build comparable tools internally, hosted adoption may pressure economics, and proprietary drug programs may consume capital without validating the software advantage.
+
+**We are wrong if:**
+- Software ACV or retention weakens for two consecutive reported periods
+- Software gross margin fails to recover during the hosted transition
+- Major pharmaceutical collaborations contract without replacement
+
+Sources: https://ir.schrodinger.com/press-releases/news-details/2026/Schrdinger-Reports-Second-Quarter-2026-Financial-Results/, https://ir.schrodinger.com/press-releases/news-details/2026/Schrdinger-Reports-Fourth-Quarter-and-Full-Year-2025-Financial-Results/default.aspx, https://clinicaltrials.gov/study/NCT05544019, https://clinicaltrials.gov/study/NCT05961839
 
 Potential = Moat 35 + AI-medicine exposure 20 + Proven growth 30 + Financial durability 15. Evidence = Serenity gate completeness and evidence quality.

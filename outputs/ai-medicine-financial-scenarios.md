@@ -20,6 +20,11 @@
 | HTFL | 2026-11-13 | $4.26B | 未核验 | latest quarter annualized (not TTM) | $291.6M | 14.6x | 缺少可比数据 | 未核验 | low |
 | CBLL | 2026-11-13 | $1.02B | 未核验 | latest quarter annualized (not TTM) | $117.2M | 8.7x | 缺少可比数据 | 未核验 | high |
 | CAI | 2026-11-13 | $6.61B | 未核验 | latest quarter annualized (not TTM) | $1101.6M | 6.0x | 缺少可比数据 | 未核验 | low |
+| CARL | 2026-11-25 | $0.50B | 未核验 | latest quarter annualized (not TTM) | $86.2M | 5.7x | 缺少可比数据 | 负值，不适用 | high |
+| GRAL | 2026-11-25 | $4.68B | 未核验 | latest quarter annualized (not TTM) | $150.1M | 31.1x | 缺少可比数据 | 负值，不适用 | medium |
+| HNGE | 2026-11-25 | $8.60B | 未核验 | latest quarter annualized (not TTM) | $939.9M | 9.1x | 缺少可比数据 | 4.0% | low |
+| OABI | 2026-11-25 | $0.69B | 未核验 | latest quarter annualized (not TTM) | $42.4M | 16.3x | 缺少可比数据 | 1.6% | low |
+| GENB | 2026-11-25 | $1.46B | 未核验 | latest quarter annualized (not TTM) | $16.9M | 86.5x | 缺少可比数据 | 负值，不适用 | high |
 
 ## TEM
 
@@ -43,12 +48,12 @@
 | 情景 | 主观权重 | 收入CAGR | 年稀释 | 终值利润率 | 终值倍数 | 五年收入 | 每股年化回报敏感度 |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | bear | 35% | 7.0% | 5.0% | n/a | 4.7x | $2250.7M | -8.2% |
-| base | 45% | 12.3% | 3.0% | n/a | 8.2x | $2859.6M | 9.8% |
-| bull | 20% | 18.5% | 2.0% | n/a | 14.1x | $3747.6M | 30.4% |
+| base | 45% | 12.3% | 3.0% | n/a | 8.6x | $2859.6M | 10.8% |
+| bull | 20% | 18.5% | 2.0% | n/a | 14.8x | $3747.6M | 31.7% |
 
-**默认期望财富口径：11.2%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：7.6%。
+**默认期望财富口径：12.1%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：8.3%。
 
-排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $62.92（相对当前 -9.6%）；悲观达到门槛所需价格 $76.95（相对当前 10.6%）。
+排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $65.99（相对当前 -5.2%）；悲观达到门槛所需价格 $76.95（相对当前 10.6%）。
 
 权重依据：Analyst-set conservative priors reflecting premium valuation and unresolved debt/dilution evidence; not empirical probabilities. 净负债假设：Debt was not verified in the current snapshot; zero is a simplifying assumption and must be replaced before an investment conclusion. Illustrative per-share exclusion test, not a DCF or target price. Growth, dilution, probabilities and terminal multiples are analyst-set assumptions, not evidence-generated forecasts. Passing cannot upgrade a company; failing can only keep it from upgrade.
 
@@ -74,12 +79,12 @@
 | 情景 | 主观权重 | 收入CAGR | 年稀释 | 终值利润率 | 终值倍数 | 五年收入 | 每股年化回报敏感度 |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | bear | 40% | 6.7% | 3.0% | n/a | 4.7x | $356.0M | -4.2% |
-| base | 45% | 10.7% | 2.0% | n/a | 8.2x | $429.3M | 10.0% |
-| bull | 15% | 16.9% | 1.0% | n/a | 14.1x | $564.2M | 29.4% |
+| base | 45% | 10.7% | 2.0% | n/a | 8.6x | $429.3M | 11.0% |
+| bull | 15% | 16.9% | 1.0% | n/a | 14.8x | $564.2M | 30.6% |
 
-**默认期望财富口径：9.8%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：7.3%。
+**默认期望财富口径：10.5%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：7.9%。
 
-排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $26.75（相对当前 -8.4%）；悲观达到门槛所需价格 $39.96（相对当前 36.8%）。
+排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $27.93（相对当前 -4.4%）；悲观达到门槛所需价格 $39.96（相对当前 36.8%）。
 
 权重依据：Analyst-set priors: software growth slowed to ~6% while drug-discovery revenue is lumpy; not empirical probabilities. 净负债假设：Cash and securities ($373M, latest quarter) treated as net cash; debt not separately verified. Illustrative per-share exclusion test, not a DCF or target price. Growth, dilution, probabilities and terminal multiples are analyst-set assumptions, not evidence-generated forecasts. Passing cannot upgrade a company; failing can only keep it from upgrade.
 
@@ -131,12 +136,12 @@
 | 情景 | 主观权重 | 收入CAGR | 年稀释 | 终值利润率 | 终值倍数 | 五年收入 | 每股年化回报敏感度 |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | bear | 35% | 4.0% | 1.0% | n/a | 4.7x | $461.8M | 1.8% |
-| base | 45% | 4.0% | 1.0% | n/a | 8.2x | $461.8M | 14.2% |
-| bull | 20% | 10.9% | 0.0% | n/a | 14.1x | $636.5M | 37.4% |
+| base | 45% | 4.0% | 1.0% | n/a | 8.6x | $461.8M | 15.3% |
+| bull | 20% | 10.9% | 0.0% | n/a | 14.8x | $636.5M | 38.7% |
 
-**默认期望财富口径：17.4%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：14.5%。
+**默认期望财富口径：18.4%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：15.3%。
 
-排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $13.13（相对当前 10.1%）；悲观达到门槛所需价格 $22.12（相对当前 85.4%）。
+排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $13.79（相对当前 15.6%）；悲观达到门槛所需价格 $22.12（相对当前 85.4%）。
 
 权重依据：Analyst-set priors for slow-growing biosimulation software; not empirical probabilities. Growth and multiples are replaced by sourced calibration. 净负债假设：SEC XBRL 2026-09-30: long-term debt $291M less cash $215M. Illustrative per-share exclusion test, not a DCF or target price. Growth, dilution, probabilities and terminal multiples are analyst-set assumptions, not evidence-generated forecasts. Passing cannot upgrade a company; failing can only keep it from upgrade.
 
@@ -162,12 +167,12 @@
 | 情景 | 主观权重 | 收入CAGR | 年稀释 | 终值利润率 | 终值倍数 | 五年收入 | 每股年化回报敏感度 |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | bear | 35% | 9.8% | 3.0% | n/a | 4.4x | $4821.9M | -16.0% |
-| base | 45% | 17.7% | 2.0% | n/a | 8.2x | $6833.2M | 2.5% |
-| bull | 20% | 24.6% | 1.0% | n/a | 14.1x | $9073.4M | 21.9% |
+| base | 45% | 17.7% | 2.0% | n/a | 8.6x | $6833.2M | 3.5% |
+| bull | 20% | 24.6% | 1.0% | n/a | 14.8x | $9073.4M | 23.1% |
 
-**默认期望财富口径：3.6%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：-0.1%。
+**默认期望财富口径：4.5%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：0.6%。
 
-排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $202.48（相对当前 -35.7%）；悲观达到门槛所需价格 $222.85（相对当前 -29.2%）。
+排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $212.17（相对当前 -32.6%）；悲观达到门槛所需价格 $222.85（相对当前 -29.2%）。
 
 权重依据：Analyst-set priors for a fast-growing, loss-making testing company; not empirical probabilities. Growth and multiples are replaced by sourced calibration. 净负债假设：Cash and securities $1,097M (latest quarter); SEC XBRL shows no long-term debt after 2023, so treated as net cash. Verify before an investment conclusion. Illustrative per-share exclusion test, not a DCF or target price. Growth, dilution, probabilities and terminal multiples are analyst-set assumptions, not evidence-generated forecasts. Passing cannot upgrade a company; failing can only keep it from upgrade.
 
@@ -193,12 +198,12 @@
 | 情景 | 主观权重 | 收入CAGR | 年稀释 | 终值利润率 | 终值倍数 | 五年收入 | 每股年化回报敏感度 |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | bear | 40% | 7.2% | 8.0% | n/a | 4.7x | $134.6M | -5.6% |
-| base | 45% | 13.1% | 5.0% | n/a | 8.2x | $175.4M | 12.7% |
-| bull | 15% | 19.3% | 3.0% | n/a | 14.1x | $229.7M | 34.2% |
+| base | 45% | 13.1% | 5.0% | n/a | 8.6x | $175.4M | 13.7% |
+| bull | 15% | 19.3% | 3.0% | n/a | 14.8x | $229.7M | 35.4% |
 
-**默认期望财富口径：12.1%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：8.6%。
+**默认期望财富口径：13.0%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：9.2%。
 
-排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $7.95（相对当前 3.1%）；悲观达到门槛所需价格 $9.77（相对当前 26.7%）。
+排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $8.32（相对当前 7.8%）；悲观达到门槛所需价格 $9.77（相对当前 26.7%）。
 
 权重依据：Analyst-set downside-skewed priors reflecting negative EBITDA and financing risk; not empirical probabilities. 净负债假设：Uses reported cash and securities as net cash because debt was not separately verified; replace with audited net debt before an investment conclusion. Illustrative per-share exclusion test, not a DCF or target price. Growth, dilution, probabilities and terminal multiples are analyst-set assumptions, not evidence-generated forecasts. Passing cannot upgrade a company; failing can only keep it from upgrade.
 
@@ -224,12 +229,12 @@
 | 情景 | 主观权重 | 收入CAGR | 年稀释 | 终值利润率 | 终值倍数 | 五年收入 | 每股年化回报敏感度 |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | bear | 35% | 9.7% | 4.0% | n/a | 4.4x | $2168.5M | -18.2% |
-| base | 45% | 17.3% | 3.0% | n/a | 8.2x | $3028.7M | 0.8% |
-| bull | 20% | 24.1% | 2.0% | n/a | 14.1x | $4022.7M | 20.2% |
+| base | 45% | 17.3% | 3.0% | n/a | 8.6x | $3028.7M | 1.7% |
+| bull | 20% | 24.1% | 2.0% | n/a | 14.8x | $4022.7M | 21.4% |
 
-**默认期望财富口径：1.9%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：-2.0%。
+**默认期望财富口径：2.8%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：-1.3%。
 
-排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $88.40（相对当前 -41.1%）；悲观达到门槛所需价格 $93.14（相对当前 -37.9%）。
+排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $92.78（相对当前 -38.1%）；悲观达到门槛所需价格 $93.14（相对当前 -37.9%）。
 
 权重依据：Analyst-set priors for a loss-making cancer-testing company with convertible debt; not empirical probabilities. Growth and multiples are replaced by sourced calibration. 净负债假设：SEC XBRL 2026-09-30: convertible notes $1,502M less cash and securities $1,100M. Illustrative per-share exclusion test, not a DCF or target price. Growth, dilution, probabilities and terminal multiples are analyst-set assumptions, not evidence-generated forecasts. Passing cannot upgrade a company; failing can only keep it from upgrade.
 
@@ -313,12 +318,12 @@
 | 情景 | 主观权重 | 收入CAGR | 年稀释 | 终值利润率 | 终值倍数 | 五年收入 | 每股年化回报敏感度 |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | bear | 30% | 8.5% | 0.0% | n/a | 4.4x | $18370.6M | -11.1% |
-| base | 50% | 12.5% | 0.0% | n/a | 8.2x | $21965.7M | 3.6% |
-| bull | 20% | 19.2% | 0.0% | n/a | 14.1x | $29408.1M | 21.9% |
+| base | 50% | 12.5% | 0.0% | n/a | 8.6x | $21965.7M | 4.5% |
+| bull | 20% | 19.2% | 0.0% | n/a | 14.8x | $29408.1M | 23.1% |
 
-**默认期望财富口径：5.4%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：2.8%。
+**默认期望财富口径：6.3%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：3.5%。
 
-排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $301.66（相对当前 -32.3%）；悲观达到门槛所需价格 $418.54（相对当前 -6.0%）。
+排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $315.84（相对当前 -29.1%）；悲观达到门槛所需价格 $418.54（相对当前 -6.0%）。
 
 权重依据：Analyst-set priors for a profitable market leader priced at ~13x sales; not empirical probabilities. 净负债假设：Cash and investments ($6.8B, latest quarter) treated as net cash; no long-term debt. Illustrative per-share exclusion test, not a DCF or target price. Growth, dilution, probabilities and terminal multiples are analyst-set assumptions, not evidence-generated forecasts. Passing cannot upgrade a company; failing can only keep it from upgrade.
 
@@ -370,12 +375,12 @@
 | 情景 | 主观权重 | 收入CAGR | 年稀释 | 终值利润率 | 终值倍数 | 五年收入 | 每股年化回报敏感度 |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | bear | 35% | 8.6% | 4.0% | n/a | 4.7x | $439.9M | -15.5% |
-| base | 45% | 18.8% | 3.0% | n/a | 8.2x | $688.6M | 3.3% |
-| bull | 20% | 25.1% | 2.0% | n/a | 14.1x | $893.8M | 22.1% |
+| base | 45% | 18.8% | 3.0% | n/a | 8.6x | $688.6M | 4.3% |
+| bull | 20% | 25.1% | 2.0% | n/a | 14.8x | $893.8M | 23.3% |
 
-**默认期望财富口径：4.1%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：0.5%。
+**默认期望财富口径：5.0%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：1.2%。
 
-排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $32.38（相对当前 -33.2%）；悲观达到门槛所需价格 $35.40（相对当前 -27.0%）。
+排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $33.91（相对当前 -30.0%）；悲观达到门槛所需价格 $35.40（相对当前 -27.0%）。
 
 权重依据：Analyst-set priors reflecting a ~15x sales valuation; not empirical probabilities. 净负债假设：Cash and short-term investments from the Q3 2026 10-Q XBRL; no long-term debt tag found. Verify before an investment conclusion. Illustrative per-share exclusion test, not a DCF or target price. Growth, dilution, probabilities and terminal multiples are analyst-set assumptions, not evidence-generated forecasts. Passing cannot upgrade a company; failing can only keep it from upgrade.
 
@@ -401,12 +406,12 @@
 | 情景 | 主观权重 | 收入CAGR | 年稀释 | 终值利润率 | 终值倍数 | 五年收入 | 每股年化回报敏感度 |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | bear | 40% | 9.4% | 8.0% | n/a | 4.4x | $183.9M | -9.2% |
-| base | 45% | 16.2% | 5.0% | n/a | 8.2x | $248.0M | 10.7% |
-| bull | 15% | 23.0% | 3.0% | n/a | 14.1x | $330.0M | 32.3% |
+| base | 45% | 16.2% | 5.0% | n/a | 8.6x | $248.0M | 11.7% |
+| bull | 15% | 23.0% | 3.0% | n/a | 14.8x | $330.0M | 33.6% |
 
-**默认期望财富口径：9.9%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：6.0%。
+**默认期望财富口径：10.7%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：6.6%。
 
-排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $24.62（相对当前 -5.8%）；悲观达到门槛所需价格 $27.29（相对当前 4.4%）。
+排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $25.76（相对当前 -1.5%）；悲观达到门槛所需价格 $27.29（相对当前 4.4%）。
 
 权重依据：Analyst-set downside-skewed priors reflecting widening losses and funding needs; not empirical probabilities. 净负债假设：Cash and marketable securities from the Q3 2026 10-Q XBRL; no long-term debt tag found. Verify before an investment conclusion. Illustrative per-share exclusion test, not a DCF or target price. Growth, dilution, probabilities and terminal multiples are analyst-set assumptions, not evidence-generated forecasts. Passing cannot upgrade a company; failing can only keep it from upgrade.
 
@@ -432,11 +437,148 @@
 | 情景 | 主观权重 | 收入CAGR | 年稀释 | 终值利润率 | 终值倍数 | 五年收入 | 每股年化回报敏感度 |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | bear | 35% | 7.4% | 3.0% | n/a | 4.7x | $1574.1M | 0.3% |
-| base | 45% | 13.8% | 2.0% | n/a | 8.2x | $2105.3M | 19.3% |
-| bull | 20% | 20.1% | 1.0% | n/a | 14.1x | $2752.6M | 41.3% |
+| base | 45% | 13.8% | 2.0% | n/a | 8.6x | $2105.3M | 20.4% |
+| bull | 20% | 20.1% | 1.0% | n/a | 14.8x | $2752.6M | 42.7% |
 
-**默认期望财富口径：20.8%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：17.1%。
+**默认期望财富口径：21.8%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：17.8%。
 
-排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $31.61（相对当前 37.2%）；悲观达到门槛所需价格 $39.60（相对当前 71.9%）。
+排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $33.12（相对当前 43.8%）；悲观达到门槛所需价格 $39.60（相对当前 71.9%）。
 
 权重依据：Analyst-set priors; not empirical probabilities. 净负债假设：Cash, restricted cash and marketable securities ($769.2M, Q3 2026 10-Q) less $393.2M long-term debt (XBRL). Illustrative per-share exclusion test, not a DCF or target price. Growth, dilution, probabilities and terminal multiples are analyst-set assumptions, not evidence-generated forecasts. Passing cannot upgrade a company; failing can only keep it from upgrade.
+
+## CARL
+
+- 估值判断：growth valuation; requires continued validation
+- 乐观情景：aprevo personalized spine-fusion plans become standard of care in more surgeon practices; revenue keeps compounding and gross margin rises with scale.
+- 中性情景：Volume keeps growing but slows from today's 65% as the surgeon base matures; cash burn requires one more equity raise.
+- 悲观情景：Adoption stalls outside early-adopting surgeons, reimbursement or hospital value-analysis committees resist the premium, and dilution erodes per-share value.
+- 下一验证事件：Q4/FY 2026 aprevo case volume, gross margin and cash runway
+- 主要竞争对手：待补充
+- 价格日期：2026-11-25；财务期：Q3 2026（截至 2026-09-30）
+- 数据状态：current_q3_2026
+- 计算口径：Price date: 2026-11-25. P/S denominator is latest quarter annualized (not TTM) (86.2M). Annualizing one quarter can distort seasonal businesses. Runway is a simple cash/burn proxy, not company guidance. EV/EBITDA and OCF yield appear only when meaningful inputs exist. Metrics are not directly comparable across business models.
+- 官方来源：[来源 1](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/)
+
+### CARL 五年数值情景（sales终值法）
+终值倍数来源：bear = Damodaran industry P/S; base = median of AI-medicine peers; bull = top quartile of peers（行业：Healthcare Products）。
+
+增速来源：起点 64.9%（latest quarter year over year），start = the company's own reported growth; bear/base fade to Damodaran industry fundamental growth, bull to the industry's 5-year revenue CAGR；行业基本增速 7.2%，行业 5 年收入 CAGR 18.4%。
+
+
+| 情景 | 主观权重 | 收入CAGR | 年稀释 | 终值利润率 | 终值倍数 | 五年收入 | 每股年化回报敏感度 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| bear | 35% | 12.5% | 8.0% | n/a | 4.4x | $155.2M | -0.2% |
+| base | 45% | 29.3% | 5.0% | n/a | 8.6x | $311.3M | 33.9% |
+| bull | 20% | 36.4% | 3.0% | n/a | 14.8x | $406.6M | 60.2% |
+
+**默认期望财富口径：34.4%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：27.2%。
+
+排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $44.16（相对当前 144.1%）；悲观达到门槛所需价格 $30.34（相对当前 67.7%）。
+
+权重依据：Analyst-set priors for a screen-found AI company; not empirical probabilities. Growth and multiples are replaced by sourced calibration. 净负债假设：SEC XBRL 2026-09-30: long-term debt $15.4M less cash $35.9M and short-term investments $24.0M. Illustrative per-share exclusion test, not a DCF or target price. Growth, dilution, probabilities and terminal multiples are analyst-set assumptions, not evidence-generated forecasts. Passing cannot upgrade a company; failing can only keep it from upgrade.
+
+## GRAL
+
+- 估值判断：premium; execution-sensitive
+- 乐观情景：Galleri gains FDA approval and coverage; screening volume inflects and the ML methylation classifier becomes the multi-cancer standard.
+- 中性情景：Screening revenue grows mid-teens (Q3 screening +14%) without broad coverage; losses narrow slowly and cash lasts about two to three years.
+- 悲观情景：Approval or coverage is delayed or limited; burn of about $320M a year forces dilution before revenue scales.
+- 下一验证事件：Galleri PMA decision and NHS-Galleri results; Q4 screening revenue
+- 主要竞争对手：待补充
+- 价格日期：2026-11-25；财务期：Q3 2026（截至 2026-09-30）
+- 数据状态：current_q3_2026
+- 计算口径：Price date: 2026-11-25. P/S denominator is latest quarter annualized (not TTM) (150.1M). Annualizing one quarter can distort seasonal businesses. Runway is a simple cash/burn proxy, not company guidance. EV/EBITDA and OCF yield appear only when meaningful inputs exist. Metrics are not directly comparable across business models.
+- 官方来源：[来源 1](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/)
+
+### GRAL 五年数值情景（sales终值法）
+终值倍数来源：bear = Damodaran industry P/S; base = median of AI-medicine peers; bull = top quartile of peers（行业：Healthcare Products）。
+
+增速来源：起点 3.7%（latest quarter year over year），start = the company's own reported growth; bear/base fade to Damodaran industry fundamental growth, bull to the industry's 5-year revenue CAGR；行业基本增速 7.2%，行业 5 年收入 CAGR 18.4%。
+
+
+| 情景 | 主观权重 | 收入CAGR | 年稀释 | 终值利润率 | 终值倍数 | 五年收入 | 每股年化回报敏感度 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| bear | 35% | 3.7% | 6.0% | n/a | 4.4x | $180.0M | -24.1% |
+| base | 45% | 3.7% | 4.0% | n/a | 8.6x | $180.0M | -16.3% |
+| bull | 20% | 12.4% | 2.0% | n/a | 14.8x | $270.0M | -1.5% |
+
+**默认期望财富口径：-14.5%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：-16.1%。
+
+排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $24.23（相对当前 -76.7%）；悲观达到门槛所需价格 $44.26（相对当前 -57.4%）。
+
+权重依据：Analyst-set priors for a screen-found AI company; not empirical probabilities. Growth and multiples are replaced by sourced calibration. 净负债假设：SEC XBRL 2026-09-30: cash, cash equivalents and short-term investments $787.6M (the filing's own total); no debt tagged. Illustrative per-share exclusion test, not a DCF or target price. Growth, dilution, probabilities and terminal multiples are analyst-set assumptions, not evidence-generated forecasts. Passing cannot upgrade a company; failing can only keep it from upgrade.
+
+## HNGE
+
+- 估值判断：premium; execution-sensitive
+- 乐观情景：AI-guided digital musculoskeletal care keeps winning employer and health-plan contracts; growth stays high and margins expand.
+- 中性情景：Growth fades from 52% toward the digital-health average as large clients saturate; profitable and cash generative.
+- 悲观情景：Employer budgets tighten and competitors undercut pricing; growth falls quickly and the premium multiple compresses.
+- 下一验证事件：Q4/FY 2026 revenue growth, member count and 2027 guidance
+- 主要竞争对手：待补充
+- 价格日期：2026-11-25；财务期：Q3 2026（截至 2026-09-30）
+- 数据状态：current_q3_2026
+- 计算口径：Price date: 2026-11-25. P/S denominator is latest quarter annualized (not TTM) (939.9M). Annualizing one quarter can distort seasonal businesses. Runway is a simple cash/burn proxy, not company guidance. EV/EBITDA and OCF yield appear only when meaningful inputs exist. Metrics are not directly comparable across business models.
+- 官方来源：[来源 1](https://www.sec.gov/Archives/edgar/data/1673743/000162828026072251/)
+
+### HNGE 五年数值情景（sales终值法）
+终值倍数来源：bear = Damodaran industry P/S; base = median of AI-medicine peers; bull = top quartile of peers（行业：Heathcare Information and Technology）。
+
+增速来源：起点 50.6%（fiscal 2025 over 2024），start = the company's own reported growth; bear/base fade to Damodaran industry fundamental growth, bull to the industry's 5-year revenue CAGR；行业基本增速 5.3%，行业 5 年收入 CAGR 15.6%。
+
+
+| 情景 | 主观权重 | 收入CAGR | 年稀释 | 终值利润率 | 终值倍数 | 五年收入 | 每股年化回报敏感度 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| bear | 35% | 9.5% | 1.0% | n/a | 4.7x | $1479.6M | -4.2% |
+| base | 45% | 22.8% | 1.0% | n/a | 8.6x | $2620.3M | 20.4% |
+| bull | 20% | 29.2% | 0.0% | n/a | 14.8x | $3383.6M | 42.4% |
+
+**默认期望财富口径：21.0%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：16.2%。
+
+排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $156.76（相对当前 43.7%）；悲观达到门槛所需价格 $149.39（相对当前 37.0%）。
+
+权重依据：Analyst-set priors for a screen-found AI company; not empirical probabilities. Growth and multiples are replaced by sourced calibration. 净负债假设：SEC XBRL 2026-09-30: cash $211.6M plus available-for-sale securities $142.6M; no debt tagged. Shares = market value / price (two share classes, no cover total in XBRL). Illustrative per-share exclusion test, not a DCF or target price. Growth, dilution, probabilities and terminal multiples are analyst-set assumptions, not evidence-generated forecasts. Passing cannot upgrade a company; failing can only keep it from upgrade.
+
+## OABI
+
+- 估值判断：premium; execution-sensitive
+- 乐观情景：Partner antibodies discovered on the platform reach approval; royalties and milestones compound across a large partnered pipeline.
+- 中性情景：Milestone revenue stays lumpy; the partnered pipeline matures slowly and cash stays roughly flat. quarterly_revenue_m is the 2026 nine-month average ($31.8M / 3); Q3 alone was $4.0M because milestone revenue is lumpy.
+- 悲观情景：Few partner programs advance, milestones dry up and the platform is valued as a cash-burning licensor.
+- 下一验证事件：Q4 2026 milestone revenue, new partner programs and royalty-bearing approvals
+- 主要竞争对手：待补充
+- 价格日期：2026-11-25；财务期：Q3 2026（截至 2026-09-30）
+- 数据状态：current_q3_2026
+- 计算口径：Price date: 2026-11-25. P/S denominator is latest quarter annualized (not TTM) (42.4M). Annualizing one quarter can distort seasonal businesses. Runway is a simple cash/burn proxy, not company guidance. EV/EBITDA and OCF yield appear only when meaningful inputs exist. Metrics are not directly comparable across business models.
+- 官方来源：[来源 1](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/)
+
+### OABI 五年数值情景（sales终值法）
+终值倍数来源：bear = Damodaran industry P/S; base = median of AI-medicine peers; bull = top quartile of peers（行业：Drugs (Biotechnology)）。
+
+增速来源：起点 -29.2%（fiscal 2025 over 2024），start = the company's own reported growth; bear/base fade to Damodaran industry fundamental growth, bull to the industry's 5-year revenue CAGR；行业基本增速 -5.7%，行业 5 年收入 CAGR 28.9%。
+
+
+| 情景 | 主观权重 | 收入CAGR | 年稀释 | 终值利润率 | 终值倍数 | 五年收入 | 每股年化回报敏感度 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| bear | 35% | -29.2% | 3.0% | n/a | 7.3x | $7.6M | -31.7% |
+| base | 45% | -29.2% | 2.0% | n/a | 8.6x | $7.6M | -29.9% |
+| bull | 20% | 4.4% | 1.0% | n/a | 14.8x | $52.6M | 3.0% |
+
+**默认期望财富口径：-18.5%。** 先对每个情景的稀释后终值财富取期望，再年化，符合期望财富定义。直接加权三个年化率仅作分布辅助：-24.0%。
+
+排除性安全边际：基准≥12%、悲观≥-10%且输入已核验。当前结果：未通过；输入核验：否。基准达到门槛所需价格 $0.46（相对当前 -90.4%）；悲观达到门槛所需价格 $1.20（相对当前 -74.8%）。
+
+权重依据：Analyst-set priors for a screen-found AI company; not empirical probabilities. Growth and multiples are replaced by sourced calibration. 净负债假设：SEC XBRL 2026-09-30: cash $22.9M plus short-term securities $41.3M; no debt tagged. Illustrative per-share exclusion test, not a DCF or target price. Growth, dilution, probabilities and terminal multiples are analyst-set assumptions, not evidence-generated forecasts. Passing cannot upgrade a company; failing can only keep it from upgrade.
+
+## GENB
+
+- 估值判断：premium; execution-sensitive
+- 乐观情景：The AI protein-design platform produces clinical assets that read out well and draws new pharma partnerships.
+- 中性情景：Clinical-stage platform: collaboration revenue falls as Novartis and Amgen obligations near completion; value rests on the pipeline. No sales-based scenario model: collaboration revenue is not product revenue.
+- 悲观情景：Clinical setbacks and no new partners; burn of about $350M a year forces dilution.
+- 下一验证事件：GB-0895 clinical data and new pharma collaborations
+- 主要竞争对手：待补充
+- 价格日期：2026-11-25；财务期：Q3 2026（截至 2026-09-30）
+- 数据状态：current_q3_2026
+- 计算口径：Price date: 2026-11-25. P/S denominator is latest quarter annualized (not TTM) (16.9M). Annualizing one quarter can distort seasonal businesses. Runway is a simple cash/burn proxy, not company guidance. EV/EBITDA and OCF yield appear only when meaningful inputs exist. Metrics are not directly comparable across business models.
+- 官方来源：[来源 1](https://www.sec.gov/Archives/edgar/data/2100782/000119312526456890/)

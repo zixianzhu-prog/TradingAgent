@@ -1,6 +1,6 @@
 # 生物科技公开观点与专业资金对标
 
-> 生成：2026-11-25T17:11:11+00:00。公开观点 0 条；可计分观察 0 条；专业资金申报 24 条。
+> 生成：2026-11-26T19:46:38+00:00。公开观点 0 条；可计分观察 0 条；专业资金申报 23 条。
 
 > 观点只在系统首次发现后向前计分；旧文章不会从原发布日期回填收益。基金持仓是背景信息，不是买入建议，也不等于公司获得融资。
 
@@ -29,7 +29,6 @@
 
 | 日期 | 基金 | 股票 | 申报 | 持股 | 首次/修订 | 来源 |
 |---|---|---|---|---:|---|---|
-| 2026-11-16 | RTW Investments | YARW | SCHEDULE 13G/A | 9.90% | 修订 | [SEC](https://www.sec.gov/Archives/edgar/data/1566044/000214739726000003/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | RA Capital | PALI | SCHEDULE 13G/A | 9.90% | 修订 | [SEC](https://www.sec.gov/Archives/edgar/data/1357459/000134682426000291/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | Perceptive Advisors | IRD | SCHEDULE 13G/A | 9.99% | 修订 | [SEC](https://www.sec.gov/Archives/edgar/data/1228627/000119312526463810/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | Perceptive Advisors | YARW | SCHEDULE 13G/A | 9.99% | 修订 | [SEC](https://www.sec.gov/Archives/edgar/data/1566044/000119312526463818/xslSCHEDULE_13G_X02/primary_doc.xml) |

@@ -1,6 +1,6 @@
 # 管理层与核心人物雷达
 
-> 截至 2026-11-25；覆盖 16 家公司、37 名已读取申报人、39 个事件。紧急重审 2 家，普通重审 0 家；待读取 Form 4 共 0 份。
+> 截至 2026-11-26；覆盖 16 家公司、37 名已读取申报人、41 个事件。紧急重审 2 家，普通重审 0 家；待读取 Form 4 共 0 份。
 
 > 这是治理研究触发器，不是涨跌预测。Form 4 卖出不会自动视为看空；重大离职和调查只会重新打开对应的 Serenity 门槛。
 
@@ -9,10 +9,10 @@
 | 紧急重审 | NVDA | 2 | 3 | 0 | 1 | counter_thesis, earnings_validation, management_governance, reputation_risk |
 | 紧急重审 | GEHC | 3 | 1 | 0 | 0 | counter_thesis, earnings_validation, management_governance |
 | 监控 | ISRG | 2 | 6 | 0 | 6 | — |
+| 监控 | CBLL | 3 | 5 | 0 | 5 | — |
 | 监控 | HTFL | 3 | 5 | 0 | 5 | — |
 | 监控 | CAI | 3 | 4 | 0 | 4 | — |
 | 监控 | TEM | 2 | 4 | 0 | 4 | — |
-| 监控 | CBLL | 3 | 3 | 0 | 3 | — |
 | 监控 | NTRA | 1 | 3 | 0 | 3 | — |
 | 监控 | SOPH | 2 | 3 | 0 | 3 | — |
 | 监控 | GH | 3 | 2 | 0 | 2 | — |
@@ -52,6 +52,19 @@
 - 2026-11-10 · **LOEB GARY open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1035267/000156173326000018/xslF345X06/edgardoc.xml)
   - 400 shares; value $183,260; code S
 
+## CBLL · 监控
+
+- 2026-11-24 · **Woo Raymond open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1861107/000119312526478833/xslF345X06/ownership.xml)
+  - 374 shares; value $11,220; code S
+- 2026-11-24 · **Foehr David open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1861107/000119312526478831/xslF345X06/ownership.xml)
+  - 1,766 shares; value $51,479; code S
+- 2026-11-23 · **Manni Joseph S. open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1861107/000119312526478835/xslF345X06/ownership.xml)
+  - 1,313 shares; value $36,633; code S
+- 2026-11-23 · **Woo Raymond open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1861107/000119312526478833/xslF345X06/ownership.xml)
+  - 1,918 shares; value $53,512; code S
+- 2026-11-23 · **Foehr David open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1861107/000119312526478831/xslF345X06/ownership.xml)
+  - 962 shares; value $26,840; code S
+
 ## HTFL · 监控
 
 - 2026-11-17 · **Rogers Campbell open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000175/xslF345X06/form4.xml)
@@ -86,15 +99,6 @@
   - 2,103 shares; value $131,080; code S
 - 2026-11-12 · **LEFKOFSKY ERIC P open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000048/xslF345X06/form4-11232026_091158.xml)
   - 3,307 shares; value $205,067; code S
-
-## CBLL · 监控
-
-- 2026-11-16 · **Parvizi Josef open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1861107/000119312526465905/xslF345X06/ownership.xml)
-  - 25,000 shares; value $650,500; code S
-- 2026-11-12 · **BURKE WILLIAM W open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1861107/000119312526461156/xslF345X06/ownership.xml)
-  - 16,845 shares; value $447,740; code S
-- 2026-11-09 · **Taylor Joseph Michael open-market sale** · context-needed · [SEC Form 4](https://www.sec.gov/Archives/edgar/data/1861107/000119312526455553/xslF345X06/ownership.xml)
-  - 10,200 shares; value $277,644; code S
 
 ## NTRA · 监控
 

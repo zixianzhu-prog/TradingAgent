@@ -1,6 +1,6 @@
 # 生物安全与疫情雷达
 
-截至 2026-11-25。来源：USAspending.gov, awarding sub-agency: Office of Assistant Secretary for Preparedness and Response；WHO Disease Outbreak News。
+截至 2026-11-26。来源：USAspending.gov, awarding sub-agency: Office of Assistant Secretary for Preparedness and Response；WHO Disease Outbreak News。
 
 近 90 天 ASPR/BARDA 合同动作 27 笔（≥500 万美元），合计 $916M，其中 8 家上市公司；近 60 天 WHO 疫情通报 12 条。合同是收款方的收入；疫情只是背景，不等于销售。
 疫情与合同按病原名称匹配，较粗：例如 Regeneron 的 Inmazeb 针对 Zaire 型埃博拉，对 Bundibugyo 型没有获批适应症，需逐一核对毒株。

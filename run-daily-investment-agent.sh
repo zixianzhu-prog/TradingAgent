@@ -31,6 +31,15 @@ json.dump({"at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "stat
           open(path, "w", encoding="utf-8"), indent=2)
 PY
 }
+case "${SEC_USER_AGENT:-}" in
+  *@*) ;;
+  *)
+    # Most steps read SEC EDGAR, which requires a contact address; without it they would replace good results with
+    # empty "pending-config" ones. The address is never stored in the repo, so stop here and keep yesterday's outputs.
+    echo "SEC_USER_AGENT is not set (contact email required by SEC). Nothing was run; the last results are kept." >&2
+    echo "Run: SEC_USER_AGENT=\"Name email\" $0" >&2
+    exit 2 ;;
+esac
 write_status running
 trap 'code=$?; if [ "$code" -ne 0 ]; then write_status "aborted (exit $code)"; fi' EXIT
 cd "$PROJECT_DIR/trend-agent"
@@ -174,7 +183,7 @@ PYTHONPATH=src .venv/bin/python -m ai_fund_lab.cli \
   --reports ../outputs/nvidia-market
 
 cd "$PROJECT_DIR"
-if [ "$AGENT_MODE" = "deep" ] && [ "${RUN_TRADINGAGENTS_FULL_REVIEW:-1}" = "1" ]; then
+if [ "$AGENT_MODE" = "deep" ] && [ "${RUN_TRADINGAGENTS_FULL_REVIEW:-0}" = "1" ]; then
   python3 scripts/run_tradingagents_full_review.py \
     --limit "${TRADINGAGENTS_REVIEW_LIMIT:-1}" \
     --cadence-days "${TRADINGAGENTS_REVIEW_CADENCE_DAYS:-7}" \

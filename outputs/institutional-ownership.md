@@ -1,6 +1,6 @@
 # SEC 13D/13G 重要股东雷达
 
-> 状态：partial。覆盖队列 44 家；文件 246 份；13D 30；13G 216。
+> 状态：ok。覆盖队列 44 家；文件 246 份；13D 31；13G 215。
 
 > 13D/13G 证明重要股东的受益所有权，不等于公司获得新融资。13D 可能带有影响控制的意图；13G 通常是被动或合格机构申报。
 
@@ -10,6 +10,7 @@
 
 | 日期 | 公司 | 基金 | 持股比例 | 首次/修订 | 文件 | 来源 |
 |---|---|---|---:|---|---|---|
+| 2026-11-25 | YARW | Logos Global Management LP | 9.50% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1566044/000093583626000662/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-17 | YARW | Logos Global Management LP | 9.99% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1566044/000093583626000626/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | GLUE | TCG Crossover GP II, LLC | 4.40% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1826457/000119312526464030/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | GLUE | Vestal Point Capital, LP | 8.40% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1826457/000090266426004583/xslSCHEDULE_13G_X02/primary_doc.xml) |
@@ -21,7 +22,6 @@
 | 2026-11-16 | IRD | Cormorant Asset Management, LP | 6.61% | 首次 | SCHEDULE 13G | [SEC](https://www.sec.gov/Archives/edgar/data/1228627/000117266126005298/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | SGMT | Woodline Partners LP | 5.10% | 首次 | SCHEDULE 13G | [SEC](https://www.sec.gov/Archives/edgar/data/1400118/000091957426008060/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | YARW | Perceptive Advisors LLC | 9.99% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1566044/000119312526463818/xslSCHEDULE_13G_X02/primary_doc.xml) |
-| 2026-11-16 | YARW | RTW Fund Group GP, LLC | 9.90% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1566044/000214739726000003/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | AGMB | Redmile Group, LLC | 3.50% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/2020932/000090514826004929/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | ANTX | Commodore Capital LP | 9.90% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1880438/000183194226000048/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | PALI | RA Capital Management, L.P. | 9.90% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1357459/000134682426000291/xslSCHEDULE_13G_X02/primary_doc.xml) |
@@ -66,12 +66,12 @@
 | 2026-02-17 | ALEC | RTW Investments, LP | 0.00% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1653087/000149321526000024/xslSCHEDULE_13G_X01/primary_doc.xml) |
 | 2026-02-17 | ELDN | RA Capital Management, L.P. | 0.00% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1404281/000134682426000041/xslSCHEDULE_13G_X01/primary_doc.xml) |
 | 2026-02-17 | KALA | Baker Bros. Advisors LP | 9.99% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1479419/000110465926016457/xslSCHEDULE_13G_X01/primary_doc.xml) |
-| 2025-11-25 | CERT | Deerfield Mgmt, L.P. | 4.90% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1827090/000119380525001659/xslSCHEDULE_13G_X01/primary_doc.xml) |
 
 ## 全部申报
 
 | 日期 | 公司 | 文件 | 申报人 | 持股比例 | 类型 | 来源 |
 |---|---|---|---|---:|---|---|
+| 2026-11-25 | YARW | SCHEDULE 13G/A | Logos Global Management LP | 9.50% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1566044/000093583626000662/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-24 | IBIO | SCHEDULE 13G/A | Coastlands Capital LP | 13.01% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1420720/000110465926131475/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-20 | YARW | SCHEDULE 13D/A | AI Biotechnology LLC | 1.16% | potential-control-or-active | [SEC](https://www.sec.gov/Archives/edgar/data/1566044/000119312526470747/xslSCHEDULE_13D_X02/primary_doc.xml) |
 | 2026-11-17 | YARW | SCHEDULE 13G/A | Logos Global Management LP | 9.99% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1566044/000093583626000626/xslSCHEDULE_13G_X02/primary_doc.xml) |
@@ -96,7 +96,6 @@
 | 2026-11-16 | YARW | SCHEDULE 13G/A | Perceptive Advisors LLC | 9.99% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1566044/000119312526463818/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | YARW | SCHEDULE 13G/A | JANUS HENDERSON GROUP Ltd. | 3.00% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1566044/000127417326000261/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | YARW | SCHEDULE 13G | Ameriprise Financial, Inc. | 8.60% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1566044/000119312526462440/xslSCHEDULE_13G_X02/primary_doc.xml) |
-| 2026-11-16 | YARW | SCHEDULE 13G/A | RTW Fund Group GP, LLC | 9.90% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1566044/000214739726000003/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | AGMB | SCHEDULE 13G/A | Redmile Group, LLC | 3.50% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/2020932/000090514826004929/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | ANTX | SCHEDULE 13G/A | Commodore Capital LP | 9.90% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1880438/000183194226000048/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | PALI | SCHEDULE 13G/A | RA Capital Management, L.P. | 9.90% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1357459/000134682426000291/xslSCHEDULE_13G_X02/primary_doc.xml) |
@@ -116,6 +115,7 @@
 | 2026-11-13 | OM | SCHEDULE 13G/A | AQR Capital Management, LLC | 1.83% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1484612/000116755726000250/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-12 | SOPH | SCHEDULE 13D/A | Schindel Yair Chaim | 6.20% | potential-control-or-active | [SEC](https://www.sec.gov/Archives/edgar/data/1840706/000117891326005168/xslSCHEDULE_13D_X02/primary_doc.xml) |
 | 2026-11-12 | IRD | SCHEDULE 13G/A | Adage Capital Management, L.P. | 2.71% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1228627/000091957426007560/xslSCHEDULE_13G_X02/primary_doc.xml) |
+| 2026-11-12 | BDSX | SCHEDULE 13D/A | SCHULER JACK W | 22.30% | potential-control-or-active | [SEC](https://www.sec.gov/Archives/edgar/data/1439725/000090514826004746/xslSCHEDULE_13D_X02/primary_doc.xml) |
 | 2026-11-10 | RXRX | SCHEDULE 13G | STATE STREET CORPORATION | 5.60% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1601830/000009375126000711/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-10 | CGEM | SCHEDULE 13G | STATE STREET CORPORATION | 4.00% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1789972/000009375126000639/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-09 | PALI | SCHEDULE 13G/A | Soleus Capital Master Fund, L.P. | 8.60% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1357459/000121390026117542/xslSCHEDULE_13G_X02/primary_doc.xml) |
@@ -317,4 +317,3 @@
 | 2026-01-08 | ANIK | SCHEDULE 13G/A | Trigran Investments, Inc. | 1.20% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/898437/000110465926002059/xslSCHEDULE_13G_X01/primary_doc.xml) |
 | 2025-12-18 | SGMT | SCHEDULE 13G/A | KPCB Pandemic and Bio Defense Fund, LLC | 0.00% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1400118/000110465925122583/xslSCHEDULE_13G_X01/primary_doc.xml) |
 | 2025-12-03 | KALA | SCHEDULE 13G | OXFORD FINANCE LLC | 16.50% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1479419/000155625725000003/xslSCHEDULE_13G_X01/primary_doc.xml) |
-| 2025-11-25 | CERT | SCHEDULE 13G/A | Deerfield Mgmt, L.P. | 4.90% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1827090/000119380525001659/xslSCHEDULE_13G_X01/primary_doc.xml) |

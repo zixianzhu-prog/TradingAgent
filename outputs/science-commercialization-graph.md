@@ -1,6 +1,6 @@
 # 科研到商业化证据链
 
-> 已连接 57 家公司；合作或公司收入信号 17 家；研究者/公司关系 16 家；公司披露技术归属 18 家；USPTO 独立核验 7 家；13D/13G 重要股东 42 家；完整链路 0 家。
+> 已连接 57 家公司；合作或公司收入信号 17 家；研究者/公司关系 16 家；公司披露技术归属 18 家；USPTO 独立核验 6 家；13D/13G 重要股东 42 家；完整链路 0 家。
 
 > 这是可审计研究漏斗，不是股票评分。技术相似、论文提及或合作公告都不能单独证明知识产权、客户收入或买入价值。
 
@@ -8,12 +8,12 @@
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---|
 | NTRA | 1 | 34 | 0 | 1 | 8 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
 | TECX | 0 | 0 | 17 | 1 | 3 | 0 | 0 | 0 | science-linked |
-| ALEC | 1 | 1 | 6 | 1 | 8 | 2 | 0 | 0 | ownership-and-pharma-validated |
 | IRD | 0 | 0 | 8 | 1 | 8 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | PRME | 0 | 0 | 12 | 1 | 3 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | RXRX | 1 | 2 | 1 | 1 | 8 | 0 | 3 | 1 | ownership-and-company-revenue-verified |
 | ABCL | 1 | 6 | 3 | 1 | 2 | 0 | 2 | 1 | ownership-and-company-revenue-verified |
-| BDSX | 0 | 0 | 6 | 1 | 7 | 0 | 0 | 0 | science-linked |
+| ALEC | 1 | 1 | 3 | 1 | 8 | 2 | 0 | 0 | ownership-and-pharma-validated |
+| BDSX | 0 | 0 | 6 | 1 | 8 | 0 | 0 | 0 | science-linked |
 | SDGR | 1 | 1 | 2 | 1 | 6 | 0 | 2 | 1 | ownership-and-company-revenue-verified |
 | FATE | 1 | 1 | 5 | 1 | 4 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | HURA | 0 | 0 | 9 | 1 | 2 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
@@ -29,13 +29,13 @@
 | SGMT | 1 | 1 | 0 | 1 | 7 | 0 | 0 | 0 | science-linked |
 | YARW | 0 | 0 | 1 | 1 | 8 | 0 | 0 | 0 | science-linked |
 | ANIK | 1 | 1 | 0 | 0 | 6 | 1 | 0 | 0 | commercial-signal-with-ownership-gap |
-| CERT | 1 | 1 | 0 | 0 | 6 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
 | ELDN | 0 | 0 | 1 | 0 | 8 | 0 | 0 | 0 | science-linked |
 | GLUE | 0 | 0 | 0 | 1 | 8 | 0 | 0 | 0 | evidence-fragment |
 | IBIO | 0 | 0 | 0 | 1 | 8 | 0 | 0 | 0 | evidence-fragment |
 | OM | 0 | 0 | 0 | 1 | 8 | 0 | 0 | 0 | evidence-fragment |
 | OMDA | 0 | 0 | 0 | 1 | 8 | 0 | 0 | 0 | evidence-fragment |
 | RNA | 0 | 0 | 0 | 0 | 8 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
+| CERT | 1 | 1 | 0 | 0 | 5 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
 | GEHC | 0 | 0 | 0 | 0 | 7 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
 | HCAT | 0 | 0 | 0 | 0 | 8 | 0 | 0 | 0 | evidence-fragment |
 | AGMB | 0 | 0 | 0 | 0 | 7 | 0 | 0 | 0 | evidence-fragment |
@@ -103,24 +103,6 @@
 - [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/67433/216) · uspto_assignment：USPTO recorded assignment 067433/0216 from GRUSWITZ, FRANZ to TECTONIC THERAPEUTIC, INC. on 2024-05-16
 - [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/67433/222) · uspto_assignment：USPTO recorded assignment 067433/0222 from ALVES, WASHINGTON; DIENER, JOHN; KNIHTILA, RYAN; MUSLIN, ANTHONY J. to TECTONIC THERAPEUTIC, INC. on 2024-05-16
 - [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/69261/712) · uspto_assignment：USPTO recorded assignment 069261/0712 from ALPINE MERGER SUBSIDIARY, INC.; TECTONIC THERAPEUTIC, INC. to TECTONIC OPERATING COMPANY, INC. on 2024-11-14
-
-## ALEC · Alector, Inc.
-
-已有商业信号，但不能把合作公告当成客户收入；仍按缺口继续核验。
-
-**尚缺证据**
-- 缺 IND 生效或已登记临床试验证据
-- 缺经 SEC/XBRL 核验的收入证据
-
-**已核验证据**
-- [OpenAlex company institution](https://doi.org/10.1186/s13195-024-01599-1) · company_authored_research：41 papers since 2023-11-24 list Alector (United States) as an author institution; most cited: Preclinical and first-in-human evaluation of AL002, a novel TREM2 agonistic antibody for Alzheimer’s disease
-- [OpenAlex author affiliation](https://doi.org/10.1186/s13195-024-01599-1) · researcher_company_affiliation：Hua Long, Adam Simmons, Arthur J. Mayorga, Brady Burgess affiliated with Alector (United States) on Preclinical and first-in-human evaluation of AL002, a novel TREM2 agonistic antibody for Alzheimer’s disease
-- [SEC filing](https://www.sec.gov/Archives/edgar/data/1653087/000119312526071593/alec-20251231.htm) · patent_portfolio：Tau siRNA Program We own one patent family directed to our ABC-enabled tau siRNA program.
-- [SEC filing](https://www.sec.gov/Archives/edgar/data/1653087/000119312526071593/alec-20251231.htm) · patent_portfolio：GCase Program We own two patent families directed to our glucocerebrosidase (GCase) program covering engineered GCase compositions including our ABC platform technology and use of those compositions.
-- [SEC filing](https://www.sec.gov/Archives/edgar/data/1653087/000119312526071593/alec-20251231.htm) · patent_portfolio：A-beta Program We own one patent family directed to our ABC-enabled anti-amyloid beta program.
-- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/74695/213) · uspto_assignment：USPTO recorded assignment 074695/0213 from BIENLY, THUNGA; BROWN, ERIC; NIVITCHANYONG, TARANGSRI; ROSENTHAL, ARNON; SOKOLOVSKY, MAYA; TANG, MARGARET L.; TONG, RAYMOND KA-HANG; GONG, BELVIN; YEE, ANGIE GRACE; HADDAD, DOMINIK; LONG, HUA; SUN, JIAHONG; SHAN, LU to ALECTOR LLC on 2026-05-19
-- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/73782/694) · uspto_assignment：USPTO recorded assignment 073782/0694 from BIENLY, THUNGA; BROWN, ERIC; NIVITCHANYONG, TARANGSRI; ROSENTHAL, ARNON; SOKOLOVSKY, MAYA; TANG, MARGARET L.; TONG, RAYMOND KA-HANG; GONG, BELVIN; YEE, ANGIE GRACE; HADDAD, DOMINIK; LONG, HUA; SUN, JIAHONG; SHAN, LU to ALECTOR LLC on 2026-02-13
-- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/73782/694) · uspto_assignment：USPTO recorded assignment 073782/0694 from BIENLY, THUNGA; BROWN, ERIC; NIVITCHANYONG, TARANGSRI; ROSENTHAL, ARNON; SOKOLOVSKY, MAYA; TANG, MARGARET L.; TONG, RAYMOND KA-HANG; GONG, BELVIN; YEE, ANGIE GRACE; HADDAD, DOMINIK; LONG, HUA; SUN, JIAHONG; SHAN, LU to ALECTOR LLC on 2026-02-13
 
 ## IRD · Opus Genetics, Inc.
 
@@ -198,6 +180,25 @@
 - [OpenAlex author affiliation](https://doi.org/10.1080/19420862.2024.2394229) · researcher_company_affiliation：Alaa Amash, Gesa Volkers, Patrick J. Farber, Daniel Griffin affiliated with AbCellera (Canada) on Developability considerations for bispecific and multispecific antibodies
 - [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1703057/000170305726000012/abcl-20251231.htm) · license：Patent Portfolio We have developed an expansive patent portfolio with claims related to multiple aspects of our discovery and development capabilities, beginning with our first patent applications exclusively licensed from UBC in 2013.
 
+## ALEC · Alector, Inc.
+
+已有商业信号，但不能把合作公告当成客户收入；仍按缺口继续核验。
+
+**尚缺证据**
+- 公司已在 SEC 披露专利/许可，但尚缺 USPTO 或大学技术转移材料独立复核
+- 缺 IND 生效或已登记临床试验证据
+- 缺经 SEC/XBRL 核验的收入证据
+
+**已核验证据**
+- [OpenAlex company institution](https://doi.org/10.1186/s13195-024-01599-1) · company_authored_research：41 papers since 2023-11-24 list Alector (United States) as an author institution; most cited: Preclinical and first-in-human evaluation of AL002, a novel TREM2 agonistic antibody for Alzheimer’s disease
+- [OpenAlex author affiliation](https://doi.org/10.1186/s13195-024-01599-1) · researcher_company_affiliation：Hua Long, Adam Simmons, Arthur J. Mayorga, Brady Burgess affiliated with Alector (United States) on Preclinical and first-in-human evaluation of AL002, a novel TREM2 agonistic antibody for Alzheimer’s disease
+- [SEC filing](https://www.sec.gov/Archives/edgar/data/1653087/000119312526071593/alec-20251231.htm) · patent_portfolio：Tau siRNA Program We own one patent family directed to our ABC-enabled tau siRNA program.
+- [SEC filing](https://www.sec.gov/Archives/edgar/data/1653087/000119312526071593/alec-20251231.htm) · patent_portfolio：GCase Program We own two patent families directed to our glucocerebrosidase (GCase) program covering engineered GCase compositions including our ABC platform technology and use of those compositions.
+- [SEC filing](https://www.sec.gov/Archives/edgar/data/1653087/000119312526071593/alec-20251231.htm) · patent_portfolio：A-beta Program We own one patent family directed to our ABC-enabled anti-amyloid beta program.
+- [SEC XBRL](https://www.sec.gov/Archives/edgar/data/1653087/000119312526071593/) · equity_raise：Cash received from issuing equity (XBRL ProceedsFromIssuanceOfCommonStock): 2024-01-01 to 2024-12-31: $71.1M (10-K); 2025-01-01 to 2025-12-31: $20.0M (10-K)
+- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1653087/000134682426000247/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：RA Capital Management, L.P. reported beneficial ownership of 5.1% on SCHEDULE 13G.
+- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1653087/000117266126004680/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Deep Track Capital, LP reported beneficial ownership of 8.61% on SCHEDULE 13G.
+
 ## BDSX · BIODESIX INC
 
 目前只到科研/关系发现层，不能升级为商业化结论。
@@ -216,7 +217,7 @@
 - [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/66230/209) · uspto_assignment：USPTO recorded assignment 066230/0209 from PESTANO, GARY A.; MELLERT, HESTIA to BIODESIX, INC. on 2024-01-24
 - [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/65174/123) · uspto_assignment：USPTO recorded assignment 065174/0123 from CAMPBELL, THOMAS; GEORGANTAS, ROBERT W., III; RÖDER, HEINRICH; RÖDER, JOANNA; MAGUIRE, LAURA to BIODESIX, INC. on 2023-10-10
 - [SEC XBRL](https://www.sec.gov/Archives/edgar/data/1439725/000119312526449763/) · equity_raise：Cash received from issuing equity (XBRL ProceedsFromIssuanceOfCommonStock): 2024-01-01 to 2024-12-31: $55.6M (10-K); 2025-01-01 to 2025-12-31: $7.3M (10-K); 2026-01-01 to 2026-09-30: $30.4M (10-Q)
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1439725/000121390026070194/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Soleus Capital Master Fund, L.P. reported beneficial ownership of 5.1% on SCHEDULE 13G.
+- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1439725/000090514826004746/xslSCHEDULE_13D_X02/primary_doc.xml) · schedule_13d：SCHULER JACK W reported beneficial ownership of 22.3% on SCHEDULE 13D/A.
 
 ## SDGR · Schrodinger
 

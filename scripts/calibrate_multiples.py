@@ -47,6 +47,10 @@ INDUSTRY = {
     "NTRA": "Healthcare Products",    # genetic testing; Damodaran's support-services group (0.37x) is insurers and distributors
     "GH": "Healthcare Products",
     "CERT": "Heathcare Information and Technology",  # biosimulation software
+    "CARL": "Healthcare Products",    # personalized spine implants planned by AI
+    "GRAL": "Healthcare Products",    # cancer screening test, grouped with NTRA and GH
+    "HNGE": "Heathcare Information and Technology",  # digital musculoskeletal care
+    "OABI": "Drugs (Biotechnology)",  # antibody-discovery platform paid in milestones and royalties
 }
 # Mature companies where AI is a small part of revenue: the base case keeps today's own multiple (no AI re-rating),
 # the bear case is the lower of the industry and 75% of today's, the bull case at most the lowest of industry, peers and 1.5x today's.

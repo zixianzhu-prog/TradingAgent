@@ -2,12 +2,17 @@
 
 > 只把 P（公开市场买入）与 S（公开市场卖出）视为主动市场交易；A/M/F/G 等授予、行权、纳税或赠与不会被误报为买卖。新申报仅触发研究，不改变评级、不下单。
 
-模式：`monitor`；近期开表 45 份；本次新增 1 份；已确认公开市场交易 123 笔；读取错误 0。
+模式：`monitor`；近期开表 45 份；本次新增 0 份；已确认公开市场交易 124 笔；读取错误 0。
 
 ## 公开市场交易
 
 | 日期 | 股票 | 内部人 | 类型 | 股数 | 价格 | 金额 | 申报 |
 |---|---|---|---|---:|---:|---:|---|
+| 2026-11-23 | CBLL | Manni Joseph S. | S 公开市场卖出 | 1,313 | $27.90 | $36,633 | [SEC](https://www.sec.gov/Archives/edgar/data/1861107/000119312526478835/xslF345X06/ownership.xml) |
+| 2026-11-23 | CBLL | Woo Raymond | S 公开市场卖出 | 1,918 | $27.90 | $53,512 | [SEC](https://www.sec.gov/Archives/edgar/data/1861107/000119312526478833/xslF345X06/ownership.xml) |
+| 2026-11-24 | CBLL | Woo Raymond | S 公开市场卖出 | 374 | $30.00 | $11,220 | [SEC](https://www.sec.gov/Archives/edgar/data/1861107/000119312526478833/xslF345X06/ownership.xml) |
+| 2026-11-23 | CBLL | Foehr David | S 公开市场卖出 | 962 | $27.90 | $26,840 | [SEC](https://www.sec.gov/Archives/edgar/data/1861107/000119312526478831/xslF345X06/ownership.xml) |
+| 2026-11-24 | CBLL | Foehr David | S 公开市场卖出 | 1,766 | $29.15 | $51,479 | [SEC](https://www.sec.gov/Archives/edgar/data/1861107/000119312526478831/xslF345X06/ownership.xml) |
 | 2026-11-23 | SOPH | Van Well Daan | S 公开市场卖出 | 1,623 | $6.56 | $10,655 | [SEC](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000366/xslF345X06/wk-form4_1795554087.xml) |
 | 2026-11-19 | NVDA | Teter Timothy S. | S 公开市场卖出 | 1,434 | $146.03 | $209,407 | [SEC](https://www.sec.gov/Archives/edgar/data/1045810/000169684126000016/xslF345X06/wk-form4_1795470863.xml) |
 | 2026-11-19 | NVDA | Teter Timothy S. | S 公开市场卖出 | 4,217 | $147.24 | $620,917 | [SEC](https://www.sec.gov/Archives/edgar/data/1045810/000169684126000016/xslF345X06/wk-form4_1795470863.xml) |
@@ -74,7 +79,6 @@
 | 2026-11-17 | ISRG | Brosius Mark | S 公开市场卖出 | 46 | $437.33 | $20,117 | [SEC](https://www.sec.gov/Archives/edgar/data/1035267/000201030026000039/xslF345X06/edgardoc.xml) |
 | 2026-11-18 | ISRG | Brosius Mark | S 公开市场卖出 | 46 | $430.63 | $19,809 | [SEC](https://www.sec.gov/Archives/edgar/data/1035267/000201030026000039/xslF345X06/edgardoc.xml) |
 | 2026-11-16 | SOPH | Van Well Daan | S 公开市场卖出 | 1,224 | $7.73 | $9,462 | [SEC](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000364/xslF345X06/wk-form4_1794949249.xml) |
-| 2026-11-16 | CBLL | Parvizi Josef | S 公开市场卖出 | 25,000 | $26.02 | $650,500 | [SEC](https://www.sec.gov/Archives/edgar/data/1861107/000119312526465905/xslF345X06/ownership.xml) |
 | 2026-11-13 | SOPH | Xu Zhenyu | S 公开市场卖出 | 4,000 | $7.96 | $31,821 | [SEC](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000362/xslF345X06/wk-form4_1794862930.xml) |
 | 2026-11-13 | ABCL | Booth Andrew | P 公开市场买入 | 8,600 | $11.33 | $97,438 | [SEC](https://www.sec.gov/Archives/edgar/data/1703057/000183441126000010/xslF345X06/wk-form4_1794591678.xml) |
 | 2026-11-11 | NTRA | Sheena Jonathan | S 公开市场卖出 | 40 | $315.26 | $12,610 | [SEC](https://www.sec.gov/Archives/edgar/data/1604821/000164664926000045/xslF345X06/form4-11132026_091101.xml) |
@@ -91,8 +95,6 @@
 | 2026-11-11 | NTRA | Sheena Jonathan | S 公开市场卖出 | 120 | $320.07 | $38,408 | [SEC](https://www.sec.gov/Archives/edgar/data/1604821/000164664926000045/xslF345X06/form4-11132026_091101.xml) |
 | 2026-11-11 | NTRA | Sheena Jonathan | S 公开市场卖出 | 80 | $322.88 | $25,830 | [SEC](https://www.sec.gov/Archives/edgar/data/1604821/000164664926000045/xslF345X06/form4-11132026_091101.xml) |
 | 2026-11-11 | NTRA | Sheena Jonathan | S 公开市场卖出 | 40 | $324.76 | $12,990 | [SEC](https://www.sec.gov/Archives/edgar/data/1604821/000164664926000045/xslF345X06/form4-11132026_091101.xml) |
-| 2026-11-12 | CBLL | BURKE WILLIAM W | S 公开市场卖出 | 16,845 | $26.58 | $447,740 | [SEC](https://www.sec.gov/Archives/edgar/data/1861107/000119312526461156/xslF345X06/ownership.xml) |
-| 2026-11-12 | CBLL | BURKE WILLIAM W | S 公开市场卖出 | 1,155 | $27.48 | $31,739 | [SEC](https://www.sec.gov/Archives/edgar/data/1861107/000119312526461156/xslF345X06/ownership.xml) |
 | 2026-11-11 | SDGR | Abel Robert Lorne | S 公开市场卖出 | 21,927 | $34.00 | $745,518 | [SEC](https://www.sec.gov/Archives/edgar/data/1490978/000179817926000007/xslF345X06/wk-form4_1794520216.xml) |
 | 2026-11-11 | SDGR | Abel Robert Lorne | S 公开市场卖出 | 1,678 | $34.00 | $57,052 | [SEC](https://www.sec.gov/Archives/edgar/data/1490978/000179817926000007/xslF345X06/wk-form4_1794520216.xml) |
 | 2026-11-11 | RDNT | Patel Mital | S 公开市场卖出 | 44,661 | $78.51 | $3,506,335 | [SEC](https://www.sec.gov/Archives/edgar/data/790526/000168316826008638/xslF345X06/ownership.xml) |
@@ -123,7 +125,6 @@
 | 2026-11-06 | NTRA | Sheena Jonathan | S 公开市场卖出 | 45 | $325.05 | $14,627 | [SEC](https://www.sec.gov/Archives/edgar/data/1604821/000164664926000044/xslF345X06/form4-11102026_091101.xml) |
 | 2026-11-10 | HTFL | Farquhar John C.M. | S 公开市场卖出 | 38,900 | $55.74 | $2,168,286 | [SEC](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000168/xslF345X06/form4.xml) |
 | 2026-11-09 | HTFL | Verghese Vikram | S 公开市场卖出 | 3,587 | $53.15 | $190,649 | [SEC](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000166/xslF345X06/form4.xml) |
-| 2026-11-09 | CBLL | Taylor Joseph Michael | S 公开市场卖出 | 10,200 | $27.22 | $277,644 | [SEC](https://www.sec.gov/Archives/edgar/data/1861107/000119312526455553/xslF345X06/ownership.xml) |
 | 2026-11-02 | NTRA | Sheena Jonathan | S 公开市场卖出 | 3 | $388.20 | $1,165 | [SEC](https://www.sec.gov/Archives/edgar/data/1604821/000164664926000043/xslF345X06/form4-11042026_091115.xml) |
 | 2026-11-02 | NTRA | Sheena Jonathan | S 公开市场卖出 | 109 | $400.29 | $43,632 | [SEC](https://www.sec.gov/Archives/edgar/data/1604821/000164664926000043/xslF345X06/form4-11042026_091115.xml) |
 | 2026-09-22 | CAI | Denton John Russel | S 公开市场卖出 | 7,500 | $31.82 | $238,626 | [SEC](https://www.sec.gov/Archives/edgar/data/2019410/000207192326000007/xslF345X06/wk-form4_1790197601.xml) |
@@ -134,7 +135,10 @@
 
 ## 最近申报（含非市场交易）
 
-- 2026-11-24 · SOPH · Van Well Daan · S 公开市场卖出 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000366/xslF345X06/wk-form4_1795554087.xml) **NEW**
+- 2026-11-25 · CBLL · Manni Joseph S. · S 公开市场卖出 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1861107/000119312526478835/xslF345X06/ownership.xml)
+- 2026-11-25 · CBLL · Woo Raymond · S 公开市场卖出, M 期权行权或转换, S 公开市场卖出 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1861107/000119312526478833/xslF345X06/ownership.xml)
+- 2026-11-25 · CBLL · Foehr David · S 公开市场卖出, S 公开市场卖出 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1861107/000119312526478831/xslF345X06/ownership.xml)
+- 2026-11-24 · SOPH · Van Well Daan · S 公开市场卖出 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000366/xslF345X06/wk-form4_1795554087.xml)
 - 2026-11-23 · NVDA · Teter Timothy S. · S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出, S 公开市场卖出 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1045810/000169684126000016/xslF345X06/wk-form4_1795470863.xml)
 - 2026-11-23 · GH · MIGNONE ROBERTO · M 期权行权或转换 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1576280/000125839426000022/xslF345X06/wk-form4_1795474020.xml)
 - 2026-11-23 · GH · POTTER MYRTLE S · S 公开市场卖出 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1576280/000121413026000006/xslF345X06/wk-form4_1795474050.xml)
@@ -151,9 +155,6 @@
 - 2026-11-18 · RXRX · Hallett David · F 以股份支付税款 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000156/xslF345X06/wk-form4_1795040124.xml)
 - 2026-11-18 · RXRX · Khan Najat · F 以股份支付税款 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000155/xslF345X06/wk-form4_1795040105.xml)
 - 2026-11-17 · SOPH · Van Well Daan · S 公开市场卖出 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000364/xslF345X06/wk-form4_1794949249.xml)
-- 2026-11-17 · CBLL · Parvizi Josef · S 公开市场卖出 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1861107/000119312526465905/xslF345X06/ownership.xml)
-- 2026-11-16 · SOPH · Xu Zhenyu · S 公开市场卖出 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000362/xslF345X06/wk-form4_1794862930.xml)
-- 2026-11-16 · ABCL · Booth Andrew · M 期权行权或转换, G 赠与 · [SEC 原始申报](https://www.sec.gov/Archives/edgar/data/1703057/000183441126000013/xslF345X06/wk-form4_1794845662.xml)
 
 ## 解释规则
 

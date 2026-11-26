@@ -75,7 +75,7 @@
 | 股票 | AI医疗暴露类型 | 研究优先分 | 完整度 | 证据质量 | 具体未完成门槛 | 价格/日期 | P/S及口径 | EV/EBITDA | OCF收益率 | 行动层级 |
 |---|---|---:|---:|---:|---|---|---|---:|---:|---|
 | TEM | 直接精准医疗数据平台 | 93.0 | 90/100 | 57/100 | 瓶颈:partial；纯业务暴露:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 优先深挖 |
-| GEHC | 大型影像设备平台，AI为产品功能层 | 88.0 | 77/100 | 73/100 | 产业链:partial；瓶颈:partial；纯业务暴露:partial；治理:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 优先深挖 |
+| GEHC | 大型影像设备平台，AI为产品功能层 | 88.0 | 69/100 | 61/100 | 产业链:partial；瓶颈:partial；纯业务暴露:partial；反方论点:partial；治理:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 优先深挖 |
 | SDGR | infrastructure research candidate | 86.0 | 87/100 | 66/100 | 财报:partial；瓶颈:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 优先深挖 |
 | CERT | validated workflow infrastructure challenger | 86.0 | 77/100 | 69/100 | 财报:partial；瓶颈:partial；纯业务暴露:partial；治理:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 优先深挖 |
 | ISRG | 高质量手术机器人平台，AI为次要增量 | 86.0 | 69/100 | 76/100 | 产业链:partial；客户依赖:partial；瓶颈:partial；纯业务暴露:partial；治理:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 优先深挖 |
@@ -85,11 +85,11 @@
 | NTRA | scaled diagnostic-data compounder | 81.0 | 72/100 | 71/100 | 客户依赖:partial；瓶颈:partial；纯业务暴露:partial；多节点控制:partial；治理:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 优先深挖 |
 | CAI | news-triggered, Serenity-reviewed | 80.0 | 95/100 | 72/100 | 瓶颈:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 优先深挖 |
 | RXRX | high-upside watchlist | 79.0 | 82/100 | 74/100 | 财报:partial；瓶颈:partial；治理:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 优先深挖 |
-| CBLL | news-triggered, Serenity-reviewed | 78.0 | 95/100 | 72/100 | 瓶颈:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 优先深挖 |
+| CBLL | news-triggered, Serenity-reviewed | 78.0 | 82/100 | 69/100 | 瓶颈:partial；反方论点:partial；治理:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 优先深挖 |
 | SOPH | 直接精准医疗数据平台 | 75.0 | 77/100 | 52/100 | 财报:partial；瓶颈:partial；多节点控制:partial；治理:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 优先深挖 |
 | GH | scaled precision-oncology challenger | 74.0 | 38/100 | 64/100 | 产业链:partial；客户依赖:partial；财报:partial；瓶颈:unknown；纯业务暴露:partial；多节点控制:unknown；反方论点:partial；治理:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 观察 |
 | ABCL | secondary watchlist | 69.0 | 53/100 | 81/100 | 产业链:partial；客户依赖:partial；财报:partial；瓶颈:partial；纯业务暴露:partial；多节点控制:partial；反方论点:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 观察 |
-| NVDA | 算力基准，非AI医疗纯业务 | 60.0 | 暂停评分（事件重验证） | 72/100 | 产业链:unknown；客户依赖:stale；财报:stale；瓶颈:partial；纯业务暴露:unknown；多节点控制:unknown；反方论点:stale；治理:stale | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 事件重验证 |
+| NVDA | 算力基准，非AI医疗纯业务 | 60.0 | 暂停评分（事件重验证） | 72/100 | 产业链:partial；客户依赖:stale；财报:stale；瓶颈:partial；纯业务暴露:unknown；多节点控制:partial；反方论点:stale；治理:stale | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 事件重验证 |
 
 **当前没有任何公司达到正式‘推荐/投资通过’。** 这是因为至少一项硬门槛、证据质量、估值或事件重验证尚未完成。
 
@@ -110,7 +110,7 @@ NVDA 并非因为基本面得分低而被清零，而是硬事件政策把相关
 
 ### GEHC — GE HealthCare Technologies
 
-- **当前行动层级：** 优先深挖；研究优先分 88.0，完整度 77/100，证据质量 73/100，有据分 75/100。
+- **当前行动层级：** 优先深挖；研究优先分 88.0，完整度 69/100，证据质量 61/100，有据分 66/100。
 - **长期逻辑：** GE HealthCare combines a large hospital installed base, imaging hardware, service relationships and an extensive FDA AI-device footprint. Its potential advantage is distribution and workflow integration, not a single algorithm.
 - **为什么现在关注：** Q3 2026 revenue grew 7.2%, backlog was $23.7 billion and the FDA mapping identified 107 AI-enabled device records under GE manufacturer names.
 - **Serenity作用：** A multi-node distribution and workflow platform, but not a pure AI play; the open question is whether AI raises replacement demand, attachment revenue or pricing power.
@@ -174,7 +174,7 @@ NVDA 并非因为基本面得分低而被清零，而是硬事件政策把相关
 
 ### NVDA — NVIDIA
 
-- **当前行动层级：** 事件重验证；研究优先分 60.0，完整度 暂停评分（事件重验证），证据质量 72/100，有据分 32/100。
+- **当前行动层级：** 事件重验证；研究优先分 60.0，完整度 暂停评分（事件重验证），证据质量 72/100，有据分 39/100。
 - **长期逻辑：** NVIDIA supplies accelerated compute and software used in imaging and digital biology, but healthcare is not separately disclosed and cannot be valued as a pure AI-medicine business.
 - **为什么现在关注：** Q2 FY2027 revenue reached $96.2 billion and Data Center revenue $89.0 billion; the scale validates infrastructure demand but not healthcare-specific economics.
 - **Serenity作用：** An enabling platform rather than the narrow downstream medical chokepoint Serenity normally seeks. It is a benchmark and infrastructure exposure, not a like-for-like pure-play candidate.
@@ -206,7 +206,7 @@ NVDA 并非因为基本面得分低而被清零，而是硬事件政策把相关
 
 ### CBLL — Ceribell
 
-- **当前行动层级：** 优先深挖；研究优先分 78.0，完整度 95/100，证据质量 72/100，有据分 86/100。
+- **当前行动层级：** 优先深挖；研究优先分 78.0，完整度 82/100，证据质量 69/100，有据分 77/100。
 - **长期逻辑：** A pure-play AI brain-monitoring platform with first-in-class FDA clearances: the first device cleared to help diagnose status epilepticus and the only cleared delirium monitor, backed by a Medicare add-on payment. It controls hardware, algorithm, manufacturing and distribution.
 - **为什么现在关注：** Q3 2026 revenue grew 30% with gross margin near 90%.
 - **Serenity作用：** A clinical-workflow chokepoint in the ICU and emergency room: rapid EEG where hospitals often have no neurologist on site.

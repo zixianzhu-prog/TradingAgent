@@ -300,6 +300,13 @@ def main() -> None:
     ranking = json.loads((ROOT / "state/ai-medicine-top5.json").read_text(encoding="utf-8")).get("ranking", [])
     need = {r["ticker"]: r["company"] for r in ranking
             if r["ticker"] not in modeled and any(w in (r.get("segment") or "") for w in ("drug discovery", "antibody discovery"))}
+    # The deep-review queue's drug-discovery companies get the same treatment (their counter-thesis gate needs a valuation).
+    flt = json.loads((ROOT / "state/candidate-filter.json").read_text(encoding="utf-8")) if (ROOT / "state/candidate-filter.json").exists() else {}
+    small_tickers = {r["ticker"] for r in json.loads(SMALL.read_text(encoding="utf-8")).get("companies", [])} if SMALL.exists() else set()
+    for t in flt.get("deepReview", []):
+        c = (flt.get("companies") or {}).get(t) or {}
+        if t not in modeled and t not in small_tickers and c.get("segment") in DRUG_SEGMENTS:
+            need.setdefault(t, c.get("company") or t)
     payload = build(inputs() + covered_inputs(need), overrides)
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     REPORT.write_text(report(payload), encoding="utf-8")

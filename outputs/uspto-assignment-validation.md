@@ -1,12 +1,12 @@
 # USPTO 专利受让独立核验
 
-> 待核验 7 家；已由官方记录核验 7 家；官方记录 38 条。
+> 待核验 7 家；已由官方记录核验 6 家；官方记录 35 条。
 
 > SEC 中的专利/许可说法只负责建立队列。只有 USPTO Assignment Center/Open Data Portal 的受让记录才能把独立核验改为通过。
 
 | 公司 | SEC 说法 | USPTO 状态 | 官方检索 |
 |---|---:|---|---|
-| ALEC · Alector, Inc. | 3 | verified | [按受让人检索](https://assignmentcenter.uspto.gov/search/intellectualProperty/search) |
+| ALEC · Alector, Inc. | 3 | pending-official-search | [按受让人检索](https://assignmentcenter.uspto.gov/search/intellectualProperty/search) |
 | ANTX · AN2 Therapeutics, Inc. | 1 | verified | [按受让人检索](https://assignmentcenter.uspto.gov/search/intellectualProperty/search) |
 | BDSX · BIODESIX INC | 1 | verified | [按受让人检索](https://assignmentcenter.uspto.gov/search/intellectualProperty/search) |
 | HURA · TuHURA Biosciences, Inc./NV | 1 | verified | [按受让人检索](https://assignmentcenter.uspto.gov/search/intellectualProperty/search) |
@@ -33,9 +33,6 @@
 
 | 公司 | 申请号 | 发明名称 | 受让人 | 转让人 | 登记日 | 卷/帧 |
 |---|---|---|---|---|---|---|
-| ALEC | 19542026 | ANTI-AMYLOID BETA PEPTIDE ANTIBODIES AND METHODS OF USE THER | ALECTOR LLC | BIENLY, THUNGA; BROWN, ERIC; NIVITCHANYONG, TARANGSRI; ROSEN | 2026-05-19 | [074695/0213](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/74695/213) |
-| ALEC | 63979679 | ANTI-AMYLOID BETA PEPTIDE ANTIBODIES AND METHODS OF USE THER | ALECTOR LLC | BIENLY, THUNGA; BROWN, ERIC; NIVITCHANYONG, TARANGSRI; ROSEN | 2026-02-13 | [073782/0694](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/73782/694) |
-| ALEC | 63911900 | ANTI-AMYLOID BETA PEPTIDE ANTIBODIES AND METHODS OF USE THER | ALECTOR LLC | BIENLY, THUNGA; BROWN, ERIC; NIVITCHANYONG, TARANGSRI; ROSEN | 2026-02-13 | [073782/0694](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/73782/694) |
 | ANTX | 63803388 | BORON HETEROCYCLE CONTAINING COMPOUNDS AS ENPP INHIBITORS, A | AN2 THERAPEUTICS, INC. | AUBREY, MARISSA CAROLINE; NIEMAN, JAMES A. | 2025-08-05 | [071941/0309](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/71941/309) |
 | BDSX | 18730197 | SENSITIVE AND ACCURATE FEATURE VALUES FROM DEEP MALDI SPECTR | BIODESIX, INC. | KOC, MATTHEW; RODER, HEINRICH | 2024-07-19 | [068033/0359](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/68033/359) |
 | BDSX | 18171802 | PREDICTIVE TEST FOR PROGNOSIS OF MYELODYSPLASTIC SYNDROME PA | BIODESIX, INC. | RÖDER, HEINRICH; RÖDER, JOANNA; STEINGRIMSSON, ARNI | 2023-05-11 | [063617/0896](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/63617/896) |

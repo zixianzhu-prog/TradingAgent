@@ -31,3 +31,18 @@ def test_dimension_counts_only_with_verified_quote(monkeypatch):
 def test_valuation_needs_a_range_or_flip_points():
     assert not ccr.valuation_check(None)["examined"]
     assert ccr.valuation_check({"price": 57.4, "limitPrice": 62.9, "flipPoints": ["growth can fall 2 points"]})["examined"]
+
+
+def test_scenario_model_counts_as_valuation_when_there_is_no_ticket():
+    row = {"price": 18.09, "scenario_model": {"probability_weighted_case_annualized_return": 0.08,
+           "cases": {"bear": {"annualized_return": -0.12}, "base": {"annualized_return": 0.10, "price_for_policy_return": 16.5}}}}
+    v = ccr.valuation_check(None, row)
+    assert v["examined"] and "16.5" in v["summary"] and "-12.0%" in v["summary"]
+    assert not ccr.valuation_check(None, {"price": 1, "scenario_model": {}})["examined"]
+
+
+def test_rnpv_counts_as_valuation_for_drug_developers():
+    r = {"price": 9.34, "phase": 2, "valuePerShare": {"bear": 2.38, "base": 2.79, "bull": 3.95}, "impliedPeakSalesM": 6121.0,
+         "notes": ["discovery platform"]}
+    v = ccr.valuation_check(None, None, r)
+    assert v["examined"] and "6,121" in v["summary"] and v["source"].endswith("rnpv-valuations.json")

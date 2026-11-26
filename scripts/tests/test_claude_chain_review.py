@@ -34,3 +34,18 @@ def test_to_gates_needs_named_parties_and_dated_actuals(monkeypatch):
     assert e["status"] == "pass" and len(e["support"]) == 1  # guidance is not counted as support
     ans["downstream"][0]["party"] = "top 20 pharmaceutical companies"
     assert ccr.to_gates(ans, p)[0]["status"] == "pass"
+
+
+def test_gate_passages_keeps_dated_results(monkeypatch):
+    supply = "supplier vendor manufacture license customers pharma hospitals users cloud sequencing " * 20
+    results = ("For the three months ended September 30, 2026, total revenue was $10.2 million compared to $3.1 million; "
+               "net loss was $12.0 million. ") * 12
+    text = (supply[:2200] * 12) + results[:2200] + (supply[:2200] * 6)
+    monkeypatch.setattr(ccr.pcr, "filing_text", lambda url, allow_fetch=True: text)
+    out = ccr.gate_passages([("10-Q", "2026-11-05", "u")], limit=6, results_per_filing=2)
+    assert any("three months ended" in p["text"] for p in out)
+
+
+def test_unrelated_actuals_are_not_reported_as_missing():
+    status, rule = ccr.earnings_status(0, 0, 0, 3)
+    assert status == "unknown" and "无直接关系" in rule

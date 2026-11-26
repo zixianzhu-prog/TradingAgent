@@ -808,6 +808,250 @@
         "https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm",
         "https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-20251231.htm"
       ]
+    },
+    {
+      "ticker": "CARL",
+      "financial_period": "Q3 2026",
+      "financial_date": "2026-09-30",
+      "price_date": "2026-11-25",
+      "price": 18.09,
+      "shares": 27404088,
+      "quarterly_revenue_m": 21.554,
+      "revenue_growth_pct": 64.9,
+      "cash_and_securities_m": 59.945,
+      "quarterly_net_income_m": -12.245,
+      "quarterly_operating_cash_flow_m": -9.68,
+      "adjusted_ebitda_m": null,
+      "full_year_revenue_guide_m": null,
+      "dilution_flag": "high",
+      "data_freshness": "current_q3_2026",
+      "next_validation_event": "Q4/FY 2026 aprevo case volume, gross margin and cash runway",
+      "bull_case": "aprevo personalized spine-fusion plans become standard of care in more surgeon practices; revenue keeps compounding and gross margin rises with scale.",
+      "base_case": "Volume keeps growing but slows from today's 65% as the surgeon base matures; cash burn requires one more equity raise.",
+      "bear_case": "Adoption stalls outside early-adopting surgeons, reimbursement or hospital value-analysis committees resist the premium, and dilution erodes per-share value.",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/"
+      ],
+      "scenario_inputs": {
+        "horizon_years": 5,
+        "metric": "sales",
+        "inputs_verified": false,
+        "net_debt_assumption_m": -44.5,
+        "net_debt_assumption_note": "SEC XBRL 2026-09-30: long-term debt $15.4M less cash $35.9M and short-term investments $24.0M.",
+        "probability_basis": "Analyst-set priors for a screen-found AI company; not empirical probabilities. Growth and multiples are replaced by sourced calibration.",
+        "cases": {
+          "bear": {
+            "probability": 0.35,
+            "revenue_cagr": 0.15,
+            "annual_share_dilution": 0.08,
+            "terminal_margin": null,
+            "terminal_multiple": 1.5
+          },
+          "base": {
+            "probability": 0.45,
+            "revenue_cagr": 0.3,
+            "annual_share_dilution": 0.05,
+            "terminal_margin": null,
+            "terminal_multiple": 3.0
+          },
+          "bull": {
+            "probability": 0.2,
+            "revenue_cagr": 0.45,
+            "annual_share_dilution": 0.03,
+            "terminal_margin": null,
+            "terminal_multiple": 5.0
+          }
+        }
+      }
+    },
+    {
+      "ticker": "GRAL",
+      "financial_period": "Q3 2026",
+      "financial_date": "2026-09-30",
+      "price_date": "2026-11-25",
+      "price": 103.98,
+      "shares": 44962171,
+      "quarterly_revenue_m": 37.535,
+      "revenue_growth_pct": 3.7,
+      "cash_and_securities_m": 787.551,
+      "quarterly_net_income_m": -103.568,
+      "quarterly_operating_cash_flow_m": -80.82,
+      "adjusted_ebitda_m": null,
+      "full_year_revenue_guide_m": null,
+      "dilution_flag": "medium",
+      "data_freshness": "current_q3_2026",
+      "next_validation_event": "Galleri PMA decision and NHS-Galleri results; Q4 screening revenue",
+      "bull_case": "Galleri gains FDA approval and coverage; screening volume inflects and the ML methylation classifier becomes the multi-cancer standard.",
+      "base_case": "Screening revenue grows mid-teens (Q3 screening +14%) without broad coverage; losses narrow slowly and cash lasts about two to three years.",
+      "bear_case": "Approval or coverage is delayed or limited; burn of about $320M a year forces dilution before revenue scales.",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/"
+      ],
+      "scenario_inputs": {
+        "horizon_years": 5,
+        "metric": "sales",
+        "inputs_verified": false,
+        "net_debt_assumption_m": -787.6,
+        "net_debt_assumption_note": "SEC XBRL 2026-09-30: cash, cash equivalents and short-term investments $787.6M (the filing's own total); no debt tagged.",
+        "probability_basis": "Analyst-set priors for a screen-found AI company; not empirical probabilities. Growth and multiples are replaced by sourced calibration.",
+        "cases": {
+          "bear": {
+            "probability": 0.35,
+            "revenue_cagr": 0.05,
+            "annual_share_dilution": 0.06,
+            "terminal_margin": null,
+            "terminal_multiple": 2.0
+          },
+          "base": {
+            "probability": 0.45,
+            "revenue_cagr": 0.15,
+            "annual_share_dilution": 0.04,
+            "terminal_margin": null,
+            "terminal_multiple": 4.0
+          },
+          "bull": {
+            "probability": 0.2,
+            "revenue_cagr": 0.35,
+            "annual_share_dilution": 0.02,
+            "terminal_margin": null,
+            "terminal_multiple": 8.0
+          }
+        }
+      }
+    },
+    {
+      "ticker": "HNGE",
+      "financial_period": "Q3 2026",
+      "financial_date": "2026-09-30",
+      "price_date": "2026-11-25",
+      "price": 109.06,
+      "shares": 78830000,
+      "quarterly_revenue_m": 234.97,
+      "revenue_growth_pct": 52.4,
+      "cash_and_securities_m": 354.197,
+      "quarterly_net_income_m": 57.398,
+      "quarterly_operating_cash_flow_m": 86.366,
+      "adjusted_ebitda_m": null,
+      "full_year_revenue_guide_m": null,
+      "dilution_flag": "low",
+      "data_freshness": "current_q3_2026",
+      "next_validation_event": "Q4/FY 2026 revenue growth, member count and 2027 guidance",
+      "bull_case": "AI-guided digital musculoskeletal care keeps winning employer and health-plan contracts; growth stays high and margins expand.",
+      "base_case": "Growth fades from 52% toward the digital-health average as large clients saturate; profitable and cash generative.",
+      "bear_case": "Employer budgets tighten and competitors undercut pricing; growth falls quickly and the premium multiple compresses.",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1673743/000162828026072251/"
+      ],
+      "scenario_inputs": {
+        "horizon_years": 5,
+        "metric": "sales",
+        "inputs_verified": false,
+        "net_debt_assumption_m": -354.2,
+        "net_debt_assumption_note": "SEC XBRL 2026-09-30: cash $211.6M plus available-for-sale securities $142.6M; no debt tagged. Shares = market value / price (two share classes, no cover total in XBRL).",
+        "probability_basis": "Analyst-set priors for a screen-found AI company; not empirical probabilities. Growth and multiples are replaced by sourced calibration.",
+        "cases": {
+          "bear": {
+            "probability": 0.35,
+            "revenue_cagr": 0.12,
+            "annual_share_dilution": 0.01,
+            "terminal_margin": null,
+            "terminal_multiple": 3.0
+          },
+          "base": {
+            "probability": 0.45,
+            "revenue_cagr": 0.25,
+            "annual_share_dilution": 0.01,
+            "terminal_margin": null,
+            "terminal_multiple": 6.0
+          },
+          "bull": {
+            "probability": 0.2,
+            "revenue_cagr": 0.35,
+            "annual_share_dilution": 0.0,
+            "terminal_margin": null,
+            "terminal_multiple": 10.0
+          }
+        }
+      }
+    },
+    {
+      "ticker": "OABI",
+      "financial_period": "Q3 2026",
+      "financial_date": "2026-09-30",
+      "price_date": "2026-11-25",
+      "price": 4.75,
+      "shares": 145860318,
+      "quarterly_revenue_m": 10.612,
+      "revenue_growth_pct": 209.4,
+      "cash_and_securities_m": 64.21,
+      "quarterly_net_income_m": -15.728,
+      "quarterly_operating_cash_flow_m": 2.78,
+      "adjusted_ebitda_m": null,
+      "full_year_revenue_guide_m": null,
+      "dilution_flag": "medium",
+      "data_freshness": "current_q3_2026",
+      "next_validation_event": "Q4 2026 milestone revenue, new partner programs and royalty-bearing approvals",
+      "bull_case": "Partner antibodies discovered on the platform reach approval; royalties and milestones compound across a large partnered pipeline.",
+      "base_case": "Milestone revenue stays lumpy; the partnered pipeline matures slowly and cash stays roughly flat. quarterly_revenue_m is the 2026 nine-month average ($31.8M / 3); Q3 alone was $4.0M because milestone revenue is lumpy.",
+      "bear_case": "Few partner programs advance, milestones dry up and the platform is valued as a cash-burning licensor.",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/"
+      ],
+      "scenario_inputs": {
+        "horizon_years": 5,
+        "metric": "sales",
+        "inputs_verified": false,
+        "net_debt_assumption_m": -64.2,
+        "net_debt_assumption_note": "SEC XBRL 2026-09-30: cash $22.9M plus short-term securities $41.3M; no debt tagged.",
+        "probability_basis": "Analyst-set priors for a screen-found AI company; not empirical probabilities. Growth and multiples are replaced by sourced calibration.",
+        "cases": {
+          "bear": {
+            "probability": 0.35,
+            "revenue_cagr": -0.05,
+            "annual_share_dilution": 0.03,
+            "terminal_margin": null,
+            "terminal_multiple": 3.0
+          },
+          "base": {
+            "probability": 0.45,
+            "revenue_cagr": 0.15,
+            "annual_share_dilution": 0.02,
+            "terminal_margin": null,
+            "terminal_multiple": 6.0
+          },
+          "bull": {
+            "probability": 0.2,
+            "revenue_cagr": 0.35,
+            "annual_share_dilution": 0.01,
+            "terminal_margin": null,
+            "terminal_multiple": 10.0
+          }
+        }
+      }
+    },
+    {
+      "ticker": "GENB",
+      "financial_period": "Q3 2026",
+      "financial_date": "2026-09-30",
+      "price_date": "2026-11-25",
+      "price": 11.31,
+      "shares": 129096666,
+      "quarterly_revenue_m": 4.22,
+      "revenue_growth_pct": -56.2,
+      "cash_and_securities_m": 404.2,
+      "quarterly_net_income_m": -87.657,
+      "quarterly_operating_cash_flow_m": -64.396,
+      "adjusted_ebitda_m": null,
+      "full_year_revenue_guide_m": null,
+      "dilution_flag": "medium",
+      "data_freshness": "current_q3_2026",
+      "next_validation_event": "GB-0895 clinical data and new pharma collaborations",
+      "bull_case": "The AI protein-design platform produces clinical assets that read out well and draws new pharma partnerships.",
+      "base_case": "Clinical-stage platform: collaboration revenue falls as Novartis and Amgen obligations near completion; value rests on the pipeline. No sales-based scenario model: collaboration revenue is not product revenue.",
+      "bear_case": "Clinical setbacks and no new partners; burn of about $350M a year forces dilution.",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/2100782/000119312526456890/"
+      ]
     }
   ]
 }
