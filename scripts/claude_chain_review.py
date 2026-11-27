@@ -49,6 +49,7 @@ PARTIES = re.compile(r"(?:Supply|Manufactur\w*|Purchase|Sourcing|Hosting|License
                      r"\b(?:purchase|purchases|purchased|obtain|source|sources|sourced|buy|buys)\b[^.]{0,60}\bfrom\s+[A-Z][\w&.-]+|"
                      r"\b(?:rely|relies|depend|depends)\b[^.]{0,30}\bon\s+[A-Z][\w&.-]+|\bsupplied\s+by\s+[A-Z][\w&.-]+|"
                      r"\b(?:sole|single|exclusive)\s+(?:source\s+)?supplier\b", re.I)
+INACTIVE_PARTY = re.compile(r"\b(?:terminated|expired|no longer (?:in effect|active)|termination of)\b", re.I)
 _Q = {"type": "object", "required": ["id", "quote"], "properties": {"id": {"type": "string"}, "quote": {"type": "string"}}}
 _PARTY = {"type": "array", "items": {"type": "object", "required": ["id", "quote", "party"], "properties": {
     "id": {"type": "string"}, "quote": {"type": "string"},
@@ -104,8 +105,11 @@ def gate_passages(filings: list[tuple[str, str, str]], limit: int = 18, results_
         picked |= {i for n, i in by_results[:results_per_filing] if n >= 4}
         # Named counterparties get their own slots too: exhibit-index agreements ("Supply Agreement ... by and between X and
         # Y") and passages naming customers or payers. Without them the map can miss the one named supplier or customer.
-        by_parties = sorted(((len(PARTIES.findall(c)), i) for i, c in enumerate(chunks) if i not in picked), reverse=True)
-        picked |= {i for n, i in by_parties[:parties_per_filing] if n >= 1}  # one named agreement is enough
+        # Keep terminated agreements as counter-evidence, but rank current relationships first so an obsolete exhibit does not
+        # consume the only named-party slot.  Earlier passages win otherwise-identical ties for deterministic output.
+        by_parties = sorted(((not bool(INACTIVE_PARTY.search(c)), len(PARTIES.findall(c)), -i, i)
+                             for i, c in enumerate(chunks) if i not in picked), reverse=True)
+        picked |= {i for _active, n, _order, i in by_parties[:parties_per_filing] if n >= 1}
         for i in sorted(picked):
             out.append({"id": "sc_" + ser.digest([url, chunks[i]])[:16], "url": url, "title": f"{form} filed {filed}", "text": chunks[i]})
     return out

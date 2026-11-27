@@ -69,3 +69,14 @@ def test_a_single_named_agreement_is_kept(monkeypatch):
     monkeypatch.setattr(ccr.pcr, "filing_text", lambda url, allow_fetch=True: text)
     out = ccr.gate_passages([("10-K", "2026-02-24", "u")], limit=6, results_per_filing=1, parties_per_filing=1)
     assert any("Delta Contract" in p["text"] for p in out)
+
+
+def test_active_named_relationship_outranks_terminated_agreement(monkeypatch):
+    terminated = ("The Supply Agreement by and between Acme and OldCo was terminated and is no longer in effect. "
+                  + "old " * 520)
+    active = ("We depend exclusively on Illumina for all sequencing instruments used in our laboratory. "
+              + "active " * 360)
+    text = terminated[:2200] + active[:2200]
+    monkeypatch.setattr(ccr.pcr, "filing_text", lambda url, allow_fetch=True: text)
+    out = ccr.gate_passages([("10-K", "2026-02-24", "u")], limit=3, results_per_filing=0, parties_per_filing=1)
+    assert any("Illumina" in p["text"] for p in out)

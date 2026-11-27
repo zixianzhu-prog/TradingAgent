@@ -1,6 +1,6 @@
 # 模拟订单条件（研究用，需人工确认）
 
-生成：2026-11-27T20:12；假设组合规模 $100,000。只在模拟盘执行，真实交易关闭。
+生成：2026-11-27T21:07；假设组合规模 $100,000。只在模拟盘执行，真实交易关闭。
 
 > 规则对每家公司相同：动作由 Serenity 结论和价格相对下单区间决定；仓位按 Serenity 分档（试探 1%、标准 5%、单只上限 10%），再按单日回撤、日成交额和现金跑道下调；只在财报、客户或合作披露验证后加仓；不设紧止损，论点被证伪才退出。
 
@@ -13,8 +13,8 @@
 | **模拟试探仓** | SDGR | $24.51 | $27.93 | $23.59 | 1.0%（1.0%） | Price $24.51 is inside the order range (consider at or below $27.93)；Serenity verdict is watch (gates still open): starter only until the up |
 | **模拟试探仓** | SOPH | $6.51 | $8.32 | $5.77 | 0.5%（0.5%） | Price $6.51 is inside the order range (consider at or below $8.32)；Serenity verdict is watch (gates still open): starter only until the upgr |
 | **模拟试探仓** | CERT | $10.96 | $13.79 | $13.06 | 1.0%（1.0%） | Price $10.96 is below the safety floor $13.06: cheaper than the bear case, so a starter only until a fundamental problem is ruled out |
-| **等待** | HTFL | $47.65 | $33.91 | $20.90 | — | Price $47.65 is 40% above $33.91; it implies 27% growth a year against 19% in the base case |
 | **等待** | CBLL | $30.00 | $25.76 | $16.11 | — | Price $30.0 is 16% above $25.76; it implies 20% growth a year against 16% in the base case |
+| **等待** | HTFL | $47.65 | $33.91 | $20.90 | — | Price $47.65 is 40% above $33.91; it implies 27% growth a year against 19% in the base case |
 | **等待** | ISRG | $430.18 | $315.84 | $247.15 | — | Price $430.18 is 36% above $315.84; it implies 20% growth a year against 12% in the base case |
 | **等待** | GEHC | $84.62 | $50.51 | $50.51 | — | Price $84.62 is 68% above $50.51; it implies 15% growth a year against 5% in the base case |
 | **等待** | NTRA | $304.03 | $212.17 | $131.59 | — | Price $304.03 is 43% above $212.17; it implies 27% growth a year against 18% in the base case |
