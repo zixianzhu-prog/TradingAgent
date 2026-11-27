@@ -24,6 +24,7 @@ import beneficiary_mapper as mapper
 import claude_serenity_memo as csm
 import prepare_claude_review as pcr
 import serenity_evidence_review as ser
+import claude_cli
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "state/diagnostics-economics.json"
@@ -75,7 +76,7 @@ def ask(ticker: str, items: list[dict], model: str, timeout: int = 600) -> dict 
     cmd = ["claude", "-p", "--tools", "", "--no-session-persistence", "--output-format", "json",
            "--json-schema", json.dumps(SCHEMA), "--model", model]
     try:
-        proc = subprocess.run(cmd, input=prompt, capture_output=True, text=True, timeout=timeout)
+        proc = claude_cli.require_success(claude_cli.run(cmd, prompt, timeout))
         return json.loads(proc.stdout).get("structured_output")
     except (subprocess.TimeoutExpired, json.JSONDecodeError):
         return None

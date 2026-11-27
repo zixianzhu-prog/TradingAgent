@@ -39,6 +39,7 @@ import sys
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from statistics import mean, pstdev
+import claude_cli
 
 ROOT = Path(__file__).resolve().parents[1]
 LEDGER = ROOT / "outputs/blind-test-ledger.jsonl"
@@ -140,7 +141,7 @@ def ask_b(prompt: str, model: str, timeout: int = 2400) -> dict | None:
     cmd = ["claude", "-p", "--tools", "WebSearch,WebFetch", "--allowedTools", "WebSearch,WebFetch", "--no-session-persistence",
            "--output-format", "json", "--json-schema", json.dumps(SCHEMA), "--model", model]
     try:
-        proc = subprocess.run(cmd, input=prompt, capture_output=True, text=True, timeout=timeout)
+        proc = claude_cli.require_success(claude_cli.run(cmd, prompt, timeout))
         return json.loads(proc.stdout).get("structured_output")
     except (subprocess.TimeoutExpired, json.JSONDecodeError):
         return None

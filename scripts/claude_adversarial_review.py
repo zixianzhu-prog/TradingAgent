@@ -22,6 +22,7 @@ import beneficiary_mapper as mapper
 import claude_serenity_memo as csm
 import prepare_claude_review as pcr
 import serenity_evidence_review as ser
+import claude_cli
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "state/serenity-adversarial.json"
@@ -48,7 +49,11 @@ def ask(ticker: str, gates: dict, evidence: list[dict], model: str, timeout: int
                                                ensure_ascii=False))
     cmd = ["claude", "-p", "--tools", "", "--no-session-persistence", "--output-format", "json",
            "--json-schema", json.dumps(SCHEMA), "--model", model]
-    proc = subprocess.run(cmd, input=prompt, capture_output=True, text=True, timeout=timeout)
+    try:
+        proc = claude_cli.require_success(claude_cli.run(cmd, prompt, timeout))
+    except claude_cli.ClaudeCLIError as exc:  # one failed call must not lose the other companies' results
+        print(f"  {ticker}: Claude CLI failed ({str(exc)[:120]}); no answer")
+        return None
     try:
         return json.loads(proc.stdout).get("structured_output")
     except json.JSONDecodeError:

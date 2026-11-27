@@ -73,6 +73,17 @@ def locate(text: str, quote: str) -> tuple[str, str] | None:
     return exact, text[max(0, index - WINDOW): index + len(normalised_quote) + WINDOW]
 
 
+def passage_for(by_id: dict, q: dict) -> dict | None:
+    """The passage a quoted fact came from. The model sometimes renames passage ids (b1, b2, ...) while quoting them
+    verbatim, so an unknown id falls back to the passage that contains the quote; the quote is still checked against the
+    full filing afterwards."""
+    p = by_id.get(q.get("id"))
+    if p:
+        return p
+    quote = q.get("quote") or ""
+    return next((x for x in by_id.values() if quote and locate(x.get("text", ""), quote)), None)
+
+
 def build(citations: dict, skills: list[dict], allow_fetch: bool) -> tuple[dict, dict, dict]:
     skill_files = [{k: s[k] for k in ("name", "path", "sha256")} for s in skills]
     manifest = {"generatedAt": ser.now(), "provider": "Claude", "requiresApiKey": False, "rubric": ser.GATES,

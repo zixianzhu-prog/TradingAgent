@@ -1,6 +1,6 @@
 # 模拟订单条件（研究用，需人工确认）
 
-生成：2026-11-26T19:59；假设组合规模 $100,000。只在模拟盘执行，真实交易关闭。
+生成：2026-11-27T04:27；假设组合规模 $100,000。只在模拟盘执行，真实交易关闭。
 
 > 规则对每家公司相同：动作由 Serenity 结论和价格相对下单区间决定；仓位按 Serenity 分档（试探 1%、标准 5%、单只上限 10%），再按单日回撤、日成交额和现金跑道下调；只在财报、客户或合作披露验证后加仓；不设紧止损，论点被证伪才退出。
 
@@ -16,9 +16,9 @@
 | **等待** | CBLL | $29.44 | $25.76 | $16.11 | — | Price $29.44 is 14% above $25.76; it implies 19% growth a year against 16% in the base case |
 | **等待** | HTFL | $46.12 | $33.91 | $20.90 | — | Price $46.12 is 36% above $33.91; it implies 26% growth a year against 19% in the base case |
 | **等待** | ISRG | $427.18 | $315.84 | $247.15 | — | Price $427.18 is 35% above $315.84; it implies 20% growth a year against 12% in the base case |
-| **等待** | RDNT | $72.27 | $58.63 | $34.62 | — | Price $72.27 is 23% above $58.63; it implies 13% growth a year against 9% in the base case |
 | **等待** | GEHC | $83.33 | $50.51 | $50.51 | — | Price $83.33 is 65% above $50.51; it implies 14% growth a year against 5% in the base case |
 | **等待** | NTRA | $301.33 | $212.17 | $131.59 | — | Price $301.33 is 42% above $212.17; it implies 26% growth a year against 18% in the base case |
+| **等待** | RDNT | $72.27 | $58.63 | $34.62 | — | Price $72.27 is 23% above $58.63; it implies 13% growth a year against 9% in the base case |
 | **等待** | RXRX | $2.63 | — | — | — | No valuation range: discovery platform; a sales multiple or one-asset rNPV would mislead. Today's price: market value $1,639M less cash $749 |
 | **等待** | GH | $153.36 | $92.78 | $55.00 | — | Evidence incomplete: primary-source completeness 48 is below the bar |
 | **等待** | ABCL | $10.59 | — | — | — | No valuation range: discovery platform; a sales multiple or one-asset rNPV would mislead. Today's price: market value $3,432M less cash $790 |
@@ -36,7 +36,7 @@
 ## CAI · 模拟试探仓 0.5%（$500）
 
 - 理由：Price $17.84 is below the safety floor $23.38: cheaper than the bear case, so a starter only until a fundamental problem is ruled out
-- Serenity：research-ready，分档 starter
+- Serenity：watch，分档 starter
 - 仓位调整：worst day in 6 months -22%: halved for the drawdown budget
 - 加仓：add after earnings, a customer or a deal confirms the thesis, up to 5%; never because the price rose
 - 减仓：consider trimming above $77.4, where even the bull case earns less than 12% a year

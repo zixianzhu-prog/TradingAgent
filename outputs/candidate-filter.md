@@ -6,20 +6,20 @@
 
 | 公司 | 轨道 | 产业链位置 | AI 判断 | 硬证据 | Serenity 完整度 |
 |---|---|---|---|---|---:|
-| CAI · Caris Life Sciences, Inc. | ai | Diagnostics | AI is core (medical_decision) | revenue $1,102M a year | 95 |
-| HTFL · Heartflow, Inc. | ai | Imaging & devices | AI is core (medical_decision) | FDA-cleared AI device; revenue $292M a year | 90 |
-| RDNT · RadNet, Inc. | ai | Imaging & devices | AI is core (medical_decision) | FDA-cleared AI device; revenue $2,553M a year | 90 |
-| TEM · Tempus AI, Inc. | ai | Diagnostics | AI is core (medical_decision) | FDA-cleared AI device; revenue $1,602M a year | 90 |
+| GLUE · Monte Rosa Therapeutics, Inc. | ai | Drug discovery | AI is core (research_development) | revenue $218M a year; registered clinical trial | 90 |
+| CBLL · Ceribell, Inc. | ai | Imaging & devices | AI is core (clinical_workflow) | FDA-cleared AI device; revenue $117M a year | 87 |
+| TEM · Tempus AI, Inc. | ai | Diagnostics | AI is core (medical_decision) | FDA-cleared AI device; revenue $1,602M a year | 85 |
+| CAI · Caris Life Sciences, Inc. | ai | Diagnostics | AI is core (medical_decision) | revenue $1,102M a year | 82 |
 | CARL · CARLSMED, INC. | ai | Imaging & devices | AI is core (clinical_workflow) | FDA-cleared AI device; revenue $86M a year | 82 |
-| CBLL · Ceribell, Inc. | ai | Imaging & devices | AI is core (clinical_workflow) | FDA-cleared AI device; revenue $117M a year | 82 |
-| RXRX · RECURSION PHARMACEUTICALS, INC. | ai | Drug discovery | AI is core (research_development) | revenue $74M a year; registered clinical trial | 82 |
-| GLUE · Monte Rosa Therapeutics, Inc. | ai | Drug discovery | AI is core (research_development) | revenue $218M a year; registered clinical trial | 80 |
+| HTFL · Heartflow, Inc. | ai | Imaging & devices | AI is core (medical_decision) | FDA-cleared AI device; revenue $292M a year | 82 |
+| HNGE · Hinge Health, Inc. | ai | Imaging & devices | AI is core (clinical_workflow) | revenue $940M a year | 77 |
+| RDNT · RadNet, Inc. | ai | Imaging & devices | AI is core (medical_decision) | FDA-cleared AI device; revenue $2,553M a year | 77 |
+| RXRX · RECURSION PHARMACEUTICALS, INC. | ai | Drug discovery | AI is core (research_development) | revenue $74M a year; registered clinical trial | 77 |
 | SOPH · SOPHiA GENETICS SA | ai | Diagnostics | AI is core (medical_decision) | revenue $77M a year | 77 |
-| GRAL · GRAIL, Inc. | ai | Diagnostics | AI is core (research_development) | revenue $150M a year | 70 |
-| HNGE · Hinge Health, Inc. | ai | Imaging & devices | AI is core (clinical_workflow) | revenue $940M a year | 67 |
+| GRAL · GRAIL, Inc. | ai | Diagnostics | AI is core (research_development) | revenue $150M a year | 75 |
+| GENB · Generate Biomedicines, Inc. | ai | Drug discovery | AI is core (research_development) | revenue $17M a year; pharma deal or IND | 69 |
 | OABI · OmniAb, Inc. | ai | Drug discovery | AI is core (research_development) | revenue $19M a year | 66 |
-| GENB · Generate Biomedicines, Inc. | ai | Drug discovery | AI is core (research_development) | revenue $17M a year; pharma deal or IND | 59 |
-| ODTX · Odyssey Therapeutics, Inc. | ai | Drug discovery | AI is core (research_development) | registered clinical trial | 44 |
+| ODTX · Odyssey Therapeutics, Inc. | ai | Drug discovery | AI is core (research_development) | registered clinical trial | 54 |
 | IBIO · iBio, Inc. | ai | Drug discovery | AI is core (research_development) | registered clinical trial | 26 |
 
 通过但不在队列（大公司作对标，或完整度排在后面）：GEHC, ISRG, IRD, RMD, ANIK, ELDN, MRNA, ANTX, CGEM, TECX, SGMT, MDT, PHG, YARW, ALEC, PRCT, RNA

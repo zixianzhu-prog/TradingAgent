@@ -31,6 +31,7 @@ import beneficiary_mapper as mapper
 import claude_serenity_memo as csm
 import prepare_claude_review as pcr
 import serenity_evidence_review as ser
+import claude_cli
 
 ROOT = Path(__file__).resolve().parents[1]
 CITATIONS = ROOT / "state/serenity-claude-citations.json"
@@ -76,7 +77,11 @@ def ask(ticker: str, passages: list[dict], model: str, timeout: int = 600) -> di
                            ensure_ascii=False))
     cmd = ["claude", "-p", "--tools", "", "--no-session-persistence", "--output-format", "json",
            "--json-schema", json.dumps(SCHEMA), "--model", model]
-    proc = subprocess.run(cmd, input=prompt, capture_output=True, text=True, timeout=timeout)
+    try:
+        proc = claude_cli.require_success(claude_cli.run(cmd, prompt, timeout))
+    except claude_cli.ClaudeCLIError as exc:  # one failed call must not lose the other companies' results
+        print(f"  {ticker}: Claude CLI failed ({str(exc)[:120]}); no answer")
+        return None
     try:
         return json.loads(proc.stdout).get("structured_output")
     except json.JSONDecodeError:
@@ -100,7 +105,7 @@ def to_gate(answer: dict, passages: list[dict], allow_fetch: bool = True) -> tup
         nonlocal dropped
         out = []
         for q in items or []:
-            p = by_id.get(q.get("id"))
+            p = pcr.passage_for(by_id, q)
             text = pcr.filing_text(p["url"], allow_fetch) if p else None
             if not p or not text or len(ser.clean(q.get("quote", ""))) < ser.MIN_QUOTE or not pcr.locate(text, q.get("quote", "")):
                 dropped += 1

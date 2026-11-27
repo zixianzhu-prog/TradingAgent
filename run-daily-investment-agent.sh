@@ -274,6 +274,9 @@ if [ ! -f "$SCREEN_STATE" ] || [ -n "$(find "$SCREEN_STATE" -mtime +6 2>/dev/nul
   # Patient counts from 10-Ks for rNPV peak sales: only companies without an entry in trend-agent/rnpv-overrides.json
   # (Claude Code on your subscription, Sonnet; deep mode only).
   if [ "$AGENT_MODE" = "deep" ]; then
+    if ! PYTHONPATH=scripts python3 scripts/claude_cli.py >/dev/null; then
+      note_fail "Claude CLI is not logged in; skipped all Claude deep-review steps and kept prior grades"
+    else
     PYTHONPATH=scripts python3 scripts/rnpv_patients.py --model "${CLAUDE_EXTRACT_MODEL:-sonnet}" \
       || note_fail "rNPV patient extraction failed; keeping existing overrides"
     # Who sells the lead drug: a partner (company earns royalties) or the company itself. Only unchecked companies.
@@ -288,6 +291,7 @@ if [ ! -f "$SCREEN_STATE" ] || [ -n "$(find "$SCREEN_STATE" -mtime +6 2>/dev/nul
       PYTHONPATH=scripts python3 scripts/claude_customer_review.py --tickers $QUEUE || note_fail "Customer-gate review failed; keeping the last grades"
       PYTHONPATH=scripts python3 scripts/claude_management_review.py --proxy --tickers $QUEUE || note_fail "Governance review failed; keeping the last grades"
       PYTHONPATH=scripts python3 scripts/claude_chain_review.py --tickers $QUEUE || note_fail "Supply-chain/earnings review failed; keeping the last grades"
+      PYTHONPATH=scripts python3 scripts/claude_control_review.py --tickers $QUEUE || note_fail "Chokepoint/multi-node review failed; keeping the last grades"
     fi
     # Opus argues against the memos behind live tickets (cached on unchanged evidence); a verified hard-gate fail makes the ticket wait.
     PYTHONPATH=scripts python3 scripts/claude_adversarial_review.py --model "${CLAUDE_ADVERSARIAL_MODEL:-opus}" \
@@ -300,6 +304,7 @@ if [ ! -f "$SCREEN_STATE" ] || [ -n "$(find "$SCREEN_STATE" -mtime +6 2>/dev/nul
     PYTHONPATH=scripts python3 scripts/diagnostics_economics.py || note_fail "Diagnostics economics failed; keeping the last result"
     # Blind test: freeze this week's calls from the agent, a plain web-search model and a mechanical rule (once a week).
     PYTHONPATH=scripts python3 scripts/blind_test.py --freeze || note_fail "Blind-test freeze failed; it retries on the next deep run"
+    fi
   fi
   # Upstream bottleneck map and Serenity evidence packets for newly shortlisted names.
   PYTHONPATH=scripts trend-agent/.venv/bin/python scripts/ai_medicine_chokepoints.py
