@@ -16,6 +16,7 @@
 5. 只提交、推送用户要求的内容；Claude 的改动和 Codex 的改动分开提交，提交说明写明是谁的改动。
 6. 深审队列只收 AI 公司。新药公司（因 IND 或大药厂合作进入的）留在信号页面，不进队列。
 7. TradingAgents 默认关闭（RUN_TRADINGAGENTS_FULL_REVIEW=1 才会运行）。
+8. 主目录始终留在 serenity-signals-backtest 分支，不要在这里新建分支或切换分支（流水线和 Claude 的提交都在这个目录里进行）。需要独立分支时，另开一个 git worktree，例如 ../x20-wps-people-signals。
 
 ## 分工
 - **Claude**：运行每日研究（AGENT_MODE=deep，命令行里带 SEC 联系方式），按规则重评门槛，重建并发布网页，提交并推送。
@@ -38,3 +39,4 @@
 - 2026-11-27 Codex T1 复核、Claude 修复：市场份额只认两种证据，一是带份额语义的百分比，二是明确的排名；独家许可（exclusive license）不算唯一供应；供应链的点名关系补上 depend on / supplied by / purchase from 等写法。
 - 2026-11-27 Codex：瓶颈证据必须区分方向；只有市场或客户依赖该公司（company_controls）才能支持门槛，公司依赖单一供应商、许可方、平台或付款方（company_depends）一律作为反证，不能通过瓶颈门槛。
 - 2026-11-27 Codex T2、Claude 复核：卡脖子证据区分方向，只有"市场依赖本公司"（company_controls）才能支持门槛，"公司依赖别人"计入反证；多环节控制要求两个相邻环节属于同一产品、来自同一段落，引文间隔 ≤ 400 字符；已终止的协议在选段落时排在仍有效的关系之后。
+- 2026-11-27 Claude：Codex 做 T2 时把主目录切到了 codex/t1-followup-hardening，导致 Claude 的提交落到新分支、推送失败；已把原分支快进到同一提交并切回。由此定下硬规则第 8 条。
