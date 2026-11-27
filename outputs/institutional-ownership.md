@@ -1,6 +1,6 @@
 # SEC 13D/13G 重要股东雷达
 
-> 状态：ok。覆盖队列 44 家；文件 246 份；13D 31；13G 215。
+> 状态：ok。覆盖队列 45 家；文件 248 份；13D 29；13G 219。
 
 > 13D/13G 证明重要股东的受益所有权，不等于公司获得新融资。13D 可能带有影响控制的意图；13G 通常是被动或合格机构申报。
 
@@ -12,11 +12,11 @@
 |---|---|---|---:|---|---|---|
 | 2026-11-25 | YARW | Logos Global Management LP | 9.50% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1566044/000093583626000662/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-17 | YARW | Logos Global Management LP | 9.99% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1566044/000093583626000626/xslSCHEDULE_13G_X02/primary_doc.xml) |
+| 2026-11-16 | IMTX | Vestal Point Capital, LP | 9.90% | 首次 | SCHEDULE 13G | [SEC](https://www.sec.gov/Archives/edgar/data/1809196/000090266426004576/xslSCHEDULE_13G_X02/primary_doc.xml) |
+| 2026-11-16 | IMTX | Baker Bros. Advisors LP | 2.80% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1809196/000110465926128332/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | GLUE | TCG Crossover GP II, LLC | 4.40% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1826457/000119312526464030/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | GLUE | Vestal Point Capital, LP | 8.40% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1826457/000090266426004583/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | GLUE | BIOTECHNOLOGY VALUE FUND L P | 5.00% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1826457/000092189526003182/xslSCHEDULE_13G_X02/primary_doc.xml) |
-| 2026-11-16 | IMTX | Vestal Point Capital, LP | 9.90% | 首次 | SCHEDULE 13G | [SEC](https://www.sec.gov/Archives/edgar/data/1809196/000090266426004576/xslSCHEDULE_13G_X02/primary_doc.xml) |
-| 2026-11-16 | IMTX | Baker Bros. Advisors LP | 2.80% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1809196/000110465926128332/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | IRD | Perceptive Advisors LLC | 9.99% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1228627/000119312526463810/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | IRD | Boxer Capital Management, LLC | 5.40% | 首次 | SCHEDULE 13G | [SEC](https://www.sec.gov/Archives/edgar/data/1228627/000121390026120703/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | IRD | Cormorant Asset Management, LP | 6.61% | 首次 | SCHEDULE 13G | [SEC](https://www.sec.gov/Archives/edgar/data/1228627/000117266126005298/xslSCHEDULE_13G_X02/primary_doc.xml) |
@@ -36,8 +36,8 @@
 | 2026-09-18 | ALEC | BIOTECHNOLOGY VALUE FUND L P | 8.40% | 首次 | SCHEDULE 13G | [SEC](https://www.sec.gov/Archives/edgar/data/1653087/000092189526002587/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-08-27 | IMTX | Perceptive Advisors LLC | 7.60% | 修订 | SCHEDULE 13D/A | [SEC](https://www.sec.gov/Archives/edgar/data/1809196/000119312526371236/xslSCHEDULE_13D_X02/primary_doc.xml) |
 | 2026-08-14 | RDNT | RTW Investments, LP | 6.20% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/790526/000149321526000155/xslSCHEDULE_13G_X02/primary_doc.xml) |
-| 2026-08-14 | GLUE | Vestal Point Capital, LP | 5.40% | 首次 | SCHEDULE 13G | [SEC](https://www.sec.gov/Archives/edgar/data/1826457/000090266426003506/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-08-14 | IMTX | Baker Bros. Advisors LP | 7.00% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1809196/000110465926097045/xslSCHEDULE_13G_X02/primary_doc.xml) |
+| 2026-08-14 | GLUE | Vestal Point Capital, LP | 5.40% | 首次 | SCHEDULE 13G | [SEC](https://www.sec.gov/Archives/edgar/data/1826457/000090266426003506/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-08-14 | CGEM | BIOTECHNOLOGY VALUE FUND L P | 9.99% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1789972/000092189526002166/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-08-14 | IRD | Perceptive Advisors LLC | 9.99% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1228627/000119312526352641/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-08-14 | NAUT | Perceptive Advisors LLC | 9.10% | 修订 | SCHEDULE 13D/A | [SEC](https://www.sec.gov/Archives/edgar/data/1808805/000119312526352644/xslSCHEDULE_13D_X02/primary_doc.xml) |
@@ -45,7 +45,9 @@
 | 2026-08-14 | RNA | RA Capital Management, L.P. | 0.00% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/2093101/000123191926000917/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-08-14 | IBIO | Vestal Point Capital, LP | 7.90% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1420720/000090266426003494/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-08-14 | IBIO | Cormorant Asset Management, LP | 9.99% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1420720/000117266126003690/xslSCHEDULE_13G_X02/primary_doc.xml) |
+| 2026-08-14 | ELOX | Samsara BioCapital, L.P. | 9.90% | 首次 | SCHEDULE 13G | [SEC](https://www.sec.gov/Archives/edgar/data/1035354/000169973726000018/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-07-06 | GLUE | New Enterprise Associates 17, L.P. | 7.90% | 修订 | SCHEDULE 13D/A | [SEC](https://www.sec.gov/Archives/edgar/data/1826457/000107261326000558/xslSCHEDULE_13D_X02/primary_doc.xml) |
+| 2026-06-16 | ELOX | EcoR1 Capital, LLC | 9.90% | 首次 | SCHEDULE 13G | [SEC](https://www.sec.gov/Archives/edgar/data/1035354/000093583626000321/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-05-15 | IMTX | Vestal Point Capital, LP | 4.60% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1809196/000090266426002549/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-05-15 | CGEM | BIOTECHNOLOGY VALUE FUND L P | 9.99% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1789972/000092189526001387/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-05-15 | AGMB | Redmile Group, LLC | 5.60% | 首次 | SCHEDULE 13G | [SEC](https://www.sec.gov/Archives/edgar/data/2020932/000110465926062718/xslSCHEDULE_13G_X02/primary_doc.xml) |
@@ -53,7 +55,6 @@
 | 2026-05-15 | RNA | RA Capital Management, L.P. | 5.60% | 首次 | SCHEDULE 13G | [SEC](https://www.sec.gov/Archives/edgar/data/2093101/000134682426000145/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-05-15 | IBIO | Logos Global Management LP | 0.00% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1420720/000093583626000283/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-05-15 | ELDN | BIOTECHNOLOGY VALUE FUND L P | 9.99% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1404281/000092189526001390/xslSCHEDULE_13G_X02/primary_doc.xml) |
-| 2026-05-15 | KALA | Baker Bros. Advisors LP | 0.01% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1479419/000110465926062584/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-05-15 | BDSX | Perceptive Advisors LLC | 4.60% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1439725/000119312526226566/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-05-15 | OM | Woodline Partners LP | 1.60% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1484612/000091957426003232/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-05-14 | ALEC | Polaris Venture Partners VI, L.P. | 4.70% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1653087/000119312526224270/xslSCHEDULE_13G_X02/primary_doc.xml) |
@@ -65,7 +66,6 @@
 | 2026-02-17 | CGEM | BIOTECHNOLOGY VALUE FUND L P | 9.99% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1789972/000092189526000457/xslSCHEDULE_13G_X01/primary_doc.xml) |
 | 2026-02-17 | ALEC | RTW Investments, LP | 0.00% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1653087/000149321526000024/xslSCHEDULE_13G_X01/primary_doc.xml) |
 | 2026-02-17 | ELDN | RA Capital Management, L.P. | 0.00% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1404281/000134682426000041/xslSCHEDULE_13G_X01/primary_doc.xml) |
-| 2026-02-17 | KALA | Baker Bros. Advisors LP | 9.99% | 修订 | SCHEDULE 13G/A | [SEC](https://www.sec.gov/Archives/edgar/data/1479419/000110465926016457/xslSCHEDULE_13G_X01/primary_doc.xml) |
 
 ## 全部申报
 
@@ -77,13 +77,13 @@
 | 2026-11-17 | YARW | SCHEDULE 13G/A | Logos Global Management LP | 9.99% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1566044/000093583626000626/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | SDGR | SCHEDULE 13G/A | Rubric Capital Management LP | 3.02% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1490978/000110465926128339/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | NTRA | SCHEDULE 13G/A | T. Rowe Price Associates, Inc. | 4.70% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1604821/000008025526000696/xslSCHEDULE_13G_X02/primary_doc.xml) |
+| 2026-11-16 | IMTX | SCHEDULE 13G | Vestal Point Capital, LP | 9.90% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1809196/000090266426004576/xslSCHEDULE_13G_X02/primary_doc.xml) |
+| 2026-11-16 | IMTX | SCHEDULE 13G/A | Baker Bros. Advisors LP | 2.80% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1809196/000110465926128332/xslSCHEDULE_13G_X02/primary_doc.xml) |
+| 2026-11-16 | IMTX | SCHEDULE 13G/A | T. Rowe Price Investment Management, Inc. | 17.10% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1809196/000189761226000752/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | GLUE | SCHEDULE 13G/A | TCG Crossover GP II, LLC | 4.40% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1826457/000119312526464030/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | GLUE | SCHEDULE 13G/A | Vestal Point Capital, LP | 8.40% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1826457/000090266426004583/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | GLUE | SCHEDULE 13G/A | BIOTECHNOLOGY VALUE FUND L P | 5.00% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1826457/000092189526003182/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | GLUE | SCHEDULE 13G/A | T. Rowe Price Associates, Inc. | 8.60% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1826457/000008025526000719/xslSCHEDULE_13G_X02/primary_doc.xml) |
-| 2026-11-16 | IMTX | SCHEDULE 13G | Vestal Point Capital, LP | 9.90% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1809196/000090266426004576/xslSCHEDULE_13G_X02/primary_doc.xml) |
-| 2026-11-16 | IMTX | SCHEDULE 13G/A | Baker Bros. Advisors LP | 2.80% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1809196/000110465926128332/xslSCHEDULE_13G_X02/primary_doc.xml) |
-| 2026-11-16 | IMTX | SCHEDULE 13G/A | T. Rowe Price Investment Management, Inc. | 17.10% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1809196/000189761226000752/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | IRD | SCHEDULE 13G/A | Perceptive Advisors LLC | 9.99% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1228627/000119312526463810/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | IRD | SCHEDULE 13G | Boxer Capital Management, LLC | 5.40% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1228627/000121390026120703/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-16 | IRD | SCHEDULE 13G/A | Caligan Partners LP | 6.20% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1228627/000172749226000027/xslSCHEDULE_13G_X02/primary_doc.xml) |
@@ -110,6 +110,7 @@
 | 2026-11-13 | SGMT | SCHEDULE 13G | SilverArc Capital Management, LLC | 6.10% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1400118/000110465926127339/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-13 | ANTX | SCHEDULE 13G/A | Coastlands Capital LP | 9.99% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1880438/000110465926127408/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-13 | ANTX | SCHEDULE 13G/A | Eric Easom | 6.20% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1880438/000119312526461157/xslSCHEDULE_13G_X02/primary_doc.xml) |
+| 2026-11-13 | ELOX | SCHEDULE 13G/A | Coastlands Capital LP | 9.99% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1035354/000110465926127416/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-13 | PRME | SCHEDULE 13D/A | ARCH Venture Fund X, L.P. | 8.40% | potential-control-or-active | [SEC](https://www.sec.gov/Archives/edgar/data/1894562/000119312526460600/xslSCHEDULE_13D_X02/primary_doc.xml) |
 | 2026-11-13 | PRME | SCHEDULE 13G | ARK Investment Management LLC | 5.54% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1894562/000110465926126830/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-13 | OM | SCHEDULE 13G/A | AQR Capital Management, LLC | 1.83% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1484612/000116755726000250/xslSCHEDULE_13G_X02/primary_doc.xml) |
@@ -118,6 +119,7 @@
 | 2026-11-12 | BDSX | SCHEDULE 13D/A | SCHULER JACK W | 22.30% | potential-control-or-active | [SEC](https://www.sec.gov/Archives/edgar/data/1439725/000090514826004746/xslSCHEDULE_13D_X02/primary_doc.xml) |
 | 2026-11-10 | RXRX | SCHEDULE 13G | STATE STREET CORPORATION | 5.60% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1601830/000009375126000711/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-10 | CGEM | SCHEDULE 13G | STATE STREET CORPORATION | 4.00% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1789972/000009375126000639/xslSCHEDULE_13G_X02/primary_doc.xml) |
+| 2026-11-09 | IAM | SCHEDULE 13G | Qatar Investment Authority | 5.80% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1997038/000144144926000012/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-09 | PALI | SCHEDULE 13G/A | Soleus Capital Master Fund, L.P. | 8.60% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1357459/000121390026117542/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-11-09 | FATE | SCHEDULE 13D/A | Redmile Group, LLC | 14.99% | potential-control-or-active | [SEC](https://www.sec.gov/Archives/edgar/data/1434316/000090514826004718/xslSCHEDULE_13D_X02/primary_doc.xml) |
 | 2026-11-06 | TEM | SCHEDULE 13G/A | ARK Investment Management LLC | 4.91% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000110465926123788/xslSCHEDULE_13G_X02/primary_doc.xml) |
@@ -136,7 +138,6 @@
 | 2026-10-27 | IRD | SCHEDULE 13G | BlackRock, Inc. | 6.10% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1228627/000201238326003823/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-10-26 | ALEC | SCHEDULE 13G | RA Capital Management, L.P. | 5.10% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1653087/000134682426000247/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-10-23 | ALEC | SCHEDULE 13G | Deep Track Capital, LP | 8.61% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1653087/000117266126004680/xslSCHEDULE_13G_X02/primary_doc.xml) |
-| 2026-10-19 | KALA | SCHEDULE 13G | Labkowski Nachum | 5.00% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1479419/000212324926000002/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-10-14 | IBIO | SCHEDULE 13G | Coastlands Capital LP | 9.72% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1420720/000110465926115801/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-10-07 | SGMT | SCHEDULE 13G | Commodore Capital LP | 7.60% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1400118/000183194226000045/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-10-06 | OM | SCHEDULE 13G/A | BML Investment Partners, L.P. | 14.70% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1484612/000137360426000055/xslSCHEDULE_13G_X02/primary_doc.xml) |
@@ -149,12 +150,12 @@
 | 2026-08-14 | NTRA | SCHEDULE 13G/A | T. Rowe Price Associates, Inc. | 6.30% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1604821/000008025526000548/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-08-14 | GH | SCHEDULE 13G/A | T. Rowe Price Associates, Inc. | 4.90% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1576280/000008025526000560/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-08-14 | RDNT | SCHEDULE 13G/A | RTW Investments, LP | 6.20% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/790526/000149321526000155/xslSCHEDULE_13G_X02/primary_doc.xml) |
+| 2026-08-14 | OABI | SCHEDULE 13G/A | Whitefort Capital Management, LP | 7.10% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1846253/000101359426000911/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-08-14 | OMDA | SCHEDULE 13G/A | Divisadero Street Capital Management, LP | 6.30% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1611115/000091957426005548/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-08-14 | OMDA | SCHEDULE 13G | American Century Investment Management, Inc. | 6.20% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1611115/000005238826000292/xslSCHEDULE_13G_X01/primary_doc.xml) |
-| 2026-08-14 | OABI | SCHEDULE 13G/A | Whitefort Capital Management, LP | 7.10% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1846253/000101359426000911/xslSCHEDULE_13G_X02/primary_doc.xml) |
+| 2026-08-14 | IMTX | SCHEDULE 13G/A | Baker Bros. Advisors LP | 7.00% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1809196/000110465926097045/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-08-14 | GLUE | SCHEDULE 13G/A | Montanova Capital, LLC | 4.20% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1826457/000091957426005533/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-08-14 | GLUE | SCHEDULE 13G | Vestal Point Capital, LP | 5.40% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1826457/000090266426003506/xslSCHEDULE_13G_X02/primary_doc.xml) |
-| 2026-08-14 | IMTX | SCHEDULE 13G/A | Baker Bros. Advisors LP | 7.00% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1809196/000110465926097045/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-08-14 | CGEM | SCHEDULE 13G/A | BIOTECHNOLOGY VALUE FUND L P | 9.99% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1789972/000092189526002166/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-08-14 | CGEM | SCHEDULE 13G | T. Rowe Price Associates, Inc. | 6.20% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1789972/000008025526000574/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-08-14 | IRD | SCHEDULE 13G/A | Perceptive Advisors LLC | 9.99% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1228627/000119312526352641/xslSCHEDULE_13G_X02/primary_doc.xml) |
@@ -167,6 +168,8 @@
 | 2026-08-14 | IBIO | SCHEDULE 13G | Lynx1 Capital Management LP | 5.40% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1420720/000090266426003523/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-08-14 | IBIO | SCHEDULE 13G/A | Vestal Point Capital, LP | 7.90% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1420720/000090266426003494/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-08-14 | IBIO | SCHEDULE 13G/A | Cormorant Asset Management, LP | 9.99% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1420720/000117266126003690/xslSCHEDULE_13G_X02/primary_doc.xml) |
+| 2026-08-14 | ELOX | SCHEDULE 13G | Samsara BioCapital, L.P. | 9.90% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1035354/000169973726000018/xslSCHEDULE_13G_X02/primary_doc.xml) |
+| 2026-08-14 | ELOX | SCHEDULE 13G | Nantahala Capital Management, LLC | 9.91% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1035354/000110465926097268/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-08-14 | HCAT | SCHEDULE 13G/A | Stoney Lonesome HF LP | 9.60% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1636422/000092189526002187/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-08-13 | PALI | SCHEDULE 13G/A | Soleus Capital Master Fund, L.P. | 7.50% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1357459/000121390026088750/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-08-13 | IBIO | SCHEDULE 13G/A | Affinity Asset Advisors, LLC | 9.99% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1420720/000101143826000508/xslSCHEDULE_13G_X02/primary_doc.xml) |
@@ -189,6 +192,7 @@
 | 2026-07-28 | HYPR | SCHEDULE 13G | BlackRock, Inc. | 5.50% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1833769/000201238326002521/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-07-28 | HCAT | SCHEDULE 13G/A | BlackRock, Inc. | 1.50% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1636422/000201238326002516/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-07-27 | RNA | SCHEDULE 13G/A | BlackRock, Inc. | 6.60% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/2093101/000201238326002192/xslSCHEDULE_13G_X02/primary_doc.xml) |
+| 2026-07-27 | ELOX | SCHEDULE 13G | Aberdeen Group plc | 9.91% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1035354/000171677426000020/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-07-21 | TEM | SCHEDULE 13D/A | Tempus AI, Inc. | 12.60% | potential-control-or-active | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000119312526310289/xslSCHEDULE_13D_X02/primary_doc.xml) |
 | 2026-07-21 | HCAT | SCHEDULE 13G | Impax Asset Management Group plc | 5.41% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1636422/000174976826000003/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-07-20 | NVDA | SCHEDULE 13G | NVIDIA Corporation | 9.30% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000062/xslSCHEDULE_13G_X01/primary_doc.xml) |
@@ -198,11 +202,14 @@
 | 2026-07-08 | GLUE | SCHEDULE 13G/A | T. Rowe Price Associates, Inc. | 10.50% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1826457/000008025526000442/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-07-08 | FATE | SCHEDULE 13G/A | BlackRock, Inc. | 1.90% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1434316/000201238326001939/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-07-06 | GLUE | SCHEDULE 13D/A | New Enterprise Associates 17, L.P. | 7.90% | potential-control-or-active | [SEC](https://www.sec.gov/Archives/edgar/data/1826457/000107261326000558/xslSCHEDULE_13D_X02/primary_doc.xml) |
-| 2026-07-02 | KALA | SCHEDULE 13D/A | Lazar David E. | 3.90% | potential-control-or-active | [SEC](https://www.sec.gov/Archives/edgar/data/1479419/000182912626007224/xslSCHEDULE_13D_X02/primary_doc.xml) |
 | 2026-06-30 | NAUT | SCHEDULE 13D/A | AH Bio Fund II, L.P. | 7.10% | potential-control-or-active | [SEC](https://www.sec.gov/Archives/edgar/data/1808805/000172572126000004/xslSCHEDULE_13D_X02/primary_doc.xml) |
 | 2026-06-23 | OMDA | SCHEDULE 13G | The Cigna Group | 5.80% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1611115/000114036126026088/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-06-22 | HCAT | SCHEDULE 13D | Palogic Value Management, LP | 6.70% | potential-control-or-active | [SEC](https://www.sec.gov/Archives/edgar/data/1636422/000110465926076342/xslSCHEDULE_13D_X02/primary_doc.xml) |
 | 2026-06-18 | BDSX | SCHEDULE 13G | Soleus Capital Master Fund, L.P. | 5.10% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1439725/000121390026070194/xslSCHEDULE_13G_X02/primary_doc.xml) |
+| 2026-06-17 | ELOX | SCHEDULE 13G | Coastlands Capital LP | 9.99% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1035354/000110465926075290/xslSCHEDULE_13G_X02/primary_doc.xml) |
+| 2026-06-17 | ELOX | SCHEDULE 13G | Domicilium Capital Partners LLC | 19.99% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1035354/000091957426004022/xslSCHEDULE_13G_X02/primary_doc.xml) |
+| 2026-06-16 | ELOX | SCHEDULE 13G | EcoR1 Capital, LLC | 9.90% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1035354/000093583626000321/xslSCHEDULE_13G_X02/primary_doc.xml) |
+| 2026-06-16 | ELOX | SCHEDULE 13G | Stonepine Capital Management, LLC | 9.90% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1035354/000144077126000006/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-06-08 | HCAT | SCHEDULE 13D/A | Whetstone Capital Advisors, LLC | 4.50% | potential-control-or-active | [SEC](https://www.sec.gov/Archives/edgar/data/1636422/000160727826000004/xslSCHEDULE_13D_X02/primary_doc.xml) |
 | 2026-06-05 | ODTX | SCHEDULE 13G | FMR LLC | 10.20% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1882782/000031506626001419/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-06-04 | NAUT | SCHEDULE 13D/A | AH Bio Fund II, L.P. | 9.90% | potential-control-or-active | [SEC](https://www.sec.gov/Archives/edgar/data/1808805/000172572126000002/xslSCHEDULE_13D_X02/primary_doc.xml) |
@@ -215,10 +222,10 @@
 | 2026-05-15 | GH | SCHEDULE 13G | T. Rowe Price Associates, Inc. | 5.40% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1576280/000008025526000415/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-05-15 | RDNT | SCHEDULE 13G | T. Rowe Price Associates, Inc. | 5.40% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/790526/000008025526000395/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-05-15 | OMDA | SCHEDULE 13G/A | Andreessen Horowitz Fund IV, L.P. | 4.20% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1611115/000160319826000006/xslSCHEDULE_13G_X02/primary_doc.xml) |
-| 2026-05-15 | ODTX | SCHEDULE 13D | Dimension Management, L.P. | 7.10% | potential-control-or-active | [SEC](https://www.sec.gov/Archives/edgar/data/1882782/000119312526226695/xslSCHEDULE_13D_X02/primary_doc.xml) |
-| 2026-05-15 | ODTX | SCHEDULE 13D | Jeito II S.L.P. | 7.80% | potential-control-or-active | [SEC](https://www.sec.gov/Archives/edgar/data/1882782/000095010326007273/xslSCHEDULE_13D_X02/primary_doc.xml) |
 | 2026-05-15 | IMTX | SCHEDULE 13G/A | Vestal Point Capital, LP | 4.60% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1809196/000090266426002549/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-05-15 | IMTX | SCHEDULE 13G | The Toronto-Dominion Bank | 5.50% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1809196/000094726326000045/xslSCHEDULE_13G_X02/primary_doc.xml) |
+| 2026-05-15 | ODTX | SCHEDULE 13D | Dimension Management, L.P. | 7.10% | potential-control-or-active | [SEC](https://www.sec.gov/Archives/edgar/data/1882782/000119312526226695/xslSCHEDULE_13D_X02/primary_doc.xml) |
+| 2026-05-15 | ODTX | SCHEDULE 13D | Jeito II S.L.P. | 7.80% | potential-control-or-active | [SEC](https://www.sec.gov/Archives/edgar/data/1882782/000095010326007273/xslSCHEDULE_13D_X02/primary_doc.xml) |
 | 2026-05-15 | CGEM | SCHEDULE 13G/A | BIOTECHNOLOGY VALUE FUND L P | 9.99% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1789972/000092189526001387/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-05-15 | AGMB | SCHEDULE 13G | Redmile Group, LLC | 5.60% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/2020932/000110465926062718/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-05-15 | AGMB | SCHEDULE 13G | Cormorant Asset Management, LP | 5.01% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/2020932/000117266126002216/xslSCHEDULE_13G_X02/primary_doc.xml) |
@@ -226,7 +233,6 @@
 | 2026-05-15 | RNA | SCHEDULE 13G | RA Capital Management, L.P. | 5.60% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/2093101/000134682426000145/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-05-15 | IBIO | SCHEDULE 13G/A | Logos Global Management LP | 0.00% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1420720/000093583626000283/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-05-15 | ELDN | SCHEDULE 13G/A | BIOTECHNOLOGY VALUE FUND L P | 9.99% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1404281/000092189526001390/xslSCHEDULE_13G_X02/primary_doc.xml) |
-| 2026-05-15 | KALA | SCHEDULE 13G/A | Baker Bros. Advisors LP | 0.01% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1479419/000110465926062584/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-05-15 | HCAT | SCHEDULE 13G/A | Stoney Lonesome HF LP | 8.60% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1636422/000092189526001411/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-05-15 | BDSX | SCHEDULE 13G/A | Perceptive Advisors LLC | 4.60% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1439725/000119312526226566/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-05-15 | OM | SCHEDULE 13G/A | Alyeska Investment Group, L.P. | 0.00% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1484612/000117266126002376/xslSCHEDULE_13G_X02/primary_doc.xml) |
@@ -295,7 +301,6 @@
 | 2026-02-17 | ALEC | SCHEDULE 13G/A | RTW Investments, LP | 0.00% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1653087/000149321526000024/xslSCHEDULE_13G_X01/primary_doc.xml) |
 | 2026-02-17 | ELDN | SCHEDULE 13G/A | RA Capital Management, L.P. | 0.00% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1404281/000134682426000041/xslSCHEDULE_13G_X01/primary_doc.xml) |
 | 2026-02-17 | HURA | SCHEDULE 13G | Highbridge Capital Management, LLC | 9.10% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1498382/000090266426001107/xslSCHEDULE_13G_X01/primary_doc.xml) |
-| 2026-02-17 | KALA | SCHEDULE 13G/A | Baker Bros. Advisors LP | 9.99% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1479419/000110465926016457/xslSCHEDULE_13G_X01/primary_doc.xml) |
 | 2026-02-13 | SDGR | SCHEDULE 13G/A | Rubric Capital Management LP | 6.47% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1490978/000110465926015243/xslSCHEDULE_13G_X01/primary_doc.xml) |
 | 2026-02-13 | GEHC | SCHEDULE 13G/A | Dodge &amp; Cox | 6.90% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1932393/000119312526050671/xslSCHEDULE_13G_X01/primary_doc.xml) |
 | 2026-02-13 | ELDN | SCHEDULE 13G/A | Coastlands Capital LP | 4.99% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1404281/000110465926015219/xslSCHEDULE_13G_X01/primary_doc.xml) |
@@ -303,7 +308,6 @@
 | 2026-02-10 | TEM | SCHEDULE 13G/A | Eric Paul Lefkofsky | 24.00% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1717115/000111435726000004/xslSCHEDULE_13G_X01/primary_doc.xml) |
 | 2026-02-10 | OABI | SCHEDULE 13G/A | Ash X LP | 8.50% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1846253/000101143826000064/xslSCHEDULE_13G_X01/primary_doc.xml) |
 | 2026-02-06 | ALEC | SCHEDULE 13G/A | Arnon Rosenthal | 7.40% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1653087/000119312526041267/xslSCHEDULE_13G_X01/primary_doc.xml) |
-| 2026-02-06 | KALA | SCHEDULE 13D | David E. Lazar | 5.18% | potential-control-or-active | [SEC](https://www.sec.gov/Archives/edgar/data/1479419/000182912626001059/xslSCHEDULE_13D_X01/primary_doc.xml) |
 | 2026-01-30 | NVDA | SCHEDULE 13G/A | The Vanguard Group | 9.32% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1045810/000010290926000226/xslSCHEDULE_13G_X01/primary_doc.xml) |
 | 2026-01-30 | HYPR | SCHEDULE 13G/A | The Vanguard Group | 4.34% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1833769/000010290926000176/xslSCHEDULE_13G_X01/primary_doc.xml) |
 | 2026-01-29 | TECX | SCHEDULE 13G | Aberdeen Group plc | 6.10% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1681087/000171677426000007/xslSCHEDULE_13G_X01/primary_doc.xml) |
@@ -313,7 +317,5 @@
 | 2026-01-26 | BDSX | SCHEDULE 13G | Telemark Asset Management, LLC | 5.40% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1439725/000089843226000061/xslSCHEDULE_13G_X01/primary_doc.xml) |
 | 2026-01-23 | NTRA | SCHEDULE 13G/A | JPMORGAN CHASE &amp; CO. | 9.10% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1604821/000001961726000064/xslSCHEDULE_13G_X01/primary_doc.xml) |
 | 2026-01-23 | BDSX | SCHEDULE 13G/A | Telemark Asset Management, LLC | 4.10% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1439725/000089843226000056/xslSCHEDULE_13G_X01/primary_doc.xml) |
-| 2026-01-13 | KALA | SCHEDULE 13G | LifeSci Capital LLC | 7.90% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1479419/000121390026003682/xslSCHEDULE_13G_X01/primary_doc.xml) |
 | 2026-01-08 | ANIK | SCHEDULE 13G/A | Trigran Investments, Inc. | 1.20% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/898437/000110465926002059/xslSCHEDULE_13G_X01/primary_doc.xml) |
 | 2025-12-18 | SGMT | SCHEDULE 13G/A | KPCB Pandemic and Bio Defense Fund, LLC | 0.00% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1400118/000110465925122583/xslSCHEDULE_13G_X01/primary_doc.xml) |
-| 2025-12-03 | KALA | SCHEDULE 13G | OXFORD FINANCE LLC | 16.50% | passive-or-qualified-institution | [SEC](https://www.sec.gov/Archives/edgar/data/1479419/000155625725000003/xslSCHEDULE_13G_X01/primary_doc.xml) |

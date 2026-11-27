@@ -1,6 +1,6 @@
 # 事件驱动重新验证队列
 
-生成日期：2026-11-26
+生成日期：2026-11-27
 
 > 事件只触发重新研究，不会自动改变评级、仓位或创建交易。发布时间、发现时间或as-of不一致的事件会被隔离，不能使Serenity门槛失效。
 
@@ -12,7 +12,7 @@
 | NVDA | Independent board investigation | 2026-11-10 | evidence-received | management_governance, reputation_risk, counter_thesis |
 | NVDA | CEO transition and permanent successor search | 2026-11-12 | evidence-received | management_governance, counter_thesis, earnings_validation |
 | NVDA | Q3 FY2027 earnings and management outlook | 2026-11-17 | evidence-received | earnings_validation, valuation, customer_dependency, cash_generation |
-| TEM | Personalis shareholder vote | 2026-11-30 | upcoming | integration_execution, data_chokepoint, valuation |
+| TEM | Personalis shareholder vote | 2026-11-30 | due-soon | integration_execution, data_chokepoint, valuation |
 | TEM | Q4/FY 2026 earnings | 待公布 | unscheduled | earnings_validation, valuation, cash_generation |
 | SDGR | Q4/FY 2026 earnings | 待公布 | unscheduled | earnings_validation, hosted_margin, cash_runway |
 | RXRX | REC-4881 FDA path | 待公布 | unscheduled | clinical_validation, regulatory_path, valuation |
@@ -58,6 +58,15 @@
 - 日期校验：verified-ordering
 - 重新检查：cash_generation, cash_runway, clinical_validation, counter_thesis, customer_dependency, dilution, earnings_validation, falsifiers, integration_execution, management_governance, partner_economics, reputation_risk, valuation
 - 触发原因：公司名称直接匹配；股票代码直接匹配；重大事件关键词：earnings, clinical, partnership, financing, integration, leadership
+
+### NVDA · 70/100
+- [Reporters grill Blanche over handling of Huang affair, Nvidia chip exports - The Hill](https://news.google.com/rss/articles/CBMimgFBVV95cUxPS2RhQmxVTmItNkxnR1ZiYzFUWm10MGhsNS1tc0ZxLU81RGRteDBPanZMemFybkxOQUw0MFdSOHVVQnJxSDQtS2NRaGpuTkFHTF9KMGFLWGhHcXYyUno4V2xKNHFvUmlScFpkU1U0MnRiOXJFNjNpTFd5S0JKMkw5MkRiOE5vMkZpRS14YXJ5WTdybTdjWHdmVzRB0gGfAUFVX3lxTFBXLTFGazlhY2hQTDB2aXAyYUVQc1RHTWI0MHpzRUM5UGVvYnlhSThhd0pnVlg1RDlMODY3bXZiN3puM1FDRHAybHNBenFDa0FfWGFPREM4TmZQTllSRm1YdG9ER2x0SXFKcGRLancwVGV4QjlIV0RJY1hFOHFCY0xHMjkwbjk4bGhQT291eFNxRWxvUEFLNVRwcFdTUUpHUQ?oc=5)（媒体报道，无对应公司发布）
+- 同一事件的报道：1 篇
+- 事件类型：reputational
+- 信息可用：2026-11-27T19:51:44.757554+00:00；最早进入研究：2026-11-30
+- 日期校验：verified-ordering
+- 重新检查：counter_thesis, management_governance, reputation_risk
+- 触发原因：公司名称直接匹配；重大事件关键词：reputational；官方或监管来源
 
 ### NVDA · 70/100
 - [NVIDIA Board Reinstates Jensen Huang as President, CEO and Board Director](https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director)（公司一手发布）

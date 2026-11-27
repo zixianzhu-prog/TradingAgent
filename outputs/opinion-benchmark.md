@@ -1,6 +1,6 @@
 # 生物科技公开观点与专业资金对标
 
-> 生成：2026-11-26T19:46:38+00:00。公开观点 0 条；可计分观察 0 条；专业资金申报 23 条。
+> 生成：2026-11-27T19:55:45+00:00。公开观点 0 条；可计分观察 0 条；专业资金申报 21 条。
 
 > 观点只在系统首次发现后向前计分；旧文章不会从原发布日期回填收益。基金持仓是背景信息，不是买入建议，也不等于公司获得融资。
 
@@ -46,12 +46,10 @@
 | 2026-05-15 | RA Capital | RNA | SCHEDULE 13G | 5.60% | 首次 | [SEC](https://www.sec.gov/Archives/edgar/data/2093101/000134682426000145/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-05-15 | Perceptive Advisors | BDSX | SCHEDULE 13G/A | 4.60% | 修订 | [SEC](https://www.sec.gov/Archives/edgar/data/1439725/000119312526226566/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-05-15 | Cormorant Asset Management | AGMB | SCHEDULE 13G | 5.01% | 首次 | [SEC](https://www.sec.gov/Archives/edgar/data/2020932/000117266126002216/xslSCHEDULE_13G_X02/primary_doc.xml) |
-| 2026-05-15 | Baker Brothers | KALA | SCHEDULE 13G/A | 0.01% | 修订 | [SEC](https://www.sec.gov/Archives/edgar/data/1479419/000110465926062584/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-05-07 | Baker Brothers | ABCL | SCHEDULE 13G/A | 10.80% | 修订 | [SEC](https://www.sec.gov/Archives/edgar/data/1703057/000110465926057139/xslSCHEDULE_13G_X02/primary_doc.xml) |
 | 2026-02-17 | RTW Investments | RDNT | SCHEDULE 13G | 5.10% | 首次 | [SEC](https://www.sec.gov/Archives/edgar/data/790526/000149321526000044/xslSCHEDULE_13G_X01/primary_doc.xml) |
 | 2026-02-17 | RTW Investments | ALEC | SCHEDULE 13G/A | 0.00% | 修订 | [SEC](https://www.sec.gov/Archives/edgar/data/1653087/000149321526000024/xslSCHEDULE_13G_X01/primary_doc.xml) |
 | 2026-02-17 | RA Capital | ELDN | SCHEDULE 13G/A | 0.00% | 修订 | [SEC](https://www.sec.gov/Archives/edgar/data/1404281/000134682426000041/xslSCHEDULE_13G_X01/primary_doc.xml) |
-| 2026-02-17 | Baker Brothers | KALA | SCHEDULE 13G/A | 9.99% | 修订 | [SEC](https://www.sec.gov/Archives/edgar/data/1479419/000110465926016457/xslSCHEDULE_13G_X01/primary_doc.xml) |
 
 ## 判定纪律
 

@@ -1,19 +1,21 @@
 # 科研到商业化证据链
 
-> 已连接 57 家公司；合作或公司收入信号 17 家；研究者/公司关系 16 家；公司披露技术归属 18 家；USPTO 独立核验 6 家；13D/13G 重要股东 42 家；完整链路 0 家。
+> 已连接 56 家公司；合作或公司收入信号 16 家；研究者/公司关系 16 家；公司披露技术归属 19 家；USPTO 独立核验 10 家；13D/13G 重要股东 43 家；完整链路 0 家。
 
 > 这是可审计研究漏斗，不是股票评分。技术相似、论文提及或合作公告都不能单独证明知识产权、客户收入或买入价值。
 
 | 公司 | 科研 | 研究者/公司 | 专利/许可 | 融资 | 13D/G股东 | 药企付费/合作 | IND/临床 | SEC收入 | 当前结论 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---|
-| NTRA | 1 | 34 | 0 | 1 | 8 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
+| NTRA | 1 | 52 | 0 | 0 | 8 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
+| RXRX | 1 | 2 | 16 | 1 | 8 | 0 | 3 | 1 | ownership-and-company-revenue-verified |
+| ODTX | 1 | 1 | 11 | 1 | 7 | 0 | 0 | 0 | science-linked |
 | TECX | 0 | 0 | 17 | 1 | 3 | 0 | 0 | 0 | science-linked |
+| ALEC | 1 | 1 | 5 | 1 | 8 | 2 | 0 | 0 | ownership-and-pharma-validated |
 | IRD | 0 | 0 | 8 | 1 | 8 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | PRME | 0 | 0 | 12 | 1 | 3 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
-| RXRX | 1 | 2 | 1 | 1 | 8 | 0 | 3 | 1 | ownership-and-company-revenue-verified |
 | ABCL | 1 | 6 | 3 | 1 | 2 | 0 | 2 | 1 | ownership-and-company-revenue-verified |
-| ALEC | 1 | 1 | 3 | 1 | 8 | 2 | 0 | 0 | ownership-and-pharma-validated |
 | BDSX | 0 | 0 | 6 | 1 | 8 | 0 | 0 | 0 | science-linked |
+| OABI | 0 | 0 | 11 | 1 | 2 | 0 | 0 | 0 | science-linked |
 | SDGR | 1 | 1 | 2 | 1 | 6 | 0 | 2 | 1 | ownership-and-company-revenue-verified |
 | FATE | 1 | 1 | 5 | 1 | 4 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | HURA | 0 | 0 | 9 | 1 | 2 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
@@ -21,15 +23,14 @@
 | CGEM | 0 | 0 | 2 | 1 | 8 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | PALI | 0 | 0 | 1 | 2 | 8 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | TEM | 1 | 2 | 0 | 1 | 7 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
-| KALA | 0 | 0 | 3 | 1 | 7 | 0 | 0 | 0 | science-linked |
 | GH | 1 | 1 | 0 | 1 | 6 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
 | IMTX | 0 | 1 | 1 | 0 | 8 | 0 | 0 | 0 | science-linked |
 | NAUT | 0 | 2 | 0 | 0 | 8 | 0 | 0 | 0 | science-linked |
-| ODTX | 1 | 1 | 0 | 1 | 7 | 0 | 0 | 0 | science-linked |
 | SGMT | 1 | 1 | 0 | 1 | 7 | 0 | 0 | 0 | science-linked |
 | YARW | 0 | 0 | 1 | 1 | 8 | 0 | 0 | 0 | science-linked |
 | ANIK | 1 | 1 | 0 | 0 | 6 | 1 | 0 | 0 | commercial-signal-with-ownership-gap |
 | ELDN | 0 | 0 | 1 | 0 | 8 | 0 | 0 | 0 | science-linked |
+| ELOX | 0 | 0 | 0 | 0 | 8 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | GLUE | 0 | 0 | 0 | 1 | 8 | 0 | 0 | 0 | evidence-fragment |
 | IBIO | 0 | 0 | 0 | 1 | 8 | 0 | 0 | 0 | evidence-fragment |
 | OM | 0 | 0 | 0 | 1 | 8 | 0 | 0 | 0 | evidence-fragment |
@@ -39,25 +40,23 @@
 | GEHC | 0 | 0 | 0 | 0 | 7 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
 | HCAT | 0 | 0 | 0 | 0 | 8 | 0 | 0 | 0 | evidence-fragment |
 | AGMB | 0 | 0 | 0 | 0 | 7 | 0 | 0 | 0 | evidence-fragment |
-| OABI | 0 | 0 | 4 | 1 | 2 | 0 | 0 | 0 | science-linked |
 | RDNT | 0 | 0 | 0 | 1 | 5 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
 | NVDA | 0 | 0 | 0 | 0 | 5 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
-| IONS | 0 | 0 | 0 | 5 | 0 | 0 | 0 | 0 | evidence-fragment |
 | AVXL | 1 | 1 | 0 | 0 | 2 | 0 | 0 | 0 | science-linked |
 | HYPR | 1 | 1 | 0 | 0 | 2 | 0 | 0 | 0 | science-linked |
+| GENB | 0 | 0 | 2 | 0 | 0 | 1 | 0 | 0 | ownership-and-pharma-validated |
+| IONS | 0 | 0 | 0 | 3 | 0 | 0 | 0 | 0 | evidence-fragment |
 | IQV | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
 | ISRG | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 1 | commercial-signal-with-ownership-gap |
 | ZYME | 0 | 0 | 0 | 0 | 0 | 2 | 1 | 0 | commercial-signal-with-ownership-gap |
 | ACET | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | clinical-signal-with-ownership-gap |
 | AGPU | 0 | 0 | 0 | 1 | 1 | 0 | 0 | 0 | evidence-fragment |
+| IAM | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 0 | commercial-signal-with-ownership-gap |
 | PCSA | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | clinical-signal-with-ownership-gap |
 | SOPH | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 0 | evidence-fragment |
 | BHVN | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | commercial-signal-with-ownership-gap |
 | CARL | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | evidence-fragment |
-| ELOX | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
-| GENB | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | commercial-signal-with-ownership-gap |
 | HALO | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | commercial-signal-with-ownership-gap |
-| IAM | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | commercial-signal-with-ownership-gap |
 | IMNM | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | KTTA | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | clinical-signal-with-ownership-gap |
 | MDCX | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | commercial-signal-with-ownership-gap |
@@ -70,19 +69,57 @@
 
 **尚缺证据**
 - 缺公司专利、专利受让或大学技术许可的明确证据
+- 缺融资投资人身份及资金进入的原始证据
 - 缺大药厂付费、许可或具有经济条款的合作证据
 - 缺 IND 生效或已登记临床试验证据
 - 公司总收入已核验，但尚不能证明收入来自相关 AI/科研技术
 
 **已核验证据**
 - [OpenAlex company institution](https://doi.org/10.1038/s41591-024-03254-6) · company_authored_research：381 papers since 2023-11-24 list Natera (United States) as an author institution; most cited: ctDNA-based molecular residual disease and survival in resectable colorectal cancer
-- [OpenAlex author affiliation](https://doi.org/10.1038/s41392-026-03076-7) · researcher_company_affiliation：Shuting Li is affiliated with Central South University on Next-generation multispecific antibodies for oncology: mechanisms and clinical translation
-- [OpenAlex author affiliation](https://doi.org/10.1038/s41392-026-03076-7) · researcher_company_affiliation：Shuting Li is affiliated with Xiangya Hospital Central South University on Next-generation multispecific antibodies for oncology: mechanisms and clinical translation
-- [OpenAlex author affiliation](https://doi.org/10.1038/s41392-026-03076-7) · researcher_company_affiliation：Lanhua Tang is affiliated with Central South University on Next-generation multispecific antibodies for oncology: mechanisms and clinical translation
-- [OpenAlex author affiliation](https://doi.org/10.1038/s41392-026-03076-7) · researcher_company_affiliation：Lanhua Tang is affiliated with Xiangya Hospital Central South University on Next-generation multispecific antibodies for oncology: mechanisms and clinical translation
-- [OpenAlex author affiliation](https://doi.org/10.1038/s41392-026-03076-7) · researcher_company_affiliation：Hong Shen is affiliated with Central South University on Next-generation multispecific antibodies for oncology: mechanisms and clinical translation
-- [OpenAlex author affiliation](https://doi.org/10.1038/s41392-026-03076-7) · researcher_company_affiliation：Hong Shen is affiliated with Xiangya Hospital Central South University on Next-generation multispecific antibodies for oncology: mechanisms and clinical translation
-- [OpenAlex author affiliation](https://doi.org/10.1038/s41392-026-03076-7) · researcher_company_affiliation：Shan Zeng is affiliated with Central South University on Next-generation multispecific antibodies for oncology: mechanisms and clinical translation
+- [OpenAlex author affiliation](https://doi.org/10.3389/fmed.2026.2001315) · researcher_company_affiliation：Ziyi Wang is affiliated with Central South University on Case Report: Pulmonary mucoepidermoid carcinoma harboring EML4::ALK fusion and ALK-immunopositive lung carcinomas with mucoepidermoid carcinoma-like differentiation
+- [OpenAlex author affiliation](https://doi.org/10.3389/fmed.2026.2001315) · researcher_company_affiliation：Ziyi Wang is affiliated with Second Xiangya Hospital of Central South University on Case Report: Pulmonary mucoepidermoid carcinoma harboring EML4::ALK fusion and ALK-immunopositive lung carcinomas with mucoepidermoid carcinoma-like differentiation
+- [OpenAlex author affiliation](https://doi.org/10.3389/fmed.2026.2001315) · researcher_company_affiliation：Ziyi Wang is affiliated with Xiangya Hospital Central South University on Case Report: Pulmonary mucoepidermoid carcinoma harboring EML4::ALK fusion and ALK-immunopositive lung carcinomas with mucoepidermoid carcinoma-like differentiation
+- [OpenAlex author affiliation](https://doi.org/10.3389/fmed.2026.2001315) · researcher_company_affiliation：Minqi Qiu is affiliated with Central South University on Case Report: Pulmonary mucoepidermoid carcinoma harboring EML4::ALK fusion and ALK-immunopositive lung carcinomas with mucoepidermoid carcinoma-like differentiation
+- [OpenAlex author affiliation](https://doi.org/10.3389/fmed.2026.2001315) · researcher_company_affiliation：Minqi Qiu is affiliated with Second Xiangya Hospital of Central South University on Case Report: Pulmonary mucoepidermoid carcinoma harboring EML4::ALK fusion and ALK-immunopositive lung carcinomas with mucoepidermoid carcinoma-like differentiation
+- [OpenAlex author affiliation](https://doi.org/10.3389/fmed.2026.2001315) · researcher_company_affiliation：Minqi Qiu is affiliated with Xiangya Hospital Central South University on Case Report: Pulmonary mucoepidermoid carcinoma harboring EML4::ALK fusion and ALK-immunopositive lung carcinomas with mucoepidermoid carcinoma-like differentiation
+- [OpenAlex author affiliation](https://doi.org/10.3389/fmed.2026.2001315) · researcher_company_affiliation：Jiaoyun Zheng is affiliated with Central South University on Case Report: Pulmonary mucoepidermoid carcinoma harboring EML4::ALK fusion and ALK-immunopositive lung carcinomas with mucoepidermoid carcinoma-like differentiation
+
+## RXRX · Recursion Pharmaceuticals
+
+已有商业信号，但不能把合作公告当成客户收入；仍按缺口继续核验。
+
+**尚缺证据**
+- 缺大药厂付费、许可或具有经济条款的合作证据
+- 公司总收入已核验，但尚不能证明收入来自相关 AI/科研技术
+
+**已核验证据**
+- [OpenAlex company institution](https://doi.org/10.1101/2025.06.14.659707) · company_authored_research：73 papers since 2023-11-24 list Recursion (United States) as an author institution; most cited: Boltz-2: Towards Accurate and Efficient Binding Affinity Prediction
+- [SEC filing](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000065/rxrx-20260430.htm) · founder_company：COMMITTEE MEMBERSHIP Research and Development Technology Corporate Social Responsibility DIRECTOR SINCE 2013 AGE 43 Christopher Gibson, Ph.D. , is our co-founder and Chair of the Board, as of January 1, 2026.
+- [OpenAlex author affiliation](https://doi.org/10.1101/2025.06.14.659707) · researcher_company_affiliation：Stephan Thaler, Julien Roy, Dominique Beaini affiliated with Recursion (United States) on Boltz-2: Towards Accurate and Efficient Binding Affinity Prediction
+- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/rxrx-20251231.htm) · license：10-K 001-40323 10.21 February 29, 2024 10.26#^ Amended and Restated License Agreement between the Registrant and University of Utah Research Foundation, dated February 9, 2016.
+- [SEC filing](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/rxrx-20251231.htm) · patent_portfolio：We also pursue a strategy of seeking patent protection on 56 Table of Contents smaller discrete inventions throughout the breadth of our pipeline, ranging from experiment design, operations within our labs, data collection and analysis (including deep learning insights). • Recursion Program IP: A breakdown of our Program IP portfolio is below: ◦ REC-4881: We own patent applications, or exclusively license Takeda’s interest in patents and patent applications from Takeda, related to composition of matter and methods of reducing polyp burden in people living with FAP using REC-4881.
+- [SEC filing](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/rxrx-20251231.htm) · patent_portfolio：With respect to FAP, orphan drug exclusivity in the U.S. would run seven years from marketing authorization. ◦ REC-3964: We own a patent and patent applications related to the composition of matter and methods of inhibiting the toxin produced by Clostridioides difficile in the gastrointestinal tract using REC-3964.
+- [SEC filing](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/rxrx-20251231.htm) · patent_portfolio：Currently, we expect our issued patent related to REC-3964 to expire no earlier than 2042, excluding any patent term adjustment or patent term extension, or other mechanisms for effecting patent term, and assuming payment of all appropriate maintenance, renewal, annuity or other governmental fee. ◦ REC-617: We own patent applications related to REC-617; these patent applications relate to composition of matter and methods of treatment of multiple advanced solid tumor indications for REC-617.
+- [SEC filing](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/rxrx-20251231.htm) · patent_portfolio：Upon issuance, we expect our patents resulting from these patent applications will expire no earlier than 2041, excluding any patent term extension, or other mechanisms for effecting patent term, and assuming payment of all appropriate maintenance, renewal, annuity or other governmental fee. ◦ REC-1245: We own patent applications related to the composition of matter and methods of treating biomarker-enriched solid tumors and lymphoma using REC-1245.
+
+## ODTX · Odyssey Therapeutics, Inc.
+
+目前只到科研/关系发现层，不能升级为商业化结论。
+
+**尚缺证据**
+- 缺大药厂付费、许可或具有经济条款的合作证据
+- 缺 IND 生效或已登记临床试验证据
+- 缺经 SEC/XBRL 核验的收入证据
+
+**已核验证据**
+- [OpenAlex company institution](https://doi.org/10.1038/s41586-024-07318-y) · company_authored_research：13 papers since 2023-11-24 list Odyssey Therapeutics (United States) as an author institution; most cited: Chemoproteomic discovery of a covalent allosteric inhibitor of WRN helicase
+- [OpenAlex author affiliation](https://doi.org/10.1038/s41586-024-07318-y) · researcher_company_affiliation：Robert T. Abraham affiliated with Odyssey Therapeutics (United States) on Chemoproteomic discovery of a covalent allosteric inhibitor of WRN helicase
+- [SEC filing](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) · patent_portfolio：We own an issued patent in the United States that claims the composition of matter of OD-001.
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/74543/524) · uspto_assignment：USPTO recorded assignment 074543/0524 from AVERSA, ROBERT; KOELMEL, DOMINIK K.; PAN, SHIFENG; VANHUIS, CHAD; WLODARSKA, MARTA; TAYLOR, CLARKE to ODYSSEY THERAPEUTICS, INC. on 2026-05-01
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/73311/813) · uspto_assignment：USPTO recorded assignment 073311/0813 from ABRAHAM, ROBERT THOMAS; DAKE, TAMARA; OPIPARI, ANTHONY W.; PINHEIRO, ELAINE MARIA; FRANCHI, LUIGI to ODYSSEY THERAPEUTICS, INC. on 2025-12-24
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/73311/904) · uspto_assignment：USPTO recorded assignment 073311/0904 from HUBER, FERDINAND; PREISS, LAURA; KÖNIG, PAUL-ALBERT to ODYSSEY THERAPEUTICS GMBH on 2025-12-24
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/73311/961) · uspto_assignment：USPTO recorded assignment 073311/0961 from ODYSSEY THERAPEUTICS GMBH to ODYSSEY THERAPEUTICS, INC. on 2025-12-24
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/73889/1) · uspto_assignment：USPTO recorded assignment 073889/0001 from STUWE, TOBIAS; HUBER, FERDINAND; SWEE, LEE KIM; PREISS, LAURA to ODYSSEY THERAPEUTICS GMBH on 2026-02-25
 
 ## TECX · Tectonic Therapeutic, Inc.
 
@@ -103,6 +140,24 @@
 - [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/67433/216) · uspto_assignment：USPTO recorded assignment 067433/0216 from GRUSWITZ, FRANZ to TECTONIC THERAPEUTIC, INC. on 2024-05-16
 - [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/67433/222) · uspto_assignment：USPTO recorded assignment 067433/0222 from ALVES, WASHINGTON; DIENER, JOHN; KNIHTILA, RYAN; MUSLIN, ANTHONY J. to TECTONIC THERAPEUTIC, INC. on 2024-05-16
 - [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/69261/712) · uspto_assignment：USPTO recorded assignment 069261/0712 from ALPINE MERGER SUBSIDIARY, INC.; TECTONIC THERAPEUTIC, INC. to TECTONIC OPERATING COMPANY, INC. on 2024-11-14
+
+## ALEC · Alector, Inc.
+
+已有商业信号，但不能把合作公告当成客户收入；仍按缺口继续核验。
+
+**尚缺证据**
+- 缺 IND 生效或已登记临床试验证据
+- 缺经 SEC/XBRL 核验的收入证据
+
+**已核验证据**
+- [OpenAlex company institution](https://doi.org/10.1186/s13195-024-01599-1) · company_authored_research：41 papers since 2023-11-24 list Alector (United States) as an author institution; most cited: Preclinical and first-in-human evaluation of AL002, a novel TREM2 agonistic antibody for Alzheimer’s disease
+- [OpenAlex author affiliation](https://doi.org/10.1186/s13195-024-01599-1) · researcher_company_affiliation：Hua Long, Adam Simmons, Arthur J. Mayorga, Brady Burgess affiliated with Alector (United States) on Preclinical and first-in-human evaluation of AL002, a novel TREM2 agonistic antibody for Alzheimer’s disease
+- [SEC filing](https://www.sec.gov/Archives/edgar/data/1653087/000119312526071593/alec-20251231.htm) · patent_portfolio：Tau siRNA Program We own one patent family directed to our ABC-enabled tau siRNA program.
+- [SEC filing](https://www.sec.gov/Archives/edgar/data/1653087/000119312526071593/alec-20251231.htm) · patent_portfolio：GCase Program We own two patent families directed to our glucocerebrosidase (GCase) program covering engineered GCase compositions including our ABC platform technology and use of those compositions.
+- [SEC filing](https://www.sec.gov/Archives/edgar/data/1653087/000119312526071593/alec-20251231.htm) · patent_portfolio：A-beta Program We own one patent family directed to our ABC-enabled anti-amyloid beta program.
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/74695/213) · uspto_assignment：USPTO recorded assignment 074695/0213 from BIENLY, THUNGA; BROWN, ERIC; NIVITCHANYONG, TARANGSRI; ROSENTHAL, ARNON; SOKOLOVSKY, MAYA; TANG, MARGARET L.; TONG, RAYMOND KA-HANG; GONG, BELVIN; YEE, ANGIE GRACE; HADDAD, DOMINIK; LONG, HUA; SUN, JIAHONG; SHAN, LU to ALECTOR LLC on 2026-05-19
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/73782/694) · uspto_assignment：USPTO recorded assignment 073782/0694 from BIENLY, THUNGA; BROWN, ERIC; NIVITCHANYONG, TARANGSRI; ROSENTHAL, ARNON; SOKOLOVSKY, MAYA; TANG, MARGARET L.; TONG, RAYMOND KA-HANG; GONG, BELVIN; YEE, ANGIE GRACE; HADDAD, DOMINIK; LONG, HUA; SUN, JIAHONG; SHAN, LU to ALECTOR LLC on 2026-02-13
+- [SEC XBRL](https://www.sec.gov/Archives/edgar/data/1653087/000119312526071593/) · equity_raise：Cash received from issuing equity (XBRL ProceedsFromIssuanceOfCommonStock): 2024-01-01 to 2024-12-31: $71.1M (10-K); 2025-01-01 to 2025-12-31: $20.0M (10-K)
 
 ## IRD · Opus Genetics, Inc.
 
@@ -142,25 +197,6 @@
 - [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/73927/780) · uspto_assignment：USPTO recorded assignment 073927/0780 from HARVEY, TYLER; KOSHELEVA, EKATERINA ALEXEEVNA to PRIME MEDICINE, INC. on 2026-02-27
 - [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/75204/928) · uspto_assignment：USPTO recorded assignment 075204/0928 from HARVEY, TYLER; KOSHELEVA, EKATERINA ALEXEEVNA to PRIME MEDICINE, INC. on 2026-07-08
 
-## RXRX · Recursion Pharmaceuticals
-
-已有商业信号，但不能把合作公告当成客户收入；仍按缺口继续核验。
-
-**尚缺证据**
-- 公司已在 SEC 披露专利/许可，但尚缺 USPTO 或大学技术转移材料独立复核
-- 缺大药厂付费、许可或具有经济条款的合作证据
-- 公司总收入已核验，但尚不能证明收入来自相关 AI/科研技术
-
-**已核验证据**
-- [OpenAlex company institution](https://doi.org/10.1101/2025.06.14.659707) · company_authored_research：73 papers since 2023-11-24 list Recursion (United States) as an author institution; most cited: Boltz-2: Towards Accurate and Efficient Binding Affinity Prediction
-- [SEC filing](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000065/rxrx-20260430.htm) · founder_company：COMMITTEE MEMBERSHIP Research and Development Technology Corporate Social Responsibility DIRECTOR SINCE 2013 AGE 43 Christopher Gibson, Ph.D. , is our co-founder and Chair of the Board, as of January 1, 2026.
-- [OpenAlex author affiliation](https://doi.org/10.1101/2025.06.14.659707) · researcher_company_affiliation：Stephan Thaler, Julien Roy, Dominique Beaini affiliated with Recursion (United States) on Boltz-2: Towards Accurate and Efficient Binding Affinity Prediction
-- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/rxrx-20251231.htm) · license：10-K 001-40323 10.21 February 29, 2024 10.26#^ Amended and Restated License Agreement between the Registrant and University of Utah Research Foundation, dated February 9, 2016.
-- [SEC XBRL](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/) · equity_raise：Cash received from issuing equity (XBRL ProceedsFromIssuanceOfCommonStock): 2024-01-01 to 2024-12-31: $300.4M (10-K); 2025-01-01 to 2025-12-31: $528.9M (10-K); 2026-01-01 to 2026-09-30: $85.5M (10-Q)
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1601830/000110465926126833/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：ARK Investment Management LLC reported beneficial ownership of 8.36% on SCHEDULE 13G/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1601830/000009375126000711/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：STATE STREET CORPORATION reported beneficial ownership of 5.6% on SCHEDULE 13G.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1601830/000009375126000530/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：STATE STREET CORPORATION reported beneficial ownership of 6.6% on SCHEDULE 13G.
-
 ## ABCL · AbCellera Biologics
 
 已有商业信号，但不能把合作公告当成客户收入；仍按缺口继续核验。
@@ -179,25 +215,6 @@
 - [SEC filing](https://www.sec.gov/Archives/edgar/data/1703057/000170305726000012/abcl-20251231.htm) · founder_company：Hansen is qualified to serve on our Board of Directors because of the perspective and experience he brings as a co-founder and our Chief Executive Officer.
 - [OpenAlex author affiliation](https://doi.org/10.1080/19420862.2024.2394229) · researcher_company_affiliation：Alaa Amash, Gesa Volkers, Patrick J. Farber, Daniel Griffin affiliated with AbCellera (Canada) on Developability considerations for bispecific and multispecific antibodies
 - [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1703057/000170305726000012/abcl-20251231.htm) · license：Patent Portfolio We have developed an expansive patent portfolio with claims related to multiple aspects of our discovery and development capabilities, beginning with our first patent applications exclusively licensed from UBC in 2013.
-
-## ALEC · Alector, Inc.
-
-已有商业信号，但不能把合作公告当成客户收入；仍按缺口继续核验。
-
-**尚缺证据**
-- 公司已在 SEC 披露专利/许可，但尚缺 USPTO 或大学技术转移材料独立复核
-- 缺 IND 生效或已登记临床试验证据
-- 缺经 SEC/XBRL 核验的收入证据
-
-**已核验证据**
-- [OpenAlex company institution](https://doi.org/10.1186/s13195-024-01599-1) · company_authored_research：41 papers since 2023-11-24 list Alector (United States) as an author institution; most cited: Preclinical and first-in-human evaluation of AL002, a novel TREM2 agonistic antibody for Alzheimer’s disease
-- [OpenAlex author affiliation](https://doi.org/10.1186/s13195-024-01599-1) · researcher_company_affiliation：Hua Long, Adam Simmons, Arthur J. Mayorga, Brady Burgess affiliated with Alector (United States) on Preclinical and first-in-human evaluation of AL002, a novel TREM2 agonistic antibody for Alzheimer’s disease
-- [SEC filing](https://www.sec.gov/Archives/edgar/data/1653087/000119312526071593/alec-20251231.htm) · patent_portfolio：Tau siRNA Program We own one patent family directed to our ABC-enabled tau siRNA program.
-- [SEC filing](https://www.sec.gov/Archives/edgar/data/1653087/000119312526071593/alec-20251231.htm) · patent_portfolio：GCase Program We own two patent families directed to our glucocerebrosidase (GCase) program covering engineered GCase compositions including our ABC platform technology and use of those compositions.
-- [SEC filing](https://www.sec.gov/Archives/edgar/data/1653087/000119312526071593/alec-20251231.htm) · patent_portfolio：A-beta Program We own one patent family directed to our ABC-enabled anti-amyloid beta program.
-- [SEC XBRL](https://www.sec.gov/Archives/edgar/data/1653087/000119312526071593/) · equity_raise：Cash received from issuing equity (XBRL ProceedsFromIssuanceOfCommonStock): 2024-01-01 to 2024-12-31: $71.1M (10-K); 2025-01-01 to 2025-12-31: $20.0M (10-K)
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1653087/000134682426000247/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：RA Capital Management, L.P. reported beneficial ownership of 5.1% on SCHEDULE 13G.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1653087/000117266126004680/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Deep Track Capital, LP reported beneficial ownership of 8.61% on SCHEDULE 13G.
 
 ## BDSX · BIODESIX INC
 
@@ -218,6 +235,26 @@
 - [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/65174/123) · uspto_assignment：USPTO recorded assignment 065174/0123 from CAMPBELL, THOMAS; GEORGANTAS, ROBERT W., III; RÖDER, HEINRICH; RÖDER, JOANNA; MAGUIRE, LAURA to BIODESIX, INC. on 2023-10-10
 - [SEC XBRL](https://www.sec.gov/Archives/edgar/data/1439725/000119312526449763/) · equity_raise：Cash received from issuing equity (XBRL ProceedsFromIssuanceOfCommonStock): 2024-01-01 to 2024-12-31: $55.6M (10-K); 2025-01-01 to 2025-12-31: $7.3M (10-K); 2026-01-01 to 2026-09-30: $30.4M (10-Q)
 - [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1439725/000090514826004746/xslSCHEDULE_13D_X02/primary_doc.xml) · schedule_13d：SCHULER JACK W reported beneficial ownership of 22.3% on SCHEDULE 13D/A.
+
+## OABI · OmniAb, Inc.
+
+目前只到科研/关系发现层，不能升级为商业化结论。
+
+**尚缺证据**
+- 缺论文作者/创始人与公司的原始关系证据
+- 缺大药厂付费、许可或具有经济条款的合作证据
+- 缺 IND 生效或已登记临床试验证据
+- 缺经 SEC/XBRL 核验的收入证据
+
+**已核验证据**
+- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) · license：Through the Ab Initio acquisition in 2019, we obtained an exclusive license from Stanford University directed to screening methods using transmembrane and cell-surface proteins and related compositions and kits.
+- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) · license：We also have an exclusive license from The Scripps Research Institute to technology related to ultralong CDRH3s.
+- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) · license：OmniAb has an exclusive license from the Applied Biomedical Science Institute to a family of patent applications relating to the Picobody® technology.
+- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) · license：We also have a non-exclusive license from Stanford University to two patent families relating to methods for extracting samples from microcapillary arrays, which together include five issued patents in the U.S., two issued patents in Europe, four issued patents in Japan, two issued patents in China, and pending applications in China.
+- [SEC filing](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) · patent_portfolio：We own patents directed to OmniAb animals and related inventions, including 29 issued patents in the United States, eight issued patents in Europe, seven issued patents in Japan, five issued patents in China, and counterpart patents granted in other countries.
+- [SEC filing](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) · patent_portfolio：We own patents directed to OmniAb animals and related inventions, including 29 issued patents in the United States, eight issued patents in Europe, seven issued patents in Japan, five issued patents in China, and counterpart patents gr
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/71683/569) · uspto_assignment：USPTO recorded assignment 071683/0569 from LI, YUXING; SHANG, XIAORAN to OMNIAB, INC. on 2025-07-11
+- [USPTO Assignment Center](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/71289/187) · uspto_assignment：USPTO recorded assignment 071289/0187 from MECHIN, INGRID; NAIR, ANIL to OMNIAB, INC. on 2025-06-02
 
 ## SDGR · Schrodinger
 
@@ -315,46 +352,6 @@
 - [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1789972/000008025526000574/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：T. Rowe Price Associates, Inc. reported beneficial ownership of 6.2% on SCHEDULE 13G.
 - [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1789972/000009375126000446/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：STATE STREET CORPORATION reported beneficial ownership of 6.0% on SCHEDULE 13G.
 - [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1789972/000092189526001387/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：BIOTECHNOLOGY VALUE FUND L P reported beneficial ownership of 9.99% on SCHEDULE 13G/A.
-
-## PALI · PALISADE BIO, INC.
-
-目前只到科研/关系发现层，不能升级为商业化结论。
-
-**尚缺证据**
-- 缺论文作者/创始人与公司的原始关系证据
-- 公司已在 SEC 披露专利/许可，但尚缺 USPTO 或大学技术转移材料独立复核
-- 缺大药厂付费、许可或具有经济条款的合作证据
-- 缺经 SEC/XBRL 核验的收入证据
-
-**已核验证据**
-- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1357459/000135745926000004/pali-20251231.htm) · license：License Agreements with the Regents of the University of California Prior to the Seneca Merger, LBS entered into three license agreements, as amended, with the Regents of the University of California (“Regents”) for exclusive commercial rights to certain patents, technology and know-how related to LB1148.
-- [SEC Form D](https://www.sec.gov/Archives/edgar/data/2162952/000216295226000001/primary_doc.xml) · form_d_financing：Palimpsest Bio Corp. reported $172,000 sold in this offering
-- [SEC XBRL](https://www.sec.gov/Archives/edgar/data/1357459/000135745926000024/) · equity_raise：Cash received from issuing equity (XBRL ProceedsFromIssuanceOfCommonStock): 2024-01-01 to 2024-12-31: $8.4M (10-K); 2025-01-01 to 2025-12-31: $128.2M (10-K); 2026-01-01 to 2026-09-30: $3.5M (10-Q)
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1357459/000134682426000291/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：RA Capital Management, L.P. reported beneficial ownership of 9.9% on SCHEDULE 13G/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1357459/000119312526462520/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Ameriprise Financial, Inc. reported beneficial ownership of 8.4% on SCHEDULE 13G/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1357459/000121390026117542/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Soleus Capital Master Fund, L.P. reported beneficial ownership of 8.6% on SCHEDULE 13G/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1357459/000210011926001634/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Vanguard Capital Management reported beneficial ownership of 5.16% on SCHEDULE 13G.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1357459/000183194226000040/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Commodore Capital LP reported beneficial ownership of 0.0% on SCHEDULE 13G/A.
-
-## TEM · Tempus AI
-
-已有商业信号，但不能把合作公告当成客户收入；仍按缺口继续核验。
-
-**尚缺证据**
-- 缺公司专利、专利受让或大学技术许可的明确证据
-- 缺大药厂付费、许可或具有经济条款的合作证据
-- 缺 IND 生效或已登记临床试验证据
-- 公司总收入已核验，但尚不能证明收入来自相关 AI/科研技术
-
-**已核验证据**
-- [OpenAlex company institution](https://doi.org/10.1126/science.adi5199) · company_authored_research：312 papers since 2023-11-24 list Tempus Labs (United States) as an author institution; most cited: Single-cell genomics and regulatory networks for 388 human brains
-- [SEC 10-K](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) · founder：We were founded by Eric Lefkofsky under the name Bioin, LLC in Delaware in August 2015.
-- [OpenAlex author affiliation](https://doi.org/10.1126/science.adi5199) · researcher_company_affiliation：Lijun Cheng, Mary Flaherty, Sophia C. Gaynor-Gillett, Jennifer R. Moran affiliated with Tempus Labs (United States) on Single-cell genomics and regulatory networks for 388 human brains
-- [SEC XBRL](https://www.sec.gov/Archives/edgar/data/1717115/000095017025025603/) · equity_raise：Cash received from issuing equity (XBRL ProceedsFromIssuanceInitialPublicOffering): 2024-01-01 to 2024-12-31: $382.0M (10-K)
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1717115/000110465926123788/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：ARK Investment Management LLC reported beneficial ownership of 4.91% on SCHEDULE 13G/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1717115/000149315226049107/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：Bradley A. Keywell reported beneficial ownership of 3.46% on SCHEDULE 13G/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1717115/000119312526310289/xslSCHEDULE_13D_X02/primary_doc.xml) · schedule_13d：Tempus AI, Inc. reported beneficial ownership of 12.6% on SCHEDULE 13D/A.
-- [SEC beneficial ownership filing](https://www.sec.gov/Archives/edgar/data/1717115/000108887526000035/xslSCHEDULE_13G_X02/primary_doc.xml) · schedule_13g：BAILLIE GIFFORD &amp; CO reported beneficial ownership of 5.0% on SCHEDULE 13G/A.
 
 ## 如何补齐
 

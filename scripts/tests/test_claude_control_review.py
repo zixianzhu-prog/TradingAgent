@@ -10,12 +10,15 @@ def test_chokepoint_rubric():
     # A model cannot turn an arbitrary number or marketing adjective into a hard moat.
     assert ccr.chokepoint_status([{"kind": "market_share", "quote": "we serve 45 customers with a unique platform"}])[0] == "partial"
     assert ccr.chokepoint_status([{"kind": "only_cleared", "quote": "we received FDA clearance for a unique product"}])[0] == "partial"
+    assert ccr.chokepoint_status([{"kind": "market_share", "quote": "Our revenue grew 45% this year compared with last year"}])[0] == "partial"
     assert ccr.chokepoint_status([])[0] == "unknown"
 
 
 def test_node_rubric_needs_two_adjacent_in_house_steps():
-    assert ccr.node_status([{"id":"p1","node": "model_software", "inHouse": True}, {"id":"p1","node": "design", "inHouse": True}])[0] == "pass"
-    assert ccr.node_status([{"id":"p1","node": "model_software", "inHouse": True}, {"id":"p2","node": "design", "inHouse": True}])[0] == "partial"
+    assert ccr.node_status([{"id":"p1","node": "model_software", "inHouse": True, "pos": 10}, {"id":"p1","node": "design", "inHouse": True, "pos": 120}])[0] == "pass"
+    assert ccr.node_status([{"id":"p1","node": "model_software", "inHouse": True, "pos": 10}, {"id":"p2","node": "design", "inHouse": True, "pos": 20}])[0] == "partial"
+    # same passage but far apart (e.g. two unrelated products): not connected
+    assert ccr.node_status([{"id":"p1","node": "model_software", "inHouse": True, "pos": 10}, {"id":"p1","node": "design", "inHouse": True, "pos": 1500}])[0] == "partial"
     assert ccr.node_status([{"node": "data", "inHouse": True}, {"node": "sales", "inHouse": True}])[0] == "partial"
     assert ccr.node_status([{"node": "design", "inHouse": True}, {"node": "manufacturing", "inHouse": False}])[0] == "partial"
     assert ccr.node_status([{"node": "manufacturing", "inHouse": False}])[0] == "unknown"
@@ -86,3 +89,25 @@ def test_failed_cli_call_returns_no_answer(monkeypatch):
     monkeypatch.setattr(ccr.claude_cli, "run", lambda *a, **k: None)
     monkeypatch.setattr(ccr.claude_cli, "require_success", boom)
     assert ccr.ask("CARL", [], "sonnet") is None
+
+
+def test_market_share_needs_share_wording_or_an_explicit_rank():
+    ms = lambda q: ccr.barrier_is_specific({"kind": "market_share", "quote": q})
+    assert not ms("The addressable market grew 45% during 2026.")          # market growth, not share (Codex T1)
+    assert not ms("Our revenue grew 45% this year compared with last year")
+    assert ms("We are the number one provider of AI-based coronary analysis in the United States.")  # rank (Codex T1)
+    assert ms("we hold 45% of the US market")
+    assert ms("our tests represented approximately 30% of the U.S. MRD testing market")
+    assert ms("we have a 62% market share in the US")
+    assert ms("Our share of the U.S. market was 38% in 2025")
+
+
+def test_direct_supplier_wording_counts_as_a_named_party():
+    import claude_chain_review as chain
+    assert chain.PARTIES.search("We depend exclusively on Illumina for all sequencing instruments.")
+    assert chain.PARTIES.search("Our reagents are supplied by Thermo Fisher Scientific under a long-term agreement.")
+
+
+def test_exclusive_license_is_not_a_sole_source():
+    q = "Roche will have a worldwide, exclusive license under patents and know-how controlled by us to develop and commercialize products"
+    assert not ccr.barrier_is_specific({"kind": "sole_source", "quote": q})

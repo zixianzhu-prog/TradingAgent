@@ -1,18 +1,18 @@
 # AI Medicine: 5–10 Year Leaders
 
-> Which AI-medicine companies have the highest potential over the next 5-10 years, and why? Research only, not investment advice. Data as of 2026-11-25.
+> Which AI-medicine companies have the highest potential over the next 5-10 years, and why? Research only, not investment advice. Data as of 2026-11-27.
 
 | # | Ticker | Company | Potential | Evidence | Flag |
 | ---: | --- | --- | ---: | ---: | --- |
-| 1 | CBLL | Ceribell | 86.3 | 82 |  |
-| 2 | HTFL | HeartFlow | 84.7 | 80 |  |
+| 1 | HTFL | HeartFlow | 84.7 | 80 |  |
+| 2 | CBLL | Ceribell | 81.7 | 80 |  |
 | 3 | ISRG | Intuitive Surgical | 79.7 | 72 |  |
 | 4 | GEHC | GE HealthCare Technologies | 76.3 | 66 |  |
-| 5 | CAI | Caris Life Sciences | 75.7 | 75 |  |
+| 5 | CAI | Caris Life Sciences | 75.7 | 76 |  |
 | 6 | NTRA | Natera | 75.0 | 72 |  |
 | 7 | SDGR | Schrodinger | 74.7 | 75 |  |
-| 8 | RDNT | RadNet / DeepHealth | 73.7 | 74 |  |
-| 9 | TEM | Tempus AI | 73.7 | 73 |  |
+| 8 | TEM | Tempus AI | 73.7 | 74 |  |
+| 9 | RDNT | RadNet / DeepHealth | 73.7 | 74 |  |
 | 10 | SOPH | SOPHiA GENETICS | 72.7 | 71 |  |
 | 11 | IQV | IQVIA | 70.3 | 65 |  |
 | 12 | RXRX | Recursion Pharmaceuticals | 64.7 | 72 |  |
@@ -71,24 +71,7 @@ Sources: https://investor.gehealthcare.com/news-releases/news-release-details/ge
 
 Sources: https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-20251231.htm, https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm
 
-## 1. CBLL — Ceribell
-
-**Chokepoint:** A clinical-workflow chokepoint in the ICU and emergency room: rapid EEG where hospitals often have no neurologist on site.
-
-**Why it can win:** A pure-play AI brain-monitoring platform with first-in-class FDA clearances: the first device cleared to help diagnose status epilepticus and the only cleared delirium monitor, backed by a Medicare add-on payment. It controls hardware, algorithm, manufacturing and distribution.
-
-**Why now:** Q3 2026 revenue grew 30% with gross margin near 90%.
-
-**Strongest case against:** Losses are widening and headbands are assembled by contract manufacturers in China and Vietnam; more dilution is likely.
-
-**We are wrong if:**
-- Quarterly net loss keeps widening for two more quarters
-- Revenue growth falls below 20%
-- NTAP payment is not renewed
-
-Sources: https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm, https://www.sec.gov/Archives/edgar/data/1861107/000119312526445555/cbll-20260930.htm
-
-## 2. HTFL — HeartFlow
+## 1. HTFL — HeartFlow
 
 **Chokepoint:** A payment chokepoint: the scarce asset is the billing code, coverage and clinical evidence, not the algorithm alone.
 
@@ -104,6 +87,23 @@ Sources: https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll
 - CMS cuts the CPT 75580 payment rate
 
 Sources: https://www.sec.gov/Archives/edgar/data/1464521/000146452126000042/htfl-20251231x10k.htm, https://www.sec.gov/Archives/edgar/data/0001464521/000146452126000171/htfl-20261112xex99_1.htm
+
+## 2. CBLL — Ceribell
+
+**Chokepoint:** A clinical-workflow chokepoint in the ICU and emergency room: rapid EEG where hospitals often have no neurologist on site.
+
+**Why it can win:** A pure-play AI brain-monitoring platform with first-in-class FDA clearances: the first device cleared to help diagnose status epilepticus and the only cleared delirium monitor, backed by a Medicare add-on payment. It controls hardware, algorithm, manufacturing and distribution.
+
+**Why now:** Q3 2026 revenue grew 30% with gross margin near 90%.
+
+**Strongest case against:** Losses are widening and headbands are assembled by contract manufacturers in China and Vietnam; more dilution is likely.
+
+**We are wrong if:**
+- Quarterly net loss keeps widening for two more quarters
+- Revenue growth falls below 20%
+- NTAP payment is not renewed
+
+Sources: https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm, https://www.sec.gov/Archives/edgar/data/1861107/000119312526445555/cbll-20260930.htm
 
 ## 7. SDGR — Schrodinger
 

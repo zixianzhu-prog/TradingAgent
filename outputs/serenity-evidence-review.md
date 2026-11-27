@@ -1154,7 +1154,7 @@ CEO和CFO评估认为截至2025年12月31日内部控制有效（基于COSO 2013
 
 ## CAI · complete
 
-审查记录：`state/serenity-reviews/CAI-claude-21c538a18694c6534e61.json`
+审查记录：`state/serenity-reviews/CAI-claude-66e5c6f418c6cc90e925.json`
 
 ### supply_chain_map: pass
 
@@ -1171,11 +1171,13 @@ CEO和CFO评估认为截至2025年12月31日内部控制有效（基于COSO 2013
 
 ### chokepoint_evidence: partial
 
-按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。文件记录了三项替代壁垒：超过120万肿瘤病例的专有多模态基因组数据集规模优势（市场份额集中）、FDA批准MI Cancer Seek为伴随诊断产品（唯一获批壁垒），以及覆盖AI/ML分子分析方法的68项及121项专利组合（专利壁垒）；文件未点名任何竞争对手。公司自主控制数据生成、解决方案设计、AI/ML模型软件开发（Caris MI Clarity）、实验室检测（制造）、直接商业化销售及对制药公司的服务，仅将数据去标识化的分词处理环节外包给第三方。
+按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。档案显示 Caris 拥有约 189 项分子检测及 aptamer 相关专利、超 120 万例多模态临床基因组数据集的规模优势，以及 MI Cancer Seek 的 FDA 伴随诊断批准，但无明确市场份额数字或客户转换成本引文；临床数据伙伴 ConcertAI、Flatiron、COTA 仅以合作方身份被点名，非竞争对手。公司自主承担核心数据采集、CMI 平台与 MI Clarity 的 AI/ML 模型开发、解决方案设计及多组学实验室检测与商业化，但数据标记化、第三方临床数据获取及去识别认证均外包给外部方。
 
-- 支持 [ev_004234fd13e4f31a](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-20251231.htm) (primary-document): we owned 68 patents (including four allowances) and 77 pending applications, and had an exclusive license to one patent application, which collectively relate to our molecular profiling solutions, including claims directed to early detection of cancer, monitoring disease recurrence, identifying treatments of likely benefit or lack of benefit for cancer patients, and the use of AI and ML for prediction of response to various cancer therapies
+- 支持 [ev_1f3fdf8192470db7](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-20251231.htm) (primary-document): we owned 68 patents (including four allowances) and 77 pending applications, and had an exclusive license to one patent application, which collectively relate to our molecular profiling solutions
+- 支持 [ev_897034fec2a8509b](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-20251231.htm) (primary-document): we owned 121 patents (including one allowance), and 24 pending applications, and had exclusive licenses to 43 patents and applications, which collectively relate to aptamer library screening and uses thereof
 - 支持 [ev_4eb0a838d2a17135](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm) (primary-document): one of the largest and most comprehensive multi-modal clinico-genomic datasets in oncology based on tests we have run on over 1,200,000 cases as of September 30, 2026
-- 支持 [ev_457df77e1333ce01](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm) (primary-document): the FDA approval of MI Cancer Seek as a companion diagnostic in the fourth quarter of 2024
+- 支持 [ev_3e8d7a66fc60a66b](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm) (primary-document): the FDA approval of MI Cancer Seek as a companion diagnostic in the fourth quarter of 2024 followed by the broad commercial launch of MI Cancer Seek in the first quarter of 2025
+- 反证 [ev_97d9737df914bafc](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-20251231.htm) (primary-document): clinical data partners, such as ConcertAI, Flatiron and COTA, to enable the creation of matched clinico-genomic datasets that can be licensed to biopharma companies for their use in drug discovery
 - 缺口：按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒
 
 ### customer_dependency: pass
@@ -1198,15 +1200,16 @@ CEO和CFO评估认为截至2025年12月31日内部控制有效（基于COSO 2013
 
 ### multi_node_control: partial
 
-按 Serenity 规则：同一证据段确认公司自己控制至少两个相连环节（data、model_software、design、manufacturing、sales、service）。文件记录了三项替代壁垒：超过120万肿瘤病例的专有多模态基因组数据集规模优势（市场份额集中）、FDA批准MI Cancer Seek为伴随诊断产品（唯一获批壁垒），以及覆盖AI/ML分子分析方法的68项及121项专利组合（专利壁垒）；文件未点名任何竞争对手。公司自主控制数据生成、解决方案设计、AI/ML模型软件开发（Caris MI Clarity）、实验室检测（制造）、直接商业化销售及对制药公司的服务，仅将数据去标识化的分词处理环节外包给第三方。
+按 Serenity 规则：同一处原文确认公司自己控制至少两个相连环节（data、model_software、design、manufacturing、sales）。档案显示 Caris 拥有约 189 项分子检测及 aptamer 相关专利、超 120 万例多模态临床基因组数据集的规模优势，以及 MI Cancer Seek 的 FDA 伴随诊断批准，但无明确市场份额数字或客户转换成本引文；临床数据伙伴 ConcertAI、Flatiron、COTA 仅以合作方身份被点名，非竞争对手。公司自主承担核心数据采集、CMI 平台与 MI Clarity 的 AI/ML 模型开发、解决方案设计及多组学实验室检测与商业化，但数据标记化、第三方临床数据获取及去识别认证均外包给外部方。
 
 - 支持 [ev_4eb0a838d2a17135](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm) (primary-document): one of the largest and most comprehensive multi-modal clinico-genomic datasets in oncology based on tests we have run on over 1,200,000 cases as of September 30, 2026
-- 支持 [ev_a95792062eb49d04](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm) (primary-document): Caris MI Clarity was developed using our proprietary multi-modal dataset, and we believe it demonstrates our ability to translate that dataset into new clinical solutions that extend beyond sequencing-based profiling
+- 支持 [ev_55176c25a2521f11](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm) (primary-document): Our Caris Molecular Intelligence platform is purpose-built to leverage the convergence of next-generation sequencing (“NGS”), AI and ML technologies, and high-performance computing
+- 支持 [ev_e7c0f1c4f22457ee](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm) (primary-document): Caris MI Clarity was developed using our proprietary multi-modal dataset, and we believe it demonstrates our ability to translate that dataset into new clinical solutions
 - 支持 [ev_c82284e49a0f2aff](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm) (primary-document): we launched Caris MI Clarity, our first commercially available digital, AI/ML-based prognostic solution, which applies computational pathology and machine learning to digitized hematoxylin and eosin whole-slide images
-- 支持 [ev_30c01ee1665c9ff0](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm) (primary-document): expand our internal quality assurance programs, incorporate new equipment, implement new technology systems and processes, expand laboratory capacity
-- 支持 [ev_f936009aac04b0d5](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm) (primary-document): the cost and timing associated with commercializing and marketing our solutions, including any regulatory authorization or marketing approval that may be required and the expansion of our commercial teams
-- 支持 [ev_1ee72d262e90be13](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm) (primary-document): The Company collaborates with biopharmaceutical companies to provide commercial services and prospective and retrospective testing, along with data and bioinformatics collaboration
+- 支持 [ev_5a597ccc86b71182](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm) (primary-document): Our purpose-built, proprietary multi-omic profiling solutions capture and analyze molecular information from tissue and blood in a comprehensive manner
+- 支持 [ev_5a427befcd6e2804](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm) (primary-document): With our broad commercial launch of Caris Assure for therapy selection in the first quarter of 2024, the FDA approval of MI Cancer Seek as a companion diagnostic in the fourth quarter of 2024
 - 反证 [ev_555dc70900a47a63](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-20251231.htm) (primary-document): We utilize a third-party tokenization process to match deidentified data from various sources to create the multi-modal product
+- 反证 [ev_148420ac171b5751](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-20251231.htm) (primary-document): many of our data licensing agreements involve the use of third-party clinical data that is combined with our molecular data and then licensed to biopharma companies or other end users
 - 缺口：存在反证，需要进一步核验
 
 ### earnings_validation: partial
@@ -1256,28 +1259,26 @@ CEO和CFO评估认为截至2025年12月31日内部控制有效（基于COSO 2013
 
 ## CARL · complete
 
-审查记录：`state/serenity-reviews/CARL-claude-a61e990634fc49da9535.json`
+审查记录：`state/serenity-reviews/CARL-claude-88d6b47042724bf006ed.json`
 
 ### supply_chain_map: partial
 
-按 Serenity 规则：缺少上游的具体关系证据。供应链图显示：上游为未具名合同制造商（提供钛合金椎间融合器制造及相关第三方服务）和独立销售代理；公司产品为aprevo技术平台（AI手术规划软件+个性化椎间融合器及corra颈椎钢板系统）；下游付费方为医院（主要购买方）及Medicare/Medicaid/商业保险等第三方支付机构。业绩数据方面，FY2025收入$50.5M同比增长85.9%、Q3 2026单季$21.6M同比增长64.9%、2026年前九个月$56.6M同比增长60.2%，均由aprevo手术量增加驱动，与AI产品adoption推动收入增长的论点高度一致；无任何收入或销量数据与论点相悖。
+按 Serenity 规则：缺少上游的具体关系证据。上游：依赖无名合约制造商（钛合金植入体加工）及患者标准诊断影像作为AI算法输入，均无具名协议；公司产品为aprevo个性化脊椎融合平台（AI手术规划软件+定制植入物）及corra颈椎钢板系统；下游直接客户为医院，使用方为外科医生及外科中心，最终付款方为Medicare/Medicaid及商业保险公司。所有收入实绩均呈高速增长（2025全年同比+85.9%至$50.5M，Q3 2026同比+65%，2026年前九月同比+60%至$56.6M），与"AI产品采用推动收入增长"的论点完全一致；毛利率、净亏损及利息支出与采用论点无直接关联，列为unrelated。
 
 - 支持 [ev_9bbfc99188624554](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): The aprevo Technology Platform is the first available solution in the United States to provide personalized digital surgical plans and the accompanying aprevo interbody implants that are tailored to each patient’s pathology and vertebral bone topography.
+- 支持 [ev_3d3c8cdf95fab2cc](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): The surgical kit delivered to customers includes aprevo interbody implants, and as applicable, fixation implants, for a custom vertebral fit and personalized alignment to address each patient’s unique needs, and single-use surgical instruments.
 - 支持 [ev_0daf10aa916686bb](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): We sell our aprevo interbody implants, corra cervical plating systems and accompanying inserter instruments to customers under standard pricing schedules.
 - 支持 [ev_0c37ff8f3b862a3f](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): Hospitals are the primary purchasers of our aprevo interbody implants under the aprevo Technology Platform, which are primarily used in a hospital inpatient setting.
+- 支持 [ev_67ec0349ae3f6218](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): promoting our platform to surgeons, hospitals and ambulatory surgical centers and working with our customers to secure required approvals for our products
 - 支持 [ev_3c21640f4bec4f94](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): third-party payors, including private insurers, governmental payors, such as Medicare and Medicaid, managed care organizations, and administrative contractors to cover and pay for all or part of the cost of a spine surgery
-- 支持 [ev_813f910315bec6a8](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): both the surgeon or other healthcare provider and the hospital or healthcare facility submit claims for reimbursement to the third-party payor.
 - 缺口：按 Serenity 规则：缺少上游的具体关系证据
 
 ### chokepoint_evidence: partial
 
-按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。集中度与替代壁垒方面：公司持有45项已授权专利及约120项待审申请，aprevo及颈椎平台均已获FDA 510(k)批准，CMS专属ICD-10-PCS代码为使用该平台的医院提供高达21,125美元的额外报销，形成实质性转换成本；文件仅将"标准椎间融合器"列为替代品，未点名具体竞争对手。供应链节点方面：公司自主掌握AI手术规划软件（模型/软件节点）和患者个性化植入物设计（设计节点），同时依赖合同制造商完成部分生产、依赖独立销售代理覆盖销售渠道。
+按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。壁垒方面：文件仅披露了45项已授权专利及约120项待审专利，以及FDA 510(k)对aprevo植入物的上市许可；文件未点名任何竞争对手或替代产品，亦无市场份额或转换成本的具体数据。节点控制方面：公司自主运营AI手术规划软件（model_software）和植入物设计（design），制造环节兼有自建与合同制造（manufacturing），销售环节依赖独立销售代理（sales，第三方）。
 
-- 支持 [ev_b145955f050aab51](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): our patent portfolio contained 45 total issued patents and approximately 120 pending patent applications relating to the aprevo Technology Platform
+- 支持 [ev_50d7017b4bd5e17a](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): 45 total issued patents and approximately 120 pending patent applications relating to the aprevo Technology Platform
 - 支持 [ev_a89812c005f50a34](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): The U.S. Food and Drug Administration (“FDA”) cleared the aprevo lumbar interbody implants through its 510(k) regulatory pathway for the correction of adult lumbar spinal deformity in December 2020 and several degenerative conditions of the lumbar spine in August 2022.
-- 支持 [ev_a1500d88984b4ff3](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): In November 2024, the FDA 510(k) cleared the aprevo interbody implants for cervical spine fusion surgery as part of the FDA-cleared Carlsmed Technology Platform
-- 支持 [ev_24b9ad2702ffbc12](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): CMS created unique ICD-10-PCS codes to identify cervical fusion procedures using “custom made anatomically designed interbody fusion devices” such as our Carlsmed Technology Platform. Reimbursement claims submitted with these unique ICD-10-PCS procedure codes may qualify hospitals for up to an additional $21,125 in NTAP reimbursement for eligible inpatient procedures.
-- 反证 [ev_9e524cf1828761c5](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): aprevo cervical currently has the same payor reimbursement methodology as stock interbody implants for hospital outpatient departments and ambulatory surgery centers
 - 缺口：按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒
 
 ### customer_dependency: pass
@@ -1299,26 +1300,26 @@ CEO和CFO评估认为截至2025年12月31日内部控制有效（基于COSO 2013
 
 ### multi_node_control: partial
 
-按 Serenity 规则：同一证据段确认公司自己控制至少两个相连环节（model_software、design、manufacturing）。集中度与替代壁垒方面：公司持有45项已授权专利及约120项待审申请，aprevo及颈椎平台均已获FDA 510(k)批准，CMS专属ICD-10-PCS代码为使用该平台的医院提供高达21,125美元的额外报销，形成实质性转换成本；文件仅将"标准椎间融合器"列为替代品，未点名具体竞争对手。供应链节点方面：公司自主掌握AI手术规划软件（模型/软件节点）和患者个性化植入物设计（设计节点），同时依赖合同制造商完成部分生产、依赖独立销售代理覆盖销售渠道。
+按 Serenity 规则：同一处原文确认公司自己控制至少两个相连环节（model_software、design、manufacturing）。壁垒方面：文件仅披露了45项已授权专利及约120项待审专利，以及FDA 510(k)对aprevo植入物的上市许可；文件未点名任何竞争对手或替代产品，亦无市场份额或转换成本的具体数据。节点控制方面：公司自主运营AI手术规划软件（model_software）和植入物设计（design），制造环节兼有自建与合同制造（manufacturing），销售环节依赖独立销售代理（sales，第三方）。
 
-- 支持 [ev_39c0fc5d12aaefc0](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): This platform (the “Carlsmed Technology Platform”) includes proprietary surgical planning software, using outcomes-based algorithms that are aided with artificial intelligence, and resulting patient-specific implants for spine surgery.
-- 支持 [ev_7659c0d0e923bcae](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): The Company designs, manufactures, and markets the Carlsmed Technology Platform for spine fusion surgery procedures that are performed at hospitals and ambulatory surgical centers.
+- 支持 [ev_50abe2899d20c816](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): proprietary surgical planning software, using outcomes-based algorithms that are aided with artificial intelligence
 - 支持 [ev_7114a743129b0c08](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): The Company designs, manufactures, and markets the Carlsmed Technology Platform for spine fusion surgery procedures
-- 反证 [ev_eb0dea642b508478](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): These costs of sales include allocations for personnel, software, contract manufacturing and other third-party services, packaging, shipping, provision for excess and obsolete inventory, and overhead cost allocations.
+- 支持 [ev_7114a743129b0c08](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): The Company designs, manufactures, and markets the Carlsmed Technology Platform for spine fusion surgery procedures
+- 反证 [ev_dec693348a441263](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): contract manufacturing and other third-party services, packaging, shipping, provision for excess and obsolete inventory
 - 反证 [ev_417327c3f2750d91](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): independent sales agent commissions, costs associated with generic surgical instruments we may provide to our independent sales agents
 - 缺口：存在反证，需要进一步核验
 
 ### earnings_validation: pass
 
-按 Serenity 规则：有标明日期的实际财务结果支持论点。供应链图显示：上游为未具名合同制造商（提供钛合金椎间融合器制造及相关第三方服务）和独立销售代理；公司产品为aprevo技术平台（AI手术规划软件+个性化椎间融合器及corra颈椎钢板系统）；下游付费方为医院（主要购买方）及Medicare/Medicaid/商业保险等第三方支付机构。业绩数据方面，FY2025收入$50.5M同比增长85.9%、Q3 2026单季$21.6M同比增长64.9%、2026年前九个月$56.6M同比增长60.2%，均由aprevo手术量增加驱动，与AI产品adoption推动收入增长的论点高度一致；无任何收入或销量数据与论点相悖。
+按 Serenity 规则：有标明日期的实际财务结果支持论点。上游：依赖无名合约制造商（钛合金植入体加工）及患者标准诊断影像作为AI算法输入，均无具名协议；公司产品为aprevo个性化脊椎融合平台（AI手术规划软件+定制植入物）及corra颈椎钢板系统；下游直接客户为医院，使用方为外科医生及外科中心，最终付款方为Medicare/Medicaid及商业保险公司。所有收入实绩均呈高速增长（2025全年同比+85.9%至$50.5M，Q3 2026同比+65%，2026年前九月同比+60%至$56.6M），与"AI产品采用推动收入增长"的论点完全一致；毛利率、净亏损及利息支出与采用论点无直接关联，列为unrelated。
 
-- 支持 [ev_cde804d4f4a2230e](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): For the three months ended December 31, 2025 and 2024, we recognized revenue of $15.2 million and $9.4 million, respectively, representing period-over-period growth of 61.2%.
+- 支持 [ev_cb4fca5206fcbec1](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): he three months ended December 31, 2025 and 2024, we recognized revenue of $15.2 million and $9.4 million, respectively, representing period-over-period growth of 61.2%.
 - 支持 [ev_f7bc4837c0a47471](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): We recognized $50.5 million of revenue in 2025, based on the timing of the use of aprevo interbody implants in surgical procedures.
 - 支持 [ev_fb8b769060260113](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): The increase of $23.3 million, or 85.9%, was primarily driven by increased sales of aprevo interbody implants during the year ended December 31, 2025 as compared to the year ended December 31, 2024, with our average revenue per procedure substantially constant.
-- 支持 [ev_e941bb0359389d7a](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): We recognized $27.2 million of revenue in 2024, based on the timing of the use of aprevo interbody implants in surgical procedures.
-- 支持 [ev_7bc92f78fa6ece6e](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): Revenue $ 21,554 $ 13,074 $ 8,480 64.9 %
+- 支持 [ev_fa1c240a7e797a9a](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): For the three months ended September 30, 2026 and 2025, we recognized revenue of $21.6 million and $13.1 million, respectively, representing period-over-period growth of 65%.
+- 支持 [ev_ca165d317abd0886](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): For the nine months ended September 30, 2026 and 2025, we recognized revenue of $56.6 million and $35.3 million, respectively, representing period-over-period growth of 60%.
 - 支持 [ev_d558c72d12ae4e4a](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): Revenue was $56.6 million and $35.3 million for the nine months ended September 30, 2026 and 2025, respectively. The increase of $21.3 million, or 60.2%, was primarily driven by increased volume of Carlsmed Technology Platform lumbar and cervical surgical procedures in the current nine-month period
-- 支持 [ev_a941b5a6b347cbfc](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): Upon achievement of a certain revenue milestone in June 2026, the interest-only period and repayment terms of the Term Loan were extended through April 15, 2028
+- 支持 [ev_eb8d3f2e5fc9928d](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): Upon achievement of a certain revenue milestone in June 2026, the interest-only period and repayment terms of the Term Loan were extended
 
 ### counter_thesis: pass
 
@@ -1354,7 +1355,7 @@ CEO和CFO评估认为截至2025年12月31日内部控制有效（基于COSO 2013
 
 ## CBLL · complete
 
-审查记录：`state/serenity-reviews/CBLL-claude-526becbd330b1aec5d29.json`
+审查记录：`state/serenity-reviews/CBLL-claude-461259403f1fcbacef1e.json`
 
 ### supply_chain_map: pass
 
@@ -1372,12 +1373,12 @@ CEO和CFO评估认为截至2025年12月31日内部控制有效（基于COSO 2013
 
 ### chokepoint_evidence: partial
 
-按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。专利组合（含58项专利及申请）和商业秘密构成主要替代壁垒，尤其是针对脑电图硬件及癫痫检测算法的专利，并对竞争对手Natus Medical的BrainWatch产品提起侵权诉讼。公司自主开发算法软件、持有专有头带和电极设计，并自行制造产品，控制模型软件、设计和制造三个供应链节点。
+按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。文段所列障碍仅为专利组合（58项，涵盖硬件与算法）、斯坦福独家授权及商业秘密，未见供应集中度或具体替代障碍的证据，亦无市场份额数据。公司自主开发 EEG 算法与 Ceribell System 硬件（模型软件与设计节点自营），制造活动以"由我们或代表我们实施"表述，显示可能依赖第三方，销售与服务节点在文段中无明确描述。
 
-- 支持 [ev_68ed4b713eb26f3f](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): our patent portfolio contains 58 total issued utility patents and pending utility patent applications (excluding European validation states)
-- 支持 [ev_aef43a6c4242aaf4](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): 16 patents and patent applications are directed to EEG algorithms for seizure detection that run on the Ceribell System (2 issued)
-- 支持 [ev_54f2a93ea2ae9aca](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): we also rely upon trademarks, trade secrets, know-how, and continuing technological innovation to develop and maintain our competitive position
-- 反证 [ev_c0613b1fb71d10dc](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): filed patent infringement complaints against Natus Medical Incorporated and related subsidiaries (“Natus”) with the U.S. International Trade Commission
+- 支持 [ev_60ea4babc1eb0a89](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): our patent portfolio contains 58 total issued utility patents and pending utility patent applications (excluding European validation states), and includes patents and patent applications that are solely owned by us, exclusively licensed from Stanford University, and co-owned with Stanford University
+- 支持 [ev_a845b5d456164e2c](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): patents and patent applications are directed to EEG algorithms for seizure detection that run on the Ceribell System
+- 支持 [ev_a38513e5f3398a38](https://www.sec.gov/Archives/edgar/data/1861107/000119312526445555/cbll-20260930.htm) (primary-document): We are subject to certain manufacturing restrictions related to licensed intellectual property rights that were developed with the financial assistance of United States government grants
+- 反证 [ev_167a8324a3a61c38](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): the Natus BrainWatch product infringes upon our proprietary headband and electrode designs
 - 缺口：按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒
 
 ### customer_dependency: pass
@@ -1394,13 +1395,14 @@ CEO和CFO评估认为截至2025年12月31日内部控制有效（基于COSO 2013
 
 - 支持 [ev_0ee916a511fa4063](https://www.sec.gov/Archives/edgar/data/1861107/000119312526445555/cbll-20260930.htm) (primary-document): By combining proprietary, highly portable and rapidly deployable hardware with sophisticated artificial intelligence
 
-### multi_node_control: pass
+### multi_node_control: partial
 
-按 Serenity 规则：同一证据段确认公司自己控制至少两个相连环节（model_software、design、manufacturing）。专利组合（含58项专利及申请）和商业秘密构成主要替代壁垒，尤其是针对脑电图硬件及癫痫检测算法的专利，并对竞争对手Natus Medical的BrainWatch产品提起侵权诉讼。公司自主开发算法软件、持有专有头带和电极设计，并自行制造产品，控制模型软件、设计和制造三个供应链节点。
+按 Serenity 规则：自己控制的环节（model_software、design）不足两个或互不相连。文段所列障碍仅为专利组合（58项，涵盖硬件与算法）、斯坦福独家授权及商业秘密，未见供应集中度或具体替代障碍的证据，亦无市场份额数据。公司自主开发 EEG 算法与 Ceribell System 硬件（模型软件与设计节点自营），制造活动以"由我们或代表我们实施"表述，显示可能依赖第三方，销售与服务节点在文段中无明确描述。
 
-- 支持 [ev_02b47b1880641857](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): algorithms for seizure detection as well as other medical conditions
-- 支持 [ev_35e258a5380f4963](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): our proprietary headband and electrode designs
-- 支持 [ev_f0f124a85036db5a](https://www.sec.gov/Archives/edgar/data/1861107/000119312526445555/cbll-20260930.htm) (primary-document): We are subject to certain manufacturing restrictions related to licensed intellectual property rights
+- 支持 [ev_937e8d5d36a65631](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): We have developed, and are continuing to develop, a comprehensive intellectual property portfolio related to EEG monitoring in the acute care setting, including the Ceribell System hardware and algorithms for seizure detection
+- 支持 [ev_1d83107bb6295184](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): 23 patents and patent applications are directed to the Ceribell System (14 issued), 16 patents and patent applications are directed to EEG algorithms for seizure detection that run on the Ceribell System
+- 反证 [ev_c359b41bbcc87216](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): inventions made in the course of the development, manufacture, and commercial activities conducted by or on behalf of us
+- 缺口：按 Serenity 规则：自己控制的环节（model_software、design）不足两个或互不相连
 
 ### earnings_validation: pass
 
@@ -2156,7 +2158,7 @@ AI 是影像设备和软件上的功能（如 EchoPAC 的 AI 多普勒周期检�
 
 ## GENB · complete
 
-审查记录：`state/serenity-reviews/GENB-claude-be8975fe2efcd1fba323.json`
+审查记录：`state/serenity-reviews/GENB-claude-003bd23e9e22c4879e35.json`
 
 ### supply_chain_map: pass
 
@@ -2176,14 +2178,14 @@ AI 是影像设备和软件上的功能（如 EchoPAC 的 AI 多普勒周期检�
 
 ### chokepoint_evidence: partial
 
-按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。文件援引的壁垒为GB-4362快速通道资格、BPCIA 12年生物排他期、专利申请及商业秘密，但均未提供具体的供应集中度数据，且专利相关表述大多指向不确定性风险而非已确立的替代障碍。公司通过Generate平台自主开展AI模型与软件开发、并以自有专利申请覆盖产品设计与研发（均为in-house），但销售及商业化能力尚未建立（not in-house）。
+按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。这些段落未提供具体的供应集中度或替代障碍证据，仅有专利/商业秘密保护风险声明和 GB-4362 的快速通道认定；公司自主运营 The Generate Platform（模型/软件节点），但明确表示无销售及分销经验，须依赖第三方完成商业化，其余节点（数据、设计、制造）在段落中无明确归属。
 
-- 支持 [ev_db9072b96a1399fb](https://www.sec.gov/Archives/edgar/data/2100782/000119312526456890/ck0002100782-20260930.htm) (primary-document): we have received Fast Track Designation for GB-4362
-- 支持 [ev_29b53ce287ca10c1](https://www.sec.gov/Archives/edgar/data/2100782/000119312526456890/ck0002100782-20260930.htm) (primary-document): The FDA cannot make approval of a biosimilar effective until 12 years after the reference product’s first licensure
+- 支持 [ev_cc64b4d6ecf2da28](https://www.sec.gov/Archives/edgar/data/2100782/000119312526456890/ck0002100782-20260930.htm) (primary-document): we have received Fast Track Designation for GB-4362, there can be no assurance that we will successfully obtain such designations for our other or future product candidates
 - 支持 [ev_a9800e27dae635df](https://www.sec.gov/Archives/edgar/data/2100782/000119312526456890/ck0002100782-20260930.htm) (primary-document): we also rely on proprietary source code, trade secrets and know-how
-- 支持 [ev_dca1a850c5fdf943](https://www.sec.gov/Archives/edgar/data/2100782/000119312526456890/ck0002100782-20260930.htm) (primary-document): patents that may be issued may not include claims that cover a broad enough scope to prevent alternative solutions by competitors, including fast-follower products
+- 支持 [ev_7269a03371855906](https://www.sec.gov/Archives/edgar/data/2100782/000119312526456890/ck0002100782-20260930.htm) (primary-document): compositions and methods of use. The patent application process is subject to numerous risks and uncertainties
+- 反证 [ev_6e8f77b66c75d45c](https://www.sec.gov/Archives/edgar/data/2100782/000119312526456890/ck0002100782-20260930.htm) (primary-document): prevent alternative solutions by competitors, including fast-follower products
 - 反证 [ev_faff5f2d5edea66f](https://www.sec.gov/Archives/edgar/data/2100782/000119312526456890/ck0002100782-20260930.htm) (primary-document): our competitors, many of which have substantially greater resources than we or our partners do, and many of which have made significant investments in competing technologies
-- 反证 [ev_8fa7685c2ff8967b](https://www.sec.gov/Archives/edgar/data/2100782/000119312526456890/ck0002100782-20260930.htm) (primary-document): competition from biosimilars or other biologics could occur earlier than anticipated
+- 反证 [ev_54e31563213807db](https://www.sec.gov/Archives/edgar/data/2100782/000119312526456890/ck0002100782-20260930.htm) (primary-document): competition from generics or biosimilars
 - 反证 [ev_b035ea193e7c6dc0](https://www.sec.gov/Archives/edgar/data/2100782/000119312526456890/ck0002100782-20260930.htm) (primary-document): competitors may nonetheless pursue full BLAs
 - 缺口：按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒
 
@@ -2206,13 +2208,12 @@ AI 是影像设备和软件上的功能（如 EchoPAC 的 AI 多普勒周期检�
 
 ### multi_node_control: partial
 
-按 Serenity 规则：自己控制的环节（model_software、design）不足两个或互不相连。文件援引的壁垒为GB-4362快速通道资格、BPCIA 12年生物排他期、专利申请及商业秘密，但均未提供具体的供应集中度数据，且专利相关表述大多指向不确定性风险而非已确立的替代障碍。公司通过Generate平台自主开展AI模型与软件开发、并以自有专利申请覆盖产品设计与研发（均为in-house），但销售及商业化能力尚未建立（not in-house）。
+按 Serenity 规则：自己控制的环节（model_software）不足两个或互不相连。这些段落未提供具体的供应集中度或替代障碍证据，仅有专利/商业秘密保护风险声明和 GB-4362 的快速通道认定；公司自主运营 The Generate Platform（模型/软件节点），但明确表示无销售及分销经验，须依赖第三方完成商业化，其余节点（数据、设计、制造）在段落中无明确归属。
 
 - 支持 [ev_07ae6b9f165485fd](https://www.sec.gov/Archives/edgar/data/2100782/000119312526456890/ck0002100782-20260930.htm) (primary-document): we use AI in certain aspects of The Generate Platform
-- 支持 [ev_adf1ee7d5e862d21](https://www.sec.gov/Archives/edgar/data/2100782/000119312526456890/ck0002100782-20260930.htm) (primary-document): engineering, development, manufacture and commercialization of other potential product candidates including, but not limited to, compositions and methods of use
 - 反证 [ev_97e8d67e254c8f0c](https://www.sec.gov/Archives/edgar/data/2100782/000119312526456890/ck0002100782-20260930.htm) (primary-document): we have no sales, distribution or marketing experience
 - 反证 [ev_6e882e2fe7895e41](https://www.sec.gov/Archives/edgar/data/2100782/000119312526456890/ck0002100782-20260930.htm) (primary-document): we will need to develop sales and marketing capabilities in the United States, Europe and other regions, either on our own or with others
-- 缺口：按 Serenity 规则：自己控制的环节（model_software、design）不足两个或互不相连
+- 缺口：按 Serenity 规则：自己控制的环节（model_software）不足两个或互不相连
 
 ### earnings_validation: partial
 
@@ -2351,7 +2352,7 @@ AI 是影像设备和软件上的功能（如 EchoPAC 的 AI 多普勒周期检�
 
 ## GLUE · complete
 
-审查记录：`state/serenity-reviews/GLUE-claude-b6e945c3bab563f20bc2.json`
+审查记录：`state/serenity-reviews/GLUE-claude-477290b4a033f56b7514.json`
 
 ### supply_chain_map: pass
 
@@ -2368,11 +2369,14 @@ AI 是影像设备和软件上的功能（如 EchoPAC 的 AI 多普勒周期检�
 
 ### chokepoint_evidence: partial
 
-按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。壁垒方面，文件披露公司拥有53个待审专利家族及4件已授权美国专利（含QuEEN™引擎相关12个专利家族），并保留未申请专利的商业秘密；通道中未提及任何具名竞争对手或替代产品。自主节点方面，公司自主运营AI/ML驱动的QuEEN™引擎（模型/软件）及内部研发（设计），临床研究执行依赖供应商与第三方服务商，全部销售及商业化权利已通过许可协议授予罗氏和诺华。
+按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。壁垒方面，文件披露了53个待审专利家族、专有QuEEN™发现引擎（含商业秘密）及对罗氏的独家许可安排，但未提供具体市场份额数据或明确的供应集中度证据，AI相关性本身不构成卡脖子证据。公司自营模型软件（QuEEN™引擎）和药物设计两个相连环节，制造依赖第三方供应商，销售/商业化由诺华和罗氏负责。
 
-- 支持 [ev_9fb74922bca19180](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): solely owned a patent portfolio that included fifty-three (53) pending patent families, including pending patent applications filed under the PCT, national and regional phase patent applications, and multiple pending United States provisional patent applications
-- 支持 [ev_c47adcd906628d25](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): our patent portfolio related to our QuEEN TM discovery engine included twelve patent families
-- 支持 [ev_d79ddf6054f1b1e9](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): we may choose not to file a patent in order to maintain certain trade secrets or know-how, and a third party may subsequently file a patent covering such trade secrets or know-how
+- 支持 [ev_6ccb888f86815769](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): solely owned a patent portfolio that included fifty-three (53) pending patent families
+- 支持 [ev_1e67fc3e65e12cb4](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): our industry-leading QuEEN TM discovery engine
+- 支持 [ev_44acb55d5d2ccfd5](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): we may choose not to file a patent in order to maintain certain trade secrets or know-how
+- 支持 [ev_75e28f4f4e9d259d](https://www.sec.gov/Archives/edgar/data/1826457/000119312526448568/glue-20260930.htm) (primary-document): Roche will have a worldwide, exclusive license under patents and know-how controlled by us to develop and commercialize products directed to applicable targets
+- 反证 [ev_6c52aea16127d7c7](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): Competitors may challenge our issued patents or may file patent applications before we do
+- 反证 [ev_dbec11d82160fbaf](https://www.sec.gov/Archives/edgar/data/1826457/000119312526109360/glue-20251231.htm) (primary-document): a third party may develop a competitive drug or product that provides benefits similar to one or more of our current or future product candidates but that has a different composition or otherwise falls outside the scope of our patent protection
 - 缺口：按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒
 
 ### customer_dependency: pass
@@ -2395,13 +2399,12 @@ AI 是影像设备和软件上的功能（如 EchoPAC 的 AI 多普勒周期检�
 
 ### multi_node_control: partial
 
-按 Serenity 规则：自己控制的环节（model_software、design）不足两个或互不相连。壁垒方面，文件披露公司拥有53个待审专利家族及4件已授权美国专利（含QuEEN™引擎相关12个专利家族），并保留未申请专利的商业秘密；通道中未提及任何具名竞争对手或替代产品。自主节点方面，公司自主运营AI/ML驱动的QuEEN™引擎（模型/软件）及内部研发（设计），临床研究执行依赖供应商与第三方服务商，全部销售及商业化权利已通过许可协议授予罗氏和诺华。
+按 Serenity 规则：自己控制的环节（model_software、design）不足两个或互不相连。壁垒方面，文件披露了53个待审专利家族、专有QuEEN™发现引擎（含商业秘密）及对罗氏的独家许可安排，但未提供具体市场份额数据或明确的供应集中度证据，AI相关性本身不构成卡脖子证据。公司自营模型软件（QuEEN™引擎）和药物设计两个相连环节，制造依赖第三方供应商，销售/商业化由诺华和罗氏负责。
 
-- 支持 [ev_3d513e80d5fe6688](https://www.sec.gov/Archives/edgar/data/1826457/000119312526448568/glue-20260930.htm) (primary-document): we will apply our proprietary AI/ML-enabled QuEEN™ engine for the discovery and development of degraders for the First Licensed Program and the Optioned I&I Programs
+- 支持 [ev_1d2b8349604fb937](https://www.sec.gov/Archives/edgar/data/1826457/000119312526448568/glue-20260930.htm) (primary-document): our proprietary AI/ML-enabled QuEEN™ engine for the discovery and development of degraders
 - 支持 [ev_34c927138a19a1d0](https://www.sec.gov/Archives/edgar/data/1826457/000119312526448568/glue-20260930.htm) (primary-document): Most of our research and development expenses have been related to the development of our QuEEN TM discovery engine and advancement of our GSPT1, NEK7, and VAV1 programs
 - 反证 [ev_0b0ee656aa8caa27](https://www.sec.gov/Archives/edgar/data/1826457/000119312526448568/glue-20260930.htm) (primary-document): information and data provided to us by our vendors and third-party service providers
-- 反证 [ev_75e28f4f4e9d259d](https://www.sec.gov/Archives/edgar/data/1826457/000119312526448568/glue-20260930.htm) (primary-document): Roche will have a worldwide, exclusive license under patents and know-how controlled by us to develop and commercialize products directed to applicable targets
-- 反证 [ev_0701a3bc419edda3](https://www.sec.gov/Archives/edgar/data/1826457/000119312526448568/glue-20260930.htm) (primary-document): The Licensed Programs will be further developed and commercialized by Novartis, unless ot
+- 反证 [ev_f5d82dfba6b721c3](https://www.sec.gov/Archives/edgar/data/1826457/000119312526448568/glue-20260930.htm) (primary-document): Novartis is responsible for all subsequent development and commercial activities starting at Phase 2
 - 缺口：按 Serenity 规则：自己控制的环节（model_software、design）不足两个或互不相连
 
 ### earnings_validation: pass
@@ -2448,7 +2451,7 @@ AI 是影像设备和软件上的功能（如 EchoPAC 的 AI 多普勒周期检�
 
 ## GRAL · complete
 
-审查记录：`state/serenity-reviews/GRAL-claude-2fb929d87887c090069e.json`
+审查记录：`state/serenity-reviews/GRAL-claude-b25b9f1aef52f3f1ee99.json`
 
 ### supply_chain_map: pass
 
@@ -2465,14 +2468,15 @@ AI 是影像设备和软件上的功能（如 EchoPAC 的 AI 多普勒周期检�
 
 ### chokepoint_evidence: partial
 
-按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。壁垒方面，GRAIL持有或独家许可超过156项甲基化分析专利、75项癌症来源信号专利及60项检测化学专利，并依赖Illumina作为关键测序技术供应商，同时已于2026年1月提交PMA申请寻求FDA审查，另以最大基因组医学临床项目所积累的数据集构成实质性替代壁垒。供应链节点方面，公司自主开展临床数据收集、生物信息学及机器学习分类器开发、测试设计及实验室样本处理制造，并直接面向医生和健康系统销售，同时在设计环节依赖香港中文大学授权专利、在制造环节依赖Illumina知识产权、在国际销售环节依赖外部经销商。
+按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。替代壁垒方面：公司在甲基化分析（156项专利）、癌症信号溯源（75项专利）和检测化学（60项专利）上持有或独家授权大量专利；Galleri是唯一已提交PMA的MCED产品；临床项目数据集和EHR集成构成转换成本；测序材料依赖Illumina供货，形成供应集中风险。多环节控制方面：公司自主运营数据生成（大型临床研究）、模型软件（专有生物信息学与ML分类器）、实验室制造和国内销售四个相连环节，同时对国际市场通过第三方分销商销售，测序底层硬件依赖Illumina。
 
-- 支持 [ev_78f3aa8e9ac1f3d2](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): we own or exclusively license 156 issued or granted patents worldwide directed to systems, software, methods, compositions, mixtures, or kits for methylation analysis
-- 支持 [ev_a081cf30748e6b8f](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): we own or exclusively license 75 issued or granted patents worldwide directed to systems, software, methods, or kits for determining cancer signal of origin
+- 支持 [ev_0d260474b6e18828](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): with respect to methylation analysis, which is a foundational technology underlying our current products, we own or exclusively license 156 issued or granted patents worldwide directed to systems, software, methods, compositions, mixtures, or kits for methylation analysis
+- 支持 [ev_6c372b168c57e900](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): with respect to our technology for determining cancer type through identification of cancer signal of origin, we own or exclusively license 75 issued or granted patents worldwide directed to systems, software, methods, or kits for determining cancer signal of origin
 - 支持 [ev_3d4f7906837ad99d](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): we own or exclusively license 60 granted or issued patents worldwide directed to methods, assay panels, compositions, or software for assay chemistry and techniques
-- 支持 [ev_4421288229f53e4f](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): We have also entered into certain supply and commercial agreements with various vendors and suppliers, including Illumina, under which we receive rights to their intellectual property for use in our products
 - 支持 [ev_1bede20dd14b4165](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): our commitment to FDA review of Galleri in the PMA we submitted in January 2026
-- 支持 [ev_ec0ff3091ed3ec98](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): our extensive and robust datasets generated from our clinical studies, our demonstrated test performance, our clinical program that we believe is the largest in genomic medicine
+- 支持 [ev_e8c4009e48b5b475](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): we have invested heavily in clinical studies and designed and executed what we believe is the largest clinical program in genomic medicine to date
+- 支持 [ev_4421288229f53e4f](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): We have also entered into certain supply and commercial agreements with various vendors and suppliers, including Illumina, under which we receive rights to their intellectual property for use in our products
+- 支持 [ev_bfaf6aeed7389ddb](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): broader adoption of enhanced ordering pathways enabled by EHR integrations
 - 缺口：按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒
 
 ### customer_dependency: pass
@@ -2497,17 +2501,16 @@ AI 是影像设备和软件上的功能（如 EchoPAC 的 AI 多普勒周期检�
 
 ### multi_node_control: partial
 
-按 Serenity 规则：同一证据段确认公司自己控制至少两个相连环节（data、model_software、design、manufacturing、sales）。壁垒方面，GRAIL持有或独家许可超过156项甲基化分析专利、75项癌症来源信号专利及60项检测化学专利，并依赖Illumina作为关键测序技术供应商，同时已于2026年1月提交PMA申请寻求FDA审查，另以最大基因组医学临床项目所积累的数据集构成实质性替代壁垒。供应链节点方面，公司自主开展临床数据收集、生物信息学及机器学习分类器开发、测试设计及实验室样本处理制造，并直接面向医生和健康系统销售，同时在设计环节依赖香港中文大学授权专利、在制造环节依赖Illumina知识产权、在国际销售环节依赖外部经销商。
+按 Serenity 规则：同一处原文确认公司自己控制至少两个相连环节（data、model_software、design、manufacturing、sales）。替代壁垒方面：公司在甲基化分析（156项专利）、癌症信号溯源（75项专利）和检测化学（60项专利）上持有或独家授权大量专利；Galleri是唯一已提交PMA的MCED产品；临床项目数据集和EHR集成构成转换成本；测序材料依赖Illumina供货，形成供应集中风险。多环节控制方面：公司自主运营数据生成（大型临床研究）、模型软件（专有生物信息学与ML分类器）、实验室制造和国内销售四个相连环节，同时对国际市场通过第三方分销商销售，测序底层硬件依赖Illumina。
 
-- 支持 [ev_e8c4009e48b5b475](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): we have invested heavily in clinical studies and designed and executed what we believe is the largest clinical program in genomic medicine to date
-- 支持 [ev_1a71d03071a03a7a](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): bioinformatics techniques and biologically directed machine learning classifiers, which are incorporated into or used for Galleri, our precision oncology portfolio, and DAC
+- 支持 [ev_b1797cbb17363e98](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): we have invested heavily in clinical studies and designed and executed what we believe is the largest clinical program in genomic medicine to date. These studies include: NHS-Galleri, PATHFINDER, PATHFINDER 2, CCGA, REACH/Galleri-Medicare, REFLECTION, STRIVE, SUMMIT, and SYMPLIFY
+- 支持 [ev_33eb01262fc82635](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): our proprietary bioinformatics and classifiers, including, for example, cfNA sequencing, marker panels, methylation signatures, bioinformatics techniques and biologically directed machine learning classifiers
 - 支持 [ev_f5b19a836a8a911f](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): our multidisciplinary capabilities leveraging the power of next-generation sequencing and advanced and trained machine learning algorithms and data science
-- 支持 [ev_106db98a3fe4f0cc](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): cfNA sequencing, marker panels, methylation signatures, bioinformatics techniques and biologically directed machine learning classifiers, which are incorporated into or used for Galleri
-- 支持 [ev_cd468eecb74ef09b](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): increase in the proportion of commercial samples compared to research samples processed within our laboratory primarily due to a reduction in research sample volumes
-- 支持 [ev_4a697319a8d1e581](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): Our commercial strategy targets primary care physicians, health systems, employers, digital health platforms, payors, international distributors and life insurance providers
-- 反证 [ev_3eb24fc5eae25d45](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): also exclusively license certain patents, patent applications, and other intellectual property from third parties, including the Chinese University of Hong Kong
-- 反证 [ev_aa69182000e4c8f5](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): supply and commercial agreements with various vendors and suppliers, including Illumina, under which we receive rights to their intellectual property for use in our products
-- 反证 [ev_fb905615e514ffce](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): we have begun expansion in select additional geographies through distributors, including Israel, Canada and the United Kingdom
+- 支持 [ev_955c2e6ea563bbd0](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): increase in the proportion of commercial samples compared to research samples processed within our laboratory
+- 支持 [ev_ea0dfc6d513b293b](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): Our commercial strategy targets primary care physicians, health systems, employers, digital health platforms, payors, international distributors and life insurance providers, and focuses on innovative value-oriented partnerships
+- 支持 [ev_eab8657fedd7d9b6](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): our rigorous and objective approach to test development and research
+- 反证 [ev_4421288229f53e4f](https://www.sec.gov/Archives/edgar/data/1699031/000162828026017319/gral-20251231.htm) (primary-document): We have also entered into certain supply and commercial agreements with various vendors and suppliers, including Illumina, under which we receive rights to their intellectual property for use in our products
+- 反证 [ev_7b5f78a186347cbe](https://www.sec.gov/Archives/edgar/data/1699031/000162828026071041/gral-20260930.htm) (primary-document): we have begun expansion in select additional geographies through distributors, including Israel, Canada and the United Kingdom, and have further planned expansion through distributors in other international markets, including in South Korea through our partnership with Samsung
 - 缺口：存在反证，需要进一步核验
 
 ### earnings_validation: unknown
@@ -2863,24 +2866,29 @@ CEO Andrew Dudum和CFO Oluyemi Okupe在位。但2026年11月4日任命Dr. Andrew
 
 ## HNGE · complete
 
-审查记录：`state/serenity-reviews/HNGE-claude-a4cb95f22fa0cc95f304.json`
+审查记录：`state/serenity-reviews/HNGE-claude-70b1630e6c0347cc8dec.json`
 
 ### supply_chain_map: partial
 
-按 Serenity 规则：缺少上游的具体关系证据。地图：上游为无名第三方设备制造商（Enso/Perifit）及技术IP授权方；公司产品为基于AI的MSK订阅平台与Enso/Perifit可穿戴设备；下游付款方为大型健康计划（HCSC、Elevance、Aetna）及其他合作伙伴，经由约60家合作伙伴分发给会员。论点检验：FY2025收入同比增长51%至$5.879亿，2026年Q3及前九月收入分别同比增长52%与51%，会员数持续增加，合作伙伴数维持在60家以上，所有收入与合作伙伴数据均与"AI产品采用推动收入、客户及合作伙伴增长"的论点一致，未发现矛盾性数据；利息收入下降等非经营性项目与论点无关。
+按 Serenity 规则：缺少上游的具体关系证据。供应链地图：上游为少数无名第三方设备供应商（Enso 及外围硬件）和非独家 IP/软件授权方；公司产品为 AI 驱动的 MSK 订阅平台（含 Enso 电神经刺激可穿戴设备）；下游付款方为 HCSC、Elevance（Anthem）、Aetna 等大型健康险公司及其他合作伙伴，终端使用者为会员。财务结果均与论点一致：2025 全年营收同比增长 51% 至 5.879 亿美元，2026 年前三季度营收继续同比增长 51%，新增会员和保留会员双双增长，合作伙伴数量维持"逾 60 家"，均直接体现 AI MSK 平台被持续采纳所带来的收入与客户增长。
 
 - 支持 [ev_d7adcbd0f1bb2751](https://www.sec.gov/Archives/edgar/data/1673743/000162828026013808/hnge-20251231.htm) (primary-document): Revenue is the income generated from member subscription fees paid to access our technology platform to treat and prevent MSK pain.
-- 支持 [ev_37ffee7926b58da4](https://www.sec.gov/Archives/edgar/data/1673743/000162828026072251/hnge-20260930.htm) (primary-document): Enso and Perifit devices that we provide to certain members in connection with our platform and programs.
-- 支持 [ev_c0e51a04c2f3ebfd](https://www.sec.gov/Archives/edgar/data/1673743/000162828026013808/hnge-20251231.htm) (primary-document): client contracts through (i) Health Care Service Corporation (“HCSC”) accounted for 17.5% and 17.1% of our revenue, respectively, (ii) Elevance Health, Inc., formerly known as Anthem, Inc. (“Elevance”), accounted for 13.7% and 14.0% of our revenue, respectively, and (iii) Aetna Life Insurance Company (“Aetna”) accounted for 10.5% and 11.6% of our revenue, respectively.
+- 支持 [ev_09db64ce855df971](https://www.sec.gov/Archives/edgar/data/1673743/000162828026013808/hnge-20251231.htm) (primary-document): supply quality Enso devices and other peripheral products to our members
+- 支持 [ev_94b4150385d9080d](https://www.sec.gov/Archives/edgar/data/1673743/000162828026013808/hnge-20251231.htm) (primary-document): Health Care Service Corporation (“HCSC”) accounted for 17.5% and 17.1% of our revenue, respectively
+- 支持 [ev_2be78aab1bc65124](https://www.sec.gov/Archives/edgar/data/1673743/000162828026013808/hnge-20251231.htm) (primary-document): Elevance Health, Inc., formerly known as Anthem, Inc. (“Elevance”), accounted for 13.7% and 14.0% of our revenue, respectively
+- 支持 [ev_1f5865b15c5ad224](https://www.sec.gov/Archives/edgar/data/1673743/000162828026013808/hnge-20251231.htm) (primary-document): Aetna Life Insurance Company (“Aetna”) accounted for 10.5% and 11.6% of our revenue, respectively
+- 支持 [ev_b3ac66380b1f38fd](https://www.sec.gov/Archives/edgar/data/1673743/000162828026072251/hnge-20260930.htm) (primary-document): Health Care Service Corporation (“HCSC”) accounted for 16% and 18% of our revenue, respectively
+- 支持 [ev_02cc25089a3ad90d](https://www.sec.gov/Archives/edgar/data/1673743/000162828026072251/hnge-20260930.htm) (primary-document): Elevance Health, Inc., formerly known as Anthem, Inc. (“Elevance”), accounted for 13% and 14% of our revenue, respectively
+- 支持 [ev_665f9258c2976b1b](https://www.sec.gov/Archives/edgar/data/1673743/000162828026072251/hnge-20260930.htm) (primary-document): Aetna Life Insurance Company (“Aetna”) accounted for 10% and 10% of our revenue, respectively
 - 缺口：按 Serenity 规则：缺少上游的具体关系证据
 
 ### chokepoint_evidence: partial
 
-按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。公司持有超过60项美国已授权专利及大量PCT申请，并依赖商业秘密保护TrueMotion运动追踪和Enso电神经刺激等核心技术，构成知识产权替代壁垒，但各段落均未披露市场份额数据或具体供给集中度指标，亦未点名任何竞争对手。公司自主开发TrueMotion和Enso软件模型并拥有独立销售团队，但平台软件层依赖第三方及开源软件，服务交付亦依赖外部互联网基础设施。
+按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。文件披露的唯一壁垒是专利组合（截至2026年9月持有35项美国已授权专利及90项待审专利）和商业秘密，但未披露任何供应集中度数据、替代障碍或具名竞争对手，AI相关性本身不满足卡脖子门槛要求。公司自行开发TrueMotion AI软件（model_software）、承担研发设计（design）和向会员直接提供数字应用（service）并持有自有销售团队（sales），同时依赖第三方及开源软件运营平台（model_software部分外包）。
 
-- 支持 [ev_c53e8041dc8c4b5a](https://www.sec.gov/Archives/edgar/data/1673743/000162828026013808/hnge-20251231.htm) (primary-document): we owned 21 issued patents and 45 pending patent applications in the U.S. as well as 20 pending PCT applications, 26 foreign issued patents and 54 pending foreign patent applications
 - 支持 [ev_173f9047f509271f](https://www.sec.gov/Archives/edgar/data/1673743/000162828026013808/hnge-20251231.htm) (primary-document): Our issued patents and pending patent applications generally relate to our TrueMotion AI-powered motion tracking technology and Enso, a wearable device that utilizes our proprietary electrical nerve stimulation technology accessed through the Hinge Health app
-- 支持 [ev_fbb54813162f6fd9](https://www.sec.gov/Archives/edgar/data/1673743/000162828026072251/hnge-20260930.htm) (primary-document): We rely heavily on trade secret laws and confidentiality agreements to protect our unpatented know-how, technology, and other proprietary information, including our platform and programs, and to maintain our competitive position
+- 支持 [ev_6ab66ae04bf2268e](https://www.sec.gov/Archives/edgar/data/1673743/000162828026072251/hnge-20260930.htm) (primary-document): we owned 35 issued patents and 90 pending patent applications in the United States as well as 9 pending PCT applications, over 50 foreign issued patents and over 60 pending foreign patent applications
+- 支持 [ev_35eb812cb8269867](https://www.sec.gov/Archives/edgar/data/1673743/000162828026072251/hnge-20260930.htm) (primary-document): we consider trade secrets and know-how to be one of our primary sources of intellectual property
 - 缺口：按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒
 
 ### customer_dependency: pass
@@ -2906,25 +2914,27 @@ CEO Andrew Dudum和CFO Oluyemi Okupe在位。但2026年11月4日任命Dr. Andrew
 
 ### multi_node_control: partial
 
-按 Serenity 规则：自己控制的环节（model_software、sales）不足两个或互不相连。公司持有超过60项美国已授权专利及大量PCT申请，并依赖商业秘密保护TrueMotion运动追踪和Enso电神经刺激等核心技术，构成知识产权替代壁垒，但各段落均未披露市场份额数据或具体供给集中度指标，亦未点名任何竞争对手。公司自主开发TrueMotion和Enso软件模型并拥有独立销售团队，但平台软件层依赖第三方及开源软件，服务交付亦依赖外部互联网基础设施。
+按 Serenity 规则：自己控制的环节（model_software、design、sales、service）不足两个或互不相连。文件披露的唯一壁垒是专利组合（截至2026年9月持有35项美国已授权专利及90项待审专利）和商业秘密，但未披露任何供应集中度数据、替代障碍或具名竞争对手，AI相关性本身不满足卡脖子门槛要求。公司自行开发TrueMotion AI软件（model_software）、承担研发设计（design）和向会员直接提供数字应用（service）并持有自有销售团队（sales），同时依赖第三方及开源软件运营平台（model_software部分外包）。
 
-- 支持 [ev_173f9047f509271f](https://www.sec.gov/Archives/edgar/data/1673743/000162828026013808/hnge-20251231.htm) (primary-document): Our issued patents and pending patent applications generally relate to our TrueMotion AI-powered motion tracking technology and Enso, a wearable device that utilizes our proprietary electrical nerve stimulation technology accessed through the Hinge Health app
-- 支持 [ev_53f20b9dfa13b32a](https://www.sec.gov/Archives/edgar/data/1673743/000162828026013808/hnge-20251231.htm) (primary-document): New competitors or alliances may emerge that have greater market share, a larger number of clients or contracted lives, more widely adopted proprietary technologies, greater marketing expertise, greater financial resources, and larger sales forces than we have
-- 反证 [ev_52dc8bded2083351](https://www.sec.gov/Archives/edgar/data/1673743/000162828026013808/hnge-20251231.htm) (primary-document): We rely on third-party and open-source software for our platform and programs. Our inability to obtain third-party licenses for such software, or obtain them on favorable terms, or any errors, bugs, defects, or failures caused by such software could adversely affect our business
-- 反证 [ev_8e4a7c912ee77dd8](https://www.sec.gov/Archives/edgar/data/1673743/000162828026072251/hnge-20260930.htm) (primary-document): We rely on internet infrastructure, bandwidth providers, third-party computer hardware and software, and other third parties for providing services to our clients and members, and any failure or interruption in the services provided by these third parties could expose us to litigation
-- 缺口：按 Serenity 规则：自己控制的环节（model_software、sales）不足两个或互不相连
+- 支持 [ev_3fcde03bc2d389b7](https://www.sec.gov/Archives/edgar/data/1673743/000162828026013808/hnge-20251231.htm) (primary-document): Our issued patents and pending patent applications generally relate to our TrueMotion AI-powered motion tracking technology
+- 支持 [ev_59f1f733b14440be](https://www.sec.gov/Archives/edgar/data/1673743/000162828026013808/hnge-20251231.htm) (primary-document): the research, design, and development of new programs or the expansion of our platform
+- 支持 [ev_a4713a6211114725](https://www.sec.gov/Archives/edgar/data/1673743/000162828026013808/hnge-20251231.htm) (primary-document): We develop and offer certain digital applications to our members
+- 支持 [ev_9af045e9b5dbd011](https://www.sec.gov/Archives/edgar/data/1673743/000162828026013808/hnge-20251231.htm) (primary-document): larger sales forces than we have
+- 反证 [ev_dc3988a15429a11e](https://www.sec.gov/Archives/edgar/data/1673743/000162828026013808/hnge-20251231.htm) (primary-document): We rely on third-party and open-source software for our platform and programs
+- 缺口：按 Serenity 规则：自己控制的环节（model_software、design、sales、service）不足两个或互不相连
 
 ### earnings_validation: pass
 
-按 Serenity 规则：有标明日期的实际财务结果支持论点。地图：上游为无名第三方设备制造商（Enso/Perifit）及技术IP授权方；公司产品为基于AI的MSK订阅平台与Enso/Perifit可穿戴设备；下游付款方为大型健康计划（HCSC、Elevance、Aetna）及其他合作伙伴，经由约60家合作伙伴分发给会员。论点检验：FY2025收入同比增长51%至$5.879亿，2026年Q3及前九月收入分别同比增长52%与51%，会员数持续增加，合作伙伴数维持在60家以上，所有收入与合作伙伴数据均与"AI产品采用推动收入、客户及合作伙伴增长"的论点一致，未发现矛盾性数据；利息收入下降等非经营性项目与论点无关。
+按 Serenity 规则：有标明日期的实际财务结果支持论点。供应链地图：上游为少数无名第三方设备供应商（Enso 及外围硬件）和非独家 IP/软件授权方；公司产品为 AI 驱动的 MSK 订阅平台（含 Enso 电神经刺激可穿戴设备）；下游付款方为 HCSC、Elevance（Anthem）、Aetna 等大型健康险公司及其他合作伙伴，终端使用者为会员。财务结果均与论点一致：2025 全年营收同比增长 51% 至 5.879 亿美元，2026 年前三季度营收继续同比增长 51%，新增会员和保留会员双双增长，合作伙伴数量维持"逾 60 家"，均直接体现 AI MSK 平台被持续采纳所带来的收入与客户增长。
 
-- 支持 [ev_be702755ae8dbc0c](https://www.sec.gov/Archives/edgar/data/1673743/000162828026013808/hnge-20251231.htm) (primary-document): Revenue for the year ended December 31, 2025 increased by $197.5 million, or 51%, compared to the year ended December 31, 2024. The increase was primarily due to revenue growth from existing clients.
 - 支持 [ev_3507972cf0a3c802](https://www.sec.gov/Archives/edgar/data/1673743/000162828026013808/hnge-20251231.htm) (primary-document): Revenue $ 587,860 $ 390,404 $ 197,456 51 %
-- 支持 [ev_6430c5aed03c364c](https://www.sec.gov/Archives/edgar/data/1673743/000162828026072251/hnge-20260930.htm) (primary-document): Revenue for the three months ended September 30, 2026 increased by $80.8 million, or 52%, compared to the three months ended September 30, 2025.
-- 支持 [ev_daacf13db22eacb2](https://www.sec.gov/Archives/edgar/data/1673743/000162828026072251/hnge-20260930.htm) (primary-document): Revenue for the nine months ended September 30, 2026 increased by $213.0 million, or 51%, compared to the nine months ended September 30, 2025.
+- 支持 [ev_be702755ae8dbc0c](https://www.sec.gov/Archives/edgar/data/1673743/000162828026013808/hnge-20251231.htm) (primary-document): Revenue for the year ended December 31, 2025 increased by $197.5 million, or 51%, compared to the year ended December 31, 2024. The increase was primarily due to revenue growth from existing clients.
+- 支持 [ev_0ba36380a4f12415](https://www.sec.gov/Archives/edgar/data/1673743/000162828026072251/hnge-20260930.htm) (primary-document): Revenue $ 234,970 $ 154,211 $ 80,759 52 %
+- 支持 [ev_fc27f013b75bb90b](https://www.sec.gov/Archives/edgar/data/1673743/000162828026072251/hnge-20260930.htm) (primary-document): Revenue $ 630,094 $ 417,134 $ 212,960 51 %
 - 支持 [ev_9acf6a3257a0a97a](https://www.sec.gov/Archives/edgar/data/1673743/000162828026072251/hnge-20260930.htm) (primary-document): The increase within existing clients was the result of retaining members within, and adding more members to, our existing member base.
-- 支持 [ev_cb53089fc31a6978](https://www.sec.gov/Archives/edgar/data/1673743/000162828026072251/hnge-20260930.htm) (primary-document): As of September 30, 2026, we had over 60 partners.
+- 支持 [ev_1d94da20edba2633](https://www.sec.gov/Archives/edgar/data/1673743/000162828026072251/hnge-20260930.htm) (primary-document): Add: billings during the period 277,678 178,768 788,413 499,197
 - 支持 [ev_dffc05a8706dcaef](https://www.sec.gov/Archives/edgar/data/1673743/000162828026013808/hnge-20251231.htm) (primary-document): As of December 31, 2025 and 2024, we had approximately 60 partners.
+- 支持 [ev_cb53089fc31a6978](https://www.sec.gov/Archives/edgar/data/1673743/000162828026072251/hnge-20260930.htm) (primary-document): As of September 30, 2026, we had over 60 partners.
 
 ### counter_thesis: pass
 
@@ -2959,7 +2969,7 @@ CEO Andrew Dudum和CFO Oluyemi Okupe在位。但2026年11月4日任命Dr. Andrew
 
 ## HTFL · complete
 
-审查记录：`state/serenity-reviews/HTFL-claude-b3a4b363b9b828a65976.json`
+审查记录：`state/serenity-reviews/HTFL-claude-b47c732adff1b13128e9.json`
 
 ### supply_chain_map: pass
 
@@ -2972,13 +2982,14 @@ CEO Andrew Dudum和CFO Oluyemi Okupe在位。但2026年11月4日任命Dr. Andrew
 
 ### chokepoint_evidence: partial
 
-按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。壁垒方面，公司持有约617件已授权专利（到期至2044年）并对Cleerly、Elucid提起专利侵权诉讼，同时医疗机构不愿改变CAD评估标准实践构成转换壁垒，但通道中未见供给集中度数据。节点控制方面，公司自研AI模型与软件、拥有设计团队及自建销售和生产服务团队（model_software、design、sales、service均为自有），云托管基础设施依赖第三方。
+按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。文段所列壁垒均为专利（约617项，有效期至2044年）和商业秘密，以及医疗机构改变标准诊疗实践的转换惯性，未提供具体市场集中度数据或供应替代障碍。公司自主研发AI算法与软件、自主设计产品、由内部生产团队处理病例并自主销售，但云端托管依赖第三方服务商。
 
 - 支持 [ev_cb2706b4e8aaaf13](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000042/htfl-20251231x10k.htm) (primary-document): our owned and licensed patent portfolio includes approximately 617 issued patents and 93 pending patent applications globally
 - 支持 [ev_fd5bf489bc65c60f](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000042/htfl-20251231x10k.htm) (primary-document): our owned and licensed issued U.S. patents expire 15 Table of Contents through 2044
+- 支持 [ev_5584623b669b1c7a](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000042/htfl-20251231x10k.htm) (primary-document): trade secrets that may be important to the development of our business, especially where we do not believe patent protection is appropriate or obtainable
 - 支持 [ev_dd43a0c7b44c38cb](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000173/htfl-20260930x10q.htm) (primary-document): if healthcare providers are unwilling to change their standard practice regarding the evaluation of CAD, our business, financial condition, results of operations and prospects will be adversely affected
-- 反证 [ev_ed6552f935714afc](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000173/htfl-20260930x10q.htm) (primary-document): we filed a patent infringement lawsuit against Cleerly, Inc. in the United States District Court for the Eastern District of Texas. The complaint seeks permanent injunctive relief and damages arising from Cleerly’s unauthorized and continued use of Heartflow’s patented technology. Heartflow asserts that Cleerly’s Ischemia, Plaque Analysis, and Compare products infringe six of Heartflow’s patents
-- 反证 [ev_a067c1bd715882f5](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000173/htfl-20260930x10q.htm) (primary-document): the Company filed a patent infringement lawsuit against Elucid Bioimaging Inc. in the United States District Court for the District of Massachusetts. The complaint seeks permanent injunctive relief and damages arising from Elucid’s unauthorized and continued use of the Company’s patented technology and for misappropriation of the Company’s trade secrets. The Company asserts that Elucid’s Plaque-IQ and FFR-IQ products infringe four of its patents
+- 反证 [ev_31828875a1969dc6](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000173/htfl-20260930x10q.htm) (primary-document): Cleerly’s Ischemia, Plaque Analysis, and Compare products infringe six of Heartflow’s patents with priority dates from 2012 to 2018
+- 反证 [ev_9d434cea2d0c50ac](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000173/htfl-20260930x10q.htm) (primary-document): Elucid’s Plaque-IQ and FFR-IQ products infringe four of its patents with priority dates from 2013 to 2016
 - 缺口：按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒
 
 ### customer_dependency: pass
@@ -2998,13 +3009,12 @@ CEO Andrew Dudum和CFO Oluyemi Okupe在位。但2026年11月4日任命Dr. Andrew
 
 ### multi_node_control: partial
 
-按 Serenity 规则：同一证据段确认公司自己控制至少两个相连环节（model_software、design、sales、service）。壁垒方面，公司持有约617件已授权专利（到期至2044年）并对Cleerly、Elucid提起专利侵权诉讼，同时医疗机构不愿改变CAD评估标准实践构成转换壁垒，但通道中未见供给集中度数据。节点控制方面，公司自研AI模型与软件、拥有设计团队及自建销售和生产服务团队（model_software、design、sales、service均为自有），云托管基础设施依赖第三方。
+按 Serenity 规则：同一处原文确认公司自己控制至少两个相连环节（model_software、design、sales）。文段所列壁垒均为专利（约617项，有效期至2044年）和商业秘密，以及医疗机构改变标准诊疗实践的转换惯性，未提供具体市场集中度数据或供应替代障碍。公司自主研发AI算法与软件、自主设计产品、由内部生产团队处理病例并自主销售，但云端托管依赖第三方服务商。
 
-- 支持 [ev_94b56f16274001d7](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000042/htfl-20251231x10k.htm) (primary-document): machine learning methods for generation of the 3D models used for our FFR CT Analysis and Plaque Analysis products, and methods of deriving blood flow, anatomy, plaque and organ tissue information from the image data
-- 支持 [ev_e4bbc48d76260d59](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000173/htfl-20260930x10q.htm) (primary-document): Our research and development team is comprised of PhD research scientists with expertise in AI-based algorithms and medical imaging, alongside software engineers skilled in cloud architecture, AI algorithms, machine and deep learning and 3D visualization
+- 支持 [ev_0fee9b0437ca1db1](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000042/htfl-20251231x10k.htm) (primary-document): machine learning methods for generation of the 3D models used for our FFR CT Analysis and Plaque Analysis products
+- 支持 [ev_f9313a18a629de42](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000173/htfl-20260930x10q.htm) (primary-document): research and development team is comprised of PhD research scientists with expertise in AI-based algorithms and medical imaging, alongside software engineers skilled in cloud architecture, AI algorithms, machine and deep learning and 3D visualization
 - 支持 [ev_a9d6300becc7e8d6](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000173/htfl-20260930x10q.htm) (primary-document): product managers and designers who ensure optimal customer experience and design
-- 支持 [ev_9dd6014828519821](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000173/htfl-20260930x10q.htm) (primary-document): our financial and contractual arrangements with providers and our sales and marketing activities
-- 支持 [ev_330563f65c6daf38](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000173/htfl-20260930x10q.htm) (primary-document): we expect modulations in our gross margin as we hire and train additional personnel in our production team to support our increasing patient case volume
+- 支持 [ev_85ddb7f48acd8c06](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000173/htfl-20260930x10q.htm) (primary-document): Selling, general and administrative expenses increased $36.5 million, or 38%, to $132.7 million during the nine months ended September 30, 2026
 - 反证 [ev_fa76ecc3815c784e](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000173/htfl-20260930x10q.htm) (primary-document): increases of $2.2 million in consulting and professional fees, $1.8 million in allocated overhead, $1.3 million in third-party hosting fees
 - 缺口：存在反证，需要进一步核验
 
@@ -4321,26 +4331,28 @@ Jensen Huang 已恢复 CEO 与董事职务，并新增独立董事组成的监�
 
 ## OABI · complete
 
-审查记录：`state/serenity-reviews/OABI-claude-a9adefaa2dec691afdfe.json`
+审查记录：`state/serenity-reviews/OABI-claude-2c3f8a08645255bdebae.json`
 
 ### supply_chain_map: partial
 
-按 Serenity 规则：缺少上游的具体关系证据。passages涵盖10-K（截至2025-12-31财年）及10-Q（截至2026-09-30前三季度）财务数据，供应链上游为匿名合同制造商（xPloration仪器）与第三方IP授权方，下游为制药公司合作伙伴（Partner B-F及2026年8月新签方），公司产品为OmniAb抗体发现平台（含技术许可、研究服务、xPloration仪器）。论文主张OmniDeep™AI产品驱动收入与合作伙伴增长：2025财年总收入同比下降29%、服务收入下降39%与论文矛盾，但2026年前九个月总收入增长209%、许可与里程碑收入增长458%、xPloration收入增长165%及新签1250万美元预付款合作协议均与论文一致，整体信号2025财年与论文相悖、2026年与论文吻合。
+按 Serenity 规则：缺少上游的具体关系证据。供应链地图：上游依赖无名合同制造商、CRO及第三方IP许可方提供xPloration仪器零件与研究服务，核心产品为OmniAb抗体发现平台（含xPloration仪器）及许可研究服务，具名下游方包括通过Icagen子公司历史许可的罗氏、资产收购方Angelini Pharma，以及2026年8月新增的匿名药企（$1250万合作协议）。财务结果方面，FY2025总收入同比下滑29%（$18,666K）与论点相悖；但2026年前九个月总收入同比大幅增长209%（$31,835K）、xPloration收入增165%、服务收入增48%，加之新增大额合作协议，均与AI平台采用带动收入及合作伙伴增长的论点一致。
 
-- 支持 [ev_f7ffd979b4e55dff](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) (primary-document): The Company’s revenue is typically derived from license agreements with its partners and consists of: (i) upfront or annual payments for technology access (license revenue), (ii) payments for the performance of research services (service revenue), (iii) downstream payments in the form of preclinical, intellectual property, clinical, regulatory, and commercial milestones (milestone revenue) and (iv) royalties on net sales from partners’ product sales (royalty revenue).
 - 支持 [ev_6621c18d6e7fb137](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) (primary-document): In May 2025, we launched the xPloration Partner Access Program, under which our partners can purchase xPloration instruments.
-- 支持 [ev_50cf6881ba5b77ac](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): Approved products represents an OmniAb-derived antibody for which our partner has received marketing approval. We view this metric as an indication of our near- and mid-term potential revenue from royalty payments.
-- 支持 [ev_ea93bbaa9c3a2fa5](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) (primary-document): ck0001846253:PartnerBMember us-gaap:CustomerConcentrationRiskMember us-gaap:RevenueFromContractWithCustomerMember 2025-01-01 2025-12-31 0001846253 ck0001846253:PartnerCMember us-gaap:CustomerConcentrationRiskMember us-gaap:RevenueFromContractWithCustomerMember 2025-01-01 2025-12-31
+- 支持 [ev_f7ffd979b4e55dff](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) (primary-document): The Company’s revenue is typically derived from license agreements with its partners and consists of: (i) upfront or annual payments for technology access (license revenue), (ii) payments for the performance of research services (service revenue), (iii) downstream payments in the form of preclinical, intellectual property, clinical, regulatory, and commercial milestones (milestone revenue) and (iv) royalties on net sales from partners’ product sales (royalty revenue).
+- 支持 [ev_098552fc86b78558](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): Approved products represents an OmniAb-derived antibody for which our partner has received marketing approval.
+- 支持 [ev_e1adf8209f33f308](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): the license agreement, dated December 4, 2018, as amended on June 30, 2021, October 21, 2022, and December 22, 2023, by and between F. Hoffmann-La Roche Ltd (“Roche”) and the Company’s subsidiary Icagen
+- 支持 [ev_73a7959dda4e7002](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): the Company entered into an Asset Purchase and Assignment Agreement (the “Asset Purchase Agreement”) with Angelini Pharma S.p.A. (“Angelini”).
 - 缺口：按 Serenity 规则：缺少上游的具体关系证据
 
 ### chokepoint_evidence: partial
 
-按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。文件披露的壁垒包括：覆盖转基因动物平台的大量专利（美国29项已授权）、商业秘密与专有技术，以及里程碑付款和版税在合同终止后仍继续生效所形成的转换成本，同时公司声称OmniAb动物是业内最多样化的宿主系统。公司自主掌控的供应链节点涵盖：下一代测序数据集挖掘（data）、AI驱动的xPloration筛选软件与平台（model_software）、计算抗原设计（design）、专有转基因动物生产（manufacturing）、技术许可与里程碑销售（sales）以及平台相关服务（service）；但平台计算引擎中使用了开源软件（model_software部分依赖第三方）。
+按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。障碍方面：段落记录了覆盖转基因动物（OmniRat/OmniMouse/OmniChicken）和 xPloration 筛选技术的大量专利，以及对 Scripps 等机构超长 CDRH3 技术的独家许可，同时 xPloration 平台含专有一次性耗材构成替换壁垒；但段落中未点名任何竞争对手或替代品。自营环节方面：公司自行完成 NGS 数据集挖掘（data）、AI 筛选软件（model_software）、抗原计算设计（design）、转基因动物制备（manufacturing）、许可协议直销（sales）及研究服务（service），各主要环节均在内部完成。
 
-- 支持 [ev_07e9bf58bb89fb43](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) (primary-document): We own patents directed to OmniAb animals and related inventions, including 29 issued patents in the United States, eight issued patents in Europe, seven issued patents in Japan, five issued patents in China
-- 支持 [ev_7e469ebf104215b7](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) (primary-document): We also rely upon trade secrets, know-how, continuing technological innovations and licensing opportunities to develop and maintain our competitive position.
-- 支持 [ev_d2e22d2cbef3682f](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): We believe the OmniAb animals comprise the most diverse host systems available in the industry.
-- 支持 [ev_9210d6cbf264e1f9](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): all milestone payments and royalties survive termination and continue with respect to any OmniAb-derived therapeutic
+- 支持 [ev_f525f6baf9efdaab](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) (primary-document): We own patents directed to OmniAb animals and related inventions, including 29 issued patents in the United States
+- 支持 [ev_76729238b2967baf](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): We believe the OmniAb animals comprise the most diverse host systems available in the industry
+- 支持 [ev_94051318b79cffed](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): The xPloration platform includes an instrument, proprietary single-use consumables, software and related services
+- 支持 [ev_742b3c9e4d1483eb](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) (primary-document): The patent portfolio includes seven issued patents in the U.S., three granted European patents, one issued patent in China, and seven issued patents in Japan
+- 支持 [ev_a97b70342ab7de06](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) (primary-document): We also have an exclusive license from The Scripps Research Institute to technology related to ultralong CDRH3s
 - 缺口：按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒
 
 ### customer_dependency: pass
@@ -4360,29 +4372,26 @@ Jensen Huang 已恢复 CEO 与董事职务，并新增独立董事组成的监�
 - 支持 [ev_61be3199281d8367](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) (primary-document): The Company’s revenue is typically derived from license agreements with its partners and consists of: (i) upfront or annual payments for technology access (license revenue), (ii) payments for the performance of research services (service revenue), (iii) downstream payments in the form of preclinical, intellectual property, clinical, regulatory, and commercial milestones (milestone revenue) and (iv) royalties
 - 证伪条件：若公司进入与抗体发现无关的新业务板块，则纯粹度降低
 
-### multi_node_control: partial
+### multi_node_control: pass
 
-按 Serenity 规则：自己控制的环节（data、model_software、design、manufacturing、sales、service）不足两个或互不相连。文件披露的壁垒包括：覆盖转基因动物平台的大量专利（美国29项已授权）、商业秘密与专有技术，以及里程碑付款和版税在合同终止后仍继续生效所形成的转换成本，同时公司声称OmniAb动物是业内最多样化的宿主系统。公司自主掌控的供应链节点涵盖：下一代测序数据集挖掘（data）、AI驱动的xPloration筛选软件与平台（model_software）、计算抗原设计（design）、专有转基因动物生产（manufacturing）、技术许可与里程碑销售（sales）以及平台相关服务（service）；但平台计算引擎中使用了开源软件（model_software部分依赖第三方）。
+按 Serenity 规则：同一处原文确认公司自己控制至少两个相连环节（data、model_software、design、manufacturing、sales、service）。障碍方面：段落记录了覆盖转基因动物（OmniRat/OmniMouse/OmniChicken）和 xPloration 筛选技术的大量专利，以及对 Scripps 等机构超长 CDRH3 技术的独家许可，同时 xPloration 平台含专有一次性耗材构成替换壁垒；但段落中未点名任何竞争对手或替代品。自营环节方面：公司自行完成 NGS 数据集挖掘（data）、AI 筛选软件（model_software）、抗原计算设计（design）、转基因动物制备（manufacturing）、许可协议直销（sales）及研究服务（service），各主要环节均在内部完成。
 
-- 支持 [ev_06b2ec8b1add8e5a](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): mining of next-generation sequencing datasets with custom algorithms, are used to identify fully human antibodies
-- 支持 [ev_84439eaa9066d629](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): xPloration, our AI-powered, high-throughput single B-cell screening platform. The xPloration platform includes an instrument, proprietary single-use consumables, software and related services.
-- 支持 [ev_09b4b67dcc936d7d](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): computational antigen design and immunization methods, paired with high-throughput single B cell phenotypic screening
-- 支持 [ev_3eef9bdf7e2980a2](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): powers the immune systems of our proprietary, transgenic animals to create optimized candidates for human therapeutics
-- 支持 [ev_d9136afb2983f935](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): upfront or, in some instances, annual payments for technology access; (ii) payments for performance of research services; (iii) downstream payments in the form of preclinical, intellectual property, clinical, regulatory, and commercial milestones; and (iv) royalties on net sales
-- 支持 [ev_e7683ae5bbf71df2](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): The xPloration platform includes an instrument, proprietary single-use consumables, software and related services.
-- 反证 [ev_cd5803baef270cec](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) (primary-document): We use open source software in connection with our technology and computational engine of our platform.
-- 缺口：按 Serenity 规则：自己控制的环节（data、model_software、design、manufacturing、sales、service）不足两个或互不相连
+- 支持 [ev_6386be350c760410](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): mining of next-generation sequencing datasets with custom algorithms
+- 支持 [ev_ffc3b82ea78726cb](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): xPloration, our AI-powered, high-throughput single B-cell screening platform
+- 支持 [ev_77638394313798ce](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): computational antigen design and immunization methods
+- 支持 [ev_cb54f90643162679](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): our proprietary, transgenic animals to create optimized candidates for human therapeutics
+- 支持 [ev_a697a9c930a2756a](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): Our license agreements with pharmaceutical and biotechnology partners generally include: (i) upfront or, in some instances, annual payments for technology access
+- 支持 [ev_ce088725476a613b](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): payments for performance of research services
 
 ### earnings_validation: partial
 
-按 Serenity 规则：实际结果有的支持、有的不支持论点。passages涵盖10-K（截至2025-12-31财年）及10-Q（截至2026-09-30前三季度）财务数据，供应链上游为匿名合同制造商（xPloration仪器）与第三方IP授权方，下游为制药公司合作伙伴（Partner B-F及2026年8月新签方），公司产品为OmniAb抗体发现平台（含技术许可、研究服务、xPloration仪器）。论文主张OmniDeep™AI产品驱动收入与合作伙伴增长：2025财年总收入同比下降29%、服务收入下降39%与论文矛盾，但2026年前九个月总收入增长209%、许可与里程碑收入增长458%、xPloration收入增长165%及新签1250万美元预付款合作协议均与论文一致，整体信号2025财年与论文相悖、2026年与论文吻合。
+按 Serenity 规则：实际结果有的支持、有的不支持论点。供应链地图：上游依赖无名合同制造商、CRO及第三方IP许可方提供xPloration仪器零件与研究服务，核心产品为OmniAb抗体发现平台（含xPloration仪器）及许可研究服务，具名下游方包括通过Icagen子公司历史许可的罗氏、资产收购方Angelini Pharma，以及2026年8月新增的匿名药企（$1250万合作协议）。财务结果方面，FY2025总收入同比下滑29%（$18,666K）与论点相悖；但2026年前九个月总收入同比大幅增长209%（$31,835K）、xPloration收入增165%、服务收入增48%，加之新增大额合作协议，均与AI平台采用带动收入及合作伙伴增长的论点一致。
 
-- 支持 [ev_bc255892be42b354](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) (primary-document): xPloration revenue 754 — 754 100 %
 - 支持 [ev_3fa5e8164b341f7a](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): Total revenue $ 3,993 $ 2,239 $ 1,754 78 %
+- 支持 [ev_ad88e702ceba0550](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): xPloration revenue 703 74 629 850 %
 - 支持 [ev_08642c78d7c34348](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): Total revenue $ 31,835 $ 10,290 $ 21,545 209 %
-- 支持 [ev_0cf1aede4ed32c99](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): License and milestone revenue $ 21,640 $ 3,879 $ 17,761 458 %
-- 支持 [ev_2497e77ad27e9369](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): Service revenue 7,415 5,027 2,388 48 %
 - 支持 [ev_7d8f0dba30358de2](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): xPloration revenue 1,918 724 1,194 165 %
+- 支持 [ev_2497e77ad27e9369](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): Service revenue 7,415 5,027 2,388 48 %
 - 支持 [ev_8499291548d00f8c](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): In August 2026, the Company entered into a research collaboration and license agreement with a pharmaceutical company that included a nonrefundable $ 12.5 million upfront payment.
 - 反证 [ev_6ced1c97fb193f01](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) (primary-document): Total revenue $ 18,666 $ 26,391 $ (7,725) (29) %
 - 反证 [ev_c191626266acb16a](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) (primary-document): Service revenue 7,263 11,949 (4,686) (39) %
@@ -4417,7 +4426,7 @@ Jensen Huang 已恢复 CEO 与董事职务，并新增独立董事组成的监�
 
 ## ODTX · complete
 
-审查记录：`state/serenity-reviews/ODTX-claude-8aa6cdcad53eabd8dbca.json`
+审查记录：`state/serenity-reviews/ODTX-claude-d3bba3d40b981f0233cd.json`
 
 ### supply_chain_map: pass
 
@@ -4433,11 +4442,10 @@ Jensen Huang 已恢复 CEO 与董事职务，并新增独立董事组成的监�
 
 ### chokepoint_evidence: partial
 
-按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。文件中可识别的替代壁垒仅限于OD-001组合物专利及专有软件/数据集的商业秘密保护，无市场份额数据或供应集中度数据，且未点名任何具体竞争对手。公司自主运营AI/ML平台（模型/软件节点）并持有内部专有数据集（数据节点），同时自主进行药物设计；但数据库访问、AI基础设施托管、制造及销售均依赖第三方或合作方。
+按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。壁垒方面：段落仅显示 OD-001 组成物专利及商业秘密／保密协议，未见任何供应集中度数据或可量化替代障碍，竞争者均以"our competitors"泛称，无具名对手。多环节控制方面：公司自主运营 AI/ML 平台（模型/软件）与药物发现设计两个环节，但数据依赖第三方数据库、基础设施全部外包、制造依赖 CMO、商业化依赖合作方，不足以证明对相连两个供应链节点的实质控制。
 
 - 支持 [ev_773335756e86bd42](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): We own an issued patent in the United States that claims the composition of matter of OD-001.
 - 支持 [ev_c09a4dd61a62c09a](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): We also rely upon a combination of trade secrets, know-how and confidentiality agreements to protect the intellectual property related to our product candidates and technologies
-- 支持 [ev_7f05db5954c19452](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): Our proprietary software tools and data sets are inherently complex and may contain defects or errors.
 - 缺口：按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒
 
 ### customer_dependency: partial
@@ -4457,15 +4465,14 @@ Jensen Huang 已恢复 CEO 与董事职务，并新增独立董事组成的监�
 
 ### multi_node_control: partial
 
-按 Serenity 规则：同一证据段确认公司自己控制至少两个相连环节（data、model_software、design）。文件中可识别的替代壁垒仅限于OD-001组合物专利及专有软件/数据集的商业秘密保护，无市场份额数据或供应集中度数据，且未点名任何具体竞争对手。公司自主运营AI/ML平台（模型/软件节点）并持有内部专有数据集（数据节点），同时自主进行药物设计；但数据库访问、AI基础设施托管、制造及销售均依赖第三方或合作方。
+按 Serenity 规则：同一处原文确认公司自己控制至少两个相连环节（model_software、design）。壁垒方面：段落仅显示 OD-001 组成物专利及商业秘密／保密协议，未见任何供应集中度数据或可量化替代障碍，竞争者均以"our competitors"泛称，无具名对手。多环节控制方面：公司自主运营 AI/ML 平台（模型/软件）与药物发现设计两个环节，但数据依赖第三方数据库、基础设施全部外包、制造依赖 CMO、商业化依赖合作方，不足以证明对相连两个供应链节点的实质控制。
 
-- 支持 [ev_7f05db5954c19452](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): Our proprietary software tools and data sets are inherently complex and may contain defects or errors.
 - 支持 [ev_08b178cb3bda4876](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): We use our AI/ML platform to improve our target discovery programs by improving the hit finding and lead optimization process for our small-molecule product candidates.
-- 支持 [ev_773335756e86bd42](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): We own an issued patent in the United States that claims the composition of matter of OD-001.
+- 支持 [ev_08b178cb3bda4876](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): We use our AI/ML platform to improve our target discovery programs by improving the hit finding and lead optimization process for our small-molecule product candidates.
 - 反证 [ev_121c3d07084b1daf](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): Our AI/ML platform accesses third-party databases.
 - 反证 [ev_6171f9639db40cf9](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): We outsource all of the core network infrastructure relating to our AI/ML platform to third-party hosting services.
-- 反证 [ev_b9a54a8dcff62a03](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): collaborators with marketing, manufacturing and distribution rights to one or more of our product candidates that achieve regulatory approval, if any, may not commit sufficient resources to or otherwise not perform satisfactorily in carrying out the marketing and distribution of such product or products
-- 反证 [ev_b9a54a8dcff62a03](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): collaborators with marketing, manufacturing and distribution rights to one or more of our product candidates that achieve regulatory approval, if any, may not commit sufficient resources to or otherwise not perform satisfactorily in carrying out the marketing and distribution of such product or products
+- 反证 [ev_c9acea277cbe69c0](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): outside scientific collaborators, CROs, CMOs, consultants, advisors and other third parties
+- 反证 [ev_fa7a3adaa68aef95](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): collaborators with marketing, manufacturing and distribution rights to one or more of our product candidates that achieve regulatory approval
 - 缺口：存在反证，需要进一步核验
 
 ### earnings_validation: partial
@@ -5136,7 +5143,7 @@ Prime Medicine拥有Prime Editing平台技术和LNP肝脏递送平台，但这�
 
 ## RDNT · complete
 
-审查记录：`state/serenity-reviews/RDNT-claude-b5bd53b5ff1863ca001e.json`
+审查记录：`state/serenity-reviews/RDNT-claude-4fe60225336b9e246a1f.json`
 
 ### supply_chain_map: pass
 
@@ -5156,14 +5163,12 @@ Prime Medicine拥有Prime Editing平台技术和LNP肝脏递送平台，但这�
 
 ### chokepoint_evidence: partial
 
-按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。文件仅显示规模优势（多地成像中心数量与设备种类）和PACS软件捆绑销售形成的转换壁垒，以及向Imagen提供专有成像数据作为AI开发原材料的潜在独占供应地位，但均无具体市场集中度数据或替代障碍的量化证据。公司自行承担数据采集、软件研发（DeepHealth/PACS）、系统设计（eRad）及销售环节，制造环节外包给第三方硬件供应商，网络安全运营亦依赖第三方托管安全运营中心。
+按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。卡脖子门槛方面，文件仅披露规模优势（位置数量和设备种类）以及eRad底层调度系统的内部依赖，未提供具体供应集中度数据或替代壁垒，竞争者众多（独立影像运营商、私募支持连锁机构、医院等），不满足"特定供应集中度或替代壁垒"要求。多环节控制方面，公司自营数据（影像数据资产）、模型/软件（DeepHealth AI临床应用）、设计（eRad系统）、销售（自有销售团队）和服务（影像中心运营管理）五个环节，硬件制造依赖第三方；数据与模型/软件为相邻的两个自营节点。
 
 - 支持 [ev_f87b31c96b4a34dd](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): Our scale in both the number of our locations and the number and types of imaging equipment we offer is one of our competitive advantages.
-- 支持 [ev_da0f0bb0359dcd18](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): our core software products, such as PACS, are essential to most of our arrangements as hardware, software and related services are sold as an integrated package
-- 支持 [ev_580f0b1e5ac664e0](https://www.sec.gov/Archives/edgar/data/790526/000162828026072345/rdnt-20260930.htm) (primary-document): a data partnership agreement granting Imagen access to certain imaging data for artificial intelligence development and commercialization
-- 反证 [ev_656a49cc21a23eac](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): independent imaging operators, private equity-backed chains, and smaller regional operators, as well as hospitals, clinics and radiology groups that operate their own imaging equipment
+- 支持 [ev_a587c867826a5fe6](https://www.sec.gov/Archives/edgar/data/790526/000162828026072345/rdnt-20260930.htm) (primary-document): our eRad subsidiary, which designs the underlying critical scheduling, data storage and retrieval systems necessary for imaging center operation
+- 反证 [ev_95629e64f70c38db](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): Our competitors include independent imaging operators, private equity-backed chains, and smaller regional operators, as well as hospitals, clinics and radiology groups that operate their own imaging equipment.
 - 反证 [ev_c90c3096c2e18d08](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): Many companies currently manufacture diagnostic imaging equipment.
-- 反证 [ev_5ab1687d8028bb8a](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): advances in technology may enable physicians and others to perform diagnostic imaging procedures without us
 - 缺口：按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒
 
 ### customer_dependency: pass
@@ -5184,16 +5189,15 @@ AI 业务约占收入 5%，主体是影像中心运营。
 
 ### multi_node_control: partial
 
-按 Serenity 规则：自己控制的环节（data、model_software、design、sales、service）不足两个或互不相连。文件仅显示规模优势（多地成像中心数量与设备种类）和PACS软件捆绑销售形成的转换壁垒，以及向Imagen提供专有成像数据作为AI开发原材料的潜在独占供应地位，但均无具体市场集中度数据或替代障碍的量化证据。公司自行承担数据采集、软件研发（DeepHealth/PACS）、系统设计（eRad）及销售环节，制造环节外包给第三方硬件供应商，网络安全运营亦依赖第三方托管安全运营中心。
+按 Serenity 规则：同一处原文确认公司自己控制至少两个相连环节（data、model_software、design、sales、service）。卡脖子门槛方面，文件仅披露规模优势（位置数量和设备种类）以及eRad底层调度系统的内部依赖，未提供具体供应集中度数据或替代壁垒，竞争者众多（独立影像运营商、私募支持连锁机构、医院等），不满足"特定供应集中度或替代壁垒"要求。多环节控制方面，公司自营数据（影像数据资产）、模型/软件（DeepHealth AI临床应用）、设计（eRad系统）、销售（自有销售团队）和服务（影像中心运营管理）五个环节，硬件制造依赖第三方；数据与模型/软件为相邻的两个自营节点。
 
 - 支持 [ev_580f0b1e5ac664e0](https://www.sec.gov/Archives/edgar/data/790526/000162828026072345/rdnt-20260930.htm) (primary-document): a data partnership agreement granting Imagen access to certain imaging data for artificial intelligence development and commercialization
-- 支持 [ev_3f4bcfaeddda5218](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): Non-Capitalized R&D - DeepHealth Cloud OS & Generative AI
+- 支持 [ev_d5e54578e4a6ba6d](https://www.sec.gov/Archives/edgar/data/790526/000162828026072345/rdnt-20260930.htm) (primary-document): Health segment develops and deploys clinical applications to enhance interpretation of medical images and improve patient outcomes
 - 支持 [ev_a587c867826a5fe6](https://www.sec.gov/Archives/edgar/data/790526/000162828026072345/rdnt-20260930.htm) (primary-document): our eRad subsidiary, which designs the underlying critical scheduling, data storage and retrieval systems necessary for imaging center operation
-- 支持 [ev_28a304604663ee98](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): The PACS sales are made primarily through our sales force and generally include hardware, software, installation, training and first-year warranty support.
-- 支持 [ev_b8ad88097989155e](https://www.sec.gov/Archives/edgar/data/790526/000162828026072345/rdnt-20260930.htm) (primary-document): RadNet provides non-medical, technical and administrative services to the Consolidated Medical Group for which it receives a management fee, pursuant to the related management agreements.
+- 支持 [ev_f7d57806126a3c57](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): PACS sales are made primarily through our sales force
+- 支持 [ev_ae84e06eb7ca2418](https://www.sec.gov/Archives/edgar/data/790526/000162828026072345/rdnt-20260930.htm) (primary-document): providing, among other things, day-to-day operational oversight, revenue cycle, human resources, finance, accounting and information systems to the imaging centers
 - 反证 [ev_7d4002e2284df34b](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): Hardware, which is not unique or special purpose, is purchased from a third-party and resold to customers with a small mark-up.
-- 反证 [ev_661fe60e325f430e](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): maintain a third-party managed security operations center which in-concert provide 24x7x365 real-time detection and response
-- 缺口：按 Serenity 规则：自己控制的环节（data、model_software、design、sales、service）不足两个或互不相连
+- 缺口：存在反证，需要进一步核验
 
 ### earnings_validation: pass
 
@@ -5463,7 +5467,7 @@ Atrium是临床阶段药物开发公司，专注遗传性心肌病RNA疗法。�
 
 ## RXRX · complete
 
-审查记录：`state/serenity-reviews/RXRX-claude-81d2cc1ff9ceb810056c.json`
+审查记录：`state/serenity-reviews/RXRX-claude-522aa4d5719875926edf.json`
 
 ### supply_chain_map: pass
 
@@ -5482,14 +5486,12 @@ Atrium是临床阶段药物开发公司，专注遗传性心肌病RNA疗法。�
 
 ### chokepoint_evidence: partial
 
-按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。文件记录的替代壁垒包括：REC-3964（到期不早于2042年）、REC-1245（到期不早于2043年）等多项成分专利，REC-4881的FDA孤儿药七年独占权及首创新药指定，以及公司独家拥有的TxFM基础模型（已对外许可）和内部制造超过一万亿个iPSC衍生神经元细胞所构建的全基因组CRISPR图谱，构成实质性供应集中与替代壁垒；文件未点名任何具体竞争对手。公司自主掌控数据采集与生物图谱构建（内部制造iPSC细胞）、AI模型开发（Recursion OS/TxFM）及药物设计环节，同时在细胞制造上自主生产，但数据层依赖Tempus提供去标识化病历、模型层依赖第三方开源软件与云基础设施，销售与商业化则完全授权给Sanofi和Roche/Genentech等合作伙伴负责。
+按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。文件提供的替代壁垒仅为组成物专利（REC-3964到期不早于2042年、REC-1245到期不早于2043年等）及FAP孤儿药七年独占期，无供应集中度或定量市场份额数据，各段落未点名任何竞争对手。公司自主掌握数据生成（表型图谱、CRISPR神经元图谱）、AI基础模型和药物设计平台，并在内部制造研究用iPSC细胞（data、model_software、design、manufacturing均为in-house），同时依赖Tempus提供去标识化病理数据及第三方云基础设施，合作产品商业化由Sanofi主导。
 
+- 支持 [ev_3159da295cbceca2](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/rxrx-20251231.htm) (primary-document): FAP, orphan drug exclusivity in the U.S. would run seven years from marketing authorization.
 - 支持 [ev_c41aadd70ef42c2a](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/rxrx-20251231.htm) (primary-document): We own a patent and patent applications related to the composition of matter and methods of inhibiting the toxin produced by Clostridioides difficile in the gastrointestinal tract using REC-3964. Currently, we expect our issued patent related to REC-3964 to expire no earlier than 2042
-- 支持 [ev_8d2e730c9b2e0f29](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/rxrx-20251231.htm) (primary-document): orphan drug exclusivity in the U.S. would run seven years from marketing authorization
-- 支持 [ev_4db6f1f38ef6968b](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): REC-4881, a potential first-in-class oral therapy granted FDA Orphan Drug and Fast Track designations
-- 支持 [ev_7c81eda9c0a4bb14](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): the Company granted Tempus a non-exclusive, non-sublicensable, non-transferable, worldwide license to the Company's TxFM Model solely for use within the field of oncology
-- 支持 [ev_1681341b01afc6c4](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): the first whole-genome CRISPR knockout map, which was built by Recursion in partnership with Roche and Genentech from a subset of over 1 trillion internally manufactured iPSC-derived neuronal cells
 - 支持 [ev_e08079c2abd7b987](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/rxrx-20251231.htm) (primary-document): We own patent applications related to the composition of matter and methods of treating biomarker-enriched solid tumors and lymphoma using REC-1245. Upon issuance, we expect our patents resulting from these patent applications will expire no earlier than 2043
+- 支持 [ev_d2ee76ce7be4baa9](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/rxrx-20251231.htm) (primary-document): We own patent applications related to REC-617; these patent applications relate to composition of matter and methods of treatment of multiple advanced solid tumor indications for REC-617. Upon issuance, we expect our patents resulting from these patent applications will expire no earlier than 2041
 - 缺口：按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒
 
 ### customer_dependency: pass
@@ -5510,17 +5512,18 @@ Atrium是临床阶段药物开发公司，专注遗传性心肌病RNA疗法。�
 
 ### multi_node_control: partial
 
-按 Serenity 规则：同一证据段确认公司自己控制至少两个相连环节（data、model_software、design、manufacturing）。文件记录的替代壁垒包括：REC-3964（到期不早于2042年）、REC-1245（到期不早于2043年）等多项成分专利，REC-4881的FDA孤儿药七年独占权及首创新药指定，以及公司独家拥有的TxFM基础模型（已对外许可）和内部制造超过一万亿个iPSC衍生神经元细胞所构建的全基因组CRISPR图谱，构成实质性供应集中与替代壁垒；文件未点名任何具体竞争对手。公司自主掌控数据采集与生物图谱构建（内部制造iPSC细胞）、AI模型开发（Recursion OS/TxFM）及药物设计环节，同时在细胞制造上自主生产，但数据层依赖Tempus提供去标识化病历、模型层依赖第三方开源软件与云基础设施，销售与商业化则完全授权给Sanofi和Roche/Genentech等合作伙伴负责。
+按 Serenity 规则：自己控制的环节（data、model_software、design、manufacturing）不足两个或互不相连。文件提供的替代壁垒仅为组成物专利（REC-3964到期不早于2042年、REC-1245到期不早于2043年等）及FAP孤儿药七年独占期，无供应集中度或定量市场份额数据，各段落未点名任何竞争对手。公司自主掌握数据生成（表型图谱、CRISPR神经元图谱）、AI基础模型和药物设计平台，并在内部制造研究用iPSC细胞（data、model_software、design、manufacturing均为in-house），同时依赖Tempus提供去标识化病理数据及第三方云基础设施，合作产品商业化由Sanofi主导。
 
-- 支持 [ev_1681341b01afc6c4](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): the first whole-genome CRISPR knockout map, which was built by Recursion in partnership with Roche and Genentech from a subset of over 1 trillion internally manufactured iPSC-derived neuronal cells
-- 支持 [ev_0970c0e956cded06](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): Recursion’s integrated AI-enabled drug design platform and small-molecule chemistry capabilities with Sanofi’s deep expertise in drug discovery and immunology
-- 支持 [ev_83ae875c0975e24e](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): REC-1245 was identified within 18 months after screening only 204 compounds using Recursion’s design platform
+- 支持 [ev_82a2ced2237b6d26](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): Recursion is constructing, using the Company’s imaging technology and proprietary machine-learning algorithms, unique maps of the inferred relationships amongst perturbation phenotypes in a given cellular context
+- 支持 [ev_7c9a0547cc898886](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): Predictions generated from the first whole-genome CRISPR knockout map, which was built by Recursion in partnership with Roche and Genentech from a subset of over 1 trillion internally manufactured iPSC-derived neuronal cells
+- 支持 [ev_3435d7a33e3b6e7a](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): opportunity was identified through unbiased phenotypic screening using Recursion’s proprietary AI foundation models, which revealed MEK1/2 inhibition as a potential way to reverse cellular phenotypes
+- 支持 [ev_3725dcd232bb6823](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): REC-1245 was identified within 18 months after screening only 204 compounds using Recursion’s design platform.
+- 支持 [ev_b0b183d569830fec](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): The candidate was delivered by the combination of Recursion’s integrated AI-enabled drug design platform and small-molecule chemistry capabilities with Sanofi’s deep expertise in drug discovery and immunology.
 - 支持 [ev_42f7a658eddfdb00](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): over 1 trillion internally manufactured iPSC-derived neuronal cells
-- 反证 [ev_cc34e7efd028ca6c](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): decrease the aggregate total of unique records of de-identified data the Company may access during the term
+- 反证 [ev_3c47e48a9db71793](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): Tempus will also provide the Company with access to a certain number of de-identified pathology records with linked clinical data during the term of the TxFM License Agreement.
 - 反证 [ev_ad1c869ea7a419b8](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): our ability to utilize third-party open source software and cloud-based infrastructure, on which we are dependent
-- 反证 [ev_5dff29efd720696b](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): Sanofi funding and leading further development and commercialization to advance the program toward patients
-- 反证 [ev_1c52f8ccc8cad55f](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): Roche will have an option to obtain an exclusive license to develop and commercialize such potential therapeutic small molecules or to exploit such target in the applicable exclusive field
-- 缺口：存在反证，需要进一步核验
+- 反证 [ev_47195daf59fbd53e](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): Sanofi funding and leading further development and commercialization to advance the program toward patients.
+- 缺口：按 Serenity 规则：自己控制的环节（data、model_software、design、manufacturing）不足两个或互不相连
 
 ### earnings_validation: partial
 
@@ -5880,7 +5883,7 @@ SGMT为preparation阶段Phase 3公司，亏损属预期。公司披露截至2026
 
 ## SOPH · complete
 
-审查记录：`state/serenity-reviews/SOPH-claude-2972d01ad95bd01155a4.json`
+审查记录：`state/serenity-reviews/SOPH-claude-fb9f54806484cee83b28.json`
 
 ### supply_chain_map: pass
 
@@ -5898,11 +5901,11 @@ SGMT为preparation阶段Phase 3公司，亏损属预期。公司披露截至2026
 
 ### chokepoint_evidence: partial
 
-按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。壁垒方面，公司持有涵盖NGS数据算法、基因组数据处理及HRD检测方法的专利组合（10项美国授权专利、67项境外授权专利），并将核心分析算法作为商业秘密保护，同时将平台生成的洞察数据（Insights）定性为公司独家财产；节点控制方面，公司自主构建并运营SOPHiA DDM云原生软件平台（模型/软件节点），直接处理客户基因组数据并提供端到端服务（数据节点、服务节点），仪器与耗材制造依赖第三方，部分测序步骤亦通过合作方网络外包。
+按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。壁垒方面，文中仅披露专利组合（美国已授权10件、海外67件）及商业秘密/专有算法作为知识产权保护，未见具体市场份额数据、替代成本描述或唯一供应商证据，亦无任何竞争对手被点名。公司自主运营数据处理和云端AI分析软件平台（SOPHiA DDM）两个环节，测序仪器与耗材依赖第三方制造商，样本测序服务则外包给合作方实验室。
 
 - 支持 [ev_73e004f02558481e](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): we solely owned 10 issued U.S. patents, 21 pending U.S. patent applications, 67 issued patents in foreign jurisdictions and approximately 42 pending patent applications in foreign jurisdictions
-- 支持 [ev_aa658bca92634abc](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): one issued patent in Israel, one issued patent in Australia, one issued patent in Brazil, one issued patent in Europe, one issued patent in India, three pending U.S. patent applications and two pending foreign patent applications in Canada and China relating to our algorithm for next generation sequencing data which is used in our SOPHiA DDM Platform
-- 支持 [ev_1b0dc03320164e5f](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): our analysis techniques and analysis generated using our proprietary algorithms in the context of our SOPHiA DDM Platform, are better kept as trade secrets in order to protect and maintain our competitive position
+- 支持 [ev_93e5a9a9b1979dfd](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): We also rely on trade secrets, including know-how, unpatented technology and other proprietary information, to strengthen our competitive position.
+- 支持 [ev_18a57d63c4ce6ec2](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): Insights are generated using our proprietary algorithms in the context of our SOPHiA DDM Platform and constitute our know-how and trade secrets.
 - 缺口：按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒
 
 ### customer_dependency: pass
@@ -5922,14 +5925,13 @@ SGMT为preparation阶段Phase 3公司，亏损属预期。公司披露截至2026
 
 ### multi_node_control: partial
 
-按 Serenity 规则：自己控制的环节（data、model_software、service）不足两个或互不相连。壁垒方面，公司持有涵盖NGS数据算法、基因组数据处理及HRD检测方法的专利组合（10项美国授权专利、67项境外授权专利），并将核心分析算法作为商业秘密保护，同时将平台生成的洞察数据（Insights）定性为公司独家财产；节点控制方面，公司自主构建并运营SOPHiA DDM云原生软件平台（模型/软件节点），直接处理客户基因组数据并提供端到端服务（数据节点、服务节点），仪器与耗材制造依赖第三方，部分测序步骤亦通过合作方网络外包。
+按 Serenity 规则：自己控制的环节（data、model_software）不足两个或互不相连。壁垒方面，文中仅披露专利组合（美国已授权10件、海外67件）及商业秘密/专有算法作为知识产权保护，未见具体市场份额数据、替代成本描述或唯一供应商证据，亦无任何竞争对手被点名。公司自主运营数据处理和云端AI分析软件平台（SOPHiA DDM）两个环节，测序仪器与耗材依赖第三方制造商，样本测序服务则外包给合作方实验室。
 
 - 支持 [ev_cf20adb87c88797e](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): we process thousands of genetic profiles for our customers around the world
-- 支持 [ev_f7a4de0b2a41a337](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): We purposefully built a cloud-native software platform capable of being used in decentralized locations and of analyzing data from multiple modalities and that can be scaled globally
-- 支持 [ev_a59880a909b3abee](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): bundle access model enables us to support our customers end-to-end across the data generation, analytics and reporting steps
-- 反证 [ev_e8727790d47e6705](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): We route their samples to selected SOPHiA DDM Platform collaborators who conduct the sequencing process for the customer and upload the resulting data into our SOPHiA DDM Platform
+- 支持 [ev_a218dac1c6973d2e](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): We purposefully built a cloud-native software platform capable of being used in decentralized locations and of analyzing data from multiple modalities
 - 反证 [ev_f0087a0537cedf51](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): we bundle third-party instruments and consumable products with our analytics solution to provide customers the ability to perform end-to-end workflows
-- 缺口：按 Serenity 规则：自己控制的环节（data、model_software、service）不足两个或互不相连
+- 反证 [ev_7c1d18e1dbbf0f0d](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): We route their samples to selected SOPHiA DDM Platform collaborators who conduct the sequencing process for the customer
+- 缺口：按 Serenity 规则：自己控制的环节（data、model_software）不足两个或互不相连
 
 ### earnings_validation: partial
 
@@ -6090,7 +6092,7 @@ Tectonic是临床阶段生物技术公司，专注于GPCR靶向生物制剂。�
 
 ## TEM · complete
 
-审查记录：`state/serenity-reviews/TEM-claude-09fe0c847b211ee0788b.json`
+审查记录：`state/serenity-reviews/TEM-claude-7239e1fdcc11eb2aa3a8.json`
 
 ### supply_chain_map: pass
 
@@ -6107,14 +6109,16 @@ Tectonic是临床阶段生物技术公司，专注于GPCR靶向生物制剂。�
 
 ### chokepoint_evidence: partial
 
-按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。障碍方面，Tempus是美国最大的癌症患者测序商之一，拥有230项已授权美国专利及专有多模态数据库，永久保留去识别化数据权利，并通过覆盖技术整合费用将平台嵌入临床工作流程形成高转换成本，但文件未点名任何具体竞争对手。在供应链节点方面，公司自主运营数据采集与结构化（五个诊断实验室）、AI软件与算法工具开发、直接对外数据许可销售及测序与临床试验匹配服务，同时依赖第三方数据许可及Pathos基础模型授权。
+按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒。壁垒方面，Tempus 持有230项已授权美国专利并依赖商业秘密，合同到期后仍保留去识别化数据权利形成转换成本，且以"美国最大癌症基因测序商之一"的市场地位和与医疗机构的专有数据关系构成供应集中壁垒；竞争对手仅以"传统诊断实验室"和"其他科技公司"等类别泛称出现，无具名对手。自营环节方面，公司自主采集与结构化数据、开发AI模型及软件工具、运营五个高通量诊断实验室（制造端）、直接签订企业销售合同，并提供临床试验匹配等服务，仅部分分子数据和云计算依赖第三方。
 
 - 支持 [ev_50a9281d245aadaf](https://www.sec.gov/Archives/edgar/data/1717115/000119312526442624/tem-20260930.htm) (primary-document): one of the largest sequencers of cancer patients, and patients with other diseases, in the United States
 - 支持 [ev_ed44871db5d8ab62](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): we believe our relationships with healthcare institutions provide us with proprietary data to deliver on the promise of AI in healthcare
-- 支持 [ev_bf40a577d9ceb575](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): We generally retain the rights we acquire in de-identified data even if our contractual obligations expire or are terminated
-- 支持 [ev_599e980c3add6b12](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): we cover the actual direct costs associated with the technical integrations needed to create a data connection
-- 支持 [ev_06b10d5688d21855](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): embedding our solution into the clinical care of patients
-- 支持 [ev_5230af8872a85c4e](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): 230 issued U.S. patents and allowed applications, 210 pending U.S. non-provisional patent applications, 5 pending U.S. provisional patent applications
+- 支持 [ev_52d6872fde66fa95](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): We generally retain the rights we acquire in de-identified data even if our contractual obligations expire or are terminated.
+- 支持 [ev_d679280c91299ddf](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): We cover these costs to help facilitate providers’ contribution of data and their corresponding use of our products
+- 支持 [ev_b0245d35b112fe33](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): 230 issued U.S. patents and allowed applications, 210 pending U.S. non-provisional patent applications
+- 支持 [ev_3327ef37160cbcd0](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): We also rely on trade secrets, including know-how, unpatented technology and other proprietary information, to strengthen our competitive position.
+- 反证 [ev_ac998759a9562e99](https://www.sec.gov/Archives/edgar/data/1717115/000119312526442624/tem-20260930.htm) (primary-document): Unlike traditional diagnostic labs, we can incorporate unique patient information, such as clinical, molecular, and imaging data
+- 反证 [ev_d30908e825a49aa9](https://www.sec.gov/Archives/edgar/data/1717115/000119312526442624/tem-20260930.htm) (primary-document): Unlike other technology companies, we are deeply rooted in clinical care delivery
 - 缺口：按 Serenity 规则：只有专利或不具体的壁垒，缺少具体的供应集中或替代壁垒
 
 ### customer_dependency: pass
@@ -6140,16 +6144,17 @@ Tectonic是临床阶段生物技术公司，专注于GPCR靶向生物制剂。�
 
 ### multi_node_control: partial
 
-按 Serenity 规则：自己控制的环节（data、model_software、manufacturing、sales、service）不足两个或互不相连。障碍方面，Tempus是美国最大的癌症患者测序商之一，拥有230项已授权美国专利及专有多模态数据库，永久保留去识别化数据权利，并通过覆盖技术整合费用将平台嵌入临床工作流程形成高转换成本，但文件未点名任何具体竞争对手。在供应链节点方面，公司自主运营数据采集与结构化（五个诊断实验室）、AI软件与算法工具开发、直接对外数据许可销售及测序与临床试验匹配服务，同时依赖第三方数据许可及Pathos基础模型授权。
+按 Serenity 规则：自己控制的环节（data、model_software、design、manufacturing、sales、service）不足两个或互不相连。壁垒方面，Tempus 持有230项已授权美国专利并依赖商业秘密，合同到期后仍保留去识别化数据权利形成转换成本，且以"美国最大癌症基因测序商之一"的市场地位和与医疗机构的专有数据关系构成供应集中壁垒；竞争对手仅以"传统诊断实验室"和"其他科技公司"等类别泛称出现，无具名对手。自营环节方面，公司自主采集与结构化数据、开发AI模型及软件工具、运营五个高通量诊断实验室（制造端）、直接签订企业销售合同，并提供临床试验匹配等服务，仅部分分子数据和云计算依赖第三方。
 
-- 支持 [ev_1a75a443f0a2a77f](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): we began by rebuilding the foundation of how data flows in and out of healthcare institutions, which we refer to as the Tempus Platform
-- 支持 [ev_0540fd793f88c77a](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): We have developed various software tools, including algorithmic agents that leverage large language models, to organize millions of records into a common format
+- 支持 [ev_82b7967d08028043](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): We ingest and structure data using optical character recognition, or OCR, natural language processing, or NLP, and proprietary workflow tools along with manual data curation.
+- 支持 [ev_0bb6e534fa98080a](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): We have developed various software tools, including algorithmic agents that leverage large language models, to organize millions of records into a common format that spans a variety of data types.
+- 支持 [ev_b811e37525589440](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): we deploy proprietary clinical data abstraction tools, including natural language processing, optical character recognition, and our abstraction software, to structure, harmonize, and de-identify the data we collect.
+- 支持 [ev_d7c6bb649b1a38ba](https://www.sec.gov/Archives/edgar/data/1717115/000119312526442624/tem-20260930.htm) (primary-document): costs incurred to develop new assays and products, including validation costs, research and development and allocated lab personnel costs
 - 支持 [ev_d9eb282b9dbf3447](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): we generate data for our Platform from our five high-throughput diagnostic testing labs in Chicago, Atlanta, Raleigh, Aliso Viejo and Minneapolis
-- 支持 [ev_77c5daaaf8006157](https://www.sec.gov/Archives/edgar/data/1717115/000119312526442624/tem-20260930.htm) (primary-document): These transactions consist of data licensing agreements, AI-enabled clinical trial matching, and analytical services
-- 支持 [ev_a5e01557e09fabb4](https://www.sec.gov/Archives/edgar/data/1717115/000119312526442624/tem-20260930.htm) (primary-document): provide AstraZeneca with certain of our products and services, including licensed data, sequencing, clinical trial matching, organoid modeling services, algorithm development
-- 反证 [ev_4194ee8aa3d5a8d7](https://www.sec.gov/Archives/edgar/data/1717115/000119312526442624/tem-20260930.htm) (primary-document): non-cancelable arrangements with third parties, primarily related to data licenses and cloud computing services
-- 反证 [ev_175e99a0743d5fb1](https://www.sec.gov/Archives/edgar/data/1717115/000119312526442624/tem-20260930.htm) (primary-document): we will receive a license to use the Foundation Model upon its completion
-- 缺口：按 Serenity 规则：自己控制的环节（data、model_software、manufacturing、sales、service）不足两个或互不相连
+- 支持 [ev_e90a582ad817230c](https://www.sec.gov/Archives/edgar/data/1717115/000119312526442624/tem-20260930.htm) (primary-document): AstraZeneca has committed to spend a minimum of $220.0 million on such products and services during the term of the MSA
+- 支持 [ev_9bbcf5821ddc25cb](https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm) (primary-document): clinical trial matching services or data de-identification and structuring services
+- 反证 [ev_9e98a1265799b47d](https://www.sec.gov/Archives/edgar/data/1717115/000119312526442624/tem-20260930.htm) (primary-document): The Company has entered into non-cancelable arrangements with third parties, primarily related to data licenses and cloud computing services.
+- 缺口：按 Serenity 规则：自己控制的环节（data、model_software、design、manufacturing、sales、service）不足两个或互不相连
 
 ### earnings_validation: pass
 

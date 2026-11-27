@@ -59,3 +59,13 @@ def test_gate_passages_keeps_named_counterparties(monkeypatch):
     monkeypatch.setattr(ccr.pcr, "filing_text", lambda url, allow_fetch=True: text)
     out = ccr.gate_passages([("10-K", "2026-02-24", "u")], limit=8, results_per_filing=1, parties_per_filing=2)
     assert any("Shenzhen Everwin" in p["text"] for p in out)
+
+
+def test_a_single_named_agreement_is_kept(monkeypatch):
+    filler = "supplier vendor manufacture license customers pharma hospitals users cloud sequencing revenue " * 20
+    one = ("Exhibit 10.9 Manufacturing Agreement, dated May 2, 2023, by and between Acme Robotics, Inc. and Delta Contract "
+           "Manufacturing LLC. Exhibit 19.1 Insider Trading Policy. ") + "z " * 1000
+    text = (filler[:2200] * 10) + one[:2200] + (filler[:2200] * 3)
+    monkeypatch.setattr(ccr.pcr, "filing_text", lambda url, allow_fetch=True: text)
+    out = ccr.gate_passages([("10-K", "2026-02-24", "u")], limit=6, results_per_filing=1, parties_per_filing=1)
+    assert any("Delta Contract" in p["text"] for p in out)

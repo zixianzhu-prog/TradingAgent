@@ -1,17 +1,24 @@
 # USPTO 专利受让独立核验
 
-> 待核验 7 家；已由官方记录核验 6 家；官方记录 35 条。
+> 待核验 14 家；已由官方记录核验 10 家；官方记录 61 条。
 
 > SEC 中的专利/许可说法只负责建立队列。只有 USPTO Assignment Center/Open Data Portal 的受让记录才能把独立核验改为通过。
 
 | 公司 | SEC 说法 | USPTO 状态 | 官方检索 |
 |---|---:|---|---|
-| ALEC · Alector, Inc. | 3 | pending-official-search | [按受让人检索](https://assignmentcenter.uspto.gov/search/intellectualProperty/search) |
+| ALEC · Alector, Inc. | 3 | verified | [按受让人检索](https://assignmentcenter.uspto.gov/search/intellectualProperty/search) |
 | ANTX · AN2 Therapeutics, Inc. | 1 | verified | [按受让人检索](https://assignmentcenter.uspto.gov/search/intellectualProperty/search) |
 | BDSX · BIODESIX INC | 1 | verified | [按受让人检索](https://assignmentcenter.uspto.gov/search/intellectualProperty/search) |
+| CBLL · CBLL | 1 | pending-official-search | [按受让人检索](https://assignmentcenter.uspto.gov/search/intellectualProperty/search) |
+| GENB · GENB | 2 | pending-official-search | [按受让人检索](https://assignmentcenter.uspto.gov/search/intellectualProperty/search) |
+| GRAL · GRAL | 6 | pending-official-search | [按受让人检索](https://assignmentcenter.uspto.gov/search/intellectualProperty/search) |
+| HTFL · HTFL | 1 | pending-official-search | [按受让人检索](https://assignmentcenter.uspto.gov/search/intellectualProperty/search) |
 | HURA · TuHURA Biosciences, Inc./NV | 1 | verified | [按受让人检索](https://assignmentcenter.uspto.gov/search/intellectualProperty/search) |
 | IRD · Opus Genetics, Inc. | 1 | verified | [按受让人检索](https://assignmentcenter.uspto.gov/search/intellectualProperty/search) |
+| OABI · OmniAb, Inc. | 2 | verified | [按受让人检索](https://assignmentcenter.uspto.gov/search/intellectualProperty/search) |
+| ODTX · Odyssey Therapeutics, Inc. | 1 | verified | [按受让人检索](https://assignmentcenter.uspto.gov/search/intellectualProperty/search) |
 | PRME · Prime Medicine, Inc. | 1 | verified | [按受让人检索](https://assignmentcenter.uspto.gov/search/intellectualProperty/search) |
+| RXRX · Recursion Pharmaceuticals | 6 | verified | [按受让人检索](https://assignmentcenter.uspto.gov/search/intellectualProperty/search) |
 | TECX · Tectonic Therapeutic, Inc. | 1 | verified | [按受让人检索](https://assignmentcenter.uspto.gov/search/intellectualProperty/search) |
 
 ## 专利被抵押给债权人（担保权益）
@@ -33,6 +40,8 @@
 
 | 公司 | 申请号 | 发明名称 | 受让人 | 转让人 | 登记日 | 卷/帧 |
 |---|---|---|---|---|---|---|
+| ALEC | 19542026 | ANTI-AMYLOID BETA PEPTIDE ANTIBODIES AND METHODS OF USE THER | ALECTOR LLC | BIENLY, THUNGA; BROWN, ERIC; NIVITCHANYONG, TARANGSRI; ROSEN | 2026-05-19 | [074695/0213](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/74695/213) |
+| ALEC | 63979679 | ANTI-AMYLOID BETA PEPTIDE ANTIBODIES AND METHODS OF USE THER | ALECTOR LLC | BIENLY, THUNGA; BROWN, ERIC; NIVITCHANYONG, TARANGSRI; ROSEN | 2026-02-13 | [073782/0694](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/73782/694) |
 | ANTX | 63803388 | BORON HETEROCYCLE CONTAINING COMPOUNDS AS ENPP INHIBITORS, A | AN2 THERAPEUTICS, INC. | AUBREY, MARISSA CAROLINE; NIEMAN, JAMES A. | 2025-08-05 | [071941/0309](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/71941/309) |
 | BDSX | 18730197 | SENSITIVE AND ACCURATE FEATURE VALUES FROM DEEP MALDI SPECTR | BIODESIX, INC. | KOC, MATTHEW; RODER, HEINRICH | 2024-07-19 | [068033/0359](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/68033/359) |
 | BDSX | 18171802 | PREDICTIVE TEST FOR PROGNOSIS OF MYELODYSPLASTIC SYNDROME PA | BIODESIX, INC. | RÖDER, HEINRICH; RÖDER, JOANNA; STEINGRIMSSON, ARNI | 2023-05-11 | [063617/0896](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/63617/896) |
@@ -47,12 +56,36 @@
 | HURA | 18060605 | MODIFIED MRNA FOR MULTICELL TRANSFORMATION | TUHURA BIOSCIENCES, INC. | MORPHOGENESIS, INC. | 2024-03-08 | [066778/0087](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/66778/87) |
 | IRD | 19566464 | METHODS AND COMPOSITIONS FOR TREATMENT OF MYDRIASIS | OCUPHIRE PHARMA, INC. | CHARIZANIS, KONSTANTINOS; SOOCH, MINA; HOFFMANN, BERNHARD; M | 2026-07-29 | [075447/0730](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/75447/730) |
 | IRD | 19566464 | METHODS AND COMPOSITIONS FOR TREATMENT OF MYDRIASIS | OPUS GENETICS, INC. | OCUPHIRE PHARMA, INC. | 2026-07-29 | [076271/0229](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/76271/229) |
+| OABI | 19147638 | ANTIBODIES FOR ZIKA VIRUS | OMNIAB, INC. | LI, YUXING; SHANG, XIAORAN | 2025-07-11 | [071683/0569](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/71683/569) |
+| OABI | PCTUS2025026857 | HETEROARYLINDOLE INHIBITORS OF APOL-1 | OMNIAB, INC. | MECHIN, INGRID; NAIR, ANIL | 2025-06-02 | [071289/0187](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/71289/187) |
+| OABI | PCTUS2025026857 | HETEROARYLINDOLE INHIBITORS OF APOL-1 | ICAGEN, LLC | BIOPHARMAWORKS, LLC | 2025-06-02 | [071289/0208](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/71289/208) |
+| OABI | PCTUS2025026857 | HETEROARYLINDOLE INHIBITORS OF APOL-1 | BIOPHARMAWORKS, LLC | DOW, ROBERT | 2025-06-02 | [071289/0205](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/71289/205) |
+| OABI | PCTUS2025026857 | HETEROARYLINDOLE INHIBITORS OF APOL-1 | OMNIAB, INC. | ICAGEN, LLC | 2025-06-02 | [071289/0211](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/71289/211) |
+| ODTX | 19540128 | INHIBITORS OF RIPK2 AND MEDICAL USES THEREOF | ODYSSEY THERAPEUTICS, INC. | AVERSA, ROBERT; KOELMEL, DOMINIK K.; PAN, SHIFENG; VANHUIS,  | 2026-05-01 | [074543/0524](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/74543/524) |
+| ODTX | 19497133 | ANTI-TRAILR2 ANTIGEN-BINDING PROTEINS AND USES THEREOF | ODYSSEY THERAPEUTICS, INC. | ABRAHAM, ROBERT THOMAS; DAKE, TAMARA; OPIPARI, ANTHONY W.; P | 2025-12-24 | [073311/0813](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/73311/813) |
+| ODTX | 19497133 | ANTI-TRAILR2 ANTIGEN-BINDING PROTEINS AND USES THEREOF | ODYSSEY THERAPEUTICS GMBH | HUBER, FERDINAND; PREISS, LAURA; KÖNIG, PAUL-ALBERT | 2025-12-24 | [073311/0904](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/73311/904) |
+| ODTX | 19497133 | ANTI-TRAILR2 ANTIGEN-BINDING PROTEINS AND USES THEREOF | ODYSSEY THERAPEUTICS, INC. | ODYSSEY THERAPEUTICS GMBH | 2025-12-24 | [073311/0961](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/73311/961) |
+| ODTX | 63930579 | ANTI-INTERLEUKIN-33 (IL-33) ANTIGEN-BINDING PROTEINS AND USE | ODYSSEY THERAPEUTICS GMBH | STUWE, TOBIAS; HUBER, FERDINAND; SWEE, LEE KIM; PREISS, LAUR | 2026-02-25 | [073889/0001](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/73889/1) |
+| ODTX | 63930579 | ANTI-INTERLEUKIN-33 (IL-33) ANTIGEN-BINDING PROTEINS AND USE | ODYSSEY THERAPEUTICS, INC. | FRANCHI, LUIGI; SOISSON, STEPHEN MICHAEL; OPIPARI, ANTHONY W | 2026-02-25 | [073889/0164](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/73889/164) |
+| ODTX | 63930579 | ANTI-INTERLEUKIN-33 (IL-33) ANTIGEN-BINDING PROTEINS AND USE | ODYSSEY THERAPEUTICS, INC. | ODYSSEY THERAPEUTICS GMBH | 2026-02-25 | [073889/0418](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/73889/418) |
+| ODTX | 63930579 | ANTI-INTERLEUKIN-33 (IL-33) ANTIGEN-BINDING PROTEINS AND USE | ODYSSEY THERAPEUTICS GMBH | KIRCHHOFF, ALEXANDER; KÖNIG, PAUL-ALBERT | 2026-04-13 | [074348/0206](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/74348/206) |
+| ODTX | 63930579 | ANTI-INTERLEUKIN-33 (IL-33) ANTIGEN-BINDING PROTEINS AND USE | ODYSSEY THERAPEUTICS, INC. | SCHMIDT, FLORIAN; FLINSPACH, MACK LOUIS, III | 2026-04-13 | [074349/0054](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/74349/54) |
+| ODTX | 63930579 | ANTI-INTERLEUKIN-33 (IL-33) ANTIGEN-BINDING PROTEINS AND USE | ODYSSEY THERAPEUTICS, INC. | ODYSSEY THERAPEUTICS GMBH | 2026-04-13 | [075391/0362](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/75391/362) |
 | PRME | 63914011 | GENOME EDITING COMPOSITIONS AND METHODS FOR TREATMENT OF ALP | PRIME MEDICINE, INC. | HARVEY, TYLER; KOSHELEVA, EKATERINA ALEXEEVNA | 2026-02-27 | [073927/0780](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/73927/780) |
 | PRME | 63914011 | GENOME EDITING COMPOSITIONS AND METHODS FOR TREATMENT OF ALP | PRIME MEDICINE, INC. | HARVEY, TYLER; KOSHELEVA, EKATERINA ALEXEEVNA | 2026-07-08 | [075204/0928](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/75204/928) |
 | PRME | PCTUS2025052253 | BUILDING BLOCKS FOR GAINAC-BASED LIPIDS | PRIME MEDICINE, INC. | GURUGE, CHARITHA; LAI, LI | 2026-05-05 | [074565/0722](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/74565/722) |
 | PRME | PCTUS2025052273 | UNIVERSAL LNP COMPOSITIONS | PRIME MEDICINE, INC. | HATIT, MARINE; GURUGE, CHARITHA; LAI, LI | 2026-05-05 | [074565/0643](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/74565/643) |
 | PRME | 19476304 | LIPID NANOPARTICLE (LNP) DELIVERY SYSTEMS AND FORMULATIONS | PRIME MEDICINE, INC. | HATIT, MARINE; GURUGE, CHARITHA; LAI, LI | 2026-05-05 | [074565/0322](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/74565/322) |
 | PRME | 19152740 | GENOME EDITING COMPOSITIONS AND METHODS FOR TREATMENT OF CYS | PRIME MEDICINE, INC. | XI, LINGHE; HARJANTO, DEWI | 2026-06-04 | [074850/0614](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/74850/614) |
+| RXRX | 19571048 | GENERATING BINDING FREE ENERGY UTILIZING INTELLIGENT RESTRAI | RECURSION PHARMACEUTICALS, INC. | WU, ZHIYI; KOENIG, GERHAD; COSSINS, BENJAMIN PHILIP | 2026-03-18 | [074118/0256](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/74118/256) |
+| RXRX | 19571048 | GENERATING BINDING FREE ENERGY UTILIZING INTELLIGENT RESTRAI | RECURSION PHARMACEUTICALS, INC. | WU, ZHIYI; KOENIG, GERHARD; COSSINS, BENJAMIN PHILIP | 2026-04-10 | [076018/0470](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/76018/470) |
+| RXRX | 19539879 | GENERATING DIVERSE AND NOVEL MOLECULAR STRUCTURES USING A GE | RECURSION PHARMACEUTICALS, INC. | BENGIO, EMMANUEL; ROY, JULIEN; CRETU, MIRUNA TEODORA | 2026-05-11 | [074619/0682](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/74619/682) |
+| RXRX | 63960177 | METHODS OF TREATING FAMILIAL ADENOMATOUS POLYPOSIS | RECURSION PHARMACEUTICALS, INC. | SHANKARAN, HARISH; SU, YING; ROWLEY, SHANE DOUGLAS | 2026-01-21 | [073537/0717](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/73537/717) |
+| RXRX | 19436903 | UTILIZING MOLECULAR DYNAMICS SIMULATION MODELS TO DETERMINE  | RECURSION PHARMACEUTICALS, INC. | THALER, STEPHAN; WU, ZHIYI; BARTLETT, GAIL JOY; TOSSOU, PRUD | 2026-01-06 | [073383/0442](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/73383/442) |
+| RXRX | 19430684 | AROMATIC HETEROCYCLIC COMPOUND, PHARMACEUTICAL COMPOSITION,  | GT APEIRON THERAPEUTICS LIMITED | GU, XIAOHUI; BAI, HAIYUN | 2026-01-08 | [073410/0449](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/73410/449) |
+| RXRX | 19430684 | AROMATIC HETEROCYCLIC COMPOUND, PHARMACEUTICAL COMPOSITION,  | EXSCIENTIA AI LIMITED | BESNARD, JÉRÉMY; BARBEAU, OLIVIER RÉMI | 2026-01-08 | [073410/0479](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/73410/479) |
+| RXRX | 19430684 | AROMATIC HETEROCYCLIC COMPOUND, PHARMACEUTICAL COMPOSITION,  | EXSCIENTIA AI LIMITED | GT APEIRON THERAPEUTICS LIMITED | 2026-01-08 | [073410/0507](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/73410/507) |
+| RXRX | 19430684 | AROMATIC HETEROCYCLIC COMPOUND, PHARMACEUTICAL COMPOSITION,  | RECURSION PHARMACEUTICALS, INC. | EXSCIENTIA AI LIMITED | 2026-01-08 | [073410/0524](https://assignmentcenter.uspto.gov/ipas/search/api/v3/public/download/patent/73410/524) |
 | TECX | 63617398 | RELAXIN-2 FUSION PROTEIN ANALOGS AND METHODS OF USING SAME | TECTONIC THERAPEUTIC, INC. | GRUSWITZ, FRANZ | 2024-05-16 | [067433/0216](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/67433/216) |
 | TECX | 63617398 | RELAXIN-2 FUSION PROTEIN ANALOGS AND METHODS OF USING SAME | TECTONIC THERAPEUTIC, INC. | DIENER, JOHN; MUSLIN, ANTHONY J.; ALVES, WASHINGTON; KNIHTIL | 2024-05-16 | [067433/0204](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/67433/204) |
 | TECX | 63617398 | RELAXIN-2 FUSION PROTEIN ANALOGS AND METHODS OF USING SAME | TECTONIC OPERATING COMPANY, INC. | ALPINE MERGER SUBSIDIARY, INC.; TECTONIC THERAPEUTIC, INC. | 2024-11-14 | [069261/0712](https://assignmentcenter.uspto.gov/ipas/search/api/v2/public/download/patent/69261/712) |

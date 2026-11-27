@@ -40,6 +40,7 @@ TERMS = re.compile(r"competit|market share|sole|single source|only (?:FDA|compan
                    r"proprietary|in-house|our own|we manufacture|manufacturing facility|contract manufactur|third-party|"
                    r"outsourc|direct sales|sales force|distribut|laborator|data|algorithm|software|design", re.I)
 STRONG = {"market_share", "sole_source", "only_cleared", "switching_cost"}
+NODE_WINDOW = 400
 CHAIN = ["data", "model_software", "design", "manufacturing", "sales", "service"]
 _Q = {"id": {"type": "string"}, "quote": {"type": "string"}}
 SCHEMA = {"type": "object", "required": ["barriers", "competitors", "nodes", "reason"], "properties": {
@@ -96,11 +97,22 @@ def barrier_is_specific(barrier: dict) -> bool:
     quote = barrier.get("quote", "")
     kind = barrier.get("kind")
     if kind == "market_share":
-        return bool(re.search(r"\b\d+(?:\.\d+)?\s*%|\bnumber one\b|\bno\.\s*1\b|\b#1\b", quote, re.I))
+        # Two kinds of evidence (Codex review T1): a percentage bound to share wording ("45% market share", "share of",
+        # "accounted for 45% of the market"), or an explicit rank of the company ("the number one provider of ...").
+        # "The addressable market grew 45%" is market growth, not the company's share.
+        pct = r"\d+(?:\.\d+)?\s*%"
+        share = (rf"{pct}\s+(?:of\s+(?:the\s+)?(?:\w+\s+){{0,4}})?(?:market\s+)?share\b|\bmarket\s+share\b.{{0,40}}{pct}|"
+                 rf"\bshare\s+of\b.{{0,40}}{pct}|{pct}.{{0,15}}\bshare\s+of\b|"
+                 rf"\b(?:accounted\s+for|represent(?:s|ed)?|hold|holds|have|has)\s+(?:approximately\s+|about\s+|over\s+)?{pct}\s+of\s+(?:the\s+)?(?:[\w.-]+\s+){{0,5}}market\b")
+        rank = (r"\b(?:number one|no\.\s*1|#1|largest|leading|market leader)\b.{0,40}"
+                r"\b(?:provider|supplier|company|manufacturer|player|vendor|seller|laborator(?:y|ies)|share)\b")
+        return bool(re.search(share, quote, re.I) or re.search(rank, quote, re.I))
     if kind == "sole_source":
         # "non-exclusive" or "not the sole" describe the opposite of a chokepoint
         return bool(re.search(r"(?<![-\w])(?<!not )(?<!non-)\b(?:only|sole|exclusive|single[- ]source)\b", quote, re.I)
-                    and not re.search(r"\bnon-exclusive\b|\bnot (?:the )?(?:only|sole|exclusive)\b", quote, re.I))
+                    and not re.search(r"\bnon-exclusive\b|\bnot (?:the )?(?:only|sole|exclusive)\b", quote, re.I)
+                    # an exclusive license is a deal term (the licensor cannot license others), not control of a scarce input
+                    and not re.search(r"\bexclusive\b[^.]{0,40}\blicen[cs]e|\blicen[cs]e[^.]{0,40}\bexclusive\b", quote, re.I))
     if kind == "only_cleared":
         return bool(re.search(r"\b(?:only|sole|first and only)\b", quote, re.I) and
                     re.search(r"\b(?:FDA|cleared|approved|authorized)\b", quote, re.I))
@@ -125,14 +137,13 @@ def node_status(nodes: list[dict]) -> tuple[str, str]:
     # Two steps mentioned in unrelated filing sections or products do not prove
     # one connected chain. A pass requires adjacent steps in the same evidence
     # passage; otherwise the facts stay partial for manual product-level review.
-    by_passage: dict[str, set[int]] = {}
-    for node in nodes:
-        if node.get("inHouse") and node.get("node") in CHAIN and node.get("id"):
-            by_passage.setdefault(node["id"], set()).add(CHAIN.index(node["node"]))
-    connected = any(any(b - a == 1 for a, b in zip(sorted(indexes), sorted(indexes)[1:]))
-                    for indexes in by_passage.values())
+    # Same passage is not enough (two products can share a passage): the two adjacent steps must be quoted within
+    # NODE_WINDOW characters of each other, i.e. in the same or the next sentence.
+    own_nodes = [n for n in nodes if n.get("inHouse") and n.get("node") in CHAIN and n.get("id") and n.get("pos") is not None]
+    connected = any(a["id"] == b["id"] and abs(CHAIN.index(a["node"]) - CHAIN.index(b["node"])) == 1
+                    and abs(a["pos"] - b["pos"]) <= NODE_WINDOW for a in own_nodes for b in own_nodes)
     if connected:
-        return "pass", f"按 Serenity 规则：同一证据段确认公司自己控制至少两个相连环节（{names}）"
+        return "pass", f"按 Serenity 规则：同一处原文确认公司自己控制至少两个相连环节（{names}）"
     if own:
         return "partial", f"按 Serenity 规则：自己控制的环节（{names}）不足两个或互不相连"
     return "unknown", "按 Serenity 规则：未找到公司自己控制供应链环节的证据"
@@ -155,7 +166,9 @@ def to_gates(answer: dict, passages: list[dict], allow_fetch: bool = True) -> tu
             # invents short aliases (b1, n2, ...); retaining those aliases can
             # incorrectly merge facts from different passages or split facts
             # that came from the same passage when node_status groups them.
-            out.append({"id": p["id"], "url": p["url"], "quote": q["quote"],
+            hit = pcr.locate(p.get("text", ""), q["quote"])
+            pos = p["text"].find(hit[0]) if hit else None
+            out.append({"id": p["id"], "url": p["url"], "quote": q["quote"], "pos": pos,
                         **{k: q[k] for k in ("kind", "node", "inHouse") if k in q}})
         return out
 
