@@ -8,7 +8,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from benchmark_evaluator import create_table
-from performance_tracker import build_report, connect, record_cohort_history, record_predictions
+from performance_tracker import backfill_prediction_tasks, build_report, connect, record_cohort_history, record_predictions
 
 
 class PerformanceTrackerTests(unittest.TestCase):
@@ -59,6 +59,26 @@ class PerformanceTrackerTests(unittest.TestCase):
             self.assertEqual(record_cohort_history(connection, str(report_dir), "ai-medicine"), 0)
             connection.close()
 
+    def test_legacy_task_backfill_uses_only_frozen_columns(self):
+        with tempfile.TemporaryDirectory() as directory:
+            connection = connect(str(Path(directory) / "history.db"))
+            connection.execute(
+                "INSERT INTO predictions VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                ("TEST", "2026-01-02", 100, 70, 80, 60, -0.2, 75, 65, -0.03, 72, "high", "research-ready", "then"),
+            )
+            connection.commit()
+            self.assertEqual(backfill_prediction_tasks(connection), 3)
+            self.assertEqual(backfill_prediction_tasks(connection), 0)
+            rows = connection.execute(
+                "SELECT task_type, claim FROM prediction_tasks ORDER BY task_type"
+            ).fetchall()
+            self.assertEqual([(row[0], row[1]) for row in rows], [
+                ("event_impact", "negative"),
+                ("long_term_quality", "durable-candidate"),
+                ("price_direction", "down"),
+            ])
+            connection.close()
+
     def test_prediction_is_frozen_on_first_insert(self):
         with tempfile.TemporaryDirectory() as directory:
             connection = connect(str(Path(directory) / "history.db"))
@@ -71,6 +91,17 @@ class PerformanceTrackerTests(unittest.TestCase):
             self.assertEqual(record_predictions(connection, market, news, serenity), 0)
             frozen = connection.execute("SELECT news_score FROM predictions").fetchone()[0]
             self.assertEqual(frozen, 70)
+            tasks = connection.execute(
+                "SELECT task_type, claim FROM prediction_tasks ORDER BY task_type"
+            ).fetchall()
+            self.assertEqual(
+                [(row[0], row[1]) for row in tasks],
+                [
+                    ("event_impact", "neutral"),
+                    ("long_term_quality", "needs-validation"),
+                    ("price_direction", "up"),
+                ],
+            )
             cohort = connection.execute("SELECT cohort FROM prediction_cohorts").fetchone()[0]
             self.assertEqual(cohort, "general")
             connection.close()

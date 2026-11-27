@@ -43,6 +43,18 @@ def connect(path: str) -> sqlite3.Connection:
           cohort TEXT NOT NULL,
           PRIMARY KEY (ticker, as_of, cohort)
         );
+        CREATE TABLE IF NOT EXISTS prediction_tasks (
+          ticker TEXT NOT NULL,
+          as_of TEXT NOT NULL,
+          task_type TEXT NOT NULL,
+          horizon_sessions INTEGER,
+          claim TEXT NOT NULL,
+          numeric_value REAL,
+          confidence_score REAL,
+          evidence_basis TEXT NOT NULL,
+          recorded_at TEXT NOT NULL,
+          PRIMARY KEY (ticker, as_of, task_type)
+        );
         """
     )
     return connection
@@ -119,8 +131,101 @@ def record_predictions(connection: sqlite3.Connection, market: dict[str, Any], n
             "INSERT OR IGNORE INTO prediction_cohorts (ticker, as_of, cohort) VALUES (?, ?, ?)",
             (ticker, signal["as_of"], cohort),
         )
+        # Freeze three different questions separately.  Serenity is a long-term
+        # research judgment, news is an event-impact hypothesis, and Kronos is a
+        # short-horizon price forecast.  They must never be presented as one
+        # calibrated probability.
+        serenity_decision = serenity_by_ticker.get(ticker, {}).get("serenity_decision", "unreviewed")
+        long_term_claim = {
+            "research-ready": "durable-candidate",
+            "watch": "needs-validation",
+            "revalidate": "revalidate",
+            "reject": "rejected",
+        }.get(serenity_decision, "unreviewed")
+        sentiment = float(company_news.get("sentiment", 0.0) or 0.0)
+        event_claim = "positive" if sentiment > 0.1 else "negative" if sentiment < -0.1 else "neutral"
+        price_claim = "up" if forecast_return > 0.005 else "down" if forecast_return < -0.005 else "flat"
+        tasks = (
+            ("long_term_quality", 1260, long_term_claim, None, None, {
+                "serenityDecision": serenity_decision,
+                "purpose": "5-10 year company-quality thesis; not a price forecast",
+            }),
+            ("event_impact", 20, event_claim, sentiment, float(company_news.get("reliability_score", 0) or 0), {
+                "newsScore": scores["news"],
+                "relevanceScore": int(company_news.get("relevance_score", 0) or 0),
+                "reliabilityScore": int(company_news.get("reliability_score", 0) or 0),
+                "purpose": "event-direction hypothesis; requires later fundamental and price labels",
+            }),
+            ("price_direction", 5, price_claim, forecast_return, float(scores["kronos"]), {
+                "forecastReturn": forecast_return,
+                "technicalScore": scores["technical"],
+                "purpose": "5-session market forecast scored only against future prices",
+            }),
+        )
+        for task_type, horizon, claim, value, task_confidence, basis in tasks:
+            connection.execute(
+                """INSERT OR IGNORE INTO prediction_tasks
+                   (ticker, as_of, task_type, horizon_sessions, claim, numeric_value,
+                    confidence_score, evidence_basis, recorded_at)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                (ticker, signal["as_of"], task_type, horizon, claim, value,
+                 task_confidence, json.dumps(basis, ensure_ascii=False, sort_keys=True), recorded_at),
+            )
     connection.commit()
     return count
+
+
+def backfill_prediction_tasks(connection: sqlite3.Connection) -> int:
+    """Split legacy frozen rows without using any information observed later.
+
+    Every input comes from the original append-only ``predictions`` row.  This is
+    a schema migration, not a historical re-score.
+    """
+    inserted = 0
+    rows = connection.execute("SELECT * FROM predictions ORDER BY as_of, ticker").fetchall()
+    for row in rows:
+        serenity_decision = row["serenity_decision"]
+        long_term_claim = {
+            "research-ready": "durable-candidate",
+            "watch": "needs-validation",
+            "revalidate": "revalidate",
+            "reject": "rejected",
+        }.get(serenity_decision, "unreviewed")
+        sentiment = float(row["sentiment"] or 0.0)
+        event_claim = "positive" if sentiment > 0.1 else "negative" if sentiment < -0.1 else "neutral"
+        forecast = float(row["forecast_return"] or 0.0)
+        price_claim = "up" if forecast > 0.005 else "down" if forecast < -0.005 else "flat"
+        tasks = (
+            ("long_term_quality", 1260, long_term_claim, None, None, {
+                "serenityDecision": serenity_decision,
+                "purpose": "5-10 year company-quality thesis; not a price forecast",
+                "migration": "original frozen row only",
+            }),
+            ("event_impact", 20, event_claim, sentiment, float(row["reliability_score"] or 0), {
+                "newsScore": row["news_score"], "relevanceScore": row["relevance_score"],
+                "reliabilityScore": row["reliability_score"],
+                "purpose": "event-direction hypothesis; requires later fundamental and price labels",
+                "migration": "original frozen row only",
+            }),
+            ("price_direction", 5, price_claim, forecast, float(row["kronos_score"] or 0), {
+                "forecastReturn": forecast, "technicalScore": row["technical_score"],
+                "purpose": "5-session market forecast scored only against future prices",
+                "migration": "original frozen row only",
+            }),
+        )
+        for task_type, horizon, claim, value, confidence, basis in tasks:
+            before = connection.total_changes
+            connection.execute(
+                """INSERT OR IGNORE INTO prediction_tasks
+                   (ticker, as_of, task_type, horizon_sessions, claim, numeric_value,
+                    confidence_score, evidence_basis, recorded_at)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                (row["ticker"], row["as_of"], task_type, horizon, claim, value, confidence,
+                 json.dumps(basis, ensure_ascii=False, sort_keys=True), row["recorded_at"]),
+            )
+            inserted += connection.total_changes - before
+    connection.commit()
+    return inserted
 
 
 def benchmark_rows(connection: sqlite3.Connection, horizon: int) -> list[sqlite3.Row]:
@@ -159,6 +264,27 @@ def build_report(connection: sqlite3.Connection, output: str) -> None:
             f"| {row['as_of']} | {row['ticker']} | {row['price']:.2f} | {row['news_score']} | "
             f"{row['technical_score']} | {row['kronos_score']} | {row['combined_score']} | {row['serenity_decision']} |"
         )
+    task_rows = connection.execute(
+        """SELECT task_type, COUNT(*) AS samples, COUNT(DISTINCT as_of) AS dates,
+                  MAX(as_of) AS latest_as_of
+           FROM prediction_tasks GROUP BY task_type ORDER BY task_type"""
+    ).fetchall()
+    task_labels = {
+        "long_term_quality": "长期公司质量（Serenity）",
+        "event_impact": "事件影响（新闻）",
+        "price_direction": "5日价格方向（Kronos）",
+    }
+    lines.extend(["", "## 三类预测任务已分离", "",
+                  "> 三类记录回答不同问题，不能把 Serenity 门槛、新闻情绪或 Kronos 方向解释成同一个上涨概率。", "",
+                  "| 任务 | 冻结样本 | 独立日期 | 最新日期 | 如何验证 |",
+                  "| --- | ---: | ---: | --- | --- |"])
+    validation = {
+        "long_term_quality": "财报、客户、临床和5–10年论点证伪",
+        "event_impact": "20日基本面变化及相对XBI表现",
+        "price_direction": "5个真实交易日后的方向与超额收益",
+    }
+    for row in task_rows:
+        lines.append(f"| {task_labels.get(row['task_type'], row['task_type'])} | {row['samples']} | {row['dates']} | {row['latest_as_of']} | {validation.get(row['task_type'], '待定义')} |")
     lines.extend(["", "## 未来表现回填", "",
                   "| 后续交易日 | 已完成样本 | 平均收益 | 平均超额XBI | Kronos方向命中率 | 高分组平均收益 | 低分组平均收益 | Serenity通过组 |",
                   "| ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |"])
@@ -198,11 +324,12 @@ def main() -> None:
     serenity = json.loads(Path(args.serenity_assessment).read_text(encoding="utf-8"))
     theme_stocks = json.loads(Path(args.theme_stock_report).read_text(encoding="utf-8")) if args.theme_stock_report else None
     connection = connect(args.database)
+    migrated_tasks = backfill_prediction_tasks(connection)
     recorded = record_predictions(connection, market, news, serenity, theme_stocks, args.cohort)
     cohort_labels = record_cohort_history(connection, args.market_dir, args.cohort)
     build_report(connection, args.output)
     connection.close()
-    print(json.dumps({"recorded": recorded, "cohortLabels": cohort_labels, "report": args.output}))
+    print(json.dumps({"recorded": recorded, "migratedTasks": migrated_tasks, "cohortLabels": cohort_labels, "report": args.output}))
 
 
 if __name__ == "__main__":

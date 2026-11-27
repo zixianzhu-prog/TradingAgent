@@ -98,9 +98,9 @@ def market_rows(market: dict, links: dict, news: dict, serenity: dict, category:
     return rows
 
 
-def performance_rows(database: Path) -> tuple[list[dict], dict]:
+def performance_rows(database: Path) -> tuple[list[dict], dict, dict]:
     if not database.is_file():
-        return [], {str(h): {"samples": 0} for h in (1, 5, 20, 60)}
+        return [], {str(h): {"samples": 0} for h in (1, 5, 20, 60)}, {"tasks": [], "latest": []}
     connection = sqlite3.connect(database)
     connection.row_factory = sqlite3.Row
     predictions = [dict(row) for row in connection.execute(
@@ -143,8 +143,26 @@ def performance_rows(database: Path) -> tuple[list[dict], dict]:
             "momentumReturn": avg("momentum_return"),
             "validationStatus": "insufficient-sample" if len(rows) < 30 or len({row["prediction_as_of"] for row in rows}) < 10 else "initial-evidence" if avg("excess_spy") is not None and avg("excess_spy") > 0 and avg("excess_xlv") > 0 and avg("excess_xbi") is not None and avg("excess_xbi") > 0 else "not-validated",
         }
+    has_tasks = connection.execute(
+        "SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='prediction_tasks'"
+    ).fetchone()[0]
+    task_payload = {"tasks": [], "latest": []}
+    if has_tasks:
+        task_payload["tasks"] = [dict(row) for row in connection.execute(
+            """SELECT task_type AS taskType, COUNT(*) AS samples,
+                      COUNT(DISTINCT as_of) AS distinctDates, MAX(as_of) AS latestAsOf
+               FROM prediction_tasks GROUP BY task_type ORDER BY task_type"""
+        ).fetchall()]
+        latest_day = connection.execute("SELECT MAX(as_of) FROM prediction_tasks").fetchone()[0]
+        if latest_day:
+            task_payload["latest"] = [dict(row) for row in connection.execute(
+                """SELECT ticker, as_of AS asOf, task_type AS taskType,
+                          horizon_sessions AS horizonSessions, claim, numeric_value AS numericValue,
+                          confidence_score AS confidenceScore
+                   FROM prediction_tasks WHERE as_of=? ORDER BY ticker, task_type""", (latest_day,)
+            ).fetchall()]
     connection.close()
-    return predictions, metrics
+    return predictions, metrics, task_payload
 
 
 def build_stock_detail(row: dict, serenity_row: dict, theme: dict) -> dict:
@@ -230,7 +248,8 @@ def main() -> None:
     institutional_ownership = load(ROOT / "state/institutional-ownership.json", {"filings": [], "summary": {}})
     opinion_benchmark = load(ROOT / "state/opinion-benchmark.json", {"calls": [], "fundSignals": [], "summary": {}})
     management_radar = load(ROOT / "state/management-radar.json", {"companies": [], "summary": {}})
-    predictions, performance = performance_rows(ROOT / "state/investment-score-history.db")
+    event_prediction_validation = load(ROOT / "state/event-prediction-validation.json", {"summary": {}, "episodes": [], "scored": []})
+    predictions, performance, prediction_tasks = performance_rows(ROOT / "state/investment-score-history.db")
     stocks = market_rows(ai_medicine_market, theme_links, company_news, serenity, "ai_medicine")
     stocks += market_rows(nvidia_market, theme_links, company_news, serenity, "nvidia")
     stocks.sort(key=lambda row: row["combinedScore"], reverse=True)
@@ -278,6 +297,8 @@ def main() -> None:
         },
         "predictions": predictions,
         "performance": performance,
+        "predictionTasks": prediction_tasks,
+        "eventPredictionValidation": event_prediction_validation,
         "tradingAgentsReviews": list(tradingagents.values()),
         "latestUpdates": latest_updates,
         "eventAgent": event_revalidation,

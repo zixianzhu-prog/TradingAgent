@@ -388,6 +388,12 @@ trend-agent/.venv/bin/python scripts/performance_tracker.py \
   --theme-stock-report trend-agent/reports/daily/theme-stocks/theme-stock-links.json \
   --database state/investment-score-history.db \
   --output outputs/investment-score-performance.md
+# Score only independent, explicit news-event episodes after 20 real trading
+# sessions. Neutral and low-reliability calls remain visible but never count as hits.
+trend-agent/.venv/bin/python scripts/event_outcome_evaluator.py \
+  --database state/investment-score-history.db \
+  --json-output state/event-prediction-validation.json \
+  --markdown-output outputs/event-prediction-validation.md
 # Freeze Serenity research tiers (weekly or on change) in the same ledger, score them
 # against XBI on real trading days, then rebuild the demo page with the track record.
 (cd scripts && ../ai-fund-lab/.venv/bin/python serenity_call_ledger.py)

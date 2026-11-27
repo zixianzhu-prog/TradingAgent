@@ -23,6 +23,7 @@ KEY_REPORTS = (
     "outputs/event-revalidation-queue.md",
     "outputs/finrobot-event-analysis.md",
     "outputs/agent-benchmark-validation.md",
+    "outputs/event-prediction-validation.md",
     "outputs/ai-medicine-thesis-memory.md",
     "outputs/scientific-frontier.md",
     "outputs/science-commercialization-graph.md",
@@ -55,6 +56,12 @@ def build(root: Path, news_db: Path, score_db: Path) -> dict:
     outcomes = rows(scores, """SELECT horizon, COUNT(*) AS samples,
         COUNT(DISTINCT prediction_as_of) AS independentDates FROM benchmark_outcomes
         GROUP BY horizon ORDER BY horizon""")
+    has_tasks = scores.execute(
+        "SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='prediction_tasks'"
+    ).fetchone()[0]
+    prediction_tasks = rows(scores, """SELECT task_type, COUNT(*) AS samples,
+        COUNT(DISTINCT as_of) AS independentDates FROM prediction_tasks
+        GROUP BY task_type ORDER BY task_type""") if has_tasks else []
     raw_runs = []
     for cohort, relative in MARKET_DIRS:
         files = sorted((root / relative).glob("run-*.json"))
@@ -89,12 +96,14 @@ def build(root: Path, news_db: Path, score_db: Path) -> dict:
             "frozenPredictions": sum(row["predictions"] for row in prediction_dates),
             "independentMarketDates": len(prediction_dates),
             "latestPredictionMarketDate": latest_prediction,
+            "separatedPredictionTasks": sum(row["samples"] for row in prediction_tasks),
         },
         "articleDates": article_dates,
         "themeRunDates": theme_dates,
         "predictionDates": prediction_dates,
         "cohorts": cohorts,
         "benchmarkOutcomes": outcomes,
+        "predictionTasks": prediction_tasks,
         "rawRuns": raw_runs,
         "reports": reports,
         "integrityRules": [
@@ -117,6 +126,7 @@ def render(payload: dict) -> str:
         f"- 冻结预测：**{storage['frozenPredictions']}** 条",
         f"- 独立市场日期：**{storage['independentMarketDates']}** 天",
         f"- 最新预测对应市场日：**{storage['latestPredictionMarketDate'] or '—'}**", "",
+        f"- 分离后的任务记录：**{storage['separatedPredictionTasks']}** 条（长期质量、事件影响、价格方向分别保存）", "",
         "## 新闻入库日期", "", "| 发现日期 | 新入库文章 | 来源数 |", "|---|---:|---:|",
     ]
     for row in payload["articleDates"]:
@@ -130,6 +140,9 @@ def render(payload: dict) -> str:
     lines += ["", "## 未来表现回填", "", "| 周期 | 已回填样本 | 独立预测日 |", "|---:|---:|---:|"]
     for row in payload["benchmarkOutcomes"]:
         lines.append(f"| {row['horizon']} | {row['samples']} | {row['independentDates']} |")
+    lines += ["", "## 分离后的预测任务", "", "| 任务 | 冻结记录 | 独立日期 |", "|---|---:|---:|"]
+    for row in payload["predictionTasks"]:
+        lines.append(f"| {row['task_type']} | {row['samples']} | {row['independentDates']} |")
     lines += ["", "## 原始运行文件", "", "| 队列 | 文件数 | 文件中的市场日期 |", "|---|---:|---|"]
     for row in payload["rawRuns"]:
         dates = ", ".join(f"{day} ({count}次)" for day, count in sorted(row["marketDates"].items())) or "—"
