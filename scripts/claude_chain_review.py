@@ -42,6 +42,9 @@ TERMS = re.compile(r"supplier|suppl(?:y|ies)|vendor|cloud|manufactur|sequenc|lic
                    r"biopharma|revenue|total revenue|net loss|gross margin|increased|decreased|three months ended|year ended", re.I)
 RESULTS = re.compile(r"three months ended|nine months ended|six months ended|year ended|total revenues?|net loss|net income|"
                      r"\$\s?[\d.,]+\s?(?:million|billion)|compared to|increase of|decrease of", re.I)
+PARTIES = re.compile(r"(?:Supply|Manufactur\w*|Purchase|Sourcing|Hosting|License|Collaboration|Services|Distribution)[\w ,]{0,40}"
+                     r"Agreement[^.]{0,120}by and (?:between|among)|customers? (?:include|such as)|payors? (?:include|such as)|"
+                     r"\bMedicare\b|\bMedicaid\b|accounted for (?:approximately )?\d+%|\d+% of (?:our )?(?:total )?(?:net )?revenue", re.I)
 _Q = {"type": "object", "required": ["id", "quote"], "properties": {"id": {"type": "string"}, "quote": {"type": "string"}}}
 _PARTY = {"type": "array", "items": {"type": "object", "required": ["id", "quote", "party"], "properties": {
     "id": {"type": "string"}, "quote": {"type": "string"},
@@ -84,7 +87,7 @@ def thesis_of(ticker: str) -> str:
             "or partnerships.") if quote else ""
 
 
-def gate_passages(filings: list[tuple[str, str, str]], limit: int = 18, results_per_filing: int = 3) -> list[dict]:
+def gate_passages(filings: list[tuple[str, str, str]], limit: int = 18, results_per_filing: int = 3, parties_per_filing: int = 3) -> list[dict]:
     out = []
     for form, filed, url in filings:
         text = pcr.filing_text(url, allow_fetch=True) or ""
@@ -95,6 +98,10 @@ def gate_passages(filings: list[tuple[str, str, str]], limit: int = 18, results_
         # Dated results get their own slots, so supply-chain prose cannot crowd them out.
         by_results = sorted(((len(RESULTS.findall(c)), i) for i, c in enumerate(chunks) if i not in picked), reverse=True)
         picked |= {i for n, i in by_results[:results_per_filing] if n >= 4}
+        # Named counterparties get their own slots too: exhibit-index agreements ("Supply Agreement ... by and between X and
+        # Y") and passages naming customers or payers. Without them the map can miss the one named supplier or customer.
+        by_parties = sorted(((len(PARTIES.findall(c)), i) for i, c in enumerate(chunks) if i not in picked), reverse=True)
+        picked |= {i for n, i in by_parties[:parties_per_filing] if n >= 2}
         for i in sorted(picked):
             out.append({"id": "sc_" + ser.digest([url, chunks[i]])[:16], "url": url, "title": f"{form} filed {filed}", "text": chunks[i]})
     return out
@@ -103,7 +110,7 @@ def gate_passages(filings: list[tuple[str, str, str]], limit: int = 18, results_
 def ask(ticker: str, thesis: str, passages: list[dict], model: str, timeout: int = 600) -> dict | None:
     prompt = ("Report facts for two Serenity gates. supply_chain_map rubric: \"" + ser.GATES["supply_chain_map"] + "\" "
               "earnings_validation rubric: \"" + ser.GATES["earnings_validation"] + "\" You do NOT grade. From the passages only, "
-              "list with exact quotes: upstream inputs and who supplies them; the company's own product; downstream users. Then list "
+              "list with exact quotes: upstream inputs and who supplies them (an exhibit-index agreement naming the counterparty counts); the company's own product; downstream users or payers. Then list "
               "financial results with their period, marking each actual or guidance, and whether it is consistent with, inconsistent "
               "with, or unrelated to this stated thesis: \"" + thesis + "\". Revenue, volume, customer or partnership figures for the company's products bear on a thesis about adoption or growth: growth is consistent, decline is inconsistent; mark unrelated only figures that do not bear on it (e.g. tax, interest). Supplier dependence, concentration and similar risks go "
               "under otherRisks; they are recorded, not graded. Every quote must be at least 20 characters and an exact substring of the passage whose id you give. "

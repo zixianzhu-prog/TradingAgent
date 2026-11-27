@@ -4,15 +4,15 @@
 
 | # | Ticker | Company | Potential | Evidence | Flag |
 | ---: | --- | --- | ---: | ---: | --- |
-| 1 | CBLL | Ceribell | 86.3 | 77 |  |
-| 2 | HTFL | HeartFlow | 84.7 | 74 |  |
+| 1 | CBLL | Ceribell | 86.3 | 82 |  |
+| 2 | HTFL | HeartFlow | 84.7 | 80 |  |
 | 3 | ISRG | Intuitive Surgical | 79.7 | 72 |  |
 | 4 | GEHC | GE HealthCare Technologies | 76.3 | 66 |  |
 | 5 | CAI | Caris Life Sciences | 75.7 | 75 |  |
 | 6 | NTRA | Natera | 75.0 | 72 |  |
 | 7 | SDGR | Schrodinger | 74.7 | 75 |  |
-| 8 | TEM | Tempus AI | 73.7 | 73 |  |
-| 9 | RDNT | RadNet / DeepHealth | 73.7 | 69 |  |
+| 8 | RDNT | RadNet / DeepHealth | 73.7 | 74 |  |
+| 9 | TEM | Tempus AI | 73.7 | 73 |  |
 | 10 | SOPH | SOPHiA GENETICS | 72.7 | 71 |  |
 | 11 | IQV | IQVIA | 70.3 | 65 |  |
 | 12 | RXRX | Recursion Pharmaceuticals | 64.7 | 72 |  |

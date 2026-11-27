@@ -79,13 +79,13 @@
 | SDGR | infrastructure research candidate | 86.0 | 82/100 | 64/100 | 财报:partial；瓶颈:partial；多节点控制:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 优先深挖 |
 | CERT | validated workflow infrastructure challenger | 86.0 | 72/100 | 64/100 | 财报:partial；瓶颈:partial；纯业务暴露:partial；多节点控制:partial；治理:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 优先深挖 |
 | ISRG | 高质量手术机器人平台，AI为次要增量 | 86.0 | 69/100 | 76/100 | 产业链:partial；客户依赖:partial；瓶颈:partial；纯业务暴露:partial；治理:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 优先深挖 |
-| RDNT | 影像中心运营商 + AI期权（非纯AI） | 84.0 | 77/100 | 56/100 | 产业链:partial；瓶颈:partial；纯业务暴露:partial；多节点控制:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 优先深挖 |
+| RDNT | 影像中心运营商 + AI期权（非纯AI） | 84.0 | 85/100 | 57/100 | 瓶颈:partial；纯业务暴露:partial；多节点控制:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 优先深挖 |
 | IQV | 临床数据/CRO平台，AI为效率层 | 82.0 | 56/100 | 79/100 | 产业链:partial；客户依赖:partial；瓶颈:fail；多节点控制:partial；反方论点:partial；治理:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 优先深挖 |
-| HTFL | news-triggered, Serenity-reviewed | 82.0 | 82/100 | 62/100 | 产业链:partial；瓶颈:partial；多节点控制:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 优先深挖 |
+| HTFL | news-triggered, Serenity-reviewed | 82.0 | 90/100 | 64/100 | 瓶颈:partial；多节点控制:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 优先深挖 |
 | NTRA | scaled diagnostic-data compounder | 81.0 | 72/100 | 71/100 | 客户依赖:partial；瓶颈:partial；纯业务暴露:partial；多节点控制:partial；治理:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 优先深挖 |
 | CAI | news-triggered, Serenity-reviewed | 80.0 | 82/100 | 64/100 | 财报:partial；瓶颈:partial；多节点控制:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 优先深挖 |
 | RXRX | high-upside watchlist | 79.0 | 77/100 | 64/100 | 财报:partial；瓶颈:partial；多节点控制:partial；治理:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 优先深挖 |
-| CBLL | news-triggered, Serenity-reviewed | 78.0 | 87/100 | 62/100 | 产业链:partial；瓶颈:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 优先深挖 |
+| CBLL | news-triggered, Serenity-reviewed | 78.0 | 95/100 | 63/100 | 瓶颈:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 优先深挖 |
 | SOPH | 直接精准医疗数据平台 | 75.0 | 77/100 | 62/100 | 财报:partial；瓶颈:partial；多节点控制:partial；治理:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 优先深挖 |
 | GH | scaled precision-oncology challenger | 74.0 | 38/100 | 64/100 | 产业链:partial；客户依赖:partial；财报:partial；瓶颈:unknown；纯业务暴露:partial；多节点控制:unknown；反方论点:partial；治理:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 观察 |
 | ABCL | secondary watchlist | 69.0 | 53/100 | 81/100 | 产业链:partial；客户依赖:partial；财报:partial；瓶颈:partial；纯业务暴露:partial；多节点控制:partial；反方论点:partial | 待核验 | 不适用 / 待核验 | 待核验 | 待核验/不适用 | 观察 |
@@ -126,7 +126,7 @@ NVDA 并非因为基本面得分低而被清零，而是硬事件政策把相关
 
 ### RDNT — RadNet / DeepHealth
 
-- **当前行动层级：** 优先深挖；研究优先分 84.0，完整度 77/100，证据质量 56/100，有据分 69/100。
+- **当前行动层级：** 优先深挖；研究优先分 84.0，完整度 85/100，证据质量 57/100，有据分 74/100。
 - **长期逻辑：** RadNet links real imaging centers, patient workflow, image data and DeepHealth software. That vertical loop may create a more defensible learning and distribution advantage than a standalone radiology algorithm vendor.
 - **为什么现在关注：** Q3 2026 total revenue grew 22.1%; Digital Health revenue grew 32.6% to $32.9 million, while the FDA mapping identified nine DeepHealth/Aidence records.
 - **Serenity作用：** Controls multiple connected nodes—care delivery, workflow, data and AI software—but Digital Health is still a small share of total revenue and must prove independent economics.
@@ -190,7 +190,7 @@ NVDA 并非因为基本面得分低而被清零，而是硬事件政策把相关
 
 ### HTFL — HeartFlow
 
-- **当前行动层级：** 优先深挖；研究优先分 82.0，完整度 82/100，证据质量 62/100，有据分 74/100。
+- **当前行动层级：** 优先深挖；研究优先分 82.0，完整度 90/100，证据质量 64/100，有据分 80/100。
 - **长期逻辑：** The closest thing to a reimbursement chokepoint in AI medicine: its AI coronary analysis (FFR-CT) is paid under a Category I CPT code, insurers' coverage policies for it apply to about 99% of insured US lives, and it is written into cardiology guidelines. Its second product, plaque analysis, got its own Category I code in 2026 and is covered for about 75%. Every CT scanner and hospital that adopts it makes it harder to displace.
 - **为什么现在关注：** Q3 2026 revenue grew 57% with an 83.6% gross margin, and more than 1,800 institutions have adopted it.
 - **Serenity作用：** A payment chokepoint: the scarce asset is the billing code, coverage and clinical evidence, not the algorithm alone.
@@ -206,7 +206,7 @@ NVDA 并非因为基本面得分低而被清零，而是硬事件政策把相关
 
 ### CBLL — Ceribell
 
-- **当前行动层级：** 优先深挖；研究优先分 78.0，完整度 87/100，证据质量 62/100，有据分 77/100。
+- **当前行动层级：** 优先深挖；研究优先分 78.0，完整度 95/100，证据质量 63/100，有据分 82/100。
 - **长期逻辑：** A pure-play AI brain-monitoring platform with first-in-class FDA clearances: the first device cleared to help diagnose status epilepticus and the only cleared delirium monitor, backed by a Medicare add-on payment. It controls hardware, algorithm, manufacturing and distribution.
 - **为什么现在关注：** Q3 2026 revenue grew 30% with gross margin near 90%.
 - **Serenity作用：** A clinical-workflow chokepoint in the ICU and emergency room: rapid EEG where hospitals often have no neurologist on site.

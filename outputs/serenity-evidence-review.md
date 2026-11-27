@@ -1256,15 +1256,17 @@ CEO和CFO评估认为截至2025年12月31日内部控制有效（基于COSO 2013
 
 ## CARL · complete
 
-审查记录：`state/serenity-reviews/CARL-claude-9fef1b2a36cbdf673842.json`
+审查记录：`state/serenity-reviews/CARL-claude-a61e990634fc49da9535.json`
 
 ### supply_chain_map: partial
 
-按 Serenity 规则：缺少上游的具体关系证据。上游依赖合同制造商生产钛合金植入体及第三方软件服务；公司产品为aprevo Technology Platform（AI驱动个性化脊柱手术计划+aprevo植入物+corra颈椎系统）；下游用户为医院、门诊手术中心、外科医生及患者。多期实际财务数据均显示收入持续高速增长（FY2024 $27.2M→FY2025 $50.5M增85.9%；Q3 2026同比增64.9%；2026前三季度$56.6M增60.2%），与"AI产品驱动收入增长"论点一致；净亏损及毛利率数据与论点无直接关联。
+按 Serenity 规则：缺少上游的具体关系证据。供应链图显示：上游为未具名合同制造商（提供钛合金椎间融合器制造及相关第三方服务）和独立销售代理；公司产品为aprevo技术平台（AI手术规划软件+个性化椎间融合器及corra颈椎钢板系统）；下游付费方为医院（主要购买方）及Medicare/Medicaid/商业保险等第三方支付机构。业绩数据方面，FY2025收入$50.5M同比增长85.9%、Q3 2026单季$21.6M同比增长64.9%、2026年前九个月$56.6M同比增长60.2%，均由aprevo手术量增加驱动，与AI产品adoption推动收入增长的论点高度一致；无任何收入或销量数据与论点相悖。
 
-- 支持 [ev_18ffb78dccd70895](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): The aprevo Technology Platform represents an end-to-end, integrated digital technology platform designed to deliver better surgical results, reduce the need for revision surgery, and improve long-term outcomes.
+- 支持 [ev_9bbfc99188624554](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): The aprevo Technology Platform is the first available solution in the United States to provide personalized digital surgical plans and the accompanying aprevo interbody implants that are tailored to each patient’s pathology and vertebral bone topography.
 - 支持 [ev_0daf10aa916686bb](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): We sell our aprevo interbody implants, corra cervical plating systems and accompanying inserter instruments to customers under standard pricing schedules.
-- 支持 [ev_bb55273e240a3aeb](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): successfully educating hospitals, ambulatory surgical centers, surgeons, and patients of the relative benefits of the aprevo Technology Platform compared to stock implants
+- 支持 [ev_0c37ff8f3b862a3f](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): Hospitals are the primary purchasers of our aprevo interbody implants under the aprevo Technology Platform, which are primarily used in a hospital inpatient setting.
+- 支持 [ev_3c21640f4bec4f94](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): third-party payors, including private insurers, governmental payors, such as Medicare and Medicaid, managed care organizations, and administrative contractors to cover and pay for all or part of the cost of a spine surgery
+- 支持 [ev_813f910315bec6a8](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): both the surgeon or other healthcare provider and the hospital or healthcare facility submit claims for reimbursement to the third-party payor.
 - 缺口：按 Serenity 规则：缺少上游的具体关系证据
 
 ### chokepoint_evidence: partial
@@ -1308,13 +1310,15 @@ CEO和CFO评估认为截至2025年12月31日内部控制有效（基于COSO 2013
 
 ### earnings_validation: pass
 
-按 Serenity 规则：有标明日期的实际财务结果支持论点。上游依赖合同制造商生产钛合金植入体及第三方软件服务；公司产品为aprevo Technology Platform（AI驱动个性化脊柱手术计划+aprevo植入物+corra颈椎系统）；下游用户为医院、门诊手术中心、外科医生及患者。多期实际财务数据均显示收入持续高速增长（FY2024 $27.2M→FY2025 $50.5M增85.9%；Q3 2026同比增64.9%；2026前三季度$56.6M增60.2%），与"AI产品驱动收入增长"论点一致；净亏损及毛利率数据与论点无直接关联。
+按 Serenity 规则：有标明日期的实际财务结果支持论点。供应链图显示：上游为未具名合同制造商（提供钛合金椎间融合器制造及相关第三方服务）和独立销售代理；公司产品为aprevo技术平台（AI手术规划软件+个性化椎间融合器及corra颈椎钢板系统）；下游付费方为医院（主要购买方）及Medicare/Medicaid/商业保险等第三方支付机构。业绩数据方面，FY2025收入$50.5M同比增长85.9%、Q3 2026单季$21.6M同比增长64.9%、2026年前九个月$56.6M同比增长60.2%，均由aprevo手术量增加驱动，与AI产品adoption推动收入增长的论点高度一致；无任何收入或销量数据与论点相悖。
 
-- 支持 [ev_b4c9799861831a9f](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): we recognized revenue of $15.2 million and $9.4 million, respectively, representing period-over-period growth of 61.2%
+- 支持 [ev_cde804d4f4a2230e](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): For the three months ended December 31, 2025 and 2024, we recognized revenue of $15.2 million and $9.4 million, respectively, representing period-over-period growth of 61.2%.
 - 支持 [ev_f7bc4837c0a47471](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): We recognized $50.5 million of revenue in 2025, based on the timing of the use of aprevo interbody implants in surgical procedures.
+- 支持 [ev_fb8b769060260113](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): The increase of $23.3 million, or 85.9%, was primarily driven by increased sales of aprevo interbody implants during the year ended December 31, 2025 as compared to the year ended December 31, 2024, with our average revenue per procedure substantially constant.
 - 支持 [ev_e941bb0359389d7a](https://www.sec.gov/Archives/edgar/data/1794546/000119312526071551/carl-20251231.htm) (primary-document): We recognized $27.2 million of revenue in 2024, based on the timing of the use of aprevo interbody implants in surgical procedures.
-- 支持 [ev_85ffc0d783d248c4](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): Revenue $ 21,554 $ 13,074 $ 8,480 64.9 % 100.0 % 100.0 %
-- 支持 [ev_2ad286c945b8bf09](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): Revenue was $56.6 million and $35.3 million for the nine months ended September 30, 2026 and 2025, respectively. The increase of $21.3 million, or 60.2%
+- 支持 [ev_7bc92f78fa6ece6e](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): Revenue $ 21,554 $ 13,074 $ 8,480 64.9 %
+- 支持 [ev_d558c72d12ae4e4a](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): Revenue was $56.6 million and $35.3 million for the nine months ended September 30, 2026 and 2025, respectively. The increase of $21.3 million, or 60.2%, was primarily driven by increased volume of Carlsmed Technology Platform lumbar and cervical surgical procedures in the current nine-month period
+- 支持 [ev_a941b5a6b347cbfc](https://www.sec.gov/Archives/edgar/data/1794546/000179454626000026/carl-20260930.htm) (primary-document): Upon achievement of a certain revenue milestone in June 2026, the interest-only period and repayment terms of the Term Loan were extended through April 15, 2028
 
 ### counter_thesis: pass
 
@@ -1350,17 +1354,21 @@ CEO和CFO评估认为截至2025年12月31日内部控制有效（基于COSO 2013
 
 ## CBLL · complete
 
-审查记录：`state/serenity-reviews/CBLL-claude-fe99ae4328bc482481ab.json`
+审查记录：`state/serenity-reviews/CBLL-claude-526becbd330b1aec5d29.json`
 
-### supply_chain_map: partial
+### supply_chain_map: pass
 
-按 Serenity 规则：缺少上游的具体关系证据。供应链地图：上游为中国、越南无名第三方制造商（供应一次性Wearable头带）及多家零部件供应商（部分为单一来源），公司在加州桑尼维尔完成最终组装；产品为Ceribell System（硬件Wearable+Clarity订阅软件），下游客户为急症护理医院。财务结果对照论点：2025财年产品收入与订阅收入分别实现两位数增长（订阅+41%），2026年前三季度产品与订阅收入同比均增长约31%/29%，毛利率达88%–90%，与论点中首创FDA许可AI脑监测平台持续扩大医院采用的主张一致；净亏损扩大属成本扩张，与论点无直接关联。
+按 Serenity 规则：上游投入、公司产品、下游用户均有具体关系的一手证据。地图：上游为斯坦福大学（独家IP许可）、深圳爱旺及越南爱旺（Wearable头带制造）、Ease Care/Luxen & Kersen（供应协议）及多家中越组件供应商，公司在加州桑尼维尔完成最终组装，向医院客户销售一次性Wearable头带与Clarity订阅，由Medicare/Medicaid及商业保险报销。结果：FY2025产品收入与订阅收入均两位数增长（订阅+41%，毛利润+38%），2026年Q3/9M产品收入继续同比增长31%、订阅增长28%-29%，所有营收与采用量数据均与"首创FDA许可AI脑监测平台+Medicare附加支付驱动扩张"的命题一致，无矛盾数据，税务/NOL条目与命题无关。
 
-- 支持 [ev_b0b2372173fc6d5d](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): Product revenue is generated by the sale of our disposable Wearables that are intended for single patient use. Subscription revenue is generated by monthly subscription fees charged to our hospital customers for use of Clarity, recorders, and our portal.
+- 支持 [ev_2b2c55f0a5b97961](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): Exclusive (Equity) Agreement, dated June 15, 2015, by and between the Board of Trustees of the Leland Stanford Junior University and CeriBell, Inc.
+- 支持 [ev_448c4900ab15e497](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): Corporate Supply Agreement, dated January 10, 2022, by and between CeriBell, Inc. and Shenzhen Everwin Precision Technology Co., Ltd.
+- 支持 [ev_62a21f147ef83b26](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): Amendment No. 3 to the Corporate Supply Agreement, dated September 22, 2025, by and among CeriBell, Inc., Shenzhen Everwin Precision Technology Co., Ltd., and Everwin Precision (Viet Nam) Technology Co., Ltd.
+- 支持 [ev_02e32109d773ea87](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): Corporate Supply Agreement, dated February 1, 2024, by and between CeriBell, Inc. and Ease Care under the management of Luxen and Kersen.
 - 支持 [ev_2e8347a67afb1ed7](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): improvements aimed at increasing the value provided by the Ceribell System for diagnosing and monitoring seizures and delirium in the acute care setting
+- 支持 [ev_b7fac257a254363e](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): Product revenue is generated by the sale of our disposable Wearables that are intended for single patient use.
+- 支持 [ev_a6c1bb0b07a72072](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): Subscription revenue is generated by monthly subscription fees charged to our hospital customers for use of Clarity, recorders, and our portal.
 - 支持 [ev_931164cfdcaf896b](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): monthly subscription fees charged to our hospital customers for use of Clarity, recorders, and our portal
-- 支持 [ev_d790fa86ea47e7f0](https://www.sec.gov/Archives/edgar/data/1861107/000119312526445555/cbll-20260930.htm) (primary-document): extending adoption of the Ceribell System to new accounts and expanding the utilization of the Ceribell System in existing accounts
-- 缺口：按 Serenity 规则：缺少上游的具体关系证据
+- 支持 [ev_f48d4394f43bd7d4](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): governmental authorities, private health insurers and other third-party payers provide coverage for and establish adequate reimbursement levels for our products and related services
 
 ### chokepoint_evidence: partial
 
@@ -1396,11 +1404,11 @@ CEO和CFO评估认为截至2025年12月31日内部控制有效（基于COSO 2013
 
 ### earnings_validation: pass
 
-按 Serenity 规则：有标明日期的实际财务结果支持论点。供应链地图：上游为中国、越南无名第三方制造商（供应一次性Wearable头带）及多家零部件供应商（部分为单一来源），公司在加州桑尼维尔完成最终组装；产品为Ceribell System（硬件Wearable+Clarity订阅软件），下游客户为急症护理医院。财务结果对照论点：2025财年产品收入与订阅收入分别实现两位数增长（订阅+41%），2026年前三季度产品与订阅收入同比均增长约31%/29%，毛利率达88%–90%，与论点中首创FDA许可AI脑监测平台持续扩大医院采用的主张一致；净亏损扩大属成本扩张，与论点无直接关联。
+按 Serenity 规则：有标明日期的实际财务结果支持论点。地图：上游为斯坦福大学（独家IP许可）、深圳爱旺及越南爱旺（Wearable头带制造）、Ease Care/Luxen & Kersen（供应协议）及多家中越组件供应商，公司在加州桑尼维尔完成最终组装，向医院客户销售一次性Wearable头带与Clarity订阅，由Medicare/Medicaid及商业保险报销。结果：FY2025产品收入与订阅收入均两位数增长（订阅+41%，毛利润+38%），2026年Q3/9M产品收入继续同比增长31%、订阅增长28%-29%，所有营收与采用量数据均与"首创FDA许可AI脑监测平台+Medicare附加支付驱动扩张"的命题一致，无矛盾数据，税务/NOL条目与命题无关。
 
 - 支持 [ev_c8402ef62cad9dfd](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): Product revenue growth was primarily driven by the addition of new customers and an increase in utilization of headbands and resulting headband sales, driven by continued customer education that resulted in increased awareness and adoption of our products.
-- 支持 [ev_c293e2e126711fc7](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): Subscription revenue for fiscal year 2025 increased $6.4 million, or 41%, compared to fiscal year 2024. Subscription revenue growth was primarily driven by an increase in new customer subscriptions.
-- 支持 [ev_4977883d9d988fbc](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): Gross profit $ 78,274 $ 56,750 $ 21,524 38 % Gross margin 88 % 87 % 1 %
+- 支持 [ev_3fae57a28c479854](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): Subscription revenue for fiscal year 2025 increased $6.4 million, or 41%, compared to fiscal year 2024.
+- 支持 [ev_dbb3c813f28b5d06](https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm) (primary-document): Gross profit $ 78,274 $ 56,750 $ 21,524 38 % Gross margin 88 % 87 % 1 % Product gross profit 57,207 41,870 15,337 37 % Product gross margin 85 % 84 % 1 % Subscription gross profit 21,067 14,880 6,187 42 % Subscription gross margin 97 % 97 % 0 %
 - 支持 [ev_f2f195297c426136](https://www.sec.gov/Archives/edgar/data/1861107/000119312526445555/cbll-20260930.htm) (primary-document): Product revenue for the three and nine months ended September 30, 2026, increased $5.2 million and $15.1 million, or 31% and 31%, respectively, compared to the same period of fiscal year 2025.
 - 支持 [ev_244a07870e767923](https://www.sec.gov/Archives/edgar/data/1861107/000119312526445555/cbll-20260930.htm) (primary-document): Subscription revenue for the three and nine months ended September 30, 2026, increased $1.5 million and $4.5 million, respectively, or 28% and 29%, respectively, compared to the same period of fiscal year 2025.
 - 支持 [ev_643c98208b3898a8](https://www.sec.gov/Archives/edgar/data/1861107/000119312526445555/cbll-20260930.htm) (primary-document): Gross profit $ 26,340 $ 19,942 $ 6,398 32 % Gross margin 90 % 88 % 2 %
@@ -2855,16 +2863,15 @@ CEO Andrew Dudum和CFO Oluyemi Okupe在位。但2026年11月4日任命Dr. Andrew
 
 ## HNGE · complete
 
-审查记录：`state/serenity-reviews/HNGE-claude-759f581b6debd2695a26.json`
+审查记录：`state/serenity-reviews/HNGE-claude-a4cb95f22fa0cc95f304.json`
 
 ### supply_chain_map: partial
 
-按 Serenity 规则：缺少上游的具体关系证据。供应链图谱显示，上游为无名第三方设备制造商（提供Enso/Perifit硬件）、IP授权方及第三方/开源软件供应商；公司产品为订阅制肌骨疼痛数字平台及配套设备；下游为企业/机构/合作伙伴客户（clients）及会员患者（members）。收入在2025年全年（+51%）、2026年Q3（+52%）及2026年前九个月（+51%）均持续高速增长，与论点"AI产品采用推动收入增长"的结果方向一致，但段落将增长驱动归因于现有客户保留与扩张，未直接将增长与TrueMotion AI技术的采用挂钩。
+按 Serenity 规则：缺少上游的具体关系证据。地图：上游为无名第三方设备制造商（Enso/Perifit）及技术IP授权方；公司产品为基于AI的MSK订阅平台与Enso/Perifit可穿戴设备；下游付款方为大型健康计划（HCSC、Elevance、Aetna）及其他合作伙伴，经由约60家合作伙伴分发给会员。论点检验：FY2025收入同比增长51%至$5.879亿，2026年Q3及前九月收入分别同比增长52%与51%，会员数持续增加，合作伙伴数维持在60家以上，所有收入与合作伙伴数据均与"AI产品采用推动收入、客户及合作伙伴增长"的论点一致，未发现矛盾性数据；利息收入下降等非经营性项目与论点无关。
 
 - 支持 [ev_d7adcbd0f1bb2751](https://www.sec.gov/Archives/edgar/data/1673743/000162828026013808/hnge-20251231.htm) (primary-document): Revenue is the income generated from member subscription fees paid to access our technology platform to treat and prevent MSK pain.
-- 支持 [ev_ed3060abcd91be2b](https://www.sec.gov/Archives/edgar/data/1673743/000162828026072251/hnge-20260930.htm) (primary-document): Enso and Perifit devices that we provide to certain members in connection with our platform and programs
-- 支持 [ev_2288b2deef2a06eb](https://www.sec.gov/Archives/edgar/data/1673743/000162828026013808/hnge-20251231.htm) (primary-document): businesses, organizations or partners that have an agreement (collectively, “clients”), in an amount that reflects the consideration the entity expects to be entitled to in exchange for those goods or services
-- 支持 [ev_86656cd406263c8a](https://www.sec.gov/Archives/edgar/data/1673743/000162828026013808/hnge-20251231.htm) (primary-document): the Company’s members represent an eligible life who has engaged with the Company’s platform at any point and whose engagement has been billed or is contractually eligible to be billed
+- 支持 [ev_37ffee7926b58da4](https://www.sec.gov/Archives/edgar/data/1673743/000162828026072251/hnge-20260930.htm) (primary-document): Enso and Perifit devices that we provide to certain members in connection with our platform and programs.
+- 支持 [ev_c0e51a04c2f3ebfd](https://www.sec.gov/Archives/edgar/data/1673743/000162828026013808/hnge-20251231.htm) (primary-document): client contracts through (i) Health Care Service Corporation (“HCSC”) accounted for 17.5% and 17.1% of our revenue, respectively, (ii) Elevance Health, Inc., formerly known as Anthem, Inc. (“Elevance”), accounted for 13.7% and 14.0% of our revenue, respectively, and (iii) Aetna Life Insurance Company (“Aetna”) accounted for 10.5% and 11.6% of our revenue, respectively.
 - 缺口：按 Serenity 规则：缺少上游的具体关系证据
 
 ### chokepoint_evidence: partial
@@ -2909,11 +2916,15 @@ CEO Andrew Dudum和CFO Oluyemi Okupe在位。但2026年11月4日任命Dr. Andrew
 
 ### earnings_validation: pass
 
-按 Serenity 规则：有标明日期的实际财务结果支持论点。供应链图谱显示，上游为无名第三方设备制造商（提供Enso/Perifit硬件）、IP授权方及第三方/开源软件供应商；公司产品为订阅制肌骨疼痛数字平台及配套设备；下游为企业/机构/合作伙伴客户（clients）及会员患者（members）。收入在2025年全年（+51%）、2026年Q3（+52%）及2026年前九个月（+51%）均持续高速增长，与论点"AI产品采用推动收入增长"的结果方向一致，但段落将增长驱动归因于现有客户保留与扩张，未直接将增长与TrueMotion AI技术的采用挂钩。
+按 Serenity 规则：有标明日期的实际财务结果支持论点。地图：上游为无名第三方设备制造商（Enso/Perifit）及技术IP授权方；公司产品为基于AI的MSK订阅平台与Enso/Perifit可穿戴设备；下游付款方为大型健康计划（HCSC、Elevance、Aetna）及其他合作伙伴，经由约60家合作伙伴分发给会员。论点检验：FY2025收入同比增长51%至$5.879亿，2026年Q3及前九月收入分别同比增长52%与51%，会员数持续增加，合作伙伴数维持在60家以上，所有收入与合作伙伴数据均与"AI产品采用推动收入、客户及合作伙伴增长"的论点一致，未发现矛盾性数据；利息收入下降等非经营性项目与论点无关。
 
 - 支持 [ev_be702755ae8dbc0c](https://www.sec.gov/Archives/edgar/data/1673743/000162828026013808/hnge-20251231.htm) (primary-document): Revenue for the year ended December 31, 2025 increased by $197.5 million, or 51%, compared to the year ended December 31, 2024. The increase was primarily due to revenue growth from existing clients.
+- 支持 [ev_3507972cf0a3c802](https://www.sec.gov/Archives/edgar/data/1673743/000162828026013808/hnge-20251231.htm) (primary-document): Revenue $ 587,860 $ 390,404 $ 197,456 51 %
 - 支持 [ev_6430c5aed03c364c](https://www.sec.gov/Archives/edgar/data/1673743/000162828026072251/hnge-20260930.htm) (primary-document): Revenue for the three months ended September 30, 2026 increased by $80.8 million, or 52%, compared to the three months ended September 30, 2025.
 - 支持 [ev_daacf13db22eacb2](https://www.sec.gov/Archives/edgar/data/1673743/000162828026072251/hnge-20260930.htm) (primary-document): Revenue for the nine months ended September 30, 2026 increased by $213.0 million, or 51%, compared to the nine months ended September 30, 2025.
+- 支持 [ev_9acf6a3257a0a97a](https://www.sec.gov/Archives/edgar/data/1673743/000162828026072251/hnge-20260930.htm) (primary-document): The increase within existing clients was the result of retaining members within, and adding more members to, our existing member base.
+- 支持 [ev_cb53089fc31a6978](https://www.sec.gov/Archives/edgar/data/1673743/000162828026072251/hnge-20260930.htm) (primary-document): As of September 30, 2026, we had over 60 partners.
+- 支持 [ev_dffc05a8706dcaef](https://www.sec.gov/Archives/edgar/data/1673743/000162828026013808/hnge-20251231.htm) (primary-document): As of December 31, 2025 and 2024, we had approximately 60 partners.
 
 ### counter_thesis: pass
 
@@ -2948,16 +2959,16 @@ CEO Andrew Dudum和CFO Oluyemi Okupe在位。但2026年11月4日任命Dr. Andrew
 
 ## HTFL · complete
 
-审查记录：`state/serenity-reviews/HTFL-claude-57795ff676938d9fb79e.json`
+审查记录：`state/serenity-reviews/HTFL-claude-b3a4b363b9b828a65976.json`
 
-### supply_chain_map: partial
+### supply_chain_map: pass
 
-按 Serenity 规则：缺少下游的具体关系证据。供应链图谱：上游为AWS云托管、无名技术许可方及客户CT机提交的CCTA影像；产品为Heartflow FFR CT分析与斑块分析AI软件；下游为医院、医疗系统、诊所及阅片医生。各期财务数据显示营收年增40%（2025年全年）、49%（2026年前三季度），案例量增速47%/78%/89%，斑块分析CPT编码75577自2026年1月生效后明显推动商业化，均与论断所述报销壁垒拉动持续扩张一致；利息支出及权证重估等项目与论断无关。
+按 Serenity 规则：上游投入、公司产品、下游用户均有具体关系的一手证据。供应链图谱：上游为AWS云基础设施（有明确协议约束）及匿名第三方技术授权持有方（收取特许权使用费）；公司产品为两款AI分析软件（FFR CT Analysis与Plaque Analysis）；下游使用付款方为医院、门诊、独立影像中心，以及Medicare与UnitedHealthcare、Aetna、Cigna、Anthem、各地蓝十字蓝盾等命名商业保险。各期财务结果均与论点一致：FY2025收入同比+40%、案例量+47%，Q3 2026收入+57%、案例量+89%，9M 2026收入+49%、案例量+78%，斑块分析CPT代码75577于2026年1月1日生效后明确驱动增量案例，整体采用加速趋势印证护城河主张；唯一不一致项为CMS拟议2026 OPPS规则提出削减Medicare APC报销最高15%，对论点中"有利报销"部分构成潜在矛盾，但该规则尚未最终确定。
 
 - 支持 [ev_cdb0fdc63d692596](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000042/htfl-20251231x10k.htm) (primary-document): Because our agreement with AWS limits AWS’ liability for damages, we may not be able to recover a material portion of our liabilities to our customers and third parties from AWS.
-- 支持 [ev_fba38c0098cace27](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000042/htfl-20251231x10k.htm) (primary-document): Our Heartflow FFR CT Analysis is indicated for patients with stenosis levels between 40% and 90%
+- 支持 [ev_13200262bf804ca4](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000042/htfl-20251231x10k.htm) (primary-document): Our Heartflow FFR CT Analysis is indicated for patients with stenosis levels between 40% and 90%, and we believe approximately 33% of patients have this level of stenosis.
 - 支持 [ev_871f95f4407d12b4](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000173/htfl-20260930x10q.htm) (primary-document): Our Heartflow Plaque Analysis is indicated for patients with stenosis levels between 1% and 69%, and we believe approximately 60% of patients have this level of stenosis.
-- 缺口：按 Serenity 规则：缺少下游的具体关系证据
+- 支持 [ev_a3219d6661295ea0](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000042/htfl-20251231x10k.htm) (primary-document): UnitedHealthcare, Aetna, Cigna, Anthem, and regional Blue Cross Blue Shield plans
 
 ### chokepoint_evidence: partial
 
@@ -2999,18 +3010,17 @@ CEO Andrew Dudum和CFO Oluyemi Okupe在位。但2026年11月4日任命Dr. Andrew
 
 ### earnings_validation: pass
 
-按 Serenity 规则：有标明日期的实际财务结果支持论点。供应链图谱：上游为AWS云托管、无名技术许可方及客户CT机提交的CCTA影像；产品为Heartflow FFR CT分析与斑块分析AI软件；下游为医院、医疗系统、诊所及阅片医生。各期财务数据显示营收年增40%（2025年全年）、49%（2026年前三季度），案例量增速47%/78%/89%，斑块分析CPT编码75577自2026年1月生效后明显推动商业化，均与论断所述报销壁垒拉动持续扩张一致；利息支出及权证重估等项目与论断无关。
+按 Serenity 规则：有标明日期的实际财务结果支持论点。供应链图谱：上游为AWS云基础设施（有明确协议约束）及匿名第三方技术授权持有方（收取特许权使用费）；公司产品为两款AI分析软件（FFR CT Analysis与Plaque Analysis）；下游使用付款方为医院、门诊、独立影像中心，以及Medicare与UnitedHealthcare、Aetna、Cigna、Anthem、各地蓝十字蓝盾等命名商业保险。各期财务结果均与论点一致：FY2025收入同比+40%、案例量+47%，Q3 2026收入+57%、案例量+89%，9M 2026收入+49%、案例量+78%，斑块分析CPT代码75577于2026年1月1日生效后明确驱动增量案例，整体采用加速趋势印证护城河主张；唯一不一致项为CMS拟议2026 OPPS规则提出削减Medicare APC报销最高15%，对论点中"有利报销"部分构成潜在矛盾，但该规则尚未最终确定。
 
 - 支持 [ev_2b777a4ae1dd07fa](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000042/htfl-20251231x10k.htm) (primary-document): Revenue increased $50.2 million, or 40%, to $176.0 million during the year ended December 31, 2025, compared to $125.8 million during the year ended December 31, 2024.
-- 支持 [ev_15875442c9fac9e8](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000042/htfl-20251231x10k.htm) (primary-document): The increase in revenue was primarily attributable to a 47% increase in revenue case volume
-- 支持 [ev_b33d2651810cccea](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000042/htfl-20251231x10k.htm) (primary-document): The percentage of our U.S. revenue cases attributable to clinic and office-based accounts was 32%, 28% and 22% for the years ended December 31, 2025, 2024 and 2023, respectively.
+- 支持 [ev_5d0f0f8c7d2c3edb](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000042/htfl-20251231x10k.htm) (primary-document): The increase in revenue was primarily attributable to a 47% increase in revenue case volume, partially offset by a reduction in average sales price due to a higher percentage of revenue cases generated from clinic and office-based accounts and an increase in utilization and volume rebates.
 - 支持 [ev_956e776683866565](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000042/htfl-20251231x10k.htm) (primary-document): Gross margin for the year ended December 31, 2025 increased to 77% as compared to 75% for the year ended December 31, 2024.
 - 支持 [ev_fe87e650d222b610](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000173/htfl-20260930x10q.htm) (primary-document): Revenue increased $26.6 million, or 57%, to $72.9 million during the three months ended September 30, 2026, compared to $46.3 million during the three months ended September 30, 2025.
-- 支持 [ev_99939059bdda4d69](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000173/htfl-20260930x10q.htm) (primary-document): The increase in revenue was primarily attributable to a 89% increase in revenue case volume
-- 支持 [ev_24b96312e3e3da6c](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000173/htfl-20260930x10q.htm) (primary-document): Revenue case volume for the three months ended September 30, 2026, benefited from the continued commercialization and account adoption of Heartflow Plaque Analysis. This growth was driven in part by expanded reimbursement coverage under CPT code 75577, which became effective on January 1, 2026
+- 支持 [ev_f51bb96612354d9a](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000173/htfl-20260930x10q.htm) (primary-document): The increase in revenue was primarily attributable to a 89% increase in revenue case volume, partially offset by a reduction in average sales price due to a higher percentage of revenue cases generated from clinic and office-based accounts and an increase in volume rebates.
+- 支持 [ev_b70b1178e9c48fd0](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000173/htfl-20260930x10q.htm) (primary-document): Revenue case volume for the three months ended September 30, 2026, benefited from the continued commercialization and account adoption of Heartflow Plaque Analysis. This growth was driven in part by expanded reimbursement coverage under CPT code 75577, which became effective on January 1, 2026 .
 - 支持 [ev_615eae36d88db6c1](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000173/htfl-20260930x10q.htm) (primary-document): Gross margin for the three months ended September 30, 2026 increased to 84% as compared to 77% for the three months ended September 30, 2025.
 - 支持 [ev_2b6acbe25f6ed692](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000173/htfl-20260930x10q.htm) (primary-document): Revenue increased $62.6 million, or 49%, to $189.5 million during the nine months ended September 30, 2026, compared to $126.9 million during the nine months ended September 30, 2025.
-- 支持 [ev_e2db04a7715ecf41](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000173/htfl-20260930x10q.htm) (primary-document): The increase in revenue was primarily attributable to a 78% increase in revenue case volume
+- 支持 [ev_6a76adf8fae1ee81](https://www.sec.gov/Archives/edgar/data/1464521/000146452126000173/htfl-20260930x10q.htm) (primary-document): The increase in revenue was primarily attributable to a 78% increase in revenue case volume, partially offset by a reduction in average sales price due to a higher percentage of revenue cases generated from clinic and office-based accounts and an increase in volume rebates.
 
 ### counter_thesis: pass
 
@@ -4311,15 +4321,16 @@ Jensen Huang 已恢复 CEO 与董事职务，并新增独立董事组成的监�
 
 ## OABI · complete
 
-审查记录：`state/serenity-reviews/OABI-claude-2c5e162c70d97857ccc6.json`
+审查记录：`state/serenity-reviews/OABI-claude-a9adefaa2dec691afdfe.json`
 
 ### supply_chain_map: partial
 
-按 Serenity 规则：缺少上游的具体关系证据。地图显示上游为无名第三方IP授权方、合同研究机构及合同制造商，公司产品为抗体发现技术平台（以许可协议授权给制药合作伙伴）及xPloration仪器，下游为无名制药合作伙伴。各段落均未将任何收入变动归因于OmniDeep™ AI工具的采用：2025年全年总营收同比下降29%至1,867万美元，与论点矛盾；2026年前九个月总营收同比增长209%至3,184万美元、并于2026年8月新签一笔1,250万美元合作协议，方向上与论点一致，但增长动因被明确归因于里程碑收入及仪器销售，而非AI产品采用。
+按 Serenity 规则：缺少上游的具体关系证据。passages涵盖10-K（截至2025-12-31财年）及10-Q（截至2026-09-30前三季度）财务数据，供应链上游为匿名合同制造商（xPloration仪器）与第三方IP授权方，下游为制药公司合作伙伴（Partner B-F及2026年8月新签方），公司产品为OmniAb抗体发现平台（含技术许可、研究服务、xPloration仪器）。论文主张OmniDeep™AI产品驱动收入与合作伙伴增长：2025财年总收入同比下降29%、服务收入下降39%与论文矛盾，但2026年前九个月总收入增长209%、许可与里程碑收入增长458%、xPloration收入增长165%及新签1250万美元预付款合作协议均与论文一致，整体信号2025财年与论文相悖、2026年与论文吻合。
 
 - 支持 [ev_f7ffd979b4e55dff](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) (primary-document): The Company’s revenue is typically derived from license agreements with its partners and consists of: (i) upfront or annual payments for technology access (license revenue), (ii) payments for the performance of research services (service revenue), (iii) downstream payments in the form of preclinical, intellectual property, clinical, regulatory, and commercial milestones (milestone revenue) and (iv) royalties on net sales from partners’ product sales (royalty revenue).
-- 支持 [ev_9aa9ed4496d8e320](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) (primary-document): Cost of revenue for xPloration instruments and consumables includes costs of material parts and associated freight, shipping and handling, contract manufacturing costs, warranty services, costs of servicing instruments at customer sites, and other direct costs related to xPloration revenue recognized in the period.
-- 支持 [ev_7adbd59de7137002](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): the Company entered into a research collaboration and license agreement with a pharmaceutical company that included a nonrefundable $ 12.5 million upfront payment
+- 支持 [ev_6621c18d6e7fb137](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) (primary-document): In May 2025, we launched the xPloration Partner Access Program, under which our partners can purchase xPloration instruments.
+- 支持 [ev_50cf6881ba5b77ac](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): Approved products represents an OmniAb-derived antibody for which our partner has received marketing approval. We view this metric as an indication of our near- and mid-term potential revenue from royalty payments.
+- 支持 [ev_ea93bbaa9c3a2fa5](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) (primary-document): ck0001846253:PartnerBMember us-gaap:CustomerConcentrationRiskMember us-gaap:RevenueFromContractWithCustomerMember 2025-01-01 2025-12-31 0001846253 ck0001846253:PartnerCMember us-gaap:CustomerConcentrationRiskMember us-gaap:RevenueFromContractWithCustomerMember 2025-01-01 2025-12-31
 - 缺口：按 Serenity 规则：缺少上游的具体关系证据
 
 ### chokepoint_evidence: partial
@@ -4364,13 +4375,17 @@ Jensen Huang 已恢复 CEO 与董事职务，并新增独立董事组成的监�
 
 ### earnings_validation: partial
 
-按 Serenity 规则：实际结果有的支持、有的不支持论点。地图显示上游为无名第三方IP授权方、合同研究机构及合同制造商，公司产品为抗体发现技术平台（以许可协议授权给制药合作伙伴）及xPloration仪器，下游为无名制药合作伙伴。各段落均未将任何收入变动归因于OmniDeep™ AI工具的采用：2025年全年总营收同比下降29%至1,867万美元，与论点矛盾；2026年前九个月总营收同比增长209%至3,184万美元、并于2026年8月新签一笔1,250万美元合作协议，方向上与论点一致，但增长动因被明确归因于里程碑收入及仪器销售，而非AI产品采用。
+按 Serenity 规则：实际结果有的支持、有的不支持论点。passages涵盖10-K（截至2025-12-31财年）及10-Q（截至2026-09-30前三季度）财务数据，供应链上游为匿名合同制造商（xPloration仪器）与第三方IP授权方，下游为制药公司合作伙伴（Partner B-F及2026年8月新签方），公司产品为OmniAb抗体发现平台（含技术许可、研究服务、xPloration仪器）。论文主张OmniDeep™AI产品驱动收入与合作伙伴增长：2025财年总收入同比下降29%、服务收入下降39%与论文矛盾，但2026年前九个月总收入增长209%、许可与里程碑收入增长458%、xPloration收入增长165%及新签1250万美元预付款合作协议均与论文一致，整体信号2025财年与论文相悖、2026年与论文吻合。
 
-- 支持 [ev_19aa82b76dfc1fc1](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): Total revenue 3,993 2,239 31,835 10,290
+- 支持 [ev_bc255892be42b354](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) (primary-document): xPloration revenue 754 — 754 100 %
+- 支持 [ev_3fa5e8164b341f7a](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): Total revenue $ 3,993 $ 2,239 $ 1,754 78 %
 - 支持 [ev_08642c78d7c34348](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): Total revenue $ 31,835 $ 10,290 $ 21,545 209 %
-- 支持 [ev_8afe089d4192a233](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): License and milestone revenue increased primarily due to an $18.3 million increase in milestone revenue, partially offset by a decrease in license revenue.
+- 支持 [ev_0cf1aede4ed32c99](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): License and milestone revenue $ 21,640 $ 3,879 $ 17,761 458 %
+- 支持 [ev_2497e77ad27e9369](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): Service revenue 7,415 5,027 2,388 48 %
+- 支持 [ev_7d8f0dba30358de2](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): xPloration revenue 1,918 724 1,194 165 %
 - 支持 [ev_8499291548d00f8c](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): In August 2026, the Company entered into a research collaboration and license agreement with a pharmaceutical company that included a nonrefundable $ 12.5 million upfront payment.
 - 反证 [ev_6ced1c97fb193f01](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) (primary-document): Total revenue $ 18,666 $ 26,391 $ (7,725) (29) %
+- 反证 [ev_c191626266acb16a](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) (primary-document): Service revenue 7,263 11,949 (4,686) (39) %
 - 缺口：按 Serenity 规则：实际结果有的支持、有的不支持论点
 
 ### counter_thesis: partial
@@ -4402,18 +4417,19 @@ Jensen Huang 已恢复 CEO 与董事职务，并新增独立董事组成的监�
 
 ## ODTX · complete
 
-审查记录：`state/serenity-reviews/ODTX-claude-364b7bc5ddfb3aac4794.json`
+审查记录：`state/serenity-reviews/ODTX-claude-8aa6cdcad53eabd8dbca.json`
 
-### supply_chain_map: partial
+### supply_chain_map: pass
 
-按 Serenity 规则：缺少上游的具体关系证据。供应链图显示ODTX上游依赖未具名第三方CMO（药物原料及制剂制造）、CRO（临床前/临床研究）及境外原材料供应商，核心产品为OD-001候选药物（进入2b期单药及2a期联合试验）及对外授权的AI/ML小分子发现平台，下游用户包括辉瑞（MTA已于2025年到期）、强生/Janssen（战略合作许可已履约完毕）及Terray。由于论题为空字符串，所有财务实绩——含2026年前三季度净亏损1.441亿美元、协作收入归零及研发支出1.107亿美元——均无可比照对象，全部标记为不相关。
+按 Serenity 规则：上游投入、公司产品、下游用户均有具体关系的一手证据。供应链图显示：上游依赖无名第三方CMO供应OD-001药物原料、CRO执行临床试验及实验室试剂供应商，以及通过Rahko收购获得AI技术；下游付费客户为Pfizer、J&J和Terray等大型制药公司。对照"AI平台推动收入/合作伙伴增长"的论点，2025年合作收入（Pfizer MTA $0.5M，J&J $2.5M）与论点一致，但2026年前三季及前九个月合作收入均降至零（两份协议均已履行完毕/到期），且公司明确表示不预期再从现有Pfizer或J&J协议中产生收入，全部收入数据与论点不一致，当前无新合作伙伴收入支持论点。
 
-- 支持 [ev_83879fef80502b1c](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): start-up activities for our planned OD-001 phase 2b 31 monotherapy and phase 2a combination trials, as well as increased toxicology studies, external chemistry and chemistry, manufacturing, and controls ac
+- 支持 [ev_fb887e54ed002a98](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): updates to the assumptions used in estimating the fair value of the Rahko contingent consideration, primarily due to an increase in the Company's market capitalization, following the completion of our IPO in May 2026.
 - 支持 [ev_8509ecf577401529](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): to jointly discover and optimize small-molecule medicines against select therapeutic targets using the Company’s artificial intelligence and machine learning capability
+- 支持 [ev_46e86cd48b324497](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): our planned OD-001 phase 2b 31 monotherapy and phase 2a combination trials, as well as increased toxicology studies, external chemistry and chemistry, manufacturing, and controls ac
 - 支持 [ev_00c2506eed3768a0](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): In 2023, Pfizer paid the Company a nonrefundable upfront payment of $ 1.0 million in exchange for the nonexclusive license as well as R&D services performed by the Company over the initial period and the First Pfizer Option was exercised.
 - 支持 [ev_5d11e88ef999c0c1](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): The Company recognized $ 0.0 million and $ 2.5 million of revenue associated with the J&J Agreement during the three and nine months ended September 30, 2025, respectively, which is recorded as collaboration revenue
 - 支持 [ev_92cc2b9da46ae273](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): We have previously entered into collaborations with Pfizer Inc., or Pfizer, J&J and Terray to conduct various research and development activities.
-- 缺口：按 Serenity 规则：缺少上游的具体关系证据
+- 支持 [ev_7dccb1b6b5358aaa](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): the Centers for Medicare & Medicaid Services, or CMS, imposes rebates on many Medicare Part B and Medicare Part D products to penalize price increases that outpace inflation on an annual basis.
 
 ### chokepoint_evidence: partial
 
@@ -4452,11 +4468,18 @@ Jensen Huang 已恢复 CEO 与董事职务，并新增独立董事组成的监�
 - 反证 [ev_b9a54a8dcff62a03](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): collaborators with marketing, manufacturing and distribution rights to one or more of our product candidates that achieve regulatory approval, if any, may not commit sufficient resources to or otherwise not perform satisfactorily in carrying out the marketing and distribution of such product or products
 - 缺口：存在反证，需要进一步核验
 
-### earnings_validation: unknown
+### earnings_validation: partial
 
-按 Serenity 规则：有标明日期的实际财务结果，但都与论点无直接关系，不能算支持。供应链图显示ODTX上游依赖未具名第三方CMO（药物原料及制剂制造）、CRO（临床前/临床研究）及境外原材料供应商，核心产品为OD-001候选药物（进入2b期单药及2a期联合试验）及对外授权的AI/ML小分子发现平台，下游用户包括辉瑞（MTA已于2025年到期）、强生/Janssen（战略合作许可已履约完毕）及Terray。由于论题为空字符串，所有财务实绩——含2026年前三季度净亏损1.441亿美元、协作收入归零及研发支出1.107亿美元——均无可比照对象，全部标记为不相关。
+按 Serenity 规则：实际结果有的支持、有的不支持论点。供应链图显示：上游依赖无名第三方CMO供应OD-001药物原料、CRO执行临床试验及实验室试剂供应商，以及通过Rahko收购获得AI技术；下游付费客户为Pfizer、J&J和Terray等大型制药公司。对照"AI平台推动收入/合作伙伴增长"的论点，2025年合作收入（Pfizer MTA $0.5M，J&J $2.5M）与论点一致，但2026年前三季及前九个月合作收入均降至零（两份协议均已履行完毕/到期），且公司明确表示不预期再从现有Pfizer或J&J协议中产生收入，全部收入数据与论点不一致，当前无新合作伙伴收入支持论点。
 
-- 缺口：按 Serenity 规则：有标明日期的实际财务结果，但都与论点无直接关系，不能算支持
+- 支持 [ev_be96ed6fdb2e6bd5](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): The Company recognized $ 0.5 million of revenue associated with the Pfizer MTA during the nine months ended September 30, 2025 , which is included in collaboration revenue on the condensed consolidated statements of operations and comprehensive loss.
+- 支持 [ev_af39c76e2cbf0b02](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): The Company recognized $ 0.1 million of revenue associated with the Pfizer MTA during the three months ended September 30, 2025.
+- 支持 [ev_d326d1acc51a6745](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): The Company recognized $ 0.0 million and $ 2.5 million of revenue associated with the J&J Agreement during the three and nine months ended September 30, 2025, respectively, which is recorded as collaboration revenue on the condensed consolidated statements of operations and comprehensive loss.
+- 反证 [ev_9e4129ac2a12983b](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): no revenue has been recorded during the three and nine months ended September 30, 2026.
+- 反证 [ev_9e4129ac2a12983b](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): no revenue has been recorded during the three and nine months ended September 30, 2026.
+- 反证 [ev_0d66b3bcc82855ba](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): Collaboration revenue decreased by $0.1 million, from $0.1 million for the three months ended September 30, 2025 compared to zero for the three months ended September 30, 2026. The decrease is related to the Company fulfilling all of its current obligations under the J&J Agreement and the expiration of the Pfizer MTA during the year ended December 31, 2025.
+- 反证 [ev_e6a3dbb99cab6c12](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): Collaboration revenue decreased by $3.0 million, from $3.0 million for the nine months ended September 30, 2025 compared to zero for the nine months ended September 30, 2026. The decrease is related to the Company
+- 缺口：按 Serenity 规则：实际结果有的支持、有的不支持论点
 
 ### counter_thesis: pass
 
@@ -5113,22 +5136,23 @@ Prime Medicine拥有Prime Editing平台技术和LNP肝脏递送平台，但这�
 
 ## RDNT · complete
 
-审查记录：`state/serenity-reviews/RDNT-claude-d59b38f3142f790616fa.json`
+审查记录：`state/serenity-reviews/RDNT-claude-b5bd53b5ff1863ca001e.json`
 
-### supply_chain_map: partial
+### supply_chain_map: pass
 
-按 Serenity 规则：缺少下游的具体关系证据。上游为收购所得AI影像技术公司（iCAD、See-Mode、CIMAR、Gleamer）及内部eRad调度/存储子系统，加上无命名的同位素示踪剂供应商；产品为418家多模态影像中心网络与DeepHealth临床AI应用（22项FDA许可）；下游为3,070家Digital Health外部客户及影像中心内的患者与各类付款方。Digital Health收入2025年同比增长41%（$65.7M→$92.7M），2026年前三季度再增46%，ARR由$67.3M升至$112.6M，程序量前三季度同比从16.8M增至45.8M，客户数从486扩张至3,070，均与论点所述"影像中心网络、患者工作流、图像数据与DeepHealth软件构成垂直闭环、形成可防御的学习与分发优势"高度吻合，无相反实证。
+按 Serenity 规则：上游投入、公司产品、下游用户均有具体关系的一手证据。地图：RadNet上游依赖iCAD、See-Mode、CIMAR、Gleamer等AI技术收购以及未具名同位素示踪剂供应商，核心产品为多模态成像中心服务与DeepHealth AI临床应用（含eRad调度/数据基础设施），下游为Medicare/Medicaid、商业保险公司、外部数字健康客户及患者。结果：数字健康营收2025年增长41.1%至9270万美元、客户数从486增至2075、程序量从1910万增至2410万、ARR从7500万增至2026年9月底的1.126亿美元，所有成像中心及Digital Health核心指标均持续增长，与"垂直整合形成学习与分发优势"的命题方向一致，但通道内无数据直接对比RadNet与独立AI算法厂商的防御性差异。
 
 - 支持 [ev_b9a6458fea1962bc](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): iCAD, Inc., an AI-powered breast health solutions company
 - 支持 [ev_32e0b5773b01f448](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): See-Mode Technologies, which enhances ultrasound-based diagnostics through artificial intelligence
 - 支持 [ev_388c777ff110a56e](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): CIMAR (UK) Limited, which provides cloud-based medical image storage, PACS, and AI-enabled imaging workflow solutions
-- 支持 [ev_475bc4116a4cd81e](https://www.sec.gov/Archives/edgar/data/790526/000162828026072345/rdnt-20260930.htm) (primary-document): the acquisition of Gleamer, a digital health business
-- 支持 [ev_2bee01d111b2b116](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): our eRad subsidiary, which designs the underlying critical scheduling, data storage and retrieval systems necessary for imaging center operation
-- 支持 [ev_165454bd884c1367](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): develops and deploys clinical applications to enhance interpretation of medical images and improve patient outcomes with an emphasis on brain, breast, prostate, and pulmonary diagnostics
-- 支持 [ev_7679e6c8dfe3189b](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): we have 22 FDA clearances and 15 CE marks
-- 支持 [ev_3f4bcfaeddda5218](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): Non-Capitalized R&D - DeepHealth Cloud OS & Generative AI
-- 支持 [ev_ec3e3b0ebb359e21](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): The vast majority of our centers offer multi-modality imaging services, a strategy that diversifies revenue streams, reduces exposure to reimbursement changes and provides patients and referring physicians one location to serve the needs of multiple procedures
-- 缺口：按 Serenity 规则：缺少下游的具体关系证据
+- 支持 [ev_8fcd3fcf9d642993](https://www.sec.gov/Archives/edgar/data/790526/000162828026072345/rdnt-20260930.htm) (primary-document): primarily reflected organic growth and the additions of iCAD, See-Mode, Gleamer and CIMAR
+- 支持 [ev_3f65071052826a9a](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): We maintain secured credit facilities with Barclays Bank PLC and Truist Bank
+- 支持 [ev_ac8a3a898acdf1c2](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): Our MRI, CT, nuclear medicine, ultrasound and mammography centers are currently accredited by the American College of Radiology
+- 支持 [ev_0da028eccbeaf667](https://www.sec.gov/Archives/edgar/data/790526/000162828026072345/rdnt-20260930.htm) (primary-document): Our Digital Health segment develops and deploys clinical applications to enhance interpretation of medical images and improve patient outcomes with an emphasis on brain, breast, prostate, and pulmonary diagnostics. Included in the segment is our eRad subsidiary, which designs the underlying critical scheduling, data storage and retrieval systems necessary for imaging center operation
+- 支持 [ev_dec6ec275b530232](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): Across our portfolio of AI solutions, we have 22 FDA clearances and 15 CE marks
+- 支持 [ev_861e5115e936e0e0](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): The majority of our centers are multi-modality sites, offering various combinations of MRI, CT, PET, nuclear medicine, ultra
+- 支持 [ev_69440a08a034aac7](https://www.sec.gov/Archives/edgar/data/790526/000162828026072345/rdnt-20260930.htm) (primary-document): RadNet recognized $ 315.9 million and $ 236.7 million of total billed net service fee revenue for the three months ended September 30, 2026 and 2025, respectively, for management services provided to the Consolidated Medical Group
+- 支持 [ev_0b89b6aeb6d6a209](https://www.sec.gov/Archives/edgar/data/790526/000162828026072345/rdnt-20260930.htm) (primary-document): Our revenue is derived from a diverse mix of payors, including private payors and commercial insurance companies, managed care capitated payors, and government payors, such as Medicare and Medicaid
 
 ### chokepoint_evidence: partial
 
@@ -5173,19 +5197,18 @@ AI 业务约占收入 5%，主体是影像中心运营。
 
 ### earnings_validation: pass
 
-按 Serenity 规则：有标明日期的实际财务结果支持论点。上游为收购所得AI影像技术公司（iCAD、See-Mode、CIMAR、Gleamer）及内部eRad调度/存储子系统，加上无命名的同位素示踪剂供应商；产品为418家多模态影像中心网络与DeepHealth临床AI应用（22项FDA许可）；下游为3,070家Digital Health外部客户及影像中心内的患者与各类付款方。Digital Health收入2025年同比增长41%（$65.7M→$92.7M），2026年前三季度再增46%，ARR由$67.3M升至$112.6M，程序量前三季度同比从16.8M增至45.8M，客户数从486扩张至3,070，均与论点所述"影像中心网络、患者工作流、图像数据与DeepHealth软件构成垂直闭环、形成可防御的学习与分发优势"高度吻合，无相反实证。
+按 Serenity 规则：有标明日期的实际财务结果支持论点。地图：RadNet上游依赖iCAD、See-Mode、CIMAR、Gleamer等AI技术收购以及未具名同位素示踪剂供应商，核心产品为多模态成像中心服务与DeepHealth AI临床应用（含eRad调度/数据基础设施），下游为Medicare/Medicaid、商业保险公司、外部数字健康客户及患者。结果：数字健康营收2025年增长41.1%至9270万美元、客户数从486增至2075、程序量从1910万增至2410万、ARR从7500万增至2026年9月底的1.126亿美元，所有成像中心及Digital Health核心指标均持续增长，与"垂直整合形成学习与分发优势"的命题方向一致，但通道内无数据直接对比RadNet与独立AI算法厂商的防御性差异。
 
 - 支持 [ev_f4cf047eff267927](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): Centers in operation 418 398 366 Total consolidated revenue $ 2,040 $ 1,830 $ 1,617
-- 支持 [ev_f4622c8050d94cc2](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): Our 10.9% increase in Imaging Center revenue compared to the same period last year was driven by higher fees per imaging procedure and increased procedure volumes
+- 支持 [ev_c0ec2c920d89a808](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): Total Revenue $1,988,193 $1,792,319 $195,874 10.9%
 - 支持 [ev_a85da922e7de6872](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): Digital Health segment revenues increased $27.0 million or 41.1% , to $92.7 million , compared to $65.7 million for the year ended December 31, 2024
-- 支持 [ev_71751782a278961f](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): the segment’s customer base expanded from 486 to 2,075, and procedure volumes increased from 19.1 million to 24.1 million, primarily reflecting the addition of iCAD
+- 支持 [ev_c416afce24c2bb97](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): the segment’s customer base expanded from 486 to 2,075, and procedure volumes increased from 19.1 million to 24.1 million
 - 支持 [ev_5f8e8aa6754efbbb](https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm) (primary-document): Annual Recurring Revenue or ARR, at the end of 2025 was $75 million
-- 支持 [ev_92e6259f1937de04](https://www.sec.gov/Archives/edgar/data/790526/000162828026072345/rdnt-20260930.htm) (primary-document): Three Months Ended September 30, 2026 Imaging Center Digital health Total Revenues from external customers $ 617,042 $ 21,215 $ 638,257 Intersegment revenues — 11,688 11,688 $ 617,042 $ 32,903 $ 649,945
 - 支持 [ev_b33a3fe390fc110f](https://www.sec.gov/Archives/edgar/data/790526/000162828026072345/rdnt-20260930.htm) (primary-document): Digital Health segment revenues increased $29.7 million, or 45.8%, to $94.5 million, compared with $64.8 million for the nine months ended September 30, 2025
 - 支持 [ev_4c5a72f82a004663](https://www.sec.gov/Archives/edgar/data/790526/000162828026072345/rdnt-20260930.htm) (primary-document): the segment’s customer base had expanded to 3,070 customers, compared with 2,042 as of September 30, 2025
 - 支持 [ev_f543fa910f20fe8d](https://www.sec.gov/Archives/edgar/data/790526/000162828026072345/rdnt-20260930.htm) (primary-document): Procedure volumes supported by Digital Health solutions increased from 6.6 million to 18.1 million for the three months ended September 30, 2026 and from 16.8 million to 45.8 million for the nine months ended September 30, 2026
 - 支持 [ev_06195cee0e5ea08a](https://www.sec.gov/Archives/edgar/data/790526/000162828026072345/rdnt-20260930.htm) (primary-document): ARR was $112.6 million as of September 30, 2026, compared with $67.3 million as of September 30, 2025
-- 支持 [ev_872ef8189a0de2b7](https://www.sec.gov/Archives/edgar/data/790526/000162828026072345/rdnt-20260930.htm) (primary-document): The increase was primarily driven by a 94.6% increase in Clinical-related revenue and a 45.8% increase in Enterprise Informatics revenue
+- 支持 [ev_1fea6522edb77d99](https://www.sec.gov/Archives/edgar/data/790526/000162828026072345/rdnt-20260930.htm) (primary-document): Total service revenue $ 638,257 $ 522,869
 
 ### counter_thesis: pass
 
