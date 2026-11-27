@@ -40,3 +40,5 @@
 - 2026-11-27 Codex：瓶颈证据必须区分方向；只有市场或客户依赖该公司（company_controls）才能支持门槛，公司依赖单一供应商、许可方、平台或付款方（company_depends）一律作为反证，不能通过瓶颈门槛。
 - 2026-11-27 Codex T2、Claude 复核：卡脖子证据区分方向，只有"市场依赖本公司"（company_controls）才能支持门槛，"公司依赖别人"计入反证；多环节控制要求两个相邻环节属于同一产品、来自同一段落，引文间隔 ≤ 400 字符；已终止的协议在选段落时排在仍有效的关系之后。
 - 2026-11-27 Claude：Codex 做 T2 时把主目录切到了 codex/t1-followup-hardening，导致 Claude 的提交落到新分支、推送失败；已把原分支快进到同一提交并切回。由此定下硬规则第 8 条。
+- 2026-11-27 Claude：全局 git 配置 core.autocrlf=true，会在工作区里把文件改成 CRLF，导致 sh 读不了每日脚本。本仓库已单独设为 core.autocrlf=input。改完 shell 脚本先跑一次 sh -n run-daily-investment-agent.sh。
+- 2026-11-27 Claude：把 Codex 的关键人物信号追踪（4e6ff69，people_signal_tracker.py）合并进主分支，提交为 933c06a。它只生成人工复核队列，不改动门槛。
