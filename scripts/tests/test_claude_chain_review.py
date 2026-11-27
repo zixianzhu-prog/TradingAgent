@@ -9,7 +9,8 @@ def test_map_rubric():
 
 def test_earnings_rubric():
     assert ccr.earnings_status(2, 0, 0)[0] == "pass"
-    assert ccr.earnings_status(1, 1, 0)[0] == "partial"
+    assert ccr.earnings_status(1, 1, 0)[0] == "pass"     # rubric text: supporting results suffice; contrary ones are counter-evidence
+    assert "反证" in ccr.earnings_status(1, 1, 0)[1]
     assert ccr.earnings_status(0, 1, 0)[0] == "partial"
     assert ccr.earnings_status(0, 0, 3)[0] == "partial"   # guidance alone
     assert ccr.earnings_status(0, 0, 0)[0] == "unknown"

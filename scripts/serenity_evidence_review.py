@@ -339,9 +339,8 @@ def validate(raw, passages):
         if state == "pass" and gate == "counter_thesis" and (not refs["counter"] or not item.get("falsifiers")):
             state = "partial"
             missing.append("缺少有引用的反证或证伪条件")
-        if state == "pass" and gate != "counter_thesis" and refs["counter"]:
-            state = "partial"
-            missing.append("存在反证，需要进一步核验")
+        # No blanket "counter-evidence caps the gate" rule: only counter_thesis's rubric text speaks of counter-evidence (handled
+        # above). Other gates follow their own rubric text; their counter quotes stay visible next to the grade.
         if state == "fail" and refs["counter"] and all(NON_SPECIFIC.search(r["quote"]) for r in refs["counter"]):
             # Generic risk-factor language, our own disclaimer sentences and registry/XBRL fields are not
             # direct counter-evidence: every filer has them. A fail needs a company-specific fact.

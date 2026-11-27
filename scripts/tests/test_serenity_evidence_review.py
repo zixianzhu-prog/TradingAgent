@@ -31,10 +31,12 @@ def test_hostname_spoof_is_not_primary():
     assert not host_matches("https://nvidia.com.attacker.test/release", {"nvidia.com"})
 
 
-def test_conflicting_evidence_prevents_pass():
+def test_counter_evidence_stays_visible_but_follows_the_gate_rubric():
+    # Serenity's earnings rubric asks for supporting dated results; contrary quotes are kept, not used to cap the gate.
     raw = review()
     raw["gates"]["earnings_validation"]["counter"] = [{"id": "ev_real", "quote": P["text"]}]
-    assert validate(raw, [P])["earnings_validation"]["status"] == "partial"
+    out = validate(raw, [P])["earnings_validation"]
+    assert out["status"] == "pass" and len(out["counter"]) == 1
 
 
 def test_claude_review_is_not_marked_stale_by_new_codex_packet(tmp_path, monkeypatch):

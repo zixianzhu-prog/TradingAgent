@@ -42,3 +42,4 @@
 - 2026-11-27 Claude：Codex 做 T2 时把主目录切到了 codex/t1-followup-hardening，导致 Claude 的提交落到新分支、推送失败；已把原分支快进到同一提交并切回。由此定下硬规则第 8 条。
 - 2026-11-27 Claude：全局 git 配置 core.autocrlf=true，会在工作区里把文件改成 CRLF，导致 sh 读不了每日脚本。本仓库已单独设为 core.autocrlf=input。改完 shell 脚本先跑一次 sh -n run-daily-investment-agent.sh。
 - 2026-11-27 Claude：把 Codex 的关键人物信号追踪（4e6ff69，people_signal_tracker.py）合并进主分支，提交为 933c06a。它只生成人工复核队列，不改动门槛。
+- 2026-11-27 用户：门槛一律按 Serenity 原文判。财报门槛只要有支持论点的标明日期的实际结果就 pass，反向结果记为反证、不拦门槛；去掉导入时"带反证就降级"的全局规则（只有反方门槛的原文提到反证）。

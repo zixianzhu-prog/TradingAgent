@@ -146,10 +146,12 @@ def map_status(upstream: int, product: int, downstream: int) -> tuple[str, str]:
 
 
 def earnings_status(consistent: int, inconsistent: int, guidance: int, unrelated: int = 0) -> tuple[str, str]:
-    if consistent and not inconsistent:
-        return "pass", "按 Serenity 规则：有标明日期的实际财务结果支持论点"
+    # Serenity's rubric asks only for dated actual results supporting the thesis. Results that cut against it are kept as
+    # counter-evidence (shown in the reason and the counter list) but, per the rubric text, do not block the gate.
     if consistent and inconsistent:
-        return "partial", "按 Serenity 规则：实际结果有的支持、有的不支持论点"
+        return "pass", f"按 Serenity 规则：有标明日期的实际财务结果支持论点（另有 {inconsistent} 条反向结果，记为反证）"
+    if consistent:
+        return "pass", "按 Serenity 规则：有标明日期的实际财务结果支持论点"
     if inconsistent:
         return "partial", "按 Serenity 规则：标明日期的实际结果不支持论点"
     if guidance:

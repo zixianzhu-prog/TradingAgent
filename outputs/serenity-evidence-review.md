@@ -1209,9 +1209,9 @@ CEO和CFO评估认为截至2025年12月31日内部控制有效（基于COSO 2013
 - 支持 [ev_1ee72d262e90be13](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm) (primary-document): The Company collaborates with biopharmaceutical companies to provide commercial services and prospective and retrospective testing, along with data and bioinformatics collaboration
 - 支持 [ev_f30d04383556d760](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm) (primary-document): expansion of our commercial teams
 
-### earnings_validation: partial
+### earnings_validation: pass
 
-按 Serenity 规则：实际结果有的支持、有的不支持论点。供应链图显示：上游为Illumina独家供应NGS仪器与试剂及多家独家耗材供应商；公司产品为MI Profile/Caris Assure精准肿瘤分子诊断、制药研发服务及分子数据授权；下游为医院、医生、患者、生物制药客户及数据合作伙伴。对照论文：临床病例量与分子诊断收入在FY2025及2026年各期均持续大幅增长，与"数据资产随每次检测增长"的核心主张一致；但passages完全未提及超百万累计病例、AI产品或FDA伴随诊断批准，且制药研发服务收入在FY2025和9M2026均下滑，与论文中"数据喂养制药服务"的部分主张相悖。
+按 Serenity 规则：有标明日期的实际财务结果支持论点（另有 2 条反向结果，记为反证）。供应链图显示：上游为Illumina独家供应NGS仪器与试剂及多家独家耗材供应商；公司产品为MI Profile/Caris Assure精准肿瘤分子诊断、制药研发服务及分子数据授权；下游为医院、医生、患者、生物制药客户及数据合作伙伴。对照论文：临床病例量与分子诊断收入在FY2025及2026年各期均持续大幅增长，与"数据资产随每次检测增长"的核心主张一致；但passages完全未提及超百万累计病例、AI产品或FDA伴随诊断批准，且制药研发服务收入在FY2025和9M2026均下滑，与论文中"数据喂养制药服务"的部分主张相悖。
 
 - 支持 [ev_dd575673d0545762](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-20251231.htm) (primary-document): Total revenue was $812.0 million for the year ended December 31, 2025, compared to $412.3 million for the year ended December 31, 2024, an increase of $399.8 million, or 97.0%.
 - 支持 [ev_f3d24da4b7463f7c](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-20251231.htm) (primary-document): Molecular profiling services revenue increased to $766.7 million for the year ended December 31, 2025, from $349.1 million for the year ended December 31, 2024, an increase of $417.6 million, or 119.6%.
@@ -1222,7 +1222,6 @@ CEO和CFO评估认为截至2025年12月31日内部控制有效（基于COSO 2013
 - 支持 [ev_8f2c9f16bdf80512](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm) (primary-document): Clinical cases increased to approximately 173,500 for the nine months ended September 30, 2026 from approximately 146,700 for the nine months ended September 30, 2025.
 - 反证 [ev_961f4c2d8f134300](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-20251231.htm) (primary-document): Pharma research and development services revenue decreased to $45.3 million for the year ended December 31, 2025, from $63.1 million for the year ended December 31, 2024, a decrease of $17.8 million, or 28.2%.
 - 反证 [ev_d1a60031d3808c4e](https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm) (primary-document): Pharma research and development services revenue decreased to $29.5 million for the nine months ended September 30, 2026, from $34.6 million for the nine months ended September 30, 2025, a decrease of $5.1 million, or 14.7%.
-- 缺口：按 Serenity 规则：实际结果有的支持、有的不支持论点
 
 ### counter_thesis: pass
 
@@ -1602,9 +1601,9 @@ AI 与机器学习正在融入软件和咨询业务，核心仍是生物模拟�
 - 支持 [ev_70f88e4789b0c6dd](https://www.sec.gov/Archives/edgar/data/1827090/000182709026000035/cert-20260930.htm) (primary-document): The Company’s primary professional services offering includes consulting services, which may be either strategic consulting services, reporting and analysis services, or any combination of the two.
 - 缺口：按 Serenity 规则：自己控制的环节（data、model_software、design、sales、service）不足两个或互不相连
 
-### earnings_validation: partial
+### earnings_validation: pass
 
-按 Serenity 规则：实际结果有的支持、有的不支持论点。供应链图显示上游依赖第三方分包商和云基础设施提供商，通过Chemaxon等并购扩充产品线，向制药生物技术公司交付软件许可/订阅及法规咨询服务，客户关系以多年期合同为主。财务数据整体与论点一致：软件收入2025财年增长18%、2026年前三季度增长8%，总收入持续正增长，体现平台型工具的广泛采用；但服务收入在2026年Q3及前三季度分别下滑2%和3%，局部与"嵌入药物开发决策的经常性需求"论点相悖。
+按 Serenity 规则：有标明日期的实际财务结果支持论点（另有 2 条反向结果，记为反证）。供应链图显示上游依赖第三方分包商和云基础设施提供商，通过Chemaxon等并购扩充产品线，向制药生物技术公司交付软件许可/订阅及法规咨询服务，客户关系以多年期合同为主。财务数据整体与论点一致：软件收入2025财年增长18%、2026年前三季度增长8%，总收入持续正增长，体现平台型工具的广泛采用；但服务收入在2026年Q3及前三季度分别下滑2%和3%，局部与"嵌入药物开发决策的经常性需求"论点相悖。
 
 - 支持 [ev_b646c0873f4d02c4](https://www.sec.gov/Archives/edgar/data/1827090/000182709026000011/cert-20251231.htm) (primary-document): Revenues increased by $33.7 million, or 9%, to $418.8 million for the year ended December 31, 2025, as compared to the same period in 2024
 - 支持 [ev_ebe9c16180a3d162](https://www.sec.gov/Archives/edgar/data/1827090/000182709026000011/cert-20251231.htm) (primary-document): Organic revenue $ 401,825 6 %
@@ -1616,7 +1615,6 @@ AI 与机器学习正在融入软件和咨询业务，核心仍是生物模拟�
 - 支持 [ev_f2e24fca7c19c598](https://www.sec.gov/Archives/edgar/data/1827090/000182709026000035/cert-20260930.htm) (primary-document): Software revenues increased by $10.5 million, or 8%, to $147.4 million for the nine months ended September 30, 2026 as compared to the same period in 2025, primarily driven by increased demand from existing customers and expanded relationships with existing customers
 - 反证 [ev_569d97d102e58778](https://www.sec.gov/Archives/edgar/data/1827090/000182709026000035/cert-20260930.htm) (primary-document): Services revenues decreased by $1.0 million to $46.1 million for the three months ended September 30, 2026 as compared to the same period in 2025
 - 反证 [ev_52e1d57b87c2e3d4](https://www.sec.gov/Archives/edgar/data/1827090/000182709026000035/cert-20260930.htm) (primary-document): Services revenues decreased by $3.5 million, or 3%, to $134.9 million for the nine months ended September 30, 2026 as compared to the same period in 2025
-- 缺口：按 Serenity 规则：实际结果有的支持、有的不支持论点
 
 ### counter_thesis: pass
 
@@ -4369,9 +4367,9 @@ Jensen Huang 已恢复 CEO 与董事职务，并新增独立董事组成的监�
 - 支持 [ev_f4cd8b403e8ea142](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): OmniAb licenses cutting-edge discovery research technology to pharmaceutical and biotech companies and academic institutions
 - 缺口：按 Serenity 规则：自己控制的环节（data、model_software、design、manufacturing、sales、service）不足两个或互不相连
 
-### earnings_validation: partial
+### earnings_validation: pass
 
-按 Serenity 规则：实际结果有的支持、有的不支持论点。供应链地图：上游依赖无名合同制造商、CRO及第三方IP许可方提供xPloration仪器零件与研究服务，核心产品为OmniAb抗体发现平台（含xPloration仪器）及许可研究服务，具名下游方包括通过Icagen子公司历史许可的罗氏、资产收购方Angelini Pharma，以及2026年8月新增的匿名药企（$1250万合作协议）。财务结果方面，FY2025总收入同比下滑29%（$18,666K）与论点相悖；但2026年前九个月总收入同比大幅增长209%（$31,835K）、xPloration收入增165%、服务收入增48%，加之新增大额合作协议，均与AI平台采用带动收入及合作伙伴增长的论点一致。
+按 Serenity 规则：有标明日期的实际财务结果支持论点（另有 2 条反向结果，记为反证）。供应链地图：上游依赖无名合同制造商、CRO及第三方IP许可方提供xPloration仪器零件与研究服务，核心产品为OmniAb抗体发现平台（含xPloration仪器）及许可研究服务，具名下游方包括通过Icagen子公司历史许可的罗氏、资产收购方Angelini Pharma，以及2026年8月新增的匿名药企（$1250万合作协议）。财务结果方面，FY2025总收入同比下滑29%（$18,666K）与论点相悖；但2026年前九个月总收入同比大幅增长209%（$31,835K）、xPloration收入增165%、服务收入增48%，加之新增大额合作协议，均与AI平台采用带动收入及合作伙伴增长的论点一致。
 
 - 支持 [ev_3fa5e8164b341f7a](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): Total revenue $ 3,993 $ 2,239 $ 1,754 78 %
 - 支持 [ev_ad88e702ceba0550](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): xPloration revenue 703 74 629 850 %
@@ -4381,7 +4379,6 @@ Jensen Huang 已恢复 CEO 与董事职务，并新增独立董事组成的监�
 - 支持 [ev_8499291548d00f8c](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000051/oabi-20260930.htm) (primary-document): In August 2026, the Company entered into a research collaboration and license agreement with a pharmaceutical company that included a nonrefundable $ 12.5 million upfront payment.
 - 反证 [ev_6ced1c97fb193f01](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) (primary-document): Total revenue $ 18,666 $ 26,391 $ (7,725) (29) %
 - 反证 [ev_c191626266acb16a](https://www.sec.gov/Archives/edgar/data/1846253/000184625326000009/ck0001846253-20251231.htm) (primary-document): Service revenue 7,263 11,949 (4,686) (39) %
-- 缺口：按 Serenity 规则：实际结果有的支持、有的不支持论点
 
 ### counter_thesis: partial
 
@@ -4460,9 +4457,9 @@ Jensen Huang 已恢复 CEO 与董事职务，并新增独立董事组成的监�
 - 支持 [ev_773335756e86bd42](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): We own an issued patent in the United States that claims the composition of matter of OD-001.
 - 缺口：按 Serenity 规则：自己控制的环节（model_software、design）不足两个或互不相连
 
-### earnings_validation: partial
+### earnings_validation: pass
 
-按 Serenity 规则：实际结果有的支持、有的不支持论点。供应链图显示：上游依赖无名第三方CMO供应OD-001药物原料、CRO执行临床试验及实验室试剂供应商，以及通过Rahko收购获得AI技术；下游付费客户为Pfizer、J&J和Terray等大型制药公司。对照"AI平台推动收入/合作伙伴增长"的论点，2025年合作收入（Pfizer MTA $0.5M，J&J $2.5M）与论点一致，但2026年前三季及前九个月合作收入均降至零（两份协议均已履行完毕/到期），且公司明确表示不预期再从现有Pfizer或J&J协议中产生收入，全部收入数据与论点不一致，当前无新合作伙伴收入支持论点。
+按 Serenity 规则：有标明日期的实际财务结果支持论点（另有 4 条反向结果，记为反证）。供应链图显示：上游依赖无名第三方CMO供应OD-001药物原料、CRO执行临床试验及实验室试剂供应商，以及通过Rahko收购获得AI技术；下游付费客户为Pfizer、J&J和Terray等大型制药公司。对照"AI平台推动收入/合作伙伴增长"的论点，2025年合作收入（Pfizer MTA $0.5M，J&J $2.5M）与论点一致，但2026年前三季及前九个月合作收入均降至零（两份协议均已履行完毕/到期），且公司明确表示不预期再从现有Pfizer或J&J协议中产生收入，全部收入数据与论点不一致，当前无新合作伙伴收入支持论点。
 
 - 支持 [ev_be96ed6fdb2e6bd5](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): The Company recognized $ 0.5 million of revenue associated with the Pfizer MTA during the nine months ended September 30, 2025 , which is included in collaboration revenue on the condensed consolidated statements of operations and comprehensive loss.
 - 支持 [ev_af39c76e2cbf0b02](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): The Company recognized $ 0.1 million of revenue associated with the Pfizer MTA during the three months ended September 30, 2025.
@@ -4471,7 +4468,6 @@ Jensen Huang 已恢复 CEO 与董事职务，并新增独立董事组成的监�
 - 反证 [ev_9e4129ac2a12983b](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): no revenue has been recorded during the three and nine months ended September 30, 2026.
 - 反证 [ev_0d66b3bcc82855ba](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): Collaboration revenue decreased by $0.1 million, from $0.1 million for the three months ended September 30, 2025 compared to zero for the three months ended September 30, 2026. The decrease is related to the Company fulfilling all of its current obligations under the J&J Agreement and the expiration of the Pfizer MTA during the year ended December 31, 2025.
 - 反证 [ev_e6a3dbb99cab6c12](https://www.sec.gov/Archives/edgar/data/1882782/000119312526446208/odtx-20260930.htm) (primary-document): Collaboration revenue decreased by $3.0 million, from $3.0 million for the nine months ended September 30, 2025 compared to zero for the nine months ended September 30, 2026. The decrease is related to the Company
-- 缺口：按 Serenity 规则：实际结果有的支持、有的不支持论点
 
 ### counter_thesis: pass
 
@@ -5512,9 +5508,9 @@ Atrium是临床阶段药物开发公司，专注遗传性心肌病RNA疗法。�
 - 支持 [ev_42f7a658eddfdb00](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): over 1 trillion internally manufactured iPSC-derived neuronal cells
 - 支持 [ev_b0b183d569830fec](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): The candidate was delivered by the combination of Recursion’s integrated AI-enabled drug design platform and small-molecule chemistry capabilities with Sanofi’s deep expertise in drug discovery and immunology.
 
-### earnings_validation: partial
+### earnings_validation: pass
 
-按 Serenity 规则：实际结果有的支持、有的不支持论点。通道揭示了RXRX的上游输入（Tempus去识别化临床记录、Takeda授权化合物TAK-733、第三方CDMO药物制造、第三方平台试剂设备供应商）、公司产品（Phenomap生物图谱、TxFM AI模型及REC-4881/REC-1245临床资产）以及下游用户（Sanofi免疫学小分子合作、Roche神经科学Phenomap、Tempus肿瘤学TxFM许可）之间的具体关系。实际财务数据中，2025年全年总收入同比增长27%（7.47亿美元）、Roche 3000万美元Phenomap验收里程碑（2025年第四季度）、Sanofi 1000万美元免疫学候选药物里程碑（2026年第三季度）及TxFM 1200万美元许可费（2026年9月）均与论点"合作里程碑及临床资产提供多种获胜路径"一致，但2026年前九个月运营收入同比下降19%与论点相悖，持续扩大的净亏损（2025年6.45亿美元）与论点无直接关联。
+按 Serenity 规则：有标明日期的实际财务结果支持论点（另有 1 条反向结果，记为反证）。通道揭示了RXRX的上游输入（Tempus去识别化临床记录、Takeda授权化合物TAK-733、第三方CDMO药物制造、第三方平台试剂设备供应商）、公司产品（Phenomap生物图谱、TxFM AI模型及REC-4881/REC-1245临床资产）以及下游用户（Sanofi免疫学小分子合作、Roche神经科学Phenomap、Tempus肿瘤学TxFM许可）之间的具体关系。实际财务数据中，2025年全年总收入同比增长27%（7.47亿美元）、Roche 3000万美元Phenomap验收里程碑（2025年第四季度）、Sanofi 1000万美元免疫学候选药物里程碑（2026年第三季度）及TxFM 1200万美元许可费（2026年9月）均与论点"合作里程碑及临床资产提供多种获胜路径"一致，但2026年前九个月运营收入同比下降19%与论点相悖，持续扩大的净亏损（2025年6.45亿美元）与论点无直接关联。
 
 - 支持 [ev_07abf13fef349093](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/rxrx-20251231.htm) (primary-document): Total revenue 74,681 58,839 44,575 15,842 26.9 % 14,264 32.0 %
 - 支持 [ev_e9b6a309b8dd60ed](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): the $ 30.0 million variable consideration for the second acceptance fee until the map was accepted, which was during the fourth quarter of 2025.
@@ -5522,7 +5518,6 @@ Atrium是临床阶段药物开发公司，专注遗传性心肌病RNA疗法。�
 - 支持 [ev_2ac7a1a89452b02f](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): the increase in revenue compared to the prior period was primarily due to our Sanofi partnership, for which the Company achieved a $10.0 million milestone for an immunology small molecule development candidate.
 - 支持 [ev_063432cb068a83ff](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): Tempus will pay the Company a non-refundable license fee of $ 12.0 million in two installments of
 - 反证 [ev_f911148ff5db62c1](https://www.sec.gov/Archives/edgar/data/1601830/000160183026000145/rxrx-20260930.htm) (primary-document): Operating revenue $ 18,055 $ 4,983 $ 13,072 >100% $ 31,659 $ 38,905 $ (7,246) (19) %
-- 缺口：按 Serenity 规则：实际结果有的支持、有的不支持论点
 
 ### counter_thesis: pass
 
@@ -5709,9 +5704,9 @@ SEC一手材料提供了带日期的实际公司级收入、利润、现金或�
 - 支持 [ev_5cfca8057e52e57d](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): we will have the perpetual right to continue to provide support to any such third parties in connection with their use of such software.
 - 缺口：按 Serenity 规则：自己控制的环节（model_software、sales、service）不足两个或互不相连
 
-### earnings_validation: partial
+### earnings_validation: pass
 
-按 Serenity 规则：实际结果有的支持、有的不支持论点。地图：上游为哥伦比亚大学授权IP（嵌入核心物理/AI软件）及第三方CRO与合同制造商（支持药物管线）；产品为计算预测建模平台（Glide、Prime等具名软件）加自有管线SGR-1505/3515；下游以生物制药公司为主，Novartis为代表命名客户。结果对论点基本一致：2025年软件收入1.995亿美元（+11%）、顶级20家药企ACV 8080万美元、商业客户总留存率96%均支持"卖铲子"逻辑，药物发现收入+107%支持管线上行空间；但2026年前三季度软件收入同比下滑（1.063亿 vs 1.169亿）且管理层明确预期近期收入下降，对论点构成压力。
+按 Serenity 规则：有标明日期的实际财务结果支持论点（另有 1 条反向结果，记为反证）。地图：上游为哥伦比亚大学授权IP（嵌入核心物理/AI软件）及第三方CRO与合同制造商（支持药物管线）；产品为计算预测建模平台（Glide、Prime等具名软件）加自有管线SGR-1505/3515；下游以生物制药公司为主，Novartis为代表命名客户。结果对论点基本一致：2025年软件收入1.995亿美元（+11%）、顶级20家药企ACV 8080万美元、商业客户总留存率96%均支持"卖铲子"逻辑，药物发现收入+107%支持管线上行空间；但2026年前三季度软件收入同比下滑（1.063亿 vs 1.169亿）且管理层明确预期近期收入下降，对论点构成压力。
 
 - 支持 [ev_bba7837c9bf8ef57](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): Total software products and services 199,500 180,365 19,135 11%
 - 支持 [ev_1a6130195bf0a82a](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): Total revenues $ 255,869 $ 207,539 $ 48,330 23%
@@ -5722,7 +5717,6 @@ SEC一手材料提供了带日期的实际公司级收入、利润、现金或�
 - 支持 [ev_ed545ecef276fa64](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): Total drug discovery 56,369 27,174 29,195 107%
 - 支持 [ev_03a0802e8ef843b0](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000010/sdgr-20251231.htm) (primary-document): The increase in revenues for drug discovery services during the year ended December 31, 2025 as compared to the year ended December 31, 2024 was primarily due to the Novartis collaboration services that began in November 2024 and the progress of new and existing collaborations.
 - 反证 [ev_b69c6d7f3da18cc8](https://www.sec.gov/Archives/edgar/data/1490978/000149097826000076/sdgr-20260930.htm) (primary-document): Total software revenue $ 38,153 $ 35,928 $ 106,257 $ 116,931
-- 缺口：按 Serenity 规则：实际结果有的支持、有的不支持论点
 
 ### counter_thesis: pass
 
@@ -5918,9 +5912,9 @@ SGMT为preparation阶段Phase 3公司，亏损属预期。公司披露截至2026
 - 支持 [ev_cf20adb87c88797e](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): we process thousands of genetic profiles for our customers around the world
 - 缺口：按 Serenity 规则：自己控制的环节（data、model_software）不足两个或互不相连
 
-### earnings_validation: partial
+### earnings_validation: pass
 
-按 Serenity 规则：实际结果有的支持、有的不支持论点。图谱：上游依赖微软Azure等云服务商及IDT/Qiagen/NEB等消耗品供应商，以及第三方制造商和七家整合访问实验室；产品为SOPHiA DDM云原生多模态AI分析平台及生物制药应用套件；下游覆盖医院、参考实验室和制药/生物技术/CRO客户。结果方面，2025财年平台收入7490万美元（同比+18%）、分析量增长11%、NDR升至115%均与论点一致；但2025年生物制药收入同比小幅下降70万美元，与论点中"支持生物制药项目"的增长含义不符。
+按 Serenity 规则：有标明日期的实际财务结果支持论点（另有 1 条反向结果，记为反证）。图谱：上游依赖微软Azure等云服务商及IDT/Qiagen/NEB等消耗品供应商，以及第三方制造商和七家整合访问实验室；产品为SOPHiA DDM云原生多模态AI分析平台及生物制药应用套件；下游覆盖医院、参考实验室和制药/生物技术/CRO客户。结果方面，2025财年平台收入7490万美元（同比+18%）、分析量增长11%、NDR升至115%均与论点一致；但2025年生物制药收入同比小幅下降70万美元，与论点中"支持生物制药项目"的增长含义不符。
 
 - 支持 [ev_a206f4802b12b922](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): Revenue was $77.3 million for the year ended December 31, 2025, compared to $65.2 million for the year ended December 31, 2024.
 - 支持 [ev_f52d1b7aa075b602](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): SOPHiA DDM Platform revenue was $74.9 million for the year ended December 31, 2025 compared to $63.5 million for the year ended December 31, 2024.
@@ -5928,7 +5922,6 @@ SGMT为preparation阶段Phase 3公司，亏损属预期。公司披露截至2026
 - 支持 [ev_6f02b44432974081](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): Core Genomics Customers increased to 528 as of December 31, 2025 from 472 as of December 31, 2024.
 - 支持 [ev_749f3cf370d6d90a](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): Net dollar retention increased to 115% as of December 31, 2025 from 104% as of December 31, 2024.
 - 反证 [ev_45e25191b318e5bc](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): partially offset by a slight decrease in biopharma revenue of $0.7 million.
-- 缺口：按 Serenity 规则：实际结果有的支持、有的不支持论点
 
 ### counter_thesis: pass
 

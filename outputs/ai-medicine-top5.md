@@ -4,23 +4,23 @@
 
 | # | Ticker | Company | Potential | Evidence | Flag |
 | ---: | --- | --- | ---: | ---: | --- |
-| 1 | CBLL | Ceribell | 86.3 | 82 |  |
-| 2 | HTFL | HeartFlow | 84.7 | 79 |  |
-| 3 | CAI | Caris Life Sciences | 80.3 | 78 |  |
-| 4 | ISRG | Intuitive Surgical | 79.7 | 72 |  |
-| 5 | GEHC | GE HealthCare Technologies | 76.3 | 66 |  |
-| 6 | NTRA | Natera | 75.0 | 72 |  |
-| 7 | SDGR | Schrodinger | 74.7 | 75 |  |
-| 8 | TEM | Tempus AI | 73.7 | 73 |  |
-| 9 | RDNT | RadNet / DeepHealth | 73.7 | 73 |  |
-| 10 | SOPH | SOPHiA GENETICS | 72.7 | 71 |  |
-| 11 | IQV | IQVIA | 70.3 | 65 |  |
-| 12 | RXRX | Recursion Pharmaceuticals | 69.3 | 76 |  |
-| 13 | CERT | Certara | 62.7 | 68 |  |
+| 1 | CAI | Caris Life Sciences | 86.3 | 83 |  |
+| 2 | CBLL | Ceribell | 86.3 | 82 |  |
+| 3 | HTFL | HeartFlow | 84.7 | 79 |  |
+| 4 | SDGR | Schrodinger | 80.7 | 80 |  |
+| 5 | ISRG | Intuitive Surgical | 79.7 | 72 |  |
+| 6 | SOPH | SOPHiA GENETICS | 78.7 | 77 |  |
+| 7 | GEHC | GE HealthCare Technologies | 76.3 | 66 |  |
+| 8 | RXRX | Recursion Pharmaceuticals | 75.3 | 81 |  |
+| 9 | NTRA | Natera | 75.0 | 72 |  |
+| 10 | TEM | Tempus AI | 73.7 | 73 |  |
+| 11 | RDNT | RadNet / DeepHealth | 73.7 | 73 |  |
+| 12 | IQV | IQVIA | 70.3 | 65 |  |
+| 13 | CERT | Certara | 68.7 | 73 |  |
 | 14 | GH | Guardant Health | 61.3 | 48 | evidence incomplete |
 | 15 | ABCL | AbCellera Biologics | 58.0 | 64 |  |
 
-## 3. CAI — Caris Life Sciences
+## 1. CAI — Caris Life Sciences
 
 **Chokepoint:** A data network across testing, AI products and pharma services, similar to Tempus but with its own sequencing scale.
 
@@ -37,7 +37,7 @@
 
 Sources: https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-20251231.htm, https://www.sec.gov/Archives/edgar/data/2019410/000201941026000069/cai-20260930.htm
 
-## 4. ISRG — Intuitive Surgical
+## 5. ISRG — Intuitive Surgical
 
 **Chokepoint:** Strong customer workflow dependence and multiple revenue nodes; the main issue is valuation and whether AI creates incremental economics beyond the existing platform moat.
 
@@ -54,7 +54,7 @@ Sources: https://www.sec.gov/Archives/edgar/data/2019410/000201941026000016/cai-
 
 Sources: https://isrg.intuitive.com/news-releases/news-release-details/intuitive-announces-third-quarter-earnings-6, https://isrg.intuitive.com/static-files/42b1fa2c-4c6e-4dd7-90b9-acceda8baded, https://www.fda.gov/medical-devices/artificial-intelligence-enabled-medical-devices/list-artificial-intelligence-enabled-medical-devices
 
-## 5. GEHC — GE HealthCare Technologies
+## 7. GEHC — GE HealthCare Technologies
 
 **Chokepoint:** A multi-node distribution and workflow platform, but not a pure AI play; the open question is whether AI raises replacement demand, attachment revenue or pricing power.
 
@@ -71,7 +71,7 @@ Sources: https://isrg.intuitive.com/news-releases/news-release-details/intuitive
 
 Sources: https://investor.gehealthcare.com/news-releases/news-release-details/ge-healthcare-reports-third-quarter-2026-financial-results, https://www.fda.gov/medical-devices/artificial-intelligence-enabled-medical-devices/list-artificial-intelligence-enabled-medical-devices
 
-## 1. CBLL — Ceribell
+## 2. CBLL — Ceribell
 
 **Chokepoint:** A clinical-workflow chokepoint in the ICU and emergency room: rapid EEG where hospitals often have no neurologist on site.
 
@@ -88,7 +88,7 @@ Sources: https://investor.gehealthcare.com/news-releases/news-release-details/ge
 
 Sources: https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll-20251231.htm, https://www.sec.gov/Archives/edgar/data/1861107/000119312526445555/cbll-20260930.htm
 
-## 2. HTFL — HeartFlow
+## 3. HTFL — HeartFlow
 
 **Chokepoint:** A payment chokepoint: the scarce asset is the billing code, coverage and clinical evidence, not the algorithm alone.
 
@@ -105,7 +105,7 @@ Sources: https://www.sec.gov/Archives/edgar/data/1861107/000119312526067238/cbll
 
 Sources: https://www.sec.gov/Archives/edgar/data/1464521/000146452126000042/htfl-20251231x10k.htm, https://www.sec.gov/Archives/edgar/data/0001464521/000146452126000171/htfl-20261112xex99_1.htm
 
-## 7. SDGR — Schrodinger
+## 4. SDGR — Schrodinger
 
 **Chokepoint:** A horizontal discovery layer used across multiple customers and drug programs; more diversified than betting on one molecule.
 
