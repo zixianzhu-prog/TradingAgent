@@ -11,9 +11,9 @@
 | GLUE · Monte Rosa Therapeutics, Inc. | ai | Drug discovery | AI is core (research_development) | revenue $218M a year; registered clinical trial | 90 |
 | HTFL · Heartflow, Inc. | ai | Imaging & devices | AI is core (medical_decision) | FDA-cleared AI device; revenue $292M a year | 90 |
 | RXRX · RECURSION PHARMACEUTICALS, INC. | ai | Drug discovery | AI is core (research_development) | revenue $74M a year; registered clinical trial | 90 |
+| SOPH · SOPHiA GENETICS SA | ai | Diagnostics | AI is core (medical_decision) | revenue $77M a year | 90 |
 | CARL · CARLSMED, INC. | ai | Imaging & devices | AI is core (clinical_workflow) | FDA-cleared AI device; revenue $86M a year | 87 |
 | RDNT · RadNet, Inc. | ai | Imaging & devices | AI is core (medical_decision) | FDA-cleared AI device; revenue $2,553M a year | 85 |
-| SOPH · SOPHiA GENETICS SA | ai | Diagnostics | AI is core (medical_decision) | revenue $77M a year | 85 |
 | TEM · Tempus AI, Inc. | ai | Diagnostics | AI is core (medical_decision) | FDA-cleared AI device; revenue $1,602M a year | 85 |
 | HNGE · Hinge Health, Inc. | ai | Imaging & devices | AI is core (clinical_workflow) | revenue $940M a year | 77 |
 | ODTX · Odyssey Therapeutics, Inc. | ai | Drug discovery | AI is core (research_development) | registered clinical trial | 77 |

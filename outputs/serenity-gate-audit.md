@@ -62,7 +62,7 @@
 | RYTM | watch | 14/100 | 42/100 | 25/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | SDGR | research-ready | 90/100 | 65/100 | 80/100 | 无 | 无 | 是 |
 | SGMT | watch | 17/100 | 71/100 | 39/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
-| SOPH | watch | 85/100 | 64/100 | 77/100 | 无 | 无 | 是 |
+| SOPH | research-ready | 90/100 | 65/100 | 80/100 | 无 | 无 | 是 |
 | TECX | watch | 19/100 | 56/100 | 34/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |
 | TEM | research-ready | 85/100 | 56/100 | 73/100 | 无 | 无 | 是 |
 | TLX | watch | 31/100 | 66/100 | 45/100 | supply_chain_map, customer_dependency, earnings_validation | 无 | 是 |

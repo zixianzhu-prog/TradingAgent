@@ -65,3 +65,12 @@ def test_roster_chunk_skips_exhibit_index():
     text = roster + " " + "x" * 5000 + " " + exhibits
     assert "Ross Muken" in cmr.roster_chunk(text)
     assert cmr.roster_chunk(exhibits) == ""
+
+
+def test_foreign_annual_roster_counts_as_current_officer_list():
+    cont = [{"quote": "George Cardoza Chief Financial Officer 64", "event": "20-F filed 2026-03-01: senior management"},
+            {"quote": "said Ross Muken, Chief Executive Officer of SOPHiA GENETICS", "event": "6-K filed 2026-11-03: ex991.htm"}]
+    assert cmr.foreign_roster_continuity(cont)
+    # a domestic 10-K roster does not use this path (domestic filers sign each 10-Q)
+    assert not cmr.foreign_roster_continuity([{**cont[0], "event": "10-K filed 2026-03-01: officers"}, cont[1]])
+    assert not cmr.foreign_roster_continuity(cont[:1])   # no CEO quote

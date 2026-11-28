@@ -9,7 +9,7 @@
 | 3 | HTFL | HeartFlow | 84.7 | 79 |  |
 | 4 | SDGR | Schrodinger | 80.7 | 80 |  |
 | 5 | ISRG | Intuitive Surgical | 79.7 | 72 |  |
-| 6 | SOPH | SOPHiA GENETICS | 78.7 | 77 |  |
+| 6 | SOPH | SOPHiA GENETICS | 78.7 | 80 |  |
 | 7 | GEHC | GE HealthCare Technologies | 76.3 | 66 |  |
 | 8 | RXRX | Recursion Pharmaceuticals | 75.3 | 81 |  |
 | 9 | NTRA | Natera | 75.0 | 72 |  |

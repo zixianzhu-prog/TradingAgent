@@ -1,6 +1,6 @@
 # 每日运行数据台账
 
-生成时间：2026-11-27T23:19:28.228330+00:00
+生成时间：2026-11-28T08:07:33.096551+00:00
 
 > 原始运行可以重复保存，但冻结预测按股票和市场日期去重。重复运行不会伪造新的独立预测样本。
 
@@ -94,11 +94,11 @@
 
 ## 主要报告
 
-- ✅ `outputs/daily-investment-agent.md` · 2026-11-27T23:19:27.434114+00:00
+- ✅ `outputs/daily-investment-agent.md` · 2026-11-28T08:07:32.267365+00:00
 - ✅ `outputs/hidden-gems.md` · 2026-11-27T19:58:05.595072+00:00
 - ✅ `outputs/market-profile-audit.md` · 2026-11-27T19:58:05.494905+00:00
-- ✅ `outputs/ai-medicine-5-10-year-thesis.md` · 2026-11-27T23:19:27.474065+00:00
-- ✅ `outputs/serenity-gate-audit.md` · 2026-11-27T23:19:27.360263+00:00
+- ✅ `outputs/ai-medicine-5-10-year-thesis.md` · 2026-11-28T08:07:32.319388+00:00
+- ✅ `outputs/serenity-gate-audit.md` · 2026-11-28T08:07:32.161805+00:00
 - ✅ `outputs/event-revalidation-queue.md` · 2026-11-27T19:53:07.849722+00:00
 - ✅ `outputs/finrobot-event-analysis.md` · 2026-11-13T14:24:31.189055+00:00
 - ✅ `outputs/agent-benchmark-validation.md` · 2026-11-27T19:58:09.850994+00:00
@@ -110,7 +110,7 @@
 - ✅ `outputs/uspto-assignment-validation.md` · 2026-11-27T19:54:53.950218+00:00
 - ✅ `outputs/institutional-ownership.md` · 2026-11-27T19:55:45.859360+00:00
 - ✅ `outputs/management-radar.md` · 2026-11-27T19:53:07.164587+00:00
-- ✅ `dashboard/dist/data.json` · 2026-11-27T23:19:27.978457+00:00
+- ✅ `dashboard/dist/data.json` · 2026-11-28T08:07:32.842923+00:00
 
 ## 数据完整性规则
 

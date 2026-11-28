@@ -262,6 +262,16 @@ def serenity_status(continuity: bool, investigation: bool, succession: bool) -> 
     return "partial", "按 Serenity 规则：一手材料尚未证明领导层连续"
 
 
+def foreign_roster_continuity(cont: list[dict]) -> bool:
+    """A foreign private issuer files no quarterly officer certification, so its latest annual-report roster (20-F/40-F) is
+    its current officer list. Continuity holds when a verified roster quote names the CFO and a verified quote names the
+    CEO; a departure or vacancy is caught separately by the succession check, which still blocks a pass."""
+    annual_cfo = any(re.match(r"\s*(?:20-F|40-F)", q.get("event", "")) and re.search(r"Chief Financial Officer|\bCFO\b", q["quote"])
+                     for q in cont)
+    ceo = any(re.search(r"Chief Executive Officer|\bCEO\b", q["quote"]) for q in cont)
+    return annual_cfo and ceo
+
+
 def to_gate(answer: dict, passages: list[dict], allow_fetch: bool = True) -> tuple[dict, int]:
     """Keep only quotes found verbatim in the filing; a fact counts only with a verified quote; grade by Serenity's rubric."""
     by_id = {p["id"]: p for p in passages}
@@ -276,7 +286,7 @@ def to_gate(answer: dict, passages: list[dict], allow_fetch: bool = True) -> tup
             if not p or not text or len(ser.clean(q.get("quote", ""))) < ser.MIN_QUOTE or not pcr.locate(text, q.get("quote", "")):
                 dropped += 1
                 continue
-            out.append({"url": p["url"], "quote": q["quote"], **({"note": q["note"]} if q.get("note") else {})})
+            out.append({"url": p["url"], "quote": q["quote"], "event": p.get("event", ""), **({"note": q["note"]} if q.get("note") else {})})
         return out
 
     cont = verified((answer.get("continuity") or {}).get("evidence"))
@@ -286,7 +296,10 @@ def to_gate(answer: dict, passages: list[dict], allow_fetch: bool = True) -> tup
     # A claimed investigation or vacancy blocks a pass even if its quote failed: the model saw something to check.
     inv_open = bool((answer.get("investigation") or {}).get("open"))
     suc_open = bool((answer.get("succession") or {}).get("unresolved"))
-    status, rule = serenity_status(bool((answer.get("continuity") or {}).get("confirmed") and cont), inv_open, suc_open)
+    confirmed = bool((answer.get("continuity") or {}).get("confirmed") and cont) or foreign_roster_continuity(cont)
+    status, rule = serenity_status(confirmed, inv_open, suc_open)
+    # "event" (which filing a quote came from) is only needed for the roster check above; stored quotes stay url + quote.
+    cont, inv, suc = ([{k: v for k, v in q.items() if k != "event"} for q in qs] for qs in (cont, inv, suc))
     # Counter-evidence is only what bears on the rubric (investigation, succession). Other governance matters are kept,
     # quoted, under otherRisks: Serenity's rubric does not grade them, so they must not count as counter-evidence.
     gate = {"status": status, "reason": f"{rule}。{answer.get('reason', '')}",

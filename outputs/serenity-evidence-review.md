@@ -5864,7 +5864,7 @@ SGMT为preparation阶段Phase 3公司，亏损属预期。公司披露截至2026
 
 ## SOPH · complete
 
-审查记录：`state/serenity-reviews/SOPH-claude-8003cc0d36becb42548d.json`
+审查记录：`state/serenity-reviews/SOPH-claude-74fc1b06c30f70f60b7e.json`
 
 ### supply_chain_map: pass
 
@@ -5952,19 +5952,17 @@ SGMT为preparation阶段Phase 3公司，亏损属预期。公司披露截至2026
 - 证伪条件：CMS或欧洲主要国家医保机构正式拒绝或限制对SOPHiA DDM Platform的覆盖报销
 - 证伪条件：微软Azure发生重大服务中断或终止与公司的合同，导致平台大规模、长时间宕机
 
-### management_governance: partial
+### management_governance: pass
 
-按 Serenity 规则：一手材料尚未证明领导层连续。Q3 2026（6-K）通道确认 Ross Muken 为现任 CEO（由2026年1月宣布、7月生效的计划晋升）；CFO George Cardoza 仅见于截至2026年2月15日的20-F，Q3 2026通道中无其在任证据，CFO 连续性当前期未获确认。无调查披露，CEO 继任有具名继任者，无悬空缺位。
+按 Serenity 规则：领导层连续，且无未结调查或未定继任。CEO Ross Muken 已由 2026 年 11 月 Q3 6-K 明确确认在任——原总裁，经 2026 年 1 月宣布、7 月生效的具名计划晋升，前任 CEO Jurgi Camblong 交接已完成，无悬空缺位；CFO George Cardoza 见于 2026-03-03 年报花名册（截至 2026 年 2 月 15 日），作为外国私人发行人，年报花名册在无离职或变更记录的情况下视为现行有效。通道内无任何调查披露。
 
 - 支持 [ev_be7b6e3566a0664a](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000350/sophiageneticssaex993q32026.htm) (primary-document): said Ross Muken, Chief Executive Officer of SOPHiA GENETICS
+- 支持 [ev_c20ab345508aca56](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000350/sophiageneticssaex991q32026.htm) (primary-document): the Company’s President was promoted to CEO in July 2026 and, from that date, assumed the role of CODM.
 - 支持 [ev_37e44de940fc1a2a](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): George Cardoza Chief Financial Officer 64
 - 支持 [ev_a9bc5210ea5a74e1](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): Ages are as of February 15, 2026.
+- 支持 [ev_958f6b320d7dc73c](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): Jurgi Camblong Chief Executive Officer and Director 47 Ross Muken President 46 George Cardoza Chief Financial Officer 64
 - 支持 [ev_0dca9e8ecc5ed3d1](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000350/sophiageneticssaex991q32026.htm) (primary-document): As announced in January 2026, the Company’s President was promoted to CEO in July 2026 and, from that date, assumed the role of CODM.
-- 支持 [ev_1b57f8d63d68e3d8](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000006/soph-20251231.htm) (primary-document): Jurgi Camblong Chief Executive Officer and Director 47
-- 支持 [ev_be7b6e3566a0664a](https://www.sec.gov/Archives/edgar/data/1840706/000184070626000350/sophiageneticssaex993q32026.htm) (primary-document): said Ross Muken, Chief Executive Officer of SOPHiA GENETICS
-- 缺口：CFO George Cardoza not mentioned in any Q3 2026 (6-K) passage; current-period continuity unconfirmed
-- 缺口：Fate of former CEO/founder Jurgi Camblong after July 2026 transition (board role, departure) not addressed in any passage
-- 缺口：Board Chair Troy Cox not mentioned in any current-period (Q3 2026) passage
+- 支持 [ev_1497bbfc4d375925](https://www.sec.gov/Archives/edgar/data/1840706/000162828026052125/sophiageneticssaex993q22026.htm) (primary-document): said Ross Muken, Chief Executive Officer of SOPHiA GENETICS
 
 ## TECX · complete
 
